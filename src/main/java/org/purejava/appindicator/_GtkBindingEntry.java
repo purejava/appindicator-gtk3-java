@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -62,7 +58,7 @@ public class _GtkBindingEntry {
         return keyval$LAYOUT;
     }
 
-    private static final long keyval$OFFSET = 0;
+    private static final long keyval$OFFSET = $LAYOUT.byteOffset(groupElement("keyval"));
 
     /**
      * Offset for field:
@@ -106,7 +102,7 @@ public class _GtkBindingEntry {
         return modifiers$LAYOUT;
     }
 
-    private static final long modifiers$OFFSET = 4;
+    private static final long modifiers$OFFSET = $LAYOUT.byteOffset(groupElement("modifiers"));
 
     /**
      * Offset for field:
@@ -150,7 +146,7 @@ public class _GtkBindingEntry {
         return binding_set$LAYOUT;
     }
 
-    private static final long binding_set$OFFSET = 8;
+    private static final long binding_set$OFFSET = $LAYOUT.byteOffset(groupElement("binding_set"));
 
     /**
      * Offset for field:
@@ -194,7 +190,7 @@ public class _GtkBindingEntry {
         return set_next$LAYOUT;
     }
 
-    private static final long set_next$OFFSET = 24;
+    private static final long set_next$OFFSET = $LAYOUT.byteOffset(groupElement("set_next"));
 
     /**
      * Offset for field:
@@ -238,7 +234,7 @@ public class _GtkBindingEntry {
         return hash_next$LAYOUT;
     }
 
-    private static final long hash_next$OFFSET = 32;
+    private static final long hash_next$OFFSET = $LAYOUT.byteOffset(groupElement("hash_next"));
 
     /**
      * Offset for field:
@@ -282,7 +278,7 @@ public class _GtkBindingEntry {
         return signals$LAYOUT;
     }
 
-    private static final long signals$OFFSET = 40;
+    private static final long signals$OFFSET = $LAYOUT.byteOffset(groupElement("signals"));
 
     /**
      * Offset for field:
@@ -343,7 +339,7 @@ public class _GtkBindingEntry {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -351,7 +347,7 @@ public class _GtkBindingEntry {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

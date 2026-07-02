@@ -2,22 +2,22 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
-import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
-
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.Linker;
+import java.lang.foreign.MemorySegment;
+import java.lang.invoke.MethodHandle;
 
 /**
  * {@snippet lang=c :
  * typedef void (*GSimpleAsyncThreadFunc)(GSimpleAsyncResult *, GObject *, GCancellable *)
  * }
  */
-public class GSimpleAsyncThreadFunc {
+public final class GSimpleAsyncThreadFunc {
+
+    private GSimpleAsyncThreadFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +54,11 @@ public class GSimpleAsyncThreadFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment res, MemorySegment object, MemorySegment cancellable) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment res, MemorySegment object, MemorySegment cancellable) {
         try {
              DOWN$MH.invokeExact(funcPtr, res, object, cancellable);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

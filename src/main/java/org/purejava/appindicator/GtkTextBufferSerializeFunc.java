@@ -13,7 +13,11 @@ import java.lang.invoke.MethodHandle;
  * typedef guint8 *(*GtkTextBufferSerializeFunc)(GtkTextBuffer *, GtkTextBuffer *, const GtkTextIter *, const GtkTextIter *, gsize *, gpointer)
  * }
  */
-public class GtkTextBufferSerializeFunc {
+public final class GtkTextBufferSerializeFunc {
+
+    private GtkTextBufferSerializeFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +58,11 @@ public class GtkTextBufferSerializeFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment register_buffer, MemorySegment content_buffer, MemorySegment start, MemorySegment end, MemorySegment length, MemorySegment user_data) {
+    public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment register_buffer, MemorySegment content_buffer, MemorySegment start, MemorySegment end, MemorySegment length, MemorySegment user_data) {
         try {
             return (MemorySegment) DOWN$MH.invokeExact(funcPtr, register_buffer, content_buffer, start, end, length, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

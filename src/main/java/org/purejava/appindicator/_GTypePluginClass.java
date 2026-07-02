@@ -2,15 +2,10 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -56,7 +51,7 @@ public class _GTypePluginClass {
         return base_iface$LAYOUT;
     }
 
-    private static final long base_iface$OFFSET = 0;
+    private static final long base_iface$OFFSET = $LAYOUT.byteOffset(groupElement("base_iface"));
 
     /**
      * Offset for field:
@@ -100,7 +95,7 @@ public class _GTypePluginClass {
         return use_plugin$LAYOUT;
     }
 
-    private static final long use_plugin$OFFSET = 16;
+    private static final long use_plugin$OFFSET = $LAYOUT.byteOffset(groupElement("use_plugin"));
 
     /**
      * Offset for field:
@@ -144,7 +139,7 @@ public class _GTypePluginClass {
         return unuse_plugin$LAYOUT;
     }
 
-    private static final long unuse_plugin$OFFSET = 24;
+    private static final long unuse_plugin$OFFSET = $LAYOUT.byteOffset(groupElement("unuse_plugin"));
 
     /**
      * Offset for field:
@@ -188,7 +183,7 @@ public class _GTypePluginClass {
         return complete_type_info$LAYOUT;
     }
 
-    private static final long complete_type_info$OFFSET = 32;
+    private static final long complete_type_info$OFFSET = $LAYOUT.byteOffset(groupElement("complete_type_info"));
 
     /**
      * Offset for field:
@@ -232,7 +227,7 @@ public class _GTypePluginClass {
         return complete_interface_info$LAYOUT;
     }
 
-    private static final long complete_interface_info$OFFSET = 40;
+    private static final long complete_interface_info$OFFSET = $LAYOUT.byteOffset(groupElement("complete_interface_info"));
 
     /**
      * Offset for field:
@@ -293,7 +288,7 @@ public class _GTypePluginClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -301,7 +296,7 @@ public class _GTypePluginClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

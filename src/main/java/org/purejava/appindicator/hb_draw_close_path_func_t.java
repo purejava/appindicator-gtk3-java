@@ -13,7 +13,11 @@ import java.lang.invoke.MethodHandle;
  * typedef void (*hb_draw_close_path_func_t)(hb_draw_funcs_t *, void *, hb_draw_state_t *, void *)
  * }
  */
-public class hb_draw_close_path_func_t {
+public final class hb_draw_close_path_func_t {
+
+    private hb_draw_close_path_func_t() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -51,9 +55,11 @@ public class hb_draw_close_path_func_t {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment dfuncs, MemorySegment draw_data, MemorySegment st, MemorySegment user_data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment dfuncs, MemorySegment draw_data, MemorySegment st, MemorySegment user_data) {
         try {
              DOWN$MH.invokeExact(funcPtr, dfuncs, draw_data, st, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

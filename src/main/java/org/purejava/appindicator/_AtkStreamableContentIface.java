@@ -58,7 +58,7 @@ public class _AtkStreamableContentIface {
         return parent$LAYOUT;
     }
 
-    private static final long parent$OFFSET = 0;
+    private static final long parent$OFFSET = $LAYOUT.byteOffset(groupElement("parent"));
 
     /**
      * Offset for field:
@@ -95,7 +95,11 @@ public class _AtkStreamableContentIface {
      * gint (*get_n_mime_types)(AtkStreamableContent *)
      * }
      */
-    public class get_n_mime_types {
+    public final static class get_n_mime_types {
+
+        private get_n_mime_types() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -131,9 +135,11 @@ public class _AtkStreamableContentIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -152,7 +158,7 @@ public class _AtkStreamableContentIface {
         return get_n_mime_types$LAYOUT;
     }
 
-    private static final long get_n_mime_types$OFFSET = 16;
+    private static final long get_n_mime_types$OFFSET = $LAYOUT.byteOffset(groupElement("get_n_mime_types"));
 
     /**
      * Offset for field:
@@ -189,7 +195,11 @@ public class _AtkStreamableContentIface {
      * const gchar *(*get_mime_type)(AtkStreamableContent *, gint)
      * }
      */
-    public class get_mime_type {
+    public final static class get_mime_type {
+
+        private get_mime_type() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -226,9 +236,11 @@ public class _AtkStreamableContentIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -247,7 +259,7 @@ public class _AtkStreamableContentIface {
         return get_mime_type$LAYOUT;
     }
 
-    private static final long get_mime_type$OFFSET = 24;
+    private static final long get_mime_type$OFFSET = $LAYOUT.byteOffset(groupElement("get_mime_type"));
 
     /**
      * Offset for field:
@@ -284,7 +296,11 @@ public class _AtkStreamableContentIface {
      * GIOChannel *(*get_stream)(AtkStreamableContent *, const gchar *)
      * }
      */
-    public class get_stream {
+    public final static class get_stream {
+
+        private get_stream() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -321,9 +337,11 @@ public class _AtkStreamableContentIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -342,7 +360,7 @@ public class _AtkStreamableContentIface {
         return get_stream$LAYOUT;
     }
 
-    private static final long get_stream$OFFSET = 32;
+    private static final long get_stream$OFFSET = $LAYOUT.byteOffset(groupElement("get_stream"));
 
     /**
      * Offset for field:
@@ -379,7 +397,11 @@ public class _AtkStreamableContentIface {
      * const gchar *(*get_uri)(AtkStreamableContent *, const gchar *)
      * }
      */
-    public class get_uri {
+    public final static class get_uri {
+
+        private get_uri() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -416,9 +438,11 @@ public class _AtkStreamableContentIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -437,7 +461,7 @@ public class _AtkStreamableContentIface {
         return get_uri$LAYOUT;
     }
 
-    private static final long get_uri$OFFSET = 40;
+    private static final long get_uri$OFFSET = $LAYOUT.byteOffset(groupElement("get_uri"));
 
     /**
      * Offset for field:
@@ -481,7 +505,7 @@ public class _AtkStreamableContentIface {
         return pad1$LAYOUT;
     }
 
-    private static final long pad1$OFFSET = 48;
+    private static final long pad1$OFFSET = $LAYOUT.byteOffset(groupElement("pad1"));
 
     /**
      * Offset for field:
@@ -525,7 +549,7 @@ public class _AtkStreamableContentIface {
         return pad2$LAYOUT;
     }
 
-    private static final long pad2$OFFSET = 56;
+    private static final long pad2$OFFSET = $LAYOUT.byteOffset(groupElement("pad2"));
 
     /**
      * Offset for field:
@@ -569,7 +593,7 @@ public class _AtkStreamableContentIface {
         return pad3$LAYOUT;
     }
 
-    private static final long pad3$OFFSET = 64;
+    private static final long pad3$OFFSET = $LAYOUT.byteOffset(groupElement("pad3"));
 
     /**
      * Offset for field:
@@ -630,7 +654,7 @@ public class _AtkStreamableContentIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -638,7 +662,7 @@ public class _AtkStreamableContentIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

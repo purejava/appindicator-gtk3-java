@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -79,7 +75,7 @@ public class _GScannerConfig {
         return cset_skip_characters$LAYOUT;
     }
 
-    private static final long cset_skip_characters$OFFSET = 0;
+    private static final long cset_skip_characters$OFFSET = $LAYOUT.byteOffset(groupElement("cset_skip_characters"));
 
     /**
      * Offset for field:
@@ -123,7 +119,7 @@ public class _GScannerConfig {
         return cset_identifier_first$LAYOUT;
     }
 
-    private static final long cset_identifier_first$OFFSET = 8;
+    private static final long cset_identifier_first$OFFSET = $LAYOUT.byteOffset(groupElement("cset_identifier_first"));
 
     /**
      * Offset for field:
@@ -167,7 +163,7 @@ public class _GScannerConfig {
         return cset_identifier_nth$LAYOUT;
     }
 
-    private static final long cset_identifier_nth$OFFSET = 16;
+    private static final long cset_identifier_nth$OFFSET = $LAYOUT.byteOffset(groupElement("cset_identifier_nth"));
 
     /**
      * Offset for field:
@@ -211,7 +207,7 @@ public class _GScannerConfig {
         return cpair_comment_single$LAYOUT;
     }
 
-    private static final long cpair_comment_single$OFFSET = 24;
+    private static final long cpair_comment_single$OFFSET = $LAYOUT.byteOffset(groupElement("cpair_comment_single"));
 
     /**
      * Offset for field:
@@ -255,7 +251,7 @@ public class _GScannerConfig {
         return padding_dummy$LAYOUT;
     }
 
-    private static final long padding_dummy$OFFSET = 36;
+    private static final long padding_dummy$OFFSET = $LAYOUT.byteOffset(groupElement("padding_dummy"));
 
     /**
      * Offset for field:
@@ -316,7 +312,7 @@ public class _GScannerConfig {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -324,7 +320,7 @@ public class _GScannerConfig {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

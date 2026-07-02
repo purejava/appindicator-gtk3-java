@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -72,7 +68,7 @@ public class _GtkUIManagerClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -109,7 +105,11 @@ public class _GtkUIManagerClass {
      * void (*add_widget)(GtkUIManager *, GtkWidget *)
      * }
      */
-    public class add_widget {
+    public final static class add_widget {
+
+        private add_widget() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -145,9 +145,11 @@ public class _GtkUIManagerClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -166,7 +168,7 @@ public class _GtkUIManagerClass {
         return add_widget$LAYOUT;
     }
 
-    private static final long add_widget$OFFSET = 136;
+    private static final long add_widget$OFFSET = $LAYOUT.byteOffset(groupElement("add_widget"));
 
     /**
      * Offset for field:
@@ -203,7 +205,11 @@ public class _GtkUIManagerClass {
      * void (*actions_changed)(GtkUIManager *)
      * }
      */
-    public class actions_changed {
+    public final static class actions_changed {
+
+        private actions_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -238,9 +244,11 @@ public class _GtkUIManagerClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -259,7 +267,7 @@ public class _GtkUIManagerClass {
         return actions_changed$LAYOUT;
     }
 
-    private static final long actions_changed$OFFSET = 144;
+    private static final long actions_changed$OFFSET = $LAYOUT.byteOffset(groupElement("actions_changed"));
 
     /**
      * Offset for field:
@@ -296,7 +304,11 @@ public class _GtkUIManagerClass {
      * void (*connect_proxy)(GtkUIManager *, GtkAction *, GtkWidget *)
      * }
      */
-    public class connect_proxy {
+    public final static class connect_proxy {
+
+        private connect_proxy() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -333,9 +345,11 @@ public class _GtkUIManagerClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -354,7 +368,7 @@ public class _GtkUIManagerClass {
         return connect_proxy$LAYOUT;
     }
 
-    private static final long connect_proxy$OFFSET = 152;
+    private static final long connect_proxy$OFFSET = $LAYOUT.byteOffset(groupElement("connect_proxy"));
 
     /**
      * Offset for field:
@@ -391,7 +405,11 @@ public class _GtkUIManagerClass {
      * void (*disconnect_proxy)(GtkUIManager *, GtkAction *, GtkWidget *)
      * }
      */
-    public class disconnect_proxy {
+    public final static class disconnect_proxy {
+
+        private disconnect_proxy() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -428,9 +446,11 @@ public class _GtkUIManagerClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -449,7 +469,7 @@ public class _GtkUIManagerClass {
         return disconnect_proxy$LAYOUT;
     }
 
-    private static final long disconnect_proxy$OFFSET = 160;
+    private static final long disconnect_proxy$OFFSET = $LAYOUT.byteOffset(groupElement("disconnect_proxy"));
 
     /**
      * Offset for field:
@@ -486,7 +506,11 @@ public class _GtkUIManagerClass {
      * void (*pre_activate)(GtkUIManager *, GtkAction *)
      * }
      */
-    public class pre_activate {
+    public final static class pre_activate {
+
+        private pre_activate() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -522,9 +546,11 @@ public class _GtkUIManagerClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -543,7 +569,7 @@ public class _GtkUIManagerClass {
         return pre_activate$LAYOUT;
     }
 
-    private static final long pre_activate$OFFSET = 168;
+    private static final long pre_activate$OFFSET = $LAYOUT.byteOffset(groupElement("pre_activate"));
 
     /**
      * Offset for field:
@@ -580,7 +606,11 @@ public class _GtkUIManagerClass {
      * void (*post_activate)(GtkUIManager *, GtkAction *)
      * }
      */
-    public class post_activate {
+    public final static class post_activate {
+
+        private post_activate() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -616,9 +646,11 @@ public class _GtkUIManagerClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -637,7 +669,7 @@ public class _GtkUIManagerClass {
         return post_activate$LAYOUT;
     }
 
-    private static final long post_activate$OFFSET = 176;
+    private static final long post_activate$OFFSET = $LAYOUT.byteOffset(groupElement("post_activate"));
 
     /**
      * Offset for field:
@@ -674,7 +706,11 @@ public class _GtkUIManagerClass {
      * GtkWidget *(*get_widget)(GtkUIManager *, const gchar *)
      * }
      */
-    public class get_widget {
+    public final static class get_widget {
+
+        private get_widget() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -711,9 +747,11 @@ public class _GtkUIManagerClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -732,7 +770,7 @@ public class _GtkUIManagerClass {
         return get_widget$LAYOUT;
     }
 
-    private static final long get_widget$OFFSET = 184;
+    private static final long get_widget$OFFSET = $LAYOUT.byteOffset(groupElement("get_widget"));
 
     /**
      * Offset for field:
@@ -769,7 +807,11 @@ public class _GtkUIManagerClass {
      * GtkAction *(*get_action)(GtkUIManager *, const gchar *)
      * }
      */
-    public class get_action {
+    public final static class get_action {
+
+        private get_action() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -806,9 +848,11 @@ public class _GtkUIManagerClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -827,7 +871,7 @@ public class _GtkUIManagerClass {
         return get_action$LAYOUT;
     }
 
-    private static final long get_action$OFFSET = 192;
+    private static final long get_action$OFFSET = $LAYOUT.byteOffset(groupElement("get_action"));
 
     /**
      * Offset for field:
@@ -864,7 +908,11 @@ public class _GtkUIManagerClass {
      * void (*_gtk_reserved1)(void)
      * }
      */
-    public class _gtk_reserved1 {
+    public final static class _gtk_reserved1 {
+
+        private _gtk_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -900,6 +948,8 @@ public class _GtkUIManagerClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -918,7 +968,7 @@ public class _GtkUIManagerClass {
         return _gtk_reserved1$LAYOUT;
     }
 
-    private static final long _gtk_reserved1$OFFSET = 200;
+    private static final long _gtk_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved1"));
 
     /**
      * Offset for field:
@@ -955,7 +1005,11 @@ public class _GtkUIManagerClass {
      * void (*_gtk_reserved2)(void)
      * }
      */
-    public class _gtk_reserved2 {
+    public final static class _gtk_reserved2 {
+
+        private _gtk_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -991,6 +1045,8 @@ public class _GtkUIManagerClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1009,7 +1065,7 @@ public class _GtkUIManagerClass {
         return _gtk_reserved2$LAYOUT;
     }
 
-    private static final long _gtk_reserved2$OFFSET = 208;
+    private static final long _gtk_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved2"));
 
     /**
      * Offset for field:
@@ -1046,7 +1102,11 @@ public class _GtkUIManagerClass {
      * void (*_gtk_reserved3)(void)
      * }
      */
-    public class _gtk_reserved3 {
+    public final static class _gtk_reserved3 {
+
+        private _gtk_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1082,6 +1142,8 @@ public class _GtkUIManagerClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1100,7 +1162,7 @@ public class _GtkUIManagerClass {
         return _gtk_reserved3$LAYOUT;
     }
 
-    private static final long _gtk_reserved3$OFFSET = 216;
+    private static final long _gtk_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved3"));
 
     /**
      * Offset for field:
@@ -1137,7 +1199,11 @@ public class _GtkUIManagerClass {
      * void (*_gtk_reserved4)(void)
      * }
      */
-    public class _gtk_reserved4 {
+    public final static class _gtk_reserved4 {
+
+        private _gtk_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1173,6 +1239,8 @@ public class _GtkUIManagerClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1191,7 +1259,7 @@ public class _GtkUIManagerClass {
         return _gtk_reserved4$LAYOUT;
     }
 
-    private static final long _gtk_reserved4$OFFSET = 224;
+    private static final long _gtk_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved4"));
 
     /**
      * Offset for field:
@@ -1252,7 +1320,7 @@ public class _GtkUIManagerClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1260,7 +1328,7 @@ public class _GtkUIManagerClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

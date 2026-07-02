@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
@@ -65,7 +61,7 @@ public class _GdkEventPadAxis {
         return type$LAYOUT;
     }
 
-    private static final long type$OFFSET = 0;
+    private static final long type$OFFSET = $LAYOUT.byteOffset(groupElement("type"));
 
     /**
      * Offset for field:
@@ -109,7 +105,7 @@ public class _GdkEventPadAxis {
         return window$LAYOUT;
     }
 
-    private static final long window$OFFSET = 8;
+    private static final long window$OFFSET = $LAYOUT.byteOffset(groupElement("window"));
 
     /**
      * Offset for field:
@@ -153,7 +149,7 @@ public class _GdkEventPadAxis {
         return send_event$LAYOUT;
     }
 
-    private static final long send_event$OFFSET = 16;
+    private static final long send_event$OFFSET = $LAYOUT.byteOffset(groupElement("send_event"));
 
     /**
      * Offset for field:
@@ -197,7 +193,7 @@ public class _GdkEventPadAxis {
         return time$LAYOUT;
     }
 
-    private static final long time$OFFSET = 20;
+    private static final long time$OFFSET = $LAYOUT.byteOffset(groupElement("time"));
 
     /**
      * Offset for field:
@@ -241,7 +237,7 @@ public class _GdkEventPadAxis {
         return group$LAYOUT;
     }
 
-    private static final long group$OFFSET = 24;
+    private static final long group$OFFSET = $LAYOUT.byteOffset(groupElement("group"));
 
     /**
      * Offset for field:
@@ -285,7 +281,7 @@ public class _GdkEventPadAxis {
         return index$LAYOUT;
     }
 
-    private static final long index$OFFSET = 28;
+    private static final long index$OFFSET = $LAYOUT.byteOffset(groupElement("index"));
 
     /**
      * Offset for field:
@@ -329,7 +325,7 @@ public class _GdkEventPadAxis {
         return mode$LAYOUT;
     }
 
-    private static final long mode$OFFSET = 32;
+    private static final long mode$OFFSET = $LAYOUT.byteOffset(groupElement("mode"));
 
     /**
      * Offset for field:
@@ -373,7 +369,7 @@ public class _GdkEventPadAxis {
         return value$LAYOUT;
     }
 
-    private static final long value$OFFSET = 40;
+    private static final long value$OFFSET = $LAYOUT.byteOffset(groupElement("value"));
 
     /**
      * Offset for field:
@@ -434,7 +430,7 @@ public class _GdkEventPadAxis {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -442,7 +438,7 @@ public class _GdkEventPadAxis {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -68,7 +64,7 @@ public class _GtkPanedClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -105,7 +101,11 @@ public class _GtkPanedClass {
      * gboolean (*cycle_child_focus)(GtkPaned *, gboolean)
      * }
      */
-    public class cycle_child_focus {
+    public final static class cycle_child_focus {
+
+        private cycle_child_focus() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -142,9 +142,11 @@ public class _GtkPanedClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -163,7 +165,7 @@ public class _GtkPanedClass {
         return cycle_child_focus$LAYOUT;
     }
 
-    private static final long cycle_child_focus$OFFSET = 976;
+    private static final long cycle_child_focus$OFFSET = $LAYOUT.byteOffset(groupElement("cycle_child_focus"));
 
     /**
      * Offset for field:
@@ -200,7 +202,11 @@ public class _GtkPanedClass {
      * gboolean (*toggle_handle_focus)(GtkPaned *)
      * }
      */
-    public class toggle_handle_focus {
+    public final static class toggle_handle_focus {
+
+        private toggle_handle_focus() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -236,9 +242,11 @@ public class _GtkPanedClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -257,7 +265,7 @@ public class _GtkPanedClass {
         return toggle_handle_focus$LAYOUT;
     }
 
-    private static final long toggle_handle_focus$OFFSET = 984;
+    private static final long toggle_handle_focus$OFFSET = $LAYOUT.byteOffset(groupElement("toggle_handle_focus"));
 
     /**
      * Offset for field:
@@ -294,7 +302,11 @@ public class _GtkPanedClass {
      * gboolean (*move_handle)(GtkPaned *, GtkScrollType)
      * }
      */
-    public class move_handle {
+    public final static class move_handle {
+
+        private move_handle() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -331,9 +343,11 @@ public class _GtkPanedClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -352,7 +366,7 @@ public class _GtkPanedClass {
         return move_handle$LAYOUT;
     }
 
-    private static final long move_handle$OFFSET = 992;
+    private static final long move_handle$OFFSET = $LAYOUT.byteOffset(groupElement("move_handle"));
 
     /**
      * Offset for field:
@@ -389,7 +403,11 @@ public class _GtkPanedClass {
      * gboolean (*cycle_handle_focus)(GtkPaned *, gboolean)
      * }
      */
-    public class cycle_handle_focus {
+    public final static class cycle_handle_focus {
+
+        private cycle_handle_focus() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -426,9 +444,11 @@ public class _GtkPanedClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -447,7 +467,7 @@ public class _GtkPanedClass {
         return cycle_handle_focus$LAYOUT;
     }
 
-    private static final long cycle_handle_focus$OFFSET = 1000;
+    private static final long cycle_handle_focus$OFFSET = $LAYOUT.byteOffset(groupElement("cycle_handle_focus"));
 
     /**
      * Offset for field:
@@ -484,7 +504,11 @@ public class _GtkPanedClass {
      * gboolean (*accept_position)(GtkPaned *)
      * }
      */
-    public class accept_position {
+    public final static class accept_position {
+
+        private accept_position() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -520,9 +544,11 @@ public class _GtkPanedClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -541,7 +567,7 @@ public class _GtkPanedClass {
         return accept_position$LAYOUT;
     }
 
-    private static final long accept_position$OFFSET = 1008;
+    private static final long accept_position$OFFSET = $LAYOUT.byteOffset(groupElement("accept_position"));
 
     /**
      * Offset for field:
@@ -578,7 +604,11 @@ public class _GtkPanedClass {
      * gboolean (*cancel_position)(GtkPaned *)
      * }
      */
-    public class cancel_position {
+    public final static class cancel_position {
+
+        private cancel_position() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -614,9 +644,11 @@ public class _GtkPanedClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -635,7 +667,7 @@ public class _GtkPanedClass {
         return cancel_position$LAYOUT;
     }
 
-    private static final long cancel_position$OFFSET = 1016;
+    private static final long cancel_position$OFFSET = $LAYOUT.byteOffset(groupElement("cancel_position"));
 
     /**
      * Offset for field:
@@ -672,7 +704,11 @@ public class _GtkPanedClass {
      * void (*_gtk_reserved1)(void)
      * }
      */
-    public class _gtk_reserved1 {
+    public final static class _gtk_reserved1 {
+
+        private _gtk_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -708,6 +744,8 @@ public class _GtkPanedClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -726,7 +764,7 @@ public class _GtkPanedClass {
         return _gtk_reserved1$LAYOUT;
     }
 
-    private static final long _gtk_reserved1$OFFSET = 1024;
+    private static final long _gtk_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved1"));
 
     /**
      * Offset for field:
@@ -763,7 +801,11 @@ public class _GtkPanedClass {
      * void (*_gtk_reserved2)(void)
      * }
      */
-    public class _gtk_reserved2 {
+    public final static class _gtk_reserved2 {
+
+        private _gtk_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -799,6 +841,8 @@ public class _GtkPanedClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -817,7 +861,7 @@ public class _GtkPanedClass {
         return _gtk_reserved2$LAYOUT;
     }
 
-    private static final long _gtk_reserved2$OFFSET = 1032;
+    private static final long _gtk_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved2"));
 
     /**
      * Offset for field:
@@ -854,7 +898,11 @@ public class _GtkPanedClass {
      * void (*_gtk_reserved3)(void)
      * }
      */
-    public class _gtk_reserved3 {
+    public final static class _gtk_reserved3 {
+
+        private _gtk_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -890,6 +938,8 @@ public class _GtkPanedClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -908,7 +958,7 @@ public class _GtkPanedClass {
         return _gtk_reserved3$LAYOUT;
     }
 
-    private static final long _gtk_reserved3$OFFSET = 1040;
+    private static final long _gtk_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved3"));
 
     /**
      * Offset for field:
@@ -945,7 +995,11 @@ public class _GtkPanedClass {
      * void (*_gtk_reserved4)(void)
      * }
      */
-    public class _gtk_reserved4 {
+    public final static class _gtk_reserved4 {
+
+        private _gtk_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -981,6 +1035,8 @@ public class _GtkPanedClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -999,7 +1055,7 @@ public class _GtkPanedClass {
         return _gtk_reserved4$LAYOUT;
     }
 
-    private static final long _gtk_reserved4$OFFSET = 1048;
+    private static final long _gtk_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved4"));
 
     /**
      * Offset for field:
@@ -1060,7 +1116,7 @@ public class _GtkPanedClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1068,7 +1124,7 @@ public class _GtkPanedClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

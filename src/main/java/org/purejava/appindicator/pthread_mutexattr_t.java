@@ -2,20 +2,18 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
  * union {
- *     char __size[8];
+ *     char __size[4];
  *     int __align;
  * }
  * }
@@ -27,7 +25,7 @@ public class pthread_mutexattr_t {
     }
 
     private static final GroupLayout $LAYOUT = MemoryLayout.unionLayout(
-        MemoryLayout.sequenceLayout(8, app_indicator_h.C_CHAR).withName("__size"),
+        MemoryLayout.sequenceLayout(4, app_indicator_h.C_CHAR).withName("__size"),
         app_indicator_h.C_INT.withName("__align")
     ).withName("$anon$32:9");
 
@@ -43,19 +41,19 @@ public class pthread_mutexattr_t {
     /**
      * Layout for field:
      * {@snippet lang=c :
-     * char __size[8]
+     * char __size[4]
      * }
      */
     public static final SequenceLayout __size$layout() {
         return __size$LAYOUT;
     }
 
-    private static final long __size$OFFSET = 0;
+    private static final long __size$OFFSET = $LAYOUT.byteOffset(groupElement("__size"));
 
     /**
      * Offset for field:
      * {@snippet lang=c :
-     * char __size[8]
+     * char __size[4]
      * }
      */
     public static final long __size$offset() {
@@ -65,7 +63,7 @@ public class pthread_mutexattr_t {
     /**
      * Getter for field:
      * {@snippet lang=c :
-     * char __size[8]
+     * char __size[4]
      * }
      */
     public static MemorySegment __size(MemorySegment union) {
@@ -75,19 +73,19 @@ public class pthread_mutexattr_t {
     /**
      * Setter for field:
      * {@snippet lang=c :
-     * char __size[8]
+     * char __size[4]
      * }
      */
     public static void __size(MemorySegment union, MemorySegment fieldValue) {
         MemorySegment.copy(fieldValue, 0L, union, __size$OFFSET, __size$LAYOUT.byteSize());
     }
 
-    private static long[] __size$DIMS = { 8 };
+    private static long[] __size$DIMS = { 4 };
 
     /**
      * Dimensions for array field:
      * {@snippet lang=c :
-     * char __size[8]
+     * char __size[4]
      * }
      */
     public static long[] __size$dimensions() {
@@ -98,21 +96,21 @@ public class pthread_mutexattr_t {
     /**
      * Indexed getter for field:
      * {@snippet lang=c :
-     * char __size[8]
+     * char __size[4]
      * }
      */
     public static byte __size(MemorySegment union, long index0) {
-        return (byte)__size$ELEM_HANDLE.get(union, 0L, index0);
+        return (byte)__size$ELEM_HANDLE.get(union, __size$OFFSET, index0);
     }
 
     /**
      * Indexed setter for field:
      * {@snippet lang=c :
-     * char __size[8]
+     * char __size[4]
      * }
      */
     public static void __size(MemorySegment union, long index0, byte fieldValue) {
-        __size$ELEM_HANDLE.set(union, 0L, index0, fieldValue);
+        __size$ELEM_HANDLE.set(union, __size$OFFSET, index0, fieldValue);
     }
 
     private static final OfInt __align$LAYOUT = (OfInt)$LAYOUT.select(groupElement("__align"));
@@ -127,7 +125,7 @@ public class pthread_mutexattr_t {
         return __align$LAYOUT;
     }
 
-    private static final long __align$OFFSET = 0;
+    private static final long __align$OFFSET = $LAYOUT.byteOffset(groupElement("__align"));
 
     /**
      * Offset for field:
@@ -188,7 +186,7 @@ public class pthread_mutexattr_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -196,7 +194,7 @@ public class pthread_mutexattr_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

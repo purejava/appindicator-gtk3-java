@@ -2,22 +2,22 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
-import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
-
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.Linker;
+import java.lang.foreign.MemorySegment;
+import java.lang.invoke.MethodHandle;
 
 /**
  * {@snippet lang=c :
  * typedef void (*GtkClipboardClearFunc)(GtkClipboard *, gpointer)
  * }
  */
-public class GtkClipboardClearFunc {
+public final class GtkClipboardClearFunc {
+
+    private GtkClipboardClearFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -53,9 +53,11 @@ public class GtkClipboardClearFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment clipboard, MemorySegment user_data_or_owner) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment clipboard, MemorySegment user_data_or_owner) {
         try {
              DOWN$MH.invokeExact(funcPtr, clipboard, user_data_or_owner);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

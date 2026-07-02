@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -88,7 +84,7 @@ public class _GtkTreeModelIface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -125,7 +121,11 @@ public class _GtkTreeModelIface {
      * void (*row_changed)(GtkTreeModel *, GtkTreePath *, GtkTreeIter *)
      * }
      */
-    public class row_changed {
+    public final static class row_changed {
+
+        private row_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -162,9 +162,11 @@ public class _GtkTreeModelIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -183,7 +185,7 @@ public class _GtkTreeModelIface {
         return row_changed$LAYOUT;
     }
 
-    private static final long row_changed$OFFSET = 16;
+    private static final long row_changed$OFFSET = $LAYOUT.byteOffset(groupElement("row_changed"));
 
     /**
      * Offset for field:
@@ -220,7 +222,11 @@ public class _GtkTreeModelIface {
      * void (*row_inserted)(GtkTreeModel *, GtkTreePath *, GtkTreeIter *)
      * }
      */
-    public class row_inserted {
+    public final static class row_inserted {
+
+        private row_inserted() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -257,9 +263,11 @@ public class _GtkTreeModelIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -278,7 +286,7 @@ public class _GtkTreeModelIface {
         return row_inserted$LAYOUT;
     }
 
-    private static final long row_inserted$OFFSET = 24;
+    private static final long row_inserted$OFFSET = $LAYOUT.byteOffset(groupElement("row_inserted"));
 
     /**
      * Offset for field:
@@ -315,7 +323,11 @@ public class _GtkTreeModelIface {
      * void (*row_has_child_toggled)(GtkTreeModel *, GtkTreePath *, GtkTreeIter *)
      * }
      */
-    public class row_has_child_toggled {
+    public final static class row_has_child_toggled {
+
+        private row_has_child_toggled() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -352,9 +364,11 @@ public class _GtkTreeModelIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -373,7 +387,7 @@ public class _GtkTreeModelIface {
         return row_has_child_toggled$LAYOUT;
     }
 
-    private static final long row_has_child_toggled$OFFSET = 32;
+    private static final long row_has_child_toggled$OFFSET = $LAYOUT.byteOffset(groupElement("row_has_child_toggled"));
 
     /**
      * Offset for field:
@@ -410,7 +424,11 @@ public class _GtkTreeModelIface {
      * void (*row_deleted)(GtkTreeModel *, GtkTreePath *)
      * }
      */
-    public class row_deleted {
+    public final static class row_deleted {
+
+        private row_deleted() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -446,9 +464,11 @@ public class _GtkTreeModelIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -467,7 +487,7 @@ public class _GtkTreeModelIface {
         return row_deleted$LAYOUT;
     }
 
-    private static final long row_deleted$OFFSET = 40;
+    private static final long row_deleted$OFFSET = $LAYOUT.byteOffset(groupElement("row_deleted"));
 
     /**
      * Offset for field:
@@ -504,7 +524,11 @@ public class _GtkTreeModelIface {
      * void (*rows_reordered)(GtkTreeModel *, GtkTreePath *, GtkTreeIter *, gint *)
      * }
      */
-    public class rows_reordered {
+    public final static class rows_reordered {
+
+        private rows_reordered() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -542,9 +566,11 @@ public class _GtkTreeModelIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -563,7 +589,7 @@ public class _GtkTreeModelIface {
         return rows_reordered$LAYOUT;
     }
 
-    private static final long rows_reordered$OFFSET = 48;
+    private static final long rows_reordered$OFFSET = $LAYOUT.byteOffset(groupElement("rows_reordered"));
 
     /**
      * Offset for field:
@@ -600,7 +626,11 @@ public class _GtkTreeModelIface {
      * GtkTreeModelFlags (*get_flags)(GtkTreeModel *)
      * }
      */
-    public class get_flags {
+    public final static class get_flags {
+
+        private get_flags() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -636,9 +666,11 @@ public class _GtkTreeModelIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -657,7 +689,7 @@ public class _GtkTreeModelIface {
         return get_flags$LAYOUT;
     }
 
-    private static final long get_flags$OFFSET = 56;
+    private static final long get_flags$OFFSET = $LAYOUT.byteOffset(groupElement("get_flags"));
 
     /**
      * Offset for field:
@@ -694,7 +726,11 @@ public class _GtkTreeModelIface {
      * gint (*get_n_columns)(GtkTreeModel *)
      * }
      */
-    public class get_n_columns {
+    public final static class get_n_columns {
+
+        private get_n_columns() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -730,9 +766,11 @@ public class _GtkTreeModelIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -751,7 +789,7 @@ public class _GtkTreeModelIface {
         return get_n_columns$LAYOUT;
     }
 
-    private static final long get_n_columns$OFFSET = 64;
+    private static final long get_n_columns$OFFSET = $LAYOUT.byteOffset(groupElement("get_n_columns"));
 
     /**
      * Offset for field:
@@ -788,7 +826,11 @@ public class _GtkTreeModelIface {
      * GType (*get_column_type)(GtkTreeModel *, gint)
      * }
      */
-    public class get_column_type {
+    public final static class get_column_type {
+
+        private get_column_type() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -825,9 +867,11 @@ public class _GtkTreeModelIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static long invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static long invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (long) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -846,7 +890,7 @@ public class _GtkTreeModelIface {
         return get_column_type$LAYOUT;
     }
 
-    private static final long get_column_type$OFFSET = 72;
+    private static final long get_column_type$OFFSET = $LAYOUT.byteOffset(groupElement("get_column_type"));
 
     /**
      * Offset for field:
@@ -883,7 +927,11 @@ public class _GtkTreeModelIface {
      * gboolean (*get_iter)(GtkTreeModel *, GtkTreeIter *, GtkTreePath *)
      * }
      */
-    public class get_iter {
+    public final static class get_iter {
+
+        private get_iter() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -921,9 +969,11 @@ public class _GtkTreeModelIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -942,7 +992,7 @@ public class _GtkTreeModelIface {
         return get_iter$LAYOUT;
     }
 
-    private static final long get_iter$OFFSET = 80;
+    private static final long get_iter$OFFSET = $LAYOUT.byteOffset(groupElement("get_iter"));
 
     /**
      * Offset for field:
@@ -979,7 +1029,11 @@ public class _GtkTreeModelIface {
      * GtkTreePath *(*get_path)(GtkTreeModel *, GtkTreeIter *)
      * }
      */
-    public class get_path {
+    public final static class get_path {
+
+        private get_path() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1016,9 +1070,11 @@ public class _GtkTreeModelIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1037,7 +1093,7 @@ public class _GtkTreeModelIface {
         return get_path$LAYOUT;
     }
 
-    private static final long get_path$OFFSET = 88;
+    private static final long get_path$OFFSET = $LAYOUT.byteOffset(groupElement("get_path"));
 
     /**
      * Offset for field:
@@ -1074,7 +1130,11 @@ public class _GtkTreeModelIface {
      * void (*get_value)(GtkTreeModel *, GtkTreeIter *, gint, GValue *)
      * }
      */
-    public class get_value {
+    public final static class get_value {
+
+        private get_value() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1112,9 +1172,11 @@ public class _GtkTreeModelIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1133,7 +1195,7 @@ public class _GtkTreeModelIface {
         return get_value$LAYOUT;
     }
 
-    private static final long get_value$OFFSET = 96;
+    private static final long get_value$OFFSET = $LAYOUT.byteOffset(groupElement("get_value"));
 
     /**
      * Offset for field:
@@ -1170,7 +1232,11 @@ public class _GtkTreeModelIface {
      * gboolean (*iter_next)(GtkTreeModel *, GtkTreeIter *)
      * }
      */
-    public class iter_next {
+    public final static class iter_next {
+
+        private iter_next() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1207,9 +1273,11 @@ public class _GtkTreeModelIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1228,7 +1296,7 @@ public class _GtkTreeModelIface {
         return iter_next$LAYOUT;
     }
 
-    private static final long iter_next$OFFSET = 104;
+    private static final long iter_next$OFFSET = $LAYOUT.byteOffset(groupElement("iter_next"));
 
     /**
      * Offset for field:
@@ -1265,7 +1333,11 @@ public class _GtkTreeModelIface {
      * gboolean (*iter_previous)(GtkTreeModel *, GtkTreeIter *)
      * }
      */
-    public class iter_previous {
+    public final static class iter_previous {
+
+        private iter_previous() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1302,9 +1374,11 @@ public class _GtkTreeModelIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1323,7 +1397,7 @@ public class _GtkTreeModelIface {
         return iter_previous$LAYOUT;
     }
 
-    private static final long iter_previous$OFFSET = 112;
+    private static final long iter_previous$OFFSET = $LAYOUT.byteOffset(groupElement("iter_previous"));
 
     /**
      * Offset for field:
@@ -1360,7 +1434,11 @@ public class _GtkTreeModelIface {
      * gboolean (*iter_children)(GtkTreeModel *, GtkTreeIter *, GtkTreeIter *)
      * }
      */
-    public class iter_children {
+    public final static class iter_children {
+
+        private iter_children() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1398,9 +1476,11 @@ public class _GtkTreeModelIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1419,7 +1499,7 @@ public class _GtkTreeModelIface {
         return iter_children$LAYOUT;
     }
 
-    private static final long iter_children$OFFSET = 120;
+    private static final long iter_children$OFFSET = $LAYOUT.byteOffset(groupElement("iter_children"));
 
     /**
      * Offset for field:
@@ -1456,7 +1536,11 @@ public class _GtkTreeModelIface {
      * gboolean (*iter_has_child)(GtkTreeModel *, GtkTreeIter *)
      * }
      */
-    public class iter_has_child {
+    public final static class iter_has_child {
+
+        private iter_has_child() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1493,9 +1577,11 @@ public class _GtkTreeModelIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1514,7 +1600,7 @@ public class _GtkTreeModelIface {
         return iter_has_child$LAYOUT;
     }
 
-    private static final long iter_has_child$OFFSET = 128;
+    private static final long iter_has_child$OFFSET = $LAYOUT.byteOffset(groupElement("iter_has_child"));
 
     /**
      * Offset for field:
@@ -1551,7 +1637,11 @@ public class _GtkTreeModelIface {
      * gint (*iter_n_children)(GtkTreeModel *, GtkTreeIter *)
      * }
      */
-    public class iter_n_children {
+    public final static class iter_n_children {
+
+        private iter_n_children() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1588,9 +1678,11 @@ public class _GtkTreeModelIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1609,7 +1701,7 @@ public class _GtkTreeModelIface {
         return iter_n_children$LAYOUT;
     }
 
-    private static final long iter_n_children$OFFSET = 136;
+    private static final long iter_n_children$OFFSET = $LAYOUT.byteOffset(groupElement("iter_n_children"));
 
     /**
      * Offset for field:
@@ -1646,7 +1738,11 @@ public class _GtkTreeModelIface {
      * gboolean (*iter_nth_child)(GtkTreeModel *, GtkTreeIter *, GtkTreeIter *, gint)
      * }
      */
-    public class iter_nth_child {
+    public final static class iter_nth_child {
+
+        private iter_nth_child() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1685,9 +1781,11 @@ public class _GtkTreeModelIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1706,7 +1804,7 @@ public class _GtkTreeModelIface {
         return iter_nth_child$LAYOUT;
     }
 
-    private static final long iter_nth_child$OFFSET = 144;
+    private static final long iter_nth_child$OFFSET = $LAYOUT.byteOffset(groupElement("iter_nth_child"));
 
     /**
      * Offset for field:
@@ -1743,7 +1841,11 @@ public class _GtkTreeModelIface {
      * gboolean (*iter_parent)(GtkTreeModel *, GtkTreeIter *, GtkTreeIter *)
      * }
      */
-    public class iter_parent {
+    public final static class iter_parent {
+
+        private iter_parent() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1781,9 +1883,11 @@ public class _GtkTreeModelIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1802,7 +1906,7 @@ public class _GtkTreeModelIface {
         return iter_parent$LAYOUT;
     }
 
-    private static final long iter_parent$OFFSET = 152;
+    private static final long iter_parent$OFFSET = $LAYOUT.byteOffset(groupElement("iter_parent"));
 
     /**
      * Offset for field:
@@ -1839,7 +1943,11 @@ public class _GtkTreeModelIface {
      * void (*ref_node)(GtkTreeModel *, GtkTreeIter *)
      * }
      */
-    public class ref_node {
+    public final static class ref_node {
+
+        private ref_node() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1875,9 +1983,11 @@ public class _GtkTreeModelIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1896,7 +2006,7 @@ public class _GtkTreeModelIface {
         return ref_node$LAYOUT;
     }
 
-    private static final long ref_node$OFFSET = 160;
+    private static final long ref_node$OFFSET = $LAYOUT.byteOffset(groupElement("ref_node"));
 
     /**
      * Offset for field:
@@ -1933,7 +2043,11 @@ public class _GtkTreeModelIface {
      * void (*unref_node)(GtkTreeModel *, GtkTreeIter *)
      * }
      */
-    public class unref_node {
+    public final static class unref_node {
+
+        private unref_node() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1969,9 +2083,11 @@ public class _GtkTreeModelIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1990,7 +2106,7 @@ public class _GtkTreeModelIface {
         return unref_node$LAYOUT;
     }
 
-    private static final long unref_node$OFFSET = 168;
+    private static final long unref_node$OFFSET = $LAYOUT.byteOffset(groupElement("unref_node"));
 
     /**
      * Offset for field:
@@ -2051,7 +2167,7 @@ public class _GtkTreeModelIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -2059,7 +2175,7 @@ public class _GtkTreeModelIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

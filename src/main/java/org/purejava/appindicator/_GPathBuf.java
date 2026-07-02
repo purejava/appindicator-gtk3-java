@@ -45,7 +45,7 @@ public class _GPathBuf {
         return dummy$LAYOUT;
     }
 
-    private static final long dummy$OFFSET = 0;
+    private static final long dummy$OFFSET = $LAYOUT.byteOffset(groupElement("dummy"));
 
     /**
      * Offset for field:
@@ -97,7 +97,7 @@ public class _GPathBuf {
      * }
      */
     public static MemorySegment dummy(MemorySegment struct, long index0) {
-        return (MemorySegment)dummy$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)dummy$ELEM_HANDLE.get(struct, dummy$OFFSET, index0);
     }
 
     /**
@@ -107,7 +107,7 @@ public class _GPathBuf {
      * }
      */
     public static void dummy(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        dummy$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        dummy$ELEM_HANDLE.set(struct, dummy$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -139,7 +139,7 @@ public class _GPathBuf {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -147,7 +147,7 @@ public class _GPathBuf {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

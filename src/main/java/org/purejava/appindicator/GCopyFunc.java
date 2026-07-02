@@ -13,7 +13,11 @@ import java.lang.invoke.MethodHandle;
  * typedef gpointer (*GCopyFunc)(gconstpointer, gpointer)
  * }
  */
-public class GCopyFunc {
+public final class GCopyFunc {
+
+    private GCopyFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -50,9 +54,11 @@ public class GCopyFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment src, MemorySegment data) {
+    public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment src, MemorySegment data) {
         try {
             return (MemorySegment) DOWN$MH.invokeExact(funcPtr, src, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

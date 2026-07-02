@@ -24,7 +24,7 @@ public class GWeakRef {
 
     private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
         GWeakRef.priv.layout().withName("priv")
-    ).withName("$anon$935:9");
+    ).withName("$anon$920:9");
 
     /**
      * The layout of this struct
@@ -48,7 +48,7 @@ public class GWeakRef {
 
         private static final GroupLayout $LAYOUT = MemoryLayout.unionLayout(
             app_indicator_h.C_POINTER.withName("p")
-        ).withName("$anon$937:5");
+        ).withName("$anon$922:5");
 
         /**
          * The layout of this union
@@ -69,7 +69,7 @@ public class GWeakRef {
             return p$LAYOUT;
         }
 
-        private static final long p$OFFSET = 0;
+        private static final long p$OFFSET = $LAYOUT.byteOffset(groupElement("p"));
 
         /**
          * Offset for field:
@@ -130,7 +130,7 @@ public class GWeakRef {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -138,7 +138,7 @@ public class GWeakRef {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code elementCount * layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -160,7 +160,7 @@ public class GWeakRef {
         return priv$LAYOUT;
     }
 
-    private static final long priv$OFFSET = 0;
+    private static final long priv$OFFSET = $LAYOUT.byteOffset(groupElement("priv"));
 
     /**
      * Offset for field:
@@ -227,7 +227,7 @@ public class GWeakRef {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -235,7 +235,7 @@ public class GWeakRef {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

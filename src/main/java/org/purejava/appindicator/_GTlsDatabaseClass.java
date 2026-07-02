@@ -2,15 +2,13 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
 
 /**
  * {@snippet lang=c :
@@ -76,7 +74,7 @@ public class _GTlsDatabaseClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -113,7 +111,11 @@ public class _GTlsDatabaseClass {
      * GTlsCertificateFlags (*verify_chain)(GTlsDatabase *, GTlsCertificate *, const gchar *, GSocketConnectable *, GTlsInteraction *, GTlsDatabaseVerifyFlags, GCancellable *, GError **)
      * }
      */
-    public class verify_chain {
+    public final static class verify_chain {
+
+        private verify_chain() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -156,9 +158,11 @@ public class _GTlsDatabaseClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, int _x5, MemorySegment _x6, MemorySegment _x7) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, int _x5, MemorySegment _x6, MemorySegment _x7) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -177,7 +181,7 @@ public class _GTlsDatabaseClass {
         return verify_chain$LAYOUT;
     }
 
-    private static final long verify_chain$OFFSET = 136;
+    private static final long verify_chain$OFFSET = $LAYOUT.byteOffset(groupElement("verify_chain"));
 
     /**
      * Offset for field:
@@ -214,7 +218,11 @@ public class _GTlsDatabaseClass {
      * void (*verify_chain_async)(GTlsDatabase *, GTlsCertificate *, const gchar *, GSocketConnectable *, GTlsInteraction *, GTlsDatabaseVerifyFlags, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class verify_chain_async {
+    public final static class verify_chain_async {
+
+        private verify_chain_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -257,9 +265,11 @@ public class _GTlsDatabaseClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, int _x5, MemorySegment _x6, MemorySegment _x7, MemorySegment _x8) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, int _x5, MemorySegment _x6, MemorySegment _x7, MemorySegment _x8) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -278,7 +288,7 @@ public class _GTlsDatabaseClass {
         return verify_chain_async$LAYOUT;
     }
 
-    private static final long verify_chain_async$OFFSET = 144;
+    private static final long verify_chain_async$OFFSET = $LAYOUT.byteOffset(groupElement("verify_chain_async"));
 
     /**
      * Offset for field:
@@ -315,7 +325,11 @@ public class _GTlsDatabaseClass {
      * GTlsCertificateFlags (*verify_chain_finish)(GTlsDatabase *, GAsyncResult *, GError **)
      * }
      */
-    public class verify_chain_finish {
+    public final static class verify_chain_finish {
+
+        private verify_chain_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -353,9 +367,11 @@ public class _GTlsDatabaseClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -374,7 +390,7 @@ public class _GTlsDatabaseClass {
         return verify_chain_finish$LAYOUT;
     }
 
-    private static final long verify_chain_finish$OFFSET = 152;
+    private static final long verify_chain_finish$OFFSET = $LAYOUT.byteOffset(groupElement("verify_chain_finish"));
 
     /**
      * Offset for field:
@@ -411,7 +427,11 @@ public class _GTlsDatabaseClass {
      * gchar *(*create_certificate_handle)(GTlsDatabase *, GTlsCertificate *)
      * }
      */
-    public class create_certificate_handle {
+    public final static class create_certificate_handle {
+
+        private create_certificate_handle() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -448,9 +468,11 @@ public class _GTlsDatabaseClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -469,7 +491,7 @@ public class _GTlsDatabaseClass {
         return create_certificate_handle$LAYOUT;
     }
 
-    private static final long create_certificate_handle$OFFSET = 160;
+    private static final long create_certificate_handle$OFFSET = $LAYOUT.byteOffset(groupElement("create_certificate_handle"));
 
     /**
      * Offset for field:
@@ -506,7 +528,11 @@ public class _GTlsDatabaseClass {
      * GTlsCertificate *(*lookup_certificate_for_handle)(GTlsDatabase *, const gchar *, GTlsInteraction *, GTlsDatabaseLookupFlags, GCancellable *, GError **)
      * }
      */
-    public class lookup_certificate_for_handle {
+    public final static class lookup_certificate_for_handle {
+
+        private lookup_certificate_for_handle() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -547,9 +573,11 @@ public class _GTlsDatabaseClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -568,7 +596,7 @@ public class _GTlsDatabaseClass {
         return lookup_certificate_for_handle$LAYOUT;
     }
 
-    private static final long lookup_certificate_for_handle$OFFSET = 168;
+    private static final long lookup_certificate_for_handle$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_certificate_for_handle"));
 
     /**
      * Offset for field:
@@ -605,7 +633,11 @@ public class _GTlsDatabaseClass {
      * void (*lookup_certificate_for_handle_async)(GTlsDatabase *, const gchar *, GTlsInteraction *, GTlsDatabaseLookupFlags, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class lookup_certificate_for_handle_async {
+    public final static class lookup_certificate_for_handle_async {
+
+        private lookup_certificate_for_handle_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -646,9 +678,11 @@ public class _GTlsDatabaseClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -667,7 +701,7 @@ public class _GTlsDatabaseClass {
         return lookup_certificate_for_handle_async$LAYOUT;
     }
 
-    private static final long lookup_certificate_for_handle_async$OFFSET = 176;
+    private static final long lookup_certificate_for_handle_async$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_certificate_for_handle_async"));
 
     /**
      * Offset for field:
@@ -704,7 +738,11 @@ public class _GTlsDatabaseClass {
      * GTlsCertificate *(*lookup_certificate_for_handle_finish)(GTlsDatabase *, GAsyncResult *, GError **)
      * }
      */
-    public class lookup_certificate_for_handle_finish {
+    public final static class lookup_certificate_for_handle_finish {
+
+        private lookup_certificate_for_handle_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -742,9 +780,11 @@ public class _GTlsDatabaseClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -763,7 +803,7 @@ public class _GTlsDatabaseClass {
         return lookup_certificate_for_handle_finish$LAYOUT;
     }
 
-    private static final long lookup_certificate_for_handle_finish$OFFSET = 184;
+    private static final long lookup_certificate_for_handle_finish$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_certificate_for_handle_finish"));
 
     /**
      * Offset for field:
@@ -800,7 +840,11 @@ public class _GTlsDatabaseClass {
      * GTlsCertificate *(*lookup_certificate_issuer)(GTlsDatabase *, GTlsCertificate *, GTlsInteraction *, GTlsDatabaseLookupFlags, GCancellable *, GError **)
      * }
      */
-    public class lookup_certificate_issuer {
+    public final static class lookup_certificate_issuer {
+
+        private lookup_certificate_issuer() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -841,9 +885,11 @@ public class _GTlsDatabaseClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -862,7 +908,7 @@ public class _GTlsDatabaseClass {
         return lookup_certificate_issuer$LAYOUT;
     }
 
-    private static final long lookup_certificate_issuer$OFFSET = 192;
+    private static final long lookup_certificate_issuer$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_certificate_issuer"));
 
     /**
      * Offset for field:
@@ -899,7 +945,11 @@ public class _GTlsDatabaseClass {
      * void (*lookup_certificate_issuer_async)(GTlsDatabase *, GTlsCertificate *, GTlsInteraction *, GTlsDatabaseLookupFlags, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class lookup_certificate_issuer_async {
+    public final static class lookup_certificate_issuer_async {
+
+        private lookup_certificate_issuer_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -940,9 +990,11 @@ public class _GTlsDatabaseClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -961,7 +1013,7 @@ public class _GTlsDatabaseClass {
         return lookup_certificate_issuer_async$LAYOUT;
     }
 
-    private static final long lookup_certificate_issuer_async$OFFSET = 200;
+    private static final long lookup_certificate_issuer_async$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_certificate_issuer_async"));
 
     /**
      * Offset for field:
@@ -998,7 +1050,11 @@ public class _GTlsDatabaseClass {
      * GTlsCertificate *(*lookup_certificate_issuer_finish)(GTlsDatabase *, GAsyncResult *, GError **)
      * }
      */
-    public class lookup_certificate_issuer_finish {
+    public final static class lookup_certificate_issuer_finish {
+
+        private lookup_certificate_issuer_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1036,9 +1092,11 @@ public class _GTlsDatabaseClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1057,7 +1115,7 @@ public class _GTlsDatabaseClass {
         return lookup_certificate_issuer_finish$LAYOUT;
     }
 
-    private static final long lookup_certificate_issuer_finish$OFFSET = 208;
+    private static final long lookup_certificate_issuer_finish$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_certificate_issuer_finish"));
 
     /**
      * Offset for field:
@@ -1094,7 +1152,11 @@ public class _GTlsDatabaseClass {
      * GList *(*lookup_certificates_issued_by)(GTlsDatabase *, GByteArray *, GTlsInteraction *, GTlsDatabaseLookupFlags, GCancellable *, GError **)
      * }
      */
-    public class lookup_certificates_issued_by {
+    public final static class lookup_certificates_issued_by {
+
+        private lookup_certificates_issued_by() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1135,9 +1197,11 @@ public class _GTlsDatabaseClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1156,7 +1220,7 @@ public class _GTlsDatabaseClass {
         return lookup_certificates_issued_by$LAYOUT;
     }
 
-    private static final long lookup_certificates_issued_by$OFFSET = 216;
+    private static final long lookup_certificates_issued_by$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_certificates_issued_by"));
 
     /**
      * Offset for field:
@@ -1193,7 +1257,11 @@ public class _GTlsDatabaseClass {
      * void (*lookup_certificates_issued_by_async)(GTlsDatabase *, GByteArray *, GTlsInteraction *, GTlsDatabaseLookupFlags, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class lookup_certificates_issued_by_async {
+    public final static class lookup_certificates_issued_by_async {
+
+        private lookup_certificates_issued_by_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1234,9 +1302,11 @@ public class _GTlsDatabaseClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1255,7 +1325,7 @@ public class _GTlsDatabaseClass {
         return lookup_certificates_issued_by_async$LAYOUT;
     }
 
-    private static final long lookup_certificates_issued_by_async$OFFSET = 224;
+    private static final long lookup_certificates_issued_by_async$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_certificates_issued_by_async"));
 
     /**
      * Offset for field:
@@ -1292,7 +1362,11 @@ public class _GTlsDatabaseClass {
      * GList *(*lookup_certificates_issued_by_finish)(GTlsDatabase *, GAsyncResult *, GError **)
      * }
      */
-    public class lookup_certificates_issued_by_finish {
+    public final static class lookup_certificates_issued_by_finish {
+
+        private lookup_certificates_issued_by_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1330,9 +1404,11 @@ public class _GTlsDatabaseClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1351,7 +1427,7 @@ public class _GTlsDatabaseClass {
         return lookup_certificates_issued_by_finish$LAYOUT;
     }
 
-    private static final long lookup_certificates_issued_by_finish$OFFSET = 232;
+    private static final long lookup_certificates_issued_by_finish$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_certificates_issued_by_finish"));
 
     /**
      * Offset for field:
@@ -1395,7 +1471,7 @@ public class _GTlsDatabaseClass {
         return padding$LAYOUT;
     }
 
-    private static final long padding$OFFSET = 240;
+    private static final long padding$OFFSET = $LAYOUT.byteOffset(groupElement("padding"));
 
     /**
      * Offset for field:
@@ -1447,7 +1523,7 @@ public class _GTlsDatabaseClass {
      * }
      */
     public static MemorySegment padding(MemorySegment struct, long index0) {
-        return (MemorySegment)padding$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)padding$ELEM_HANDLE.get(struct, padding$OFFSET, index0);
     }
 
     /**
@@ -1457,7 +1533,7 @@ public class _GTlsDatabaseClass {
      * }
      */
     public static void padding(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        padding$ELEM_HANDLE.set(struct, padding$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -1489,7 +1565,7 @@ public class _GTlsDatabaseClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1497,7 +1573,7 @@ public class _GTlsDatabaseClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

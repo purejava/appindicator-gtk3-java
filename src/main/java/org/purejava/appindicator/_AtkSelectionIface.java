@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -64,7 +60,7 @@ public class _AtkSelectionIface {
         return parent$LAYOUT;
     }
 
-    private static final long parent$OFFSET = 0;
+    private static final long parent$OFFSET = $LAYOUT.byteOffset(groupElement("parent"));
 
     /**
      * Offset for field:
@@ -101,7 +97,11 @@ public class _AtkSelectionIface {
      * gboolean (*add_selection)(AtkSelection *, gint)
      * }
      */
-    public class add_selection {
+    public final static class add_selection {
+
+        private add_selection() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -138,9 +138,11 @@ public class _AtkSelectionIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -159,7 +161,7 @@ public class _AtkSelectionIface {
         return add_selection$LAYOUT;
     }
 
-    private static final long add_selection$OFFSET = 16;
+    private static final long add_selection$OFFSET = $LAYOUT.byteOffset(groupElement("add_selection"));
 
     /**
      * Offset for field:
@@ -196,7 +198,11 @@ public class _AtkSelectionIface {
      * gboolean (*clear_selection)(AtkSelection *)
      * }
      */
-    public class clear_selection {
+    public final static class clear_selection {
+
+        private clear_selection() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -232,9 +238,11 @@ public class _AtkSelectionIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -253,7 +261,7 @@ public class _AtkSelectionIface {
         return clear_selection$LAYOUT;
     }
 
-    private static final long clear_selection$OFFSET = 24;
+    private static final long clear_selection$OFFSET = $LAYOUT.byteOffset(groupElement("clear_selection"));
 
     /**
      * Offset for field:
@@ -290,7 +298,11 @@ public class _AtkSelectionIface {
      * AtkObject *(*ref_selection)(AtkSelection *, gint)
      * }
      */
-    public class ref_selection {
+    public final static class ref_selection {
+
+        private ref_selection() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -327,9 +339,11 @@ public class _AtkSelectionIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -348,7 +362,7 @@ public class _AtkSelectionIface {
         return ref_selection$LAYOUT;
     }
 
-    private static final long ref_selection$OFFSET = 32;
+    private static final long ref_selection$OFFSET = $LAYOUT.byteOffset(groupElement("ref_selection"));
 
     /**
      * Offset for field:
@@ -385,7 +399,11 @@ public class _AtkSelectionIface {
      * gint (*get_selection_count)(AtkSelection *)
      * }
      */
-    public class get_selection_count {
+    public final static class get_selection_count {
+
+        private get_selection_count() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -421,9 +439,11 @@ public class _AtkSelectionIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -442,7 +462,7 @@ public class _AtkSelectionIface {
         return get_selection_count$LAYOUT;
     }
 
-    private static final long get_selection_count$OFFSET = 40;
+    private static final long get_selection_count$OFFSET = $LAYOUT.byteOffset(groupElement("get_selection_count"));
 
     /**
      * Offset for field:
@@ -479,7 +499,11 @@ public class _AtkSelectionIface {
      * gboolean (*is_child_selected)(AtkSelection *, gint)
      * }
      */
-    public class is_child_selected {
+    public final static class is_child_selected {
+
+        private is_child_selected() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -516,9 +540,11 @@ public class _AtkSelectionIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -537,7 +563,7 @@ public class _AtkSelectionIface {
         return is_child_selected$LAYOUT;
     }
 
-    private static final long is_child_selected$OFFSET = 48;
+    private static final long is_child_selected$OFFSET = $LAYOUT.byteOffset(groupElement("is_child_selected"));
 
     /**
      * Offset for field:
@@ -574,7 +600,11 @@ public class _AtkSelectionIface {
      * gboolean (*remove_selection)(AtkSelection *, gint)
      * }
      */
-    public class remove_selection {
+    public final static class remove_selection {
+
+        private remove_selection() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -611,9 +641,11 @@ public class _AtkSelectionIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -632,7 +664,7 @@ public class _AtkSelectionIface {
         return remove_selection$LAYOUT;
     }
 
-    private static final long remove_selection$OFFSET = 56;
+    private static final long remove_selection$OFFSET = $LAYOUT.byteOffset(groupElement("remove_selection"));
 
     /**
      * Offset for field:
@@ -669,7 +701,11 @@ public class _AtkSelectionIface {
      * gboolean (*select_all_selection)(AtkSelection *)
      * }
      */
-    public class select_all_selection {
+    public final static class select_all_selection {
+
+        private select_all_selection() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -705,9 +741,11 @@ public class _AtkSelectionIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -726,7 +764,7 @@ public class _AtkSelectionIface {
         return select_all_selection$LAYOUT;
     }
 
-    private static final long select_all_selection$OFFSET = 64;
+    private static final long select_all_selection$OFFSET = $LAYOUT.byteOffset(groupElement("select_all_selection"));
 
     /**
      * Offset for field:
@@ -763,7 +801,11 @@ public class _AtkSelectionIface {
      * void (*selection_changed)(AtkSelection *)
      * }
      */
-    public class selection_changed {
+    public final static class selection_changed {
+
+        private selection_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -798,9 +840,11 @@ public class _AtkSelectionIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -819,7 +863,7 @@ public class _AtkSelectionIface {
         return selection_changed$LAYOUT;
     }
 
-    private static final long selection_changed$OFFSET = 72;
+    private static final long selection_changed$OFFSET = $LAYOUT.byteOffset(groupElement("selection_changed"));
 
     /**
      * Offset for field:
@@ -880,7 +924,7 @@ public class _AtkSelectionIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -888,7 +932,7 @@ public class _AtkSelectionIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

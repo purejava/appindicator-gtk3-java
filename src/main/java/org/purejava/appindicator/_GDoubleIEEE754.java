@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfDouble;
 
 /**
  * {@snippet lang=c :
@@ -55,7 +51,7 @@ public class _GDoubleIEEE754 {
         return v_double$LAYOUT;
     }
 
-    private static final long v_double$OFFSET = 0;
+    private static final long v_double$OFFSET = $LAYOUT.byteOffset(groupElement("v_double"));
 
     /**
      * Offset for field:
@@ -105,7 +101,7 @@ public class _GDoubleIEEE754 {
 
         private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
             MemoryLayout.paddingLayout(8)
-        ).withName("$anon$547:3");
+        ).withName("$anon$589:3");
 
         /**
          * The layout of this struct
@@ -143,7 +139,7 @@ public class _GDoubleIEEE754 {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -151,7 +147,7 @@ public class _GDoubleIEEE754 {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code elementCount * layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -176,7 +172,7 @@ public class _GDoubleIEEE754 {
         return mpn$LAYOUT;
     }
 
-    private static final long mpn$OFFSET = 0;
+    private static final long mpn$OFFSET = $LAYOUT.byteOffset(groupElement("mpn"));
 
     /**
      * Offset for field:
@@ -252,7 +248,7 @@ public class _GDoubleIEEE754 {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -260,7 +256,7 @@ public class _GDoubleIEEE754 {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

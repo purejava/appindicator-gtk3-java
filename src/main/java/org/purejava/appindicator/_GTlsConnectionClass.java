@@ -2,15 +2,13 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
 
 /**
  * {@snippet lang=c :
@@ -62,7 +60,7 @@ public class _GTlsConnectionClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -99,7 +97,11 @@ public class _GTlsConnectionClass {
      * gboolean (*accept_certificate)(GTlsConnection *, GTlsCertificate *, GTlsCertificateFlags)
      * }
      */
-    public class accept_certificate {
+    public final static class accept_certificate {
+
+        private accept_certificate() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -137,9 +139,11 @@ public class _GTlsConnectionClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -158,7 +162,7 @@ public class _GTlsConnectionClass {
         return accept_certificate$LAYOUT;
     }
 
-    private static final long accept_certificate$OFFSET = 256;
+    private static final long accept_certificate$OFFSET = $LAYOUT.byteOffset(groupElement("accept_certificate"));
 
     /**
      * Offset for field:
@@ -195,7 +199,11 @@ public class _GTlsConnectionClass {
      * gboolean (*handshake)(GTlsConnection *, GCancellable *, GError **)
      * }
      */
-    public class handshake {
+    public final static class handshake {
+
+        private handshake() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -233,9 +241,11 @@ public class _GTlsConnectionClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -254,7 +264,7 @@ public class _GTlsConnectionClass {
         return handshake$LAYOUT;
     }
 
-    private static final long handshake$OFFSET = 264;
+    private static final long handshake$OFFSET = $LAYOUT.byteOffset(groupElement("handshake"));
 
     /**
      * Offset for field:
@@ -291,7 +301,11 @@ public class _GTlsConnectionClass {
      * void (*handshake_async)(GTlsConnection *, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class handshake_async {
+    public final static class handshake_async {
+
+        private handshake_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -330,9 +344,11 @@ public class _GTlsConnectionClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -351,7 +367,7 @@ public class _GTlsConnectionClass {
         return handshake_async$LAYOUT;
     }
 
-    private static final long handshake_async$OFFSET = 272;
+    private static final long handshake_async$OFFSET = $LAYOUT.byteOffset(groupElement("handshake_async"));
 
     /**
      * Offset for field:
@@ -388,7 +404,11 @@ public class _GTlsConnectionClass {
      * gboolean (*handshake_finish)(GTlsConnection *, GAsyncResult *, GError **)
      * }
      */
-    public class handshake_finish {
+    public final static class handshake_finish {
+
+        private handshake_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -426,9 +446,11 @@ public class _GTlsConnectionClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -447,7 +469,7 @@ public class _GTlsConnectionClass {
         return handshake_finish$LAYOUT;
     }
 
-    private static final long handshake_finish$OFFSET = 280;
+    private static final long handshake_finish$OFFSET = $LAYOUT.byteOffset(groupElement("handshake_finish"));
 
     /**
      * Offset for field:
@@ -484,7 +506,11 @@ public class _GTlsConnectionClass {
      * gboolean (*get_binding_data)(GTlsConnection *, GTlsChannelBindingType, GByteArray *, GError **)
      * }
      */
-    public class get_binding_data {
+    public final static class get_binding_data {
+
+        private get_binding_data() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -523,9 +549,11 @@ public class _GTlsConnectionClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -544,7 +572,7 @@ public class _GTlsConnectionClass {
         return get_binding_data$LAYOUT;
     }
 
-    private static final long get_binding_data$OFFSET = 288;
+    private static final long get_binding_data$OFFSET = $LAYOUT.byteOffset(groupElement("get_binding_data"));
 
     /**
      * Offset for field:
@@ -581,7 +609,11 @@ public class _GTlsConnectionClass {
      * const gchar *(*get_negotiated_protocol)(GTlsConnection *)
      * }
      */
-    public class get_negotiated_protocol {
+    public final static class get_negotiated_protocol {
+
+        private get_negotiated_protocol() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -617,9 +649,11 @@ public class _GTlsConnectionClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -638,7 +672,7 @@ public class _GTlsConnectionClass {
         return get_negotiated_protocol$LAYOUT;
     }
 
-    private static final long get_negotiated_protocol$OFFSET = 296;
+    private static final long get_negotiated_protocol$OFFSET = $LAYOUT.byteOffset(groupElement("get_negotiated_protocol"));
 
     /**
      * Offset for field:
@@ -682,7 +716,7 @@ public class _GTlsConnectionClass {
         return padding$LAYOUT;
     }
 
-    private static final long padding$OFFSET = 304;
+    private static final long padding$OFFSET = $LAYOUT.byteOffset(groupElement("padding"));
 
     /**
      * Offset for field:
@@ -734,7 +768,7 @@ public class _GTlsConnectionClass {
      * }
      */
     public static MemorySegment padding(MemorySegment struct, long index0) {
-        return (MemorySegment)padding$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)padding$ELEM_HANDLE.get(struct, padding$OFFSET, index0);
     }
 
     /**
@@ -744,7 +778,7 @@ public class _GTlsConnectionClass {
      * }
      */
     public static void padding(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        padding$ELEM_HANDLE.set(struct, padding$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -776,7 +810,7 @@ public class _GTlsConnectionClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -784,7 +818,7 @@ public class _GTlsConnectionClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

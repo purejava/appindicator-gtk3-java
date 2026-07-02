@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -52,7 +48,7 @@ public class _GConverterIface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -89,7 +85,11 @@ public class _GConverterIface {
      * GConverterResult (*convert)(GConverter *, const void *, gsize, void *, gsize, GConverterFlags, gsize *, gsize *, GError **)
      * }
      */
-    public class convert {
+    public final static class convert {
+
+        private convert() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -133,9 +133,11 @@ public class _GConverterIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, long _x4, int _x5, MemorySegment _x6, MemorySegment _x7, MemorySegment _x8) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, long _x4, int _x5, MemorySegment _x6, MemorySegment _x7, MemorySegment _x8) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -154,7 +156,7 @@ public class _GConverterIface {
         return convert$LAYOUT;
     }
 
-    private static final long convert$OFFSET = 16;
+    private static final long convert$OFFSET = $LAYOUT.byteOffset(groupElement("convert"));
 
     /**
      * Offset for field:
@@ -191,7 +193,11 @@ public class _GConverterIface {
      * void (*reset)(GConverter *)
      * }
      */
-    public class reset {
+    public final static class reset {
+
+        private reset() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -226,9 +232,11 @@ public class _GConverterIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -247,7 +255,7 @@ public class _GConverterIface {
         return reset$LAYOUT;
     }
 
-    private static final long reset$OFFSET = 24;
+    private static final long reset$OFFSET = $LAYOUT.byteOffset(groupElement("reset"));
 
     /**
      * Offset for field:
@@ -308,7 +316,7 @@ public class _GConverterIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -316,7 +324,7 @@ public class _GConverterIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

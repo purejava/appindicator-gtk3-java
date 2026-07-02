@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -61,7 +57,7 @@ public class _GtkRecentData {
         return display_name$LAYOUT;
     }
 
-    private static final long display_name$OFFSET = 0;
+    private static final long display_name$OFFSET = $LAYOUT.byteOffset(groupElement("display_name"));
 
     /**
      * Offset for field:
@@ -105,7 +101,7 @@ public class _GtkRecentData {
         return description$LAYOUT;
     }
 
-    private static final long description$OFFSET = 8;
+    private static final long description$OFFSET = $LAYOUT.byteOffset(groupElement("description"));
 
     /**
      * Offset for field:
@@ -149,7 +145,7 @@ public class _GtkRecentData {
         return mime_type$LAYOUT;
     }
 
-    private static final long mime_type$OFFSET = 16;
+    private static final long mime_type$OFFSET = $LAYOUT.byteOffset(groupElement("mime_type"));
 
     /**
      * Offset for field:
@@ -193,7 +189,7 @@ public class _GtkRecentData {
         return app_name$LAYOUT;
     }
 
-    private static final long app_name$OFFSET = 24;
+    private static final long app_name$OFFSET = $LAYOUT.byteOffset(groupElement("app_name"));
 
     /**
      * Offset for field:
@@ -237,7 +233,7 @@ public class _GtkRecentData {
         return app_exec$LAYOUT;
     }
 
-    private static final long app_exec$OFFSET = 32;
+    private static final long app_exec$OFFSET = $LAYOUT.byteOffset(groupElement("app_exec"));
 
     /**
      * Offset for field:
@@ -281,7 +277,7 @@ public class _GtkRecentData {
         return groups$LAYOUT;
     }
 
-    private static final long groups$OFFSET = 40;
+    private static final long groups$OFFSET = $LAYOUT.byteOffset(groupElement("groups"));
 
     /**
      * Offset for field:
@@ -325,7 +321,7 @@ public class _GtkRecentData {
         return is_private$LAYOUT;
     }
 
-    private static final long is_private$OFFSET = 48;
+    private static final long is_private$OFFSET = $LAYOUT.byteOffset(groupElement("is_private"));
 
     /**
      * Offset for field:
@@ -386,7 +382,7 @@ public class _GtkRecentData {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -394,7 +390,7 @@ public class _GtkRecentData {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

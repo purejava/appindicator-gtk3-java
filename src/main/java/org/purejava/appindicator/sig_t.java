@@ -13,7 +13,11 @@ import java.lang.invoke.MethodHandle;
  * typedef __sighandler_t sig_t
  * }
  */
-public class sig_t {
+public final class sig_t {
+
+    private sig_t() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -48,9 +52,11 @@ public class sig_t {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,int _x0) {
+    public static void invoke(MemorySegment funcPtr, int _x0) {
         try {
              DOWN$MH.invokeExact(funcPtr, _x0);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

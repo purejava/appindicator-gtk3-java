@@ -13,7 +13,11 @@ import java.lang.invoke.MethodHandle;
  * typedef gboolean (*GHRFunc)(gpointer, gpointer, gpointer)
  * }
  */
-public class GHRFunc {
+public final class GHRFunc {
+
+    private GHRFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -51,9 +55,11 @@ public class GHRFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment key, MemorySegment value, MemorySegment user_data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment key, MemorySegment value, MemorySegment user_data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, key, value, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

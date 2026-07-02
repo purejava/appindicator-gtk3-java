@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -56,7 +52,7 @@ public class hb_segment_properties_t {
         return direction$LAYOUT;
     }
 
-    private static final long direction$OFFSET = 0;
+    private static final long direction$OFFSET = $LAYOUT.byteOffset(groupElement("direction"));
 
     /**
      * Offset for field:
@@ -100,7 +96,7 @@ public class hb_segment_properties_t {
         return script$LAYOUT;
     }
 
-    private static final long script$OFFSET = 4;
+    private static final long script$OFFSET = $LAYOUT.byteOffset(groupElement("script"));
 
     /**
      * Offset for field:
@@ -144,7 +140,7 @@ public class hb_segment_properties_t {
         return language$LAYOUT;
     }
 
-    private static final long language$OFFSET = 8;
+    private static final long language$OFFSET = $LAYOUT.byteOffset(groupElement("language"));
 
     /**
      * Offset for field:
@@ -188,7 +184,7 @@ public class hb_segment_properties_t {
         return reserved1$LAYOUT;
     }
 
-    private static final long reserved1$OFFSET = 16;
+    private static final long reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("reserved1"));
 
     /**
      * Offset for field:
@@ -232,7 +228,7 @@ public class hb_segment_properties_t {
         return reserved2$LAYOUT;
     }
 
-    private static final long reserved2$OFFSET = 24;
+    private static final long reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("reserved2"));
 
     /**
      * Offset for field:
@@ -293,7 +289,7 @@ public class hb_segment_properties_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -301,7 +297,7 @@ public class hb_segment_properties_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

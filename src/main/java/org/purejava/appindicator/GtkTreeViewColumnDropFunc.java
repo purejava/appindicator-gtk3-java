@@ -13,7 +13,11 @@ import java.lang.invoke.MethodHandle;
  * typedef gboolean (*GtkTreeViewColumnDropFunc)(GtkTreeView *, GtkTreeViewColumn *, GtkTreeViewColumn *, GtkTreeViewColumn *, gpointer)
  * }
  */
-public class GtkTreeViewColumnDropFunc {
+public final class GtkTreeViewColumnDropFunc {
+
+    private GtkTreeViewColumnDropFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -53,9 +57,11 @@ public class GtkTreeViewColumnDropFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment tree_view, MemorySegment column, MemorySegment prev_column, MemorySegment next_column, MemorySegment data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment tree_view, MemorySegment column, MemorySegment prev_column, MemorySegment next_column, MemorySegment data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, tree_view, column, prev_column, next_column, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

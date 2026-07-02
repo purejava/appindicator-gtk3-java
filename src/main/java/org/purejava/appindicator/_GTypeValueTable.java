@@ -2,15 +2,10 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -62,7 +57,7 @@ public class _GTypeValueTable {
         return value_init$LAYOUT;
     }
 
-    private static final long value_init$OFFSET = 0;
+    private static final long value_init$OFFSET = $LAYOUT.byteOffset(groupElement("value_init"));
 
     /**
      * Offset for field:
@@ -106,7 +101,7 @@ public class _GTypeValueTable {
         return value_free$LAYOUT;
     }
 
-    private static final long value_free$OFFSET = 8;
+    private static final long value_free$OFFSET = $LAYOUT.byteOffset(groupElement("value_free"));
 
     /**
      * Offset for field:
@@ -150,7 +145,7 @@ public class _GTypeValueTable {
         return value_copy$LAYOUT;
     }
 
-    private static final long value_copy$OFFSET = 16;
+    private static final long value_copy$OFFSET = $LAYOUT.byteOffset(groupElement("value_copy"));
 
     /**
      * Offset for field:
@@ -194,7 +189,7 @@ public class _GTypeValueTable {
         return value_peek_pointer$LAYOUT;
     }
 
-    private static final long value_peek_pointer$OFFSET = 24;
+    private static final long value_peek_pointer$OFFSET = $LAYOUT.byteOffset(groupElement("value_peek_pointer"));
 
     /**
      * Offset for field:
@@ -238,7 +233,7 @@ public class _GTypeValueTable {
         return collect_format$LAYOUT;
     }
 
-    private static final long collect_format$OFFSET = 32;
+    private static final long collect_format$OFFSET = $LAYOUT.byteOffset(groupElement("collect_format"));
 
     /**
      * Offset for field:
@@ -282,7 +277,7 @@ public class _GTypeValueTable {
         return collect_value$LAYOUT;
     }
 
-    private static final long collect_value$OFFSET = 40;
+    private static final long collect_value$OFFSET = $LAYOUT.byteOffset(groupElement("collect_value"));
 
     /**
      * Offset for field:
@@ -326,7 +321,7 @@ public class _GTypeValueTable {
         return lcopy_format$LAYOUT;
     }
 
-    private static final long lcopy_format$OFFSET = 48;
+    private static final long lcopy_format$OFFSET = $LAYOUT.byteOffset(groupElement("lcopy_format"));
 
     /**
      * Offset for field:
@@ -370,7 +365,7 @@ public class _GTypeValueTable {
         return lcopy_value$LAYOUT;
     }
 
-    private static final long lcopy_value$OFFSET = 56;
+    private static final long lcopy_value$OFFSET = $LAYOUT.byteOffset(groupElement("lcopy_value"));
 
     /**
      * Offset for field:
@@ -431,7 +426,7 @@ public class _GTypeValueTable {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -439,7 +434,7 @@ public class _GTypeValueTable {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

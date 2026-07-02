@@ -2,15 +2,12 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
+import static java.lang.foreign.ValueLayout.OfShort;
 
 /**
  * {@snippet lang=c :
@@ -20,7 +17,8 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  *     int __owner;
  *     unsigned int __nusers;
  *     int __kind;
- *     int __spins;
+ *     short __spins;
+ *     short __glibc_reserved;
  *     __pthread_list_t __list;
  * }
  * }
@@ -37,7 +35,8 @@ public class __pthread_mutex_s {
         app_indicator_h.C_INT.withName("__owner"),
         app_indicator_h.C_INT.withName("__nusers"),
         app_indicator_h.C_INT.withName("__kind"),
-        app_indicator_h.C_INT.withName("__spins"),
+        app_indicator_h.C_SHORT.withName("__spins"),
+        app_indicator_h.C_SHORT.withName("__glibc_reserved"),
         __pthread_internal_list.layout().withName("__list")
     ).withName("__pthread_mutex_s");
 
@@ -60,7 +59,7 @@ public class __pthread_mutex_s {
         return __lock$LAYOUT;
     }
 
-    private static final long __lock$OFFSET = 0;
+    private static final long __lock$OFFSET = $LAYOUT.byteOffset(groupElement("__lock"));
 
     /**
      * Offset for field:
@@ -104,7 +103,7 @@ public class __pthread_mutex_s {
         return __count$LAYOUT;
     }
 
-    private static final long __count$OFFSET = 4;
+    private static final long __count$OFFSET = $LAYOUT.byteOffset(groupElement("__count"));
 
     /**
      * Offset for field:
@@ -148,7 +147,7 @@ public class __pthread_mutex_s {
         return __owner$LAYOUT;
     }
 
-    private static final long __owner$OFFSET = 8;
+    private static final long __owner$OFFSET = $LAYOUT.byteOffset(groupElement("__owner"));
 
     /**
      * Offset for field:
@@ -192,7 +191,7 @@ public class __pthread_mutex_s {
         return __nusers$LAYOUT;
     }
 
-    private static final long __nusers$OFFSET = 12;
+    private static final long __nusers$OFFSET = $LAYOUT.byteOffset(groupElement("__nusers"));
 
     /**
      * Offset for field:
@@ -236,7 +235,7 @@ public class __pthread_mutex_s {
         return __kind$LAYOUT;
     }
 
-    private static final long __kind$OFFSET = 16;
+    private static final long __kind$OFFSET = $LAYOUT.byteOffset(groupElement("__kind"));
 
     /**
      * Offset for field:
@@ -268,24 +267,24 @@ public class __pthread_mutex_s {
         struct.set(__kind$LAYOUT, __kind$OFFSET, fieldValue);
     }
 
-    private static final OfInt __spins$LAYOUT = (OfInt)$LAYOUT.select(groupElement("__spins"));
+    private static final OfShort __spins$LAYOUT = (OfShort)$LAYOUT.select(groupElement("__spins"));
 
     /**
      * Layout for field:
      * {@snippet lang=c :
-     * int __spins
+     * short __spins
      * }
      */
-    public static final OfInt __spins$layout() {
+    public static final OfShort __spins$layout() {
         return __spins$LAYOUT;
     }
 
-    private static final long __spins$OFFSET = 20;
+    private static final long __spins$OFFSET = $LAYOUT.byteOffset(groupElement("__spins"));
 
     /**
      * Offset for field:
      * {@snippet lang=c :
-     * int __spins
+     * short __spins
      * }
      */
     public static final long __spins$offset() {
@@ -295,21 +294,65 @@ public class __pthread_mutex_s {
     /**
      * Getter for field:
      * {@snippet lang=c :
-     * int __spins
+     * short __spins
      * }
      */
-    public static int __spins(MemorySegment struct) {
+    public static short __spins(MemorySegment struct) {
         return struct.get(__spins$LAYOUT, __spins$OFFSET);
     }
 
     /**
      * Setter for field:
      * {@snippet lang=c :
-     * int __spins
+     * short __spins
      * }
      */
-    public static void __spins(MemorySegment struct, int fieldValue) {
+    public static void __spins(MemorySegment struct, short fieldValue) {
         struct.set(__spins$LAYOUT, __spins$OFFSET, fieldValue);
+    }
+
+    private static final OfShort __glibc_reserved$LAYOUT = (OfShort)$LAYOUT.select(groupElement("__glibc_reserved"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * short __glibc_reserved
+     * }
+     */
+    public static final OfShort __glibc_reserved$layout() {
+        return __glibc_reserved$LAYOUT;
+    }
+
+    private static final long __glibc_reserved$OFFSET = $LAYOUT.byteOffset(groupElement("__glibc_reserved"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * short __glibc_reserved
+     * }
+     */
+    public static final long __glibc_reserved$offset() {
+        return __glibc_reserved$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * short __glibc_reserved
+     * }
+     */
+    public static short __glibc_reserved(MemorySegment struct) {
+        return struct.get(__glibc_reserved$LAYOUT, __glibc_reserved$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * short __glibc_reserved
+     * }
+     */
+    public static void __glibc_reserved(MemorySegment struct, short fieldValue) {
+        struct.set(__glibc_reserved$LAYOUT, __glibc_reserved$OFFSET, fieldValue);
     }
 
     private static final GroupLayout __list$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("__list"));
@@ -324,7 +367,7 @@ public class __pthread_mutex_s {
         return __list$LAYOUT;
     }
 
-    private static final long __list$OFFSET = 24;
+    private static final long __list$OFFSET = $LAYOUT.byteOffset(groupElement("__list"));
 
     /**
      * Offset for field:
@@ -385,7 +428,7 @@ public class __pthread_mutex_s {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -393,7 +436,7 @@ public class __pthread_mutex_s {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

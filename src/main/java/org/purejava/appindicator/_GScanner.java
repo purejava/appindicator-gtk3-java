@@ -88,7 +88,7 @@ public class _GScanner {
         return user_data$LAYOUT;
     }
 
-    private static final long user_data$OFFSET = 0;
+    private static final long user_data$OFFSET = $LAYOUT.byteOffset(groupElement("user_data"));
 
     /**
      * Offset for field:
@@ -132,7 +132,7 @@ public class _GScanner {
         return max_parse_errors$LAYOUT;
     }
 
-    private static final long max_parse_errors$OFFSET = 8;
+    private static final long max_parse_errors$OFFSET = $LAYOUT.byteOffset(groupElement("max_parse_errors"));
 
     /**
      * Offset for field:
@@ -176,7 +176,7 @@ public class _GScanner {
         return parse_errors$LAYOUT;
     }
 
-    private static final long parse_errors$OFFSET = 12;
+    private static final long parse_errors$OFFSET = $LAYOUT.byteOffset(groupElement("parse_errors"));
 
     /**
      * Offset for field:
@@ -220,7 +220,7 @@ public class _GScanner {
         return input_name$LAYOUT;
     }
 
-    private static final long input_name$OFFSET = 16;
+    private static final long input_name$OFFSET = $LAYOUT.byteOffset(groupElement("input_name"));
 
     /**
      * Offset for field:
@@ -264,7 +264,7 @@ public class _GScanner {
         return qdata$LAYOUT;
     }
 
-    private static final long qdata$OFFSET = 24;
+    private static final long qdata$OFFSET = $LAYOUT.byteOffset(groupElement("qdata"));
 
     /**
      * Offset for field:
@@ -308,7 +308,7 @@ public class _GScanner {
         return config$LAYOUT;
     }
 
-    private static final long config$OFFSET = 32;
+    private static final long config$OFFSET = $LAYOUT.byteOffset(groupElement("config"));
 
     /**
      * Offset for field:
@@ -352,7 +352,7 @@ public class _GScanner {
         return token$LAYOUT;
     }
 
-    private static final long token$OFFSET = 40;
+    private static final long token$OFFSET = $LAYOUT.byteOffset(groupElement("token"));
 
     /**
      * Offset for field:
@@ -396,7 +396,7 @@ public class _GScanner {
         return value$LAYOUT;
     }
 
-    private static final long value$OFFSET = 48;
+    private static final long value$OFFSET = $LAYOUT.byteOffset(groupElement("value"));
 
     /**
      * Offset for field:
@@ -440,7 +440,7 @@ public class _GScanner {
         return line$LAYOUT;
     }
 
-    private static final long line$OFFSET = 56;
+    private static final long line$OFFSET = $LAYOUT.byteOffset(groupElement("line"));
 
     /**
      * Offset for field:
@@ -484,7 +484,7 @@ public class _GScanner {
         return position$LAYOUT;
     }
 
-    private static final long position$OFFSET = 60;
+    private static final long position$OFFSET = $LAYOUT.byteOffset(groupElement("position"));
 
     /**
      * Offset for field:
@@ -528,7 +528,7 @@ public class _GScanner {
         return next_token$LAYOUT;
     }
 
-    private static final long next_token$OFFSET = 64;
+    private static final long next_token$OFFSET = $LAYOUT.byteOffset(groupElement("next_token"));
 
     /**
      * Offset for field:
@@ -572,7 +572,7 @@ public class _GScanner {
         return next_value$LAYOUT;
     }
 
-    private static final long next_value$OFFSET = 72;
+    private static final long next_value$OFFSET = $LAYOUT.byteOffset(groupElement("next_value"));
 
     /**
      * Offset for field:
@@ -616,7 +616,7 @@ public class _GScanner {
         return next_line$LAYOUT;
     }
 
-    private static final long next_line$OFFSET = 80;
+    private static final long next_line$OFFSET = $LAYOUT.byteOffset(groupElement("next_line"));
 
     /**
      * Offset for field:
@@ -660,7 +660,7 @@ public class _GScanner {
         return next_position$LAYOUT;
     }
 
-    private static final long next_position$OFFSET = 84;
+    private static final long next_position$OFFSET = $LAYOUT.byteOffset(groupElement("next_position"));
 
     /**
      * Offset for field:
@@ -704,7 +704,7 @@ public class _GScanner {
         return symbol_table$LAYOUT;
     }
 
-    private static final long symbol_table$OFFSET = 88;
+    private static final long symbol_table$OFFSET = $LAYOUT.byteOffset(groupElement("symbol_table"));
 
     /**
      * Offset for field:
@@ -748,7 +748,7 @@ public class _GScanner {
         return input_fd$LAYOUT;
     }
 
-    private static final long input_fd$OFFSET = 96;
+    private static final long input_fd$OFFSET = $LAYOUT.byteOffset(groupElement("input_fd"));
 
     /**
      * Offset for field:
@@ -792,7 +792,7 @@ public class _GScanner {
         return text$LAYOUT;
     }
 
-    private static final long text$OFFSET = 104;
+    private static final long text$OFFSET = $LAYOUT.byteOffset(groupElement("text"));
 
     /**
      * Offset for field:
@@ -836,7 +836,7 @@ public class _GScanner {
         return text_end$LAYOUT;
     }
 
-    private static final long text_end$OFFSET = 112;
+    private static final long text_end$OFFSET = $LAYOUT.byteOffset(groupElement("text_end"));
 
     /**
      * Offset for field:
@@ -880,7 +880,7 @@ public class _GScanner {
         return buffer$LAYOUT;
     }
 
-    private static final long buffer$OFFSET = 120;
+    private static final long buffer$OFFSET = $LAYOUT.byteOffset(groupElement("buffer"));
 
     /**
      * Offset for field:
@@ -924,7 +924,7 @@ public class _GScanner {
         return scope_id$LAYOUT;
     }
 
-    private static final long scope_id$OFFSET = 128;
+    private static final long scope_id$OFFSET = $LAYOUT.byteOffset(groupElement("scope_id"));
 
     /**
      * Offset for field:
@@ -968,7 +968,7 @@ public class _GScanner {
         return msg_handler$LAYOUT;
     }
 
-    private static final long msg_handler$OFFSET = 136;
+    private static final long msg_handler$OFFSET = $LAYOUT.byteOffset(groupElement("msg_handler"));
 
     /**
      * Offset for field:
@@ -1029,7 +1029,7 @@ public class _GScanner {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1037,7 +1037,7 @@ public class _GScanner {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

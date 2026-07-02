@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -76,7 +72,7 @@ public class _GActionGroupInterface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -113,7 +109,11 @@ public class _GActionGroupInterface {
      * gboolean (*has_action)(GActionGroup *, const gchar *)
      * }
      */
-    public class has_action {
+    public final static class has_action {
+
+        private has_action() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -150,9 +150,11 @@ public class _GActionGroupInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -171,7 +173,7 @@ public class _GActionGroupInterface {
         return has_action$LAYOUT;
     }
 
-    private static final long has_action$OFFSET = 16;
+    private static final long has_action$OFFSET = $LAYOUT.byteOffset(groupElement("has_action"));
 
     /**
      * Offset for field:
@@ -208,7 +210,11 @@ public class _GActionGroupInterface {
      * gchar **(*list_actions)(GActionGroup *)
      * }
      */
-    public class list_actions {
+    public final static class list_actions {
+
+        private list_actions() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -244,9 +250,11 @@ public class _GActionGroupInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -265,7 +273,7 @@ public class _GActionGroupInterface {
         return list_actions$LAYOUT;
     }
 
-    private static final long list_actions$OFFSET = 24;
+    private static final long list_actions$OFFSET = $LAYOUT.byteOffset(groupElement("list_actions"));
 
     /**
      * Offset for field:
@@ -302,7 +310,11 @@ public class _GActionGroupInterface {
      * gboolean (*get_action_enabled)(GActionGroup *, const gchar *)
      * }
      */
-    public class get_action_enabled {
+    public final static class get_action_enabled {
+
+        private get_action_enabled() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -339,9 +351,11 @@ public class _GActionGroupInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -360,7 +374,7 @@ public class _GActionGroupInterface {
         return get_action_enabled$LAYOUT;
     }
 
-    private static final long get_action_enabled$OFFSET = 32;
+    private static final long get_action_enabled$OFFSET = $LAYOUT.byteOffset(groupElement("get_action_enabled"));
 
     /**
      * Offset for field:
@@ -397,7 +411,11 @@ public class _GActionGroupInterface {
      * const GVariantType *(*get_action_parameter_type)(GActionGroup *, const gchar *)
      * }
      */
-    public class get_action_parameter_type {
+    public final static class get_action_parameter_type {
+
+        private get_action_parameter_type() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -434,9 +452,11 @@ public class _GActionGroupInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -455,7 +475,7 @@ public class _GActionGroupInterface {
         return get_action_parameter_type$LAYOUT;
     }
 
-    private static final long get_action_parameter_type$OFFSET = 40;
+    private static final long get_action_parameter_type$OFFSET = $LAYOUT.byteOffset(groupElement("get_action_parameter_type"));
 
     /**
      * Offset for field:
@@ -492,7 +512,11 @@ public class _GActionGroupInterface {
      * const GVariantType *(*get_action_state_type)(GActionGroup *, const gchar *)
      * }
      */
-    public class get_action_state_type {
+    public final static class get_action_state_type {
+
+        private get_action_state_type() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -529,9 +553,11 @@ public class _GActionGroupInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -550,7 +576,7 @@ public class _GActionGroupInterface {
         return get_action_state_type$LAYOUT;
     }
 
-    private static final long get_action_state_type$OFFSET = 48;
+    private static final long get_action_state_type$OFFSET = $LAYOUT.byteOffset(groupElement("get_action_state_type"));
 
     /**
      * Offset for field:
@@ -587,7 +613,11 @@ public class _GActionGroupInterface {
      * GVariant *(*get_action_state_hint)(GActionGroup *, const gchar *)
      * }
      */
-    public class get_action_state_hint {
+    public final static class get_action_state_hint {
+
+        private get_action_state_hint() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -624,9 +654,11 @@ public class _GActionGroupInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -645,7 +677,7 @@ public class _GActionGroupInterface {
         return get_action_state_hint$LAYOUT;
     }
 
-    private static final long get_action_state_hint$OFFSET = 56;
+    private static final long get_action_state_hint$OFFSET = $LAYOUT.byteOffset(groupElement("get_action_state_hint"));
 
     /**
      * Offset for field:
@@ -682,7 +714,11 @@ public class _GActionGroupInterface {
      * GVariant *(*get_action_state)(GActionGroup *, const gchar *)
      * }
      */
-    public class get_action_state {
+    public final static class get_action_state {
+
+        private get_action_state() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -719,9 +755,11 @@ public class _GActionGroupInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -740,7 +778,7 @@ public class _GActionGroupInterface {
         return get_action_state$LAYOUT;
     }
 
-    private static final long get_action_state$OFFSET = 64;
+    private static final long get_action_state$OFFSET = $LAYOUT.byteOffset(groupElement("get_action_state"));
 
     /**
      * Offset for field:
@@ -777,7 +815,11 @@ public class _GActionGroupInterface {
      * void (*change_action_state)(GActionGroup *, const gchar *, GVariant *)
      * }
      */
-    public class change_action_state {
+    public final static class change_action_state {
+
+        private change_action_state() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -814,9 +856,11 @@ public class _GActionGroupInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -835,7 +879,7 @@ public class _GActionGroupInterface {
         return change_action_state$LAYOUT;
     }
 
-    private static final long change_action_state$OFFSET = 72;
+    private static final long change_action_state$OFFSET = $LAYOUT.byteOffset(groupElement("change_action_state"));
 
     /**
      * Offset for field:
@@ -872,7 +916,11 @@ public class _GActionGroupInterface {
      * void (*activate_action)(GActionGroup *, const gchar *, GVariant *)
      * }
      */
-    public class activate_action {
+    public final static class activate_action {
+
+        private activate_action() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -909,9 +957,11 @@ public class _GActionGroupInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -930,7 +980,7 @@ public class _GActionGroupInterface {
         return activate_action$LAYOUT;
     }
 
-    private static final long activate_action$OFFSET = 80;
+    private static final long activate_action$OFFSET = $LAYOUT.byteOffset(groupElement("activate_action"));
 
     /**
      * Offset for field:
@@ -967,7 +1017,11 @@ public class _GActionGroupInterface {
      * void (*action_added)(GActionGroup *, const gchar *)
      * }
      */
-    public class action_added {
+    public final static class action_added {
+
+        private action_added() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1003,9 +1057,11 @@ public class _GActionGroupInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1024,7 +1080,7 @@ public class _GActionGroupInterface {
         return action_added$LAYOUT;
     }
 
-    private static final long action_added$OFFSET = 88;
+    private static final long action_added$OFFSET = $LAYOUT.byteOffset(groupElement("action_added"));
 
     /**
      * Offset for field:
@@ -1061,7 +1117,11 @@ public class _GActionGroupInterface {
      * void (*action_removed)(GActionGroup *, const gchar *)
      * }
      */
-    public class action_removed {
+    public final static class action_removed {
+
+        private action_removed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1097,9 +1157,11 @@ public class _GActionGroupInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1118,7 +1180,7 @@ public class _GActionGroupInterface {
         return action_removed$LAYOUT;
     }
 
-    private static final long action_removed$OFFSET = 96;
+    private static final long action_removed$OFFSET = $LAYOUT.byteOffset(groupElement("action_removed"));
 
     /**
      * Offset for field:
@@ -1155,7 +1217,11 @@ public class _GActionGroupInterface {
      * void (*action_enabled_changed)(GActionGroup *, const gchar *, gboolean)
      * }
      */
-    public class action_enabled_changed {
+    public final static class action_enabled_changed {
+
+        private action_enabled_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1192,9 +1258,11 @@ public class _GActionGroupInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1213,7 +1281,7 @@ public class _GActionGroupInterface {
         return action_enabled_changed$LAYOUT;
     }
 
-    private static final long action_enabled_changed$OFFSET = 104;
+    private static final long action_enabled_changed$OFFSET = $LAYOUT.byteOffset(groupElement("action_enabled_changed"));
 
     /**
      * Offset for field:
@@ -1250,7 +1318,11 @@ public class _GActionGroupInterface {
      * void (*action_state_changed)(GActionGroup *, const gchar *, GVariant *)
      * }
      */
-    public class action_state_changed {
+    public final static class action_state_changed {
+
+        private action_state_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1287,9 +1359,11 @@ public class _GActionGroupInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1308,7 +1382,7 @@ public class _GActionGroupInterface {
         return action_state_changed$LAYOUT;
     }
 
-    private static final long action_state_changed$OFFSET = 112;
+    private static final long action_state_changed$OFFSET = $LAYOUT.byteOffset(groupElement("action_state_changed"));
 
     /**
      * Offset for field:
@@ -1345,7 +1419,11 @@ public class _GActionGroupInterface {
      * gboolean (*query_action)(GActionGroup *, const gchar *, gboolean *, const GVariantType **, const GVariantType **, GVariant **, GVariant **)
      * }
      */
-    public class query_action {
+    public final static class query_action {
+
+        private query_action() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1387,9 +1465,11 @@ public class _GActionGroupInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1408,7 +1488,7 @@ public class _GActionGroupInterface {
         return query_action$LAYOUT;
     }
 
-    private static final long query_action$OFFSET = 120;
+    private static final long query_action$OFFSET = $LAYOUT.byteOffset(groupElement("query_action"));
 
     /**
      * Offset for field:
@@ -1469,7 +1549,7 @@ public class _GActionGroupInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1477,7 +1557,7 @@ public class _GActionGroupInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

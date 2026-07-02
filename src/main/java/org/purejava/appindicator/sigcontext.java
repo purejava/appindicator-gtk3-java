@@ -2,25 +2,49 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
+import static java.lang.foreign.ValueLayout.OfLong;
+import static java.lang.foreign.ValueLayout.OfShort;
 
 /**
  * {@snippet lang=c :
  * struct sigcontext {
- *     __u64 fault_address;
- *     __u64 regs[31];
- *     __u64 sp;
- *     __u64 pc;
- *     __u64 pstate;
- *     __u8 __reserved[4096];
+ *     __uint64_t r8;
+ *     __uint64_t r9;
+ *     __uint64_t r10;
+ *     __uint64_t r11;
+ *     __uint64_t r12;
+ *     __uint64_t r13;
+ *     __uint64_t r14;
+ *     __uint64_t r15;
+ *     __uint64_t rdi;
+ *     __uint64_t rsi;
+ *     __uint64_t rbp;
+ *     __uint64_t rbx;
+ *     __uint64_t rdx;
+ *     __uint64_t rax;
+ *     __uint64_t rcx;
+ *     __uint64_t rsp;
+ *     __uint64_t rip;
+ *     __uint64_t eflags;
+ *     unsigned short cs;
+ *     unsigned short gs;
+ *     unsigned short fs;
+ *     unsigned short __pad0;
+ *     __uint64_t err;
+ *     __uint64_t trapno;
+ *     __uint64_t oldmask;
+ *     __uint64_t cr2;
+ *     union {
+ *         struct _fpstate *fpstate;
+ *         __uint64_t __fpstate_word;
+ *     };
+ *     __uint64_t __reserved1[8];
  * }
  * }
  */
@@ -31,13 +55,37 @@ public class sigcontext {
     }
 
     private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-        app_indicator_h.C_LONG_LONG.withName("fault_address"),
-        MemoryLayout.sequenceLayout(31, app_indicator_h.C_LONG_LONG).withName("regs"),
-        app_indicator_h.C_LONG_LONG.withName("sp"),
-        app_indicator_h.C_LONG_LONG.withName("pc"),
-        app_indicator_h.C_LONG_LONG.withName("pstate"),
-        MemoryLayout.paddingLayout(8),
-        MemoryLayout.sequenceLayout(4096, app_indicator_h.C_CHAR).withName("__reserved")
+        app_indicator_h.C_LONG.withName("r8"),
+        app_indicator_h.C_LONG.withName("r9"),
+        app_indicator_h.C_LONG.withName("r10"),
+        app_indicator_h.C_LONG.withName("r11"),
+        app_indicator_h.C_LONG.withName("r12"),
+        app_indicator_h.C_LONG.withName("r13"),
+        app_indicator_h.C_LONG.withName("r14"),
+        app_indicator_h.C_LONG.withName("r15"),
+        app_indicator_h.C_LONG.withName("rdi"),
+        app_indicator_h.C_LONG.withName("rsi"),
+        app_indicator_h.C_LONG.withName("rbp"),
+        app_indicator_h.C_LONG.withName("rbx"),
+        app_indicator_h.C_LONG.withName("rdx"),
+        app_indicator_h.C_LONG.withName("rax"),
+        app_indicator_h.C_LONG.withName("rcx"),
+        app_indicator_h.C_LONG.withName("rsp"),
+        app_indicator_h.C_LONG.withName("rip"),
+        app_indicator_h.C_LONG.withName("eflags"),
+        app_indicator_h.C_SHORT.withName("cs"),
+        app_indicator_h.C_SHORT.withName("gs"),
+        app_indicator_h.C_SHORT.withName("fs"),
+        app_indicator_h.C_SHORT.withName("__pad0"),
+        app_indicator_h.C_LONG.withName("err"),
+        app_indicator_h.C_LONG.withName("trapno"),
+        app_indicator_h.C_LONG.withName("oldmask"),
+        app_indicator_h.C_LONG.withName("cr2"),
+        MemoryLayout.unionLayout(
+            app_indicator_h.C_POINTER.withName("fpstate"),
+            app_indicator_h.C_LONG.withName("__fpstate_word")
+        ).withName("$anon$167:17"),
+        MemoryLayout.sequenceLayout(8, app_indicator_h.C_LONG).withName("__reserved1")
     ).withName("sigcontext");
 
     /**
@@ -47,334 +95,1313 @@ public class sigcontext {
         return $LAYOUT;
     }
 
-    private static final OfLong fault_address$LAYOUT = (OfLong)$LAYOUT.select(groupElement("fault_address"));
+    private static final OfLong r8$LAYOUT = (OfLong)$LAYOUT.select(groupElement("r8"));
 
     /**
      * Layout for field:
      * {@snippet lang=c :
-     * __u64 fault_address
+     * __uint64_t r8
      * }
      */
-    public static final OfLong fault_address$layout() {
-        return fault_address$LAYOUT;
+    public static final OfLong r8$layout() {
+        return r8$LAYOUT;
     }
 
-    private static final long fault_address$OFFSET = 0;
+    private static final long r8$OFFSET = $LAYOUT.byteOffset(groupElement("r8"));
 
     /**
      * Offset for field:
      * {@snippet lang=c :
-     * __u64 fault_address
+     * __uint64_t r8
      * }
      */
-    public static final long fault_address$offset() {
-        return fault_address$OFFSET;
+    public static final long r8$offset() {
+        return r8$OFFSET;
     }
 
     /**
      * Getter for field:
      * {@snippet lang=c :
-     * __u64 fault_address
+     * __uint64_t r8
      * }
      */
-    public static long fault_address(MemorySegment struct) {
-        return struct.get(fault_address$LAYOUT, fault_address$OFFSET);
+    public static long r8(MemorySegment struct) {
+        return struct.get(r8$LAYOUT, r8$OFFSET);
     }
 
     /**
      * Setter for field:
      * {@snippet lang=c :
-     * __u64 fault_address
+     * __uint64_t r8
      * }
      */
-    public static void fault_address(MemorySegment struct, long fieldValue) {
-        struct.set(fault_address$LAYOUT, fault_address$OFFSET, fieldValue);
+    public static void r8(MemorySegment struct, long fieldValue) {
+        struct.set(r8$LAYOUT, r8$OFFSET, fieldValue);
     }
 
-    private static final SequenceLayout regs$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("regs"));
+    private static final OfLong r9$LAYOUT = (OfLong)$LAYOUT.select(groupElement("r9"));
 
     /**
      * Layout for field:
      * {@snippet lang=c :
-     * __u64 regs[31]
+     * __uint64_t r9
      * }
      */
-    public static final SequenceLayout regs$layout() {
-        return regs$LAYOUT;
+    public static final OfLong r9$layout() {
+        return r9$LAYOUT;
     }
 
-    private static final long regs$OFFSET = 8;
+    private static final long r9$OFFSET = $LAYOUT.byteOffset(groupElement("r9"));
 
     /**
      * Offset for field:
      * {@snippet lang=c :
-     * __u64 regs[31]
+     * __uint64_t r9
      * }
      */
-    public static final long regs$offset() {
-        return regs$OFFSET;
+    public static final long r9$offset() {
+        return r9$OFFSET;
     }
 
     /**
      * Getter for field:
      * {@snippet lang=c :
-     * __u64 regs[31]
+     * __uint64_t r9
      * }
      */
-    public static MemorySegment regs(MemorySegment struct) {
-        return struct.asSlice(regs$OFFSET, regs$LAYOUT.byteSize());
+    public static long r9(MemorySegment struct) {
+        return struct.get(r9$LAYOUT, r9$OFFSET);
     }
 
     /**
      * Setter for field:
      * {@snippet lang=c :
-     * __u64 regs[31]
+     * __uint64_t r9
      * }
      */
-    public static void regs(MemorySegment struct, MemorySegment fieldValue) {
-        MemorySegment.copy(fieldValue, 0L, struct, regs$OFFSET, regs$LAYOUT.byteSize());
+    public static void r9(MemorySegment struct, long fieldValue) {
+        struct.set(r9$LAYOUT, r9$OFFSET, fieldValue);
     }
 
-    private static long[] regs$DIMS = { 31 };
+    private static final OfLong r10$LAYOUT = (OfLong)$LAYOUT.select(groupElement("r10"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __uint64_t r10
+     * }
+     */
+    public static final OfLong r10$layout() {
+        return r10$LAYOUT;
+    }
+
+    private static final long r10$OFFSET = $LAYOUT.byteOffset(groupElement("r10"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __uint64_t r10
+     * }
+     */
+    public static final long r10$offset() {
+        return r10$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __uint64_t r10
+     * }
+     */
+    public static long r10(MemorySegment struct) {
+        return struct.get(r10$LAYOUT, r10$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __uint64_t r10
+     * }
+     */
+    public static void r10(MemorySegment struct, long fieldValue) {
+        struct.set(r10$LAYOUT, r10$OFFSET, fieldValue);
+    }
+
+    private static final OfLong r11$LAYOUT = (OfLong)$LAYOUT.select(groupElement("r11"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __uint64_t r11
+     * }
+     */
+    public static final OfLong r11$layout() {
+        return r11$LAYOUT;
+    }
+
+    private static final long r11$OFFSET = $LAYOUT.byteOffset(groupElement("r11"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __uint64_t r11
+     * }
+     */
+    public static final long r11$offset() {
+        return r11$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __uint64_t r11
+     * }
+     */
+    public static long r11(MemorySegment struct) {
+        return struct.get(r11$LAYOUT, r11$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __uint64_t r11
+     * }
+     */
+    public static void r11(MemorySegment struct, long fieldValue) {
+        struct.set(r11$LAYOUT, r11$OFFSET, fieldValue);
+    }
+
+    private static final OfLong r12$LAYOUT = (OfLong)$LAYOUT.select(groupElement("r12"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __uint64_t r12
+     * }
+     */
+    public static final OfLong r12$layout() {
+        return r12$LAYOUT;
+    }
+
+    private static final long r12$OFFSET = $LAYOUT.byteOffset(groupElement("r12"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __uint64_t r12
+     * }
+     */
+    public static final long r12$offset() {
+        return r12$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __uint64_t r12
+     * }
+     */
+    public static long r12(MemorySegment struct) {
+        return struct.get(r12$LAYOUT, r12$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __uint64_t r12
+     * }
+     */
+    public static void r12(MemorySegment struct, long fieldValue) {
+        struct.set(r12$LAYOUT, r12$OFFSET, fieldValue);
+    }
+
+    private static final OfLong r13$LAYOUT = (OfLong)$LAYOUT.select(groupElement("r13"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __uint64_t r13
+     * }
+     */
+    public static final OfLong r13$layout() {
+        return r13$LAYOUT;
+    }
+
+    private static final long r13$OFFSET = $LAYOUT.byteOffset(groupElement("r13"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __uint64_t r13
+     * }
+     */
+    public static final long r13$offset() {
+        return r13$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __uint64_t r13
+     * }
+     */
+    public static long r13(MemorySegment struct) {
+        return struct.get(r13$LAYOUT, r13$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __uint64_t r13
+     * }
+     */
+    public static void r13(MemorySegment struct, long fieldValue) {
+        struct.set(r13$LAYOUT, r13$OFFSET, fieldValue);
+    }
+
+    private static final OfLong r14$LAYOUT = (OfLong)$LAYOUT.select(groupElement("r14"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __uint64_t r14
+     * }
+     */
+    public static final OfLong r14$layout() {
+        return r14$LAYOUT;
+    }
+
+    private static final long r14$OFFSET = $LAYOUT.byteOffset(groupElement("r14"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __uint64_t r14
+     * }
+     */
+    public static final long r14$offset() {
+        return r14$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __uint64_t r14
+     * }
+     */
+    public static long r14(MemorySegment struct) {
+        return struct.get(r14$LAYOUT, r14$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __uint64_t r14
+     * }
+     */
+    public static void r14(MemorySegment struct, long fieldValue) {
+        struct.set(r14$LAYOUT, r14$OFFSET, fieldValue);
+    }
+
+    private static final OfLong r15$LAYOUT = (OfLong)$LAYOUT.select(groupElement("r15"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __uint64_t r15
+     * }
+     */
+    public static final OfLong r15$layout() {
+        return r15$LAYOUT;
+    }
+
+    private static final long r15$OFFSET = $LAYOUT.byteOffset(groupElement("r15"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __uint64_t r15
+     * }
+     */
+    public static final long r15$offset() {
+        return r15$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __uint64_t r15
+     * }
+     */
+    public static long r15(MemorySegment struct) {
+        return struct.get(r15$LAYOUT, r15$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __uint64_t r15
+     * }
+     */
+    public static void r15(MemorySegment struct, long fieldValue) {
+        struct.set(r15$LAYOUT, r15$OFFSET, fieldValue);
+    }
+
+    private static final OfLong rdi$LAYOUT = (OfLong)$LAYOUT.select(groupElement("rdi"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __uint64_t rdi
+     * }
+     */
+    public static final OfLong rdi$layout() {
+        return rdi$LAYOUT;
+    }
+
+    private static final long rdi$OFFSET = $LAYOUT.byteOffset(groupElement("rdi"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __uint64_t rdi
+     * }
+     */
+    public static final long rdi$offset() {
+        return rdi$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __uint64_t rdi
+     * }
+     */
+    public static long rdi(MemorySegment struct) {
+        return struct.get(rdi$LAYOUT, rdi$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __uint64_t rdi
+     * }
+     */
+    public static void rdi(MemorySegment struct, long fieldValue) {
+        struct.set(rdi$LAYOUT, rdi$OFFSET, fieldValue);
+    }
+
+    private static final OfLong rsi$LAYOUT = (OfLong)$LAYOUT.select(groupElement("rsi"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __uint64_t rsi
+     * }
+     */
+    public static final OfLong rsi$layout() {
+        return rsi$LAYOUT;
+    }
+
+    private static final long rsi$OFFSET = $LAYOUT.byteOffset(groupElement("rsi"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __uint64_t rsi
+     * }
+     */
+    public static final long rsi$offset() {
+        return rsi$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __uint64_t rsi
+     * }
+     */
+    public static long rsi(MemorySegment struct) {
+        return struct.get(rsi$LAYOUT, rsi$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __uint64_t rsi
+     * }
+     */
+    public static void rsi(MemorySegment struct, long fieldValue) {
+        struct.set(rsi$LAYOUT, rsi$OFFSET, fieldValue);
+    }
+
+    private static final OfLong rbp$LAYOUT = (OfLong)$LAYOUT.select(groupElement("rbp"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __uint64_t rbp
+     * }
+     */
+    public static final OfLong rbp$layout() {
+        return rbp$LAYOUT;
+    }
+
+    private static final long rbp$OFFSET = $LAYOUT.byteOffset(groupElement("rbp"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __uint64_t rbp
+     * }
+     */
+    public static final long rbp$offset() {
+        return rbp$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __uint64_t rbp
+     * }
+     */
+    public static long rbp(MemorySegment struct) {
+        return struct.get(rbp$LAYOUT, rbp$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __uint64_t rbp
+     * }
+     */
+    public static void rbp(MemorySegment struct, long fieldValue) {
+        struct.set(rbp$LAYOUT, rbp$OFFSET, fieldValue);
+    }
+
+    private static final OfLong rbx$LAYOUT = (OfLong)$LAYOUT.select(groupElement("rbx"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __uint64_t rbx
+     * }
+     */
+    public static final OfLong rbx$layout() {
+        return rbx$LAYOUT;
+    }
+
+    private static final long rbx$OFFSET = $LAYOUT.byteOffset(groupElement("rbx"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __uint64_t rbx
+     * }
+     */
+    public static final long rbx$offset() {
+        return rbx$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __uint64_t rbx
+     * }
+     */
+    public static long rbx(MemorySegment struct) {
+        return struct.get(rbx$LAYOUT, rbx$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __uint64_t rbx
+     * }
+     */
+    public static void rbx(MemorySegment struct, long fieldValue) {
+        struct.set(rbx$LAYOUT, rbx$OFFSET, fieldValue);
+    }
+
+    private static final OfLong rdx$LAYOUT = (OfLong)$LAYOUT.select(groupElement("rdx"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __uint64_t rdx
+     * }
+     */
+    public static final OfLong rdx$layout() {
+        return rdx$LAYOUT;
+    }
+
+    private static final long rdx$OFFSET = $LAYOUT.byteOffset(groupElement("rdx"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __uint64_t rdx
+     * }
+     */
+    public static final long rdx$offset() {
+        return rdx$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __uint64_t rdx
+     * }
+     */
+    public static long rdx(MemorySegment struct) {
+        return struct.get(rdx$LAYOUT, rdx$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __uint64_t rdx
+     * }
+     */
+    public static void rdx(MemorySegment struct, long fieldValue) {
+        struct.set(rdx$LAYOUT, rdx$OFFSET, fieldValue);
+    }
+
+    private static final OfLong rax$LAYOUT = (OfLong)$LAYOUT.select(groupElement("rax"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __uint64_t rax
+     * }
+     */
+    public static final OfLong rax$layout() {
+        return rax$LAYOUT;
+    }
+
+    private static final long rax$OFFSET = $LAYOUT.byteOffset(groupElement("rax"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __uint64_t rax
+     * }
+     */
+    public static final long rax$offset() {
+        return rax$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __uint64_t rax
+     * }
+     */
+    public static long rax(MemorySegment struct) {
+        return struct.get(rax$LAYOUT, rax$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __uint64_t rax
+     * }
+     */
+    public static void rax(MemorySegment struct, long fieldValue) {
+        struct.set(rax$LAYOUT, rax$OFFSET, fieldValue);
+    }
+
+    private static final OfLong rcx$LAYOUT = (OfLong)$LAYOUT.select(groupElement("rcx"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __uint64_t rcx
+     * }
+     */
+    public static final OfLong rcx$layout() {
+        return rcx$LAYOUT;
+    }
+
+    private static final long rcx$OFFSET = $LAYOUT.byteOffset(groupElement("rcx"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __uint64_t rcx
+     * }
+     */
+    public static final long rcx$offset() {
+        return rcx$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __uint64_t rcx
+     * }
+     */
+    public static long rcx(MemorySegment struct) {
+        return struct.get(rcx$LAYOUT, rcx$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __uint64_t rcx
+     * }
+     */
+    public static void rcx(MemorySegment struct, long fieldValue) {
+        struct.set(rcx$LAYOUT, rcx$OFFSET, fieldValue);
+    }
+
+    private static final OfLong rsp$LAYOUT = (OfLong)$LAYOUT.select(groupElement("rsp"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __uint64_t rsp
+     * }
+     */
+    public static final OfLong rsp$layout() {
+        return rsp$LAYOUT;
+    }
+
+    private static final long rsp$OFFSET = $LAYOUT.byteOffset(groupElement("rsp"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __uint64_t rsp
+     * }
+     */
+    public static final long rsp$offset() {
+        return rsp$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __uint64_t rsp
+     * }
+     */
+    public static long rsp(MemorySegment struct) {
+        return struct.get(rsp$LAYOUT, rsp$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __uint64_t rsp
+     * }
+     */
+    public static void rsp(MemorySegment struct, long fieldValue) {
+        struct.set(rsp$LAYOUT, rsp$OFFSET, fieldValue);
+    }
+
+    private static final OfLong rip$LAYOUT = (OfLong)$LAYOUT.select(groupElement("rip"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __uint64_t rip
+     * }
+     */
+    public static final OfLong rip$layout() {
+        return rip$LAYOUT;
+    }
+
+    private static final long rip$OFFSET = $LAYOUT.byteOffset(groupElement("rip"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __uint64_t rip
+     * }
+     */
+    public static final long rip$offset() {
+        return rip$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __uint64_t rip
+     * }
+     */
+    public static long rip(MemorySegment struct) {
+        return struct.get(rip$LAYOUT, rip$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __uint64_t rip
+     * }
+     */
+    public static void rip(MemorySegment struct, long fieldValue) {
+        struct.set(rip$LAYOUT, rip$OFFSET, fieldValue);
+    }
+
+    private static final OfLong eflags$LAYOUT = (OfLong)$LAYOUT.select(groupElement("eflags"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __uint64_t eflags
+     * }
+     */
+    public static final OfLong eflags$layout() {
+        return eflags$LAYOUT;
+    }
+
+    private static final long eflags$OFFSET = $LAYOUT.byteOffset(groupElement("eflags"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __uint64_t eflags
+     * }
+     */
+    public static final long eflags$offset() {
+        return eflags$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __uint64_t eflags
+     * }
+     */
+    public static long eflags(MemorySegment struct) {
+        return struct.get(eflags$LAYOUT, eflags$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __uint64_t eflags
+     * }
+     */
+    public static void eflags(MemorySegment struct, long fieldValue) {
+        struct.set(eflags$LAYOUT, eflags$OFFSET, fieldValue);
+    }
+
+    private static final OfShort cs$LAYOUT = (OfShort)$LAYOUT.select(groupElement("cs"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * unsigned short cs
+     * }
+     */
+    public static final OfShort cs$layout() {
+        return cs$LAYOUT;
+    }
+
+    private static final long cs$OFFSET = $LAYOUT.byteOffset(groupElement("cs"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * unsigned short cs
+     * }
+     */
+    public static final long cs$offset() {
+        return cs$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * unsigned short cs
+     * }
+     */
+    public static short cs(MemorySegment struct) {
+        return struct.get(cs$LAYOUT, cs$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * unsigned short cs
+     * }
+     */
+    public static void cs(MemorySegment struct, short fieldValue) {
+        struct.set(cs$LAYOUT, cs$OFFSET, fieldValue);
+    }
+
+    private static final OfShort gs$LAYOUT = (OfShort)$LAYOUT.select(groupElement("gs"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * unsigned short gs
+     * }
+     */
+    public static final OfShort gs$layout() {
+        return gs$LAYOUT;
+    }
+
+    private static final long gs$OFFSET = $LAYOUT.byteOffset(groupElement("gs"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * unsigned short gs
+     * }
+     */
+    public static final long gs$offset() {
+        return gs$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * unsigned short gs
+     * }
+     */
+    public static short gs(MemorySegment struct) {
+        return struct.get(gs$LAYOUT, gs$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * unsigned short gs
+     * }
+     */
+    public static void gs(MemorySegment struct, short fieldValue) {
+        struct.set(gs$LAYOUT, gs$OFFSET, fieldValue);
+    }
+
+    private static final OfShort fs$LAYOUT = (OfShort)$LAYOUT.select(groupElement("fs"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * unsigned short fs
+     * }
+     */
+    public static final OfShort fs$layout() {
+        return fs$LAYOUT;
+    }
+
+    private static final long fs$OFFSET = $LAYOUT.byteOffset(groupElement("fs"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * unsigned short fs
+     * }
+     */
+    public static final long fs$offset() {
+        return fs$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * unsigned short fs
+     * }
+     */
+    public static short fs(MemorySegment struct) {
+        return struct.get(fs$LAYOUT, fs$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * unsigned short fs
+     * }
+     */
+    public static void fs(MemorySegment struct, short fieldValue) {
+        struct.set(fs$LAYOUT, fs$OFFSET, fieldValue);
+    }
+
+    private static final OfShort __pad0$LAYOUT = (OfShort)$LAYOUT.select(groupElement("__pad0"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * unsigned short __pad0
+     * }
+     */
+    public static final OfShort __pad0$layout() {
+        return __pad0$LAYOUT;
+    }
+
+    private static final long __pad0$OFFSET = $LAYOUT.byteOffset(groupElement("__pad0"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * unsigned short __pad0
+     * }
+     */
+    public static final long __pad0$offset() {
+        return __pad0$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * unsigned short __pad0
+     * }
+     */
+    public static short __pad0(MemorySegment struct) {
+        return struct.get(__pad0$LAYOUT, __pad0$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * unsigned short __pad0
+     * }
+     */
+    public static void __pad0(MemorySegment struct, short fieldValue) {
+        struct.set(__pad0$LAYOUT, __pad0$OFFSET, fieldValue);
+    }
+
+    private static final OfLong err$LAYOUT = (OfLong)$LAYOUT.select(groupElement("err"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __uint64_t err
+     * }
+     */
+    public static final OfLong err$layout() {
+        return err$LAYOUT;
+    }
+
+    private static final long err$OFFSET = $LAYOUT.byteOffset(groupElement("err"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __uint64_t err
+     * }
+     */
+    public static final long err$offset() {
+        return err$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __uint64_t err
+     * }
+     */
+    public static long err(MemorySegment struct) {
+        return struct.get(err$LAYOUT, err$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __uint64_t err
+     * }
+     */
+    public static void err(MemorySegment struct, long fieldValue) {
+        struct.set(err$LAYOUT, err$OFFSET, fieldValue);
+    }
+
+    private static final OfLong trapno$LAYOUT = (OfLong)$LAYOUT.select(groupElement("trapno"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __uint64_t trapno
+     * }
+     */
+    public static final OfLong trapno$layout() {
+        return trapno$LAYOUT;
+    }
+
+    private static final long trapno$OFFSET = $LAYOUT.byteOffset(groupElement("trapno"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __uint64_t trapno
+     * }
+     */
+    public static final long trapno$offset() {
+        return trapno$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __uint64_t trapno
+     * }
+     */
+    public static long trapno(MemorySegment struct) {
+        return struct.get(trapno$LAYOUT, trapno$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __uint64_t trapno
+     * }
+     */
+    public static void trapno(MemorySegment struct, long fieldValue) {
+        struct.set(trapno$LAYOUT, trapno$OFFSET, fieldValue);
+    }
+
+    private static final OfLong oldmask$LAYOUT = (OfLong)$LAYOUT.select(groupElement("oldmask"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __uint64_t oldmask
+     * }
+     */
+    public static final OfLong oldmask$layout() {
+        return oldmask$LAYOUT;
+    }
+
+    private static final long oldmask$OFFSET = $LAYOUT.byteOffset(groupElement("oldmask"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __uint64_t oldmask
+     * }
+     */
+    public static final long oldmask$offset() {
+        return oldmask$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __uint64_t oldmask
+     * }
+     */
+    public static long oldmask(MemorySegment struct) {
+        return struct.get(oldmask$LAYOUT, oldmask$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __uint64_t oldmask
+     * }
+     */
+    public static void oldmask(MemorySegment struct, long fieldValue) {
+        struct.set(oldmask$LAYOUT, oldmask$OFFSET, fieldValue);
+    }
+
+    private static final OfLong cr2$LAYOUT = (OfLong)$LAYOUT.select(groupElement("cr2"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __uint64_t cr2
+     * }
+     */
+    public static final OfLong cr2$layout() {
+        return cr2$LAYOUT;
+    }
+
+    private static final long cr2$OFFSET = $LAYOUT.byteOffset(groupElement("cr2"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __uint64_t cr2
+     * }
+     */
+    public static final long cr2$offset() {
+        return cr2$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __uint64_t cr2
+     * }
+     */
+    public static long cr2(MemorySegment struct) {
+        return struct.get(cr2$LAYOUT, cr2$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __uint64_t cr2
+     * }
+     */
+    public static void cr2(MemorySegment struct, long fieldValue) {
+        struct.set(cr2$LAYOUT, cr2$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout fpstate$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("$anon$167:17"), groupElement("fpstate"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * struct _fpstate *fpstate
+     * }
+     */
+    public static final AddressLayout fpstate$layout() {
+        return fpstate$LAYOUT;
+    }
+
+    private static final long fpstate$OFFSET = $LAYOUT.byteOffset(groupElement("$anon$167:17"), groupElement("fpstate"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * struct _fpstate *fpstate
+     * }
+     */
+    public static final long fpstate$offset() {
+        return fpstate$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * struct _fpstate *fpstate
+     * }
+     */
+    public static MemorySegment fpstate(MemorySegment struct) {
+        return struct.get(fpstate$LAYOUT, fpstate$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * struct _fpstate *fpstate
+     * }
+     */
+    public static void fpstate(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(fpstate$LAYOUT, fpstate$OFFSET, fieldValue);
+    }
+
+    private static final OfLong __fpstate_word$LAYOUT = (OfLong)$LAYOUT.select(groupElement("$anon$167:17"), groupElement("__fpstate_word"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __uint64_t __fpstate_word
+     * }
+     */
+    public static final OfLong __fpstate_word$layout() {
+        return __fpstate_word$LAYOUT;
+    }
+
+    private static final long __fpstate_word$OFFSET = $LAYOUT.byteOffset(groupElement("$anon$167:17"), groupElement("__fpstate_word"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __uint64_t __fpstate_word
+     * }
+     */
+    public static final long __fpstate_word$offset() {
+        return __fpstate_word$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __uint64_t __fpstate_word
+     * }
+     */
+    public static long __fpstate_word(MemorySegment struct) {
+        return struct.get(__fpstate_word$LAYOUT, __fpstate_word$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __uint64_t __fpstate_word
+     * }
+     */
+    public static void __fpstate_word(MemorySegment struct, long fieldValue) {
+        struct.set(__fpstate_word$LAYOUT, __fpstate_word$OFFSET, fieldValue);
+    }
+
+    private static final SequenceLayout __reserved1$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("__reserved1"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __uint64_t __reserved1[8]
+     * }
+     */
+    public static final SequenceLayout __reserved1$layout() {
+        return __reserved1$LAYOUT;
+    }
+
+    private static final long __reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("__reserved1"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __uint64_t __reserved1[8]
+     * }
+     */
+    public static final long __reserved1$offset() {
+        return __reserved1$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __uint64_t __reserved1[8]
+     * }
+     */
+    public static MemorySegment __reserved1(MemorySegment struct) {
+        return struct.asSlice(__reserved1$OFFSET, __reserved1$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __uint64_t __reserved1[8]
+     * }
+     */
+    public static void __reserved1(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, __reserved1$OFFSET, __reserved1$LAYOUT.byteSize());
+    }
+
+    private static long[] __reserved1$DIMS = { 8 };
 
     /**
      * Dimensions for array field:
      * {@snippet lang=c :
-     * __u64 regs[31]
+     * __uint64_t __reserved1[8]
      * }
      */
-    public static long[] regs$dimensions() {
-        return regs$DIMS;
+    public static long[] __reserved1$dimensions() {
+        return __reserved1$DIMS;
     }
-    private static final VarHandle regs$ELEM_HANDLE = regs$LAYOUT.varHandle(sequenceElement());
+    private static final VarHandle __reserved1$ELEM_HANDLE = __reserved1$LAYOUT.varHandle(sequenceElement());
 
     /**
      * Indexed getter for field:
      * {@snippet lang=c :
-     * __u64 regs[31]
+     * __uint64_t __reserved1[8]
      * }
      */
-    public static long regs(MemorySegment struct, long index0) {
-        return (long)regs$ELEM_HANDLE.get(struct, 0L, index0);
+    public static long __reserved1(MemorySegment struct, long index0) {
+        return (long)__reserved1$ELEM_HANDLE.get(struct, __reserved1$OFFSET, index0);
     }
 
     /**
      * Indexed setter for field:
      * {@snippet lang=c :
-     * __u64 regs[31]
+     * __uint64_t __reserved1[8]
      * }
      */
-    public static void regs(MemorySegment struct, long index0, long fieldValue) {
-        regs$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
-    }
-
-    private static final OfLong sp$LAYOUT = (OfLong)$LAYOUT.select(groupElement("sp"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * __u64 sp
-     * }
-     */
-    public static final OfLong sp$layout() {
-        return sp$LAYOUT;
-    }
-
-    private static final long sp$OFFSET = 256;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * __u64 sp
-     * }
-     */
-    public static final long sp$offset() {
-        return sp$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * __u64 sp
-     * }
-     */
-    public static long sp(MemorySegment struct) {
-        return struct.get(sp$LAYOUT, sp$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * __u64 sp
-     * }
-     */
-    public static void sp(MemorySegment struct, long fieldValue) {
-        struct.set(sp$LAYOUT, sp$OFFSET, fieldValue);
-    }
-
-    private static final OfLong pc$LAYOUT = (OfLong)$LAYOUT.select(groupElement("pc"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * __u64 pc
-     * }
-     */
-    public static final OfLong pc$layout() {
-        return pc$LAYOUT;
-    }
-
-    private static final long pc$OFFSET = 264;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * __u64 pc
-     * }
-     */
-    public static final long pc$offset() {
-        return pc$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * __u64 pc
-     * }
-     */
-    public static long pc(MemorySegment struct) {
-        return struct.get(pc$LAYOUT, pc$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * __u64 pc
-     * }
-     */
-    public static void pc(MemorySegment struct, long fieldValue) {
-        struct.set(pc$LAYOUT, pc$OFFSET, fieldValue);
-    }
-
-    private static final OfLong pstate$LAYOUT = (OfLong)$LAYOUT.select(groupElement("pstate"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * __u64 pstate
-     * }
-     */
-    public static final OfLong pstate$layout() {
-        return pstate$LAYOUT;
-    }
-
-    private static final long pstate$OFFSET = 272;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * __u64 pstate
-     * }
-     */
-    public static final long pstate$offset() {
-        return pstate$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * __u64 pstate
-     * }
-     */
-    public static long pstate(MemorySegment struct) {
-        return struct.get(pstate$LAYOUT, pstate$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * __u64 pstate
-     * }
-     */
-    public static void pstate(MemorySegment struct, long fieldValue) {
-        struct.set(pstate$LAYOUT, pstate$OFFSET, fieldValue);
-    }
-
-    private static final SequenceLayout __reserved$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("__reserved"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * __u8 __reserved[4096]
-     * }
-     */
-    public static final SequenceLayout __reserved$layout() {
-        return __reserved$LAYOUT;
-    }
-
-    private static final long __reserved$OFFSET = 288;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * __u8 __reserved[4096]
-     * }
-     */
-    public static final long __reserved$offset() {
-        return __reserved$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * __u8 __reserved[4096]
-     * }
-     */
-    public static MemorySegment __reserved(MemorySegment struct) {
-        return struct.asSlice(__reserved$OFFSET, __reserved$LAYOUT.byteSize());
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * __u8 __reserved[4096]
-     * }
-     */
-    public static void __reserved(MemorySegment struct, MemorySegment fieldValue) {
-        MemorySegment.copy(fieldValue, 0L, struct, __reserved$OFFSET, __reserved$LAYOUT.byteSize());
-    }
-
-    private static long[] __reserved$DIMS = { 4096 };
-
-    /**
-     * Dimensions for array field:
-     * {@snippet lang=c :
-     * __u8 __reserved[4096]
-     * }
-     */
-    public static long[] __reserved$dimensions() {
-        return __reserved$DIMS;
-    }
-    private static final VarHandle __reserved$ELEM_HANDLE = __reserved$LAYOUT.varHandle(sequenceElement());
-
-    /**
-     * Indexed getter for field:
-     * {@snippet lang=c :
-     * __u8 __reserved[4096]
-     * }
-     */
-    public static byte __reserved(MemorySegment struct, long index0) {
-        return (byte)__reserved$ELEM_HANDLE.get(struct, 0L, index0);
-    }
-
-    /**
-     * Indexed setter for field:
-     * {@snippet lang=c :
-     * __u8 __reserved[4096]
-     * }
-     */
-    public static void __reserved(MemorySegment struct, long index0, byte fieldValue) {
-        __reserved$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+    public static void __reserved1(MemorySegment struct, long index0, long fieldValue) {
+        __reserved1$ELEM_HANDLE.set(struct, __reserved1$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -406,7 +1433,7 @@ public class sigcontext {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -414,7 +1441,7 @@ public class sigcontext {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

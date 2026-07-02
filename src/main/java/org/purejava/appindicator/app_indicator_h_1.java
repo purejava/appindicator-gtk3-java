@@ -2,21 +2,1769 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
-import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.foreign.AddressLayout;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.Linker;
+import java.lang.foreign.MemorySegment;
+import java.lang.invoke.MethodHandle;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
-
-public class app_indicator_h_1 extends app_indicator_h_2 {
+class app_indicator_h_1 extends app_indicator_h_2 {
 
     app_indicator_h_1() {
         // Should not be called directly
     }
+    /**
+     * {@snippet lang=c :
+     * typedef GtkFileChooserWidget *GtkFileChooserWidget_autoptr
+     * }
+     */
+    public static final AddressLayout GtkFileChooserWidget_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkFileChooserWidget_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkFileChooserWidget_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkFileChooserWidget_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkFileChooserWidget_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkFileChooserWidget_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkFileChooserWidget_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkFileFilter *GtkFileFilter_autoptr
+     * }
+     */
+    public static final AddressLayout GtkFileFilter_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkFileFilter_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkFileFilter_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkFileFilter_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkFileFilter_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkFileFilter_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkFileFilter_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkFixed *GtkFixed_autoptr
+     * }
+     */
+    public static final AddressLayout GtkFixed_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkFixed_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkFixed_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkFixed_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkFixed_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkFixed_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkFixed_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkFlowBox *GtkFlowBox_autoptr
+     * }
+     */
+    public static final AddressLayout GtkFlowBox_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkFlowBox_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkFlowBox_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkFlowBox_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkFlowBox_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkFlowBox_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkFlowBox_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkFlowBoxChild *GtkFlowBoxChild_autoptr
+     * }
+     */
+    public static final AddressLayout GtkFlowBoxChild_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkFlowBoxChild_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkFlowBoxChild_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkFlowBoxChild_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkFlowBoxChild_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkFlowBoxChild_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkFlowBoxChild_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkFontButton *GtkFontButton_autoptr
+     * }
+     */
+    public static final AddressLayout GtkFontButton_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkFontButton_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkFontButton_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkFontButton_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkFontButton_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkFontButton_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkFontButton_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkFontChooser *GtkFontChooser_autoptr
+     * }
+     */
+    public static final AddressLayout GtkFontChooser_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkFontChooser_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkFontChooser_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkFontChooser_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkFontChooser_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkFontChooser_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkFontChooser_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkFontChooserDialog *GtkFontChooserDialog_autoptr
+     * }
+     */
+    public static final AddressLayout GtkFontChooserDialog_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkFontChooserDialog_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkFontChooserDialog_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkFontChooserDialog_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkFontChooserDialog_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkFontChooserDialog_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkFontChooserDialog_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkFontChooserWidget *GtkFontChooserWidget_autoptr
+     * }
+     */
+    public static final AddressLayout GtkFontChooserWidget_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkFontChooserWidget_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkFontChooserWidget_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkFontChooserWidget_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkFontChooserWidget_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkFontChooserWidget_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkFontChooserWidget_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkFrame *GtkFrame_autoptr
+     * }
+     */
+    public static final AddressLayout GtkFrame_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkFrame_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkFrame_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkFrame_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkFrame_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkFrame_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkFrame_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkGLArea *GtkGLArea_autoptr
+     * }
+     */
+    public static final AddressLayout GtkGLArea_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkGLArea_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkGLArea_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkGLArea_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkGLArea_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkGLArea_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkGLArea_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkGesture *GtkGesture_autoptr
+     * }
+     */
+    public static final AddressLayout GtkGesture_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkGesture_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkGesture_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkGesture_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkGesture_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkGesture_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkGesture_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkGestureDrag *GtkGestureDrag_autoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureDrag_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkGestureDrag_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureDrag_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkGestureDrag_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureDrag_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkGestureDrag_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureDrag_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkGestureLongPress *GtkGestureLongPress_autoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureLongPress_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkGestureLongPress_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureLongPress_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkGestureLongPress_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureLongPress_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkGestureLongPress_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureLongPress_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkGestureMultiPress *GtkGestureMultiPress_autoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureMultiPress_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkGestureMultiPress_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureMultiPress_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkGestureMultiPress_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureMultiPress_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkGestureMultiPress_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureMultiPress_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkGesturePan *GtkGesturePan_autoptr
+     * }
+     */
+    public static final AddressLayout GtkGesturePan_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkGesturePan_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkGesturePan_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkGesturePan_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkGesturePan_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkGesturePan_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkGesturePan_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkGestureRotate *GtkGestureRotate_autoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureRotate_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkGestureRotate_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureRotate_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkGestureRotate_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureRotate_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkGestureRotate_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureRotate_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkGestureSingle *GtkGestureSingle_autoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureSingle_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkGestureSingle_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureSingle_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkGestureSingle_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureSingle_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkGestureSingle_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureSingle_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkGestureSwipe *GtkGestureSwipe_autoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureSwipe_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkGestureSwipe_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureSwipe_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkGestureSwipe_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureSwipe_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkGestureSwipe_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureSwipe_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkGestureZoom *GtkGestureZoom_autoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureZoom_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkGestureZoom_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureZoom_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkGestureZoom_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureZoom_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkGestureZoom_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkGestureZoom_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkGrid *GtkGrid_autoptr
+     * }
+     */
+    public static final AddressLayout GtkGrid_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkGrid_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkGrid_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkGrid_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkGrid_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkGrid_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkGrid_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkHeaderBar *GtkHeaderBar_autoptr
+     * }
+     */
+    public static final AddressLayout GtkHeaderBar_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkHeaderBar_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkHeaderBar_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkHeaderBar_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkHeaderBar_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkHeaderBar_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkHeaderBar_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkIMContext *GtkIMContext_autoptr
+     * }
+     */
+    public static final AddressLayout GtkIMContext_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkIMContext_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkIMContext_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkIMContext_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkIMContext_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkIMContext_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkIMContext_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkIMContextSimple *GtkIMContextSimple_autoptr
+     * }
+     */
+    public static final AddressLayout GtkIMContextSimple_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkIMContextSimple_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkIMContextSimple_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkIMContextSimple_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkIMContextSimple_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkIMContextSimple_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkIMContextSimple_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkIMMulticontext *GtkIMMulticontext_autoptr
+     * }
+     */
+    public static final AddressLayout GtkIMMulticontext_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkIMMulticontext_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkIMMulticontext_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkIMMulticontext_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkIMMulticontext_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkIMMulticontext_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkIMMulticontext_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkIconInfo *GtkIconInfo_autoptr
+     * }
+     */
+    public static final AddressLayout GtkIconInfo_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkIconInfo_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkIconInfo_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkIconInfo_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkIconInfo_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkIconInfo_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkIconInfo_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkIconTheme *GtkIconTheme_autoptr
+     * }
+     */
+    public static final AddressLayout GtkIconTheme_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkIconTheme_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkIconTheme_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkIconTheme_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkIconTheme_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkIconTheme_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkIconTheme_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkIconView *GtkIconView_autoptr
+     * }
+     */
+    public static final AddressLayout GtkIconView_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkIconView_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkIconView_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkIconView_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkIconView_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkIconView_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkIconView_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkImage *GtkImage_autoptr
+     * }
+     */
+    public static final AddressLayout GtkImage_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkImage_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkImage_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkImage_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkImage_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkImage_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkImage_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkInfoBar *GtkInfoBar_autoptr
+     * }
+     */
+    public static final AddressLayout GtkInfoBar_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkInfoBar_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkInfoBar_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkInfoBar_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkInfoBar_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkInfoBar_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkInfoBar_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkInvisible *GtkInvisible_autoptr
+     * }
+     */
+    public static final AddressLayout GtkInvisible_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkInvisible_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkInvisible_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkInvisible_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkInvisible_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkInvisible_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkInvisible_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkLayout *GtkLayout_autoptr
+     * }
+     */
+    public static final AddressLayout GtkLayout_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkLayout_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkLayout_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkLayout_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkLayout_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkLayout_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkLayout_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkLevelBar *GtkLevelBar_autoptr
+     * }
+     */
+    public static final AddressLayout GtkLevelBar_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkLevelBar_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkLevelBar_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkLevelBar_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkLevelBar_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkLevelBar_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkLevelBar_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkLinkButton *GtkLinkButton_autoptr
+     * }
+     */
+    public static final AddressLayout GtkLinkButton_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkLinkButton_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkLinkButton_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkLinkButton_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkLinkButton_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkLinkButton_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkLinkButton_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkListStore *GtkListStore_autoptr
+     * }
+     */
+    public static final AddressLayout GtkListStore_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkListStore_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkListStore_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkListStore_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkListStore_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkListStore_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkListStore_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkLockButton *GtkLockButton_autoptr
+     * }
+     */
+    public static final AddressLayout GtkLockButton_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkLockButton_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkLockButton_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkLockButton_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkLockButton_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkLockButton_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkLockButton_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkMenuBar *GtkMenuBar_autoptr
+     * }
+     */
+    public static final AddressLayout GtkMenuBar_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkMenuBar_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkMenuBar_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkMenuBar_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkMenuBar_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkMenuBar_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkMenuBar_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkMenuButton *GtkMenuButton_autoptr
+     * }
+     */
+    public static final AddressLayout GtkMenuButton_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkMenuButton_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkMenuButton_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkMenuButton_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkMenuButton_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkMenuButton_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkMenuButton_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkMenuItem *GtkMenuItem_autoptr
+     * }
+     */
+    public static final AddressLayout GtkMenuItem_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkMenuItem_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkMenuItem_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkMenuItem_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkMenuItem_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkMenuItem_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkMenuItem_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkMenuToolButton *GtkMenuToolButton_autoptr
+     * }
+     */
+    public static final AddressLayout GtkMenuToolButton_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkMenuToolButton_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkMenuToolButton_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkMenuToolButton_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkMenuToolButton_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkMenuToolButton_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkMenuToolButton_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkMessageDialog *GtkMessageDialog_autoptr
+     * }
+     */
+    public static final AddressLayout GtkMessageDialog_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkMessageDialog_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkMessageDialog_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkMessageDialog_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkMessageDialog_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkMessageDialog_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkMessageDialog_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkMountOperation *GtkMountOperation_autoptr
+     * }
+     */
+    public static final AddressLayout GtkMountOperation_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkMountOperation_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkMountOperation_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkMountOperation_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkMountOperation_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkMountOperation_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkMountOperation_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkNotebook *GtkNotebook_autoptr
+     * }
+     */
+    public static final AddressLayout GtkNotebook_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkNotebook_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkNotebook_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkNotebook_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkNotebook_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkNotebook_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkNotebook_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkOffscreenWindow *GtkOffscreenWindow_autoptr
+     * }
+     */
+    public static final AddressLayout GtkOffscreenWindow_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkOffscreenWindow_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkOffscreenWindow_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkOffscreenWindow_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkOffscreenWindow_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkOffscreenWindow_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkOffscreenWindow_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkOrientable *GtkOrientable_autoptr
+     * }
+     */
+    public static final AddressLayout GtkOrientable_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkOrientable_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkOrientable_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkOrientable_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkOrientable_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkOrientable_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkOrientable_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkOverlay *GtkOverlay_autoptr
+     * }
+     */
+    public static final AddressLayout GtkOverlay_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkOverlay_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkOverlay_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkOverlay_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkOverlay_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkOverlay_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkOverlay_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkPageSetup *GtkPageSetup_autoptr
+     * }
+     */
+    public static final AddressLayout GtkPageSetup_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkPageSetup_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkPageSetup_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkPageSetup_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkPageSetup_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkPageSetup_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkPageSetup_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkPaned *GtkPaned_autoptr
+     * }
+     */
+    public static final AddressLayout GtkPaned_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkPaned_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkPaned_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkPaned_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkPaned_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkPaned_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkPaned_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkPlacesSidebar *GtkPlacesSidebar_autoptr
+     * }
+     */
+    public static final AddressLayout GtkPlacesSidebar_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkPlacesSidebar_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkPlacesSidebar_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkPlacesSidebar_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkPlacesSidebar_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkPlacesSidebar_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkPlacesSidebar_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkPopover *GtkPopover_autoptr
+     * }
+     */
+    public static final AddressLayout GtkPopover_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkPopover_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkPopover_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkPopover_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkPopover_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkPopover_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkPopover_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkPopoverMenu *GtkPopoverMenu_autoptr
+     * }
+     */
+    public static final AddressLayout GtkPopoverMenu_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkPopoverMenu_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkPopoverMenu_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkPopoverMenu_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkPopoverMenu_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkPopoverMenu_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkPopoverMenu_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkPrintContext *GtkPrintContext_autoptr
+     * }
+     */
+    public static final AddressLayout GtkPrintContext_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkPrintContext_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkPrintContext_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkPrintContext_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkPrintContext_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkPrintContext_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkPrintContext_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkPrintOperation *GtkPrintOperation_autoptr
+     * }
+     */
+    public static final AddressLayout GtkPrintOperation_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkPrintOperation_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkPrintOperation_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkPrintOperation_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkPrintOperation_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkPrintOperation_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkPrintOperation_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkPrintOperationPreview *GtkPrintOperationPreview_autoptr
+     * }
+     */
+    public static final AddressLayout GtkPrintOperationPreview_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkPrintOperationPreview_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkPrintOperationPreview_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkPrintOperationPreview_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkPrintOperationPreview_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkPrintOperationPreview_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkPrintOperationPreview_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkPrintSettings *GtkPrintSettings_autoptr
+     * }
+     */
+    public static final AddressLayout GtkPrintSettings_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkPrintSettings_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkPrintSettings_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkPrintSettings_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkPrintSettings_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkPrintSettings_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkPrintSettings_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkProgressBar *GtkProgressBar_autoptr
+     * }
+     */
+    public static final AddressLayout GtkProgressBar_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkProgressBar_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkProgressBar_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkProgressBar_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkProgressBar_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkProgressBar_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkProgressBar_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkRadioButton *GtkRadioButton_autoptr
+     * }
+     */
+    public static final AddressLayout GtkRadioButton_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkRadioButton_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkRadioButton_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkRadioButton_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkRadioButton_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkRadioButton_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkRadioButton_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkRadioMenuItem *GtkRadioMenuItem_autoptr
+     * }
+     */
+    public static final AddressLayout GtkRadioMenuItem_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkRadioMenuItem_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkRadioMenuItem_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkRadioMenuItem_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkRadioMenuItem_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkRadioMenuItem_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkRadioMenuItem_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkRadioToolButton *GtkRadioToolButton_autoptr
+     * }
+     */
+    public static final AddressLayout GtkRadioToolButton_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkRadioToolButton_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkRadioToolButton_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkRadioToolButton_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkRadioToolButton_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkRadioToolButton_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkRadioToolButton_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkRange *GtkRange_autoptr
+     * }
+     */
+    public static final AddressLayout GtkRange_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkRange_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkRange_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkRange_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkRange_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkRange_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkRange_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkRcStyle *GtkRcStyle_autoptr
+     * }
+     */
+    public static final AddressLayout GtkRcStyle_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkRcStyle_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkRcStyle_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkRcStyle_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkRcStyle_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkRcStyle_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkRcStyle_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkRecentChooser *GtkRecentChooser_autoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentChooser_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkRecentChooser_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentChooser_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkRecentChooser_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentChooser_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkRecentChooser_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentChooser_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkRecentChooserDialog *GtkRecentChooserDialog_autoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserDialog_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkRecentChooserDialog_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserDialog_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkRecentChooserDialog_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserDialog_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkRecentChooserDialog_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserDialog_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkRecentChooserMenu *GtkRecentChooserMenu_autoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserMenu_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkRecentChooserMenu_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserMenu_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkRecentChooserMenu_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserMenu_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkRecentChooserMenu_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserMenu_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkRecentChooserWidget *GtkRecentChooserWidget_autoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserWidget_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkRecentChooserWidget_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserWidget_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkRecentChooserWidget_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserWidget_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkRecentChooserWidget_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserWidget_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkRecentFilter *GtkRecentFilter_autoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentFilter_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkRecentFilter_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentFilter_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkRecentFilter_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentFilter_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkRecentFilter_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentFilter_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkRecentManager *GtkRecentManager_autoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentManager_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkRecentManager_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentManager_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkRecentManager_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentManager_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkRecentManager_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkRecentManager_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkRevealer *GtkRevealer_autoptr
+     * }
+     */
+    public static final AddressLayout GtkRevealer_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkRevealer_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkRevealer_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkRevealer_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkRevealer_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkRevealer_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkRevealer_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkScale *GtkScale_autoptr
+     * }
+     */
+    public static final AddressLayout GtkScale_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkScale_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkScale_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkScale_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkScale_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkScale_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkScale_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkScaleButton *GtkScaleButton_autoptr
+     * }
+     */
+    public static final AddressLayout GtkScaleButton_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkScaleButton_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkScaleButton_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkScaleButton_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkScaleButton_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkScaleButton_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkScaleButton_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkScrollable *GtkScrollable_autoptr
+     * }
+     */
+    public static final AddressLayout GtkScrollable_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkScrollable_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkScrollable_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkScrollable_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkScrollable_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkScrollable_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkScrollable_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkScrollbar *GtkScrollbar_autoptr
+     * }
+     */
+    public static final AddressLayout GtkScrollbar_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkScrollbar_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkScrollbar_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkScrollbar_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkScrollbar_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkScrollbar_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkScrollbar_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkScrolledWindow *GtkScrolledWindow_autoptr
+     * }
+     */
+    public static final AddressLayout GtkScrolledWindow_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkScrolledWindow_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkScrolledWindow_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkScrolledWindow_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkScrolledWindow_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkScrolledWindow_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkScrolledWindow_queueautoptr = app_indicator_h.C_POINTER;
     /**
      * {@snippet lang=c :
      * typedef GtkSearchBar *GtkSearchBar_autoptr
@@ -1414,9 +3162,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1438,6 +3186,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_get_type$handle() {
         return app_indicator_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * GType app_indicator_get_type()
+     * }
+     */
+    public static MemorySegment app_indicator_get_type$address() {
+        return app_indicator_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * GType app_indicator_get_type()
@@ -1450,6 +3209,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1463,9 +3224,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_new"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_new");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1487,6 +3248,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_new$handle() {
         return app_indicator_new.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * AppIndicator *app_indicator_new(const gchar *id, const gchar *icon_name, AppIndicatorCategory category)
+     * }
+     */
+    public static MemorySegment app_indicator_new$address() {
+        return app_indicator_new.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * AppIndicator *app_indicator_new(const gchar *id, const gchar *icon_name, AppIndicatorCategory category)
@@ -1499,6 +3271,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_new", id, icon_name, category);
             }
             return (MemorySegment)mh$.invokeExact(id, icon_name, category);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1513,9 +3287,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_new_with_path"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_new_with_path");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1537,6 +3311,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_new_with_path$handle() {
         return app_indicator_new_with_path.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * AppIndicator *app_indicator_new_with_path(const gchar *id, const gchar *icon_name, AppIndicatorCategory category, const gchar *icon_theme_path)
+     * }
+     */
+    public static MemorySegment app_indicator_new_with_path$address() {
+        return app_indicator_new_with_path.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * AppIndicator *app_indicator_new_with_path(const gchar *id, const gchar *icon_name, AppIndicatorCategory category, const gchar *icon_theme_path)
@@ -1549,6 +3334,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_new_with_path", id, icon_name, category, icon_theme_path);
             }
             return (MemorySegment)mh$.invokeExact(id, icon_name, category, icon_theme_path);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1560,9 +3347,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_set_status"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_set_status");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1584,6 +3371,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_set_status$handle() {
         return app_indicator_set_status.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * void app_indicator_set_status(AppIndicator *self, AppIndicatorStatus status)
+     * }
+     */
+    public static MemorySegment app_indicator_set_status$address() {
+        return app_indicator_set_status.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * void app_indicator_set_status(AppIndicator *self, AppIndicatorStatus status)
@@ -1596,6 +3394,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_set_status", self, status);
             }
             mh$.invokeExact(self, status);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1607,9 +3407,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_set_attention_icon"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_set_attention_icon");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1631,6 +3431,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_set_attention_icon$handle() {
         return app_indicator_set_attention_icon.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * void app_indicator_set_attention_icon(AppIndicator *self, const gchar *icon_name)
+     * }
+     */
+    public static MemorySegment app_indicator_set_attention_icon$address() {
+        return app_indicator_set_attention_icon.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * void app_indicator_set_attention_icon(AppIndicator *self, const gchar *icon_name)
@@ -1643,6 +3454,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_set_attention_icon", self, icon_name);
             }
             mh$.invokeExact(self, icon_name);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1655,9 +3468,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_set_attention_icon_full"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_set_attention_icon_full");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1679,6 +3492,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_set_attention_icon_full$handle() {
         return app_indicator_set_attention_icon_full.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * void app_indicator_set_attention_icon_full(AppIndicator *self, const gchar *icon_name, const gchar *icon_desc)
+     * }
+     */
+    public static MemorySegment app_indicator_set_attention_icon_full$address() {
+        return app_indicator_set_attention_icon_full.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * void app_indicator_set_attention_icon_full(AppIndicator *self, const gchar *icon_name, const gchar *icon_desc)
@@ -1691,6 +3515,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_set_attention_icon_full", self, icon_name, icon_desc);
             }
             mh$.invokeExact(self, icon_name, icon_desc);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1702,9 +3528,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_set_menu"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_set_menu");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1726,6 +3552,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_set_menu$handle() {
         return app_indicator_set_menu.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * void app_indicator_set_menu(AppIndicator *self, GtkMenu *menu)
+     * }
+     */
+    public static MemorySegment app_indicator_set_menu$address() {
+        return app_indicator_set_menu.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * void app_indicator_set_menu(AppIndicator *self, GtkMenu *menu)
@@ -1738,6 +3575,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_set_menu", self, menu);
             }
             mh$.invokeExact(self, menu);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1749,9 +3588,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_set_icon"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_set_icon");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1773,6 +3612,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_set_icon$handle() {
         return app_indicator_set_icon.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * void app_indicator_set_icon(AppIndicator *self, const gchar *icon_name)
+     * }
+     */
+    public static MemorySegment app_indicator_set_icon$address() {
+        return app_indicator_set_icon.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * void app_indicator_set_icon(AppIndicator *self, const gchar *icon_name)
@@ -1785,6 +3635,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_set_icon", self, icon_name);
             }
             mh$.invokeExact(self, icon_name);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1797,9 +3649,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_set_icon_full"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_set_icon_full");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1821,6 +3673,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_set_icon_full$handle() {
         return app_indicator_set_icon_full.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * void app_indicator_set_icon_full(AppIndicator *self, const gchar *icon_name, const gchar *icon_desc)
+     * }
+     */
+    public static MemorySegment app_indicator_set_icon_full$address() {
+        return app_indicator_set_icon_full.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * void app_indicator_set_icon_full(AppIndicator *self, const gchar *icon_name, const gchar *icon_desc)
@@ -1833,6 +3696,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_set_icon_full", self, icon_name, icon_desc);
             }
             mh$.invokeExact(self, icon_name, icon_desc);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1845,9 +3710,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_set_label"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_set_label");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1869,6 +3734,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_set_label$handle() {
         return app_indicator_set_label.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * void app_indicator_set_label(AppIndicator *self, const gchar *label, const gchar *guide)
+     * }
+     */
+    public static MemorySegment app_indicator_set_label$address() {
+        return app_indicator_set_label.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * void app_indicator_set_label(AppIndicator *self, const gchar *label, const gchar *guide)
@@ -1881,6 +3757,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_set_label", self, label, guide);
             }
             mh$.invokeExact(self, label, guide);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1892,9 +3770,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_set_icon_theme_path"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_set_icon_theme_path");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1916,6 +3794,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_set_icon_theme_path$handle() {
         return app_indicator_set_icon_theme_path.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * void app_indicator_set_icon_theme_path(AppIndicator *self, const gchar *icon_theme_path)
+     * }
+     */
+    public static MemorySegment app_indicator_set_icon_theme_path$address() {
+        return app_indicator_set_icon_theme_path.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * void app_indicator_set_icon_theme_path(AppIndicator *self, const gchar *icon_theme_path)
@@ -1928,6 +3817,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_set_icon_theme_path", self, icon_theme_path);
             }
             mh$.invokeExact(self, icon_theme_path);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1939,9 +3830,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_set_ordering_index"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_set_ordering_index");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1963,6 +3854,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_set_ordering_index$handle() {
         return app_indicator_set_ordering_index.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * void app_indicator_set_ordering_index(AppIndicator *self, guint32 ordering_index)
+     * }
+     */
+    public static MemorySegment app_indicator_set_ordering_index$address() {
+        return app_indicator_set_ordering_index.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * void app_indicator_set_ordering_index(AppIndicator *self, guint32 ordering_index)
@@ -1975,6 +3877,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_set_ordering_index", self, ordering_index);
             }
             mh$.invokeExact(self, ordering_index);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1986,9 +3890,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_set_secondary_activate_target"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_set_secondary_activate_target");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2010,6 +3914,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_set_secondary_activate_target$handle() {
         return app_indicator_set_secondary_activate_target.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * void app_indicator_set_secondary_activate_target(AppIndicator *self, GtkWidget *menuitem)
+     * }
+     */
+    public static MemorySegment app_indicator_set_secondary_activate_target$address() {
+        return app_indicator_set_secondary_activate_target.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * void app_indicator_set_secondary_activate_target(AppIndicator *self, GtkWidget *menuitem)
@@ -2022,6 +3937,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_set_secondary_activate_target", self, menuitem);
             }
             mh$.invokeExact(self, menuitem);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2033,9 +3950,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_set_title"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_set_title");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2057,6 +3974,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_set_title$handle() {
         return app_indicator_set_title.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * void app_indicator_set_title(AppIndicator *self, const gchar *title)
+     * }
+     */
+    public static MemorySegment app_indicator_set_title$address() {
+        return app_indicator_set_title.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * void app_indicator_set_title(AppIndicator *self, const gchar *title)
@@ -2069,6 +3997,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_set_title", self, title);
             }
             mh$.invokeExact(self, title);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2080,9 +4010,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_id"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_id");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2104,6 +4034,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_get_id$handle() {
         return app_indicator_get_id.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_id(AppIndicator *self)
+     * }
+     */
+    public static MemorySegment app_indicator_get_id$address() {
+        return app_indicator_get_id.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * const gchar *app_indicator_get_id(AppIndicator *self)
@@ -2116,6 +4057,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_get_id", self);
             }
             return (MemorySegment)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2127,9 +4070,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_category"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_category");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2151,6 +4094,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_get_category$handle() {
         return app_indicator_get_category.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * AppIndicatorCategory app_indicator_get_category(AppIndicator *self)
+     * }
+     */
+    public static MemorySegment app_indicator_get_category$address() {
+        return app_indicator_get_category.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * AppIndicatorCategory app_indicator_get_category(AppIndicator *self)
@@ -2163,6 +4117,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_get_category", self);
             }
             return (int)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2174,9 +4130,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_status"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_status");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2198,6 +4154,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_get_status$handle() {
         return app_indicator_get_status.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * AppIndicatorStatus app_indicator_get_status(AppIndicator *self)
+     * }
+     */
+    public static MemorySegment app_indicator_get_status$address() {
+        return app_indicator_get_status.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * AppIndicatorStatus app_indicator_get_status(AppIndicator *self)
@@ -2210,6 +4177,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_get_status", self);
             }
             return (int)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2221,9 +4190,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_icon"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_icon");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2245,6 +4214,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_get_icon$handle() {
         return app_indicator_get_icon.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_icon(AppIndicator *self)
+     * }
+     */
+    public static MemorySegment app_indicator_get_icon$address() {
+        return app_indicator_get_icon.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * const gchar *app_indicator_get_icon(AppIndicator *self)
@@ -2257,6 +4237,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_get_icon", self);
             }
             return (MemorySegment)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2268,9 +4250,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_icon_desc"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_icon_desc");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2292,6 +4274,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_get_icon_desc$handle() {
         return app_indicator_get_icon_desc.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_icon_desc(AppIndicator *self)
+     * }
+     */
+    public static MemorySegment app_indicator_get_icon_desc$address() {
+        return app_indicator_get_icon_desc.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * const gchar *app_indicator_get_icon_desc(AppIndicator *self)
@@ -2304,6 +4297,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_get_icon_desc", self);
             }
             return (MemorySegment)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2315,9 +4310,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_icon_theme_path"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_icon_theme_path");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2339,6 +4334,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_get_icon_theme_path$handle() {
         return app_indicator_get_icon_theme_path.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_icon_theme_path(AppIndicator *self)
+     * }
+     */
+    public static MemorySegment app_indicator_get_icon_theme_path$address() {
+        return app_indicator_get_icon_theme_path.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * const gchar *app_indicator_get_icon_theme_path(AppIndicator *self)
@@ -2351,6 +4357,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_get_icon_theme_path", self);
             }
             return (MemorySegment)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2362,9 +4370,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_attention_icon"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_attention_icon");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2386,6 +4394,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_get_attention_icon$handle() {
         return app_indicator_get_attention_icon.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_attention_icon(AppIndicator *self)
+     * }
+     */
+    public static MemorySegment app_indicator_get_attention_icon$address() {
+        return app_indicator_get_attention_icon.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * const gchar *app_indicator_get_attention_icon(AppIndicator *self)
@@ -2398,6 +4417,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_get_attention_icon", self);
             }
             return (MemorySegment)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2409,9 +4430,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_attention_icon_desc"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_attention_icon_desc");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2433,6 +4454,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_get_attention_icon_desc$handle() {
         return app_indicator_get_attention_icon_desc.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_attention_icon_desc(AppIndicator *self)
+     * }
+     */
+    public static MemorySegment app_indicator_get_attention_icon_desc$address() {
+        return app_indicator_get_attention_icon_desc.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * const gchar *app_indicator_get_attention_icon_desc(AppIndicator *self)
@@ -2445,6 +4477,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_get_attention_icon_desc", self);
             }
             return (MemorySegment)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2456,9 +4490,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_title"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_title");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2480,6 +4514,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_get_title$handle() {
         return app_indicator_get_title.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_title(AppIndicator *self)
+     * }
+     */
+    public static MemorySegment app_indicator_get_title$address() {
+        return app_indicator_get_title.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * const gchar *app_indicator_get_title(AppIndicator *self)
@@ -2492,6 +4537,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_get_title", self);
             }
             return (MemorySegment)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2503,9 +4550,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_menu"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_menu");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2527,6 +4574,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_get_menu$handle() {
         return app_indicator_get_menu.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * GtkMenu *app_indicator_get_menu(AppIndicator *self)
+     * }
+     */
+    public static MemorySegment app_indicator_get_menu$address() {
+        return app_indicator_get_menu.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * GtkMenu *app_indicator_get_menu(AppIndicator *self)
@@ -2539,6 +4597,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_get_menu", self);
             }
             return (MemorySegment)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2550,9 +4610,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_label"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_label");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2574,6 +4634,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_get_label$handle() {
         return app_indicator_get_label.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_label(AppIndicator *self)
+     * }
+     */
+    public static MemorySegment app_indicator_get_label$address() {
+        return app_indicator_get_label.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * const gchar *app_indicator_get_label(AppIndicator *self)
@@ -2586,6 +4657,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_get_label", self);
             }
             return (MemorySegment)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2597,9 +4670,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_label_guide"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_label_guide");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2621,6 +4694,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_get_label_guide$handle() {
         return app_indicator_get_label_guide.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_label_guide(AppIndicator *self)
+     * }
+     */
+    public static MemorySegment app_indicator_get_label_guide$address() {
+        return app_indicator_get_label_guide.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * const gchar *app_indicator_get_label_guide(AppIndicator *self)
@@ -2633,6 +4717,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_get_label_guide", self);
             }
             return (MemorySegment)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2644,9 +4730,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_ordering_index"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_ordering_index");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2668,6 +4754,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_get_ordering_index$handle() {
         return app_indicator_get_ordering_index.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * guint32 app_indicator_get_ordering_index(AppIndicator *self)
+     * }
+     */
+    public static MemorySegment app_indicator_get_ordering_index$address() {
+        return app_indicator_get_ordering_index.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * guint32 app_indicator_get_ordering_index(AppIndicator *self)
@@ -2680,6 +4777,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_get_ordering_index", self);
             }
             return (int)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2691,9 +4790,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_secondary_activate_target"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_secondary_activate_target");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2715,6 +4814,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_get_secondary_activate_target$handle() {
         return app_indicator_get_secondary_activate_target.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * GtkWidget *app_indicator_get_secondary_activate_target(AppIndicator *self)
+     * }
+     */
+    public static MemorySegment app_indicator_get_secondary_activate_target$address() {
+        return app_indicator_get_secondary_activate_target.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * GtkWidget *app_indicator_get_secondary_activate_target(AppIndicator *self)
@@ -2727,6 +4837,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_get_secondary_activate_target", self);
             }
             return (MemorySegment)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2739,9 +4851,9 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_build_menu_from_desktop"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_build_menu_from_desktop");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2763,6 +4875,17 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static MethodHandle app_indicator_build_menu_from_desktop$handle() {
         return app_indicator_build_menu_from_desktop.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * void app_indicator_build_menu_from_desktop(AppIndicator *self, const gchar *desktop_file, const gchar *desktop_profile)
+     * }
+     */
+    public static MemorySegment app_indicator_build_menu_from_desktop$address() {
+        return app_indicator_build_menu_from_desktop.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * void app_indicator_build_menu_from_desktop(AppIndicator *self, const gchar *desktop_file, const gchar *desktop_profile)
@@ -2775,6 +4898,8 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 traceDowncall("app_indicator_build_menu_from_desktop", self, desktop_file, desktop_profile);
             }
             mh$.invokeExact(self, desktop_file, desktop_profile);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2859,13 +4984,13 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     }
     /**
      * {@snippet lang=c :
-     * #define G_STRLOC "/tmp/jextract$11643820498856352186.h:49"
+     * #define G_STRLOC "jextract$macro.h:50"
      * }
      */
     public static MemorySegment G_STRLOC() {
         class Holder {
             static final MemorySegment G_STRLOC
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("/tmp/jextract$11643820498856352186.h:49");
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("jextract$macro.h:50");
         }
         return Holder.G_STRLOC;
     }
@@ -2887,14 +5012,23 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static int TRUE() {
         return TRUE;
     }
-    private static final long _POSIX_C_SOURCE = 200809L;
+    private static final long _POSIX_C_SOURCE = 202405L;
     /**
      * {@snippet lang=c :
-     * #define _POSIX_C_SOURCE 200809
+     * #define _POSIX_C_SOURCE 202405
      * }
      */
     public static long _POSIX_C_SOURCE() {
         return _POSIX_C_SOURCE;
+    }
+    private static final int __TIMESIZE = (int)64L;
+    /**
+     * {@snippet lang=c :
+     * #define __TIMESIZE 64
+     * }
+     */
+    public static int __TIMESIZE() {
+        return __TIMESIZE;
     }
     private static final long __STDC_IEC_60559_BFP__ = 201404L;
     /**
@@ -3157,10 +5291,19 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static int CHAR_BIT() {
         return CHAR_BIT;
     }
-    private static final int CHAR_MAX = (int)255L;
+    private static final int CHAR_MIN = (int)-128L;
     /**
      * {@snippet lang=c :
-     * #define CHAR_MAX 255
+     * #define CHAR_MIN -128
+     * }
+     */
+    public static int CHAR_MIN() {
+        return CHAR_MIN;
+    }
+    private static final int CHAR_MAX = (int)127L;
+    /**
+     * {@snippet lang=c :
+     * #define CHAR_MAX 127
      * }
      */
     public static int CHAR_MAX() {
@@ -3202,19 +5345,19 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static int DBL_MANT_DIG() {
         return DBL_MANT_DIG;
     }
-    private static final int LDBL_MANT_DIG = (int)113L;
+    private static final int LDBL_MANT_DIG = (int)64L;
     /**
      * {@snippet lang=c :
-     * #define LDBL_MANT_DIG 113
+     * #define LDBL_MANT_DIG 64
      * }
      */
     public static int LDBL_MANT_DIG() {
         return LDBL_MANT_DIG;
     }
-    private static final int DECIMAL_DIG = (int)36L;
+    private static final int DECIMAL_DIG = (int)21L;
     /**
      * {@snippet lang=c :
-     * #define DECIMAL_DIG 36
+     * #define DECIMAL_DIG 21
      * }
      */
     public static int DECIMAL_DIG() {
@@ -3238,10 +5381,10 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static int DBL_DIG() {
         return DBL_DIG;
     }
-    private static final int LDBL_DIG = (int)33L;
+    private static final int LDBL_DIG = (int)18L;
     /**
      * {@snippet lang=c :
-     * #define LDBL_DIG 33
+     * #define LDBL_DIG 18
      * }
      */
     public static int LDBL_DIG() {
@@ -3445,10 +5588,10 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static int DBL_DECIMAL_DIG() {
         return DBL_DECIMAL_DIG;
     }
-    private static final int LDBL_DECIMAL_DIG = (int)36L;
+    private static final int LDBL_DECIMAL_DIG = (int)21L;
     /**
      * {@snippet lang=c :
-     * #define LDBL_DECIMAL_DIG 36
+     * #define LDBL_DECIMAL_DIG 21
      * }
      */
     public static int LDBL_DECIMAL_DIG() {
@@ -4297,50 +6440,86 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static int GLIB_VERSION_2_78() {
         return GLIB_VERSION_2_78;
     }
-    private static final int GLIB_VERSION_CUR_STABLE = (int)151040L;
+    private static final int GLIB_VERSION_2_80 = (int)151552L;
     /**
      * {@snippet lang=c :
-     * #define GLIB_VERSION_CUR_STABLE 151040
+     * #define GLIB_VERSION_2_80 151552
+     * }
+     */
+    public static int GLIB_VERSION_2_80() {
+        return GLIB_VERSION_2_80;
+    }
+    private static final int GLIB_VERSION_2_82 = (int)152064L;
+    /**
+     * {@snippet lang=c :
+     * #define GLIB_VERSION_2_82 152064
+     * }
+     */
+    public static int GLIB_VERSION_2_82() {
+        return GLIB_VERSION_2_82;
+    }
+    private static final int GLIB_VERSION_2_84 = (int)152576L;
+    /**
+     * {@snippet lang=c :
+     * #define GLIB_VERSION_2_84 152576
+     * }
+     */
+    public static int GLIB_VERSION_2_84() {
+        return GLIB_VERSION_2_84;
+    }
+    private static final int GLIB_VERSION_2_86 = (int)153088L;
+    /**
+     * {@snippet lang=c :
+     * #define GLIB_VERSION_2_86 153088
+     * }
+     */
+    public static int GLIB_VERSION_2_86() {
+        return GLIB_VERSION_2_86;
+    }
+    private static final int GLIB_VERSION_2_88 = (int)153600L;
+    /**
+     * {@snippet lang=c :
+     * #define GLIB_VERSION_2_88 153600
+     * }
+     */
+    public static int GLIB_VERSION_2_88() {
+        return GLIB_VERSION_2_88;
+    }
+    private static final int GLIB_VERSION_CUR_STABLE = (int)153600L;
+    /**
+     * {@snippet lang=c :
+     * #define GLIB_VERSION_CUR_STABLE 153600
      * }
      */
     public static int GLIB_VERSION_CUR_STABLE() {
         return GLIB_VERSION_CUR_STABLE;
     }
-    private static final int GLIB_VERSION_PREV_STABLE = (int)150528L;
+    private static final int GLIB_VERSION_PREV_STABLE = (int)153088L;
     /**
      * {@snippet lang=c :
-     * #define GLIB_VERSION_PREV_STABLE 150528
+     * #define GLIB_VERSION_PREV_STABLE 153088
      * }
      */
     public static int GLIB_VERSION_PREV_STABLE() {
         return GLIB_VERSION_PREV_STABLE;
     }
-    private static final int GLIB_VERSION_MIN_REQUIRED = (int)151040L;
+    private static final int GLIB_VERSION_MIN_REQUIRED = (int)153600L;
     /**
      * {@snippet lang=c :
-     * #define GLIB_VERSION_MIN_REQUIRED 151040
+     * #define GLIB_VERSION_MIN_REQUIRED 153600
      * }
      */
     public static int GLIB_VERSION_MIN_REQUIRED() {
         return GLIB_VERSION_MIN_REQUIRED;
     }
-    private static final int GLIB_VERSION_MAX_ALLOWED = (int)151040L;
+    private static final int GLIB_VERSION_MAX_ALLOWED = (int)153600L;
     /**
      * {@snippet lang=c :
-     * #define GLIB_VERSION_MAX_ALLOWED 151040
+     * #define GLIB_VERSION_MAX_ALLOWED 153600
      * }
      */
     public static int GLIB_VERSION_MAX_ALLOWED() {
         return GLIB_VERSION_MAX_ALLOWED;
-    }
-    private static final int __KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64 = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * #define __KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64 1
-     * }
-     */
-    public static int __KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64() {
-        return __KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64;
     }
     private static final long CLOCKS_PER_SEC = 1000000L;
     /**
@@ -4708,24 +6887,6 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static int __WCLONE() {
         return __WCLONE;
     }
-    private static final int __HAVE_FLOAT64X = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * #define __HAVE_FLOAT64X 1
-     * }
-     */
-    public static int __HAVE_FLOAT64X() {
-        return __HAVE_FLOAT64X;
-    }
-    private static final int __HAVE_FLOAT64X_LONG_DOUBLE = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * #define __HAVE_FLOAT64X_LONG_DOUBLE 1
-     * }
-     */
-    public static int __HAVE_FLOAT64X_LONG_DOUBLE() {
-        return __HAVE_FLOAT64X_LONG_DOUBLE;
-    }
     private static final int __HAVE_DISTINCT_FLOAT16 = (int)0L;
     /**
      * {@snippet lang=c :
@@ -4744,10 +6905,10 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static int __HAVE_DISTINCT_FLOAT128X() {
         return __HAVE_DISTINCT_FLOAT128X;
     }
-    private static final int __HAVE_FLOAT128_UNLIKE_LDBL = (int)0L;
+    private static final int __HAVE_FLOAT128_UNLIKE_LDBL = (int)1L;
     /**
      * {@snippet lang=c :
-     * #define __HAVE_FLOAT128_UNLIKE_LDBL 0
+     * #define __HAVE_FLOAT128_UNLIKE_LDBL 1
      * }
      */
     public static int __HAVE_FLOAT128_UNLIKE_LDBL() {
@@ -4951,149 +7112,41 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static int SA_STACK() {
         return SA_STACK;
     }
-    private static final int __SVE_VL_MIN = (int)16L;
+    private static final int FP_XSTATE_MAGIC1 = (int)1179670611L;
     /**
      * {@snippet lang=c :
-     * #define __SVE_VL_MIN 16
+     * #define FP_XSTATE_MAGIC1 1179670611
      * }
      */
-    public static int __SVE_VL_MIN() {
-        return __SVE_VL_MIN;
+    public static int FP_XSTATE_MAGIC1() {
+        return FP_XSTATE_MAGIC1;
     }
-    private static final int __SVE_VL_MAX = (int)8192L;
+    private static final int FP_XSTATE_MAGIC2 = (int)1179670597L;
     /**
      * {@snippet lang=c :
-     * #define __SVE_VL_MAX 8192
+     * #define FP_XSTATE_MAGIC2 1179670597
      * }
      */
-    public static int __SVE_VL_MAX() {
-        return __SVE_VL_MAX;
+    public static int FP_XSTATE_MAGIC2() {
+        return FP_XSTATE_MAGIC2;
     }
-    private static final int SVE_VQ_BYTES = (int)16L;
+    private static final long FP_XSTATE_MAGIC2_SIZE = 4L;
     /**
      * {@snippet lang=c :
-     * #define SVE_VQ_BYTES 16
+     * #define FP_XSTATE_MAGIC2_SIZE 4
      * }
      */
-    public static int SVE_VQ_BYTES() {
-        return SVE_VQ_BYTES;
+    public static long FP_XSTATE_MAGIC2_SIZE() {
+        return FP_XSTATE_MAGIC2_SIZE;
     }
-    private static final int SVE_VQ_MIN = (int)1L;
+    private static final int NGREG = (int)23L;
     /**
      * {@snippet lang=c :
-     * #define SVE_VQ_MIN 1
+     * #define NGREG 23
      * }
      */
-    public static int SVE_VQ_MIN() {
-        return SVE_VQ_MIN;
-    }
-    private static final int SVE_VQ_MAX = (int)512L;
-    /**
-     * {@snippet lang=c :
-     * #define SVE_VQ_MAX 512
-     * }
-     */
-    public static int SVE_VQ_MAX() {
-        return SVE_VQ_MAX;
-    }
-    private static final int SVE_VL_MIN = (int)16L;
-    /**
-     * {@snippet lang=c :
-     * #define SVE_VL_MIN 16
-     * }
-     */
-    public static int SVE_VL_MIN() {
-        return SVE_VL_MIN;
-    }
-    private static final int SVE_VL_MAX = (int)8192L;
-    /**
-     * {@snippet lang=c :
-     * #define SVE_VL_MAX 8192
-     * }
-     */
-    public static int SVE_VL_MAX() {
-        return SVE_VL_MAX;
-    }
-    private static final int SVE_NUM_ZREGS = (int)32L;
-    /**
-     * {@snippet lang=c :
-     * #define SVE_NUM_ZREGS 32
-     * }
-     */
-    public static int SVE_NUM_ZREGS() {
-        return SVE_NUM_ZREGS;
-    }
-    private static final int SVE_NUM_PREGS = (int)16L;
-    /**
-     * {@snippet lang=c :
-     * #define SVE_NUM_PREGS 16
-     * }
-     */
-    public static int SVE_NUM_PREGS() {
-        return SVE_NUM_PREGS;
-    }
-    private static final long SVE_SIG_REGS_OFFSET = 16L;
-    /**
-     * {@snippet lang=c :
-     * #define SVE_SIG_REGS_OFFSET 16
-     * }
-     */
-    public static long SVE_SIG_REGS_OFFSET() {
-        return SVE_SIG_REGS_OFFSET;
-    }
-    private static final long SVE_SIG_ZREGS_OFFSET = 16L;
-    /**
-     * {@snippet lang=c :
-     * #define SVE_SIG_ZREGS_OFFSET 16
-     * }
-     */
-    public static long SVE_SIG_ZREGS_OFFSET() {
-        return SVE_SIG_ZREGS_OFFSET;
-    }
-    private static final long ZA_SIG_REGS_OFFSET = 16L;
-    /**
-     * {@snippet lang=c :
-     * #define ZA_SIG_REGS_OFFSET 16
-     * }
-     */
-    public static long ZA_SIG_REGS_OFFSET() {
-        return ZA_SIG_REGS_OFFSET;
-    }
-    private static final int ZT_SIG_REG_BYTES = (int)64L;
-    /**
-     * {@snippet lang=c :
-     * #define ZT_SIG_REG_BYTES 64
-     * }
-     */
-    public static int ZT_SIG_REG_BYTES() {
-        return ZT_SIG_REG_BYTES;
-    }
-    private static final long ZT_SIG_REGS_OFFSET = 16L;
-    /**
-     * {@snippet lang=c :
-     * #define ZT_SIG_REGS_OFFSET 16
-     * }
-     */
-    public static long ZT_SIG_REGS_OFFSET() {
-        return ZT_SIG_REGS_OFFSET;
-    }
-    private static final long ELF_NGREG = 34L;
-    /**
-     * {@snippet lang=c :
-     * #define ELF_NGREG 34
-     * }
-     */
-    public static long ELF_NGREG() {
-        return ELF_NGREG;
-    }
-    private static final int ELF_PRARGSZ = (int)80L;
-    /**
-     * {@snippet lang=c :
-     * #define ELF_PRARGSZ 80
-     * }
-     */
-    public static int ELF_PRARGSZ() {
-        return ELF_PRARGSZ;
+    public static int NGREG() {
+        return NGREG;
     }
     private static final long G_TIME_SPAN_DAY = 86400000000L;
     /**
@@ -5193,6 +7246,483 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
      */
     public static int G_HOOK_FLAG_USER_SHIFT() {
         return G_HOOK_FLAG_USER_SHIFT;
+    }
+    private static final int __WCHAR_MAX = (int)2147483647L;
+    /**
+     * {@snippet lang=c :
+     * #define __WCHAR_MAX 2147483647
+     * }
+     */
+    public static int __WCHAR_MAX() {
+        return __WCHAR_MAX;
+    }
+    private static final int __WCHAR_MIN = (int)-2147483648L;
+    /**
+     * {@snippet lang=c :
+     * #define __WCHAR_MIN -2147483648
+     * }
+     */
+    public static int __WCHAR_MIN() {
+        return __WCHAR_MIN;
+    }
+    private static final int INT8_MIN = (int)-128L;
+    /**
+     * {@snippet lang=c :
+     * #define INT8_MIN -128
+     * }
+     */
+    public static int INT8_MIN() {
+        return INT8_MIN;
+    }
+    private static final int INT16_MIN = (int)-32768L;
+    /**
+     * {@snippet lang=c :
+     * #define INT16_MIN -32768
+     * }
+     */
+    public static int INT16_MIN() {
+        return INT16_MIN;
+    }
+    private static final int INT32_MIN = (int)-2147483648L;
+    /**
+     * {@snippet lang=c :
+     * #define INT32_MIN -2147483648
+     * }
+     */
+    public static int INT32_MIN() {
+        return INT32_MIN;
+    }
+    private static final long INT64_MIN = -9223372036854775808L;
+    /**
+     * {@snippet lang=c :
+     * #define INT64_MIN -9223372036854775808
+     * }
+     */
+    public static long INT64_MIN() {
+        return INT64_MIN;
+    }
+    private static final int INT8_MAX = (int)127L;
+    /**
+     * {@snippet lang=c :
+     * #define INT8_MAX 127
+     * }
+     */
+    public static int INT8_MAX() {
+        return INT8_MAX;
+    }
+    private static final int INT16_MAX = (int)32767L;
+    /**
+     * {@snippet lang=c :
+     * #define INT16_MAX 32767
+     * }
+     */
+    public static int INT16_MAX() {
+        return INT16_MAX;
+    }
+    private static final int INT32_MAX = (int)2147483647L;
+    /**
+     * {@snippet lang=c :
+     * #define INT32_MAX 2147483647
+     * }
+     */
+    public static int INT32_MAX() {
+        return INT32_MAX;
+    }
+    private static final long INT64_MAX = 9223372036854775807L;
+    /**
+     * {@snippet lang=c :
+     * #define INT64_MAX 9223372036854775807
+     * }
+     */
+    public static long INT64_MAX() {
+        return INT64_MAX;
+    }
+    private static final int UINT8_MAX = (int)255L;
+    /**
+     * {@snippet lang=c :
+     * #define UINT8_MAX 255
+     * }
+     */
+    public static int UINT8_MAX() {
+        return UINT8_MAX;
+    }
+    private static final int UINT16_MAX = (int)65535L;
+    /**
+     * {@snippet lang=c :
+     * #define UINT16_MAX 65535
+     * }
+     */
+    public static int UINT16_MAX() {
+        return UINT16_MAX;
+    }
+    private static final int UINT32_MAX = (int)4294967295L;
+    /**
+     * {@snippet lang=c :
+     * #define UINT32_MAX 4294967295
+     * }
+     */
+    public static int UINT32_MAX() {
+        return UINT32_MAX;
+    }
+    private static final long UINT64_MAX = -1L;
+    /**
+     * {@snippet lang=c :
+     * #define UINT64_MAX -1
+     * }
+     */
+    public static long UINT64_MAX() {
+        return UINT64_MAX;
+    }
+    private static final int INT_LEAST8_MIN = (int)-128L;
+    /**
+     * {@snippet lang=c :
+     * #define INT_LEAST8_MIN -128
+     * }
+     */
+    public static int INT_LEAST8_MIN() {
+        return INT_LEAST8_MIN;
+    }
+    private static final int INT_LEAST16_MIN = (int)-32768L;
+    /**
+     * {@snippet lang=c :
+     * #define INT_LEAST16_MIN -32768
+     * }
+     */
+    public static int INT_LEAST16_MIN() {
+        return INT_LEAST16_MIN;
+    }
+    private static final int INT_LEAST32_MIN = (int)-2147483648L;
+    /**
+     * {@snippet lang=c :
+     * #define INT_LEAST32_MIN -2147483648
+     * }
+     */
+    public static int INT_LEAST32_MIN() {
+        return INT_LEAST32_MIN;
+    }
+    private static final long INT_LEAST64_MIN = -9223372036854775808L;
+    /**
+     * {@snippet lang=c :
+     * #define INT_LEAST64_MIN -9223372036854775808
+     * }
+     */
+    public static long INT_LEAST64_MIN() {
+        return INT_LEAST64_MIN;
+    }
+    private static final int INT_LEAST8_MAX = (int)127L;
+    /**
+     * {@snippet lang=c :
+     * #define INT_LEAST8_MAX 127
+     * }
+     */
+    public static int INT_LEAST8_MAX() {
+        return INT_LEAST8_MAX;
+    }
+    private static final int INT_LEAST16_MAX = (int)32767L;
+    /**
+     * {@snippet lang=c :
+     * #define INT_LEAST16_MAX 32767
+     * }
+     */
+    public static int INT_LEAST16_MAX() {
+        return INT_LEAST16_MAX;
+    }
+    private static final int INT_LEAST32_MAX = (int)2147483647L;
+    /**
+     * {@snippet lang=c :
+     * #define INT_LEAST32_MAX 2147483647
+     * }
+     */
+    public static int INT_LEAST32_MAX() {
+        return INT_LEAST32_MAX;
+    }
+    private static final long INT_LEAST64_MAX = 9223372036854775807L;
+    /**
+     * {@snippet lang=c :
+     * #define INT_LEAST64_MAX 9223372036854775807
+     * }
+     */
+    public static long INT_LEAST64_MAX() {
+        return INT_LEAST64_MAX;
+    }
+    private static final int UINT_LEAST8_MAX = (int)255L;
+    /**
+     * {@snippet lang=c :
+     * #define UINT_LEAST8_MAX 255
+     * }
+     */
+    public static int UINT_LEAST8_MAX() {
+        return UINT_LEAST8_MAX;
+    }
+    private static final int UINT_LEAST16_MAX = (int)65535L;
+    /**
+     * {@snippet lang=c :
+     * #define UINT_LEAST16_MAX 65535
+     * }
+     */
+    public static int UINT_LEAST16_MAX() {
+        return UINT_LEAST16_MAX;
+    }
+    private static final int UINT_LEAST32_MAX = (int)4294967295L;
+    /**
+     * {@snippet lang=c :
+     * #define UINT_LEAST32_MAX 4294967295
+     * }
+     */
+    public static int UINT_LEAST32_MAX() {
+        return UINT_LEAST32_MAX;
+    }
+    private static final long UINT_LEAST64_MAX = -1L;
+    /**
+     * {@snippet lang=c :
+     * #define UINT_LEAST64_MAX -1
+     * }
+     */
+    public static long UINT_LEAST64_MAX() {
+        return UINT_LEAST64_MAX;
+    }
+    private static final int INT_FAST8_MIN = (int)-128L;
+    /**
+     * {@snippet lang=c :
+     * #define INT_FAST8_MIN -128
+     * }
+     */
+    public static int INT_FAST8_MIN() {
+        return INT_FAST8_MIN;
+    }
+    private static final long INT_FAST16_MIN = -9223372036854775808L;
+    /**
+     * {@snippet lang=c :
+     * #define INT_FAST16_MIN -9223372036854775808
+     * }
+     */
+    public static long INT_FAST16_MIN() {
+        return INT_FAST16_MIN;
+    }
+    private static final long INT_FAST32_MIN = -9223372036854775808L;
+    /**
+     * {@snippet lang=c :
+     * #define INT_FAST32_MIN -9223372036854775808
+     * }
+     */
+    public static long INT_FAST32_MIN() {
+        return INT_FAST32_MIN;
+    }
+    private static final long INT_FAST64_MIN = -9223372036854775808L;
+    /**
+     * {@snippet lang=c :
+     * #define INT_FAST64_MIN -9223372036854775808
+     * }
+     */
+    public static long INT_FAST64_MIN() {
+        return INT_FAST64_MIN;
+    }
+    private static final int INT_FAST8_MAX = (int)127L;
+    /**
+     * {@snippet lang=c :
+     * #define INT_FAST8_MAX 127
+     * }
+     */
+    public static int INT_FAST8_MAX() {
+        return INT_FAST8_MAX;
+    }
+    private static final long INT_FAST16_MAX = 9223372036854775807L;
+    /**
+     * {@snippet lang=c :
+     * #define INT_FAST16_MAX 9223372036854775807
+     * }
+     */
+    public static long INT_FAST16_MAX() {
+        return INT_FAST16_MAX;
+    }
+    private static final long INT_FAST32_MAX = 9223372036854775807L;
+    /**
+     * {@snippet lang=c :
+     * #define INT_FAST32_MAX 9223372036854775807
+     * }
+     */
+    public static long INT_FAST32_MAX() {
+        return INT_FAST32_MAX;
+    }
+    private static final long INT_FAST64_MAX = 9223372036854775807L;
+    /**
+     * {@snippet lang=c :
+     * #define INT_FAST64_MAX 9223372036854775807
+     * }
+     */
+    public static long INT_FAST64_MAX() {
+        return INT_FAST64_MAX;
+    }
+    private static final int UINT_FAST8_MAX = (int)255L;
+    /**
+     * {@snippet lang=c :
+     * #define UINT_FAST8_MAX 255
+     * }
+     */
+    public static int UINT_FAST8_MAX() {
+        return UINT_FAST8_MAX;
+    }
+    private static final long UINT_FAST16_MAX = -1L;
+    /**
+     * {@snippet lang=c :
+     * #define UINT_FAST16_MAX -1
+     * }
+     */
+    public static long UINT_FAST16_MAX() {
+        return UINT_FAST16_MAX;
+    }
+    private static final long UINT_FAST32_MAX = -1L;
+    /**
+     * {@snippet lang=c :
+     * #define UINT_FAST32_MAX -1
+     * }
+     */
+    public static long UINT_FAST32_MAX() {
+        return UINT_FAST32_MAX;
+    }
+    private static final long UINT_FAST64_MAX = -1L;
+    /**
+     * {@snippet lang=c :
+     * #define UINT_FAST64_MAX -1
+     * }
+     */
+    public static long UINT_FAST64_MAX() {
+        return UINT_FAST64_MAX;
+    }
+    private static final long INTPTR_MIN = -9223372036854775808L;
+    /**
+     * {@snippet lang=c :
+     * #define INTPTR_MIN -9223372036854775808
+     * }
+     */
+    public static long INTPTR_MIN() {
+        return INTPTR_MIN;
+    }
+    private static final long INTPTR_MAX = 9223372036854775807L;
+    /**
+     * {@snippet lang=c :
+     * #define INTPTR_MAX 9223372036854775807
+     * }
+     */
+    public static long INTPTR_MAX() {
+        return INTPTR_MAX;
+    }
+    private static final long UINTPTR_MAX = -1L;
+    /**
+     * {@snippet lang=c :
+     * #define UINTPTR_MAX -1
+     * }
+     */
+    public static long UINTPTR_MAX() {
+        return UINTPTR_MAX;
+    }
+    private static final long INTMAX_MIN = -9223372036854775808L;
+    /**
+     * {@snippet lang=c :
+     * #define INTMAX_MIN -9223372036854775808
+     * }
+     */
+    public static long INTMAX_MIN() {
+        return INTMAX_MIN;
+    }
+    private static final long INTMAX_MAX = 9223372036854775807L;
+    /**
+     * {@snippet lang=c :
+     * #define INTMAX_MAX 9223372036854775807
+     * }
+     */
+    public static long INTMAX_MAX() {
+        return INTMAX_MAX;
+    }
+    private static final long UINTMAX_MAX = -1L;
+    /**
+     * {@snippet lang=c :
+     * #define UINTMAX_MAX -1
+     * }
+     */
+    public static long UINTMAX_MAX() {
+        return UINTMAX_MAX;
+    }
+    private static final long PTRDIFF_MIN = -9223372036854775808L;
+    /**
+     * {@snippet lang=c :
+     * #define PTRDIFF_MIN -9223372036854775808
+     * }
+     */
+    public static long PTRDIFF_MIN() {
+        return PTRDIFF_MIN;
+    }
+    private static final long PTRDIFF_MAX = 9223372036854775807L;
+    /**
+     * {@snippet lang=c :
+     * #define PTRDIFF_MAX 9223372036854775807
+     * }
+     */
+    public static long PTRDIFF_MAX() {
+        return PTRDIFF_MAX;
+    }
+    private static final int SIG_ATOMIC_MIN = (int)-2147483648L;
+    /**
+     * {@snippet lang=c :
+     * #define SIG_ATOMIC_MIN -2147483648
+     * }
+     */
+    public static int SIG_ATOMIC_MIN() {
+        return SIG_ATOMIC_MIN;
+    }
+    private static final int SIG_ATOMIC_MAX = (int)2147483647L;
+    /**
+     * {@snippet lang=c :
+     * #define SIG_ATOMIC_MAX 2147483647
+     * }
+     */
+    public static int SIG_ATOMIC_MAX() {
+        return SIG_ATOMIC_MAX;
+    }
+    private static final long SIZE_MAX = -1L;
+    /**
+     * {@snippet lang=c :
+     * #define SIZE_MAX -1
+     * }
+     */
+    public static long SIZE_MAX() {
+        return SIZE_MAX;
+    }
+    private static final int WCHAR_MIN = (int)-2147483648L;
+    /**
+     * {@snippet lang=c :
+     * #define WCHAR_MIN -2147483648
+     * }
+     */
+    public static int WCHAR_MIN() {
+        return WCHAR_MIN;
+    }
+    private static final int WCHAR_MAX = (int)2147483647L;
+    /**
+     * {@snippet lang=c :
+     * #define WCHAR_MAX 2147483647
+     * }
+     */
+    public static int WCHAR_MAX() {
+        return WCHAR_MAX;
+    }
+    private static final int WINT_MIN = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define WINT_MIN 0
+     * }
+     */
+    public static int WINT_MIN() {
+        return WINT_MIN;
+    }
+    private static final int WINT_MAX = (int)4294967295L;
+    /**
+     * {@snippet lang=c :
+     * #define WINT_MAX 4294967295
+     * }
+     */
+    public static int WINT_MAX() {
+        return WINT_MAX;
     }
     private static final int G_PRIORITY_HIGH = (int)-100L;
     /**
@@ -5686,6 +8216,24 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static int EDEADLOCK() {
         return EDEADLOCK;
     }
+    private static final int EFSBADCRC = (int)74L;
+    /**
+     * {@snippet lang=c :
+     * #define EFSBADCRC 74
+     * }
+     */
+    public static int EFSBADCRC() {
+        return EFSBADCRC;
+    }
+    private static final int EFSCORRUPTED = (int)117L;
+    /**
+     * {@snippet lang=c :
+     * #define EFSCORRUPTED 117
+     * }
+     */
+    public static int EFSCORRUPTED() {
+        return EFSCORRUPTED;
+    }
     private static final int ENOTSUP = (int)95L;
     /**
      * {@snippet lang=c :
@@ -5706,6 +8254,39 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
                 = app_indicator_h.LIBRARY_ARENA.allocateFrom("isolate_dirs");
         }
         return Holder.G_TEST_OPTION_ISOLATE_DIRS;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_TEST_OPTION_NO_PRGNAME "no_g_set_prgname"
+     * }
+     */
+    public static MemorySegment G_TEST_OPTION_NO_PRGNAME() {
+        class Holder {
+            static final MemorySegment G_TEST_OPTION_NO_PRGNAME
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("no_g_set_prgname");
+        }
+        return Holder.G_TEST_OPTION_NO_PRGNAME;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_TEST_OPTION_NONFATAL_ASSERTIONS "nonfatal-assertions"
+     * }
+     */
+    public static MemorySegment G_TEST_OPTION_NONFATAL_ASSERTIONS() {
+        class Holder {
+            static final MemorySegment G_TEST_OPTION_NONFATAL_ASSERTIONS
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("nonfatal-assertions");
+        }
+        return Holder.G_TEST_OPTION_NONFATAL_ASSERTIONS;
+    }
+    private static final long G_NSEC_PER_SEC = 1000000000L;
+    /**
+     * {@snippet lang=c :
+     * #define G_NSEC_PER_SEC 1000000000
+     * }
+     */
+    public static long G_NSEC_PER_SEC() {
+        return G_NSEC_PER_SEC;
     }
     /**
      * {@snippet lang=c :
@@ -5812,10 +8393,10 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static int GDK_MINOR_VERSION() {
         return GDK_MINOR_VERSION;
     }
-    private static final int GDK_MICRO_VERSION = (int)41L;
+    private static final int GDK_MICRO_VERSION = (int)52L;
     /**
      * {@snippet lang=c :
-     * #define GDK_MICRO_VERSION 41
+     * #define GDK_MICRO_VERSION 52
      * }
      */
     public static int GDK_MICRO_VERSION() {
@@ -6433,15 +9014,6 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
     public static long _POSIX_MEMORY_PROTECTION() {
         return _POSIX_MEMORY_PROTECTION;
     }
-    private static final int _POSIX_VDISABLE = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_VDISABLE 0
-     * }
-     */
-    public static int _POSIX_VDISABLE() {
-        return _POSIX_VDISABLE;
-    }
     private static final long _POSIX_THREADS = 200809L;
     /**
      * {@snippet lang=c :
@@ -6621,3522 +9193,6 @@ public class app_indicator_h_1 extends app_indicator_h_2 {
      */
     public static long _POSIX_BARRIERS() {
         return _POSIX_BARRIERS;
-    }
-    private static final long _POSIX_MESSAGE_PASSING = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_MESSAGE_PASSING 200809
-     * }
-     */
-    public static long _POSIX_MESSAGE_PASSING() {
-        return _POSIX_MESSAGE_PASSING;
-    }
-    private static final long _POSIX_THREAD_PROCESS_SHARED = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_THREAD_PROCESS_SHARED 200809
-     * }
-     */
-    public static long _POSIX_THREAD_PROCESS_SHARED() {
-        return _POSIX_THREAD_PROCESS_SHARED;
-    }
-    private static final long _POSIX_CLOCK_SELECTION = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_CLOCK_SELECTION 200809
-     * }
-     */
-    public static long _POSIX_CLOCK_SELECTION() {
-        return _POSIX_CLOCK_SELECTION;
-    }
-    private static final long _POSIX_ADVISORY_INFO = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_ADVISORY_INFO 200809
-     * }
-     */
-    public static long _POSIX_ADVISORY_INFO() {
-        return _POSIX_ADVISORY_INFO;
-    }
-    private static final long _POSIX_IPV6 = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_IPV6 200809
-     * }
-     */
-    public static long _POSIX_IPV6() {
-        return _POSIX_IPV6;
-    }
-    private static final long _POSIX_RAW_SOCKETS = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_RAW_SOCKETS 200809
-     * }
-     */
-    public static long _POSIX_RAW_SOCKETS() {
-        return _POSIX_RAW_SOCKETS;
-    }
-    private static final long _POSIX2_CHAR_TERM = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX2_CHAR_TERM 200809
-     * }
-     */
-    public static long _POSIX2_CHAR_TERM() {
-        return _POSIX2_CHAR_TERM;
-    }
-    private static final int _POSIX_SPORADIC_SERVER = (int)-1L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_SPORADIC_SERVER -1
-     * }
-     */
-    public static int _POSIX_SPORADIC_SERVER() {
-        return _POSIX_SPORADIC_SERVER;
-    }
-    private static final int _POSIX_THREAD_SPORADIC_SERVER = (int)-1L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_THREAD_SPORADIC_SERVER -1
-     * }
-     */
-    public static int _POSIX_THREAD_SPORADIC_SERVER() {
-        return _POSIX_THREAD_SPORADIC_SERVER;
-    }
-    private static final int _POSIX_TRACE = (int)-1L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_TRACE -1
-     * }
-     */
-    public static int _POSIX_TRACE() {
-        return _POSIX_TRACE;
-    }
-    private static final int _POSIX_TRACE_EVENT_FILTER = (int)-1L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_TRACE_EVENT_FILTER -1
-     * }
-     */
-    public static int _POSIX_TRACE_EVENT_FILTER() {
-        return _POSIX_TRACE_EVENT_FILTER;
-    }
-    private static final int _POSIX_TRACE_INHERIT = (int)-1L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_TRACE_INHERIT -1
-     * }
-     */
-    public static int _POSIX_TRACE_INHERIT() {
-        return _POSIX_TRACE_INHERIT;
-    }
-    private static final int _POSIX_TRACE_LOG = (int)-1L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_TRACE_LOG -1
-     * }
-     */
-    public static int _POSIX_TRACE_LOG() {
-        return _POSIX_TRACE_LOG;
-    }
-    private static final int _POSIX_TYPED_MEMORY_OBJECTS = (int)-1L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_TYPED_MEMORY_OBJECTS -1
-     * }
-     */
-    public static int _POSIX_TYPED_MEMORY_OBJECTS() {
-        return _POSIX_TYPED_MEMORY_OBJECTS;
-    }
-    private static final int _POSIX_V7_ILP32_OFF32 = (int)-1L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_V7_ILP32_OFF32 -1
-     * }
-     */
-    public static int _POSIX_V7_ILP32_OFF32() {
-        return _POSIX_V7_ILP32_OFF32;
-    }
-    private static final int _POSIX_V7_ILP32_OFFBIG = (int)-1L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_V7_ILP32_OFFBIG -1
-     * }
-     */
-    public static int _POSIX_V7_ILP32_OFFBIG() {
-        return _POSIX_V7_ILP32_OFFBIG;
-    }
-    private static final int _POSIX_V6_ILP32_OFF32 = (int)-1L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_V6_ILP32_OFF32 -1
-     * }
-     */
-    public static int _POSIX_V6_ILP32_OFF32() {
-        return _POSIX_V6_ILP32_OFF32;
-    }
-    private static final int _POSIX_V6_ILP32_OFFBIG = (int)-1L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_V6_ILP32_OFFBIG -1
-     * }
-     */
-    public static int _POSIX_V6_ILP32_OFFBIG() {
-        return _POSIX_V6_ILP32_OFFBIG;
-    }
-    private static final int _XBS5_ILP32_OFF32 = (int)-1L;
-    /**
-     * {@snippet lang=c :
-     * #define _XBS5_ILP32_OFF32 -1
-     * }
-     */
-    public static int _XBS5_ILP32_OFF32() {
-        return _XBS5_ILP32_OFF32;
-    }
-    private static final int _XBS5_ILP32_OFFBIG = (int)-1L;
-    /**
-     * {@snippet lang=c :
-     * #define _XBS5_ILP32_OFFBIG -1
-     * }
-     */
-    public static int _XBS5_ILP32_OFFBIG() {
-        return _XBS5_ILP32_OFFBIG;
-    }
-    private static final int _POSIX_V7_LPBIG_OFFBIG = (int)-1L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_V7_LPBIG_OFFBIG -1
-     * }
-     */
-    public static int _POSIX_V7_LPBIG_OFFBIG() {
-        return _POSIX_V7_LPBIG_OFFBIG;
-    }
-    private static final int _POSIX_V6_LPBIG_OFFBIG = (int)-1L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_V6_LPBIG_OFFBIG -1
-     * }
-     */
-    public static int _POSIX_V6_LPBIG_OFFBIG() {
-        return _POSIX_V6_LPBIG_OFFBIG;
-    }
-    private static final int _XBS5_LPBIG_OFFBIG = (int)-1L;
-    /**
-     * {@snippet lang=c :
-     * #define _XBS5_LPBIG_OFFBIG -1
-     * }
-     */
-    public static int _XBS5_LPBIG_OFFBIG() {
-        return _XBS5_LPBIG_OFFBIG;
-    }
-    private static final int L_SET = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * #define L_SET 0
-     * }
-     */
-    public static int L_SET() {
-        return L_SET;
-    }
-    private static final int L_INCR = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * #define L_INCR 1
-     * }
-     */
-    public static int L_INCR() {
-        return L_INCR;
-    }
-    private static final int L_XTND = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * #define L_XTND 2
-     * }
-     */
-    public static int L_XTND() {
-        return L_XTND;
-    }
-    private static final int _SC_PAGE_SIZE = (int)30L;
-    /**
-     * {@snippet lang=c :
-     * #define _SC_PAGE_SIZE 30
-     * }
-     */
-    public static int _SC_PAGE_SIZE() {
-        return _SC_PAGE_SIZE;
-    }
-    private static final int _CS_POSIX_V6_WIDTH_RESTRICTED_ENVS = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * #define _CS_POSIX_V6_WIDTH_RESTRICTED_ENVS 1
-     * }
-     */
-    public static int _CS_POSIX_V6_WIDTH_RESTRICTED_ENVS() {
-        return _CS_POSIX_V6_WIDTH_RESTRICTED_ENVS;
-    }
-    private static final int _CS_POSIX_V5_WIDTH_RESTRICTED_ENVS = (int)4L;
-    /**
-     * {@snippet lang=c :
-     * #define _CS_POSIX_V5_WIDTH_RESTRICTED_ENVS 4
-     * }
-     */
-    public static int _CS_POSIX_V5_WIDTH_RESTRICTED_ENVS() {
-        return _CS_POSIX_V5_WIDTH_RESTRICTED_ENVS;
-    }
-    private static final int _CS_POSIX_V7_WIDTH_RESTRICTED_ENVS = (int)5L;
-    /**
-     * {@snippet lang=c :
-     * #define _CS_POSIX_V7_WIDTH_RESTRICTED_ENVS 5
-     * }
-     */
-    public static int _CS_POSIX_V7_WIDTH_RESTRICTED_ENVS() {
-        return _CS_POSIX_V7_WIDTH_RESTRICTED_ENVS;
-    }
-    private static final int G_DBUS_METHOD_INVOCATION_HANDLED = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * #define G_DBUS_METHOD_INVOCATION_HANDLED 1
-     * }
-     */
-    public static int G_DBUS_METHOD_INVOCATION_HANDLED() {
-        return G_DBUS_METHOD_INVOCATION_HANDLED;
-    }
-    private static final int G_DBUS_METHOD_INVOCATION_UNHANDLED = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * #define G_DBUS_METHOD_INVOCATION_UNHANDLED 0
-     * }
-     */
-    public static int G_DBUS_METHOD_INVOCATION_UNHANDLED() {
-        return G_DBUS_METHOD_INVOCATION_UNHANDLED;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_DEBUG_CONTROLLER_EXTENSION_POINT_NAME "gio-debug-controller"
-     * }
-     */
-    public static MemorySegment G_DEBUG_CONTROLLER_EXTENSION_POINT_NAME() {
-        class Holder {
-            static final MemorySegment G_DEBUG_CONTROLLER_EXTENSION_POINT_NAME
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("gio-debug-controller");
-        }
-        return Holder.G_DEBUG_CONTROLLER_EXTENSION_POINT_NAME;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_DRIVE_IDENTIFIER_KIND_UNIX_DEVICE "unix-device"
-     * }
-     */
-    public static MemorySegment G_DRIVE_IDENTIFIER_KIND_UNIX_DEVICE() {
-        class Holder {
-            static final MemorySegment G_DRIVE_IDENTIFIER_KIND_UNIX_DEVICE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix-device");
-        }
-        return Holder.G_DRIVE_IDENTIFIER_KIND_UNIX_DEVICE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_STANDARD_TYPE "standard::type"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_TYPE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_TYPE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::type");
-        }
-        return Holder.G_FILE_ATTRIBUTE_STANDARD_TYPE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN "standard::is-hidden"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::is-hidden");
-        }
-        return Holder.G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_STANDARD_IS_BACKUP "standard::is-backup"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_BACKUP() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_BACKUP
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::is-backup");
-        }
-        return Holder.G_FILE_ATTRIBUTE_STANDARD_IS_BACKUP;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_STANDARD_IS_SYMLINK "standard::is-symlink"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_SYMLINK() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_SYMLINK
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::is-symlink");
-        }
-        return Holder.G_FILE_ATTRIBUTE_STANDARD_IS_SYMLINK;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_STANDARD_IS_VIRTUAL "standard::is-virtual"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_VIRTUAL() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_VIRTUAL
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::is-virtual");
-        }
-        return Holder.G_FILE_ATTRIBUTE_STANDARD_IS_VIRTUAL;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_STANDARD_IS_VOLATILE "standard::is-volatile"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_VOLATILE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_VOLATILE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::is-volatile");
-        }
-        return Holder.G_FILE_ATTRIBUTE_STANDARD_IS_VOLATILE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_STANDARD_NAME "standard::name"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_NAME() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_NAME
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::name");
-        }
-        return Holder.G_FILE_ATTRIBUTE_STANDARD_NAME;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME "standard::display-name"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::display-name");
-        }
-        return Holder.G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME "standard::edit-name"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::edit-name");
-        }
-        return Holder.G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_STANDARD_COPY_NAME "standard::copy-name"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_COPY_NAME() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_COPY_NAME
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::copy-name");
-        }
-        return Holder.G_FILE_ATTRIBUTE_STANDARD_COPY_NAME;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_STANDARD_DESCRIPTION "standard::description"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_DESCRIPTION() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_DESCRIPTION
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::description");
-        }
-        return Holder.G_FILE_ATTRIBUTE_STANDARD_DESCRIPTION;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_STANDARD_ICON "standard::icon"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_ICON() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_ICON
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::icon");
-        }
-        return Holder.G_FILE_ATTRIBUTE_STANDARD_ICON;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON "standard::symbolic-icon"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::symbolic-icon");
-        }
-        return Holder.G_FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE "standard::content-type"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::content-type");
-        }
-        return Holder.G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_STANDARD_FAST_CONTENT_TYPE "standard::fast-content-type"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_FAST_CONTENT_TYPE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_FAST_CONTENT_TYPE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::fast-content-type");
-        }
-        return Holder.G_FILE_ATTRIBUTE_STANDARD_FAST_CONTENT_TYPE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_STANDARD_SIZE "standard::size"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_SIZE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_SIZE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::size");
-        }
-        return Holder.G_FILE_ATTRIBUTE_STANDARD_SIZE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE "standard::allocated-size"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::allocated-size");
-        }
-        return Holder.G_FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET "standard::symlink-target"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::symlink-target");
-        }
-        return Holder.G_FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_STANDARD_TARGET_URI "standard::target-uri"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_TARGET_URI() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_TARGET_URI
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::target-uri");
-        }
-        return Holder.G_FILE_ATTRIBUTE_STANDARD_TARGET_URI;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER "standard::sort-order"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::sort-order");
-        }
-        return Holder.G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_ETAG_VALUE "etag::value"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_ETAG_VALUE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_ETAG_VALUE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("etag::value");
-        }
-        return Holder.G_FILE_ATTRIBUTE_ETAG_VALUE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_ID_FILE "id::file"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_ID_FILE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_ID_FILE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("id::file");
-        }
-        return Holder.G_FILE_ATTRIBUTE_ID_FILE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_ID_FILESYSTEM "id::filesystem"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_ID_FILESYSTEM() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_ID_FILESYSTEM
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("id::filesystem");
-        }
-        return Holder.G_FILE_ATTRIBUTE_ID_FILESYSTEM;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_ACCESS_CAN_READ "access::can-read"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_READ() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_READ
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("access::can-read");
-        }
-        return Holder.G_FILE_ATTRIBUTE_ACCESS_CAN_READ;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE "access::can-write"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("access::can-write");
-        }
-        return Holder.G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE "access::can-execute"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("access::can-execute");
-        }
-        return Holder.G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_ACCESS_CAN_DELETE "access::can-delete"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_DELETE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_DELETE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("access::can-delete");
-        }
-        return Holder.G_FILE_ATTRIBUTE_ACCESS_CAN_DELETE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_ACCESS_CAN_TRASH "access::can-trash"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_TRASH() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_TRASH
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("access::can-trash");
-        }
-        return Holder.G_FILE_ATTRIBUTE_ACCESS_CAN_TRASH;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_ACCESS_CAN_RENAME "access::can-rename"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_RENAME() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_RENAME
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("access::can-rename");
-        }
-        return Holder.G_FILE_ATTRIBUTE_ACCESS_CAN_RENAME;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_CAN_MOUNT "mountable::can-mount"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_MOUNT() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_MOUNT
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::can-mount");
-        }
-        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_CAN_MOUNT;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_CAN_UNMOUNT "mountable::can-unmount"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_UNMOUNT() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_UNMOUNT
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::can-unmount");
-        }
-        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_CAN_UNMOUNT;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_CAN_EJECT "mountable::can-eject"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_EJECT() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_EJECT
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::can-eject");
-        }
-        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_CAN_EJECT;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE "mountable::unix-device"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::unix-device");
-        }
-        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE_FILE "mountable::unix-device-file"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE_FILE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE_FILE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::unix-device-file");
-        }
-        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE_FILE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_HAL_UDI "mountable::hal-udi"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_HAL_UDI() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_HAL_UDI
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::hal-udi");
-        }
-        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_HAL_UDI;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START "mountable::can-start"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::can-start");
-        }
-        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START_DEGRADED "mountable::can-start-degraded"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START_DEGRADED() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START_DEGRADED
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::can-start-degraded");
-        }
-        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START_DEGRADED;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_CAN_STOP "mountable::can-stop"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_STOP() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_STOP
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::can-stop");
-        }
-        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_CAN_STOP;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_START_STOP_TYPE "mountable::start-stop-type"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_START_STOP_TYPE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_START_STOP_TYPE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::start-stop-type");
-        }
-        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_START_STOP_TYPE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_CAN_POLL "mountable::can-poll"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_POLL() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_POLL
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::can-poll");
-        }
-        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_CAN_POLL;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_IS_MEDIA_CHECK_AUTOMATIC "mountable::is-media-check-automatic"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_IS_MEDIA_CHECK_AUTOMATIC() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_IS_MEDIA_CHECK_AUTOMATIC
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::is-media-check-automatic");
-        }
-        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_IS_MEDIA_CHECK_AUTOMATIC;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_TIME_MODIFIED "time::modified"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::modified");
-        }
-        return Holder.G_FILE_ATTRIBUTE_TIME_MODIFIED;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC "time::modified-usec"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::modified-usec");
-        }
-        return Holder.G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_TIME_MODIFIED_NSEC "time::modified-nsec"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED_NSEC() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED_NSEC
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::modified-nsec");
-        }
-        return Holder.G_FILE_ATTRIBUTE_TIME_MODIFIED_NSEC;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_TIME_ACCESS "time::access"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::access");
-        }
-        return Holder.G_FILE_ATTRIBUTE_TIME_ACCESS;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_TIME_ACCESS_USEC "time::access-usec"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS_USEC() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS_USEC
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::access-usec");
-        }
-        return Holder.G_FILE_ATTRIBUTE_TIME_ACCESS_USEC;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_TIME_ACCESS_NSEC "time::access-nsec"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS_NSEC() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS_NSEC
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::access-nsec");
-        }
-        return Holder.G_FILE_ATTRIBUTE_TIME_ACCESS_NSEC;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_TIME_CHANGED "time::changed"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::changed");
-        }
-        return Holder.G_FILE_ATTRIBUTE_TIME_CHANGED;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_TIME_CHANGED_USEC "time::changed-usec"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED_USEC() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED_USEC
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::changed-usec");
-        }
-        return Holder.G_FILE_ATTRIBUTE_TIME_CHANGED_USEC;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_TIME_CHANGED_NSEC "time::changed-nsec"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED_NSEC() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED_NSEC
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::changed-nsec");
-        }
-        return Holder.G_FILE_ATTRIBUTE_TIME_CHANGED_NSEC;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_TIME_CREATED "time::created"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::created");
-        }
-        return Holder.G_FILE_ATTRIBUTE_TIME_CREATED;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_TIME_CREATED_USEC "time::created-usec"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED_USEC() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED_USEC
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::created-usec");
-        }
-        return Holder.G_FILE_ATTRIBUTE_TIME_CREATED_USEC;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_TIME_CREATED_NSEC "time::created-nsec"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED_NSEC() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED_NSEC
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::created-nsec");
-        }
-        return Holder.G_FILE_ATTRIBUTE_TIME_CREATED_NSEC;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_UNIX_DEVICE "unix::device"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_DEVICE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_UNIX_DEVICE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix::device");
-        }
-        return Holder.G_FILE_ATTRIBUTE_UNIX_DEVICE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_UNIX_INODE "unix::inode"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_INODE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_UNIX_INODE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix::inode");
-        }
-        return Holder.G_FILE_ATTRIBUTE_UNIX_INODE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_UNIX_MODE "unix::mode"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_MODE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_UNIX_MODE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix::mode");
-        }
-        return Holder.G_FILE_ATTRIBUTE_UNIX_MODE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_UNIX_NLINK "unix::nlink"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_NLINK() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_UNIX_NLINK
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix::nlink");
-        }
-        return Holder.G_FILE_ATTRIBUTE_UNIX_NLINK;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_UNIX_UID "unix::uid"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_UID() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_UNIX_UID
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix::uid");
-        }
-        return Holder.G_FILE_ATTRIBUTE_UNIX_UID;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_UNIX_GID "unix::gid"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_GID() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_UNIX_GID
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix::gid");
-        }
-        return Holder.G_FILE_ATTRIBUTE_UNIX_GID;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_UNIX_RDEV "unix::rdev"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_RDEV() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_UNIX_RDEV
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix::rdev");
-        }
-        return Holder.G_FILE_ATTRIBUTE_UNIX_RDEV;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_UNIX_BLOCK_SIZE "unix::block-size"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_BLOCK_SIZE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_UNIX_BLOCK_SIZE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix::block-size");
-        }
-        return Holder.G_FILE_ATTRIBUTE_UNIX_BLOCK_SIZE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_UNIX_BLOCKS "unix::blocks"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_BLOCKS() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_UNIX_BLOCKS
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix::blocks");
-        }
-        return Holder.G_FILE_ATTRIBUTE_UNIX_BLOCKS;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_UNIX_IS_MOUNTPOINT "unix::is-mountpoint"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_IS_MOUNTPOINT() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_UNIX_IS_MOUNTPOINT
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix::is-mountpoint");
-        }
-        return Holder.G_FILE_ATTRIBUTE_UNIX_IS_MOUNTPOINT;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_DOS_IS_ARCHIVE "dos::is-archive"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_DOS_IS_ARCHIVE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_DOS_IS_ARCHIVE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("dos::is-archive");
-        }
-        return Holder.G_FILE_ATTRIBUTE_DOS_IS_ARCHIVE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_DOS_IS_SYSTEM "dos::is-system"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_DOS_IS_SYSTEM() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_DOS_IS_SYSTEM
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("dos::is-system");
-        }
-        return Holder.G_FILE_ATTRIBUTE_DOS_IS_SYSTEM;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_DOS_IS_MOUNTPOINT "dos::is-mountpoint"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_DOS_IS_MOUNTPOINT() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_DOS_IS_MOUNTPOINT
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("dos::is-mountpoint");
-        }
-        return Holder.G_FILE_ATTRIBUTE_DOS_IS_MOUNTPOINT;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_DOS_REPARSE_POINT_TAG "dos::reparse-point-tag"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_DOS_REPARSE_POINT_TAG() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_DOS_REPARSE_POINT_TAG
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("dos::reparse-point-tag");
-        }
-        return Holder.G_FILE_ATTRIBUTE_DOS_REPARSE_POINT_TAG;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_OWNER_USER "owner::user"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_OWNER_USER() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_OWNER_USER
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("owner::user");
-        }
-        return Holder.G_FILE_ATTRIBUTE_OWNER_USER;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_OWNER_USER_REAL "owner::user-real"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_OWNER_USER_REAL() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_OWNER_USER_REAL
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("owner::user-real");
-        }
-        return Holder.G_FILE_ATTRIBUTE_OWNER_USER_REAL;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_OWNER_GROUP "owner::group"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_OWNER_GROUP() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_OWNER_GROUP
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("owner::group");
-        }
-        return Holder.G_FILE_ATTRIBUTE_OWNER_GROUP;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_THUMBNAIL_PATH "thumbnail::path"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::path");
-        }
-        return Holder.G_FILE_ATTRIBUTE_THUMBNAIL_PATH;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_THUMBNAILING_FAILED "thumbnail::failed"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::failed");
-        }
-        return Holder.G_FILE_ATTRIBUTE_THUMBNAILING_FAILED;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID "thumbnail::is-valid"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::is-valid");
-        }
-        return Holder.G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_THUMBNAIL_PATH_NORMAL "thumbnail::path-normal"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_NORMAL() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_NORMAL
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::path-normal");
-        }
-        return Holder.G_FILE_ATTRIBUTE_THUMBNAIL_PATH_NORMAL;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_NORMAL "thumbnail::failed-normal"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_NORMAL() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_NORMAL
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::failed-normal");
-        }
-        return Holder.G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_NORMAL;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_NORMAL "thumbnail::is-valid-normal"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_NORMAL() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_NORMAL
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::is-valid-normal");
-        }
-        return Holder.G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_NORMAL;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_THUMBNAIL_PATH_LARGE "thumbnail::path-large"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_LARGE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_LARGE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::path-large");
-        }
-        return Holder.G_FILE_ATTRIBUTE_THUMBNAIL_PATH_LARGE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_LARGE "thumbnail::failed-large"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_LARGE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_LARGE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::failed-large");
-        }
-        return Holder.G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_LARGE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_LARGE "thumbnail::is-valid-large"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_LARGE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_LARGE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::is-valid-large");
-        }
-        return Holder.G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_LARGE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XLARGE "thumbnail::path-xlarge"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XLARGE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XLARGE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::path-xlarge");
-        }
-        return Holder.G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XLARGE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XLARGE "thumbnail::failed-xlarge"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XLARGE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XLARGE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::failed-xlarge");
-        }
-        return Holder.G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XLARGE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XLARGE "thumbnail::is-valid-xlarge"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XLARGE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XLARGE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::is-valid-xlarge");
-        }
-        return Holder.G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XLARGE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XXLARGE "thumbnail::path-xxlarge"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XXLARGE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XXLARGE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::path-xxlarge");
-        }
-        return Holder.G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XXLARGE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XXLARGE "thumbnail::failed-xxlarge"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XXLARGE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XXLARGE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::failed-xxlarge");
-        }
-        return Holder.G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XXLARGE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XXLARGE "thumbnail::is-valid-xxlarge"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XXLARGE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XXLARGE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::is-valid-xxlarge");
-        }
-        return Holder.G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XXLARGE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_PREVIEW_ICON "preview::icon"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_PREVIEW_ICON() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_PREVIEW_ICON
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("preview::icon");
-        }
-        return Holder.G_FILE_ATTRIBUTE_PREVIEW_ICON;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_FILESYSTEM_SIZE "filesystem::size"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_SIZE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_SIZE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("filesystem::size");
-        }
-        return Holder.G_FILE_ATTRIBUTE_FILESYSTEM_SIZE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_FILESYSTEM_FREE "filesystem::free"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_FREE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_FREE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("filesystem::free");
-        }
-        return Holder.G_FILE_ATTRIBUTE_FILESYSTEM_FREE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_FILESYSTEM_USED "filesystem::used"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_USED() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_USED
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("filesystem::used");
-        }
-        return Holder.G_FILE_ATTRIBUTE_FILESYSTEM_USED;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_FILESYSTEM_TYPE "filesystem::type"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_TYPE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_TYPE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("filesystem::type");
-        }
-        return Holder.G_FILE_ATTRIBUTE_FILESYSTEM_TYPE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_FILESYSTEM_READONLY "filesystem::readonly"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_READONLY() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_READONLY
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("filesystem::readonly");
-        }
-        return Holder.G_FILE_ATTRIBUTE_FILESYSTEM_READONLY;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_FILESYSTEM_USE_PREVIEW "filesystem::use-preview"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_USE_PREVIEW() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_USE_PREVIEW
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("filesystem::use-preview");
-        }
-        return Holder.G_FILE_ATTRIBUTE_FILESYSTEM_USE_PREVIEW;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_FILESYSTEM_REMOTE "filesystem::remote"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_REMOTE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_REMOTE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("filesystem::remote");
-        }
-        return Holder.G_FILE_ATTRIBUTE_FILESYSTEM_REMOTE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_GVFS_BACKEND "gvfs::backend"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_GVFS_BACKEND() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_GVFS_BACKEND
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("gvfs::backend");
-        }
-        return Holder.G_FILE_ATTRIBUTE_GVFS_BACKEND;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_SELINUX_CONTEXT "selinux::context"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_SELINUX_CONTEXT() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_SELINUX_CONTEXT
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("selinux::context");
-        }
-        return Holder.G_FILE_ATTRIBUTE_SELINUX_CONTEXT;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_TRASH_ITEM_COUNT "trash::item-count"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_TRASH_ITEM_COUNT() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_TRASH_ITEM_COUNT
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("trash::item-count");
-        }
-        return Holder.G_FILE_ATTRIBUTE_TRASH_ITEM_COUNT;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_TRASH_ORIG_PATH "trash::orig-path"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_TRASH_ORIG_PATH() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_TRASH_ORIG_PATH
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("trash::orig-path");
-        }
-        return Holder.G_FILE_ATTRIBUTE_TRASH_ORIG_PATH;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_TRASH_DELETION_DATE "trash::deletion-date"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_TRASH_DELETION_DATE() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_TRASH_DELETION_DATE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("trash::deletion-date");
-        }
-        return Holder.G_FILE_ATTRIBUTE_TRASH_DELETION_DATE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_FILE_ATTRIBUTE_RECENT_MODIFIED "recent::modified"
-     * }
-     */
-    public static MemorySegment G_FILE_ATTRIBUTE_RECENT_MODIFIED() {
-        class Holder {
-            static final MemorySegment G_FILE_ATTRIBUTE_RECENT_MODIFIED
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("recent::modified");
-        }
-        return Holder.G_FILE_ATTRIBUTE_RECENT_MODIFIED;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_MEMORY_MONITOR_EXTENSION_POINT_NAME "gio-memory-monitor"
-     * }
-     */
-    public static MemorySegment G_MEMORY_MONITOR_EXTENSION_POINT_NAME() {
-        class Holder {
-            static final MemorySegment G_MEMORY_MONITOR_EXTENSION_POINT_NAME
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("gio-memory-monitor");
-        }
-        return Holder.G_MEMORY_MONITOR_EXTENSION_POINT_NAME;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_MENU_ATTRIBUTE_ACTION "action"
-     * }
-     */
-    public static MemorySegment G_MENU_ATTRIBUTE_ACTION() {
-        class Holder {
-            static final MemorySegment G_MENU_ATTRIBUTE_ACTION
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("action");
-        }
-        return Holder.G_MENU_ATTRIBUTE_ACTION;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_MENU_ATTRIBUTE_ACTION_NAMESPACE "action-namespace"
-     * }
-     */
-    public static MemorySegment G_MENU_ATTRIBUTE_ACTION_NAMESPACE() {
-        class Holder {
-            static final MemorySegment G_MENU_ATTRIBUTE_ACTION_NAMESPACE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("action-namespace");
-        }
-        return Holder.G_MENU_ATTRIBUTE_ACTION_NAMESPACE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_MENU_ATTRIBUTE_TARGET "target"
-     * }
-     */
-    public static MemorySegment G_MENU_ATTRIBUTE_TARGET() {
-        class Holder {
-            static final MemorySegment G_MENU_ATTRIBUTE_TARGET
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("target");
-        }
-        return Holder.G_MENU_ATTRIBUTE_TARGET;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_MENU_ATTRIBUTE_LABEL "label"
-     * }
-     */
-    public static MemorySegment G_MENU_ATTRIBUTE_LABEL() {
-        class Holder {
-            static final MemorySegment G_MENU_ATTRIBUTE_LABEL
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("label");
-        }
-        return Holder.G_MENU_ATTRIBUTE_LABEL;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_MENU_ATTRIBUTE_ICON "icon"
-     * }
-     */
-    public static MemorySegment G_MENU_ATTRIBUTE_ICON() {
-        class Holder {
-            static final MemorySegment G_MENU_ATTRIBUTE_ICON
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("icon");
-        }
-        return Holder.G_MENU_ATTRIBUTE_ICON;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_MENU_LINK_SUBMENU "submenu"
-     * }
-     */
-    public static MemorySegment G_MENU_LINK_SUBMENU() {
-        class Holder {
-            static final MemorySegment G_MENU_LINK_SUBMENU
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("submenu");
-        }
-        return Holder.G_MENU_LINK_SUBMENU;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_MENU_LINK_SECTION "section"
-     * }
-     */
-    public static MemorySegment G_MENU_LINK_SECTION() {
-        class Holder {
-            static final MemorySegment G_MENU_LINK_SECTION
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("section");
-        }
-        return Holder.G_MENU_LINK_SECTION;
-    }
-    private static final int G_MENU_EXPORTER_MAX_SECTION_SIZE = (int)1000L;
-    /**
-     * {@snippet lang=c :
-     * #define G_MENU_EXPORTER_MAX_SECTION_SIZE 1000
-     * }
-     */
-    public static int G_MENU_EXPORTER_MAX_SECTION_SIZE() {
-        return G_MENU_EXPORTER_MAX_SECTION_SIZE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_VOLUME_MONITOR_EXTENSION_POINT_NAME "gio-volume-monitor"
-     * }
-     */
-    public static MemorySegment G_VOLUME_MONITOR_EXTENSION_POINT_NAME() {
-        class Holder {
-            static final MemorySegment G_VOLUME_MONITOR_EXTENSION_POINT_NAME
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("gio-volume-monitor");
-        }
-        return Holder.G_VOLUME_MONITOR_EXTENSION_POINT_NAME;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_NATIVE_VOLUME_MONITOR_EXTENSION_POINT_NAME "gio-native-volume-monitor"
-     * }
-     */
-    public static MemorySegment G_NATIVE_VOLUME_MONITOR_EXTENSION_POINT_NAME() {
-        class Holder {
-            static final MemorySegment G_NATIVE_VOLUME_MONITOR_EXTENSION_POINT_NAME
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("gio-native-volume-monitor");
-        }
-        return Holder.G_NATIVE_VOLUME_MONITOR_EXTENSION_POINT_NAME;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_NETWORK_MONITOR_EXTENSION_POINT_NAME "gio-network-monitor"
-     * }
-     */
-    public static MemorySegment G_NETWORK_MONITOR_EXTENSION_POINT_NAME() {
-        class Holder {
-            static final MemorySegment G_NETWORK_MONITOR_EXTENSION_POINT_NAME
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("gio-network-monitor");
-        }
-        return Holder.G_NETWORK_MONITOR_EXTENSION_POINT_NAME;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_POWER_PROFILE_MONITOR_EXTENSION_POINT_NAME "gio-power-profile-monitor"
-     * }
-     */
-    public static MemorySegment G_POWER_PROFILE_MONITOR_EXTENSION_POINT_NAME() {
-        class Holder {
-            static final MemorySegment G_POWER_PROFILE_MONITOR_EXTENSION_POINT_NAME
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("gio-power-profile-monitor");
-        }
-        return Holder.G_POWER_PROFILE_MONITOR_EXTENSION_POINT_NAME;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_PROXY_EXTENSION_POINT_NAME "gio-proxy"
-     * }
-     */
-    public static MemorySegment G_PROXY_EXTENSION_POINT_NAME() {
-        class Holder {
-            static final MemorySegment G_PROXY_EXTENSION_POINT_NAME
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("gio-proxy");
-        }
-        return Holder.G_PROXY_EXTENSION_POINT_NAME;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_PROXY_RESOLVER_EXTENSION_POINT_NAME "gio-proxy-resolver"
-     * }
-     */
-    public static MemorySegment G_PROXY_RESOLVER_EXTENSION_POINT_NAME() {
-        class Holder {
-            static final MemorySegment G_PROXY_RESOLVER_EXTENSION_POINT_NAME
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("gio-proxy-resolver");
-        }
-        return Holder.G_PROXY_RESOLVER_EXTENSION_POINT_NAME;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_TLS_BACKEND_EXTENSION_POINT_NAME "gio-tls-backend"
-     * }
-     */
-    public static MemorySegment G_TLS_BACKEND_EXTENSION_POINT_NAME() {
-        class Holder {
-            static final MemorySegment G_TLS_BACKEND_EXTENSION_POINT_NAME
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("gio-tls-backend");
-        }
-        return Holder.G_TLS_BACKEND_EXTENSION_POINT_NAME;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_TLS_DATABASE_PURPOSE_AUTHENTICATE_SERVER "1.3.6.1.5.5.7.3.1"
-     * }
-     */
-    public static MemorySegment G_TLS_DATABASE_PURPOSE_AUTHENTICATE_SERVER() {
-        class Holder {
-            static final MemorySegment G_TLS_DATABASE_PURPOSE_AUTHENTICATE_SERVER
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("1.3.6.1.5.5.7.3.1");
-        }
-        return Holder.G_TLS_DATABASE_PURPOSE_AUTHENTICATE_SERVER;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_TLS_DATABASE_PURPOSE_AUTHENTICATE_CLIENT "1.3.6.1.5.5.7.3.2"
-     * }
-     */
-    public static MemorySegment G_TLS_DATABASE_PURPOSE_AUTHENTICATE_CLIENT() {
-        class Holder {
-            static final MemorySegment G_TLS_DATABASE_PURPOSE_AUTHENTICATE_CLIENT
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("1.3.6.1.5.5.7.3.2");
-        }
-        return Holder.G_TLS_DATABASE_PURPOSE_AUTHENTICATE_CLIENT;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_VFS_EXTENSION_POINT_NAME "gio-vfs"
-     * }
-     */
-    public static MemorySegment G_VFS_EXTENSION_POINT_NAME() {
-        class Holder {
-            static final MemorySegment G_VFS_EXTENSION_POINT_NAME
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("gio-vfs");
-        }
-        return Holder.G_VFS_EXTENSION_POINT_NAME;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_VOLUME_IDENTIFIER_KIND_HAL_UDI "hal-udi"
-     * }
-     */
-    public static MemorySegment G_VOLUME_IDENTIFIER_KIND_HAL_UDI() {
-        class Holder {
-            static final MemorySegment G_VOLUME_IDENTIFIER_KIND_HAL_UDI
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hal-udi");
-        }
-        return Holder.G_VOLUME_IDENTIFIER_KIND_HAL_UDI;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_VOLUME_IDENTIFIER_KIND_UNIX_DEVICE "unix-device"
-     * }
-     */
-    public static MemorySegment G_VOLUME_IDENTIFIER_KIND_UNIX_DEVICE() {
-        class Holder {
-            static final MemorySegment G_VOLUME_IDENTIFIER_KIND_UNIX_DEVICE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix-device");
-        }
-        return Holder.G_VOLUME_IDENTIFIER_KIND_UNIX_DEVICE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_VOLUME_IDENTIFIER_KIND_LABEL "label"
-     * }
-     */
-    public static MemorySegment G_VOLUME_IDENTIFIER_KIND_LABEL() {
-        class Holder {
-            static final MemorySegment G_VOLUME_IDENTIFIER_KIND_LABEL
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("label");
-        }
-        return Holder.G_VOLUME_IDENTIFIER_KIND_LABEL;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_VOLUME_IDENTIFIER_KIND_UUID "uuid"
-     * }
-     */
-    public static MemorySegment G_VOLUME_IDENTIFIER_KIND_UUID() {
-        class Holder {
-            static final MemorySegment G_VOLUME_IDENTIFIER_KIND_UUID
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("uuid");
-        }
-        return Holder.G_VOLUME_IDENTIFIER_KIND_UUID;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_VOLUME_IDENTIFIER_KIND_NFS_MOUNT "nfs-mount"
-     * }
-     */
-    public static MemorySegment G_VOLUME_IDENTIFIER_KIND_NFS_MOUNT() {
-        class Holder {
-            static final MemorySegment G_VOLUME_IDENTIFIER_KIND_NFS_MOUNT
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("nfs-mount");
-        }
-        return Holder.G_VOLUME_IDENTIFIER_KIND_NFS_MOUNT;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define G_VOLUME_IDENTIFIER_KIND_CLASS "class"
-     * }
-     */
-    public static MemorySegment G_VOLUME_IDENTIFIER_KIND_CLASS() {
-        class Holder {
-            static final MemorySegment G_VOLUME_IDENTIFIER_KIND_CLASS
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("class");
-        }
-        return Holder.G_VOLUME_IDENTIFIER_KIND_CLASS;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_STRING "1.52.1"
-     * }
-     */
-    public static MemorySegment PANGO_VERSION_STRING() {
-        class Holder {
-            static final MemorySegment PANGO_VERSION_STRING
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("1.52.1");
-        }
-        return Holder.PANGO_VERSION_STRING;
-    }
-    private static final int PANGO_VERSION_1_2 = (int)66048L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_2 66048
-     * }
-     */
-    public static int PANGO_VERSION_1_2() {
-        return PANGO_VERSION_1_2;
-    }
-    private static final int PANGO_VERSION_1_4 = (int)66560L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_4 66560
-     * }
-     */
-    public static int PANGO_VERSION_1_4() {
-        return PANGO_VERSION_1_4;
-    }
-    private static final int PANGO_VERSION_1_6 = (int)67072L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_6 67072
-     * }
-     */
-    public static int PANGO_VERSION_1_6() {
-        return PANGO_VERSION_1_6;
-    }
-    private static final int PANGO_VERSION_1_8 = (int)67584L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_8 67584
-     * }
-     */
-    public static int PANGO_VERSION_1_8() {
-        return PANGO_VERSION_1_8;
-    }
-    private static final int PANGO_VERSION_1_10 = (int)68096L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_10 68096
-     * }
-     */
-    public static int PANGO_VERSION_1_10() {
-        return PANGO_VERSION_1_10;
-    }
-    private static final int PANGO_VERSION_1_12 = (int)68608L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_12 68608
-     * }
-     */
-    public static int PANGO_VERSION_1_12() {
-        return PANGO_VERSION_1_12;
-    }
-    private static final int PANGO_VERSION_1_14 = (int)69120L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_14 69120
-     * }
-     */
-    public static int PANGO_VERSION_1_14() {
-        return PANGO_VERSION_1_14;
-    }
-    private static final int PANGO_VERSION_1_16 = (int)69632L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_16 69632
-     * }
-     */
-    public static int PANGO_VERSION_1_16() {
-        return PANGO_VERSION_1_16;
-    }
-    private static final int PANGO_VERSION_1_18 = (int)70144L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_18 70144
-     * }
-     */
-    public static int PANGO_VERSION_1_18() {
-        return PANGO_VERSION_1_18;
-    }
-    private static final int PANGO_VERSION_1_20 = (int)70656L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_20 70656
-     * }
-     */
-    public static int PANGO_VERSION_1_20() {
-        return PANGO_VERSION_1_20;
-    }
-    private static final int PANGO_VERSION_1_22 = (int)71168L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_22 71168
-     * }
-     */
-    public static int PANGO_VERSION_1_22() {
-        return PANGO_VERSION_1_22;
-    }
-    private static final int PANGO_VERSION_1_24 = (int)71680L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_24 71680
-     * }
-     */
-    public static int PANGO_VERSION_1_24() {
-        return PANGO_VERSION_1_24;
-    }
-    private static final int PANGO_VERSION_1_26 = (int)72192L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_26 72192
-     * }
-     */
-    public static int PANGO_VERSION_1_26() {
-        return PANGO_VERSION_1_26;
-    }
-    private static final int PANGO_VERSION_1_28 = (int)72704L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_28 72704
-     * }
-     */
-    public static int PANGO_VERSION_1_28() {
-        return PANGO_VERSION_1_28;
-    }
-    private static final int PANGO_VERSION_1_30 = (int)73216L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_30 73216
-     * }
-     */
-    public static int PANGO_VERSION_1_30() {
-        return PANGO_VERSION_1_30;
-    }
-    private static final int PANGO_VERSION_1_32 = (int)73728L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_32 73728
-     * }
-     */
-    public static int PANGO_VERSION_1_32() {
-        return PANGO_VERSION_1_32;
-    }
-    private static final int PANGO_VERSION_1_34 = (int)74240L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_34 74240
-     * }
-     */
-    public static int PANGO_VERSION_1_34() {
-        return PANGO_VERSION_1_34;
-    }
-    private static final int PANGO_VERSION_1_36 = (int)74752L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_36 74752
-     * }
-     */
-    public static int PANGO_VERSION_1_36() {
-        return PANGO_VERSION_1_36;
-    }
-    private static final int PANGO_VERSION_1_38 = (int)75264L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_38 75264
-     * }
-     */
-    public static int PANGO_VERSION_1_38() {
-        return PANGO_VERSION_1_38;
-    }
-    private static final int PANGO_VERSION_1_40 = (int)75776L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_40 75776
-     * }
-     */
-    public static int PANGO_VERSION_1_40() {
-        return PANGO_VERSION_1_40;
-    }
-    private static final int PANGO_VERSION_1_42 = (int)76288L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_42 76288
-     * }
-     */
-    public static int PANGO_VERSION_1_42() {
-        return PANGO_VERSION_1_42;
-    }
-    private static final int PANGO_VERSION_1_44 = (int)76800L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_44 76800
-     * }
-     */
-    public static int PANGO_VERSION_1_44() {
-        return PANGO_VERSION_1_44;
-    }
-    private static final int PANGO_VERSION_1_46 = (int)77312L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_46 77312
-     * }
-     */
-    public static int PANGO_VERSION_1_46() {
-        return PANGO_VERSION_1_46;
-    }
-    private static final int PANGO_VERSION_1_48 = (int)77824L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_48 77824
-     * }
-     */
-    public static int PANGO_VERSION_1_48() {
-        return PANGO_VERSION_1_48;
-    }
-    private static final int PANGO_VERSION_1_50 = (int)78336L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_50 78336
-     * }
-     */
-    public static int PANGO_VERSION_1_50() {
-        return PANGO_VERSION_1_50;
-    }
-    private static final int PANGO_VERSION_1_52 = (int)78848L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_1_52 78848
-     * }
-     */
-    public static int PANGO_VERSION_1_52() {
-        return PANGO_VERSION_1_52;
-    }
-    private static final int PANGO_VERSION_CUR_STABLE = (int)78848L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_CUR_STABLE 78848
-     * }
-     */
-    public static int PANGO_VERSION_CUR_STABLE() {
-        return PANGO_VERSION_CUR_STABLE;
-    }
-    private static final int PANGO_VERSION_PREV_STABLE = (int)78336L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_PREV_STABLE 78336
-     * }
-     */
-    public static int PANGO_VERSION_PREV_STABLE() {
-        return PANGO_VERSION_PREV_STABLE;
-    }
-    private static final int PANGO_VERSION_MIN_REQUIRED = (int)78848L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_MIN_REQUIRED 78848
-     * }
-     */
-    public static int PANGO_VERSION_MIN_REQUIRED() {
-        return PANGO_VERSION_MIN_REQUIRED;
-    }
-    private static final int PANGO_VERSION_MAX_ALLOWED = (int)78848L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION_MAX_ALLOWED 78848
-     * }
-     */
-    public static int PANGO_VERSION_MAX_ALLOWED() {
-        return PANGO_VERSION_MAX_ALLOWED;
-    }
-    private static final int __WCHAR_MAX = (int)4294967295L;
-    /**
-     * {@snippet lang=c :
-     * #define __WCHAR_MAX 4294967295
-     * }
-     */
-    public static int __WCHAR_MAX() {
-        return __WCHAR_MAX;
-    }
-    private static final int __WCHAR_MIN = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * #define __WCHAR_MIN 0
-     * }
-     */
-    public static int __WCHAR_MIN() {
-        return __WCHAR_MIN;
-    }
-    private static final int INT8_MIN = (int)-128L;
-    /**
-     * {@snippet lang=c :
-     * #define INT8_MIN -128
-     * }
-     */
-    public static int INT8_MIN() {
-        return INT8_MIN;
-    }
-    private static final int INT16_MIN = (int)-32768L;
-    /**
-     * {@snippet lang=c :
-     * #define INT16_MIN -32768
-     * }
-     */
-    public static int INT16_MIN() {
-        return INT16_MIN;
-    }
-    private static final int INT32_MIN = (int)-2147483648L;
-    /**
-     * {@snippet lang=c :
-     * #define INT32_MIN -2147483648
-     * }
-     */
-    public static int INT32_MIN() {
-        return INT32_MIN;
-    }
-    private static final long INT64_MIN = -9223372036854775808L;
-    /**
-     * {@snippet lang=c :
-     * #define INT64_MIN -9223372036854775808
-     * }
-     */
-    public static long INT64_MIN() {
-        return INT64_MIN;
-    }
-    private static final int INT8_MAX = (int)127L;
-    /**
-     * {@snippet lang=c :
-     * #define INT8_MAX 127
-     * }
-     */
-    public static int INT8_MAX() {
-        return INT8_MAX;
-    }
-    private static final int INT16_MAX = (int)32767L;
-    /**
-     * {@snippet lang=c :
-     * #define INT16_MAX 32767
-     * }
-     */
-    public static int INT16_MAX() {
-        return INT16_MAX;
-    }
-    private static final int INT32_MAX = (int)2147483647L;
-    /**
-     * {@snippet lang=c :
-     * #define INT32_MAX 2147483647
-     * }
-     */
-    public static int INT32_MAX() {
-        return INT32_MAX;
-    }
-    private static final long INT64_MAX = 9223372036854775807L;
-    /**
-     * {@snippet lang=c :
-     * #define INT64_MAX 9223372036854775807
-     * }
-     */
-    public static long INT64_MAX() {
-        return INT64_MAX;
-    }
-    private static final int UINT8_MAX = (int)255L;
-    /**
-     * {@snippet lang=c :
-     * #define UINT8_MAX 255
-     * }
-     */
-    public static int UINT8_MAX() {
-        return UINT8_MAX;
-    }
-    private static final int UINT16_MAX = (int)65535L;
-    /**
-     * {@snippet lang=c :
-     * #define UINT16_MAX 65535
-     * }
-     */
-    public static int UINT16_MAX() {
-        return UINT16_MAX;
-    }
-    private static final int UINT32_MAX = (int)4294967295L;
-    /**
-     * {@snippet lang=c :
-     * #define UINT32_MAX 4294967295
-     * }
-     */
-    public static int UINT32_MAX() {
-        return UINT32_MAX;
-    }
-    private static final long UINT64_MAX = -1L;
-    /**
-     * {@snippet lang=c :
-     * #define UINT64_MAX -1
-     * }
-     */
-    public static long UINT64_MAX() {
-        return UINT64_MAX;
-    }
-    private static final int INT_LEAST8_MIN = (int)-128L;
-    /**
-     * {@snippet lang=c :
-     * #define INT_LEAST8_MIN -128
-     * }
-     */
-    public static int INT_LEAST8_MIN() {
-        return INT_LEAST8_MIN;
-    }
-    private static final int INT_LEAST16_MIN = (int)-32768L;
-    /**
-     * {@snippet lang=c :
-     * #define INT_LEAST16_MIN -32768
-     * }
-     */
-    public static int INT_LEAST16_MIN() {
-        return INT_LEAST16_MIN;
-    }
-    private static final int INT_LEAST32_MIN = (int)-2147483648L;
-    /**
-     * {@snippet lang=c :
-     * #define INT_LEAST32_MIN -2147483648
-     * }
-     */
-    public static int INT_LEAST32_MIN() {
-        return INT_LEAST32_MIN;
-    }
-    private static final long INT_LEAST64_MIN = -9223372036854775808L;
-    /**
-     * {@snippet lang=c :
-     * #define INT_LEAST64_MIN -9223372036854775808
-     * }
-     */
-    public static long INT_LEAST64_MIN() {
-        return INT_LEAST64_MIN;
-    }
-    private static final int INT_LEAST8_MAX = (int)127L;
-    /**
-     * {@snippet lang=c :
-     * #define INT_LEAST8_MAX 127
-     * }
-     */
-    public static int INT_LEAST8_MAX() {
-        return INT_LEAST8_MAX;
-    }
-    private static final int INT_LEAST16_MAX = (int)32767L;
-    /**
-     * {@snippet lang=c :
-     * #define INT_LEAST16_MAX 32767
-     * }
-     */
-    public static int INT_LEAST16_MAX() {
-        return INT_LEAST16_MAX;
-    }
-    private static final int INT_LEAST32_MAX = (int)2147483647L;
-    /**
-     * {@snippet lang=c :
-     * #define INT_LEAST32_MAX 2147483647
-     * }
-     */
-    public static int INT_LEAST32_MAX() {
-        return INT_LEAST32_MAX;
-    }
-    private static final long INT_LEAST64_MAX = 9223372036854775807L;
-    /**
-     * {@snippet lang=c :
-     * #define INT_LEAST64_MAX 9223372036854775807
-     * }
-     */
-    public static long INT_LEAST64_MAX() {
-        return INT_LEAST64_MAX;
-    }
-    private static final int UINT_LEAST8_MAX = (int)255L;
-    /**
-     * {@snippet lang=c :
-     * #define UINT_LEAST8_MAX 255
-     * }
-     */
-    public static int UINT_LEAST8_MAX() {
-        return UINT_LEAST8_MAX;
-    }
-    private static final int UINT_LEAST16_MAX = (int)65535L;
-    /**
-     * {@snippet lang=c :
-     * #define UINT_LEAST16_MAX 65535
-     * }
-     */
-    public static int UINT_LEAST16_MAX() {
-        return UINT_LEAST16_MAX;
-    }
-    private static final int UINT_LEAST32_MAX = (int)4294967295L;
-    /**
-     * {@snippet lang=c :
-     * #define UINT_LEAST32_MAX 4294967295
-     * }
-     */
-    public static int UINT_LEAST32_MAX() {
-        return UINT_LEAST32_MAX;
-    }
-    private static final long UINT_LEAST64_MAX = -1L;
-    /**
-     * {@snippet lang=c :
-     * #define UINT_LEAST64_MAX -1
-     * }
-     */
-    public static long UINT_LEAST64_MAX() {
-        return UINT_LEAST64_MAX;
-    }
-    private static final int INT_FAST8_MIN = (int)-128L;
-    /**
-     * {@snippet lang=c :
-     * #define INT_FAST8_MIN -128
-     * }
-     */
-    public static int INT_FAST8_MIN() {
-        return INT_FAST8_MIN;
-    }
-    private static final long INT_FAST16_MIN = -9223372036854775808L;
-    /**
-     * {@snippet lang=c :
-     * #define INT_FAST16_MIN -9223372036854775808
-     * }
-     */
-    public static long INT_FAST16_MIN() {
-        return INT_FAST16_MIN;
-    }
-    private static final long INT_FAST32_MIN = -9223372036854775808L;
-    /**
-     * {@snippet lang=c :
-     * #define INT_FAST32_MIN -9223372036854775808
-     * }
-     */
-    public static long INT_FAST32_MIN() {
-        return INT_FAST32_MIN;
-    }
-    private static final long INT_FAST64_MIN = -9223372036854775808L;
-    /**
-     * {@snippet lang=c :
-     * #define INT_FAST64_MIN -9223372036854775808
-     * }
-     */
-    public static long INT_FAST64_MIN() {
-        return INT_FAST64_MIN;
-    }
-    private static final int INT_FAST8_MAX = (int)127L;
-    /**
-     * {@snippet lang=c :
-     * #define INT_FAST8_MAX 127
-     * }
-     */
-    public static int INT_FAST8_MAX() {
-        return INT_FAST8_MAX;
-    }
-    private static final long INT_FAST16_MAX = 9223372036854775807L;
-    /**
-     * {@snippet lang=c :
-     * #define INT_FAST16_MAX 9223372036854775807
-     * }
-     */
-    public static long INT_FAST16_MAX() {
-        return INT_FAST16_MAX;
-    }
-    private static final long INT_FAST32_MAX = 9223372036854775807L;
-    /**
-     * {@snippet lang=c :
-     * #define INT_FAST32_MAX 9223372036854775807
-     * }
-     */
-    public static long INT_FAST32_MAX() {
-        return INT_FAST32_MAX;
-    }
-    private static final long INT_FAST64_MAX = 9223372036854775807L;
-    /**
-     * {@snippet lang=c :
-     * #define INT_FAST64_MAX 9223372036854775807
-     * }
-     */
-    public static long INT_FAST64_MAX() {
-        return INT_FAST64_MAX;
-    }
-    private static final int UINT_FAST8_MAX = (int)255L;
-    /**
-     * {@snippet lang=c :
-     * #define UINT_FAST8_MAX 255
-     * }
-     */
-    public static int UINT_FAST8_MAX() {
-        return UINT_FAST8_MAX;
-    }
-    private static final long UINT_FAST16_MAX = -1L;
-    /**
-     * {@snippet lang=c :
-     * #define UINT_FAST16_MAX -1
-     * }
-     */
-    public static long UINT_FAST16_MAX() {
-        return UINT_FAST16_MAX;
-    }
-    private static final long UINT_FAST32_MAX = -1L;
-    /**
-     * {@snippet lang=c :
-     * #define UINT_FAST32_MAX -1
-     * }
-     */
-    public static long UINT_FAST32_MAX() {
-        return UINT_FAST32_MAX;
-    }
-    private static final long UINT_FAST64_MAX = -1L;
-    /**
-     * {@snippet lang=c :
-     * #define UINT_FAST64_MAX -1
-     * }
-     */
-    public static long UINT_FAST64_MAX() {
-        return UINT_FAST64_MAX;
-    }
-    private static final long INTPTR_MIN = -9223372036854775808L;
-    /**
-     * {@snippet lang=c :
-     * #define INTPTR_MIN -9223372036854775808
-     * }
-     */
-    public static long INTPTR_MIN() {
-        return INTPTR_MIN;
-    }
-    private static final long INTPTR_MAX = 9223372036854775807L;
-    /**
-     * {@snippet lang=c :
-     * #define INTPTR_MAX 9223372036854775807
-     * }
-     */
-    public static long INTPTR_MAX() {
-        return INTPTR_MAX;
-    }
-    private static final long UINTPTR_MAX = -1L;
-    /**
-     * {@snippet lang=c :
-     * #define UINTPTR_MAX -1
-     * }
-     */
-    public static long UINTPTR_MAX() {
-        return UINTPTR_MAX;
-    }
-    private static final long INTMAX_MIN = -9223372036854775808L;
-    /**
-     * {@snippet lang=c :
-     * #define INTMAX_MIN -9223372036854775808
-     * }
-     */
-    public static long INTMAX_MIN() {
-        return INTMAX_MIN;
-    }
-    private static final long INTMAX_MAX = 9223372036854775807L;
-    /**
-     * {@snippet lang=c :
-     * #define INTMAX_MAX 9223372036854775807
-     * }
-     */
-    public static long INTMAX_MAX() {
-        return INTMAX_MAX;
-    }
-    private static final long UINTMAX_MAX = -1L;
-    /**
-     * {@snippet lang=c :
-     * #define UINTMAX_MAX -1
-     * }
-     */
-    public static long UINTMAX_MAX() {
-        return UINTMAX_MAX;
-    }
-    private static final long PTRDIFF_MIN = -9223372036854775808L;
-    /**
-     * {@snippet lang=c :
-     * #define PTRDIFF_MIN -9223372036854775808
-     * }
-     */
-    public static long PTRDIFF_MIN() {
-        return PTRDIFF_MIN;
-    }
-    private static final long PTRDIFF_MAX = 9223372036854775807L;
-    /**
-     * {@snippet lang=c :
-     * #define PTRDIFF_MAX 9223372036854775807
-     * }
-     */
-    public static long PTRDIFF_MAX() {
-        return PTRDIFF_MAX;
-    }
-    private static final int SIG_ATOMIC_MIN = (int)-2147483648L;
-    /**
-     * {@snippet lang=c :
-     * #define SIG_ATOMIC_MIN -2147483648
-     * }
-     */
-    public static int SIG_ATOMIC_MIN() {
-        return SIG_ATOMIC_MIN;
-    }
-    private static final int SIG_ATOMIC_MAX = (int)2147483647L;
-    /**
-     * {@snippet lang=c :
-     * #define SIG_ATOMIC_MAX 2147483647
-     * }
-     */
-    public static int SIG_ATOMIC_MAX() {
-        return SIG_ATOMIC_MAX;
-    }
-    private static final long SIZE_MAX = -1L;
-    /**
-     * {@snippet lang=c :
-     * #define SIZE_MAX -1
-     * }
-     */
-    public static long SIZE_MAX() {
-        return SIZE_MAX;
-    }
-    private static final int WCHAR_MIN = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * #define WCHAR_MIN 0
-     * }
-     */
-    public static int WCHAR_MIN() {
-        return WCHAR_MIN;
-    }
-    private static final int WCHAR_MAX = (int)4294967295L;
-    /**
-     * {@snippet lang=c :
-     * #define WCHAR_MAX 4294967295
-     * }
-     */
-    public static int WCHAR_MAX() {
-        return WCHAR_MAX;
-    }
-    private static final int WINT_MIN = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * #define WINT_MIN 0
-     * }
-     */
-    public static int WINT_MIN() {
-        return WINT_MIN;
-    }
-    private static final int WINT_MAX = (int)4294967295L;
-    /**
-     * {@snippet lang=c :
-     * #define WINT_MAX 4294967295
-     * }
-     */
-    public static int WINT_MAX() {
-        return WINT_MAX;
-    }
-    private static final int HB_CODEPOINT_INVALID = (int)4294967295L;
-    /**
-     * {@snippet lang=c :
-     * #define HB_CODEPOINT_INVALID 4294967295
-     * }
-     */
-    public static int HB_CODEPOINT_INVALID() {
-        return HB_CODEPOINT_INVALID;
-    }
-    private static final int HB_TAG_NONE = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * #define HB_TAG_NONE 0
-     * }
-     */
-    public static int HB_TAG_NONE() {
-        return HB_TAG_NONE;
-    }
-    private static final int HB_TAG_MAX = (int)4294967295L;
-    /**
-     * {@snippet lang=c :
-     * #define HB_TAG_MAX 4294967295
-     * }
-     */
-    public static int HB_TAG_MAX() {
-        return HB_TAG_MAX;
-    }
-    private static final int HB_TAG_MAX_SIGNED = (int)2147483647L;
-    /**
-     * {@snippet lang=c :
-     * #define HB_TAG_MAX_SIGNED 2147483647
-     * }
-     */
-    public static int HB_TAG_MAX_SIGNED() {
-        return HB_TAG_MAX_SIGNED;
-    }
-    private static final MemorySegment HB_LANGUAGE_INVALID = MemorySegment.ofAddress(0L);
-    /**
-     * {@snippet lang=c :
-     * #define HB_LANGUAGE_INVALID (void*) 0
-     * }
-     */
-    public static MemorySegment HB_LANGUAGE_INVALID() {
-        return HB_LANGUAGE_INVALID;
-    }
-    private static final int HB_FEATURE_GLOBAL_END = (int)4294967295L;
-    /**
-     * {@snippet lang=c :
-     * #define HB_FEATURE_GLOBAL_END 4294967295
-     * }
-     */
-    public static int HB_FEATURE_GLOBAL_END() {
-        return HB_FEATURE_GLOBAL_END;
-    }
-    private static final int HB_UNICODE_MAX = (int)1114111L;
-    /**
-     * {@snippet lang=c :
-     * #define HB_UNICODE_MAX 1114111
-     * }
-     */
-    public static int HB_UNICODE_MAX() {
-        return HB_UNICODE_MAX;
-    }
-    private static final int HB_SET_VALUE_INVALID = (int)4294967295L;
-    /**
-     * {@snippet lang=c :
-     * #define HB_SET_VALUE_INVALID 4294967295
-     * }
-     */
-    public static int HB_SET_VALUE_INVALID() {
-        return HB_SET_VALUE_INVALID;
-    }
-    private static final int HB_MAP_VALUE_INVALID = (int)4294967295L;
-    /**
-     * {@snippet lang=c :
-     * #define HB_MAP_VALUE_INVALID 4294967295
-     * }
-     */
-    public static int HB_MAP_VALUE_INVALID() {
-        return HB_MAP_VALUE_INVALID;
-    }
-    private static final int HB_PAINT_IMAGE_FORMAT_PNG = (int)1886283552L;
-    /**
-     * {@snippet lang=c :
-     * #define HB_PAINT_IMAGE_FORMAT_PNG 1886283552
-     * }
-     */
-    public static int HB_PAINT_IMAGE_FORMAT_PNG() {
-        return HB_PAINT_IMAGE_FORMAT_PNG;
-    }
-    private static final int HB_PAINT_IMAGE_FORMAT_SVG = (int)1937139488L;
-    /**
-     * {@snippet lang=c :
-     * #define HB_PAINT_IMAGE_FORMAT_SVG 1937139488
-     * }
-     */
-    public static int HB_PAINT_IMAGE_FORMAT_SVG() {
-        return HB_PAINT_IMAGE_FORMAT_SVG;
-    }
-    private static final int HB_PAINT_IMAGE_FORMAT_BGRA = (int)1111970369L;
-    /**
-     * {@snippet lang=c :
-     * #define HB_PAINT_IMAGE_FORMAT_BGRA 1111970369
-     * }
-     */
-    public static int HB_PAINT_IMAGE_FORMAT_BGRA() {
-        return HB_PAINT_IMAGE_FORMAT_BGRA;
-    }
-    private static final int HB_FONT_NO_VAR_NAMED_INSTANCE = (int)4294967295L;
-    /**
-     * {@snippet lang=c :
-     * #define HB_FONT_NO_VAR_NAMED_INSTANCE 4294967295
-     * }
-     */
-    public static int HB_FONT_NO_VAR_NAMED_INSTANCE() {
-        return HB_FONT_NO_VAR_NAMED_INSTANCE;
-    }
-    private static final int HB_BUFFER_REPLACEMENT_CODEPOINT_DEFAULT = (int)65533L;
-    /**
-     * {@snippet lang=c :
-     * #define HB_BUFFER_REPLACEMENT_CODEPOINT_DEFAULT 65533
-     * }
-     */
-    public static int HB_BUFFER_REPLACEMENT_CODEPOINT_DEFAULT() {
-        return HB_BUFFER_REPLACEMENT_CODEPOINT_DEFAULT;
-    }
-    private static final int HB_SCRIPT_CANADIAN_ABORIGINAL = (int)1130458739L;
-    /**
-     * {@snippet lang=c :
-     * #define HB_SCRIPT_CANADIAN_ABORIGINAL 1130458739
-     * }
-     */
-    public static int HB_SCRIPT_CANADIAN_ABORIGINAL() {
-        return HB_SCRIPT_CANADIAN_ABORIGINAL;
-    }
-    private static final int HB_BUFFER_FLAGS_DEFAULT = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * #define HB_BUFFER_FLAGS_DEFAULT 0
-     * }
-     */
-    public static int HB_BUFFER_FLAGS_DEFAULT() {
-        return HB_BUFFER_FLAGS_DEFAULT;
-    }
-    private static final int HB_BUFFER_SERIALIZE_FLAGS_DEFAULT = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * #define HB_BUFFER_SERIALIZE_FLAGS_DEFAULT 0
-     * }
-     */
-    public static int HB_BUFFER_SERIALIZE_FLAGS_DEFAULT() {
-        return HB_BUFFER_SERIALIZE_FLAGS_DEFAULT;
-    }
-    private static final int HB_UNICODE_MAX_DECOMPOSITION_LEN = (int)19L;
-    /**
-     * {@snippet lang=c :
-     * #define HB_UNICODE_MAX_DECOMPOSITION_LEN 19
-     * }
-     */
-    public static int HB_UNICODE_MAX_DECOMPOSITION_LEN() {
-        return HB_UNICODE_MAX_DECOMPOSITION_LEN;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define HB_VERSION_STRING "8.3.0"
-     * }
-     */
-    public static MemorySegment HB_VERSION_STRING() {
-        class Holder {
-            static final MemorySegment HB_VERSION_STRING
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("8.3.0");
-        }
-        return Holder.HB_VERSION_STRING;
-    }
-    private static final double PANGO_SCALE_XX_SMALL = 0.5787037037037d;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_SCALE_XX_SMALL 0.5787037037037
-     * }
-     */
-    public static double PANGO_SCALE_XX_SMALL() {
-        return PANGO_SCALE_XX_SMALL;
-    }
-    private static final double PANGO_SCALE_X_SMALL = 0.6944444444444d;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_SCALE_X_SMALL 0.6944444444444
-     * }
-     */
-    public static double PANGO_SCALE_X_SMALL() {
-        return PANGO_SCALE_X_SMALL;
-    }
-    private static final double PANGO_SCALE_SMALL = 0.8333333333333d;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_SCALE_SMALL 0.8333333333333
-     * }
-     */
-    public static double PANGO_SCALE_SMALL() {
-        return PANGO_SCALE_SMALL;
-    }
-    private static final double PANGO_SCALE_MEDIUM = 1.0d;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_SCALE_MEDIUM 1.0
-     * }
-     */
-    public static double PANGO_SCALE_MEDIUM() {
-        return PANGO_SCALE_MEDIUM;
-    }
-    private static final double PANGO_SCALE_LARGE = 1.2d;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_SCALE_LARGE 1.2
-     * }
-     */
-    public static double PANGO_SCALE_LARGE() {
-        return PANGO_SCALE_LARGE;
-    }
-    private static final double PANGO_SCALE_X_LARGE = 1.44d;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_SCALE_X_LARGE 1.44
-     * }
-     */
-    public static double PANGO_SCALE_X_LARGE() {
-        return PANGO_SCALE_X_LARGE;
-    }
-    private static final double PANGO_SCALE_XX_LARGE = 1.728d;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_SCALE_XX_LARGE 1.728
-     * }
-     */
-    public static double PANGO_SCALE_XX_LARGE() {
-        return PANGO_SCALE_XX_LARGE;
-    }
-    private static final int PANGO_GLYPH_EMPTY = (int)268435455L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_GLYPH_EMPTY 268435455
-     * }
-     */
-    public static int PANGO_GLYPH_EMPTY() {
-        return PANGO_GLYPH_EMPTY;
-    }
-    private static final int PANGO_GLYPH_INVALID_INPUT = (int)4294967295L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_GLYPH_INVALID_INPUT 4294967295
-     * }
-     */
-    public static int PANGO_GLYPH_INVALID_INPUT() {
-        return PANGO_GLYPH_INVALID_INPUT;
-    }
-    private static final int PANGO_GLYPH_UNKNOWN_FLAG = (int)268435456L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_GLYPH_UNKNOWN_FLAG 268435456
-     * }
-     */
-    public static int PANGO_GLYPH_UNKNOWN_FLAG() {
-        return PANGO_GLYPH_UNKNOWN_FLAG;
-    }
-    private static final int PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING 0
-     * }
-     */
-    public static int PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING() {
-        return PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING;
-    }
-    private static final int PANGO_ATTR_INDEX_TO_TEXT_END = (int)4294967295L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_ATTR_INDEX_TO_TEXT_END 4294967295
-     * }
-     */
-    public static int PANGO_ATTR_INDEX_TO_TEXT_END() {
-        return PANGO_ATTR_INDEX_TO_TEXT_END;
-    }
-    private static final int PANGO_ANALYSIS_FLAG_CENTERED_BASELINE = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_ANALYSIS_FLAG_CENTERED_BASELINE 1
-     * }
-     */
-    public static int PANGO_ANALYSIS_FLAG_CENTERED_BASELINE() {
-        return PANGO_ANALYSIS_FLAG_CENTERED_BASELINE;
-    }
-    private static final int PANGO_ANALYSIS_FLAG_IS_ELLIPSIS = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_ANALYSIS_FLAG_IS_ELLIPSIS 2
-     * }
-     */
-    public static int PANGO_ANALYSIS_FLAG_IS_ELLIPSIS() {
-        return PANGO_ANALYSIS_FLAG_IS_ELLIPSIS;
-    }
-    private static final int PANGO_ANALYSIS_FLAG_NEED_HYPHEN = (int)4L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_ANALYSIS_FLAG_NEED_HYPHEN 4
-     * }
-     */
-    public static int PANGO_ANALYSIS_FLAG_NEED_HYPHEN() {
-        return PANGO_ANALYSIS_FLAG_NEED_HYPHEN;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_RENDER_TYPE_NONE "PangoRenderNone"
-     * }
-     */
-    public static MemorySegment PANGO_RENDER_TYPE_NONE() {
-        class Holder {
-            static final MemorySegment PANGO_RENDER_TYPE_NONE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("PangoRenderNone");
-        }
-        return Holder.PANGO_RENDER_TYPE_NONE;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_ENGINE_TYPE_LANG "PangoEngineLang"
-     * }
-     */
-    public static MemorySegment PANGO_ENGINE_TYPE_LANG() {
-        class Holder {
-            static final MemorySegment PANGO_ENGINE_TYPE_LANG
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("PangoEngineLang");
-        }
-        return Holder.PANGO_ENGINE_TYPE_LANG;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_ENGINE_TYPE_SHAPE "PangoEngineShape"
-     * }
-     */
-    public static MemorySegment PANGO_ENGINE_TYPE_SHAPE() {
-        class Holder {
-            static final MemorySegment PANGO_ENGINE_TYPE_SHAPE
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("PangoEngineShape");
-        }
-        return Holder.PANGO_ENGINE_TYPE_SHAPE;
-    }
-    private static final int EOF = (int)-1L;
-    /**
-     * {@snippet lang=c :
-     * #define EOF -1
-     * }
-     */
-    public static int EOF() {
-        return EOF;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define P_tmpdir "/tmp"
-     * }
-     */
-    public static MemorySegment P_tmpdir() {
-        class Holder {
-            static final MemorySegment P_tmpdir
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("/tmp");
-        }
-        return Holder.P_tmpdir;
-    }
-    private static final int PANGO_VERSION = (int)15201L;
-    /**
-     * {@snippet lang=c :
-     * #define PANGO_VERSION 15201
-     * }
-     */
-    public static int PANGO_VERSION() {
-        return PANGO_VERSION;
-    }
-    private static final int CAIRO_FONT_TYPE_ATSUI = (int)3L;
-    /**
-     * {@snippet lang=c :
-     * #define CAIRO_FONT_TYPE_ATSUI 3
-     * }
-     */
-    public static int CAIRO_FONT_TYPE_ATSUI() {
-        return CAIRO_FONT_TYPE_ATSUI;
-    }
-    private static final int CAIRO_VERSION = (int)11800L;
-    /**
-     * {@snippet lang=c :
-     * #define CAIRO_VERSION 11800
-     * }
-     */
-    public static int CAIRO_VERSION() {
-        return CAIRO_VERSION;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define CAIRO_VERSION_STRING "1.18.0"
-     * }
-     */
-    public static MemorySegment CAIRO_VERSION_STRING() {
-        class Holder {
-            static final MemorySegment CAIRO_VERSION_STRING
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("1.18.0");
-        }
-        return Holder.CAIRO_VERSION_STRING;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define CAIRO_TAG_DEST "cairo.dest"
-     * }
-     */
-    public static MemorySegment CAIRO_TAG_DEST() {
-        class Holder {
-            static final MemorySegment CAIRO_TAG_DEST
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("cairo.dest");
-        }
-        return Holder.CAIRO_TAG_DEST;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define CAIRO_TAG_LINK "Link"
-     * }
-     */
-    public static MemorySegment CAIRO_TAG_LINK() {
-        class Holder {
-            static final MemorySegment CAIRO_TAG_LINK
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("Link");
-        }
-        return Holder.CAIRO_TAG_LINK;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define CAIRO_TAG_CONTENT "cairo.content"
-     * }
-     */
-    public static MemorySegment CAIRO_TAG_CONTENT() {
-        class Holder {
-            static final MemorySegment CAIRO_TAG_CONTENT
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("cairo.content");
-        }
-        return Holder.CAIRO_TAG_CONTENT;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define CAIRO_TAG_CONTENT_REF "cairo.content_ref"
-     * }
-     */
-    public static MemorySegment CAIRO_TAG_CONTENT_REF() {
-        class Holder {
-            static final MemorySegment CAIRO_TAG_CONTENT_REF
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("cairo.content_ref");
-        }
-        return Holder.CAIRO_TAG_CONTENT_REF;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define CAIRO_MIME_TYPE_JPEG "image/jpeg"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_JPEG() {
-        class Holder {
-            static final MemorySegment CAIRO_MIME_TYPE_JPEG
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("image/jpeg");
-        }
-        return Holder.CAIRO_MIME_TYPE_JPEG;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define CAIRO_MIME_TYPE_PNG "image/png"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_PNG() {
-        class Holder {
-            static final MemorySegment CAIRO_MIME_TYPE_PNG
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("image/png");
-        }
-        return Holder.CAIRO_MIME_TYPE_PNG;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define CAIRO_MIME_TYPE_JP2 "image/jp2"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_JP2() {
-        class Holder {
-            static final MemorySegment CAIRO_MIME_TYPE_JP2
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("image/jp2");
-        }
-        return Holder.CAIRO_MIME_TYPE_JP2;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define CAIRO_MIME_TYPE_URI "text/x-uri"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_URI() {
-        class Holder {
-            static final MemorySegment CAIRO_MIME_TYPE_URI
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("text/x-uri");
-        }
-        return Holder.CAIRO_MIME_TYPE_URI;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define CAIRO_MIME_TYPE_UNIQUE_ID "application/x-cairo.uuid"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_UNIQUE_ID() {
-        class Holder {
-            static final MemorySegment CAIRO_MIME_TYPE_UNIQUE_ID
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("application/x-cairo.uuid");
-        }
-        return Holder.CAIRO_MIME_TYPE_UNIQUE_ID;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define CAIRO_MIME_TYPE_JBIG2 "application/x-cairo.jbig2"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_JBIG2() {
-        class Holder {
-            static final MemorySegment CAIRO_MIME_TYPE_JBIG2
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("application/x-cairo.jbig2");
-        }
-        return Holder.CAIRO_MIME_TYPE_JBIG2;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define CAIRO_MIME_TYPE_JBIG2_GLOBAL "application/x-cairo.jbig2-global"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_JBIG2_GLOBAL() {
-        class Holder {
-            static final MemorySegment CAIRO_MIME_TYPE_JBIG2_GLOBAL
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("application/x-cairo.jbig2-global");
-        }
-        return Holder.CAIRO_MIME_TYPE_JBIG2_GLOBAL;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define CAIRO_MIME_TYPE_JBIG2_GLOBAL_ID "application/x-cairo.jbig2-global-id"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_JBIG2_GLOBAL_ID() {
-        class Holder {
-            static final MemorySegment CAIRO_MIME_TYPE_JBIG2_GLOBAL_ID
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("application/x-cairo.jbig2-global-id");
-        }
-        return Holder.CAIRO_MIME_TYPE_JBIG2_GLOBAL_ID;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define CAIRO_MIME_TYPE_CCITT_FAX "image/g3fax"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_CCITT_FAX() {
-        class Holder {
-            static final MemorySegment CAIRO_MIME_TYPE_CCITT_FAX
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("image/g3fax");
-        }
-        return Holder.CAIRO_MIME_TYPE_CCITT_FAX;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define CAIRO_MIME_TYPE_CCITT_FAX_PARAMS "application/x-cairo.ccitt.params"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_CCITT_FAX_PARAMS() {
-        class Holder {
-            static final MemorySegment CAIRO_MIME_TYPE_CCITT_FAX_PARAMS
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("application/x-cairo.ccitt.params");
-        }
-        return Holder.CAIRO_MIME_TYPE_CCITT_FAX_PARAMS;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define CAIRO_MIME_TYPE_EPS "application/postscript"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_EPS() {
-        class Holder {
-            static final MemorySegment CAIRO_MIME_TYPE_EPS
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("application/postscript");
-        }
-        return Holder.CAIRO_MIME_TYPE_EPS;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define CAIRO_MIME_TYPE_EPS_PARAMS "application/x-cairo.eps.params"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_EPS_PARAMS() {
-        class Holder {
-            static final MemorySegment CAIRO_MIME_TYPE_EPS_PARAMS
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("application/x-cairo.eps.params");
-        }
-        return Holder.CAIRO_MIME_TYPE_EPS_PARAMS;
-    }
-    private static final long GDK_CURRENT_TIME = 0L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_CURRENT_TIME 0
-     * }
-     */
-    public static long GDK_CURRENT_TIME() {
-        return GDK_CURRENT_TIME;
-    }
-    private static final long GDK_PARENT_RELATIVE = 1L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PARENT_RELATIVE 1
-     * }
-     */
-    public static long GDK_PARENT_RELATIVE() {
-        return GDK_PARENT_RELATIVE;
-    }
-    private static final MemorySegment GDK_NONE = MemorySegment.ofAddress(0L);
-    /**
-     * {@snippet lang=c :
-     * #define GDK_NONE (void*) 0
-     * }
-     */
-    public static MemorySegment GDK_NONE() {
-        return GDK_NONE;
-    }
-    private static final int GDK_PRIORITY_EVENTS = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PRIORITY_EVENTS 0
-     * }
-     */
-    public static int GDK_PRIORITY_EVENTS() {
-        return GDK_PRIORITY_EVENTS;
-    }
-    private static final int GDK_PRIORITY_REDRAW = (int)120L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PRIORITY_REDRAW 120
-     * }
-     */
-    public static int GDK_PRIORITY_REDRAW() {
-        return GDK_PRIORITY_REDRAW;
-    }
-    private static final int GDK_EVENT_PROPAGATE = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_EVENT_PROPAGATE 0
-     * }
-     */
-    public static int GDK_EVENT_PROPAGATE() {
-        return GDK_EVENT_PROPAGATE;
-    }
-    private static final int GDK_EVENT_STOP = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_EVENT_STOP 1
-     * }
-     */
-    public static int GDK_EVENT_STOP() {
-        return GDK_EVENT_STOP;
-    }
-    private static final int GDK_BUTTON_PRIMARY = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_BUTTON_PRIMARY 1
-     * }
-     */
-    public static int GDK_BUTTON_PRIMARY() {
-        return GDK_BUTTON_PRIMARY;
-    }
-    private static final int GDK_BUTTON_MIDDLE = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_BUTTON_MIDDLE 2
-     * }
-     */
-    public static int GDK_BUTTON_MIDDLE() {
-        return GDK_BUTTON_MIDDLE;
-    }
-    private static final int GDK_BUTTON_SECONDARY = (int)3L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_BUTTON_SECONDARY 3
-     * }
-     */
-    public static int GDK_BUTTON_SECONDARY() {
-        return GDK_BUTTON_SECONDARY;
-    }
-    private static final int GDK_PIXBUF_MAJOR = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_MAJOR 2
-     * }
-     */
-    public static int GDK_PIXBUF_MAJOR() {
-        return GDK_PIXBUF_MAJOR;
-    }
-    private static final int GDK_PIXBUF_MINOR = (int)42L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_MINOR 42
-     * }
-     */
-    public static int GDK_PIXBUF_MINOR() {
-        return GDK_PIXBUF_MINOR;
-    }
-    private static final int GDK_PIXBUF_MICRO = (int)10L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_MICRO 10
-     * }
-     */
-    public static int GDK_PIXBUF_MICRO() {
-        return GDK_PIXBUF_MICRO;
-    }
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION "2.42.10"
-     * }
-     */
-    public static MemorySegment GDK_PIXBUF_VERSION() {
-        class Holder {
-            static final MemorySegment GDK_PIXBUF_VERSION
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("2.42.10");
-        }
-        return Holder.GDK_PIXBUF_VERSION;
-    }
-    private static final int GDK_PIXBUF_VERSION_2_0 = (int)131072L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_2_0 131072
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_0() {
-        return GDK_PIXBUF_VERSION_2_0;
-    }
-    private static final int GDK_PIXBUF_VERSION_2_2 = (int)131584L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_2_2 131584
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_2() {
-        return GDK_PIXBUF_VERSION_2_2;
-    }
-    private static final int GDK_PIXBUF_VERSION_2_4 = (int)132096L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_2_4 132096
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_4() {
-        return GDK_PIXBUF_VERSION_2_4;
-    }
-    private static final int GDK_PIXBUF_VERSION_2_6 = (int)132608L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_2_6 132608
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_6() {
-        return GDK_PIXBUF_VERSION_2_6;
-    }
-    private static final int GDK_PIXBUF_VERSION_2_8 = (int)133120L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_2_8 133120
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_8() {
-        return GDK_PIXBUF_VERSION_2_8;
-    }
-    private static final int GDK_PIXBUF_VERSION_2_10 = (int)133632L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_2_10 133632
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_10() {
-        return GDK_PIXBUF_VERSION_2_10;
-    }
-    private static final int GDK_PIXBUF_VERSION_2_12 = (int)134144L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_2_12 134144
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_12() {
-        return GDK_PIXBUF_VERSION_2_12;
-    }
-    private static final int GDK_PIXBUF_VERSION_2_14 = (int)134656L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_2_14 134656
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_14() {
-        return GDK_PIXBUF_VERSION_2_14;
-    }
-    private static final int GDK_PIXBUF_VERSION_2_16 = (int)135168L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_2_16 135168
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_16() {
-        return GDK_PIXBUF_VERSION_2_16;
-    }
-    private static final int GDK_PIXBUF_VERSION_2_18 = (int)135680L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_2_18 135680
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_18() {
-        return GDK_PIXBUF_VERSION_2_18;
-    }
-    private static final int GDK_PIXBUF_VERSION_2_20 = (int)136192L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_2_20 136192
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_20() {
-        return GDK_PIXBUF_VERSION_2_20;
-    }
-    private static final int GDK_PIXBUF_VERSION_2_22 = (int)136704L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_2_22 136704
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_22() {
-        return GDK_PIXBUF_VERSION_2_22;
-    }
-    private static final int GDK_PIXBUF_VERSION_2_24 = (int)137216L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_2_24 137216
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_24() {
-        return GDK_PIXBUF_VERSION_2_24;
-    }
-    private static final int GDK_PIXBUF_VERSION_2_26 = (int)137728L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_2_26 137728
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_26() {
-        return GDK_PIXBUF_VERSION_2_26;
-    }
-    private static final int GDK_PIXBUF_VERSION_2_28 = (int)138240L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_2_28 138240
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_28() {
-        return GDK_PIXBUF_VERSION_2_28;
-    }
-    private static final int GDK_PIXBUF_VERSION_2_30 = (int)138752L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_2_30 138752
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_30() {
-        return GDK_PIXBUF_VERSION_2_30;
-    }
-    private static final int GDK_PIXBUF_VERSION_2_32 = (int)139264L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_2_32 139264
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_32() {
-        return GDK_PIXBUF_VERSION_2_32;
-    }
-    private static final int GDK_PIXBUF_VERSION_2_34 = (int)139776L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_2_34 139776
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_34() {
-        return GDK_PIXBUF_VERSION_2_34;
-    }
-    private static final int GDK_PIXBUF_VERSION_2_36 = (int)140288L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_2_36 140288
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_36() {
-        return GDK_PIXBUF_VERSION_2_36;
-    }
-    private static final int GDK_PIXBUF_VERSION_2_38 = (int)140800L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_2_38 140800
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_38() {
-        return GDK_PIXBUF_VERSION_2_38;
-    }
-    private static final int GDK_PIXBUF_VERSION_2_40 = (int)141312L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_2_40 141312
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_40() {
-        return GDK_PIXBUF_VERSION_2_40;
-    }
-    private static final int GDK_PIXBUF_VERSION_CUR_STABLE = (int)141824L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_CUR_STABLE 141824
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_CUR_STABLE() {
-        return GDK_PIXBUF_VERSION_CUR_STABLE;
-    }
-    private static final int GDK_PIXBUF_VERSION_PREV_STABLE = (int)141312L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_PREV_STABLE 141312
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_PREV_STABLE() {
-        return GDK_PIXBUF_VERSION_PREV_STABLE;
-    }
-    private static final int GDK_PIXBUF_VERSION_MIN_REQUIRED = (int)141824L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_MIN_REQUIRED 141824
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_MIN_REQUIRED() {
-        return GDK_PIXBUF_VERSION_MIN_REQUIRED;
-    }
-    private static final int GDK_PIXBUF_VERSION_MAX_ALLOWED = (int)141824L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION_MAX_ALLOWED 141824
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_MAX_ALLOWED() {
-        return GDK_PIXBUF_VERSION_MAX_ALLOWED;
-    }
-    private static final MemorySegment GDK_SELECTION_PRIMARY = MemorySegment.ofAddress(1L);
-    /**
-     * {@snippet lang=c :
-     * #define GDK_SELECTION_PRIMARY (void*) 1
-     * }
-     */
-    public static MemorySegment GDK_SELECTION_PRIMARY() {
-        return GDK_SELECTION_PRIMARY;
     }
 }
 

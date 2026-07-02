@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -64,7 +60,7 @@ public class _GtkLockButtonClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -101,7 +97,11 @@ public class _GtkLockButtonClass {
      * void (*reserved0)(void)
      * }
      */
-    public class reserved0 {
+    public final static class reserved0 {
+
+        private reserved0() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -137,6 +137,8 @@ public class _GtkLockButtonClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -155,7 +157,7 @@ public class _GtkLockButtonClass {
         return reserved0$LAYOUT;
     }
 
-    private static final long reserved0$OFFSET = 1088;
+    private static final long reserved0$OFFSET = $LAYOUT.byteOffset(groupElement("reserved0"));
 
     /**
      * Offset for field:
@@ -192,7 +194,11 @@ public class _GtkLockButtonClass {
      * void (*reserved1)(void)
      * }
      */
-    public class reserved1 {
+    public final static class reserved1 {
+
+        private reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -228,6 +234,8 @@ public class _GtkLockButtonClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -246,7 +254,7 @@ public class _GtkLockButtonClass {
         return reserved1$LAYOUT;
     }
 
-    private static final long reserved1$OFFSET = 1096;
+    private static final long reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("reserved1"));
 
     /**
      * Offset for field:
@@ -283,7 +291,11 @@ public class _GtkLockButtonClass {
      * void (*reserved2)(void)
      * }
      */
-    public class reserved2 {
+    public final static class reserved2 {
+
+        private reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -319,6 +331,8 @@ public class _GtkLockButtonClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -337,7 +351,7 @@ public class _GtkLockButtonClass {
         return reserved2$LAYOUT;
     }
 
-    private static final long reserved2$OFFSET = 1104;
+    private static final long reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("reserved2"));
 
     /**
      * Offset for field:
@@ -374,7 +388,11 @@ public class _GtkLockButtonClass {
      * void (*reserved3)(void)
      * }
      */
-    public class reserved3 {
+    public final static class reserved3 {
+
+        private reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -410,6 +428,8 @@ public class _GtkLockButtonClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -428,7 +448,7 @@ public class _GtkLockButtonClass {
         return reserved3$LAYOUT;
     }
 
-    private static final long reserved3$OFFSET = 1112;
+    private static final long reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("reserved3"));
 
     /**
      * Offset for field:
@@ -465,7 +485,11 @@ public class _GtkLockButtonClass {
      * void (*reserved4)(void)
      * }
      */
-    public class reserved4 {
+    public final static class reserved4 {
+
+        private reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -501,6 +525,8 @@ public class _GtkLockButtonClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -519,7 +545,7 @@ public class _GtkLockButtonClass {
         return reserved4$LAYOUT;
     }
 
-    private static final long reserved4$OFFSET = 1120;
+    private static final long reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("reserved4"));
 
     /**
      * Offset for field:
@@ -556,7 +582,11 @@ public class _GtkLockButtonClass {
      * void (*reserved5)(void)
      * }
      */
-    public class reserved5 {
+    public final static class reserved5 {
+
+        private reserved5() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -592,6 +622,8 @@ public class _GtkLockButtonClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -610,7 +642,7 @@ public class _GtkLockButtonClass {
         return reserved5$LAYOUT;
     }
 
-    private static final long reserved5$OFFSET = 1128;
+    private static final long reserved5$OFFSET = $LAYOUT.byteOffset(groupElement("reserved5"));
 
     /**
      * Offset for field:
@@ -647,7 +679,11 @@ public class _GtkLockButtonClass {
      * void (*reserved6)(void)
      * }
      */
-    public class reserved6 {
+    public final static class reserved6 {
+
+        private reserved6() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -683,6 +719,8 @@ public class _GtkLockButtonClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -701,7 +739,7 @@ public class _GtkLockButtonClass {
         return reserved6$LAYOUT;
     }
 
-    private static final long reserved6$OFFSET = 1136;
+    private static final long reserved6$OFFSET = $LAYOUT.byteOffset(groupElement("reserved6"));
 
     /**
      * Offset for field:
@@ -738,7 +776,11 @@ public class _GtkLockButtonClass {
      * void (*reserved7)(void)
      * }
      */
-    public class reserved7 {
+    public final static class reserved7 {
+
+        private reserved7() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -774,6 +816,8 @@ public class _GtkLockButtonClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -792,7 +836,7 @@ public class _GtkLockButtonClass {
         return reserved7$LAYOUT;
     }
 
-    private static final long reserved7$OFFSET = 1144;
+    private static final long reserved7$OFFSET = $LAYOUT.byteOffset(groupElement("reserved7"));
 
     /**
      * Offset for field:
@@ -853,7 +897,7 @@ public class _GtkLockButtonClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -861,7 +905,7 @@ public class _GtkLockButtonClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

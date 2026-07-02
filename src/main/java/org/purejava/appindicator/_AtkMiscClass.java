@@ -2,15 +2,13 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
 
 /**
  * {@snippet lang=c :
@@ -54,7 +52,7 @@ public class _AtkMiscClass {
         return parent$LAYOUT;
     }
 
-    private static final long parent$OFFSET = 0;
+    private static final long parent$OFFSET = $LAYOUT.byteOffset(groupElement("parent"));
 
     /**
      * Offset for field:
@@ -91,7 +89,11 @@ public class _AtkMiscClass {
      * void (*threads_enter)(AtkMisc *)
      * }
      */
-    public class threads_enter {
+    public final static class threads_enter {
+
+        private threads_enter() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -126,9 +128,11 @@ public class _AtkMiscClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -147,7 +151,7 @@ public class _AtkMiscClass {
         return threads_enter$LAYOUT;
     }
 
-    private static final long threads_enter$OFFSET = 136;
+    private static final long threads_enter$OFFSET = $LAYOUT.byteOffset(groupElement("threads_enter"));
 
     /**
      * Offset for field:
@@ -184,7 +188,11 @@ public class _AtkMiscClass {
      * void (*threads_leave)(AtkMisc *)
      * }
      */
-    public class threads_leave {
+    public final static class threads_leave {
+
+        private threads_leave() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -219,9 +227,11 @@ public class _AtkMiscClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -240,7 +250,7 @@ public class _AtkMiscClass {
         return threads_leave$LAYOUT;
     }
 
-    private static final long threads_leave$OFFSET = 144;
+    private static final long threads_leave$OFFSET = $LAYOUT.byteOffset(groupElement("threads_leave"));
 
     /**
      * Offset for field:
@@ -284,7 +294,7 @@ public class _AtkMiscClass {
         return vfuncs$LAYOUT;
     }
 
-    private static final long vfuncs$OFFSET = 152;
+    private static final long vfuncs$OFFSET = $LAYOUT.byteOffset(groupElement("vfuncs"));
 
     /**
      * Offset for field:
@@ -336,7 +346,7 @@ public class _AtkMiscClass {
      * }
      */
     public static MemorySegment vfuncs(MemorySegment struct, long index0) {
-        return (MemorySegment)vfuncs$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)vfuncs$ELEM_HANDLE.get(struct, vfuncs$OFFSET, index0);
     }
 
     /**
@@ -346,7 +356,7 @@ public class _AtkMiscClass {
      * }
      */
     public static void vfuncs(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        vfuncs$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        vfuncs$ELEM_HANDLE.set(struct, vfuncs$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -378,7 +388,7 @@ public class _AtkMiscClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -386,7 +396,7 @@ public class _AtkMiscClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

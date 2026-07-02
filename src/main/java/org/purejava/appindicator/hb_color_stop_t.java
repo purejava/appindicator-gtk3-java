@@ -2,15 +2,12 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfFloat;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -31,7 +28,7 @@ public class hb_color_stop_t {
         app_indicator_h.C_FLOAT.withName("offset"),
         app_indicator_h.C_INT.withName("is_foreground"),
         app_indicator_h.C_INT.withName("color")
-    ).withName("$anon$330:9");
+    ).withName("$anon$401:9");
 
     /**
      * The layout of this struct
@@ -52,7 +49,7 @@ public class hb_color_stop_t {
         return offset$LAYOUT;
     }
 
-    private static final long offset$OFFSET = 0;
+    private static final long offset$OFFSET = $LAYOUT.byteOffset(groupElement("offset"));
 
     /**
      * Offset for field:
@@ -96,7 +93,7 @@ public class hb_color_stop_t {
         return is_foreground$LAYOUT;
     }
 
-    private static final long is_foreground$OFFSET = 4;
+    private static final long is_foreground$OFFSET = $LAYOUT.byteOffset(groupElement("is_foreground"));
 
     /**
      * Offset for field:
@@ -140,7 +137,7 @@ public class hb_color_stop_t {
         return color$LAYOUT;
     }
 
-    private static final long color$OFFSET = 8;
+    private static final long color$OFFSET = $LAYOUT.byteOffset(groupElement("color"));
 
     /**
      * Offset for field:
@@ -201,7 +198,7 @@ public class hb_color_stop_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -209,7 +206,7 @@ public class hb_color_stop_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

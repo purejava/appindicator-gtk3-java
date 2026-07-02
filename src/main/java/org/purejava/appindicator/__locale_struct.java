@@ -2,15 +2,12 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
 
 /**
  * {@snippet lang=c :
@@ -56,7 +53,7 @@ public class __locale_struct {
         return __locales$LAYOUT;
     }
 
-    private static final long __locales$OFFSET = 0;
+    private static final long __locales$OFFSET = $LAYOUT.byteOffset(groupElement("__locales"));
 
     /**
      * Offset for field:
@@ -108,7 +105,7 @@ public class __locale_struct {
      * }
      */
     public static MemorySegment __locales(MemorySegment struct, long index0) {
-        return (MemorySegment)__locales$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)__locales$ELEM_HANDLE.get(struct, __locales$OFFSET, index0);
     }
 
     /**
@@ -118,7 +115,7 @@ public class __locale_struct {
      * }
      */
     public static void __locales(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        __locales$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        __locales$ELEM_HANDLE.set(struct, __locales$OFFSET, index0, fieldValue);
     }
 
     private static final AddressLayout __ctype_b$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("__ctype_b"));
@@ -133,7 +130,7 @@ public class __locale_struct {
         return __ctype_b$LAYOUT;
     }
 
-    private static final long __ctype_b$OFFSET = 104;
+    private static final long __ctype_b$OFFSET = $LAYOUT.byteOffset(groupElement("__ctype_b"));
 
     /**
      * Offset for field:
@@ -177,7 +174,7 @@ public class __locale_struct {
         return __ctype_tolower$LAYOUT;
     }
 
-    private static final long __ctype_tolower$OFFSET = 112;
+    private static final long __ctype_tolower$OFFSET = $LAYOUT.byteOffset(groupElement("__ctype_tolower"));
 
     /**
      * Offset for field:
@@ -221,7 +218,7 @@ public class __locale_struct {
         return __ctype_toupper$LAYOUT;
     }
 
-    private static final long __ctype_toupper$OFFSET = 120;
+    private static final long __ctype_toupper$OFFSET = $LAYOUT.byteOffset(groupElement("__ctype_toupper"));
 
     /**
      * Offset for field:
@@ -265,7 +262,7 @@ public class __locale_struct {
         return __names$LAYOUT;
     }
 
-    private static final long __names$OFFSET = 128;
+    private static final long __names$OFFSET = $LAYOUT.byteOffset(groupElement("__names"));
 
     /**
      * Offset for field:
@@ -317,7 +314,7 @@ public class __locale_struct {
      * }
      */
     public static MemorySegment __names(MemorySegment struct, long index0) {
-        return (MemorySegment)__names$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)__names$ELEM_HANDLE.get(struct, __names$OFFSET, index0);
     }
 
     /**
@@ -327,7 +324,7 @@ public class __locale_struct {
      * }
      */
     public static void __names(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        __names$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        __names$ELEM_HANDLE.set(struct, __names$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -359,7 +356,7 @@ public class __locale_struct {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -367,7 +364,7 @@ public class __locale_struct {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

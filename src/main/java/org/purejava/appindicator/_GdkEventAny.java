@@ -2,15 +2,12 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfByte;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -54,7 +51,7 @@ public class _GdkEventAny {
         return type$LAYOUT;
     }
 
-    private static final long type$OFFSET = 0;
+    private static final long type$OFFSET = $LAYOUT.byteOffset(groupElement("type"));
 
     /**
      * Offset for field:
@@ -98,7 +95,7 @@ public class _GdkEventAny {
         return window$LAYOUT;
     }
 
-    private static final long window$OFFSET = 8;
+    private static final long window$OFFSET = $LAYOUT.byteOffset(groupElement("window"));
 
     /**
      * Offset for field:
@@ -142,7 +139,7 @@ public class _GdkEventAny {
         return send_event$LAYOUT;
     }
 
-    private static final long send_event$OFFSET = 16;
+    private static final long send_event$OFFSET = $LAYOUT.byteOffset(groupElement("send_event"));
 
     /**
      * Offset for field:
@@ -203,7 +200,7 @@ public class _GdkEventAny {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -211,7 +208,7 @@ public class _GdkEventAny {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -56,7 +52,7 @@ public class _AtkHypertextIface {
         return parent$LAYOUT;
     }
 
-    private static final long parent$OFFSET = 0;
+    private static final long parent$OFFSET = $LAYOUT.byteOffset(groupElement("parent"));
 
     /**
      * Offset for field:
@@ -93,7 +89,11 @@ public class _AtkHypertextIface {
      * AtkHyperlink *(*get_link)(AtkHypertext *, gint)
      * }
      */
-    public class get_link {
+    public final static class get_link {
+
+        private get_link() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -130,9 +130,11 @@ public class _AtkHypertextIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -151,7 +153,7 @@ public class _AtkHypertextIface {
         return get_link$LAYOUT;
     }
 
-    private static final long get_link$OFFSET = 16;
+    private static final long get_link$OFFSET = $LAYOUT.byteOffset(groupElement("get_link"));
 
     /**
      * Offset for field:
@@ -188,7 +190,11 @@ public class _AtkHypertextIface {
      * gint (*get_n_links)(AtkHypertext *)
      * }
      */
-    public class get_n_links {
+    public final static class get_n_links {
+
+        private get_n_links() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -224,9 +230,11 @@ public class _AtkHypertextIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -245,7 +253,7 @@ public class _AtkHypertextIface {
         return get_n_links$LAYOUT;
     }
 
-    private static final long get_n_links$OFFSET = 24;
+    private static final long get_n_links$OFFSET = $LAYOUT.byteOffset(groupElement("get_n_links"));
 
     /**
      * Offset for field:
@@ -282,7 +290,11 @@ public class _AtkHypertextIface {
      * gint (*get_link_index)(AtkHypertext *, gint)
      * }
      */
-    public class get_link_index {
+    public final static class get_link_index {
+
+        private get_link_index() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -319,9 +331,11 @@ public class _AtkHypertextIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -340,7 +354,7 @@ public class _AtkHypertextIface {
         return get_link_index$LAYOUT;
     }
 
-    private static final long get_link_index$OFFSET = 32;
+    private static final long get_link_index$OFFSET = $LAYOUT.byteOffset(groupElement("get_link_index"));
 
     /**
      * Offset for field:
@@ -377,7 +391,11 @@ public class _AtkHypertextIface {
      * void (*link_selected)(AtkHypertext *, gint)
      * }
      */
-    public class link_selected {
+    public final static class link_selected {
+
+        private link_selected() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -413,9 +431,11 @@ public class _AtkHypertextIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -434,7 +454,7 @@ public class _AtkHypertextIface {
         return link_selected$LAYOUT;
     }
 
-    private static final long link_selected$OFFSET = 40;
+    private static final long link_selected$OFFSET = $LAYOUT.byteOffset(groupElement("link_selected"));
 
     /**
      * Offset for field:
@@ -495,7 +515,7 @@ public class _AtkHypertextIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -503,7 +523,7 @@ public class _AtkHypertextIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

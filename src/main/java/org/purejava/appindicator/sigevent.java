@@ -2,15 +2,14 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -61,7 +60,7 @@ public class sigevent {
         return sigev_value$LAYOUT;
     }
 
-    private static final long sigev_value$OFFSET = 0;
+    private static final long sigev_value$OFFSET = $LAYOUT.byteOffset(groupElement("sigev_value"));
 
     /**
      * Offset for field:
@@ -105,7 +104,7 @@ public class sigevent {
         return sigev_signo$LAYOUT;
     }
 
-    private static final long sigev_signo$OFFSET = 8;
+    private static final long sigev_signo$OFFSET = $LAYOUT.byteOffset(groupElement("sigev_signo"));
 
     /**
      * Offset for field:
@@ -149,7 +148,7 @@ public class sigevent {
         return sigev_notify$LAYOUT;
     }
 
-    private static final long sigev_notify$OFFSET = 12;
+    private static final long sigev_notify$OFFSET = $LAYOUT.byteOffset(groupElement("sigev_notify"));
 
     /**
      * Offset for field:
@@ -224,7 +223,7 @@ public class sigevent {
             return _pad$LAYOUT;
         }
 
-        private static final long _pad$OFFSET = 0;
+        private static final long _pad$OFFSET = $LAYOUT.byteOffset(groupElement("_pad"));
 
         /**
          * Offset for field:
@@ -276,7 +275,7 @@ public class sigevent {
          * }
          */
         public static int _pad(MemorySegment union, long index0) {
-            return (int)_pad$ELEM_HANDLE.get(union, 0L, index0);
+            return (int)_pad$ELEM_HANDLE.get(union, _pad$OFFSET, index0);
         }
 
         /**
@@ -286,7 +285,7 @@ public class sigevent {
          * }
          */
         public static void _pad(MemorySegment union, long index0, int fieldValue) {
-            _pad$ELEM_HANDLE.set(union, 0L, index0, fieldValue);
+            _pad$ELEM_HANDLE.set(union, _pad$OFFSET, index0, fieldValue);
         }
 
         private static final OfInt _tid$LAYOUT = (OfInt)$LAYOUT.select(groupElement("_tid"));
@@ -301,7 +300,7 @@ public class sigevent {
             return _tid$LAYOUT;
         }
 
-        private static final long _tid$OFFSET = 0;
+        private static final long _tid$OFFSET = $LAYOUT.byteOffset(groupElement("_tid"));
 
         /**
          * Offset for field:
@@ -364,7 +363,11 @@ public class sigevent {
              * void (*_function)(__sigval_t)
              * }
              */
-            public class _function {
+            public final static class _function {
+
+                private _function() {
+                    // Should not be called directly
+                }
 
                 /**
                  * The function pointer signature, expressed as a functional interface
@@ -399,9 +402,11 @@ public class sigevent {
                 /**
                  * Invoke the upcall stub {@code funcPtr}, with given parameters
                  */
-                public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+                public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
                     try {
                          DOWN$MH.invokeExact(funcPtr, _x0);
+                    } catch (Error | RuntimeException ex) {
+                        throw ex;
                     } catch (Throwable ex$) {
                         throw new AssertionError("should not reach here", ex$);
                     }
@@ -420,7 +425,7 @@ public class sigevent {
                 return _function$LAYOUT;
             }
 
-            private static final long _function$OFFSET = 0;
+            private static final long _function$OFFSET = $LAYOUT.byteOffset(groupElement("_function"));
 
             /**
              * Offset for field:
@@ -464,7 +469,7 @@ public class sigevent {
                 return _attribute$LAYOUT;
             }
 
-            private static final long _attribute$OFFSET = 8;
+            private static final long _attribute$OFFSET = $LAYOUT.byteOffset(groupElement("_attribute"));
 
             /**
              * Offset for field:
@@ -525,7 +530,7 @@ public class sigevent {
             }
 
             /**
-             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
              * The returned segment has size {@code layout().byteSize()}
              */
             public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -533,7 +538,7 @@ public class sigevent {
             }
 
             /**
-             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
              * The returned segment has size {@code elementCount * layout().byteSize()}
              */
             public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -556,7 +561,7 @@ public class sigevent {
             return _sigev_thread$LAYOUT;
         }
 
-        private static final long _sigev_thread$OFFSET = 0;
+        private static final long _sigev_thread$OFFSET = $LAYOUT.byteOffset(groupElement("_sigev_thread"));
 
         /**
          * Offset for field:
@@ -626,7 +631,7 @@ public class sigevent {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -634,7 +639,7 @@ public class sigevent {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code elementCount * layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -661,7 +666,7 @@ public class sigevent {
         return _sigev_un$LAYOUT;
     }
 
-    private static final long _sigev_un$OFFSET = 16;
+    private static final long _sigev_un$OFFSET = $LAYOUT.byteOffset(groupElement("_sigev_un"));
 
     /**
      * Offset for field:
@@ -743,7 +748,7 @@ public class sigevent {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -751,7 +756,7 @@ public class sigevent {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

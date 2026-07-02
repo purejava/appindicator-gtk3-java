@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -57,7 +53,7 @@ public class _GtkPadActionEntry {
         return type$LAYOUT;
     }
 
-    private static final long type$OFFSET = 0;
+    private static final long type$OFFSET = $LAYOUT.byteOffset(groupElement("type"));
 
     /**
      * Offset for field:
@@ -101,7 +97,7 @@ public class _GtkPadActionEntry {
         return index$LAYOUT;
     }
 
-    private static final long index$OFFSET = 4;
+    private static final long index$OFFSET = $LAYOUT.byteOffset(groupElement("index"));
 
     /**
      * Offset for field:
@@ -145,7 +141,7 @@ public class _GtkPadActionEntry {
         return mode$LAYOUT;
     }
 
-    private static final long mode$OFFSET = 8;
+    private static final long mode$OFFSET = $LAYOUT.byteOffset(groupElement("mode"));
 
     /**
      * Offset for field:
@@ -189,7 +185,7 @@ public class _GtkPadActionEntry {
         return label$LAYOUT;
     }
 
-    private static final long label$OFFSET = 16;
+    private static final long label$OFFSET = $LAYOUT.byteOffset(groupElement("label"));
 
     /**
      * Offset for field:
@@ -233,7 +229,7 @@ public class _GtkPadActionEntry {
         return action_name$LAYOUT;
     }
 
-    private static final long action_name$OFFSET = 24;
+    private static final long action_name$OFFSET = $LAYOUT.byteOffset(groupElement("action_name"));
 
     /**
      * Offset for field:
@@ -294,7 +290,7 @@ public class _GtkPadActionEntry {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -302,7 +298,7 @@ public class _GtkPadActionEntry {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

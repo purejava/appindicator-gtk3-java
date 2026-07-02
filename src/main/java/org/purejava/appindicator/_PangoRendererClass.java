@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -76,7 +72,7 @@ public class _PangoRendererClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -113,7 +109,11 @@ public class _PangoRendererClass {
      * void (*draw_glyphs)(PangoRenderer *, PangoFont *, PangoGlyphString *, int, int)
      * }
      */
-    public class draw_glyphs {
+    public final static class draw_glyphs {
+
+        private draw_glyphs() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -152,9 +152,11 @@ public class _PangoRendererClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, int _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, int _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -173,7 +175,7 @@ public class _PangoRendererClass {
         return draw_glyphs$LAYOUT;
     }
 
-    private static final long draw_glyphs$OFFSET = 136;
+    private static final long draw_glyphs$OFFSET = $LAYOUT.byteOffset(groupElement("draw_glyphs"));
 
     /**
      * Offset for field:
@@ -210,7 +212,11 @@ public class _PangoRendererClass {
      * void (*draw_rectangle)(PangoRenderer *, PangoRenderPart, int, int, int, int)
      * }
      */
-    public class draw_rectangle {
+    public final static class draw_rectangle {
+
+        private draw_rectangle() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -250,9 +256,11 @@ public class _PangoRendererClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2, int _x3, int _x4, int _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2, int _x3, int _x4, int _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -271,7 +279,7 @@ public class _PangoRendererClass {
         return draw_rectangle$LAYOUT;
     }
 
-    private static final long draw_rectangle$OFFSET = 144;
+    private static final long draw_rectangle$OFFSET = $LAYOUT.byteOffset(groupElement("draw_rectangle"));
 
     /**
      * Offset for field:
@@ -308,7 +316,11 @@ public class _PangoRendererClass {
      * void (*draw_error_underline)(PangoRenderer *, int, int, int, int)
      * }
      */
-    public class draw_error_underline {
+    public final static class draw_error_underline {
+
+        private draw_error_underline() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -347,9 +359,11 @@ public class _PangoRendererClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2, int _x3, int _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2, int _x3, int _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -368,7 +382,7 @@ public class _PangoRendererClass {
         return draw_error_underline$LAYOUT;
     }
 
-    private static final long draw_error_underline$OFFSET = 152;
+    private static final long draw_error_underline$OFFSET = $LAYOUT.byteOffset(groupElement("draw_error_underline"));
 
     /**
      * Offset for field:
@@ -405,7 +419,11 @@ public class _PangoRendererClass {
      * void (*draw_shape)(PangoRenderer *, PangoAttrShape *, int, int)
      * }
      */
-    public class draw_shape {
+    public final static class draw_shape {
+
+        private draw_shape() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -443,9 +461,11 @@ public class _PangoRendererClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -464,7 +484,7 @@ public class _PangoRendererClass {
         return draw_shape$LAYOUT;
     }
 
-    private static final long draw_shape$OFFSET = 160;
+    private static final long draw_shape$OFFSET = $LAYOUT.byteOffset(groupElement("draw_shape"));
 
     /**
      * Offset for field:
@@ -501,7 +521,11 @@ public class _PangoRendererClass {
      * void (*draw_trapezoid)(PangoRenderer *, PangoRenderPart, double, double, double, double, double, double)
      * }
      */
-    public class draw_trapezoid {
+    public final static class draw_trapezoid {
+
+        private draw_trapezoid() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -543,9 +567,11 @@ public class _PangoRendererClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, double _x2, double _x3, double _x4, double _x5, double _x6, double _x7) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, double _x2, double _x3, double _x4, double _x5, double _x6, double _x7) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -564,7 +590,7 @@ public class _PangoRendererClass {
         return draw_trapezoid$LAYOUT;
     }
 
-    private static final long draw_trapezoid$OFFSET = 168;
+    private static final long draw_trapezoid$OFFSET = $LAYOUT.byteOffset(groupElement("draw_trapezoid"));
 
     /**
      * Offset for field:
@@ -601,7 +627,11 @@ public class _PangoRendererClass {
      * void (*draw_glyph)(PangoRenderer *, PangoFont *, PangoGlyph, double, double)
      * }
      */
-    public class draw_glyph {
+    public final static class draw_glyph {
+
+        private draw_glyph() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -640,9 +670,11 @@ public class _PangoRendererClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, double _x3, double _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, double _x3, double _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -661,7 +693,7 @@ public class _PangoRendererClass {
         return draw_glyph$LAYOUT;
     }
 
-    private static final long draw_glyph$OFFSET = 176;
+    private static final long draw_glyph$OFFSET = $LAYOUT.byteOffset(groupElement("draw_glyph"));
 
     /**
      * Offset for field:
@@ -698,7 +730,11 @@ public class _PangoRendererClass {
      * void (*part_changed)(PangoRenderer *, PangoRenderPart)
      * }
      */
-    public class part_changed {
+    public final static class part_changed {
+
+        private part_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -734,9 +770,11 @@ public class _PangoRendererClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -755,7 +793,7 @@ public class _PangoRendererClass {
         return part_changed$LAYOUT;
     }
 
-    private static final long part_changed$OFFSET = 184;
+    private static final long part_changed$OFFSET = $LAYOUT.byteOffset(groupElement("part_changed"));
 
     /**
      * Offset for field:
@@ -792,7 +830,11 @@ public class _PangoRendererClass {
      * void (*begin)(PangoRenderer *)
      * }
      */
-    public class begin {
+    public final static class begin {
+
+        private begin() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -827,9 +869,11 @@ public class _PangoRendererClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -848,7 +892,7 @@ public class _PangoRendererClass {
         return begin$LAYOUT;
     }
 
-    private static final long begin$OFFSET = 192;
+    private static final long begin$OFFSET = $LAYOUT.byteOffset(groupElement("begin"));
 
     /**
      * Offset for field:
@@ -885,7 +929,11 @@ public class _PangoRendererClass {
      * void (*end)(PangoRenderer *)
      * }
      */
-    public class end {
+    public final static class end {
+
+        private end() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -920,9 +968,11 @@ public class _PangoRendererClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -941,7 +991,7 @@ public class _PangoRendererClass {
         return end$LAYOUT;
     }
 
-    private static final long end$OFFSET = 200;
+    private static final long end$OFFSET = $LAYOUT.byteOffset(groupElement("end"));
 
     /**
      * Offset for field:
@@ -978,7 +1028,11 @@ public class _PangoRendererClass {
      * void (*prepare_run)(PangoRenderer *, PangoLayoutRun *)
      * }
      */
-    public class prepare_run {
+    public final static class prepare_run {
+
+        private prepare_run() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1014,9 +1068,11 @@ public class _PangoRendererClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1035,7 +1091,7 @@ public class _PangoRendererClass {
         return prepare_run$LAYOUT;
     }
 
-    private static final long prepare_run$OFFSET = 208;
+    private static final long prepare_run$OFFSET = $LAYOUT.byteOffset(groupElement("prepare_run"));
 
     /**
      * Offset for field:
@@ -1072,7 +1128,11 @@ public class _PangoRendererClass {
      * void (*draw_glyph_item)(PangoRenderer *, const char *, PangoGlyphItem *, int, int)
      * }
      */
-    public class draw_glyph_item {
+    public final static class draw_glyph_item {
+
+        private draw_glyph_item() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1111,9 +1171,11 @@ public class _PangoRendererClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, int _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, int _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1132,7 +1194,7 @@ public class _PangoRendererClass {
         return draw_glyph_item$LAYOUT;
     }
 
-    private static final long draw_glyph_item$OFFSET = 216;
+    private static final long draw_glyph_item$OFFSET = $LAYOUT.byteOffset(groupElement("draw_glyph_item"));
 
     /**
      * Offset for field:
@@ -1169,7 +1231,11 @@ public class _PangoRendererClass {
      * void (*_pango_reserved2)(void)
      * }
      */
-    public class _pango_reserved2 {
+    public final static class _pango_reserved2 {
+
+        private _pango_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1205,6 +1271,8 @@ public class _PangoRendererClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1223,7 +1291,7 @@ public class _PangoRendererClass {
         return _pango_reserved2$LAYOUT;
     }
 
-    private static final long _pango_reserved2$OFFSET = 224;
+    private static final long _pango_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_pango_reserved2"));
 
     /**
      * Offset for field:
@@ -1260,7 +1328,11 @@ public class _PangoRendererClass {
      * void (*_pango_reserved3)(void)
      * }
      */
-    public class _pango_reserved3 {
+    public final static class _pango_reserved3 {
+
+        private _pango_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1296,6 +1368,8 @@ public class _PangoRendererClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1314,7 +1388,7 @@ public class _PangoRendererClass {
         return _pango_reserved3$LAYOUT;
     }
 
-    private static final long _pango_reserved3$OFFSET = 232;
+    private static final long _pango_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_pango_reserved3"));
 
     /**
      * Offset for field:
@@ -1351,7 +1425,11 @@ public class _PangoRendererClass {
      * void (*_pango_reserved4)(void)
      * }
      */
-    public class _pango_reserved4 {
+    public final static class _pango_reserved4 {
+
+        private _pango_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1387,6 +1465,8 @@ public class _PangoRendererClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1405,7 +1485,7 @@ public class _PangoRendererClass {
         return _pango_reserved4$LAYOUT;
     }
 
-    private static final long _pango_reserved4$OFFSET = 240;
+    private static final long _pango_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_pango_reserved4"));
 
     /**
      * Offset for field:
@@ -1466,7 +1546,7 @@ public class _PangoRendererClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1474,7 +1554,7 @@ public class _PangoRendererClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -54,7 +50,7 @@ public class _GtkStyleProviderIface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -91,7 +87,11 @@ public class _GtkStyleProviderIface {
      * GtkStyleProperties *(*get_style)(GtkStyleProvider *, GtkWidgetPath *)
      * }
      */
-    public class get_style {
+    public final static class get_style {
+
+        private get_style() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -128,9 +128,11 @@ public class _GtkStyleProviderIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -149,7 +151,7 @@ public class _GtkStyleProviderIface {
         return get_style$LAYOUT;
     }
 
-    private static final long get_style$OFFSET = 16;
+    private static final long get_style$OFFSET = $LAYOUT.byteOffset(groupElement("get_style"));
 
     /**
      * Offset for field:
@@ -186,7 +188,11 @@ public class _GtkStyleProviderIface {
      * gboolean (*get_style_property)(GtkStyleProvider *, GtkWidgetPath *, GtkStateFlags, GParamSpec *, GValue *)
      * }
      */
-    public class get_style_property {
+    public final static class get_style_property {
+
+        private get_style_property() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -226,9 +232,11 @@ public class _GtkStyleProviderIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -247,7 +255,7 @@ public class _GtkStyleProviderIface {
         return get_style_property$LAYOUT;
     }
 
-    private static final long get_style_property$OFFSET = 24;
+    private static final long get_style_property$OFFSET = $LAYOUT.byteOffset(groupElement("get_style_property"));
 
     /**
      * Offset for field:
@@ -284,7 +292,11 @@ public class _GtkStyleProviderIface {
      * GtkIconFactory *(*get_icon_factory)(GtkStyleProvider *, GtkWidgetPath *)
      * }
      */
-    public class get_icon_factory {
+    public final static class get_icon_factory {
+
+        private get_icon_factory() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -321,9 +333,11 @@ public class _GtkStyleProviderIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -342,7 +356,7 @@ public class _GtkStyleProviderIface {
         return get_icon_factory$LAYOUT;
     }
 
-    private static final long get_icon_factory$OFFSET = 32;
+    private static final long get_icon_factory$OFFSET = $LAYOUT.byteOffset(groupElement("get_icon_factory"));
 
     /**
      * Offset for field:
@@ -403,7 +417,7 @@ public class _GtkStyleProviderIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -411,7 +425,7 @@ public class _GtkStyleProviderIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

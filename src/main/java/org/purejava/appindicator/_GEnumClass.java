@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -57,7 +53,7 @@ public class _GEnumClass {
         return g_type_class$LAYOUT;
     }
 
-    private static final long g_type_class$OFFSET = 0;
+    private static final long g_type_class$OFFSET = $LAYOUT.byteOffset(groupElement("g_type_class"));
 
     /**
      * Offset for field:
@@ -101,7 +97,7 @@ public class _GEnumClass {
         return minimum$LAYOUT;
     }
 
-    private static final long minimum$OFFSET = 8;
+    private static final long minimum$OFFSET = $LAYOUT.byteOffset(groupElement("minimum"));
 
     /**
      * Offset for field:
@@ -145,7 +141,7 @@ public class _GEnumClass {
         return maximum$LAYOUT;
     }
 
-    private static final long maximum$OFFSET = 12;
+    private static final long maximum$OFFSET = $LAYOUT.byteOffset(groupElement("maximum"));
 
     /**
      * Offset for field:
@@ -189,7 +185,7 @@ public class _GEnumClass {
         return n_values$LAYOUT;
     }
 
-    private static final long n_values$OFFSET = 16;
+    private static final long n_values$OFFSET = $LAYOUT.byteOffset(groupElement("n_values"));
 
     /**
      * Offset for field:
@@ -233,7 +229,7 @@ public class _GEnumClass {
         return values$LAYOUT;
     }
 
-    private static final long values$OFFSET = 24;
+    private static final long values$OFFSET = $LAYOUT.byteOffset(groupElement("values"));
 
     /**
      * Offset for field:
@@ -294,7 +290,7 @@ public class _GEnumClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -302,7 +298,7 @@ public class _GEnumClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

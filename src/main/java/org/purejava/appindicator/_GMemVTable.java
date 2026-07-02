@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -51,7 +47,11 @@ public class _GMemVTable {
      * gpointer (*malloc)(gsize)
      * }
      */
-    public class malloc {
+    public final static class malloc {
+
+        private malloc() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -87,9 +87,11 @@ public class _GMemVTable {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,long _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, long _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -108,7 +110,7 @@ public class _GMemVTable {
         return malloc$LAYOUT;
     }
 
-    private static final long malloc$OFFSET = 0;
+    private static final long malloc$OFFSET = $LAYOUT.byteOffset(groupElement("malloc"));
 
     /**
      * Offset for field:
@@ -145,7 +147,11 @@ public class _GMemVTable {
      * gpointer (*realloc)(gpointer, gsize)
      * }
      */
-    public class realloc {
+    public final static class realloc {
+
+        private realloc() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -182,9 +188,11 @@ public class _GMemVTable {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, long _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, long _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -203,7 +211,7 @@ public class _GMemVTable {
         return realloc$LAYOUT;
     }
 
-    private static final long realloc$OFFSET = 8;
+    private static final long realloc$OFFSET = $LAYOUT.byteOffset(groupElement("realloc"));
 
     /**
      * Offset for field:
@@ -240,7 +248,11 @@ public class _GMemVTable {
      * void (*free)(gpointer)
      * }
      */
-    public class free {
+    public final static class free {
+
+        private free() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -275,9 +287,11 @@ public class _GMemVTable {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -296,7 +310,7 @@ public class _GMemVTable {
         return free$LAYOUT;
     }
 
-    private static final long free$OFFSET = 16;
+    private static final long free$OFFSET = $LAYOUT.byteOffset(groupElement("free"));
 
     /**
      * Offset for field:
@@ -333,7 +347,11 @@ public class _GMemVTable {
      * gpointer (*calloc)(gsize, gsize)
      * }
      */
-    public class calloc {
+    public final static class calloc {
+
+        private calloc() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -370,9 +388,11 @@ public class _GMemVTable {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,long _x0, long _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, long _x0, long _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -391,7 +411,7 @@ public class _GMemVTable {
         return calloc$LAYOUT;
     }
 
-    private static final long calloc$OFFSET = 24;
+    private static final long calloc$OFFSET = $LAYOUT.byteOffset(groupElement("calloc"));
 
     /**
      * Offset for field:
@@ -428,7 +448,11 @@ public class _GMemVTable {
      * gpointer (*try_malloc)(gsize)
      * }
      */
-    public class try_malloc {
+    public final static class try_malloc {
+
+        private try_malloc() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -464,9 +488,11 @@ public class _GMemVTable {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,long _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, long _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -485,7 +511,7 @@ public class _GMemVTable {
         return try_malloc$LAYOUT;
     }
 
-    private static final long try_malloc$OFFSET = 32;
+    private static final long try_malloc$OFFSET = $LAYOUT.byteOffset(groupElement("try_malloc"));
 
     /**
      * Offset for field:
@@ -522,7 +548,11 @@ public class _GMemVTable {
      * gpointer (*try_realloc)(gpointer, gsize)
      * }
      */
-    public class try_realloc {
+    public final static class try_realloc {
+
+        private try_realloc() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -559,9 +589,11 @@ public class _GMemVTable {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, long _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, long _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -580,7 +612,7 @@ public class _GMemVTable {
         return try_realloc$LAYOUT;
     }
 
-    private static final long try_realloc$OFFSET = 40;
+    private static final long try_realloc$OFFSET = $LAYOUT.byteOffset(groupElement("try_realloc"));
 
     /**
      * Offset for field:
@@ -641,7 +673,7 @@ public class _GMemVTable {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -649,7 +681,7 @@ public class _GMemVTable {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

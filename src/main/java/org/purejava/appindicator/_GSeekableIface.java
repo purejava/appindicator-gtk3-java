@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -58,7 +54,7 @@ public class _GSeekableIface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -95,7 +91,11 @@ public class _GSeekableIface {
      * goffset (*tell)(GSeekable *)
      * }
      */
-    public class tell {
+    public final static class tell {
+
+        private tell() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -131,9 +131,11 @@ public class _GSeekableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static long invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static long invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (long) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -152,7 +154,7 @@ public class _GSeekableIface {
         return tell$LAYOUT;
     }
 
-    private static final long tell$OFFSET = 16;
+    private static final long tell$OFFSET = $LAYOUT.byteOffset(groupElement("tell"));
 
     /**
      * Offset for field:
@@ -189,7 +191,11 @@ public class _GSeekableIface {
      * gboolean (*can_seek)(GSeekable *)
      * }
      */
-    public class can_seek {
+    public final static class can_seek {
+
+        private can_seek() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -225,9 +231,11 @@ public class _GSeekableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -246,7 +254,7 @@ public class _GSeekableIface {
         return can_seek$LAYOUT;
     }
 
-    private static final long can_seek$OFFSET = 24;
+    private static final long can_seek$OFFSET = $LAYOUT.byteOffset(groupElement("can_seek"));
 
     /**
      * Offset for field:
@@ -283,7 +291,11 @@ public class _GSeekableIface {
      * gboolean (*seek)(GSeekable *, goffset, GSeekType, GCancellable *, GError **)
      * }
      */
-    public class seek {
+    public final static class seek {
+
+        private seek() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -323,9 +335,11 @@ public class _GSeekableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, long _x1, int _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, long _x1, int _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -344,7 +358,7 @@ public class _GSeekableIface {
         return seek$LAYOUT;
     }
 
-    private static final long seek$OFFSET = 32;
+    private static final long seek$OFFSET = $LAYOUT.byteOffset(groupElement("seek"));
 
     /**
      * Offset for field:
@@ -381,7 +395,11 @@ public class _GSeekableIface {
      * gboolean (*can_truncate)(GSeekable *)
      * }
      */
-    public class can_truncate {
+    public final static class can_truncate {
+
+        private can_truncate() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -417,9 +435,11 @@ public class _GSeekableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -438,7 +458,7 @@ public class _GSeekableIface {
         return can_truncate$LAYOUT;
     }
 
-    private static final long can_truncate$OFFSET = 40;
+    private static final long can_truncate$OFFSET = $LAYOUT.byteOffset(groupElement("can_truncate"));
 
     /**
      * Offset for field:
@@ -475,7 +495,11 @@ public class _GSeekableIface {
      * gboolean (*truncate_fn)(GSeekable *, goffset, GCancellable *, GError **)
      * }
      */
-    public class truncate_fn {
+    public final static class truncate_fn {
+
+        private truncate_fn() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -514,9 +538,11 @@ public class _GSeekableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, long _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, long _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -535,7 +561,7 @@ public class _GSeekableIface {
         return truncate_fn$LAYOUT;
     }
 
-    private static final long truncate_fn$OFFSET = 48;
+    private static final long truncate_fn$OFFSET = $LAYOUT.byteOffset(groupElement("truncate_fn"));
 
     /**
      * Offset for field:
@@ -596,7 +622,7 @@ public class _GSeekableIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -604,7 +630,7 @@ public class _GSeekableIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

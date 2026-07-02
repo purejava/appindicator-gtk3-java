@@ -2,22 +2,22 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
-import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
-
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.Linker;
+import java.lang.foreign.MemorySegment;
+import java.lang.invoke.MethodHandle;
 
 /**
  * {@snippet lang=c :
  * typedef void (*GTypeInterfaceCheckFunc)(gpointer, gpointer)
  * }
  */
-public class GTypeInterfaceCheckFunc {
+public final class GTypeInterfaceCheckFunc {
+
+    private GTypeInterfaceCheckFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -53,9 +53,11 @@ public class GTypeInterfaceCheckFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment check_data, MemorySegment g_iface) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment check_data, MemorySegment g_iface) {
         try {
              DOWN$MH.invokeExact(funcPtr, check_data, g_iface);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

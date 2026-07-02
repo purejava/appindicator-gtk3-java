@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfDouble;
 
 /**
  * {@snippet lang=c :
@@ -58,7 +54,7 @@ public class cairo_text_extents_t {
         return x_bearing$LAYOUT;
     }
 
-    private static final long x_bearing$OFFSET = 0;
+    private static final long x_bearing$OFFSET = $LAYOUT.byteOffset(groupElement("x_bearing"));
 
     /**
      * Offset for field:
@@ -102,7 +98,7 @@ public class cairo_text_extents_t {
         return y_bearing$LAYOUT;
     }
 
-    private static final long y_bearing$OFFSET = 8;
+    private static final long y_bearing$OFFSET = $LAYOUT.byteOffset(groupElement("y_bearing"));
 
     /**
      * Offset for field:
@@ -146,7 +142,7 @@ public class cairo_text_extents_t {
         return width$LAYOUT;
     }
 
-    private static final long width$OFFSET = 16;
+    private static final long width$OFFSET = $LAYOUT.byteOffset(groupElement("width"));
 
     /**
      * Offset for field:
@@ -190,7 +186,7 @@ public class cairo_text_extents_t {
         return height$LAYOUT;
     }
 
-    private static final long height$OFFSET = 24;
+    private static final long height$OFFSET = $LAYOUT.byteOffset(groupElement("height"));
 
     /**
      * Offset for field:
@@ -234,7 +230,7 @@ public class cairo_text_extents_t {
         return x_advance$LAYOUT;
     }
 
-    private static final long x_advance$OFFSET = 32;
+    private static final long x_advance$OFFSET = $LAYOUT.byteOffset(groupElement("x_advance"));
 
     /**
      * Offset for field:
@@ -278,7 +274,7 @@ public class cairo_text_extents_t {
         return y_advance$LAYOUT;
     }
 
-    private static final long y_advance$OFFSET = 40;
+    private static final long y_advance$OFFSET = $LAYOUT.byteOffset(groupElement("y_advance"));
 
     /**
      * Offset for field:
@@ -339,7 +335,7 @@ public class cairo_text_extents_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -347,7 +343,7 @@ public class cairo_text_extents_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

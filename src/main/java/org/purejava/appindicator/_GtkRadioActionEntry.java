@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -59,7 +55,7 @@ public class _GtkRadioActionEntry {
         return name$LAYOUT;
     }
 
-    private static final long name$OFFSET = 0;
+    private static final long name$OFFSET = $LAYOUT.byteOffset(groupElement("name"));
 
     /**
      * Offset for field:
@@ -103,7 +99,7 @@ public class _GtkRadioActionEntry {
         return stock_id$LAYOUT;
     }
 
-    private static final long stock_id$OFFSET = 8;
+    private static final long stock_id$OFFSET = $LAYOUT.byteOffset(groupElement("stock_id"));
 
     /**
      * Offset for field:
@@ -147,7 +143,7 @@ public class _GtkRadioActionEntry {
         return label$LAYOUT;
     }
 
-    private static final long label$OFFSET = 16;
+    private static final long label$OFFSET = $LAYOUT.byteOffset(groupElement("label"));
 
     /**
      * Offset for field:
@@ -191,7 +187,7 @@ public class _GtkRadioActionEntry {
         return accelerator$LAYOUT;
     }
 
-    private static final long accelerator$OFFSET = 24;
+    private static final long accelerator$OFFSET = $LAYOUT.byteOffset(groupElement("accelerator"));
 
     /**
      * Offset for field:
@@ -235,7 +231,7 @@ public class _GtkRadioActionEntry {
         return tooltip$LAYOUT;
     }
 
-    private static final long tooltip$OFFSET = 32;
+    private static final long tooltip$OFFSET = $LAYOUT.byteOffset(groupElement("tooltip"));
 
     /**
      * Offset for field:
@@ -279,7 +275,7 @@ public class _GtkRadioActionEntry {
         return value$LAYOUT;
     }
 
-    private static final long value$OFFSET = 40;
+    private static final long value$OFFSET = $LAYOUT.byteOffset(groupElement("value"));
 
     /**
      * Offset for field:
@@ -340,7 +336,7 @@ public class _GtkRadioActionEntry {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -348,7 +344,7 @@ public class _GtkRadioActionEntry {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

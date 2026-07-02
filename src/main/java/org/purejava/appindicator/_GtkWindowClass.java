@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -64,7 +60,7 @@ public class _GtkWindowClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -101,7 +97,11 @@ public class _GtkWindowClass {
      * void (*set_focus)(GtkWindow *, GtkWidget *)
      * }
      */
-    public class set_focus {
+    public final static class set_focus {
+
+        private set_focus() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -137,9 +137,11 @@ public class _GtkWindowClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -158,7 +160,7 @@ public class _GtkWindowClass {
         return set_focus$LAYOUT;
     }
 
-    private static final long set_focus$OFFSET = 1008;
+    private static final long set_focus$OFFSET = $LAYOUT.byteOffset(groupElement("set_focus"));
 
     /**
      * Offset for field:
@@ -195,7 +197,11 @@ public class _GtkWindowClass {
      * void (*activate_focus)(GtkWindow *)
      * }
      */
-    public class activate_focus {
+    public final static class activate_focus {
+
+        private activate_focus() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -230,9 +236,11 @@ public class _GtkWindowClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -251,7 +259,7 @@ public class _GtkWindowClass {
         return activate_focus$LAYOUT;
     }
 
-    private static final long activate_focus$OFFSET = 1016;
+    private static final long activate_focus$OFFSET = $LAYOUT.byteOffset(groupElement("activate_focus"));
 
     /**
      * Offset for field:
@@ -288,7 +296,11 @@ public class _GtkWindowClass {
      * void (*activate_default)(GtkWindow *)
      * }
      */
-    public class activate_default {
+    public final static class activate_default {
+
+        private activate_default() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -323,9 +335,11 @@ public class _GtkWindowClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -344,7 +358,7 @@ public class _GtkWindowClass {
         return activate_default$LAYOUT;
     }
 
-    private static final long activate_default$OFFSET = 1024;
+    private static final long activate_default$OFFSET = $LAYOUT.byteOffset(groupElement("activate_default"));
 
     /**
      * Offset for field:
@@ -381,7 +395,11 @@ public class _GtkWindowClass {
      * void (*keys_changed)(GtkWindow *)
      * }
      */
-    public class keys_changed {
+    public final static class keys_changed {
+
+        private keys_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -416,9 +434,11 @@ public class _GtkWindowClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -437,7 +457,7 @@ public class _GtkWindowClass {
         return keys_changed$LAYOUT;
     }
 
-    private static final long keys_changed$OFFSET = 1032;
+    private static final long keys_changed$OFFSET = $LAYOUT.byteOffset(groupElement("keys_changed"));
 
     /**
      * Offset for field:
@@ -474,7 +494,11 @@ public class _GtkWindowClass {
      * gboolean (*enable_debugging)(GtkWindow *, gboolean)
      * }
      */
-    public class enable_debugging {
+    public final static class enable_debugging {
+
+        private enable_debugging() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -511,9 +535,11 @@ public class _GtkWindowClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -532,7 +558,7 @@ public class _GtkWindowClass {
         return enable_debugging$LAYOUT;
     }
 
-    private static final long enable_debugging$OFFSET = 1040;
+    private static final long enable_debugging$OFFSET = $LAYOUT.byteOffset(groupElement("enable_debugging"));
 
     /**
      * Offset for field:
@@ -569,7 +595,11 @@ public class _GtkWindowClass {
      * void (*_gtk_reserved1)(void)
      * }
      */
-    public class _gtk_reserved1 {
+    public final static class _gtk_reserved1 {
+
+        private _gtk_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -605,6 +635,8 @@ public class _GtkWindowClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -623,7 +655,7 @@ public class _GtkWindowClass {
         return _gtk_reserved1$LAYOUT;
     }
 
-    private static final long _gtk_reserved1$OFFSET = 1048;
+    private static final long _gtk_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved1"));
 
     /**
      * Offset for field:
@@ -660,7 +692,11 @@ public class _GtkWindowClass {
      * void (*_gtk_reserved2)(void)
      * }
      */
-    public class _gtk_reserved2 {
+    public final static class _gtk_reserved2 {
+
+        private _gtk_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -696,6 +732,8 @@ public class _GtkWindowClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -714,7 +752,7 @@ public class _GtkWindowClass {
         return _gtk_reserved2$LAYOUT;
     }
 
-    private static final long _gtk_reserved2$OFFSET = 1056;
+    private static final long _gtk_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved2"));
 
     /**
      * Offset for field:
@@ -751,7 +789,11 @@ public class _GtkWindowClass {
      * void (*_gtk_reserved3)(void)
      * }
      */
-    public class _gtk_reserved3 {
+    public final static class _gtk_reserved3 {
+
+        private _gtk_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -787,6 +829,8 @@ public class _GtkWindowClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -805,7 +849,7 @@ public class _GtkWindowClass {
         return _gtk_reserved3$LAYOUT;
     }
 
-    private static final long _gtk_reserved3$OFFSET = 1064;
+    private static final long _gtk_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved3"));
 
     /**
      * Offset for field:
@@ -866,7 +910,7 @@ public class _GtkWindowClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -874,7 +918,7 @@ public class _GtkWindowClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

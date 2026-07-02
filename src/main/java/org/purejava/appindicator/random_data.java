@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -61,7 +57,7 @@ public class random_data {
         return fptr$LAYOUT;
     }
 
-    private static final long fptr$OFFSET = 0;
+    private static final long fptr$OFFSET = $LAYOUT.byteOffset(groupElement("fptr"));
 
     /**
      * Offset for field:
@@ -105,7 +101,7 @@ public class random_data {
         return rptr$LAYOUT;
     }
 
-    private static final long rptr$OFFSET = 8;
+    private static final long rptr$OFFSET = $LAYOUT.byteOffset(groupElement("rptr"));
 
     /**
      * Offset for field:
@@ -149,7 +145,7 @@ public class random_data {
         return state$LAYOUT;
     }
 
-    private static final long state$OFFSET = 16;
+    private static final long state$OFFSET = $LAYOUT.byteOffset(groupElement("state"));
 
     /**
      * Offset for field:
@@ -193,7 +189,7 @@ public class random_data {
         return rand_type$LAYOUT;
     }
 
-    private static final long rand_type$OFFSET = 24;
+    private static final long rand_type$OFFSET = $LAYOUT.byteOffset(groupElement("rand_type"));
 
     /**
      * Offset for field:
@@ -237,7 +233,7 @@ public class random_data {
         return rand_deg$LAYOUT;
     }
 
-    private static final long rand_deg$OFFSET = 28;
+    private static final long rand_deg$OFFSET = $LAYOUT.byteOffset(groupElement("rand_deg"));
 
     /**
      * Offset for field:
@@ -281,7 +277,7 @@ public class random_data {
         return rand_sep$LAYOUT;
     }
 
-    private static final long rand_sep$OFFSET = 32;
+    private static final long rand_sep$OFFSET = $LAYOUT.byteOffset(groupElement("rand_sep"));
 
     /**
      * Offset for field:
@@ -325,7 +321,7 @@ public class random_data {
         return end_ptr$LAYOUT;
     }
 
-    private static final long end_ptr$OFFSET = 40;
+    private static final long end_ptr$OFFSET = $LAYOUT.byteOffset(groupElement("end_ptr"));
 
     /**
      * Offset for field:
@@ -386,7 +382,7 @@ public class random_data {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -394,7 +390,7 @@ public class random_data {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -58,7 +54,7 @@ public class _GtkRecentManagerClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -95,7 +91,11 @@ public class _GtkRecentManagerClass {
      * void (*changed)(GtkRecentManager *)
      * }
      */
-    public class changed {
+    public final static class changed {
+
+        private changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -130,9 +130,11 @@ public class _GtkRecentManagerClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -151,7 +153,7 @@ public class _GtkRecentManagerClass {
         return changed$LAYOUT;
     }
 
-    private static final long changed$OFFSET = 136;
+    private static final long changed$OFFSET = $LAYOUT.byteOffset(groupElement("changed"));
 
     /**
      * Offset for field:
@@ -188,7 +190,11 @@ public class _GtkRecentManagerClass {
      * void (*_gtk_recent1)(void)
      * }
      */
-    public class _gtk_recent1 {
+    public final static class _gtk_recent1 {
+
+        private _gtk_recent1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -224,6 +230,8 @@ public class _GtkRecentManagerClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -242,7 +250,7 @@ public class _GtkRecentManagerClass {
         return _gtk_recent1$LAYOUT;
     }
 
-    private static final long _gtk_recent1$OFFSET = 144;
+    private static final long _gtk_recent1$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_recent1"));
 
     /**
      * Offset for field:
@@ -279,7 +287,11 @@ public class _GtkRecentManagerClass {
      * void (*_gtk_recent2)(void)
      * }
      */
-    public class _gtk_recent2 {
+    public final static class _gtk_recent2 {
+
+        private _gtk_recent2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -315,6 +327,8 @@ public class _GtkRecentManagerClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -333,7 +347,7 @@ public class _GtkRecentManagerClass {
         return _gtk_recent2$LAYOUT;
     }
 
-    private static final long _gtk_recent2$OFFSET = 152;
+    private static final long _gtk_recent2$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_recent2"));
 
     /**
      * Offset for field:
@@ -370,7 +384,11 @@ public class _GtkRecentManagerClass {
      * void (*_gtk_recent3)(void)
      * }
      */
-    public class _gtk_recent3 {
+    public final static class _gtk_recent3 {
+
+        private _gtk_recent3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -406,6 +424,8 @@ public class _GtkRecentManagerClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -424,7 +444,7 @@ public class _GtkRecentManagerClass {
         return _gtk_recent3$LAYOUT;
     }
 
-    private static final long _gtk_recent3$OFFSET = 160;
+    private static final long _gtk_recent3$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_recent3"));
 
     /**
      * Offset for field:
@@ -461,7 +481,11 @@ public class _GtkRecentManagerClass {
      * void (*_gtk_recent4)(void)
      * }
      */
-    public class _gtk_recent4 {
+    public final static class _gtk_recent4 {
+
+        private _gtk_recent4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -497,6 +521,8 @@ public class _GtkRecentManagerClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -515,7 +541,7 @@ public class _GtkRecentManagerClass {
         return _gtk_recent4$LAYOUT;
     }
 
-    private static final long _gtk_recent4$OFFSET = 168;
+    private static final long _gtk_recent4$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_recent4"));
 
     /**
      * Offset for field:
@@ -576,7 +602,7 @@ public class _GtkRecentManagerClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -584,7 +610,7 @@ public class _GtkRecentManagerClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -45,7 +45,7 @@ public class _AtkSocket {
         return parent$LAYOUT;
     }
 
-    private static final long parent$OFFSET = 0;
+    private static final long parent$OFFSET = $LAYOUT.byteOffset(groupElement("parent"));
 
     /**
      * Offset for field:
@@ -89,7 +89,7 @@ public class _AtkSocket {
         return embedded_plug_id$LAYOUT;
     }
 
-    private static final long embedded_plug_id$OFFSET = 72;
+    private static final long embedded_plug_id$OFFSET = $LAYOUT.byteOffset(groupElement("embedded_plug_id"));
 
     /**
      * Offset for field:
@@ -150,7 +150,7 @@ public class _AtkSocket {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -158,7 +158,7 @@ public class _AtkSocket {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

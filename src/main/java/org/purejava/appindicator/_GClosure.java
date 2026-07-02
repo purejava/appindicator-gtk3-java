@@ -52,7 +52,11 @@ public class _GClosure {
      * void (*marshal)(GClosure *, GValue *, guint, const GValue *, gpointer, gpointer)
      * }
      */
-    public class marshal {
+    public final static class marshal {
+
+        private marshal() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -92,9 +96,11 @@ public class _GClosure {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -113,7 +119,7 @@ public class _GClosure {
         return marshal$LAYOUT;
     }
 
-    private static final long marshal$OFFSET = 8;
+    private static final long marshal$OFFSET = $LAYOUT.byteOffset(groupElement("marshal"));
 
     /**
      * Offset for field:
@@ -157,7 +163,7 @@ public class _GClosure {
         return data$LAYOUT;
     }
 
-    private static final long data$OFFSET = 16;
+    private static final long data$OFFSET = $LAYOUT.byteOffset(groupElement("data"));
 
     /**
      * Offset for field:
@@ -201,7 +207,7 @@ public class _GClosure {
         return notifiers$LAYOUT;
     }
 
-    private static final long notifiers$OFFSET = 24;
+    private static final long notifiers$OFFSET = $LAYOUT.byteOffset(groupElement("notifiers"));
 
     /**
      * Offset for field:
@@ -262,7 +268,7 @@ public class _GClosure {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -270,7 +276,7 @@ public class _GClosure {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

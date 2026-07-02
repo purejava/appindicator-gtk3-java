@@ -2,15 +2,12 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfDouble;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -92,7 +89,7 @@ public class _GtkTextAttributes {
         return refcount$LAYOUT;
     }
 
-    private static final long refcount$OFFSET = 0;
+    private static final long refcount$OFFSET = $LAYOUT.byteOffset(groupElement("refcount"));
 
     /**
      * Offset for field:
@@ -136,7 +133,7 @@ public class _GtkTextAttributes {
         return appearance$LAYOUT;
     }
 
-    private static final long appearance$OFFSET = 8;
+    private static final long appearance$OFFSET = $LAYOUT.byteOffset(groupElement("appearance"));
 
     /**
      * Offset for field:
@@ -180,7 +177,7 @@ public class _GtkTextAttributes {
         return justification$LAYOUT;
     }
 
-    private static final long justification$OFFSET = 56;
+    private static final long justification$OFFSET = $LAYOUT.byteOffset(groupElement("justification"));
 
     /**
      * Offset for field:
@@ -224,7 +221,7 @@ public class _GtkTextAttributes {
         return direction$LAYOUT;
     }
 
-    private static final long direction$OFFSET = 60;
+    private static final long direction$OFFSET = $LAYOUT.byteOffset(groupElement("direction"));
 
     /**
      * Offset for field:
@@ -268,7 +265,7 @@ public class _GtkTextAttributes {
         return font$LAYOUT;
     }
 
-    private static final long font$OFFSET = 64;
+    private static final long font$OFFSET = $LAYOUT.byteOffset(groupElement("font"));
 
     /**
      * Offset for field:
@@ -312,7 +309,7 @@ public class _GtkTextAttributes {
         return font_scale$LAYOUT;
     }
 
-    private static final long font_scale$OFFSET = 72;
+    private static final long font_scale$OFFSET = $LAYOUT.byteOffset(groupElement("font_scale"));
 
     /**
      * Offset for field:
@@ -356,7 +353,7 @@ public class _GtkTextAttributes {
         return left_margin$LAYOUT;
     }
 
-    private static final long left_margin$OFFSET = 80;
+    private static final long left_margin$OFFSET = $LAYOUT.byteOffset(groupElement("left_margin"));
 
     /**
      * Offset for field:
@@ -400,7 +397,7 @@ public class _GtkTextAttributes {
         return right_margin$LAYOUT;
     }
 
-    private static final long right_margin$OFFSET = 84;
+    private static final long right_margin$OFFSET = $LAYOUT.byteOffset(groupElement("right_margin"));
 
     /**
      * Offset for field:
@@ -444,7 +441,7 @@ public class _GtkTextAttributes {
         return indent$LAYOUT;
     }
 
-    private static final long indent$OFFSET = 88;
+    private static final long indent$OFFSET = $LAYOUT.byteOffset(groupElement("indent"));
 
     /**
      * Offset for field:
@@ -488,7 +485,7 @@ public class _GtkTextAttributes {
         return pixels_above_lines$LAYOUT;
     }
 
-    private static final long pixels_above_lines$OFFSET = 92;
+    private static final long pixels_above_lines$OFFSET = $LAYOUT.byteOffset(groupElement("pixels_above_lines"));
 
     /**
      * Offset for field:
@@ -532,7 +529,7 @@ public class _GtkTextAttributes {
         return pixels_below_lines$LAYOUT;
     }
 
-    private static final long pixels_below_lines$OFFSET = 96;
+    private static final long pixels_below_lines$OFFSET = $LAYOUT.byteOffset(groupElement("pixels_below_lines"));
 
     /**
      * Offset for field:
@@ -576,7 +573,7 @@ public class _GtkTextAttributes {
         return pixels_inside_wrap$LAYOUT;
     }
 
-    private static final long pixels_inside_wrap$OFFSET = 100;
+    private static final long pixels_inside_wrap$OFFSET = $LAYOUT.byteOffset(groupElement("pixels_inside_wrap"));
 
     /**
      * Offset for field:
@@ -620,7 +617,7 @@ public class _GtkTextAttributes {
         return tabs$LAYOUT;
     }
 
-    private static final long tabs$OFFSET = 104;
+    private static final long tabs$OFFSET = $LAYOUT.byteOffset(groupElement("tabs"));
 
     /**
      * Offset for field:
@@ -664,7 +661,7 @@ public class _GtkTextAttributes {
         return wrap_mode$LAYOUT;
     }
 
-    private static final long wrap_mode$OFFSET = 112;
+    private static final long wrap_mode$OFFSET = $LAYOUT.byteOffset(groupElement("wrap_mode"));
 
     /**
      * Offset for field:
@@ -708,7 +705,7 @@ public class _GtkTextAttributes {
         return language$LAYOUT;
     }
 
-    private static final long language$OFFSET = 120;
+    private static final long language$OFFSET = $LAYOUT.byteOffset(groupElement("language"));
 
     /**
      * Offset for field:
@@ -752,7 +749,7 @@ public class _GtkTextAttributes {
         return pg_bg_color$LAYOUT;
     }
 
-    private static final long pg_bg_color$OFFSET = 128;
+    private static final long pg_bg_color$OFFSET = $LAYOUT.byteOffset(groupElement("pg_bg_color"));
 
     /**
      * Offset for field:
@@ -796,7 +793,7 @@ public class _GtkTextAttributes {
         return pg_bg_rgba$LAYOUT;
     }
 
-    private static final long pg_bg_rgba$OFFSET = 144;
+    private static final long pg_bg_rgba$OFFSET = $LAYOUT.byteOffset(groupElement("pg_bg_rgba"));
 
     /**
      * Offset for field:
@@ -840,7 +837,7 @@ public class _GtkTextAttributes {
         return letter_spacing$LAYOUT;
     }
 
-    private static final long letter_spacing$OFFSET = 152;
+    private static final long letter_spacing$OFFSET = $LAYOUT.byteOffset(groupElement("letter_spacing"));
 
     /**
      * Offset for field:
@@ -884,7 +881,7 @@ public class _GtkTextAttributes {
         return font_features$LAYOUT;
     }
 
-    private static final long font_features$OFFSET = 160;
+    private static final long font_features$OFFSET = $LAYOUT.byteOffset(groupElement("font_features"));
 
     /**
      * Offset for field:
@@ -945,7 +942,7 @@ public class _GtkTextAttributes {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -953,7 +950,7 @@ public class _GtkTextAttributes {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

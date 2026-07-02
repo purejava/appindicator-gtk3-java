@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
@@ -71,7 +67,7 @@ public class _GdkEventKey {
         return type$LAYOUT;
     }
 
-    private static final long type$OFFSET = 0;
+    private static final long type$OFFSET = $LAYOUT.byteOffset(groupElement("type"));
 
     /**
      * Offset for field:
@@ -115,7 +111,7 @@ public class _GdkEventKey {
         return window$LAYOUT;
     }
 
-    private static final long window$OFFSET = 8;
+    private static final long window$OFFSET = $LAYOUT.byteOffset(groupElement("window"));
 
     /**
      * Offset for field:
@@ -159,7 +155,7 @@ public class _GdkEventKey {
         return send_event$LAYOUT;
     }
 
-    private static final long send_event$OFFSET = 16;
+    private static final long send_event$OFFSET = $LAYOUT.byteOffset(groupElement("send_event"));
 
     /**
      * Offset for field:
@@ -203,7 +199,7 @@ public class _GdkEventKey {
         return time$LAYOUT;
     }
 
-    private static final long time$OFFSET = 20;
+    private static final long time$OFFSET = $LAYOUT.byteOffset(groupElement("time"));
 
     /**
      * Offset for field:
@@ -247,7 +243,7 @@ public class _GdkEventKey {
         return state$LAYOUT;
     }
 
-    private static final long state$OFFSET = 24;
+    private static final long state$OFFSET = $LAYOUT.byteOffset(groupElement("state"));
 
     /**
      * Offset for field:
@@ -291,7 +287,7 @@ public class _GdkEventKey {
         return keyval$LAYOUT;
     }
 
-    private static final long keyval$OFFSET = 28;
+    private static final long keyval$OFFSET = $LAYOUT.byteOffset(groupElement("keyval"));
 
     /**
      * Offset for field:
@@ -335,7 +331,7 @@ public class _GdkEventKey {
         return length$LAYOUT;
     }
 
-    private static final long length$OFFSET = 32;
+    private static final long length$OFFSET = $LAYOUT.byteOffset(groupElement("length"));
 
     /**
      * Offset for field:
@@ -379,7 +375,7 @@ public class _GdkEventKey {
         return string$LAYOUT;
     }
 
-    private static final long string$OFFSET = 40;
+    private static final long string$OFFSET = $LAYOUT.byteOffset(groupElement("string"));
 
     /**
      * Offset for field:
@@ -423,7 +419,7 @@ public class _GdkEventKey {
         return hardware_keycode$LAYOUT;
     }
 
-    private static final long hardware_keycode$OFFSET = 48;
+    private static final long hardware_keycode$OFFSET = $LAYOUT.byteOffset(groupElement("hardware_keycode"));
 
     /**
      * Offset for field:
@@ -467,7 +463,7 @@ public class _GdkEventKey {
         return group$LAYOUT;
     }
 
-    private static final long group$OFFSET = 50;
+    private static final long group$OFFSET = $LAYOUT.byteOffset(groupElement("group"));
 
     /**
      * Offset for field:
@@ -528,7 +524,7 @@ public class _GdkEventKey {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -536,7 +532,7 @@ public class _GdkEventKey {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

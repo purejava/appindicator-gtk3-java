@@ -58,7 +58,7 @@ public class _AtkObject {
         return parent$LAYOUT;
     }
 
-    private static final long parent$OFFSET = 0;
+    private static final long parent$OFFSET = $LAYOUT.byteOffset(groupElement("parent"));
 
     /**
      * Offset for field:
@@ -102,7 +102,7 @@ public class _AtkObject {
         return description$LAYOUT;
     }
 
-    private static final long description$OFFSET = 24;
+    private static final long description$OFFSET = $LAYOUT.byteOffset(groupElement("description"));
 
     /**
      * Offset for field:
@@ -146,7 +146,7 @@ public class _AtkObject {
         return name$LAYOUT;
     }
 
-    private static final long name$OFFSET = 32;
+    private static final long name$OFFSET = $LAYOUT.byteOffset(groupElement("name"));
 
     /**
      * Offset for field:
@@ -190,7 +190,7 @@ public class _AtkObject {
         return accessible_parent$LAYOUT;
     }
 
-    private static final long accessible_parent$OFFSET = 40;
+    private static final long accessible_parent$OFFSET = $LAYOUT.byteOffset(groupElement("accessible_parent"));
 
     /**
      * Offset for field:
@@ -234,7 +234,7 @@ public class _AtkObject {
         return role$LAYOUT;
     }
 
-    private static final long role$OFFSET = 48;
+    private static final long role$OFFSET = $LAYOUT.byteOffset(groupElement("role"));
 
     /**
      * Offset for field:
@@ -278,7 +278,7 @@ public class _AtkObject {
         return relation_set$LAYOUT;
     }
 
-    private static final long relation_set$OFFSET = 56;
+    private static final long relation_set$OFFSET = $LAYOUT.byteOffset(groupElement("relation_set"));
 
     /**
      * Offset for field:
@@ -322,7 +322,7 @@ public class _AtkObject {
         return layer$LAYOUT;
     }
 
-    private static final long layer$OFFSET = 64;
+    private static final long layer$OFFSET = $LAYOUT.byteOffset(groupElement("layer"));
 
     /**
      * Offset for field:
@@ -383,7 +383,7 @@ public class _AtkObject {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -391,7 +391,7 @@ public class _AtkObject {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -2,22 +2,22 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
-import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
-
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.Linker;
+import java.lang.foreign.MemorySegment;
+import java.lang.invoke.MethodHandle;
 
 /**
  * {@snippet lang=c :
  * typedef gchar *(*GTypeValueCollectFunc)(GValue *, guint, GTypeCValue *, guint)
  * }
  */
-public class GTypeValueCollectFunc {
+public final class GTypeValueCollectFunc {
+
+    private GTypeValueCollectFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -56,9 +56,11 @@ public class GTypeValueCollectFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment value, int n_collect_values, MemorySegment collect_values, int collect_flags) {
+    public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment value, int n_collect_values, MemorySegment collect_values, int collect_flags) {
         try {
             return (MemorySegment) DOWN$MH.invokeExact(funcPtr, value, n_collect_values, collect_values, collect_flags);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

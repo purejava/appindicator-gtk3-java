@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -27,7 +23,7 @@ public class __once_flag {
 
     private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
         app_indicator_h.C_INT.withName("__data")
-    ).withName("$anon$108:9");
+    ).withName("$anon$109:9");
 
     /**
      * The layout of this struct
@@ -48,7 +44,7 @@ public class __once_flag {
         return __data$LAYOUT;
     }
 
-    private static final long __data$OFFSET = 0;
+    private static final long __data$OFFSET = $LAYOUT.byteOffset(groupElement("__data"));
 
     /**
      * Offset for field:
@@ -109,7 +105,7 @@ public class __once_flag {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -117,7 +113,7 @@ public class __once_flag {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

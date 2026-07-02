@@ -2,15 +2,12 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfByte;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -65,7 +62,7 @@ public class _GdkEventOwnerChange {
         return type$LAYOUT;
     }
 
-    private static final long type$OFFSET = 0;
+    private static final long type$OFFSET = $LAYOUT.byteOffset(groupElement("type"));
 
     /**
      * Offset for field:
@@ -109,7 +106,7 @@ public class _GdkEventOwnerChange {
         return window$LAYOUT;
     }
 
-    private static final long window$OFFSET = 8;
+    private static final long window$OFFSET = $LAYOUT.byteOffset(groupElement("window"));
 
     /**
      * Offset for field:
@@ -153,7 +150,7 @@ public class _GdkEventOwnerChange {
         return send_event$LAYOUT;
     }
 
-    private static final long send_event$OFFSET = 16;
+    private static final long send_event$OFFSET = $LAYOUT.byteOffset(groupElement("send_event"));
 
     /**
      * Offset for field:
@@ -197,7 +194,7 @@ public class _GdkEventOwnerChange {
         return owner$LAYOUT;
     }
 
-    private static final long owner$OFFSET = 24;
+    private static final long owner$OFFSET = $LAYOUT.byteOffset(groupElement("owner"));
 
     /**
      * Offset for field:
@@ -241,7 +238,7 @@ public class _GdkEventOwnerChange {
         return reason$LAYOUT;
     }
 
-    private static final long reason$OFFSET = 32;
+    private static final long reason$OFFSET = $LAYOUT.byteOffset(groupElement("reason"));
 
     /**
      * Offset for field:
@@ -285,7 +282,7 @@ public class _GdkEventOwnerChange {
         return selection$LAYOUT;
     }
 
-    private static final long selection$OFFSET = 40;
+    private static final long selection$OFFSET = $LAYOUT.byteOffset(groupElement("selection"));
 
     /**
      * Offset for field:
@@ -329,7 +326,7 @@ public class _GdkEventOwnerChange {
         return time$LAYOUT;
     }
 
-    private static final long time$OFFSET = 48;
+    private static final long time$OFFSET = $LAYOUT.byteOffset(groupElement("time"));
 
     /**
      * Offset for field:
@@ -373,7 +370,7 @@ public class _GdkEventOwnerChange {
         return selection_time$LAYOUT;
     }
 
-    private static final long selection_time$OFFSET = 52;
+    private static final long selection_time$OFFSET = $LAYOUT.byteOffset(groupElement("selection_time"));
 
     /**
      * Offset for field:
@@ -434,7 +431,7 @@ public class _GdkEventOwnerChange {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -442,7 +439,7 @@ public class _GdkEventOwnerChange {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

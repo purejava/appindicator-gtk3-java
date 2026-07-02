@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -68,7 +64,7 @@ public class _GtkAccelLabelClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -112,7 +108,7 @@ public class _GtkAccelLabelClass {
         return signal_quote1$LAYOUT;
     }
 
-    private static final long signal_quote1$OFFSET = 952;
+    private static final long signal_quote1$OFFSET = $LAYOUT.byteOffset(groupElement("signal_quote1"));
 
     /**
      * Offset for field:
@@ -156,7 +152,7 @@ public class _GtkAccelLabelClass {
         return signal_quote2$LAYOUT;
     }
 
-    private static final long signal_quote2$OFFSET = 960;
+    private static final long signal_quote2$OFFSET = $LAYOUT.byteOffset(groupElement("signal_quote2"));
 
     /**
      * Offset for field:
@@ -200,7 +196,7 @@ public class _GtkAccelLabelClass {
         return mod_name_shift$LAYOUT;
     }
 
-    private static final long mod_name_shift$OFFSET = 968;
+    private static final long mod_name_shift$OFFSET = $LAYOUT.byteOffset(groupElement("mod_name_shift"));
 
     /**
      * Offset for field:
@@ -244,7 +240,7 @@ public class _GtkAccelLabelClass {
         return mod_name_control$LAYOUT;
     }
 
-    private static final long mod_name_control$OFFSET = 976;
+    private static final long mod_name_control$OFFSET = $LAYOUT.byteOffset(groupElement("mod_name_control"));
 
     /**
      * Offset for field:
@@ -288,7 +284,7 @@ public class _GtkAccelLabelClass {
         return mod_name_alt$LAYOUT;
     }
 
-    private static final long mod_name_alt$OFFSET = 984;
+    private static final long mod_name_alt$OFFSET = $LAYOUT.byteOffset(groupElement("mod_name_alt"));
 
     /**
      * Offset for field:
@@ -332,7 +328,7 @@ public class _GtkAccelLabelClass {
         return mod_separator$LAYOUT;
     }
 
-    private static final long mod_separator$OFFSET = 992;
+    private static final long mod_separator$OFFSET = $LAYOUT.byteOffset(groupElement("mod_separator"));
 
     /**
      * Offset for field:
@@ -369,7 +365,11 @@ public class _GtkAccelLabelClass {
      * void (*_gtk_reserved1)(void)
      * }
      */
-    public class _gtk_reserved1 {
+    public final static class _gtk_reserved1 {
+
+        private _gtk_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -405,6 +405,8 @@ public class _GtkAccelLabelClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -423,7 +425,7 @@ public class _GtkAccelLabelClass {
         return _gtk_reserved1$LAYOUT;
     }
 
-    private static final long _gtk_reserved1$OFFSET = 1000;
+    private static final long _gtk_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved1"));
 
     /**
      * Offset for field:
@@ -460,7 +462,11 @@ public class _GtkAccelLabelClass {
      * void (*_gtk_reserved2)(void)
      * }
      */
-    public class _gtk_reserved2 {
+    public final static class _gtk_reserved2 {
+
+        private _gtk_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -496,6 +502,8 @@ public class _GtkAccelLabelClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -514,7 +522,7 @@ public class _GtkAccelLabelClass {
         return _gtk_reserved2$LAYOUT;
     }
 
-    private static final long _gtk_reserved2$OFFSET = 1008;
+    private static final long _gtk_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved2"));
 
     /**
      * Offset for field:
@@ -551,7 +559,11 @@ public class _GtkAccelLabelClass {
      * void (*_gtk_reserved3)(void)
      * }
      */
-    public class _gtk_reserved3 {
+    public final static class _gtk_reserved3 {
+
+        private _gtk_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -587,6 +599,8 @@ public class _GtkAccelLabelClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -605,7 +619,7 @@ public class _GtkAccelLabelClass {
         return _gtk_reserved3$LAYOUT;
     }
 
-    private static final long _gtk_reserved3$OFFSET = 1016;
+    private static final long _gtk_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved3"));
 
     /**
      * Offset for field:
@@ -642,7 +656,11 @@ public class _GtkAccelLabelClass {
      * void (*_gtk_reserved4)(void)
      * }
      */
-    public class _gtk_reserved4 {
+    public final static class _gtk_reserved4 {
+
+        private _gtk_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -678,6 +696,8 @@ public class _GtkAccelLabelClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -696,7 +716,7 @@ public class _GtkAccelLabelClass {
         return _gtk_reserved4$LAYOUT;
     }
 
-    private static final long _gtk_reserved4$OFFSET = 1024;
+    private static final long _gtk_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved4"));
 
     /**
      * Offset for field:
@@ -757,7 +777,7 @@ public class _GtkAccelLabelClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -765,7 +785,7 @@ public class _GtkAccelLabelClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

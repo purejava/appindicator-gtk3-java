@@ -2,15 +2,12 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfDouble;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -69,7 +66,7 @@ public class _GdkGeometry {
         return min_width$LAYOUT;
     }
 
-    private static final long min_width$OFFSET = 0;
+    private static final long min_width$OFFSET = $LAYOUT.byteOffset(groupElement("min_width"));
 
     /**
      * Offset for field:
@@ -113,7 +110,7 @@ public class _GdkGeometry {
         return min_height$LAYOUT;
     }
 
-    private static final long min_height$OFFSET = 4;
+    private static final long min_height$OFFSET = $LAYOUT.byteOffset(groupElement("min_height"));
 
     /**
      * Offset for field:
@@ -157,7 +154,7 @@ public class _GdkGeometry {
         return max_width$LAYOUT;
     }
 
-    private static final long max_width$OFFSET = 8;
+    private static final long max_width$OFFSET = $LAYOUT.byteOffset(groupElement("max_width"));
 
     /**
      * Offset for field:
@@ -201,7 +198,7 @@ public class _GdkGeometry {
         return max_height$LAYOUT;
     }
 
-    private static final long max_height$OFFSET = 12;
+    private static final long max_height$OFFSET = $LAYOUT.byteOffset(groupElement("max_height"));
 
     /**
      * Offset for field:
@@ -245,7 +242,7 @@ public class _GdkGeometry {
         return base_width$LAYOUT;
     }
 
-    private static final long base_width$OFFSET = 16;
+    private static final long base_width$OFFSET = $LAYOUT.byteOffset(groupElement("base_width"));
 
     /**
      * Offset for field:
@@ -289,7 +286,7 @@ public class _GdkGeometry {
         return base_height$LAYOUT;
     }
 
-    private static final long base_height$OFFSET = 20;
+    private static final long base_height$OFFSET = $LAYOUT.byteOffset(groupElement("base_height"));
 
     /**
      * Offset for field:
@@ -333,7 +330,7 @@ public class _GdkGeometry {
         return width_inc$LAYOUT;
     }
 
-    private static final long width_inc$OFFSET = 24;
+    private static final long width_inc$OFFSET = $LAYOUT.byteOffset(groupElement("width_inc"));
 
     /**
      * Offset for field:
@@ -377,7 +374,7 @@ public class _GdkGeometry {
         return height_inc$LAYOUT;
     }
 
-    private static final long height_inc$OFFSET = 28;
+    private static final long height_inc$OFFSET = $LAYOUT.byteOffset(groupElement("height_inc"));
 
     /**
      * Offset for field:
@@ -421,7 +418,7 @@ public class _GdkGeometry {
         return min_aspect$LAYOUT;
     }
 
-    private static final long min_aspect$OFFSET = 32;
+    private static final long min_aspect$OFFSET = $LAYOUT.byteOffset(groupElement("min_aspect"));
 
     /**
      * Offset for field:
@@ -465,7 +462,7 @@ public class _GdkGeometry {
         return max_aspect$LAYOUT;
     }
 
-    private static final long max_aspect$OFFSET = 40;
+    private static final long max_aspect$OFFSET = $LAYOUT.byteOffset(groupElement("max_aspect"));
 
     /**
      * Offset for field:
@@ -509,7 +506,7 @@ public class _GdkGeometry {
         return win_gravity$LAYOUT;
     }
 
-    private static final long win_gravity$OFFSET = 48;
+    private static final long win_gravity$OFFSET = $LAYOUT.byteOffset(groupElement("win_gravity"));
 
     /**
      * Offset for field:
@@ -570,7 +567,7 @@ public class _GdkGeometry {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -578,7 +575,7 @@ public class _GdkGeometry {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -2,15 +2,10 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -72,7 +67,7 @@ public class hb_color_line_t {
         return data$LAYOUT;
     }
 
-    private static final long data$OFFSET = 0;
+    private static final long data$OFFSET = $LAYOUT.byteOffset(groupElement("data"));
 
     /**
      * Offset for field:
@@ -116,7 +111,7 @@ public class hb_color_line_t {
         return get_color_stops$LAYOUT;
     }
 
-    private static final long get_color_stops$OFFSET = 8;
+    private static final long get_color_stops$OFFSET = $LAYOUT.byteOffset(groupElement("get_color_stops"));
 
     /**
      * Offset for field:
@@ -160,7 +155,7 @@ public class hb_color_line_t {
         return get_color_stops_user_data$LAYOUT;
     }
 
-    private static final long get_color_stops_user_data$OFFSET = 16;
+    private static final long get_color_stops_user_data$OFFSET = $LAYOUT.byteOffset(groupElement("get_color_stops_user_data"));
 
     /**
      * Offset for field:
@@ -204,7 +199,7 @@ public class hb_color_line_t {
         return get_extend$LAYOUT;
     }
 
-    private static final long get_extend$OFFSET = 24;
+    private static final long get_extend$OFFSET = $LAYOUT.byteOffset(groupElement("get_extend"));
 
     /**
      * Offset for field:
@@ -248,7 +243,7 @@ public class hb_color_line_t {
         return get_extend_user_data$LAYOUT;
     }
 
-    private static final long get_extend_user_data$OFFSET = 32;
+    private static final long get_extend_user_data$OFFSET = $LAYOUT.byteOffset(groupElement("get_extend_user_data"));
 
     /**
      * Offset for field:
@@ -292,7 +287,7 @@ public class hb_color_line_t {
         return reserved0$LAYOUT;
     }
 
-    private static final long reserved0$OFFSET = 40;
+    private static final long reserved0$OFFSET = $LAYOUT.byteOffset(groupElement("reserved0"));
 
     /**
      * Offset for field:
@@ -336,7 +331,7 @@ public class hb_color_line_t {
         return reserved1$LAYOUT;
     }
 
-    private static final long reserved1$OFFSET = 48;
+    private static final long reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("reserved1"));
 
     /**
      * Offset for field:
@@ -380,7 +375,7 @@ public class hb_color_line_t {
         return reserved2$LAYOUT;
     }
 
-    private static final long reserved2$OFFSET = 56;
+    private static final long reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("reserved2"));
 
     /**
      * Offset for field:
@@ -424,7 +419,7 @@ public class hb_color_line_t {
         return reserved3$LAYOUT;
     }
 
-    private static final long reserved3$OFFSET = 64;
+    private static final long reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("reserved3"));
 
     /**
      * Offset for field:
@@ -468,7 +463,7 @@ public class hb_color_line_t {
         return reserved5$LAYOUT;
     }
 
-    private static final long reserved5$OFFSET = 72;
+    private static final long reserved5$OFFSET = $LAYOUT.byteOffset(groupElement("reserved5"));
 
     /**
      * Offset for field:
@@ -512,7 +507,7 @@ public class hb_color_line_t {
         return reserved6$LAYOUT;
     }
 
-    private static final long reserved6$OFFSET = 80;
+    private static final long reserved6$OFFSET = $LAYOUT.byteOffset(groupElement("reserved6"));
 
     /**
      * Offset for field:
@@ -556,7 +551,7 @@ public class hb_color_line_t {
         return reserved7$LAYOUT;
     }
 
-    private static final long reserved7$OFFSET = 88;
+    private static final long reserved7$OFFSET = $LAYOUT.byteOffset(groupElement("reserved7"));
 
     /**
      * Offset for field:
@@ -600,7 +595,7 @@ public class hb_color_line_t {
         return reserved8$LAYOUT;
     }
 
-    private static final long reserved8$OFFSET = 96;
+    private static final long reserved8$OFFSET = $LAYOUT.byteOffset(groupElement("reserved8"));
 
     /**
      * Offset for field:
@@ -661,7 +656,7 @@ public class hb_color_line_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -669,7 +664,7 @@ public class hb_color_line_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

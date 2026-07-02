@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -50,7 +46,7 @@ public class cairo_text_cluster_t {
         return num_bytes$LAYOUT;
     }
 
-    private static final long num_bytes$OFFSET = 0;
+    private static final long num_bytes$OFFSET = $LAYOUT.byteOffset(groupElement("num_bytes"));
 
     /**
      * Offset for field:
@@ -94,7 +90,7 @@ public class cairo_text_cluster_t {
         return num_glyphs$LAYOUT;
     }
 
-    private static final long num_glyphs$OFFSET = 4;
+    private static final long num_glyphs$OFFSET = $LAYOUT.byteOffset(groupElement("num_glyphs"));
 
     /**
      * Offset for field:
@@ -155,7 +151,7 @@ public class cairo_text_cluster_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -163,7 +159,7 @@ public class cairo_text_cluster_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

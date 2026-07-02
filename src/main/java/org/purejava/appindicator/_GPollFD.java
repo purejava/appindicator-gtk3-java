@@ -49,7 +49,7 @@ public class _GPollFD {
         return fd$LAYOUT;
     }
 
-    private static final long fd$OFFSET = 0;
+    private static final long fd$OFFSET = $LAYOUT.byteOffset(groupElement("fd"));
 
     /**
      * Offset for field:
@@ -93,7 +93,7 @@ public class _GPollFD {
         return events$LAYOUT;
     }
 
-    private static final long events$OFFSET = 4;
+    private static final long events$OFFSET = $LAYOUT.byteOffset(groupElement("events"));
 
     /**
      * Offset for field:
@@ -137,7 +137,7 @@ public class _GPollFD {
         return revents$LAYOUT;
     }
 
-    private static final long revents$OFFSET = 6;
+    private static final long revents$OFFSET = $LAYOUT.byteOffset(groupElement("revents"));
 
     /**
      * Offset for field:
@@ -198,7 +198,7 @@ public class _GPollFD {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -206,7 +206,7 @@ public class _GPollFD {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

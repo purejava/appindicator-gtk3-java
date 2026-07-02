@@ -2,15 +2,10 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -58,7 +53,7 @@ public class _PangoAttrShape {
         return attr$LAYOUT;
     }
 
-    private static final long attr$OFFSET = 0;
+    private static final long attr$OFFSET = $LAYOUT.byteOffset(groupElement("attr"));
 
     /**
      * Offset for field:
@@ -102,7 +97,7 @@ public class _PangoAttrShape {
         return ink_rect$LAYOUT;
     }
 
-    private static final long ink_rect$OFFSET = 16;
+    private static final long ink_rect$OFFSET = $LAYOUT.byteOffset(groupElement("ink_rect"));
 
     /**
      * Offset for field:
@@ -146,7 +141,7 @@ public class _PangoAttrShape {
         return logical_rect$LAYOUT;
     }
 
-    private static final long logical_rect$OFFSET = 32;
+    private static final long logical_rect$OFFSET = $LAYOUT.byteOffset(groupElement("logical_rect"));
 
     /**
      * Offset for field:
@@ -190,7 +185,7 @@ public class _PangoAttrShape {
         return data$LAYOUT;
     }
 
-    private static final long data$OFFSET = 48;
+    private static final long data$OFFSET = $LAYOUT.byteOffset(groupElement("data"));
 
     /**
      * Offset for field:
@@ -234,7 +229,7 @@ public class _PangoAttrShape {
         return copy_func$LAYOUT;
     }
 
-    private static final long copy_func$OFFSET = 56;
+    private static final long copy_func$OFFSET = $LAYOUT.byteOffset(groupElement("copy_func"));
 
     /**
      * Offset for field:
@@ -278,7 +273,7 @@ public class _PangoAttrShape {
         return destroy_func$LAYOUT;
     }
 
-    private static final long destroy_func$OFFSET = 64;
+    private static final long destroy_func$OFFSET = $LAYOUT.byteOffset(groupElement("destroy_func"));
 
     /**
      * Offset for field:
@@ -339,7 +334,7 @@ public class _PangoAttrShape {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -347,7 +342,7 @@ public class _PangoAttrShape {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

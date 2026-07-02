@@ -2,15 +2,12 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfFloat;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -70,7 +67,7 @@ public class hb_draw_state_t {
         return path_open$LAYOUT;
     }
 
-    private static final long path_open$OFFSET = 0;
+    private static final long path_open$OFFSET = $LAYOUT.byteOffset(groupElement("path_open"));
 
     /**
      * Offset for field:
@@ -114,7 +111,7 @@ public class hb_draw_state_t {
         return path_start_x$LAYOUT;
     }
 
-    private static final long path_start_x$OFFSET = 4;
+    private static final long path_start_x$OFFSET = $LAYOUT.byteOffset(groupElement("path_start_x"));
 
     /**
      * Offset for field:
@@ -158,7 +155,7 @@ public class hb_draw_state_t {
         return path_start_y$LAYOUT;
     }
 
-    private static final long path_start_y$OFFSET = 8;
+    private static final long path_start_y$OFFSET = $LAYOUT.byteOffset(groupElement("path_start_y"));
 
     /**
      * Offset for field:
@@ -202,7 +199,7 @@ public class hb_draw_state_t {
         return current_x$LAYOUT;
     }
 
-    private static final long current_x$OFFSET = 12;
+    private static final long current_x$OFFSET = $LAYOUT.byteOffset(groupElement("current_x"));
 
     /**
      * Offset for field:
@@ -246,7 +243,7 @@ public class hb_draw_state_t {
         return current_y$LAYOUT;
     }
 
-    private static final long current_y$OFFSET = 16;
+    private static final long current_y$OFFSET = $LAYOUT.byteOffset(groupElement("current_y"));
 
     /**
      * Offset for field:
@@ -290,7 +287,7 @@ public class hb_draw_state_t {
         return reserved1$LAYOUT;
     }
 
-    private static final long reserved1$OFFSET = 20;
+    private static final long reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("reserved1"));
 
     /**
      * Offset for field:
@@ -334,7 +331,7 @@ public class hb_draw_state_t {
         return reserved2$LAYOUT;
     }
 
-    private static final long reserved2$OFFSET = 24;
+    private static final long reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("reserved2"));
 
     /**
      * Offset for field:
@@ -378,7 +375,7 @@ public class hb_draw_state_t {
         return reserved3$LAYOUT;
     }
 
-    private static final long reserved3$OFFSET = 28;
+    private static final long reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("reserved3"));
 
     /**
      * Offset for field:
@@ -422,7 +419,7 @@ public class hb_draw_state_t {
         return reserved4$LAYOUT;
     }
 
-    private static final long reserved4$OFFSET = 32;
+    private static final long reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("reserved4"));
 
     /**
      * Offset for field:
@@ -466,7 +463,7 @@ public class hb_draw_state_t {
         return reserved5$LAYOUT;
     }
 
-    private static final long reserved5$OFFSET = 36;
+    private static final long reserved5$OFFSET = $LAYOUT.byteOffset(groupElement("reserved5"));
 
     /**
      * Offset for field:
@@ -510,7 +507,7 @@ public class hb_draw_state_t {
         return reserved6$LAYOUT;
     }
 
-    private static final long reserved6$OFFSET = 40;
+    private static final long reserved6$OFFSET = $LAYOUT.byteOffset(groupElement("reserved6"));
 
     /**
      * Offset for field:
@@ -554,7 +551,7 @@ public class hb_draw_state_t {
         return reserved7$LAYOUT;
     }
 
-    private static final long reserved7$OFFSET = 44;
+    private static final long reserved7$OFFSET = $LAYOUT.byteOffset(groupElement("reserved7"));
 
     /**
      * Offset for field:
@@ -615,7 +612,7 @@ public class hb_draw_state_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -623,7 +620,7 @@ public class hb_draw_state_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

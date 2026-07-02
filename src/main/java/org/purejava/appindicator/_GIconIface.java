@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -58,7 +54,7 @@ public class _GIconIface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -95,7 +91,11 @@ public class _GIconIface {
      * guint (*hash)(GIcon *)
      * }
      */
-    public class hash {
+    public final static class hash {
+
+        private hash() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -131,9 +131,11 @@ public class _GIconIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -152,7 +154,7 @@ public class _GIconIface {
         return hash$LAYOUT;
     }
 
-    private static final long hash$OFFSET = 16;
+    private static final long hash$OFFSET = $LAYOUT.byteOffset(groupElement("hash"));
 
     /**
      * Offset for field:
@@ -189,7 +191,11 @@ public class _GIconIface {
      * gboolean (*equal)(GIcon *, GIcon *)
      * }
      */
-    public class equal {
+    public final static class equal {
+
+        private equal() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -226,9 +232,11 @@ public class _GIconIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -247,7 +255,7 @@ public class _GIconIface {
         return equal$LAYOUT;
     }
 
-    private static final long equal$OFFSET = 24;
+    private static final long equal$OFFSET = $LAYOUT.byteOffset(groupElement("equal"));
 
     /**
      * Offset for field:
@@ -284,7 +292,11 @@ public class _GIconIface {
      * gboolean (*to_tokens)(GIcon *, GPtrArray *, gint *)
      * }
      */
-    public class to_tokens {
+    public final static class to_tokens {
+
+        private to_tokens() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -322,9 +334,11 @@ public class _GIconIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -343,7 +357,7 @@ public class _GIconIface {
         return to_tokens$LAYOUT;
     }
 
-    private static final long to_tokens$OFFSET = 32;
+    private static final long to_tokens$OFFSET = $LAYOUT.byteOffset(groupElement("to_tokens"));
 
     /**
      * Offset for field:
@@ -380,7 +394,11 @@ public class _GIconIface {
      * GIcon *(*from_tokens)(gchar **, gint, gint, GError **)
      * }
      */
-    public class from_tokens {
+    public final static class from_tokens {
+
+        private from_tokens() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -419,9 +437,11 @@ public class _GIconIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2, MemorySegment _x3) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2, MemorySegment _x3) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -440,7 +460,7 @@ public class _GIconIface {
         return from_tokens$LAYOUT;
     }
 
-    private static final long from_tokens$OFFSET = 40;
+    private static final long from_tokens$OFFSET = $LAYOUT.byteOffset(groupElement("from_tokens"));
 
     /**
      * Offset for field:
@@ -477,7 +497,11 @@ public class _GIconIface {
      * GVariant *(*serialize)(GIcon *)
      * }
      */
-    public class serialize {
+    public final static class serialize {
+
+        private serialize() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -513,9 +537,11 @@ public class _GIconIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -534,7 +560,7 @@ public class _GIconIface {
         return serialize$LAYOUT;
     }
 
-    private static final long serialize$OFFSET = 48;
+    private static final long serialize$OFFSET = $LAYOUT.byteOffset(groupElement("serialize"));
 
     /**
      * Offset for field:
@@ -595,7 +621,7 @@ public class _GIconIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -603,7 +629,7 @@ public class _GIconIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -59,7 +55,7 @@ public class _PangoRenderer {
         return parent_instance$LAYOUT;
     }
 
-    private static final long parent_instance$OFFSET = 0;
+    private static final long parent_instance$OFFSET = $LAYOUT.byteOffset(groupElement("parent_instance"));
 
     /**
      * Offset for field:
@@ -103,7 +99,7 @@ public class _PangoRenderer {
         return underline$LAYOUT;
     }
 
-    private static final long underline$OFFSET = 24;
+    private static final long underline$OFFSET = $LAYOUT.byteOffset(groupElement("underline"));
 
     /**
      * Offset for field:
@@ -147,7 +143,7 @@ public class _PangoRenderer {
         return strikethrough$LAYOUT;
     }
 
-    private static final long strikethrough$OFFSET = 28;
+    private static final long strikethrough$OFFSET = $LAYOUT.byteOffset(groupElement("strikethrough"));
 
     /**
      * Offset for field:
@@ -191,7 +187,7 @@ public class _PangoRenderer {
         return active_count$LAYOUT;
     }
 
-    private static final long active_count$OFFSET = 32;
+    private static final long active_count$OFFSET = $LAYOUT.byteOffset(groupElement("active_count"));
 
     /**
      * Offset for field:
@@ -235,7 +231,7 @@ public class _PangoRenderer {
         return matrix$LAYOUT;
     }
 
-    private static final long matrix$OFFSET = 40;
+    private static final long matrix$OFFSET = $LAYOUT.byteOffset(groupElement("matrix"));
 
     /**
      * Offset for field:
@@ -279,7 +275,7 @@ public class _PangoRenderer {
         return priv$LAYOUT;
     }
 
-    private static final long priv$OFFSET = 48;
+    private static final long priv$OFFSET = $LAYOUT.byteOffset(groupElement("priv"));
 
     /**
      * Offset for field:
@@ -340,7 +336,7 @@ public class _PangoRenderer {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -348,7 +344,7 @@ public class _PangoRenderer {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

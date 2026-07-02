@@ -13,7 +13,11 @@ import java.lang.invoke.MethodHandle;
  * typedef guint (*GHashFunc)(gconstpointer)
  * }
  */
-public class GHashFunc {
+public final class GHashFunc {
+
+    private GHashFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -49,9 +53,11 @@ public class GHashFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment key) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment key) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, key);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

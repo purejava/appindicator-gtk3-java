@@ -2,74 +2,10 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
-import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
-
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
-
-public class app_indicator_h_20 extends app_indicator_h_21 {
+class app_indicator_h_20 extends app_indicator_h_21 {
 
     app_indicator_h_20() {
         // Should not be called directly
-    }
-    private static final int GDK_KEY_l = (int)108L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_KEY_l 108
-     * }
-     */
-    public static int GDK_KEY_l() {
-        return GDK_KEY_l;
-    }
-    private static final int GDK_KEY_m = (int)109L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_KEY_m 109
-     * }
-     */
-    public static int GDK_KEY_m() {
-        return GDK_KEY_m;
-    }
-    private static final int GDK_KEY_n = (int)110L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_KEY_n 110
-     * }
-     */
-    public static int GDK_KEY_n() {
-        return GDK_KEY_n;
-    }
-    private static final int GDK_KEY_o = (int)111L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_KEY_o 111
-     * }
-     */
-    public static int GDK_KEY_o() {
-        return GDK_KEY_o;
-    }
-    private static final int GDK_KEY_p = (int)112L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_KEY_p 112
-     * }
-     */
-    public static int GDK_KEY_p() {
-        return GDK_KEY_p;
-    }
-    private static final int GDK_KEY_q = (int)113L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_KEY_q 113
-     * }
-     */
-    public static int GDK_KEY_q() {
-        return GDK_KEY_q;
     }
     private static final int GDK_KEY_r = (int)114L;
     /**
@@ -9016,6 +8952,60 @@ public class app_indicator_h_20 extends app_indicator_h_21 {
      */
     public static int GDK_KEY_Hangul_WE() {
         return GDK_KEY_Hangul_WE;
+    }
+    private static final int GDK_KEY_Hangul_WI = (int)3791L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_WI 3791
+     * }
+     */
+    public static int GDK_KEY_Hangul_WI() {
+        return GDK_KEY_Hangul_WI;
+    }
+    private static final int GDK_KEY_Hangul_YU = (int)3792L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_YU 3792
+     * }
+     */
+    public static int GDK_KEY_Hangul_YU() {
+        return GDK_KEY_Hangul_YU;
+    }
+    private static final int GDK_KEY_Hangul_EU = (int)3793L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_EU 3793
+     * }
+     */
+    public static int GDK_KEY_Hangul_EU() {
+        return GDK_KEY_Hangul_EU;
+    }
+    private static final int GDK_KEY_Hangul_YI = (int)3794L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_YI 3794
+     * }
+     */
+    public static int GDK_KEY_Hangul_YI() {
+        return GDK_KEY_Hangul_YI;
+    }
+    private static final int GDK_KEY_Hangul_I = (int)3795L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_I 3795
+     * }
+     */
+    public static int GDK_KEY_Hangul_I() {
+        return GDK_KEY_Hangul_I;
+    }
+    private static final int GDK_KEY_Hangul_J_Kiyeog = (int)3796L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_J_Kiyeog 3796
+     * }
+     */
+    public static int GDK_KEY_Hangul_J_Kiyeog() {
+        return GDK_KEY_Hangul_J_Kiyeog;
     }
 }
 

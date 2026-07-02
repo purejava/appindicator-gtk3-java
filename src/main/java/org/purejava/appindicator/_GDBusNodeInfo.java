@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -57,7 +53,7 @@ public class _GDBusNodeInfo {
         return ref_count$LAYOUT;
     }
 
-    private static final long ref_count$OFFSET = 0;
+    private static final long ref_count$OFFSET = $LAYOUT.byteOffset(groupElement("ref_count"));
 
     /**
      * Offset for field:
@@ -101,7 +97,7 @@ public class _GDBusNodeInfo {
         return path$LAYOUT;
     }
 
-    private static final long path$OFFSET = 8;
+    private static final long path$OFFSET = $LAYOUT.byteOffset(groupElement("path"));
 
     /**
      * Offset for field:
@@ -145,7 +141,7 @@ public class _GDBusNodeInfo {
         return interfaces$LAYOUT;
     }
 
-    private static final long interfaces$OFFSET = 16;
+    private static final long interfaces$OFFSET = $LAYOUT.byteOffset(groupElement("interfaces"));
 
     /**
      * Offset for field:
@@ -189,7 +185,7 @@ public class _GDBusNodeInfo {
         return nodes$LAYOUT;
     }
 
-    private static final long nodes$OFFSET = 24;
+    private static final long nodes$OFFSET = $LAYOUT.byteOffset(groupElement("nodes"));
 
     /**
      * Offset for field:
@@ -233,7 +229,7 @@ public class _GDBusNodeInfo {
         return annotations$LAYOUT;
     }
 
-    private static final long annotations$OFFSET = 32;
+    private static final long annotations$OFFSET = $LAYOUT.byteOffset(groupElement("annotations"));
 
     /**
      * Offset for field:
@@ -294,7 +290,7 @@ public class _GDBusNodeInfo {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -302,7 +298,7 @@ public class _GDBusNodeInfo {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

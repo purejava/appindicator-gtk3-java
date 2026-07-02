@@ -50,7 +50,7 @@ public class _GDebugControllerDBusClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -87,7 +87,11 @@ public class _GDebugControllerDBusClass {
      * gboolean (*authorize)(GDebugControllerDBus *, GDBusMethodInvocation *)
      * }
      */
-    public class authorize {
+    public final static class authorize {
+
+        private authorize() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -124,9 +128,11 @@ public class _GDebugControllerDBusClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -145,7 +151,7 @@ public class _GDebugControllerDBusClass {
         return authorize$LAYOUT;
     }
 
-    private static final long authorize$OFFSET = 136;
+    private static final long authorize$OFFSET = $LAYOUT.byteOffset(groupElement("authorize"));
 
     /**
      * Offset for field:
@@ -189,7 +195,7 @@ public class _GDebugControllerDBusClass {
         return padding$LAYOUT;
     }
 
-    private static final long padding$OFFSET = 144;
+    private static final long padding$OFFSET = $LAYOUT.byteOffset(groupElement("padding"));
 
     /**
      * Offset for field:
@@ -241,7 +247,7 @@ public class _GDebugControllerDBusClass {
      * }
      */
     public static MemorySegment padding(MemorySegment struct, long index0) {
-        return (MemorySegment)padding$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)padding$ELEM_HANDLE.get(struct, padding$OFFSET, index0);
     }
 
     /**
@@ -251,7 +257,7 @@ public class _GDebugControllerDBusClass {
      * }
      */
     public static void padding(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        padding$ELEM_HANDLE.set(struct, padding$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -283,7 +289,7 @@ public class _GDebugControllerDBusClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -291,7 +297,7 @@ public class _GDebugControllerDBusClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -52,7 +48,7 @@ public class _GtkActivatableIface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -89,7 +85,11 @@ public class _GtkActivatableIface {
      * void (*update)(GtkActivatable *, GtkAction *, const gchar *)
      * }
      */
-    public class update {
+    public final static class update {
+
+        private update() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -126,9 +126,11 @@ public class _GtkActivatableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -147,7 +149,7 @@ public class _GtkActivatableIface {
         return update$LAYOUT;
     }
 
-    private static final long update$OFFSET = 16;
+    private static final long update$OFFSET = $LAYOUT.byteOffset(groupElement("update"));
 
     /**
      * Offset for field:
@@ -184,7 +186,11 @@ public class _GtkActivatableIface {
      * void (*sync_action_properties)(GtkActivatable *, GtkAction *)
      * }
      */
-    public class sync_action_properties {
+    public final static class sync_action_properties {
+
+        private sync_action_properties() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -220,9 +226,11 @@ public class _GtkActivatableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -241,7 +249,7 @@ public class _GtkActivatableIface {
         return sync_action_properties$LAYOUT;
     }
 
-    private static final long sync_action_properties$OFFSET = 24;
+    private static final long sync_action_properties$OFFSET = $LAYOUT.byteOffset(groupElement("sync_action_properties"));
 
     /**
      * Offset for field:
@@ -302,7 +310,7 @@ public class _GtkActivatableIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -310,7 +318,7 @@ public class _GtkActivatableIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

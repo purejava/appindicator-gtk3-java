@@ -2,15 +2,12 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -47,7 +44,11 @@ public class __pthread_cleanup_frame {
      * void (*__cancel_routine)(void *)
      * }
      */
-    public class __cancel_routine {
+    public final static class __cancel_routine {
+
+        private __cancel_routine() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -82,9 +83,11 @@ public class __pthread_cleanup_frame {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -103,7 +106,7 @@ public class __pthread_cleanup_frame {
         return __cancel_routine$LAYOUT;
     }
 
-    private static final long __cancel_routine$OFFSET = 0;
+    private static final long __cancel_routine$OFFSET = $LAYOUT.byteOffset(groupElement("__cancel_routine"));
 
     /**
      * Offset for field:
@@ -147,7 +150,7 @@ public class __pthread_cleanup_frame {
         return __cancel_arg$LAYOUT;
     }
 
-    private static final long __cancel_arg$OFFSET = 8;
+    private static final long __cancel_arg$OFFSET = $LAYOUT.byteOffset(groupElement("__cancel_arg"));
 
     /**
      * Offset for field:
@@ -191,7 +194,7 @@ public class __pthread_cleanup_frame {
         return __do_it$LAYOUT;
     }
 
-    private static final long __do_it$OFFSET = 16;
+    private static final long __do_it$OFFSET = $LAYOUT.byteOffset(groupElement("__do_it"));
 
     /**
      * Offset for field:
@@ -235,7 +238,7 @@ public class __pthread_cleanup_frame {
         return __cancel_type$LAYOUT;
     }
 
-    private static final long __cancel_type$OFFSET = 20;
+    private static final long __cancel_type$OFFSET = $LAYOUT.byteOffset(groupElement("__cancel_type"));
 
     /**
      * Offset for field:
@@ -296,7 +299,7 @@ public class __pthread_cleanup_frame {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -304,7 +307,7 @@ public class __pthread_cleanup_frame {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

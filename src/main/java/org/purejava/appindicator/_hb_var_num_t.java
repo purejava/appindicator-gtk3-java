@@ -2,15 +2,14 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
+import static java.lang.foreign.ValueLayout.OfFloat;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -60,7 +59,7 @@ public class _hb_var_num_t {
         return f$LAYOUT;
     }
 
-    private static final long f$OFFSET = 0;
+    private static final long f$OFFSET = $LAYOUT.byteOffset(groupElement("f"));
 
     /**
      * Offset for field:
@@ -104,7 +103,7 @@ public class _hb_var_num_t {
         return u32$LAYOUT;
     }
 
-    private static final long u32$OFFSET = 0;
+    private static final long u32$OFFSET = $LAYOUT.byteOffset(groupElement("u32"));
 
     /**
      * Offset for field:
@@ -148,7 +147,7 @@ public class _hb_var_num_t {
         return i32$LAYOUT;
     }
 
-    private static final long i32$OFFSET = 0;
+    private static final long i32$OFFSET = $LAYOUT.byteOffset(groupElement("i32"));
 
     /**
      * Offset for field:
@@ -192,7 +191,7 @@ public class _hb_var_num_t {
         return u16$LAYOUT;
     }
 
-    private static final long u16$OFFSET = 0;
+    private static final long u16$OFFSET = $LAYOUT.byteOffset(groupElement("u16"));
 
     /**
      * Offset for field:
@@ -244,7 +243,7 @@ public class _hb_var_num_t {
      * }
      */
     public static short u16(MemorySegment union, long index0) {
-        return (short)u16$ELEM_HANDLE.get(union, 0L, index0);
+        return (short)u16$ELEM_HANDLE.get(union, u16$OFFSET, index0);
     }
 
     /**
@@ -254,7 +253,7 @@ public class _hb_var_num_t {
      * }
      */
     public static void u16(MemorySegment union, long index0, short fieldValue) {
-        u16$ELEM_HANDLE.set(union, 0L, index0, fieldValue);
+        u16$ELEM_HANDLE.set(union, u16$OFFSET, index0, fieldValue);
     }
 
     private static final SequenceLayout i16$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("i16"));
@@ -269,7 +268,7 @@ public class _hb_var_num_t {
         return i16$LAYOUT;
     }
 
-    private static final long i16$OFFSET = 0;
+    private static final long i16$OFFSET = $LAYOUT.byteOffset(groupElement("i16"));
 
     /**
      * Offset for field:
@@ -321,7 +320,7 @@ public class _hb_var_num_t {
      * }
      */
     public static short i16(MemorySegment union, long index0) {
-        return (short)i16$ELEM_HANDLE.get(union, 0L, index0);
+        return (short)i16$ELEM_HANDLE.get(union, i16$OFFSET, index0);
     }
 
     /**
@@ -331,7 +330,7 @@ public class _hb_var_num_t {
      * }
      */
     public static void i16(MemorySegment union, long index0, short fieldValue) {
-        i16$ELEM_HANDLE.set(union, 0L, index0, fieldValue);
+        i16$ELEM_HANDLE.set(union, i16$OFFSET, index0, fieldValue);
     }
 
     private static final SequenceLayout u8$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("u8"));
@@ -346,7 +345,7 @@ public class _hb_var_num_t {
         return u8$LAYOUT;
     }
 
-    private static final long u8$OFFSET = 0;
+    private static final long u8$OFFSET = $LAYOUT.byteOffset(groupElement("u8"));
 
     /**
      * Offset for field:
@@ -398,7 +397,7 @@ public class _hb_var_num_t {
      * }
      */
     public static byte u8(MemorySegment union, long index0) {
-        return (byte)u8$ELEM_HANDLE.get(union, 0L, index0);
+        return (byte)u8$ELEM_HANDLE.get(union, u8$OFFSET, index0);
     }
 
     /**
@@ -408,7 +407,7 @@ public class _hb_var_num_t {
      * }
      */
     public static void u8(MemorySegment union, long index0, byte fieldValue) {
-        u8$ELEM_HANDLE.set(union, 0L, index0, fieldValue);
+        u8$ELEM_HANDLE.set(union, u8$OFFSET, index0, fieldValue);
     }
 
     private static final SequenceLayout i8$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("i8"));
@@ -423,7 +422,7 @@ public class _hb_var_num_t {
         return i8$LAYOUT;
     }
 
-    private static final long i8$OFFSET = 0;
+    private static final long i8$OFFSET = $LAYOUT.byteOffset(groupElement("i8"));
 
     /**
      * Offset for field:
@@ -475,7 +474,7 @@ public class _hb_var_num_t {
      * }
      */
     public static byte i8(MemorySegment union, long index0) {
-        return (byte)i8$ELEM_HANDLE.get(union, 0L, index0);
+        return (byte)i8$ELEM_HANDLE.get(union, i8$OFFSET, index0);
     }
 
     /**
@@ -485,7 +484,7 @@ public class _hb_var_num_t {
      * }
      */
     public static void i8(MemorySegment union, long index0, byte fieldValue) {
-        i8$ELEM_HANDLE.set(union, 0L, index0, fieldValue);
+        i8$ELEM_HANDLE.set(union, i8$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -517,7 +516,7 @@ public class _hb_var_num_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -525,7 +524,7 @@ public class _hb_var_num_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

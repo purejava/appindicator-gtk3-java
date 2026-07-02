@@ -2,15 +2,12 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfDouble;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -82,7 +79,7 @@ public class _cairo_path_data_t {
             return type$LAYOUT;
         }
 
-        private static final long type$OFFSET = 0;
+        private static final long type$OFFSET = $LAYOUT.byteOffset(groupElement("type"));
 
         /**
          * Offset for field:
@@ -126,7 +123,7 @@ public class _cairo_path_data_t {
             return length$LAYOUT;
         }
 
-        private static final long length$OFFSET = 4;
+        private static final long length$OFFSET = $LAYOUT.byteOffset(groupElement("length"));
 
         /**
          * Offset for field:
@@ -187,7 +184,7 @@ public class _cairo_path_data_t {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -195,7 +192,7 @@ public class _cairo_path_data_t {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code elementCount * layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -218,7 +215,7 @@ public class _cairo_path_data_t {
         return header$LAYOUT;
     }
 
-    private static final long header$OFFSET = 0;
+    private static final long header$OFFSET = $LAYOUT.byteOffset(groupElement("header"));
 
     /**
      * Offset for field:
@@ -297,7 +294,7 @@ public class _cairo_path_data_t {
             return x$LAYOUT;
         }
 
-        private static final long x$OFFSET = 0;
+        private static final long x$OFFSET = $LAYOUT.byteOffset(groupElement("x"));
 
         /**
          * Offset for field:
@@ -341,7 +338,7 @@ public class _cairo_path_data_t {
             return y$LAYOUT;
         }
 
-        private static final long y$OFFSET = 8;
+        private static final long y$OFFSET = $LAYOUT.byteOffset(groupElement("y"));
 
         /**
          * Offset for field:
@@ -402,7 +399,7 @@ public class _cairo_path_data_t {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -410,7 +407,7 @@ public class _cairo_path_data_t {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code elementCount * layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -433,7 +430,7 @@ public class _cairo_path_data_t {
         return point$LAYOUT;
     }
 
-    private static final long point$OFFSET = 0;
+    private static final long point$OFFSET = $LAYOUT.byteOffset(groupElement("point"));
 
     /**
      * Offset for field:
@@ -503,7 +500,7 @@ public class _cairo_path_data_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -511,7 +508,7 @@ public class _cairo_path_data_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

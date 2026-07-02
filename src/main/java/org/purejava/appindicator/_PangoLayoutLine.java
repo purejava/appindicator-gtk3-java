@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -57,7 +53,7 @@ public class _PangoLayoutLine {
         return layout$LAYOUT;
     }
 
-    private static final long layout$OFFSET = 0;
+    private static final long layout$OFFSET = $LAYOUT.byteOffset(groupElement("layout"));
 
     /**
      * Offset for field:
@@ -101,7 +97,7 @@ public class _PangoLayoutLine {
         return start_index$LAYOUT;
     }
 
-    private static final long start_index$OFFSET = 8;
+    private static final long start_index$OFFSET = $LAYOUT.byteOffset(groupElement("start_index"));
 
     /**
      * Offset for field:
@@ -145,7 +141,7 @@ public class _PangoLayoutLine {
         return length$LAYOUT;
     }
 
-    private static final long length$OFFSET = 12;
+    private static final long length$OFFSET = $LAYOUT.byteOffset(groupElement("length"));
 
     /**
      * Offset for field:
@@ -189,7 +185,7 @@ public class _PangoLayoutLine {
         return runs$LAYOUT;
     }
 
-    private static final long runs$OFFSET = 16;
+    private static final long runs$OFFSET = $LAYOUT.byteOffset(groupElement("runs"));
 
     /**
      * Offset for field:
@@ -250,7 +246,7 @@ public class _PangoLayoutLine {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -258,7 +254,7 @@ public class _PangoLayoutLine {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

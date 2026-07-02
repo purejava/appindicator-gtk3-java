@@ -2,15 +2,14 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
+import static java.lang.foreign.ValueLayout.OfInt;
+import static java.lang.foreign.ValueLayout.OfLong;
 
 /**
  * {@snippet lang=c :
@@ -83,7 +82,7 @@ public class _GIOChannel {
         return ref_count$LAYOUT;
     }
 
-    private static final long ref_count$OFFSET = 0;
+    private static final long ref_count$OFFSET = $LAYOUT.byteOffset(groupElement("ref_count"));
 
     /**
      * Offset for field:
@@ -127,7 +126,7 @@ public class _GIOChannel {
         return funcs$LAYOUT;
     }
 
-    private static final long funcs$OFFSET = 8;
+    private static final long funcs$OFFSET = $LAYOUT.byteOffset(groupElement("funcs"));
 
     /**
      * Offset for field:
@@ -171,7 +170,7 @@ public class _GIOChannel {
         return encoding$LAYOUT;
     }
 
-    private static final long encoding$OFFSET = 16;
+    private static final long encoding$OFFSET = $LAYOUT.byteOffset(groupElement("encoding"));
 
     /**
      * Offset for field:
@@ -215,7 +214,7 @@ public class _GIOChannel {
         return read_cd$LAYOUT;
     }
 
-    private static final long read_cd$OFFSET = 24;
+    private static final long read_cd$OFFSET = $LAYOUT.byteOffset(groupElement("read_cd"));
 
     /**
      * Offset for field:
@@ -259,7 +258,7 @@ public class _GIOChannel {
         return write_cd$LAYOUT;
     }
 
-    private static final long write_cd$OFFSET = 32;
+    private static final long write_cd$OFFSET = $LAYOUT.byteOffset(groupElement("write_cd"));
 
     /**
      * Offset for field:
@@ -303,7 +302,7 @@ public class _GIOChannel {
         return line_term$LAYOUT;
     }
 
-    private static final long line_term$OFFSET = 40;
+    private static final long line_term$OFFSET = $LAYOUT.byteOffset(groupElement("line_term"));
 
     /**
      * Offset for field:
@@ -347,7 +346,7 @@ public class _GIOChannel {
         return line_term_len$LAYOUT;
     }
 
-    private static final long line_term_len$OFFSET = 48;
+    private static final long line_term_len$OFFSET = $LAYOUT.byteOffset(groupElement("line_term_len"));
 
     /**
      * Offset for field:
@@ -391,7 +390,7 @@ public class _GIOChannel {
         return buf_size$LAYOUT;
     }
 
-    private static final long buf_size$OFFSET = 56;
+    private static final long buf_size$OFFSET = $LAYOUT.byteOffset(groupElement("buf_size"));
 
     /**
      * Offset for field:
@@ -435,7 +434,7 @@ public class _GIOChannel {
         return read_buf$LAYOUT;
     }
 
-    private static final long read_buf$OFFSET = 64;
+    private static final long read_buf$OFFSET = $LAYOUT.byteOffset(groupElement("read_buf"));
 
     /**
      * Offset for field:
@@ -479,7 +478,7 @@ public class _GIOChannel {
         return encoded_read_buf$LAYOUT;
     }
 
-    private static final long encoded_read_buf$OFFSET = 72;
+    private static final long encoded_read_buf$OFFSET = $LAYOUT.byteOffset(groupElement("encoded_read_buf"));
 
     /**
      * Offset for field:
@@ -523,7 +522,7 @@ public class _GIOChannel {
         return write_buf$LAYOUT;
     }
 
-    private static final long write_buf$OFFSET = 80;
+    private static final long write_buf$OFFSET = $LAYOUT.byteOffset(groupElement("write_buf"));
 
     /**
      * Offset for field:
@@ -567,7 +566,7 @@ public class _GIOChannel {
         return partial_write_buf$LAYOUT;
     }
 
-    private static final long partial_write_buf$OFFSET = 88;
+    private static final long partial_write_buf$OFFSET = $LAYOUT.byteOffset(groupElement("partial_write_buf"));
 
     /**
      * Offset for field:
@@ -619,7 +618,7 @@ public class _GIOChannel {
      * }
      */
     public static byte partial_write_buf(MemorySegment struct, long index0) {
-        return (byte)partial_write_buf$ELEM_HANDLE.get(struct, 0L, index0);
+        return (byte)partial_write_buf$ELEM_HANDLE.get(struct, partial_write_buf$OFFSET, index0);
     }
 
     /**
@@ -629,7 +628,7 @@ public class _GIOChannel {
      * }
      */
     public static void partial_write_buf(MemorySegment struct, long index0, byte fieldValue) {
-        partial_write_buf$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        partial_write_buf$ELEM_HANDLE.set(struct, partial_write_buf$OFFSET, index0, fieldValue);
     }
 
     private static final AddressLayout reserved1$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("reserved1"));
@@ -644,7 +643,7 @@ public class _GIOChannel {
         return reserved1$LAYOUT;
     }
 
-    private static final long reserved1$OFFSET = 96;
+    private static final long reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("reserved1"));
 
     /**
      * Offset for field:
@@ -688,7 +687,7 @@ public class _GIOChannel {
         return reserved2$LAYOUT;
     }
 
-    private static final long reserved2$OFFSET = 104;
+    private static final long reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("reserved2"));
 
     /**
      * Offset for field:
@@ -749,7 +748,7 @@ public class _GIOChannel {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -757,7 +756,7 @@ public class _GIOChannel {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

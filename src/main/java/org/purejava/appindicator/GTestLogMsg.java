@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -36,7 +32,7 @@ public class GTestLogMsg {
         app_indicator_h.C_INT.withName("n_nums"),
         MemoryLayout.paddingLayout(4),
         app_indicator_h.C_POINTER.withName("nums")
-    ).withName("$anon$682:9");
+    ).withName("$anon$722:9");
 
     /**
      * The layout of this struct
@@ -57,7 +53,7 @@ public class GTestLogMsg {
         return log_type$LAYOUT;
     }
 
-    private static final long log_type$OFFSET = 0;
+    private static final long log_type$OFFSET = $LAYOUT.byteOffset(groupElement("log_type"));
 
     /**
      * Offset for field:
@@ -101,7 +97,7 @@ public class GTestLogMsg {
         return n_strings$LAYOUT;
     }
 
-    private static final long n_strings$OFFSET = 4;
+    private static final long n_strings$OFFSET = $LAYOUT.byteOffset(groupElement("n_strings"));
 
     /**
      * Offset for field:
@@ -145,7 +141,7 @@ public class GTestLogMsg {
         return strings$LAYOUT;
     }
 
-    private static final long strings$OFFSET = 8;
+    private static final long strings$OFFSET = $LAYOUT.byteOffset(groupElement("strings"));
 
     /**
      * Offset for field:
@@ -189,7 +185,7 @@ public class GTestLogMsg {
         return n_nums$LAYOUT;
     }
 
-    private static final long n_nums$OFFSET = 16;
+    private static final long n_nums$OFFSET = $LAYOUT.byteOffset(groupElement("n_nums"));
 
     /**
      * Offset for field:
@@ -233,7 +229,7 @@ public class GTestLogMsg {
         return nums$LAYOUT;
     }
 
-    private static final long nums$OFFSET = 24;
+    private static final long nums$OFFSET = $LAYOUT.byteOffset(groupElement("nums"));
 
     /**
      * Offset for field:
@@ -294,7 +290,7 @@ public class GTestLogMsg {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -302,7 +298,7 @@ public class GTestLogMsg {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

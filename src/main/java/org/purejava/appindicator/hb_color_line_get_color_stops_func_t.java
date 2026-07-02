@@ -2,22 +2,22 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
-import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
-
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.Linker;
+import java.lang.foreign.MemorySegment;
+import java.lang.invoke.MethodHandle;
 
 /**
  * {@snippet lang=c :
  * typedef unsigned int (*hb_color_line_get_color_stops_func_t)(hb_color_line_t *, void *, unsigned int, unsigned int *, hb_color_stop_t *, void *)
  * }
  */
-public class hb_color_line_get_color_stops_func_t {
+public final class hb_color_line_get_color_stops_func_t {
+
+    private hb_color_line_get_color_stops_func_t() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -58,9 +58,11 @@ public class hb_color_line_get_color_stops_func_t {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment color_line, MemorySegment color_line_data, int start, MemorySegment count, MemorySegment color_stops, MemorySegment user_data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment color_line, MemorySegment color_line_data, int start, MemorySegment count, MemorySegment color_stops, MemorySegment user_data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, color_line, color_line_data, start, count, color_stops, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

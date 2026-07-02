@@ -90,7 +90,7 @@ public class _GtkStyle {
         return parent_instance$LAYOUT;
     }
 
-    private static final long parent_instance$OFFSET = 0;
+    private static final long parent_instance$OFFSET = $LAYOUT.byteOffset(groupElement("parent_instance"));
 
     /**
      * Offset for field:
@@ -134,7 +134,7 @@ public class _GtkStyle {
         return fg$LAYOUT;
     }
 
-    private static final long fg$OFFSET = 24;
+    private static final long fg$OFFSET = $LAYOUT.byteOffset(groupElement("fg"));
 
     /**
      * Offset for field:
@@ -187,7 +187,9 @@ public class _GtkStyle {
      */
     public static MemorySegment fg(MemorySegment struct, long index0) {
         try {
-            return (MemorySegment)fg$ELEM_HANDLE.invokeExact(struct, 0L, index0);
+            return (MemorySegment)fg$ELEM_HANDLE.invokeExact(struct, fg$OFFSET, index0);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -215,7 +217,7 @@ public class _GtkStyle {
         return bg$LAYOUT;
     }
 
-    private static final long bg$OFFSET = 84;
+    private static final long bg$OFFSET = $LAYOUT.byteOffset(groupElement("bg"));
 
     /**
      * Offset for field:
@@ -268,7 +270,9 @@ public class _GtkStyle {
      */
     public static MemorySegment bg(MemorySegment struct, long index0) {
         try {
-            return (MemorySegment)bg$ELEM_HANDLE.invokeExact(struct, 0L, index0);
+            return (MemorySegment)bg$ELEM_HANDLE.invokeExact(struct, bg$OFFSET, index0);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -296,7 +300,7 @@ public class _GtkStyle {
         return light$LAYOUT;
     }
 
-    private static final long light$OFFSET = 144;
+    private static final long light$OFFSET = $LAYOUT.byteOffset(groupElement("light"));
 
     /**
      * Offset for field:
@@ -349,7 +353,9 @@ public class _GtkStyle {
      */
     public static MemorySegment light(MemorySegment struct, long index0) {
         try {
-            return (MemorySegment)light$ELEM_HANDLE.invokeExact(struct, 0L, index0);
+            return (MemorySegment)light$ELEM_HANDLE.invokeExact(struct, light$OFFSET, index0);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -377,7 +383,7 @@ public class _GtkStyle {
         return dark$LAYOUT;
     }
 
-    private static final long dark$OFFSET = 204;
+    private static final long dark$OFFSET = $LAYOUT.byteOffset(groupElement("dark"));
 
     /**
      * Offset for field:
@@ -430,7 +436,9 @@ public class _GtkStyle {
      */
     public static MemorySegment dark(MemorySegment struct, long index0) {
         try {
-            return (MemorySegment)dark$ELEM_HANDLE.invokeExact(struct, 0L, index0);
+            return (MemorySegment)dark$ELEM_HANDLE.invokeExact(struct, dark$OFFSET, index0);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -458,7 +466,7 @@ public class _GtkStyle {
         return mid$LAYOUT;
     }
 
-    private static final long mid$OFFSET = 264;
+    private static final long mid$OFFSET = $LAYOUT.byteOffset(groupElement("mid"));
 
     /**
      * Offset for field:
@@ -511,7 +519,9 @@ public class _GtkStyle {
      */
     public static MemorySegment mid(MemorySegment struct, long index0) {
         try {
-            return (MemorySegment)mid$ELEM_HANDLE.invokeExact(struct, 0L, index0);
+            return (MemorySegment)mid$ELEM_HANDLE.invokeExact(struct, mid$OFFSET, index0);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -539,7 +549,7 @@ public class _GtkStyle {
         return text$LAYOUT;
     }
 
-    private static final long text$OFFSET = 324;
+    private static final long text$OFFSET = $LAYOUT.byteOffset(groupElement("text"));
 
     /**
      * Offset for field:
@@ -592,7 +602,9 @@ public class _GtkStyle {
      */
     public static MemorySegment text(MemorySegment struct, long index0) {
         try {
-            return (MemorySegment)text$ELEM_HANDLE.invokeExact(struct, 0L, index0);
+            return (MemorySegment)text$ELEM_HANDLE.invokeExact(struct, text$OFFSET, index0);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -620,7 +632,7 @@ public class _GtkStyle {
         return base$LAYOUT;
     }
 
-    private static final long base$OFFSET = 384;
+    private static final long base$OFFSET = $LAYOUT.byteOffset(groupElement("base"));
 
     /**
      * Offset for field:
@@ -673,7 +685,9 @@ public class _GtkStyle {
      */
     public static MemorySegment base(MemorySegment struct, long index0) {
         try {
-            return (MemorySegment)base$ELEM_HANDLE.invokeExact(struct, 0L, index0);
+            return (MemorySegment)base$ELEM_HANDLE.invokeExact(struct, base$OFFSET, index0);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -701,7 +715,7 @@ public class _GtkStyle {
         return text_aa$LAYOUT;
     }
 
-    private static final long text_aa$OFFSET = 444;
+    private static final long text_aa$OFFSET = $LAYOUT.byteOffset(groupElement("text_aa"));
 
     /**
      * Offset for field:
@@ -754,7 +768,9 @@ public class _GtkStyle {
      */
     public static MemorySegment text_aa(MemorySegment struct, long index0) {
         try {
-            return (MemorySegment)text_aa$ELEM_HANDLE.invokeExact(struct, 0L, index0);
+            return (MemorySegment)text_aa$ELEM_HANDLE.invokeExact(struct, text_aa$OFFSET, index0);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -782,7 +798,7 @@ public class _GtkStyle {
         return black$LAYOUT;
     }
 
-    private static final long black$OFFSET = 504;
+    private static final long black$OFFSET = $LAYOUT.byteOffset(groupElement("black"));
 
     /**
      * Offset for field:
@@ -826,7 +842,7 @@ public class _GtkStyle {
         return white$LAYOUT;
     }
 
-    private static final long white$OFFSET = 516;
+    private static final long white$OFFSET = $LAYOUT.byteOffset(groupElement("white"));
 
     /**
      * Offset for field:
@@ -870,7 +886,7 @@ public class _GtkStyle {
         return font_desc$LAYOUT;
     }
 
-    private static final long font_desc$OFFSET = 528;
+    private static final long font_desc$OFFSET = $LAYOUT.byteOffset(groupElement("font_desc"));
 
     /**
      * Offset for field:
@@ -914,7 +930,7 @@ public class _GtkStyle {
         return xthickness$LAYOUT;
     }
 
-    private static final long xthickness$OFFSET = 536;
+    private static final long xthickness$OFFSET = $LAYOUT.byteOffset(groupElement("xthickness"));
 
     /**
      * Offset for field:
@@ -958,7 +974,7 @@ public class _GtkStyle {
         return ythickness$LAYOUT;
     }
 
-    private static final long ythickness$OFFSET = 540;
+    private static final long ythickness$OFFSET = $LAYOUT.byteOffset(groupElement("ythickness"));
 
     /**
      * Offset for field:
@@ -1002,7 +1018,7 @@ public class _GtkStyle {
         return background$LAYOUT;
     }
 
-    private static final long background$OFFSET = 544;
+    private static final long background$OFFSET = $LAYOUT.byteOffset(groupElement("background"));
 
     /**
      * Offset for field:
@@ -1054,7 +1070,7 @@ public class _GtkStyle {
      * }
      */
     public static MemorySegment background(MemorySegment struct, long index0) {
-        return (MemorySegment)background$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)background$ELEM_HANDLE.get(struct, background$OFFSET, index0);
     }
 
     /**
@@ -1064,7 +1080,7 @@ public class _GtkStyle {
      * }
      */
     public static void background(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        background$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        background$ELEM_HANDLE.set(struct, background$OFFSET, index0, fieldValue);
     }
 
     private static final OfInt attach_count$LAYOUT = (OfInt)$LAYOUT.select(groupElement("attach_count"));
@@ -1079,7 +1095,7 @@ public class _GtkStyle {
         return attach_count$LAYOUT;
     }
 
-    private static final long attach_count$OFFSET = 584;
+    private static final long attach_count$OFFSET = $LAYOUT.byteOffset(groupElement("attach_count"));
 
     /**
      * Offset for field:
@@ -1123,7 +1139,7 @@ public class _GtkStyle {
         return visual$LAYOUT;
     }
 
-    private static final long visual$OFFSET = 592;
+    private static final long visual$OFFSET = $LAYOUT.byteOffset(groupElement("visual"));
 
     /**
      * Offset for field:
@@ -1167,7 +1183,7 @@ public class _GtkStyle {
         return private_font_desc$LAYOUT;
     }
 
-    private static final long private_font_desc$OFFSET = 600;
+    private static final long private_font_desc$OFFSET = $LAYOUT.byteOffset(groupElement("private_font_desc"));
 
     /**
      * Offset for field:
@@ -1211,7 +1227,7 @@ public class _GtkStyle {
         return rc_style$LAYOUT;
     }
 
-    private static final long rc_style$OFFSET = 608;
+    private static final long rc_style$OFFSET = $LAYOUT.byteOffset(groupElement("rc_style"));
 
     /**
      * Offset for field:
@@ -1255,7 +1271,7 @@ public class _GtkStyle {
         return styles$LAYOUT;
     }
 
-    private static final long styles$OFFSET = 616;
+    private static final long styles$OFFSET = $LAYOUT.byteOffset(groupElement("styles"));
 
     /**
      * Offset for field:
@@ -1299,7 +1315,7 @@ public class _GtkStyle {
         return property_cache$LAYOUT;
     }
 
-    private static final long property_cache$OFFSET = 624;
+    private static final long property_cache$OFFSET = $LAYOUT.byteOffset(groupElement("property_cache"));
 
     /**
      * Offset for field:
@@ -1343,7 +1359,7 @@ public class _GtkStyle {
         return icon_factories$LAYOUT;
     }
 
-    private static final long icon_factories$OFFSET = 632;
+    private static final long icon_factories$OFFSET = $LAYOUT.byteOffset(groupElement("icon_factories"));
 
     /**
      * Offset for field:
@@ -1404,7 +1420,7 @@ public class _GtkStyle {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1412,7 +1428,7 @@ public class _GtkStyle {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

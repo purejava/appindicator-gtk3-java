@@ -2,15 +2,14 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
+import static java.lang.foreign.ValueLayout.OfLong;
 
 /**
  * {@snippet lang=c :
@@ -76,7 +75,7 @@ public class _GObjectClass {
         return g_type_class$LAYOUT;
     }
 
-    private static final long g_type_class$OFFSET = 0;
+    private static final long g_type_class$OFFSET = $LAYOUT.byteOffset(groupElement("g_type_class"));
 
     /**
      * Offset for field:
@@ -120,7 +119,7 @@ public class _GObjectClass {
         return construct_properties$LAYOUT;
     }
 
-    private static final long construct_properties$OFFSET = 8;
+    private static final long construct_properties$OFFSET = $LAYOUT.byteOffset(groupElement("construct_properties"));
 
     /**
      * Offset for field:
@@ -157,7 +156,11 @@ public class _GObjectClass {
      * GObject *(*constructor)(GType, guint, GObjectConstructParam *)
      * }
      */
-    public class constructor {
+    public final static class constructor {
+
+        private constructor() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -195,9 +198,11 @@ public class _GObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,long _x0, int _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, long _x0, int _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -216,7 +221,7 @@ public class _GObjectClass {
         return constructor$LAYOUT;
     }
 
-    private static final long constructor$OFFSET = 16;
+    private static final long constructor$OFFSET = $LAYOUT.byteOffset(groupElement("constructor"));
 
     /**
      * Offset for field:
@@ -253,7 +258,11 @@ public class _GObjectClass {
      * void (*set_property)(GObject *, guint, const GValue *, GParamSpec *)
      * }
      */
-    public class set_property {
+    public final static class set_property {
+
+        private set_property() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -291,9 +300,11 @@ public class _GObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -312,7 +323,7 @@ public class _GObjectClass {
         return set_property$LAYOUT;
     }
 
-    private static final long set_property$OFFSET = 24;
+    private static final long set_property$OFFSET = $LAYOUT.byteOffset(groupElement("set_property"));
 
     /**
      * Offset for field:
@@ -349,7 +360,11 @@ public class _GObjectClass {
      * void (*get_property)(GObject *, guint, GValue *, GParamSpec *)
      * }
      */
-    public class get_property {
+    public final static class get_property {
+
+        private get_property() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -387,9 +402,11 @@ public class _GObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -408,7 +425,7 @@ public class _GObjectClass {
         return get_property$LAYOUT;
     }
 
-    private static final long get_property$OFFSET = 32;
+    private static final long get_property$OFFSET = $LAYOUT.byteOffset(groupElement("get_property"));
 
     /**
      * Offset for field:
@@ -445,7 +462,11 @@ public class _GObjectClass {
      * void (*dispose)(GObject *)
      * }
      */
-    public class dispose {
+    public final static class dispose {
+
+        private dispose() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -480,9 +501,11 @@ public class _GObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -501,7 +524,7 @@ public class _GObjectClass {
         return dispose$LAYOUT;
     }
 
-    private static final long dispose$OFFSET = 40;
+    private static final long dispose$OFFSET = $LAYOUT.byteOffset(groupElement("dispose"));
 
     /**
      * Offset for field:
@@ -538,7 +561,11 @@ public class _GObjectClass {
      * void (*finalize)(GObject *)
      * }
      */
-    public class finalize {
+    public final static class finalize {
+
+        private finalize() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -573,9 +600,11 @@ public class _GObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -594,7 +623,7 @@ public class _GObjectClass {
         return finalize$LAYOUT;
     }
 
-    private static final long finalize$OFFSET = 48;
+    private static final long finalize$OFFSET = $LAYOUT.byteOffset(groupElement("finalize"));
 
     /**
      * Offset for field:
@@ -631,7 +660,11 @@ public class _GObjectClass {
      * void (*dispatch_properties_changed)(GObject *, guint, GParamSpec **)
      * }
      */
-    public class dispatch_properties_changed {
+    public final static class dispatch_properties_changed {
+
+        private dispatch_properties_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -668,9 +701,11 @@ public class _GObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -689,7 +724,7 @@ public class _GObjectClass {
         return dispatch_properties_changed$LAYOUT;
     }
 
-    private static final long dispatch_properties_changed$OFFSET = 56;
+    private static final long dispatch_properties_changed$OFFSET = $LAYOUT.byteOffset(groupElement("dispatch_properties_changed"));
 
     /**
      * Offset for field:
@@ -726,7 +761,11 @@ public class _GObjectClass {
      * void (*notify)(GObject *, GParamSpec *)
      * }
      */
-    public class notify {
+    public final static class notify {
+
+        private notify() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -762,9 +801,11 @@ public class _GObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -783,7 +824,7 @@ public class _GObjectClass {
         return notify$LAYOUT;
     }
 
-    private static final long notify$OFFSET = 64;
+    private static final long notify$OFFSET = $LAYOUT.byteOffset(groupElement("notify"));
 
     /**
      * Offset for field:
@@ -820,7 +861,11 @@ public class _GObjectClass {
      * void (*constructed)(GObject *)
      * }
      */
-    public class constructed {
+    public final static class constructed {
+
+        private constructed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -855,9 +900,11 @@ public class _GObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -876,7 +923,7 @@ public class _GObjectClass {
         return constructed$LAYOUT;
     }
 
-    private static final long constructed$OFFSET = 72;
+    private static final long constructed$OFFSET = $LAYOUT.byteOffset(groupElement("constructed"));
 
     /**
      * Offset for field:
@@ -920,7 +967,7 @@ public class _GObjectClass {
         return flags$LAYOUT;
     }
 
-    private static final long flags$OFFSET = 80;
+    private static final long flags$OFFSET = $LAYOUT.byteOffset(groupElement("flags"));
 
     /**
      * Offset for field:
@@ -964,7 +1011,7 @@ public class _GObjectClass {
         return n_construct_properties$LAYOUT;
     }
 
-    private static final long n_construct_properties$OFFSET = 88;
+    private static final long n_construct_properties$OFFSET = $LAYOUT.byteOffset(groupElement("n_construct_properties"));
 
     /**
      * Offset for field:
@@ -1008,7 +1055,7 @@ public class _GObjectClass {
         return pspecs$LAYOUT;
     }
 
-    private static final long pspecs$OFFSET = 96;
+    private static final long pspecs$OFFSET = $LAYOUT.byteOffset(groupElement("pspecs"));
 
     /**
      * Offset for field:
@@ -1052,7 +1099,7 @@ public class _GObjectClass {
         return n_pspecs$LAYOUT;
     }
 
-    private static final long n_pspecs$OFFSET = 104;
+    private static final long n_pspecs$OFFSET = $LAYOUT.byteOffset(groupElement("n_pspecs"));
 
     /**
      * Offset for field:
@@ -1096,7 +1143,7 @@ public class _GObjectClass {
         return pdummy$LAYOUT;
     }
 
-    private static final long pdummy$OFFSET = 112;
+    private static final long pdummy$OFFSET = $LAYOUT.byteOffset(groupElement("pdummy"));
 
     /**
      * Offset for field:
@@ -1148,7 +1195,7 @@ public class _GObjectClass {
      * }
      */
     public static MemorySegment pdummy(MemorySegment struct, long index0) {
-        return (MemorySegment)pdummy$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)pdummy$ELEM_HANDLE.get(struct, pdummy$OFFSET, index0);
     }
 
     /**
@@ -1158,7 +1205,7 @@ public class _GObjectClass {
      * }
      */
     public static void pdummy(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        pdummy$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        pdummy$ELEM_HANDLE.set(struct, pdummy$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -1190,7 +1237,7 @@ public class _GObjectClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1198,7 +1245,7 @@ public class _GObjectClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

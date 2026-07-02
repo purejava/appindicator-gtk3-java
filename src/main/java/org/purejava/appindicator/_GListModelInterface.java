@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -54,7 +50,7 @@ public class _GListModelInterface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -91,7 +87,11 @@ public class _GListModelInterface {
      * GType (*get_item_type)(GListModel *)
      * }
      */
-    public class get_item_type {
+    public final static class get_item_type {
+
+        private get_item_type() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -127,9 +127,11 @@ public class _GListModelInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static long invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static long invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (long) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -148,7 +150,7 @@ public class _GListModelInterface {
         return get_item_type$LAYOUT;
     }
 
-    private static final long get_item_type$OFFSET = 16;
+    private static final long get_item_type$OFFSET = $LAYOUT.byteOffset(groupElement("get_item_type"));
 
     /**
      * Offset for field:
@@ -185,7 +187,11 @@ public class _GListModelInterface {
      * guint (*get_n_items)(GListModel *)
      * }
      */
-    public class get_n_items {
+    public final static class get_n_items {
+
+        private get_n_items() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -221,9 +227,11 @@ public class _GListModelInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -242,7 +250,7 @@ public class _GListModelInterface {
         return get_n_items$LAYOUT;
     }
 
-    private static final long get_n_items$OFFSET = 24;
+    private static final long get_n_items$OFFSET = $LAYOUT.byteOffset(groupElement("get_n_items"));
 
     /**
      * Offset for field:
@@ -279,7 +287,11 @@ public class _GListModelInterface {
      * gpointer (*get_item)(GListModel *, guint)
      * }
      */
-    public class get_item {
+    public final static class get_item {
+
+        private get_item() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -316,9 +328,11 @@ public class _GListModelInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -337,7 +351,7 @@ public class _GListModelInterface {
         return get_item$LAYOUT;
     }
 
-    private static final long get_item$OFFSET = 32;
+    private static final long get_item$OFFSET = $LAYOUT.byteOffset(groupElement("get_item"));
 
     /**
      * Offset for field:
@@ -398,7 +412,7 @@ public class _GListModelInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -406,7 +420,7 @@ public class _GListModelInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

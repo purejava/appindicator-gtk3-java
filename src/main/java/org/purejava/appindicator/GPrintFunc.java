@@ -13,7 +13,11 @@ import java.lang.invoke.MethodHandle;
  * typedef void (*GPrintFunc)(const gchar *)
  * }
  */
-public class GPrintFunc {
+public final class GPrintFunc {
+
+    private GPrintFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -48,9 +52,11 @@ public class GPrintFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment string) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment string) {
         try {
              DOWN$MH.invokeExact(funcPtr, string);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

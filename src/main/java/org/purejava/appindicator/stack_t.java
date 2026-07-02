@@ -50,7 +50,7 @@ public class stack_t {
         return ss_sp$LAYOUT;
     }
 
-    private static final long ss_sp$OFFSET = 0;
+    private static final long ss_sp$OFFSET = $LAYOUT.byteOffset(groupElement("ss_sp"));
 
     /**
      * Offset for field:
@@ -94,7 +94,7 @@ public class stack_t {
         return ss_flags$LAYOUT;
     }
 
-    private static final long ss_flags$OFFSET = 8;
+    private static final long ss_flags$OFFSET = $LAYOUT.byteOffset(groupElement("ss_flags"));
 
     /**
      * Offset for field:
@@ -138,7 +138,7 @@ public class stack_t {
         return ss_size$LAYOUT;
     }
 
-    private static final long ss_size$OFFSET = 16;
+    private static final long ss_size$OFFSET = $LAYOUT.byteOffset(groupElement("ss_size"));
 
     /**
      * Offset for field:
@@ -199,7 +199,7 @@ public class stack_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -207,7 +207,7 @@ public class stack_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

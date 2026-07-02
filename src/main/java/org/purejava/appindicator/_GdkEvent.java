@@ -92,7 +92,7 @@ public class _GdkEvent {
         return type$LAYOUT;
     }
 
-    private static final long type$OFFSET = 0;
+    private static final long type$OFFSET = $LAYOUT.byteOffset(groupElement("type"));
 
     /**
      * Offset for field:
@@ -136,7 +136,7 @@ public class _GdkEvent {
         return any$LAYOUT;
     }
 
-    private static final long any$OFFSET = 0;
+    private static final long any$OFFSET = $LAYOUT.byteOffset(groupElement("any"));
 
     /**
      * Offset for field:
@@ -180,7 +180,7 @@ public class _GdkEvent {
         return expose$LAYOUT;
     }
 
-    private static final long expose$OFFSET = 0;
+    private static final long expose$OFFSET = $LAYOUT.byteOffset(groupElement("expose"));
 
     /**
      * Offset for field:
@@ -224,7 +224,7 @@ public class _GdkEvent {
         return visibility$LAYOUT;
     }
 
-    private static final long visibility$OFFSET = 0;
+    private static final long visibility$OFFSET = $LAYOUT.byteOffset(groupElement("visibility"));
 
     /**
      * Offset for field:
@@ -268,7 +268,7 @@ public class _GdkEvent {
         return motion$LAYOUT;
     }
 
-    private static final long motion$OFFSET = 0;
+    private static final long motion$OFFSET = $LAYOUT.byteOffset(groupElement("motion"));
 
     /**
      * Offset for field:
@@ -312,7 +312,7 @@ public class _GdkEvent {
         return button$LAYOUT;
     }
 
-    private static final long button$OFFSET = 0;
+    private static final long button$OFFSET = $LAYOUT.byteOffset(groupElement("button"));
 
     /**
      * Offset for field:
@@ -356,7 +356,7 @@ public class _GdkEvent {
         return touch$LAYOUT;
     }
 
-    private static final long touch$OFFSET = 0;
+    private static final long touch$OFFSET = $LAYOUT.byteOffset(groupElement("touch"));
 
     /**
      * Offset for field:
@@ -400,7 +400,7 @@ public class _GdkEvent {
         return scroll$LAYOUT;
     }
 
-    private static final long scroll$OFFSET = 0;
+    private static final long scroll$OFFSET = $LAYOUT.byteOffset(groupElement("scroll"));
 
     /**
      * Offset for field:
@@ -444,7 +444,7 @@ public class _GdkEvent {
         return key$LAYOUT;
     }
 
-    private static final long key$OFFSET = 0;
+    private static final long key$OFFSET = $LAYOUT.byteOffset(groupElement("key"));
 
     /**
      * Offset for field:
@@ -488,7 +488,7 @@ public class _GdkEvent {
         return crossing$LAYOUT;
     }
 
-    private static final long crossing$OFFSET = 0;
+    private static final long crossing$OFFSET = $LAYOUT.byteOffset(groupElement("crossing"));
 
     /**
      * Offset for field:
@@ -532,7 +532,7 @@ public class _GdkEvent {
         return focus_change$LAYOUT;
     }
 
-    private static final long focus_change$OFFSET = 0;
+    private static final long focus_change$OFFSET = $LAYOUT.byteOffset(groupElement("focus_change"));
 
     /**
      * Offset for field:
@@ -576,7 +576,7 @@ public class _GdkEvent {
         return configure$LAYOUT;
     }
 
-    private static final long configure$OFFSET = 0;
+    private static final long configure$OFFSET = $LAYOUT.byteOffset(groupElement("configure"));
 
     /**
      * Offset for field:
@@ -620,7 +620,7 @@ public class _GdkEvent {
         return property$LAYOUT;
     }
 
-    private static final long property$OFFSET = 0;
+    private static final long property$OFFSET = $LAYOUT.byteOffset(groupElement("property"));
 
     /**
      * Offset for field:
@@ -664,7 +664,7 @@ public class _GdkEvent {
         return selection$LAYOUT;
     }
 
-    private static final long selection$OFFSET = 0;
+    private static final long selection$OFFSET = $LAYOUT.byteOffset(groupElement("selection"));
 
     /**
      * Offset for field:
@@ -708,7 +708,7 @@ public class _GdkEvent {
         return owner_change$LAYOUT;
     }
 
-    private static final long owner_change$OFFSET = 0;
+    private static final long owner_change$OFFSET = $LAYOUT.byteOffset(groupElement("owner_change"));
 
     /**
      * Offset for field:
@@ -752,7 +752,7 @@ public class _GdkEvent {
         return proximity$LAYOUT;
     }
 
-    private static final long proximity$OFFSET = 0;
+    private static final long proximity$OFFSET = $LAYOUT.byteOffset(groupElement("proximity"));
 
     /**
      * Offset for field:
@@ -796,7 +796,7 @@ public class _GdkEvent {
         return dnd$LAYOUT;
     }
 
-    private static final long dnd$OFFSET = 0;
+    private static final long dnd$OFFSET = $LAYOUT.byteOffset(groupElement("dnd"));
 
     /**
      * Offset for field:
@@ -840,7 +840,7 @@ public class _GdkEvent {
         return window_state$LAYOUT;
     }
 
-    private static final long window_state$OFFSET = 0;
+    private static final long window_state$OFFSET = $LAYOUT.byteOffset(groupElement("window_state"));
 
     /**
      * Offset for field:
@@ -884,7 +884,7 @@ public class _GdkEvent {
         return setting$LAYOUT;
     }
 
-    private static final long setting$OFFSET = 0;
+    private static final long setting$OFFSET = $LAYOUT.byteOffset(groupElement("setting"));
 
     /**
      * Offset for field:
@@ -928,7 +928,7 @@ public class _GdkEvent {
         return grab_broken$LAYOUT;
     }
 
-    private static final long grab_broken$OFFSET = 0;
+    private static final long grab_broken$OFFSET = $LAYOUT.byteOffset(groupElement("grab_broken"));
 
     /**
      * Offset for field:
@@ -972,7 +972,7 @@ public class _GdkEvent {
         return touchpad_swipe$LAYOUT;
     }
 
-    private static final long touchpad_swipe$OFFSET = 0;
+    private static final long touchpad_swipe$OFFSET = $LAYOUT.byteOffset(groupElement("touchpad_swipe"));
 
     /**
      * Offset for field:
@@ -1016,7 +1016,7 @@ public class _GdkEvent {
         return touchpad_pinch$LAYOUT;
     }
 
-    private static final long touchpad_pinch$OFFSET = 0;
+    private static final long touchpad_pinch$OFFSET = $LAYOUT.byteOffset(groupElement("touchpad_pinch"));
 
     /**
      * Offset for field:
@@ -1060,7 +1060,7 @@ public class _GdkEvent {
         return pad_button$LAYOUT;
     }
 
-    private static final long pad_button$OFFSET = 0;
+    private static final long pad_button$OFFSET = $LAYOUT.byteOffset(groupElement("pad_button"));
 
     /**
      * Offset for field:
@@ -1104,7 +1104,7 @@ public class _GdkEvent {
         return pad_axis$LAYOUT;
     }
 
-    private static final long pad_axis$OFFSET = 0;
+    private static final long pad_axis$OFFSET = $LAYOUT.byteOffset(groupElement("pad_axis"));
 
     /**
      * Offset for field:
@@ -1148,7 +1148,7 @@ public class _GdkEvent {
         return pad_group_mode$LAYOUT;
     }
 
-    private static final long pad_group_mode$OFFSET = 0;
+    private static final long pad_group_mode$OFFSET = $LAYOUT.byteOffset(groupElement("pad_group_mode"));
 
     /**
      * Offset for field:
@@ -1209,7 +1209,7 @@ public class _GdkEvent {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1217,7 +1217,7 @@ public class _GdkEvent {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

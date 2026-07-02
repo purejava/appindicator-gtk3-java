@@ -9,22 +9,20 @@ import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
- * struct itimerval {
- *     struct timeval it_interval;
- *     struct timeval it_value;
+ * struct {
+ *     GSocketControlMessageClass parent_class;
  * }
  * }
  */
-public class itimerval {
+public class GIPTosMessageClass {
 
-    itimerval() {
+    GIPTosMessageClass() {
         // Should not be called directly
     }
 
     private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-        timeval.layout().withName("it_interval"),
-        timeval.layout().withName("it_value")
-    ).withName("itimerval");
+        _GSocketControlMessageClass.layout().withName("parent_class")
+    ).withName("$anon$33:1");
 
     /**
      * The layout of this struct
@@ -33,92 +31,48 @@ public class itimerval {
         return $LAYOUT;
     }
 
-    private static final GroupLayout it_interval$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("it_interval"));
+    private static final GroupLayout parent_class$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("parent_class"));
 
     /**
      * Layout for field:
      * {@snippet lang=c :
-     * struct timeval it_interval
+     * GSocketControlMessageClass parent_class
      * }
      */
-    public static final GroupLayout it_interval$layout() {
-        return it_interval$LAYOUT;
+    public static final GroupLayout parent_class$layout() {
+        return parent_class$LAYOUT;
     }
 
-    private static final long it_interval$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
      * {@snippet lang=c :
-     * struct timeval it_interval
+     * GSocketControlMessageClass parent_class
      * }
      */
-    public static final long it_interval$offset() {
-        return it_interval$OFFSET;
+    public static final long parent_class$offset() {
+        return parent_class$OFFSET;
     }
 
     /**
      * Getter for field:
      * {@snippet lang=c :
-     * struct timeval it_interval
+     * GSocketControlMessageClass parent_class
      * }
      */
-    public static MemorySegment it_interval(MemorySegment struct) {
-        return struct.asSlice(it_interval$OFFSET, it_interval$LAYOUT.byteSize());
+    public static MemorySegment parent_class(MemorySegment struct) {
+        return struct.asSlice(parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
 
     /**
      * Setter for field:
      * {@snippet lang=c :
-     * struct timeval it_interval
+     * GSocketControlMessageClass parent_class
      * }
      */
-    public static void it_interval(MemorySegment struct, MemorySegment fieldValue) {
-        MemorySegment.copy(fieldValue, 0L, struct, it_interval$OFFSET, it_interval$LAYOUT.byteSize());
-    }
-
-    private static final GroupLayout it_value$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("it_value"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * struct timeval it_value
-     * }
-     */
-    public static final GroupLayout it_value$layout() {
-        return it_value$LAYOUT;
-    }
-
-    private static final long it_value$OFFSET = 16;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * struct timeval it_value
-     * }
-     */
-    public static final long it_value$offset() {
-        return it_value$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * struct timeval it_value
-     * }
-     */
-    public static MemorySegment it_value(MemorySegment struct) {
-        return struct.asSlice(it_value$OFFSET, it_value$LAYOUT.byteSize());
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * struct timeval it_value
-     * }
-     */
-    public static void it_value(MemorySegment struct, MemorySegment fieldValue) {
-        MemorySegment.copy(fieldValue, 0L, struct, it_value$OFFSET, it_value$LAYOUT.byteSize());
+    public static void parent_class(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
 
     /**
@@ -150,7 +104,7 @@ public class itimerval {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -158,7 +112,7 @@ public class itimerval {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

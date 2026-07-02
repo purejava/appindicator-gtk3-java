@@ -2,15 +2,13 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
+import static java.lang.foreign.ValueLayout.OfLong;
 
 /**
  * {@snippet lang=c :
@@ -113,7 +111,7 @@ public class _GVariantBuilder {
                 return partial_magic$LAYOUT;
             }
 
-            private static final long partial_magic$OFFSET = 0;
+            private static final long partial_magic$OFFSET = $LAYOUT.byteOffset(groupElement("partial_magic"));
 
             /**
              * Offset for field:
@@ -157,7 +155,7 @@ public class _GVariantBuilder {
                 return type$LAYOUT;
             }
 
-            private static final long type$OFFSET = 8;
+            private static final long type$OFFSET = $LAYOUT.byteOffset(groupElement("type"));
 
             /**
              * Offset for field:
@@ -201,7 +199,7 @@ public class _GVariantBuilder {
                 return y$LAYOUT;
             }
 
-            private static final long y$OFFSET = 16;
+            private static final long y$OFFSET = $LAYOUT.byteOffset(groupElement("y"));
 
             /**
              * Offset for field:
@@ -253,7 +251,7 @@ public class _GVariantBuilder {
              * }
              */
             public static long y(MemorySegment struct, long index0) {
-                return (long)y$ELEM_HANDLE.get(struct, 0L, index0);
+                return (long)y$ELEM_HANDLE.get(struct, y$OFFSET, index0);
             }
 
             /**
@@ -263,7 +261,7 @@ public class _GVariantBuilder {
              * }
              */
             public static void y(MemorySegment struct, long index0, long fieldValue) {
-                y$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+                y$ELEM_HANDLE.set(struct, y$OFFSET, index0, fieldValue);
             }
 
             /**
@@ -295,7 +293,7 @@ public class _GVariantBuilder {
             }
 
             /**
-             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
              * The returned segment has size {@code layout().byteSize()}
              */
             public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -303,7 +301,7 @@ public class _GVariantBuilder {
             }
 
             /**
-             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
              * The returned segment has size {@code elementCount * layout().byteSize()}
              */
             public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -327,7 +325,7 @@ public class _GVariantBuilder {
             return s$LAYOUT;
         }
 
-        private static final long s$OFFSET = 0;
+        private static final long s$OFFSET = $LAYOUT.byteOffset(groupElement("s"));
 
         /**
          * Offset for field:
@@ -383,7 +381,7 @@ public class _GVariantBuilder {
             return x$LAYOUT;
         }
 
-        private static final long x$OFFSET = 0;
+        private static final long x$OFFSET = $LAYOUT.byteOffset(groupElement("x"));
 
         /**
          * Offset for field:
@@ -435,7 +433,7 @@ public class _GVariantBuilder {
          * }
          */
         public static long x(MemorySegment union, long index0) {
-            return (long)x$ELEM_HANDLE.get(union, 0L, index0);
+            return (long)x$ELEM_HANDLE.get(union, x$OFFSET, index0);
         }
 
         /**
@@ -445,7 +443,7 @@ public class _GVariantBuilder {
          * }
          */
         public static void x(MemorySegment union, long index0, long fieldValue) {
-            x$ELEM_HANDLE.set(union, 0L, index0, fieldValue);
+            x$ELEM_HANDLE.set(union, x$OFFSET, index0, fieldValue);
         }
 
         /**
@@ -477,7 +475,7 @@ public class _GVariantBuilder {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -485,7 +483,7 @@ public class _GVariantBuilder {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code elementCount * layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -512,7 +510,7 @@ public class _GVariantBuilder {
         return u$LAYOUT;
     }
 
-    private static final long u$OFFSET = 0;
+    private static final long u$OFFSET = $LAYOUT.byteOffset(groupElement("u"));
 
     /**
      * Offset for field:
@@ -594,7 +592,7 @@ public class _GVariantBuilder {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -602,7 +600,7 @@ public class _GVariantBuilder {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

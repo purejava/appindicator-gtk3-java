@@ -2,22 +2,22 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
-import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
-
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.Linker;
+import java.lang.foreign.MemorySegment;
+import java.lang.invoke.MethodHandle;
 
 /**
  * {@snippet lang=c :
  * typedef void (*GtkTreeDestroyCountFunc)(GtkTreeView *, GtkTreePath *, gint, gpointer)
  * }
  */
-public class GtkTreeDestroyCountFunc {
+public final class GtkTreeDestroyCountFunc {
+
+    private GtkTreeDestroyCountFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -55,9 +55,11 @@ public class GtkTreeDestroyCountFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment tree_view, MemorySegment path, int children, MemorySegment user_data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment tree_view, MemorySegment path, int children, MemorySegment user_data) {
         try {
              DOWN$MH.invokeExact(funcPtr, tree_view, path, children, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

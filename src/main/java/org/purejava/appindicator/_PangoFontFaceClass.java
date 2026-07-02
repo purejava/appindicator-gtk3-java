@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -62,7 +58,7 @@ public class _PangoFontFaceClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -99,7 +95,11 @@ public class _PangoFontFaceClass {
      * const char *(*get_face_name)(PangoFontFace *)
      * }
      */
-    public class get_face_name {
+    public final static class get_face_name {
+
+        private get_face_name() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -135,9 +135,11 @@ public class _PangoFontFaceClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -156,7 +158,7 @@ public class _PangoFontFaceClass {
         return get_face_name$LAYOUT;
     }
 
-    private static final long get_face_name$OFFSET = 136;
+    private static final long get_face_name$OFFSET = $LAYOUT.byteOffset(groupElement("get_face_name"));
 
     /**
      * Offset for field:
@@ -193,7 +195,11 @@ public class _PangoFontFaceClass {
      * PangoFontDescription *(*describe)(PangoFontFace *)
      * }
      */
-    public class describe {
+    public final static class describe {
+
+        private describe() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -229,9 +235,11 @@ public class _PangoFontFaceClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -250,7 +258,7 @@ public class _PangoFontFaceClass {
         return describe$LAYOUT;
     }
 
-    private static final long describe$OFFSET = 144;
+    private static final long describe$OFFSET = $LAYOUT.byteOffset(groupElement("describe"));
 
     /**
      * Offset for field:
@@ -287,7 +295,11 @@ public class _PangoFontFaceClass {
      * void (*list_sizes)(PangoFontFace *, int **, int *)
      * }
      */
-    public class list_sizes {
+    public final static class list_sizes {
+
+        private list_sizes() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -324,9 +336,11 @@ public class _PangoFontFaceClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -345,7 +359,7 @@ public class _PangoFontFaceClass {
         return list_sizes$LAYOUT;
     }
 
-    private static final long list_sizes$OFFSET = 152;
+    private static final long list_sizes$OFFSET = $LAYOUT.byteOffset(groupElement("list_sizes"));
 
     /**
      * Offset for field:
@@ -382,7 +396,11 @@ public class _PangoFontFaceClass {
      * gboolean (*is_synthesized)(PangoFontFace *)
      * }
      */
-    public class is_synthesized {
+    public final static class is_synthesized {
+
+        private is_synthesized() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -418,9 +436,11 @@ public class _PangoFontFaceClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -439,7 +459,7 @@ public class _PangoFontFaceClass {
         return is_synthesized$LAYOUT;
     }
 
-    private static final long is_synthesized$OFFSET = 160;
+    private static final long is_synthesized$OFFSET = $LAYOUT.byteOffset(groupElement("is_synthesized"));
 
     /**
      * Offset for field:
@@ -476,7 +496,11 @@ public class _PangoFontFaceClass {
      * PangoFontFamily *(*get_family)(PangoFontFace *)
      * }
      */
-    public class get_family {
+    public final static class get_family {
+
+        private get_family() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -512,9 +536,11 @@ public class _PangoFontFaceClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -533,7 +559,7 @@ public class _PangoFontFaceClass {
         return get_family$LAYOUT;
     }
 
-    private static final long get_family$OFFSET = 168;
+    private static final long get_family$OFFSET = $LAYOUT.byteOffset(groupElement("get_family"));
 
     /**
      * Offset for field:
@@ -570,7 +596,11 @@ public class _PangoFontFaceClass {
      * void (*_pango_reserved3)(void)
      * }
      */
-    public class _pango_reserved3 {
+    public final static class _pango_reserved3 {
+
+        private _pango_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -606,6 +636,8 @@ public class _PangoFontFaceClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -624,7 +656,7 @@ public class _PangoFontFaceClass {
         return _pango_reserved3$LAYOUT;
     }
 
-    private static final long _pango_reserved3$OFFSET = 176;
+    private static final long _pango_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_pango_reserved3"));
 
     /**
      * Offset for field:
@@ -661,7 +693,11 @@ public class _PangoFontFaceClass {
      * void (*_pango_reserved4)(void)
      * }
      */
-    public class _pango_reserved4 {
+    public final static class _pango_reserved4 {
+
+        private _pango_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -697,6 +733,8 @@ public class _PangoFontFaceClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -715,7 +753,7 @@ public class _PangoFontFaceClass {
         return _pango_reserved4$LAYOUT;
     }
 
-    private static final long _pango_reserved4$OFFSET = 184;
+    private static final long _pango_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_pango_reserved4"));
 
     /**
      * Offset for field:
@@ -776,7 +814,7 @@ public class _PangoFontFaceClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -784,7 +822,7 @@ public class _PangoFontFaceClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

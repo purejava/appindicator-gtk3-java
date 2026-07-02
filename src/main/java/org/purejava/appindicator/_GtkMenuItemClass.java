@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -74,7 +70,7 @@ public class _GtkMenuItemClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -111,7 +107,11 @@ public class _GtkMenuItemClass {
      * void (*activate)(GtkMenuItem *)
      * }
      */
-    public class activate {
+    public final static class activate {
+
+        private activate() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -146,9 +146,11 @@ public class _GtkMenuItemClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -167,7 +169,7 @@ public class _GtkMenuItemClass {
         return activate$LAYOUT;
     }
 
-    private static final long activate$OFFSET = 1016;
+    private static final long activate$OFFSET = $LAYOUT.byteOffset(groupElement("activate"));
 
     /**
      * Offset for field:
@@ -204,7 +206,11 @@ public class _GtkMenuItemClass {
      * void (*activate_item)(GtkMenuItem *)
      * }
      */
-    public class activate_item {
+    public final static class activate_item {
+
+        private activate_item() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -239,9 +245,11 @@ public class _GtkMenuItemClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -260,7 +268,7 @@ public class _GtkMenuItemClass {
         return activate_item$LAYOUT;
     }
 
-    private static final long activate_item$OFFSET = 1024;
+    private static final long activate_item$OFFSET = $LAYOUT.byteOffset(groupElement("activate_item"));
 
     /**
      * Offset for field:
@@ -297,7 +305,11 @@ public class _GtkMenuItemClass {
      * void (*toggle_size_request)(GtkMenuItem *, gint *)
      * }
      */
-    public class toggle_size_request {
+    public final static class toggle_size_request {
+
+        private toggle_size_request() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -333,9 +345,11 @@ public class _GtkMenuItemClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -354,7 +368,7 @@ public class _GtkMenuItemClass {
         return toggle_size_request$LAYOUT;
     }
 
-    private static final long toggle_size_request$OFFSET = 1032;
+    private static final long toggle_size_request$OFFSET = $LAYOUT.byteOffset(groupElement("toggle_size_request"));
 
     /**
      * Offset for field:
@@ -391,7 +405,11 @@ public class _GtkMenuItemClass {
      * void (*toggle_size_allocate)(GtkMenuItem *, gint)
      * }
      */
-    public class toggle_size_allocate {
+    public final static class toggle_size_allocate {
+
+        private toggle_size_allocate() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -427,9 +445,11 @@ public class _GtkMenuItemClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -448,7 +468,7 @@ public class _GtkMenuItemClass {
         return toggle_size_allocate$LAYOUT;
     }
 
-    private static final long toggle_size_allocate$OFFSET = 1040;
+    private static final long toggle_size_allocate$OFFSET = $LAYOUT.byteOffset(groupElement("toggle_size_allocate"));
 
     /**
      * Offset for field:
@@ -485,7 +505,11 @@ public class _GtkMenuItemClass {
      * void (*set_label)(GtkMenuItem *, const gchar *)
      * }
      */
-    public class set_label {
+    public final static class set_label {
+
+        private set_label() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -521,9 +545,11 @@ public class _GtkMenuItemClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -542,7 +568,7 @@ public class _GtkMenuItemClass {
         return set_label$LAYOUT;
     }
 
-    private static final long set_label$OFFSET = 1048;
+    private static final long set_label$OFFSET = $LAYOUT.byteOffset(groupElement("set_label"));
 
     /**
      * Offset for field:
@@ -579,7 +605,11 @@ public class _GtkMenuItemClass {
      * const gchar *(*get_label)(GtkMenuItem *)
      * }
      */
-    public class get_label {
+    public final static class get_label {
+
+        private get_label() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -615,9 +645,11 @@ public class _GtkMenuItemClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -636,7 +668,7 @@ public class _GtkMenuItemClass {
         return get_label$LAYOUT;
     }
 
-    private static final long get_label$OFFSET = 1056;
+    private static final long get_label$OFFSET = $LAYOUT.byteOffset(groupElement("get_label"));
 
     /**
      * Offset for field:
@@ -673,7 +705,11 @@ public class _GtkMenuItemClass {
      * void (*select)(GtkMenuItem *)
      * }
      */
-    public class select {
+    public final static class select {
+
+        private select() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -708,9 +744,11 @@ public class _GtkMenuItemClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -729,7 +767,7 @@ public class _GtkMenuItemClass {
         return select$LAYOUT;
     }
 
-    private static final long select$OFFSET = 1064;
+    private static final long select$OFFSET = $LAYOUT.byteOffset(groupElement("select"));
 
     /**
      * Offset for field:
@@ -766,7 +804,11 @@ public class _GtkMenuItemClass {
      * void (*deselect)(GtkMenuItem *)
      * }
      */
-    public class deselect {
+    public final static class deselect {
+
+        private deselect() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -801,9 +843,11 @@ public class _GtkMenuItemClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -822,7 +866,7 @@ public class _GtkMenuItemClass {
         return deselect$LAYOUT;
     }
 
-    private static final long deselect$OFFSET = 1072;
+    private static final long deselect$OFFSET = $LAYOUT.byteOffset(groupElement("deselect"));
 
     /**
      * Offset for field:
@@ -859,7 +903,11 @@ public class _GtkMenuItemClass {
      * void (*_gtk_reserved1)(void)
      * }
      */
-    public class _gtk_reserved1 {
+    public final static class _gtk_reserved1 {
+
+        private _gtk_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -895,6 +943,8 @@ public class _GtkMenuItemClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -913,7 +963,7 @@ public class _GtkMenuItemClass {
         return _gtk_reserved1$LAYOUT;
     }
 
-    private static final long _gtk_reserved1$OFFSET = 1080;
+    private static final long _gtk_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved1"));
 
     /**
      * Offset for field:
@@ -950,7 +1000,11 @@ public class _GtkMenuItemClass {
      * void (*_gtk_reserved2)(void)
      * }
      */
-    public class _gtk_reserved2 {
+    public final static class _gtk_reserved2 {
+
+        private _gtk_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -986,6 +1040,8 @@ public class _GtkMenuItemClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1004,7 +1060,7 @@ public class _GtkMenuItemClass {
         return _gtk_reserved2$LAYOUT;
     }
 
-    private static final long _gtk_reserved2$OFFSET = 1088;
+    private static final long _gtk_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved2"));
 
     /**
      * Offset for field:
@@ -1041,7 +1097,11 @@ public class _GtkMenuItemClass {
      * void (*_gtk_reserved3)(void)
      * }
      */
-    public class _gtk_reserved3 {
+    public final static class _gtk_reserved3 {
+
+        private _gtk_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1077,6 +1137,8 @@ public class _GtkMenuItemClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1095,7 +1157,7 @@ public class _GtkMenuItemClass {
         return _gtk_reserved3$LAYOUT;
     }
 
-    private static final long _gtk_reserved3$OFFSET = 1096;
+    private static final long _gtk_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved3"));
 
     /**
      * Offset for field:
@@ -1132,7 +1194,11 @@ public class _GtkMenuItemClass {
      * void (*_gtk_reserved4)(void)
      * }
      */
-    public class _gtk_reserved4 {
+    public final static class _gtk_reserved4 {
+
+        private _gtk_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1168,6 +1234,8 @@ public class _GtkMenuItemClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1186,7 +1254,7 @@ public class _GtkMenuItemClass {
         return _gtk_reserved4$LAYOUT;
     }
 
-    private static final long _gtk_reserved4$OFFSET = 1104;
+    private static final long _gtk_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved4"));
 
     /**
      * Offset for field:
@@ -1247,7 +1315,7 @@ public class _GtkMenuItemClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1255,7 +1323,7 @@ public class _GtkMenuItemClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -45,7 +45,7 @@ public class fd_set {
         return __fds_bits$LAYOUT;
     }
 
-    private static final long __fds_bits$OFFSET = 0;
+    private static final long __fds_bits$OFFSET = $LAYOUT.byteOffset(groupElement("__fds_bits"));
 
     /**
      * Offset for field:
@@ -97,7 +97,7 @@ public class fd_set {
      * }
      */
     public static long __fds_bits(MemorySegment struct, long index0) {
-        return (long)__fds_bits$ELEM_HANDLE.get(struct, 0L, index0);
+        return (long)__fds_bits$ELEM_HANDLE.get(struct, __fds_bits$OFFSET, index0);
     }
 
     /**
@@ -107,7 +107,7 @@ public class fd_set {
      * }
      */
     public static void __fds_bits(MemorySegment struct, long index0, long fieldValue) {
-        __fds_bits$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        __fds_bits$ELEM_HANDLE.set(struct, __fds_bits$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -139,7 +139,7 @@ public class fd_set {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -147,7 +147,7 @@ public class fd_set {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

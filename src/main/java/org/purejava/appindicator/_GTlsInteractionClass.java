@@ -2,15 +2,13 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
 
 /**
  * {@snippet lang=c :
@@ -62,7 +60,7 @@ public class _GTlsInteractionClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -99,7 +97,11 @@ public class _GTlsInteractionClass {
      * GTlsInteractionResult (*ask_password)(GTlsInteraction *, GTlsPassword *, GCancellable *, GError **)
      * }
      */
-    public class ask_password {
+    public final static class ask_password {
+
+        private ask_password() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -138,9 +140,11 @@ public class _GTlsInteractionClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -159,7 +163,7 @@ public class _GTlsInteractionClass {
         return ask_password$LAYOUT;
     }
 
-    private static final long ask_password$OFFSET = 136;
+    private static final long ask_password$OFFSET = $LAYOUT.byteOffset(groupElement("ask_password"));
 
     /**
      * Offset for field:
@@ -196,7 +200,11 @@ public class _GTlsInteractionClass {
      * void (*ask_password_async)(GTlsInteraction *, GTlsPassword *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class ask_password_async {
+    public final static class ask_password_async {
+
+        private ask_password_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -235,9 +243,11 @@ public class _GTlsInteractionClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -256,7 +266,7 @@ public class _GTlsInteractionClass {
         return ask_password_async$LAYOUT;
     }
 
-    private static final long ask_password_async$OFFSET = 144;
+    private static final long ask_password_async$OFFSET = $LAYOUT.byteOffset(groupElement("ask_password_async"));
 
     /**
      * Offset for field:
@@ -293,7 +303,11 @@ public class _GTlsInteractionClass {
      * GTlsInteractionResult (*ask_password_finish)(GTlsInteraction *, GAsyncResult *, GError **)
      * }
      */
-    public class ask_password_finish {
+    public final static class ask_password_finish {
+
+        private ask_password_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -331,9 +345,11 @@ public class _GTlsInteractionClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -352,7 +368,7 @@ public class _GTlsInteractionClass {
         return ask_password_finish$LAYOUT;
     }
 
-    private static final long ask_password_finish$OFFSET = 152;
+    private static final long ask_password_finish$OFFSET = $LAYOUT.byteOffset(groupElement("ask_password_finish"));
 
     /**
      * Offset for field:
@@ -389,7 +405,11 @@ public class _GTlsInteractionClass {
      * GTlsInteractionResult (*request_certificate)(GTlsInteraction *, GTlsConnection *, GTlsCertificateRequestFlags, GCancellable *, GError **)
      * }
      */
-    public class request_certificate {
+    public final static class request_certificate {
+
+        private request_certificate() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -429,9 +449,11 @@ public class _GTlsInteractionClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -450,7 +472,7 @@ public class _GTlsInteractionClass {
         return request_certificate$LAYOUT;
     }
 
-    private static final long request_certificate$OFFSET = 160;
+    private static final long request_certificate$OFFSET = $LAYOUT.byteOffset(groupElement("request_certificate"));
 
     /**
      * Offset for field:
@@ -487,7 +509,11 @@ public class _GTlsInteractionClass {
      * void (*request_certificate_async)(GTlsInteraction *, GTlsConnection *, GTlsCertificateRequestFlags, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class request_certificate_async {
+    public final static class request_certificate_async {
+
+        private request_certificate_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -527,9 +553,11 @@ public class _GTlsInteractionClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -548,7 +576,7 @@ public class _GTlsInteractionClass {
         return request_certificate_async$LAYOUT;
     }
 
-    private static final long request_certificate_async$OFFSET = 168;
+    private static final long request_certificate_async$OFFSET = $LAYOUT.byteOffset(groupElement("request_certificate_async"));
 
     /**
      * Offset for field:
@@ -585,7 +613,11 @@ public class _GTlsInteractionClass {
      * GTlsInteractionResult (*request_certificate_finish)(GTlsInteraction *, GAsyncResult *, GError **)
      * }
      */
-    public class request_certificate_finish {
+    public final static class request_certificate_finish {
+
+        private request_certificate_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -623,9 +655,11 @@ public class _GTlsInteractionClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -644,7 +678,7 @@ public class _GTlsInteractionClass {
         return request_certificate_finish$LAYOUT;
     }
 
-    private static final long request_certificate_finish$OFFSET = 176;
+    private static final long request_certificate_finish$OFFSET = $LAYOUT.byteOffset(groupElement("request_certificate_finish"));
 
     /**
      * Offset for field:
@@ -688,7 +722,7 @@ public class _GTlsInteractionClass {
         return padding$LAYOUT;
     }
 
-    private static final long padding$OFFSET = 184;
+    private static final long padding$OFFSET = $LAYOUT.byteOffset(groupElement("padding"));
 
     /**
      * Offset for field:
@@ -740,7 +774,7 @@ public class _GTlsInteractionClass {
      * }
      */
     public static MemorySegment padding(MemorySegment struct, long index0) {
-        return (MemorySegment)padding$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)padding$ELEM_HANDLE.get(struct, padding$OFFSET, index0);
     }
 
     /**
@@ -750,7 +784,7 @@ public class _GTlsInteractionClass {
      * }
      */
     public static void padding(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        padding$ELEM_HANDLE.set(struct, padding$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -782,7 +816,7 @@ public class _GTlsInteractionClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -790,7 +824,7 @@ public class _GTlsInteractionClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -58,7 +54,7 @@ public class _AtkImageIface {
         return parent$LAYOUT;
     }
 
-    private static final long parent$OFFSET = 0;
+    private static final long parent$OFFSET = $LAYOUT.byteOffset(groupElement("parent"));
 
     /**
      * Offset for field:
@@ -95,7 +91,11 @@ public class _AtkImageIface {
      * void (*get_image_position)(AtkImage *, gint *, gint *, AtkCoordType)
      * }
      */
-    public class get_image_position {
+    public final static class get_image_position {
+
+        private get_image_position() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -133,9 +133,11 @@ public class _AtkImageIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -154,7 +156,7 @@ public class _AtkImageIface {
         return get_image_position$LAYOUT;
     }
 
-    private static final long get_image_position$OFFSET = 16;
+    private static final long get_image_position$OFFSET = $LAYOUT.byteOffset(groupElement("get_image_position"));
 
     /**
      * Offset for field:
@@ -191,7 +193,11 @@ public class _AtkImageIface {
      * const gchar *(*get_image_description)(AtkImage *)
      * }
      */
-    public class get_image_description {
+    public final static class get_image_description {
+
+        private get_image_description() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -227,9 +233,11 @@ public class _AtkImageIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -248,7 +256,7 @@ public class _AtkImageIface {
         return get_image_description$LAYOUT;
     }
 
-    private static final long get_image_description$OFFSET = 24;
+    private static final long get_image_description$OFFSET = $LAYOUT.byteOffset(groupElement("get_image_description"));
 
     /**
      * Offset for field:
@@ -285,7 +293,11 @@ public class _AtkImageIface {
      * void (*get_image_size)(AtkImage *, gint *, gint *)
      * }
      */
-    public class get_image_size {
+    public final static class get_image_size {
+
+        private get_image_size() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -322,9 +334,11 @@ public class _AtkImageIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -343,7 +357,7 @@ public class _AtkImageIface {
         return get_image_size$LAYOUT;
     }
 
-    private static final long get_image_size$OFFSET = 32;
+    private static final long get_image_size$OFFSET = $LAYOUT.byteOffset(groupElement("get_image_size"));
 
     /**
      * Offset for field:
@@ -380,7 +394,11 @@ public class _AtkImageIface {
      * gboolean (*set_image_description)(AtkImage *, const gchar *)
      * }
      */
-    public class set_image_description {
+    public final static class set_image_description {
+
+        private set_image_description() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -417,9 +435,11 @@ public class _AtkImageIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -438,7 +458,7 @@ public class _AtkImageIface {
         return set_image_description$LAYOUT;
     }
 
-    private static final long set_image_description$OFFSET = 40;
+    private static final long set_image_description$OFFSET = $LAYOUT.byteOffset(groupElement("set_image_description"));
 
     /**
      * Offset for field:
@@ -475,7 +495,11 @@ public class _AtkImageIface {
      * const gchar *(*get_image_locale)(AtkImage *)
      * }
      */
-    public class get_image_locale {
+    public final static class get_image_locale {
+
+        private get_image_locale() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -511,9 +535,11 @@ public class _AtkImageIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -532,7 +558,7 @@ public class _AtkImageIface {
         return get_image_locale$LAYOUT;
     }
 
-    private static final long get_image_locale$OFFSET = 48;
+    private static final long get_image_locale$OFFSET = $LAYOUT.byteOffset(groupElement("get_image_locale"));
 
     /**
      * Offset for field:
@@ -593,7 +619,7 @@ public class _AtkImageIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -601,7 +627,7 @@ public class _AtkImageIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

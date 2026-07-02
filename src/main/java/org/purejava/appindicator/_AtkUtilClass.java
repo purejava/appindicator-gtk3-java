@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -62,7 +58,7 @@ public class _AtkUtilClass {
         return parent$LAYOUT;
     }
 
-    private static final long parent$OFFSET = 0;
+    private static final long parent$OFFSET = $LAYOUT.byteOffset(groupElement("parent"));
 
     /**
      * Offset for field:
@@ -99,7 +95,11 @@ public class _AtkUtilClass {
      * guint (*add_global_event_listener)(GSignalEmissionHook, const gchar *)
      * }
      */
-    public class add_global_event_listener {
+    public final static class add_global_event_listener {
+
+        private add_global_event_listener() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -136,9 +136,11 @@ public class _AtkUtilClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -157,7 +159,7 @@ public class _AtkUtilClass {
         return add_global_event_listener$LAYOUT;
     }
 
-    private static final long add_global_event_listener$OFFSET = 136;
+    private static final long add_global_event_listener$OFFSET = $LAYOUT.byteOffset(groupElement("add_global_event_listener"));
 
     /**
      * Offset for field:
@@ -194,7 +196,11 @@ public class _AtkUtilClass {
      * void (*remove_global_event_listener)(guint)
      * }
      */
-    public class remove_global_event_listener {
+    public final static class remove_global_event_listener {
+
+        private remove_global_event_listener() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -229,9 +235,11 @@ public class _AtkUtilClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,int _x0) {
+        public static void invoke(MemorySegment funcPtr, int _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -250,7 +258,7 @@ public class _AtkUtilClass {
         return remove_global_event_listener$LAYOUT;
     }
 
-    private static final long remove_global_event_listener$OFFSET = 144;
+    private static final long remove_global_event_listener$OFFSET = $LAYOUT.byteOffset(groupElement("remove_global_event_listener"));
 
     /**
      * Offset for field:
@@ -287,7 +295,11 @@ public class _AtkUtilClass {
      * guint (*add_key_event_listener)(AtkKeySnoopFunc, gpointer)
      * }
      */
-    public class add_key_event_listener {
+    public final static class add_key_event_listener {
+
+        private add_key_event_listener() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -324,9 +336,11 @@ public class _AtkUtilClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -345,7 +359,7 @@ public class _AtkUtilClass {
         return add_key_event_listener$LAYOUT;
     }
 
-    private static final long add_key_event_listener$OFFSET = 152;
+    private static final long add_key_event_listener$OFFSET = $LAYOUT.byteOffset(groupElement("add_key_event_listener"));
 
     /**
      * Offset for field:
@@ -382,7 +396,11 @@ public class _AtkUtilClass {
      * void (*remove_key_event_listener)(guint)
      * }
      */
-    public class remove_key_event_listener {
+    public final static class remove_key_event_listener {
+
+        private remove_key_event_listener() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -417,9 +435,11 @@ public class _AtkUtilClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,int _x0) {
+        public static void invoke(MemorySegment funcPtr, int _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -438,7 +458,7 @@ public class _AtkUtilClass {
         return remove_key_event_listener$LAYOUT;
     }
 
-    private static final long remove_key_event_listener$OFFSET = 160;
+    private static final long remove_key_event_listener$OFFSET = $LAYOUT.byteOffset(groupElement("remove_key_event_listener"));
 
     /**
      * Offset for field:
@@ -475,7 +495,11 @@ public class _AtkUtilClass {
      * AtkObject *(*get_root)(void)
      * }
      */
-    public class get_root {
+    public final static class get_root {
+
+        private get_root() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -512,6 +536,8 @@ public class _AtkUtilClass {
         public static MemorySegment invoke(MemorySegment funcPtr) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -530,7 +556,7 @@ public class _AtkUtilClass {
         return get_root$LAYOUT;
     }
 
-    private static final long get_root$OFFSET = 168;
+    private static final long get_root$OFFSET = $LAYOUT.byteOffset(groupElement("get_root"));
 
     /**
      * Offset for field:
@@ -567,7 +593,11 @@ public class _AtkUtilClass {
      * const gchar *(*get_toolkit_name)(void)
      * }
      */
-    public class get_toolkit_name {
+    public final static class get_toolkit_name {
+
+        private get_toolkit_name() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -604,6 +634,8 @@ public class _AtkUtilClass {
         public static MemorySegment invoke(MemorySegment funcPtr) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -622,7 +654,7 @@ public class _AtkUtilClass {
         return get_toolkit_name$LAYOUT;
     }
 
-    private static final long get_toolkit_name$OFFSET = 176;
+    private static final long get_toolkit_name$OFFSET = $LAYOUT.byteOffset(groupElement("get_toolkit_name"));
 
     /**
      * Offset for field:
@@ -659,7 +691,11 @@ public class _AtkUtilClass {
      * const gchar *(*get_toolkit_version)(void)
      * }
      */
-    public class get_toolkit_version {
+    public final static class get_toolkit_version {
+
+        private get_toolkit_version() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -696,6 +732,8 @@ public class _AtkUtilClass {
         public static MemorySegment invoke(MemorySegment funcPtr) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -714,7 +752,7 @@ public class _AtkUtilClass {
         return get_toolkit_version$LAYOUT;
     }
 
-    private static final long get_toolkit_version$OFFSET = 184;
+    private static final long get_toolkit_version$OFFSET = $LAYOUT.byteOffset(groupElement("get_toolkit_version"));
 
     /**
      * Offset for field:
@@ -775,7 +813,7 @@ public class _AtkUtilClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -783,7 +821,7 @@ public class _AtkUtilClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

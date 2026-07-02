@@ -2,15 +2,12 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -221,7 +218,7 @@ public class _GtkWidgetClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -265,7 +262,7 @@ public class _GtkWidgetClass {
         return activate_signal$LAYOUT;
     }
 
-    private static final long activate_signal$OFFSET = 136;
+    private static final long activate_signal$OFFSET = $LAYOUT.byteOffset(groupElement("activate_signal"));
 
     /**
      * Offset for field:
@@ -302,7 +299,11 @@ public class _GtkWidgetClass {
      * void (*dispatch_child_properties_changed)(GtkWidget *, guint, GParamSpec **)
      * }
      */
-    public class dispatch_child_properties_changed {
+    public final static class dispatch_child_properties_changed {
+
+        private dispatch_child_properties_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -339,9 +340,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -360,7 +363,7 @@ public class _GtkWidgetClass {
         return dispatch_child_properties_changed$LAYOUT;
     }
 
-    private static final long dispatch_child_properties_changed$OFFSET = 144;
+    private static final long dispatch_child_properties_changed$OFFSET = $LAYOUT.byteOffset(groupElement("dispatch_child_properties_changed"));
 
     /**
      * Offset for field:
@@ -397,7 +400,11 @@ public class _GtkWidgetClass {
      * void (*destroy)(GtkWidget *)
      * }
      */
-    public class destroy {
+    public final static class destroy {
+
+        private destroy() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -432,9 +439,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -453,7 +462,7 @@ public class _GtkWidgetClass {
         return destroy$LAYOUT;
     }
 
-    private static final long destroy$OFFSET = 152;
+    private static final long destroy$OFFSET = $LAYOUT.byteOffset(groupElement("destroy"));
 
     /**
      * Offset for field:
@@ -490,7 +499,11 @@ public class _GtkWidgetClass {
      * void (*show)(GtkWidget *)
      * }
      */
-    public class show {
+    public final static class show {
+
+        private show() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -525,9 +538,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -546,7 +561,7 @@ public class _GtkWidgetClass {
         return show$LAYOUT;
     }
 
-    private static final long show$OFFSET = 160;
+    private static final long show$OFFSET = $LAYOUT.byteOffset(groupElement("show"));
 
     /**
      * Offset for field:
@@ -583,7 +598,11 @@ public class _GtkWidgetClass {
      * void (*show_all)(GtkWidget *)
      * }
      */
-    public class show_all {
+    public final static class show_all {
+
+        private show_all() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -618,9 +637,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -639,7 +660,7 @@ public class _GtkWidgetClass {
         return show_all$LAYOUT;
     }
 
-    private static final long show_all$OFFSET = 168;
+    private static final long show_all$OFFSET = $LAYOUT.byteOffset(groupElement("show_all"));
 
     /**
      * Offset for field:
@@ -676,7 +697,11 @@ public class _GtkWidgetClass {
      * void (*hide)(GtkWidget *)
      * }
      */
-    public class hide {
+    public final static class hide {
+
+        private hide() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -711,9 +736,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -732,7 +759,7 @@ public class _GtkWidgetClass {
         return hide$LAYOUT;
     }
 
-    private static final long hide$OFFSET = 176;
+    private static final long hide$OFFSET = $LAYOUT.byteOffset(groupElement("hide"));
 
     /**
      * Offset for field:
@@ -769,7 +796,11 @@ public class _GtkWidgetClass {
      * void (*map)(GtkWidget *)
      * }
      */
-    public class map {
+    public final static class map {
+
+        private map() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -804,9 +835,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -825,7 +858,7 @@ public class _GtkWidgetClass {
         return map$LAYOUT;
     }
 
-    private static final long map$OFFSET = 184;
+    private static final long map$OFFSET = $LAYOUT.byteOffset(groupElement("map"));
 
     /**
      * Offset for field:
@@ -862,7 +895,11 @@ public class _GtkWidgetClass {
      * void (*unmap)(GtkWidget *)
      * }
      */
-    public class unmap {
+    public final static class unmap {
+
+        private unmap() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -897,9 +934,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -918,7 +957,7 @@ public class _GtkWidgetClass {
         return unmap$LAYOUT;
     }
 
-    private static final long unmap$OFFSET = 192;
+    private static final long unmap$OFFSET = $LAYOUT.byteOffset(groupElement("unmap"));
 
     /**
      * Offset for field:
@@ -955,7 +994,11 @@ public class _GtkWidgetClass {
      * void (*realize)(GtkWidget *)
      * }
      */
-    public class realize {
+    public final static class realize {
+
+        private realize() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -990,9 +1033,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1011,7 +1056,7 @@ public class _GtkWidgetClass {
         return realize$LAYOUT;
     }
 
-    private static final long realize$OFFSET = 200;
+    private static final long realize$OFFSET = $LAYOUT.byteOffset(groupElement("realize"));
 
     /**
      * Offset for field:
@@ -1048,7 +1093,11 @@ public class _GtkWidgetClass {
      * void (*unrealize)(GtkWidget *)
      * }
      */
-    public class unrealize {
+    public final static class unrealize {
+
+        private unrealize() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1083,9 +1132,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1104,7 +1155,7 @@ public class _GtkWidgetClass {
         return unrealize$LAYOUT;
     }
 
-    private static final long unrealize$OFFSET = 208;
+    private static final long unrealize$OFFSET = $LAYOUT.byteOffset(groupElement("unrealize"));
 
     /**
      * Offset for field:
@@ -1141,7 +1192,11 @@ public class _GtkWidgetClass {
      * void (*size_allocate)(GtkWidget *, GtkAllocation *)
      * }
      */
-    public class size_allocate {
+    public final static class size_allocate {
+
+        private size_allocate() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1177,9 +1232,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1198,7 +1255,7 @@ public class _GtkWidgetClass {
         return size_allocate$LAYOUT;
     }
 
-    private static final long size_allocate$OFFSET = 216;
+    private static final long size_allocate$OFFSET = $LAYOUT.byteOffset(groupElement("size_allocate"));
 
     /**
      * Offset for field:
@@ -1235,7 +1292,11 @@ public class _GtkWidgetClass {
      * void (*state_changed)(GtkWidget *, GtkStateType)
      * }
      */
-    public class state_changed {
+    public final static class state_changed {
+
+        private state_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1271,9 +1332,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1292,7 +1355,7 @@ public class _GtkWidgetClass {
         return state_changed$LAYOUT;
     }
 
-    private static final long state_changed$OFFSET = 224;
+    private static final long state_changed$OFFSET = $LAYOUT.byteOffset(groupElement("state_changed"));
 
     /**
      * Offset for field:
@@ -1329,7 +1392,11 @@ public class _GtkWidgetClass {
      * void (*state_flags_changed)(GtkWidget *, GtkStateFlags)
      * }
      */
-    public class state_flags_changed {
+    public final static class state_flags_changed {
+
+        private state_flags_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1365,9 +1432,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1386,7 +1455,7 @@ public class _GtkWidgetClass {
         return state_flags_changed$LAYOUT;
     }
 
-    private static final long state_flags_changed$OFFSET = 232;
+    private static final long state_flags_changed$OFFSET = $LAYOUT.byteOffset(groupElement("state_flags_changed"));
 
     /**
      * Offset for field:
@@ -1423,7 +1492,11 @@ public class _GtkWidgetClass {
      * void (*parent_set)(GtkWidget *, GtkWidget *)
      * }
      */
-    public class parent_set {
+    public final static class parent_set {
+
+        private parent_set() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1459,9 +1532,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1480,7 +1555,7 @@ public class _GtkWidgetClass {
         return parent_set$LAYOUT;
     }
 
-    private static final long parent_set$OFFSET = 240;
+    private static final long parent_set$OFFSET = $LAYOUT.byteOffset(groupElement("parent_set"));
 
     /**
      * Offset for field:
@@ -1517,7 +1592,11 @@ public class _GtkWidgetClass {
      * void (*hierarchy_changed)(GtkWidget *, GtkWidget *)
      * }
      */
-    public class hierarchy_changed {
+    public final static class hierarchy_changed {
+
+        private hierarchy_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1553,9 +1632,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1574,7 +1655,7 @@ public class _GtkWidgetClass {
         return hierarchy_changed$LAYOUT;
     }
 
-    private static final long hierarchy_changed$OFFSET = 248;
+    private static final long hierarchy_changed$OFFSET = $LAYOUT.byteOffset(groupElement("hierarchy_changed"));
 
     /**
      * Offset for field:
@@ -1611,7 +1692,11 @@ public class _GtkWidgetClass {
      * void (*style_set)(GtkWidget *, GtkStyle *)
      * }
      */
-    public class style_set {
+    public final static class style_set {
+
+        private style_set() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1647,9 +1732,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1668,7 +1755,7 @@ public class _GtkWidgetClass {
         return style_set$LAYOUT;
     }
 
-    private static final long style_set$OFFSET = 256;
+    private static final long style_set$OFFSET = $LAYOUT.byteOffset(groupElement("style_set"));
 
     /**
      * Offset for field:
@@ -1705,7 +1792,11 @@ public class _GtkWidgetClass {
      * void (*direction_changed)(GtkWidget *, GtkTextDirection)
      * }
      */
-    public class direction_changed {
+    public final static class direction_changed {
+
+        private direction_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1741,9 +1832,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1762,7 +1855,7 @@ public class _GtkWidgetClass {
         return direction_changed$LAYOUT;
     }
 
-    private static final long direction_changed$OFFSET = 264;
+    private static final long direction_changed$OFFSET = $LAYOUT.byteOffset(groupElement("direction_changed"));
 
     /**
      * Offset for field:
@@ -1799,7 +1892,11 @@ public class _GtkWidgetClass {
      * void (*grab_notify)(GtkWidget *, gboolean)
      * }
      */
-    public class grab_notify {
+    public final static class grab_notify {
+
+        private grab_notify() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1835,9 +1932,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1856,7 +1955,7 @@ public class _GtkWidgetClass {
         return grab_notify$LAYOUT;
     }
 
-    private static final long grab_notify$OFFSET = 272;
+    private static final long grab_notify$OFFSET = $LAYOUT.byteOffset(groupElement("grab_notify"));
 
     /**
      * Offset for field:
@@ -1893,7 +1992,11 @@ public class _GtkWidgetClass {
      * void (*child_notify)(GtkWidget *, GParamSpec *)
      * }
      */
-    public class child_notify {
+    public final static class child_notify {
+
+        private child_notify() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1929,9 +2032,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1950,7 +2055,7 @@ public class _GtkWidgetClass {
         return child_notify$LAYOUT;
     }
 
-    private static final long child_notify$OFFSET = 280;
+    private static final long child_notify$OFFSET = $LAYOUT.byteOffset(groupElement("child_notify"));
 
     /**
      * Offset for field:
@@ -1987,7 +2092,11 @@ public class _GtkWidgetClass {
      * gboolean (*draw)(GtkWidget *, cairo_t *)
      * }
      */
-    public class draw {
+    public final static class draw {
+
+        private draw() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2024,9 +2133,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2045,7 +2156,7 @@ public class _GtkWidgetClass {
         return draw$LAYOUT;
     }
 
-    private static final long draw$OFFSET = 288;
+    private static final long draw$OFFSET = $LAYOUT.byteOffset(groupElement("draw"));
 
     /**
      * Offset for field:
@@ -2082,7 +2193,11 @@ public class _GtkWidgetClass {
      * GtkSizeRequestMode (*get_request_mode)(GtkWidget *)
      * }
      */
-    public class get_request_mode {
+    public final static class get_request_mode {
+
+        private get_request_mode() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2118,9 +2233,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2139,7 +2256,7 @@ public class _GtkWidgetClass {
         return get_request_mode$LAYOUT;
     }
 
-    private static final long get_request_mode$OFFSET = 296;
+    private static final long get_request_mode$OFFSET = $LAYOUT.byteOffset(groupElement("get_request_mode"));
 
     /**
      * Offset for field:
@@ -2176,7 +2293,11 @@ public class _GtkWidgetClass {
      * void (*get_preferred_height)(GtkWidget *, gint *, gint *)
      * }
      */
-    public class get_preferred_height {
+    public final static class get_preferred_height {
+
+        private get_preferred_height() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2213,9 +2334,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2234,7 +2357,7 @@ public class _GtkWidgetClass {
         return get_preferred_height$LAYOUT;
     }
 
-    private static final long get_preferred_height$OFFSET = 304;
+    private static final long get_preferred_height$OFFSET = $LAYOUT.byteOffset(groupElement("get_preferred_height"));
 
     /**
      * Offset for field:
@@ -2271,7 +2394,11 @@ public class _GtkWidgetClass {
      * void (*get_preferred_width_for_height)(GtkWidget *, gint, gint *, gint *)
      * }
      */
-    public class get_preferred_width_for_height {
+    public final static class get_preferred_width_for_height {
+
+        private get_preferred_width_for_height() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2309,9 +2436,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2330,7 +2459,7 @@ public class _GtkWidgetClass {
         return get_preferred_width_for_height$LAYOUT;
     }
 
-    private static final long get_preferred_width_for_height$OFFSET = 312;
+    private static final long get_preferred_width_for_height$OFFSET = $LAYOUT.byteOffset(groupElement("get_preferred_width_for_height"));
 
     /**
      * Offset for field:
@@ -2367,7 +2496,11 @@ public class _GtkWidgetClass {
      * void (*get_preferred_width)(GtkWidget *, gint *, gint *)
      * }
      */
-    public class get_preferred_width {
+    public final static class get_preferred_width {
+
+        private get_preferred_width() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2404,9 +2537,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2425,7 +2560,7 @@ public class _GtkWidgetClass {
         return get_preferred_width$LAYOUT;
     }
 
-    private static final long get_preferred_width$OFFSET = 320;
+    private static final long get_preferred_width$OFFSET = $LAYOUT.byteOffset(groupElement("get_preferred_width"));
 
     /**
      * Offset for field:
@@ -2462,7 +2597,11 @@ public class _GtkWidgetClass {
      * void (*get_preferred_height_for_width)(GtkWidget *, gint, gint *, gint *)
      * }
      */
-    public class get_preferred_height_for_width {
+    public final static class get_preferred_height_for_width {
+
+        private get_preferred_height_for_width() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2500,9 +2639,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2521,7 +2662,7 @@ public class _GtkWidgetClass {
         return get_preferred_height_for_width$LAYOUT;
     }
 
-    private static final long get_preferred_height_for_width$OFFSET = 328;
+    private static final long get_preferred_height_for_width$OFFSET = $LAYOUT.byteOffset(groupElement("get_preferred_height_for_width"));
 
     /**
      * Offset for field:
@@ -2558,7 +2699,11 @@ public class _GtkWidgetClass {
      * gboolean (*mnemonic_activate)(GtkWidget *, gboolean)
      * }
      */
-    public class mnemonic_activate {
+    public final static class mnemonic_activate {
+
+        private mnemonic_activate() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2595,9 +2740,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2616,7 +2763,7 @@ public class _GtkWidgetClass {
         return mnemonic_activate$LAYOUT;
     }
 
-    private static final long mnemonic_activate$OFFSET = 336;
+    private static final long mnemonic_activate$OFFSET = $LAYOUT.byteOffset(groupElement("mnemonic_activate"));
 
     /**
      * Offset for field:
@@ -2653,7 +2800,11 @@ public class _GtkWidgetClass {
      * void (*grab_focus)(GtkWidget *)
      * }
      */
-    public class grab_focus {
+    public final static class grab_focus {
+
+        private grab_focus() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2688,9 +2839,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2709,7 +2862,7 @@ public class _GtkWidgetClass {
         return grab_focus$LAYOUT;
     }
 
-    private static final long grab_focus$OFFSET = 344;
+    private static final long grab_focus$OFFSET = $LAYOUT.byteOffset(groupElement("grab_focus"));
 
     /**
      * Offset for field:
@@ -2746,7 +2899,11 @@ public class _GtkWidgetClass {
      * gboolean (*focus)(GtkWidget *, GtkDirectionType)
      * }
      */
-    public class focus {
+    public final static class focus {
+
+        private focus() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2783,9 +2940,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2804,7 +2963,7 @@ public class _GtkWidgetClass {
         return focus$LAYOUT;
     }
 
-    private static final long focus$OFFSET = 352;
+    private static final long focus$OFFSET = $LAYOUT.byteOffset(groupElement("focus"));
 
     /**
      * Offset for field:
@@ -2841,7 +3000,11 @@ public class _GtkWidgetClass {
      * void (*move_focus)(GtkWidget *, GtkDirectionType)
      * }
      */
-    public class move_focus {
+    public final static class move_focus {
+
+        private move_focus() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2877,9 +3040,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2898,7 +3063,7 @@ public class _GtkWidgetClass {
         return move_focus$LAYOUT;
     }
 
-    private static final long move_focus$OFFSET = 360;
+    private static final long move_focus$OFFSET = $LAYOUT.byteOffset(groupElement("move_focus"));
 
     /**
      * Offset for field:
@@ -2935,7 +3100,11 @@ public class _GtkWidgetClass {
      * gboolean (*keynav_failed)(GtkWidget *, GtkDirectionType)
      * }
      */
-    public class keynav_failed {
+    public final static class keynav_failed {
+
+        private keynav_failed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2972,9 +3141,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2993,7 +3164,7 @@ public class _GtkWidgetClass {
         return keynav_failed$LAYOUT;
     }
 
-    private static final long keynav_failed$OFFSET = 368;
+    private static final long keynav_failed$OFFSET = $LAYOUT.byteOffset(groupElement("keynav_failed"));
 
     /**
      * Offset for field:
@@ -3030,7 +3201,11 @@ public class _GtkWidgetClass {
      * gboolean (*event)(GtkWidget *, GdkEvent *)
      * }
      */
-    public class event {
+    public final static class event {
+
+        private event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3067,9 +3242,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3088,7 +3265,7 @@ public class _GtkWidgetClass {
         return event$LAYOUT;
     }
 
-    private static final long event$OFFSET = 376;
+    private static final long event$OFFSET = $LAYOUT.byteOffset(groupElement("event"));
 
     /**
      * Offset for field:
@@ -3125,7 +3302,11 @@ public class _GtkWidgetClass {
      * gboolean (*button_press_event)(GtkWidget *, GdkEventButton *)
      * }
      */
-    public class button_press_event {
+    public final static class button_press_event {
+
+        private button_press_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3162,9 +3343,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3183,7 +3366,7 @@ public class _GtkWidgetClass {
         return button_press_event$LAYOUT;
     }
 
-    private static final long button_press_event$OFFSET = 384;
+    private static final long button_press_event$OFFSET = $LAYOUT.byteOffset(groupElement("button_press_event"));
 
     /**
      * Offset for field:
@@ -3220,7 +3403,11 @@ public class _GtkWidgetClass {
      * gboolean (*button_release_event)(GtkWidget *, GdkEventButton *)
      * }
      */
-    public class button_release_event {
+    public final static class button_release_event {
+
+        private button_release_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3257,9 +3444,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3278,7 +3467,7 @@ public class _GtkWidgetClass {
         return button_release_event$LAYOUT;
     }
 
-    private static final long button_release_event$OFFSET = 392;
+    private static final long button_release_event$OFFSET = $LAYOUT.byteOffset(groupElement("button_release_event"));
 
     /**
      * Offset for field:
@@ -3315,7 +3504,11 @@ public class _GtkWidgetClass {
      * gboolean (*scroll_event)(GtkWidget *, GdkEventScroll *)
      * }
      */
-    public class scroll_event {
+    public final static class scroll_event {
+
+        private scroll_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3352,9 +3545,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3373,7 +3568,7 @@ public class _GtkWidgetClass {
         return scroll_event$LAYOUT;
     }
 
-    private static final long scroll_event$OFFSET = 400;
+    private static final long scroll_event$OFFSET = $LAYOUT.byteOffset(groupElement("scroll_event"));
 
     /**
      * Offset for field:
@@ -3410,7 +3605,11 @@ public class _GtkWidgetClass {
      * gboolean (*motion_notify_event)(GtkWidget *, GdkEventMotion *)
      * }
      */
-    public class motion_notify_event {
+    public final static class motion_notify_event {
+
+        private motion_notify_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3447,9 +3646,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3468,7 +3669,7 @@ public class _GtkWidgetClass {
         return motion_notify_event$LAYOUT;
     }
 
-    private static final long motion_notify_event$OFFSET = 408;
+    private static final long motion_notify_event$OFFSET = $LAYOUT.byteOffset(groupElement("motion_notify_event"));
 
     /**
      * Offset for field:
@@ -3505,7 +3706,11 @@ public class _GtkWidgetClass {
      * gboolean (*delete_event)(GtkWidget *, GdkEventAny *)
      * }
      */
-    public class delete_event {
+    public final static class delete_event {
+
+        private delete_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3542,9 +3747,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3563,7 +3770,7 @@ public class _GtkWidgetClass {
         return delete_event$LAYOUT;
     }
 
-    private static final long delete_event$OFFSET = 416;
+    private static final long delete_event$OFFSET = $LAYOUT.byteOffset(groupElement("delete_event"));
 
     /**
      * Offset for field:
@@ -3600,7 +3807,11 @@ public class _GtkWidgetClass {
      * gboolean (*destroy_event)(GtkWidget *, GdkEventAny *)
      * }
      */
-    public class destroy_event {
+    public final static class destroy_event {
+
+        private destroy_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3637,9 +3848,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3658,7 +3871,7 @@ public class _GtkWidgetClass {
         return destroy_event$LAYOUT;
     }
 
-    private static final long destroy_event$OFFSET = 424;
+    private static final long destroy_event$OFFSET = $LAYOUT.byteOffset(groupElement("destroy_event"));
 
     /**
      * Offset for field:
@@ -3695,7 +3908,11 @@ public class _GtkWidgetClass {
      * gboolean (*key_press_event)(GtkWidget *, GdkEventKey *)
      * }
      */
-    public class key_press_event {
+    public final static class key_press_event {
+
+        private key_press_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3732,9 +3949,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3753,7 +3972,7 @@ public class _GtkWidgetClass {
         return key_press_event$LAYOUT;
     }
 
-    private static final long key_press_event$OFFSET = 432;
+    private static final long key_press_event$OFFSET = $LAYOUT.byteOffset(groupElement("key_press_event"));
 
     /**
      * Offset for field:
@@ -3790,7 +4009,11 @@ public class _GtkWidgetClass {
      * gboolean (*key_release_event)(GtkWidget *, GdkEventKey *)
      * }
      */
-    public class key_release_event {
+    public final static class key_release_event {
+
+        private key_release_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3827,9 +4050,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3848,7 +4073,7 @@ public class _GtkWidgetClass {
         return key_release_event$LAYOUT;
     }
 
-    private static final long key_release_event$OFFSET = 440;
+    private static final long key_release_event$OFFSET = $LAYOUT.byteOffset(groupElement("key_release_event"));
 
     /**
      * Offset for field:
@@ -3885,7 +4110,11 @@ public class _GtkWidgetClass {
      * gboolean (*enter_notify_event)(GtkWidget *, GdkEventCrossing *)
      * }
      */
-    public class enter_notify_event {
+    public final static class enter_notify_event {
+
+        private enter_notify_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3922,9 +4151,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3943,7 +4174,7 @@ public class _GtkWidgetClass {
         return enter_notify_event$LAYOUT;
     }
 
-    private static final long enter_notify_event$OFFSET = 448;
+    private static final long enter_notify_event$OFFSET = $LAYOUT.byteOffset(groupElement("enter_notify_event"));
 
     /**
      * Offset for field:
@@ -3980,7 +4211,11 @@ public class _GtkWidgetClass {
      * gboolean (*leave_notify_event)(GtkWidget *, GdkEventCrossing *)
      * }
      */
-    public class leave_notify_event {
+    public final static class leave_notify_event {
+
+        private leave_notify_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -4017,9 +4252,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -4038,7 +4275,7 @@ public class _GtkWidgetClass {
         return leave_notify_event$LAYOUT;
     }
 
-    private static final long leave_notify_event$OFFSET = 456;
+    private static final long leave_notify_event$OFFSET = $LAYOUT.byteOffset(groupElement("leave_notify_event"));
 
     /**
      * Offset for field:
@@ -4075,7 +4312,11 @@ public class _GtkWidgetClass {
      * gboolean (*configure_event)(GtkWidget *, GdkEventConfigure *)
      * }
      */
-    public class configure_event {
+    public final static class configure_event {
+
+        private configure_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -4112,9 +4353,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -4133,7 +4376,7 @@ public class _GtkWidgetClass {
         return configure_event$LAYOUT;
     }
 
-    private static final long configure_event$OFFSET = 464;
+    private static final long configure_event$OFFSET = $LAYOUT.byteOffset(groupElement("configure_event"));
 
     /**
      * Offset for field:
@@ -4170,7 +4413,11 @@ public class _GtkWidgetClass {
      * gboolean (*focus_in_event)(GtkWidget *, GdkEventFocus *)
      * }
      */
-    public class focus_in_event {
+    public final static class focus_in_event {
+
+        private focus_in_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -4207,9 +4454,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -4228,7 +4477,7 @@ public class _GtkWidgetClass {
         return focus_in_event$LAYOUT;
     }
 
-    private static final long focus_in_event$OFFSET = 472;
+    private static final long focus_in_event$OFFSET = $LAYOUT.byteOffset(groupElement("focus_in_event"));
 
     /**
      * Offset for field:
@@ -4265,7 +4514,11 @@ public class _GtkWidgetClass {
      * gboolean (*focus_out_event)(GtkWidget *, GdkEventFocus *)
      * }
      */
-    public class focus_out_event {
+    public final static class focus_out_event {
+
+        private focus_out_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -4302,9 +4555,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -4323,7 +4578,7 @@ public class _GtkWidgetClass {
         return focus_out_event$LAYOUT;
     }
 
-    private static final long focus_out_event$OFFSET = 480;
+    private static final long focus_out_event$OFFSET = $LAYOUT.byteOffset(groupElement("focus_out_event"));
 
     /**
      * Offset for field:
@@ -4360,7 +4615,11 @@ public class _GtkWidgetClass {
      * gboolean (*map_event)(GtkWidget *, GdkEventAny *)
      * }
      */
-    public class map_event {
+    public final static class map_event {
+
+        private map_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -4397,9 +4656,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -4418,7 +4679,7 @@ public class _GtkWidgetClass {
         return map_event$LAYOUT;
     }
 
-    private static final long map_event$OFFSET = 488;
+    private static final long map_event$OFFSET = $LAYOUT.byteOffset(groupElement("map_event"));
 
     /**
      * Offset for field:
@@ -4455,7 +4716,11 @@ public class _GtkWidgetClass {
      * gboolean (*unmap_event)(GtkWidget *, GdkEventAny *)
      * }
      */
-    public class unmap_event {
+    public final static class unmap_event {
+
+        private unmap_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -4492,9 +4757,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -4513,7 +4780,7 @@ public class _GtkWidgetClass {
         return unmap_event$LAYOUT;
     }
 
-    private static final long unmap_event$OFFSET = 496;
+    private static final long unmap_event$OFFSET = $LAYOUT.byteOffset(groupElement("unmap_event"));
 
     /**
      * Offset for field:
@@ -4550,7 +4817,11 @@ public class _GtkWidgetClass {
      * gboolean (*property_notify_event)(GtkWidget *, GdkEventProperty *)
      * }
      */
-    public class property_notify_event {
+    public final static class property_notify_event {
+
+        private property_notify_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -4587,9 +4858,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -4608,7 +4881,7 @@ public class _GtkWidgetClass {
         return property_notify_event$LAYOUT;
     }
 
-    private static final long property_notify_event$OFFSET = 504;
+    private static final long property_notify_event$OFFSET = $LAYOUT.byteOffset(groupElement("property_notify_event"));
 
     /**
      * Offset for field:
@@ -4645,7 +4918,11 @@ public class _GtkWidgetClass {
      * gboolean (*selection_clear_event)(GtkWidget *, GdkEventSelection *)
      * }
      */
-    public class selection_clear_event {
+    public final static class selection_clear_event {
+
+        private selection_clear_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -4682,9 +4959,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -4703,7 +4982,7 @@ public class _GtkWidgetClass {
         return selection_clear_event$LAYOUT;
     }
 
-    private static final long selection_clear_event$OFFSET = 512;
+    private static final long selection_clear_event$OFFSET = $LAYOUT.byteOffset(groupElement("selection_clear_event"));
 
     /**
      * Offset for field:
@@ -4740,7 +5019,11 @@ public class _GtkWidgetClass {
      * gboolean (*selection_request_event)(GtkWidget *, GdkEventSelection *)
      * }
      */
-    public class selection_request_event {
+    public final static class selection_request_event {
+
+        private selection_request_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -4777,9 +5060,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -4798,7 +5083,7 @@ public class _GtkWidgetClass {
         return selection_request_event$LAYOUT;
     }
 
-    private static final long selection_request_event$OFFSET = 520;
+    private static final long selection_request_event$OFFSET = $LAYOUT.byteOffset(groupElement("selection_request_event"));
 
     /**
      * Offset for field:
@@ -4835,7 +5120,11 @@ public class _GtkWidgetClass {
      * gboolean (*selection_notify_event)(GtkWidget *, GdkEventSelection *)
      * }
      */
-    public class selection_notify_event {
+    public final static class selection_notify_event {
+
+        private selection_notify_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -4872,9 +5161,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -4893,7 +5184,7 @@ public class _GtkWidgetClass {
         return selection_notify_event$LAYOUT;
     }
 
-    private static final long selection_notify_event$OFFSET = 528;
+    private static final long selection_notify_event$OFFSET = $LAYOUT.byteOffset(groupElement("selection_notify_event"));
 
     /**
      * Offset for field:
@@ -4930,7 +5221,11 @@ public class _GtkWidgetClass {
      * gboolean (*proximity_in_event)(GtkWidget *, GdkEventProximity *)
      * }
      */
-    public class proximity_in_event {
+    public final static class proximity_in_event {
+
+        private proximity_in_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -4967,9 +5262,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -4988,7 +5285,7 @@ public class _GtkWidgetClass {
         return proximity_in_event$LAYOUT;
     }
 
-    private static final long proximity_in_event$OFFSET = 536;
+    private static final long proximity_in_event$OFFSET = $LAYOUT.byteOffset(groupElement("proximity_in_event"));
 
     /**
      * Offset for field:
@@ -5025,7 +5322,11 @@ public class _GtkWidgetClass {
      * gboolean (*proximity_out_event)(GtkWidget *, GdkEventProximity *)
      * }
      */
-    public class proximity_out_event {
+    public final static class proximity_out_event {
+
+        private proximity_out_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -5062,9 +5363,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -5083,7 +5386,7 @@ public class _GtkWidgetClass {
         return proximity_out_event$LAYOUT;
     }
 
-    private static final long proximity_out_event$OFFSET = 544;
+    private static final long proximity_out_event$OFFSET = $LAYOUT.byteOffset(groupElement("proximity_out_event"));
 
     /**
      * Offset for field:
@@ -5120,7 +5423,11 @@ public class _GtkWidgetClass {
      * gboolean (*visibility_notify_event)(GtkWidget *, GdkEventVisibility *)
      * }
      */
-    public class visibility_notify_event {
+    public final static class visibility_notify_event {
+
+        private visibility_notify_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -5157,9 +5464,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -5178,7 +5487,7 @@ public class _GtkWidgetClass {
         return visibility_notify_event$LAYOUT;
     }
 
-    private static final long visibility_notify_event$OFFSET = 552;
+    private static final long visibility_notify_event$OFFSET = $LAYOUT.byteOffset(groupElement("visibility_notify_event"));
 
     /**
      * Offset for field:
@@ -5215,7 +5524,11 @@ public class _GtkWidgetClass {
      * gboolean (*window_state_event)(GtkWidget *, GdkEventWindowState *)
      * }
      */
-    public class window_state_event {
+    public final static class window_state_event {
+
+        private window_state_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -5252,9 +5565,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -5273,7 +5588,7 @@ public class _GtkWidgetClass {
         return window_state_event$LAYOUT;
     }
 
-    private static final long window_state_event$OFFSET = 560;
+    private static final long window_state_event$OFFSET = $LAYOUT.byteOffset(groupElement("window_state_event"));
 
     /**
      * Offset for field:
@@ -5310,7 +5625,11 @@ public class _GtkWidgetClass {
      * gboolean (*damage_event)(GtkWidget *, GdkEventExpose *)
      * }
      */
-    public class damage_event {
+    public final static class damage_event {
+
+        private damage_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -5347,9 +5666,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -5368,7 +5689,7 @@ public class _GtkWidgetClass {
         return damage_event$LAYOUT;
     }
 
-    private static final long damage_event$OFFSET = 568;
+    private static final long damage_event$OFFSET = $LAYOUT.byteOffset(groupElement("damage_event"));
 
     /**
      * Offset for field:
@@ -5405,7 +5726,11 @@ public class _GtkWidgetClass {
      * gboolean (*grab_broken_event)(GtkWidget *, GdkEventGrabBroken *)
      * }
      */
-    public class grab_broken_event {
+    public final static class grab_broken_event {
+
+        private grab_broken_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -5442,9 +5767,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -5463,7 +5790,7 @@ public class _GtkWidgetClass {
         return grab_broken_event$LAYOUT;
     }
 
-    private static final long grab_broken_event$OFFSET = 576;
+    private static final long grab_broken_event$OFFSET = $LAYOUT.byteOffset(groupElement("grab_broken_event"));
 
     /**
      * Offset for field:
@@ -5500,7 +5827,11 @@ public class _GtkWidgetClass {
      * void (*selection_get)(GtkWidget *, GtkSelectionData *, guint, guint)
      * }
      */
-    public class selection_get {
+    public final static class selection_get {
+
+        private selection_get() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -5538,9 +5869,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -5559,7 +5892,7 @@ public class _GtkWidgetClass {
         return selection_get$LAYOUT;
     }
 
-    private static final long selection_get$OFFSET = 584;
+    private static final long selection_get$OFFSET = $LAYOUT.byteOffset(groupElement("selection_get"));
 
     /**
      * Offset for field:
@@ -5596,7 +5929,11 @@ public class _GtkWidgetClass {
      * void (*selection_received)(GtkWidget *, GtkSelectionData *, guint)
      * }
      */
-    public class selection_received {
+    public final static class selection_received {
+
+        private selection_received() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -5633,9 +5970,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -5654,7 +5993,7 @@ public class _GtkWidgetClass {
         return selection_received$LAYOUT;
     }
 
-    private static final long selection_received$OFFSET = 592;
+    private static final long selection_received$OFFSET = $LAYOUT.byteOffset(groupElement("selection_received"));
 
     /**
      * Offset for field:
@@ -5691,7 +6030,11 @@ public class _GtkWidgetClass {
      * void (*drag_begin)(GtkWidget *, GdkDragContext *)
      * }
      */
-    public class drag_begin {
+    public final static class drag_begin {
+
+        private drag_begin() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -5727,9 +6070,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -5748,7 +6093,7 @@ public class _GtkWidgetClass {
         return drag_begin$LAYOUT;
     }
 
-    private static final long drag_begin$OFFSET = 600;
+    private static final long drag_begin$OFFSET = $LAYOUT.byteOffset(groupElement("drag_begin"));
 
     /**
      * Offset for field:
@@ -5785,7 +6130,11 @@ public class _GtkWidgetClass {
      * void (*drag_end)(GtkWidget *, GdkDragContext *)
      * }
      */
-    public class drag_end {
+    public final static class drag_end {
+
+        private drag_end() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -5821,9 +6170,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -5842,7 +6193,7 @@ public class _GtkWidgetClass {
         return drag_end$LAYOUT;
     }
 
-    private static final long drag_end$OFFSET = 608;
+    private static final long drag_end$OFFSET = $LAYOUT.byteOffset(groupElement("drag_end"));
 
     /**
      * Offset for field:
@@ -5879,7 +6230,11 @@ public class _GtkWidgetClass {
      * void (*drag_data_get)(GtkWidget *, GdkDragContext *, GtkSelectionData *, guint, guint)
      * }
      */
-    public class drag_data_get {
+    public final static class drag_data_get {
+
+        private drag_data_get() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -5918,9 +6273,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, int _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, int _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -5939,7 +6296,7 @@ public class _GtkWidgetClass {
         return drag_data_get$LAYOUT;
     }
 
-    private static final long drag_data_get$OFFSET = 616;
+    private static final long drag_data_get$OFFSET = $LAYOUT.byteOffset(groupElement("drag_data_get"));
 
     /**
      * Offset for field:
@@ -5976,7 +6333,11 @@ public class _GtkWidgetClass {
      * void (*drag_data_delete)(GtkWidget *, GdkDragContext *)
      * }
      */
-    public class drag_data_delete {
+    public final static class drag_data_delete {
+
+        private drag_data_delete() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -6012,9 +6373,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -6033,7 +6396,7 @@ public class _GtkWidgetClass {
         return drag_data_delete$LAYOUT;
     }
 
-    private static final long drag_data_delete$OFFSET = 624;
+    private static final long drag_data_delete$OFFSET = $LAYOUT.byteOffset(groupElement("drag_data_delete"));
 
     /**
      * Offset for field:
@@ -6070,7 +6433,11 @@ public class _GtkWidgetClass {
      * void (*drag_leave)(GtkWidget *, GdkDragContext *, guint)
      * }
      */
-    public class drag_leave {
+    public final static class drag_leave {
+
+        private drag_leave() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -6107,9 +6474,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -6128,7 +6497,7 @@ public class _GtkWidgetClass {
         return drag_leave$LAYOUT;
     }
 
-    private static final long drag_leave$OFFSET = 632;
+    private static final long drag_leave$OFFSET = $LAYOUT.byteOffset(groupElement("drag_leave"));
 
     /**
      * Offset for field:
@@ -6165,7 +6534,11 @@ public class _GtkWidgetClass {
      * gboolean (*drag_motion)(GtkWidget *, GdkDragContext *, gint, gint, guint)
      * }
      */
-    public class drag_motion {
+    public final static class drag_motion {
+
+        private drag_motion() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -6205,9 +6578,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, int _x4) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, int _x4) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -6226,7 +6601,7 @@ public class _GtkWidgetClass {
         return drag_motion$LAYOUT;
     }
 
-    private static final long drag_motion$OFFSET = 640;
+    private static final long drag_motion$OFFSET = $LAYOUT.byteOffset(groupElement("drag_motion"));
 
     /**
      * Offset for field:
@@ -6263,7 +6638,11 @@ public class _GtkWidgetClass {
      * gboolean (*drag_drop)(GtkWidget *, GdkDragContext *, gint, gint, guint)
      * }
      */
-    public class drag_drop {
+    public final static class drag_drop {
+
+        private drag_drop() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -6303,9 +6682,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, int _x4) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, int _x4) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -6324,7 +6705,7 @@ public class _GtkWidgetClass {
         return drag_drop$LAYOUT;
     }
 
-    private static final long drag_drop$OFFSET = 648;
+    private static final long drag_drop$OFFSET = $LAYOUT.byteOffset(groupElement("drag_drop"));
 
     /**
      * Offset for field:
@@ -6361,7 +6742,11 @@ public class _GtkWidgetClass {
      * void (*drag_data_received)(GtkWidget *, GdkDragContext *, gint, gint, GtkSelectionData *, guint, guint)
      * }
      */
-    public class drag_data_received {
+    public final static class drag_data_received {
+
+        private drag_data_received() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -6402,9 +6787,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, int _x5, int _x6) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, int _x5, int _x6) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -6423,7 +6810,7 @@ public class _GtkWidgetClass {
         return drag_data_received$LAYOUT;
     }
 
-    private static final long drag_data_received$OFFSET = 656;
+    private static final long drag_data_received$OFFSET = $LAYOUT.byteOffset(groupElement("drag_data_received"));
 
     /**
      * Offset for field:
@@ -6460,7 +6847,11 @@ public class _GtkWidgetClass {
      * gboolean (*drag_failed)(GtkWidget *, GdkDragContext *, GtkDragResult)
      * }
      */
-    public class drag_failed {
+    public final static class drag_failed {
+
+        private drag_failed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -6498,9 +6889,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -6519,7 +6912,7 @@ public class _GtkWidgetClass {
         return drag_failed$LAYOUT;
     }
 
-    private static final long drag_failed$OFFSET = 664;
+    private static final long drag_failed$OFFSET = $LAYOUT.byteOffset(groupElement("drag_failed"));
 
     /**
      * Offset for field:
@@ -6556,7 +6949,11 @@ public class _GtkWidgetClass {
      * gboolean (*popup_menu)(GtkWidget *)
      * }
      */
-    public class popup_menu {
+    public final static class popup_menu {
+
+        private popup_menu() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -6592,9 +6989,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -6613,7 +7012,7 @@ public class _GtkWidgetClass {
         return popup_menu$LAYOUT;
     }
 
-    private static final long popup_menu$OFFSET = 672;
+    private static final long popup_menu$OFFSET = $LAYOUT.byteOffset(groupElement("popup_menu"));
 
     /**
      * Offset for field:
@@ -6650,7 +7049,11 @@ public class _GtkWidgetClass {
      * gboolean (*show_help)(GtkWidget *, GtkWidgetHelpType)
      * }
      */
-    public class show_help {
+    public final static class show_help {
+
+        private show_help() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -6687,9 +7090,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -6708,7 +7113,7 @@ public class _GtkWidgetClass {
         return show_help$LAYOUT;
     }
 
-    private static final long show_help$OFFSET = 680;
+    private static final long show_help$OFFSET = $LAYOUT.byteOffset(groupElement("show_help"));
 
     /**
      * Offset for field:
@@ -6745,7 +7150,11 @@ public class _GtkWidgetClass {
      * AtkObject *(*get_accessible)(GtkWidget *)
      * }
      */
-    public class get_accessible {
+    public final static class get_accessible {
+
+        private get_accessible() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -6781,9 +7190,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -6802,7 +7213,7 @@ public class _GtkWidgetClass {
         return get_accessible$LAYOUT;
     }
 
-    private static final long get_accessible$OFFSET = 688;
+    private static final long get_accessible$OFFSET = $LAYOUT.byteOffset(groupElement("get_accessible"));
 
     /**
      * Offset for field:
@@ -6839,7 +7250,11 @@ public class _GtkWidgetClass {
      * void (*screen_changed)(GtkWidget *, GdkScreen *)
      * }
      */
-    public class screen_changed {
+    public final static class screen_changed {
+
+        private screen_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -6875,9 +7290,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -6896,7 +7313,7 @@ public class _GtkWidgetClass {
         return screen_changed$LAYOUT;
     }
 
-    private static final long screen_changed$OFFSET = 696;
+    private static final long screen_changed$OFFSET = $LAYOUT.byteOffset(groupElement("screen_changed"));
 
     /**
      * Offset for field:
@@ -6933,7 +7350,11 @@ public class _GtkWidgetClass {
      * gboolean (*can_activate_accel)(GtkWidget *, guint)
      * }
      */
-    public class can_activate_accel {
+    public final static class can_activate_accel {
+
+        private can_activate_accel() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -6970,9 +7391,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -6991,7 +7414,7 @@ public class _GtkWidgetClass {
         return can_activate_accel$LAYOUT;
     }
 
-    private static final long can_activate_accel$OFFSET = 704;
+    private static final long can_activate_accel$OFFSET = $LAYOUT.byteOffset(groupElement("can_activate_accel"));
 
     /**
      * Offset for field:
@@ -7028,7 +7451,11 @@ public class _GtkWidgetClass {
      * void (*composited_changed)(GtkWidget *)
      * }
      */
-    public class composited_changed {
+    public final static class composited_changed {
+
+        private composited_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -7063,9 +7490,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -7084,7 +7513,7 @@ public class _GtkWidgetClass {
         return composited_changed$LAYOUT;
     }
 
-    private static final long composited_changed$OFFSET = 712;
+    private static final long composited_changed$OFFSET = $LAYOUT.byteOffset(groupElement("composited_changed"));
 
     /**
      * Offset for field:
@@ -7121,7 +7550,11 @@ public class _GtkWidgetClass {
      * gboolean (*query_tooltip)(GtkWidget *, gint, gint, gboolean, GtkTooltip *)
      * }
      */
-    public class query_tooltip {
+    public final static class query_tooltip {
+
+        private query_tooltip() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -7161,9 +7594,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2, int _x3, MemorySegment _x4) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2, int _x3, MemorySegment _x4) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -7182,7 +7617,7 @@ public class _GtkWidgetClass {
         return query_tooltip$LAYOUT;
     }
 
-    private static final long query_tooltip$OFFSET = 720;
+    private static final long query_tooltip$OFFSET = $LAYOUT.byteOffset(groupElement("query_tooltip"));
 
     /**
      * Offset for field:
@@ -7219,7 +7654,11 @@ public class _GtkWidgetClass {
      * void (*compute_expand)(GtkWidget *, gboolean *, gboolean *)
      * }
      */
-    public class compute_expand {
+    public final static class compute_expand {
+
+        private compute_expand() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -7256,9 +7695,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -7277,7 +7718,7 @@ public class _GtkWidgetClass {
         return compute_expand$LAYOUT;
     }
 
-    private static final long compute_expand$OFFSET = 728;
+    private static final long compute_expand$OFFSET = $LAYOUT.byteOffset(groupElement("compute_expand"));
 
     /**
      * Offset for field:
@@ -7314,7 +7755,11 @@ public class _GtkWidgetClass {
      * void (*adjust_size_request)(GtkWidget *, GtkOrientation, gint *, gint *)
      * }
      */
-    public class adjust_size_request {
+    public final static class adjust_size_request {
+
+        private adjust_size_request() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -7352,9 +7797,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -7373,7 +7820,7 @@ public class _GtkWidgetClass {
         return adjust_size_request$LAYOUT;
     }
 
-    private static final long adjust_size_request$OFFSET = 736;
+    private static final long adjust_size_request$OFFSET = $LAYOUT.byteOffset(groupElement("adjust_size_request"));
 
     /**
      * Offset for field:
@@ -7410,7 +7857,11 @@ public class _GtkWidgetClass {
      * void (*adjust_size_allocation)(GtkWidget *, GtkOrientation, gint *, gint *, gint *, gint *)
      * }
      */
-    public class adjust_size_allocation {
+    public final static class adjust_size_allocation {
+
+        private adjust_size_allocation() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -7450,9 +7901,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -7471,7 +7924,7 @@ public class _GtkWidgetClass {
         return adjust_size_allocation$LAYOUT;
     }
 
-    private static final long adjust_size_allocation$OFFSET = 744;
+    private static final long adjust_size_allocation$OFFSET = $LAYOUT.byteOffset(groupElement("adjust_size_allocation"));
 
     /**
      * Offset for field:
@@ -7508,7 +7961,11 @@ public class _GtkWidgetClass {
      * void (*style_updated)(GtkWidget *)
      * }
      */
-    public class style_updated {
+    public final static class style_updated {
+
+        private style_updated() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -7543,9 +8000,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -7564,7 +8023,7 @@ public class _GtkWidgetClass {
         return style_updated$LAYOUT;
     }
 
-    private static final long style_updated$OFFSET = 752;
+    private static final long style_updated$OFFSET = $LAYOUT.byteOffset(groupElement("style_updated"));
 
     /**
      * Offset for field:
@@ -7601,7 +8060,11 @@ public class _GtkWidgetClass {
      * gboolean (*touch_event)(GtkWidget *, GdkEventTouch *)
      * }
      */
-    public class touch_event {
+    public final static class touch_event {
+
+        private touch_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -7638,9 +8101,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -7659,7 +8124,7 @@ public class _GtkWidgetClass {
         return touch_event$LAYOUT;
     }
 
-    private static final long touch_event$OFFSET = 760;
+    private static final long touch_event$OFFSET = $LAYOUT.byteOffset(groupElement("touch_event"));
 
     /**
      * Offset for field:
@@ -7696,7 +8161,11 @@ public class _GtkWidgetClass {
      * void (*get_preferred_height_and_baseline_for_width)(GtkWidget *, gint, gint *, gint *, gint *, gint *)
      * }
      */
-    public class get_preferred_height_and_baseline_for_width {
+    public final static class get_preferred_height_and_baseline_for_width {
+
+        private get_preferred_height_and_baseline_for_width() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -7736,9 +8205,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -7757,7 +8228,7 @@ public class _GtkWidgetClass {
         return get_preferred_height_and_baseline_for_width$LAYOUT;
     }
 
-    private static final long get_preferred_height_and_baseline_for_width$OFFSET = 768;
+    private static final long get_preferred_height_and_baseline_for_width$OFFSET = $LAYOUT.byteOffset(groupElement("get_preferred_height_and_baseline_for_width"));
 
     /**
      * Offset for field:
@@ -7794,7 +8265,11 @@ public class _GtkWidgetClass {
      * void (*adjust_baseline_request)(GtkWidget *, gint *, gint *)
      * }
      */
-    public class adjust_baseline_request {
+    public final static class adjust_baseline_request {
+
+        private adjust_baseline_request() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -7831,9 +8306,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -7852,7 +8329,7 @@ public class _GtkWidgetClass {
         return adjust_baseline_request$LAYOUT;
     }
 
-    private static final long adjust_baseline_request$OFFSET = 776;
+    private static final long adjust_baseline_request$OFFSET = $LAYOUT.byteOffset(groupElement("adjust_baseline_request"));
 
     /**
      * Offset for field:
@@ -7889,7 +8366,11 @@ public class _GtkWidgetClass {
      * void (*adjust_baseline_allocation)(GtkWidget *, gint *)
      * }
      */
-    public class adjust_baseline_allocation {
+    public final static class adjust_baseline_allocation {
+
+        private adjust_baseline_allocation() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -7925,9 +8406,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -7946,7 +8429,7 @@ public class _GtkWidgetClass {
         return adjust_baseline_allocation$LAYOUT;
     }
 
-    private static final long adjust_baseline_allocation$OFFSET = 784;
+    private static final long adjust_baseline_allocation$OFFSET = $LAYOUT.byteOffset(groupElement("adjust_baseline_allocation"));
 
     /**
      * Offset for field:
@@ -7983,7 +8466,11 @@ public class _GtkWidgetClass {
      * void (*queue_draw_region)(GtkWidget *, const cairo_region_t *)
      * }
      */
-    public class queue_draw_region {
+    public final static class queue_draw_region {
+
+        private queue_draw_region() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -8019,9 +8506,11 @@ public class _GtkWidgetClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -8040,7 +8529,7 @@ public class _GtkWidgetClass {
         return queue_draw_region$LAYOUT;
     }
 
-    private static final long queue_draw_region$OFFSET = 792;
+    private static final long queue_draw_region$OFFSET = $LAYOUT.byteOffset(groupElement("queue_draw_region"));
 
     /**
      * Offset for field:
@@ -8084,7 +8573,7 @@ public class _GtkWidgetClass {
         return priv$LAYOUT;
     }
 
-    private static final long priv$OFFSET = 800;
+    private static final long priv$OFFSET = $LAYOUT.byteOffset(groupElement("priv"));
 
     /**
      * Offset for field:
@@ -8121,7 +8610,11 @@ public class _GtkWidgetClass {
      * void (*_gtk_reserved6)(void)
      * }
      */
-    public class _gtk_reserved6 {
+    public final static class _gtk_reserved6 {
+
+        private _gtk_reserved6() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -8157,6 +8650,8 @@ public class _GtkWidgetClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -8175,7 +8670,7 @@ public class _GtkWidgetClass {
         return _gtk_reserved6$LAYOUT;
     }
 
-    private static final long _gtk_reserved6$OFFSET = 808;
+    private static final long _gtk_reserved6$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved6"));
 
     /**
      * Offset for field:
@@ -8212,7 +8707,11 @@ public class _GtkWidgetClass {
      * void (*_gtk_reserved7)(void)
      * }
      */
-    public class _gtk_reserved7 {
+    public final static class _gtk_reserved7 {
+
+        private _gtk_reserved7() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -8248,6 +8747,8 @@ public class _GtkWidgetClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -8266,7 +8767,7 @@ public class _GtkWidgetClass {
         return _gtk_reserved7$LAYOUT;
     }
 
-    private static final long _gtk_reserved7$OFFSET = 816;
+    private static final long _gtk_reserved7$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved7"));
 
     /**
      * Offset for field:
@@ -8327,7 +8828,7 @@ public class _GtkWidgetClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -8335,7 +8836,7 @@ public class _GtkWidgetClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

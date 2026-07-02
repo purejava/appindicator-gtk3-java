@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
@@ -75,7 +71,7 @@ public class _GdkEventTouchpadSwipe {
         return type$LAYOUT;
     }
 
-    private static final long type$OFFSET = 0;
+    private static final long type$OFFSET = $LAYOUT.byteOffset(groupElement("type"));
 
     /**
      * Offset for field:
@@ -119,7 +115,7 @@ public class _GdkEventTouchpadSwipe {
         return window$LAYOUT;
     }
 
-    private static final long window$OFFSET = 8;
+    private static final long window$OFFSET = $LAYOUT.byteOffset(groupElement("window"));
 
     /**
      * Offset for field:
@@ -163,7 +159,7 @@ public class _GdkEventTouchpadSwipe {
         return send_event$LAYOUT;
     }
 
-    private static final long send_event$OFFSET = 16;
+    private static final long send_event$OFFSET = $LAYOUT.byteOffset(groupElement("send_event"));
 
     /**
      * Offset for field:
@@ -207,7 +203,7 @@ public class _GdkEventTouchpadSwipe {
         return phase$LAYOUT;
     }
 
-    private static final long phase$OFFSET = 17;
+    private static final long phase$OFFSET = $LAYOUT.byteOffset(groupElement("phase"));
 
     /**
      * Offset for field:
@@ -251,7 +247,7 @@ public class _GdkEventTouchpadSwipe {
         return n_fingers$LAYOUT;
     }
 
-    private static final long n_fingers$OFFSET = 18;
+    private static final long n_fingers$OFFSET = $LAYOUT.byteOffset(groupElement("n_fingers"));
 
     /**
      * Offset for field:
@@ -295,7 +291,7 @@ public class _GdkEventTouchpadSwipe {
         return time$LAYOUT;
     }
 
-    private static final long time$OFFSET = 20;
+    private static final long time$OFFSET = $LAYOUT.byteOffset(groupElement("time"));
 
     /**
      * Offset for field:
@@ -339,7 +335,7 @@ public class _GdkEventTouchpadSwipe {
         return x$LAYOUT;
     }
 
-    private static final long x$OFFSET = 24;
+    private static final long x$OFFSET = $LAYOUT.byteOffset(groupElement("x"));
 
     /**
      * Offset for field:
@@ -383,7 +379,7 @@ public class _GdkEventTouchpadSwipe {
         return y$LAYOUT;
     }
 
-    private static final long y$OFFSET = 32;
+    private static final long y$OFFSET = $LAYOUT.byteOffset(groupElement("y"));
 
     /**
      * Offset for field:
@@ -427,7 +423,7 @@ public class _GdkEventTouchpadSwipe {
         return dx$LAYOUT;
     }
 
-    private static final long dx$OFFSET = 40;
+    private static final long dx$OFFSET = $LAYOUT.byteOffset(groupElement("dx"));
 
     /**
      * Offset for field:
@@ -471,7 +467,7 @@ public class _GdkEventTouchpadSwipe {
         return dy$LAYOUT;
     }
 
-    private static final long dy$OFFSET = 48;
+    private static final long dy$OFFSET = $LAYOUT.byteOffset(groupElement("dy"));
 
     /**
      * Offset for field:
@@ -515,7 +511,7 @@ public class _GdkEventTouchpadSwipe {
         return x_root$LAYOUT;
     }
 
-    private static final long x_root$OFFSET = 56;
+    private static final long x_root$OFFSET = $LAYOUT.byteOffset(groupElement("x_root"));
 
     /**
      * Offset for field:
@@ -559,7 +555,7 @@ public class _GdkEventTouchpadSwipe {
         return y_root$LAYOUT;
     }
 
-    private static final long y_root$OFFSET = 64;
+    private static final long y_root$OFFSET = $LAYOUT.byteOffset(groupElement("y_root"));
 
     /**
      * Offset for field:
@@ -603,7 +599,7 @@ public class _GdkEventTouchpadSwipe {
         return state$LAYOUT;
     }
 
-    private static final long state$OFFSET = 72;
+    private static final long state$OFFSET = $LAYOUT.byteOffset(groupElement("state"));
 
     /**
      * Offset for field:
@@ -664,7 +660,7 @@ public class _GdkEventTouchpadSwipe {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -672,7 +668,7 @@ public class _GdkEventTouchpadSwipe {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

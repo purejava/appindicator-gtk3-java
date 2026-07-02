@@ -2,15 +2,13 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
 
 /**
  * {@snippet lang=c :
@@ -62,7 +60,7 @@ public class _GPermissionClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -99,7 +97,11 @@ public class _GPermissionClass {
      * gboolean (*acquire)(GPermission *, GCancellable *, GError **)
      * }
      */
-    public class acquire {
+    public final static class acquire {
+
+        private acquire() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -137,9 +139,11 @@ public class _GPermissionClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -158,7 +162,7 @@ public class _GPermissionClass {
         return acquire$LAYOUT;
     }
 
-    private static final long acquire$OFFSET = 136;
+    private static final long acquire$OFFSET = $LAYOUT.byteOffset(groupElement("acquire"));
 
     /**
      * Offset for field:
@@ -195,7 +199,11 @@ public class _GPermissionClass {
      * void (*acquire_async)(GPermission *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class acquire_async {
+    public final static class acquire_async {
+
+        private acquire_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -233,9 +241,11 @@ public class _GPermissionClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -254,7 +264,7 @@ public class _GPermissionClass {
         return acquire_async$LAYOUT;
     }
 
-    private static final long acquire_async$OFFSET = 144;
+    private static final long acquire_async$OFFSET = $LAYOUT.byteOffset(groupElement("acquire_async"));
 
     /**
      * Offset for field:
@@ -291,7 +301,11 @@ public class _GPermissionClass {
      * gboolean (*acquire_finish)(GPermission *, GAsyncResult *, GError **)
      * }
      */
-    public class acquire_finish {
+    public final static class acquire_finish {
+
+        private acquire_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -329,9 +343,11 @@ public class _GPermissionClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -350,7 +366,7 @@ public class _GPermissionClass {
         return acquire_finish$LAYOUT;
     }
 
-    private static final long acquire_finish$OFFSET = 152;
+    private static final long acquire_finish$OFFSET = $LAYOUT.byteOffset(groupElement("acquire_finish"));
 
     /**
      * Offset for field:
@@ -387,7 +403,11 @@ public class _GPermissionClass {
      * gboolean (*release)(GPermission *, GCancellable *, GError **)
      * }
      */
-    public class release {
+    public final static class release {
+
+        private release() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -425,9 +445,11 @@ public class _GPermissionClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -446,7 +468,7 @@ public class _GPermissionClass {
         return release$LAYOUT;
     }
 
-    private static final long release$OFFSET = 160;
+    private static final long release$OFFSET = $LAYOUT.byteOffset(groupElement("release"));
 
     /**
      * Offset for field:
@@ -483,7 +505,11 @@ public class _GPermissionClass {
      * void (*release_async)(GPermission *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class release_async {
+    public final static class release_async {
+
+        private release_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -521,9 +547,11 @@ public class _GPermissionClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -542,7 +570,7 @@ public class _GPermissionClass {
         return release_async$LAYOUT;
     }
 
-    private static final long release_async$OFFSET = 168;
+    private static final long release_async$OFFSET = $LAYOUT.byteOffset(groupElement("release_async"));
 
     /**
      * Offset for field:
@@ -579,7 +607,11 @@ public class _GPermissionClass {
      * gboolean (*release_finish)(GPermission *, GAsyncResult *, GError **)
      * }
      */
-    public class release_finish {
+    public final static class release_finish {
+
+        private release_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -617,9 +649,11 @@ public class _GPermissionClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -638,7 +672,7 @@ public class _GPermissionClass {
         return release_finish$LAYOUT;
     }
 
-    private static final long release_finish$OFFSET = 176;
+    private static final long release_finish$OFFSET = $LAYOUT.byteOffset(groupElement("release_finish"));
 
     /**
      * Offset for field:
@@ -682,7 +716,7 @@ public class _GPermissionClass {
         return reserved$LAYOUT;
     }
 
-    private static final long reserved$OFFSET = 184;
+    private static final long reserved$OFFSET = $LAYOUT.byteOffset(groupElement("reserved"));
 
     /**
      * Offset for field:
@@ -734,7 +768,7 @@ public class _GPermissionClass {
      * }
      */
     public static MemorySegment reserved(MemorySegment struct, long index0) {
-        return (MemorySegment)reserved$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)reserved$ELEM_HANDLE.get(struct, reserved$OFFSET, index0);
     }
 
     /**
@@ -744,7 +778,7 @@ public class _GPermissionClass {
      * }
      */
     public static void reserved(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        reserved$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        reserved$ELEM_HANDLE.set(struct, reserved$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -776,7 +810,7 @@ public class _GPermissionClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -784,7 +818,7 @@ public class _GPermissionClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

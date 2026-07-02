@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -56,7 +52,7 @@ public class _GProxyInterface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -93,7 +89,11 @@ public class _GProxyInterface {
      * GIOStream *(*connect)(GProxy *, GIOStream *, GProxyAddress *, GCancellable *, GError **)
      * }
      */
-    public class connect {
+    public final static class connect {
+
+        private connect() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -133,9 +133,11 @@ public class _GProxyInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -154,7 +156,7 @@ public class _GProxyInterface {
         return connect$LAYOUT;
     }
 
-    private static final long connect$OFFSET = 16;
+    private static final long connect$OFFSET = $LAYOUT.byteOffset(groupElement("connect"));
 
     /**
      * Offset for field:
@@ -191,7 +193,11 @@ public class _GProxyInterface {
      * void (*connect_async)(GProxy *, GIOStream *, GProxyAddress *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class connect_async {
+    public final static class connect_async {
+
+        private connect_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -231,9 +237,11 @@ public class _GProxyInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -252,7 +260,7 @@ public class _GProxyInterface {
         return connect_async$LAYOUT;
     }
 
-    private static final long connect_async$OFFSET = 24;
+    private static final long connect_async$OFFSET = $LAYOUT.byteOffset(groupElement("connect_async"));
 
     /**
      * Offset for field:
@@ -289,7 +297,11 @@ public class _GProxyInterface {
      * GIOStream *(*connect_finish)(GProxy *, GAsyncResult *, GError **)
      * }
      */
-    public class connect_finish {
+    public final static class connect_finish {
+
+        private connect_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -327,9 +339,11 @@ public class _GProxyInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -348,7 +362,7 @@ public class _GProxyInterface {
         return connect_finish$LAYOUT;
     }
 
-    private static final long connect_finish$OFFSET = 32;
+    private static final long connect_finish$OFFSET = $LAYOUT.byteOffset(groupElement("connect_finish"));
 
     /**
      * Offset for field:
@@ -385,7 +399,11 @@ public class _GProxyInterface {
      * gboolean (*supports_hostname)(GProxy *)
      * }
      */
-    public class supports_hostname {
+    public final static class supports_hostname {
+
+        private supports_hostname() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -421,9 +439,11 @@ public class _GProxyInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -442,7 +462,7 @@ public class _GProxyInterface {
         return supports_hostname$LAYOUT;
     }
 
-    private static final long supports_hostname$OFFSET = 40;
+    private static final long supports_hostname$OFFSET = $LAYOUT.byteOffset(groupElement("supports_hostname"));
 
     /**
      * Offset for field:
@@ -503,7 +523,7 @@ public class _GProxyInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -511,7 +531,7 @@ public class _GProxyInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

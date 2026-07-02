@@ -13,7 +13,11 @@ import java.lang.invoke.MethodHandle;
  * typedef void (*GTestFunc)(void)
  * }
  */
-public class GTestFunc {
+public final class GTestFunc {
+
+    private GTestFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -49,6 +53,8 @@ public class GTestFunc {
     public static void invoke(MemorySegment funcPtr) {
         try {
              DOWN$MH.invokeExact(funcPtr);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

@@ -2,15 +2,13 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
+import static java.lang.foreign.ValueLayout.OfLong;
 
 /**
  * {@snippet lang=c :
@@ -18,8 +16,10 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  *     unsigned long uc_flags;
  *     struct ucontext_t *uc_link;
  *     stack_t uc_stack;
- *     sigset_t uc_sigmask;
  *     mcontext_t uc_mcontext;
+ *     sigset_t uc_sigmask;
+ *     struct _libc_fpstate __fpregs_mem;
+ *     unsigned long long __ssp[4];
  * }
  * }
  */
@@ -33,9 +33,10 @@ public class ucontext_t {
         app_indicator_h.C_LONG.withName("uc_flags"),
         app_indicator_h.C_POINTER.withName("uc_link"),
         stack_t.layout().withName("uc_stack"),
+        mcontext_t.layout().withName("uc_mcontext"),
         __sigset_t.layout().withName("uc_sigmask"),
-        MemoryLayout.paddingLayout(8),
-        mcontext_t.layout().withName("uc_mcontext")
+        _libc_fpstate.layout().withName("__fpregs_mem"),
+        MemoryLayout.sequenceLayout(4, app_indicator_h.C_LONG_LONG).withName("__ssp")
     ).withName("ucontext_t");
 
     /**
@@ -57,7 +58,7 @@ public class ucontext_t {
         return uc_flags$LAYOUT;
     }
 
-    private static final long uc_flags$OFFSET = 0;
+    private static final long uc_flags$OFFSET = $LAYOUT.byteOffset(groupElement("uc_flags"));
 
     /**
      * Offset for field:
@@ -101,7 +102,7 @@ public class ucontext_t {
         return uc_link$LAYOUT;
     }
 
-    private static final long uc_link$OFFSET = 8;
+    private static final long uc_link$OFFSET = $LAYOUT.byteOffset(groupElement("uc_link"));
 
     /**
      * Offset for field:
@@ -145,7 +146,7 @@ public class ucontext_t {
         return uc_stack$LAYOUT;
     }
 
-    private static final long uc_stack$OFFSET = 16;
+    private static final long uc_stack$OFFSET = $LAYOUT.byteOffset(groupElement("uc_stack"));
 
     /**
      * Offset for field:
@@ -177,50 +178,6 @@ public class ucontext_t {
         MemorySegment.copy(fieldValue, 0L, struct, uc_stack$OFFSET, uc_stack$LAYOUT.byteSize());
     }
 
-    private static final GroupLayout uc_sigmask$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("uc_sigmask"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * sigset_t uc_sigmask
-     * }
-     */
-    public static final GroupLayout uc_sigmask$layout() {
-        return uc_sigmask$LAYOUT;
-    }
-
-    private static final long uc_sigmask$OFFSET = 40;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * sigset_t uc_sigmask
-     * }
-     */
-    public static final long uc_sigmask$offset() {
-        return uc_sigmask$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * sigset_t uc_sigmask
-     * }
-     */
-    public static MemorySegment uc_sigmask(MemorySegment struct) {
-        return struct.asSlice(uc_sigmask$OFFSET, uc_sigmask$LAYOUT.byteSize());
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * sigset_t uc_sigmask
-     * }
-     */
-    public static void uc_sigmask(MemorySegment struct, MemorySegment fieldValue) {
-        MemorySegment.copy(fieldValue, 0L, struct, uc_sigmask$OFFSET, uc_sigmask$LAYOUT.byteSize());
-    }
-
     private static final GroupLayout uc_mcontext$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("uc_mcontext"));
 
     /**
@@ -233,7 +190,7 @@ public class ucontext_t {
         return uc_mcontext$LAYOUT;
     }
 
-    private static final long uc_mcontext$OFFSET = 176;
+    private static final long uc_mcontext$OFFSET = $LAYOUT.byteOffset(groupElement("uc_mcontext"));
 
     /**
      * Offset for field:
@@ -265,6 +222,171 @@ public class ucontext_t {
         MemorySegment.copy(fieldValue, 0L, struct, uc_mcontext$OFFSET, uc_mcontext$LAYOUT.byteSize());
     }
 
+    private static final GroupLayout uc_sigmask$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("uc_sigmask"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * sigset_t uc_sigmask
+     * }
+     */
+    public static final GroupLayout uc_sigmask$layout() {
+        return uc_sigmask$LAYOUT;
+    }
+
+    private static final long uc_sigmask$OFFSET = $LAYOUT.byteOffset(groupElement("uc_sigmask"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * sigset_t uc_sigmask
+     * }
+     */
+    public static final long uc_sigmask$offset() {
+        return uc_sigmask$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * sigset_t uc_sigmask
+     * }
+     */
+    public static MemorySegment uc_sigmask(MemorySegment struct) {
+        return struct.asSlice(uc_sigmask$OFFSET, uc_sigmask$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * sigset_t uc_sigmask
+     * }
+     */
+    public static void uc_sigmask(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, uc_sigmask$OFFSET, uc_sigmask$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout __fpregs_mem$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("__fpregs_mem"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * struct _libc_fpstate __fpregs_mem
+     * }
+     */
+    public static final GroupLayout __fpregs_mem$layout() {
+        return __fpregs_mem$LAYOUT;
+    }
+
+    private static final long __fpregs_mem$OFFSET = $LAYOUT.byteOffset(groupElement("__fpregs_mem"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * struct _libc_fpstate __fpregs_mem
+     * }
+     */
+    public static final long __fpregs_mem$offset() {
+        return __fpregs_mem$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * struct _libc_fpstate __fpregs_mem
+     * }
+     */
+    public static MemorySegment __fpregs_mem(MemorySegment struct) {
+        return struct.asSlice(__fpregs_mem$OFFSET, __fpregs_mem$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * struct _libc_fpstate __fpregs_mem
+     * }
+     */
+    public static void __fpregs_mem(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, __fpregs_mem$OFFSET, __fpregs_mem$LAYOUT.byteSize());
+    }
+
+    private static final SequenceLayout __ssp$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("__ssp"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * unsigned long long __ssp[4]
+     * }
+     */
+    public static final SequenceLayout __ssp$layout() {
+        return __ssp$LAYOUT;
+    }
+
+    private static final long __ssp$OFFSET = $LAYOUT.byteOffset(groupElement("__ssp"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * unsigned long long __ssp[4]
+     * }
+     */
+    public static final long __ssp$offset() {
+        return __ssp$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * unsigned long long __ssp[4]
+     * }
+     */
+    public static MemorySegment __ssp(MemorySegment struct) {
+        return struct.asSlice(__ssp$OFFSET, __ssp$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * unsigned long long __ssp[4]
+     * }
+     */
+    public static void __ssp(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, __ssp$OFFSET, __ssp$LAYOUT.byteSize());
+    }
+
+    private static long[] __ssp$DIMS = { 4 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * unsigned long long __ssp[4]
+     * }
+     */
+    public static long[] __ssp$dimensions() {
+        return __ssp$DIMS;
+    }
+    private static final VarHandle __ssp$ELEM_HANDLE = __ssp$LAYOUT.varHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * unsigned long long __ssp[4]
+     * }
+     */
+    public static long __ssp(MemorySegment struct, long index0) {
+        return (long)__ssp$ELEM_HANDLE.get(struct, __ssp$OFFSET, index0);
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * unsigned long long __ssp[4]
+     * }
+     */
+    public static void __ssp(MemorySegment struct, long index0, long fieldValue) {
+        __ssp$ELEM_HANDLE.set(struct, __ssp$OFFSET, index0, fieldValue);
+    }
+
     /**
      * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
      * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
@@ -294,7 +416,7 @@ public class ucontext_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -302,7 +424,7 @@ public class ucontext_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

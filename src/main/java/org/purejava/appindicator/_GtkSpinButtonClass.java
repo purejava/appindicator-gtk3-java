@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -66,7 +62,7 @@ public class _GtkSpinButtonClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -103,7 +99,11 @@ public class _GtkSpinButtonClass {
      * gint (*input)(GtkSpinButton *, gdouble *)
      * }
      */
-    public class input {
+    public final static class input {
+
+        private input() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -140,9 +140,11 @@ public class _GtkSpinButtonClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -161,7 +163,7 @@ public class _GtkSpinButtonClass {
         return input$LAYOUT;
     }
 
-    private static final long input$OFFSET = 976;
+    private static final long input$OFFSET = $LAYOUT.byteOffset(groupElement("input"));
 
     /**
      * Offset for field:
@@ -198,7 +200,11 @@ public class _GtkSpinButtonClass {
      * gint (*output)(GtkSpinButton *)
      * }
      */
-    public class output {
+    public final static class output {
+
+        private output() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -234,9 +240,11 @@ public class _GtkSpinButtonClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -255,7 +263,7 @@ public class _GtkSpinButtonClass {
         return output$LAYOUT;
     }
 
-    private static final long output$OFFSET = 984;
+    private static final long output$OFFSET = $LAYOUT.byteOffset(groupElement("output"));
 
     /**
      * Offset for field:
@@ -292,7 +300,11 @@ public class _GtkSpinButtonClass {
      * void (*value_changed)(GtkSpinButton *)
      * }
      */
-    public class value_changed {
+    public final static class value_changed {
+
+        private value_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -327,9 +339,11 @@ public class _GtkSpinButtonClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -348,7 +362,7 @@ public class _GtkSpinButtonClass {
         return value_changed$LAYOUT;
     }
 
-    private static final long value_changed$OFFSET = 992;
+    private static final long value_changed$OFFSET = $LAYOUT.byteOffset(groupElement("value_changed"));
 
     /**
      * Offset for field:
@@ -385,7 +399,11 @@ public class _GtkSpinButtonClass {
      * void (*change_value)(GtkSpinButton *, GtkScrollType)
      * }
      */
-    public class change_value {
+    public final static class change_value {
+
+        private change_value() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -421,9 +439,11 @@ public class _GtkSpinButtonClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -442,7 +462,7 @@ public class _GtkSpinButtonClass {
         return change_value$LAYOUT;
     }
 
-    private static final long change_value$OFFSET = 1000;
+    private static final long change_value$OFFSET = $LAYOUT.byteOffset(groupElement("change_value"));
 
     /**
      * Offset for field:
@@ -479,7 +499,11 @@ public class _GtkSpinButtonClass {
      * void (*wrapped)(GtkSpinButton *)
      * }
      */
-    public class wrapped {
+    public final static class wrapped {
+
+        private wrapped() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -514,9 +538,11 @@ public class _GtkSpinButtonClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -535,7 +561,7 @@ public class _GtkSpinButtonClass {
         return wrapped$LAYOUT;
     }
 
-    private static final long wrapped$OFFSET = 1008;
+    private static final long wrapped$OFFSET = $LAYOUT.byteOffset(groupElement("wrapped"));
 
     /**
      * Offset for field:
@@ -572,7 +598,11 @@ public class _GtkSpinButtonClass {
      * void (*_gtk_reserved1)(void)
      * }
      */
-    public class _gtk_reserved1 {
+    public final static class _gtk_reserved1 {
+
+        private _gtk_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -608,6 +638,8 @@ public class _GtkSpinButtonClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -626,7 +658,7 @@ public class _GtkSpinButtonClass {
         return _gtk_reserved1$LAYOUT;
     }
 
-    private static final long _gtk_reserved1$OFFSET = 1016;
+    private static final long _gtk_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved1"));
 
     /**
      * Offset for field:
@@ -663,7 +695,11 @@ public class _GtkSpinButtonClass {
      * void (*_gtk_reserved2)(void)
      * }
      */
-    public class _gtk_reserved2 {
+    public final static class _gtk_reserved2 {
+
+        private _gtk_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -699,6 +735,8 @@ public class _GtkSpinButtonClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -717,7 +755,7 @@ public class _GtkSpinButtonClass {
         return _gtk_reserved2$LAYOUT;
     }
 
-    private static final long _gtk_reserved2$OFFSET = 1024;
+    private static final long _gtk_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved2"));
 
     /**
      * Offset for field:
@@ -754,7 +792,11 @@ public class _GtkSpinButtonClass {
      * void (*_gtk_reserved3)(void)
      * }
      */
-    public class _gtk_reserved3 {
+    public final static class _gtk_reserved3 {
+
+        private _gtk_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -790,6 +832,8 @@ public class _GtkSpinButtonClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -808,7 +852,7 @@ public class _GtkSpinButtonClass {
         return _gtk_reserved3$LAYOUT;
     }
 
-    private static final long _gtk_reserved3$OFFSET = 1032;
+    private static final long _gtk_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved3"));
 
     /**
      * Offset for field:
@@ -845,7 +889,11 @@ public class _GtkSpinButtonClass {
      * void (*_gtk_reserved4)(void)
      * }
      */
-    public class _gtk_reserved4 {
+    public final static class _gtk_reserved4 {
+
+        private _gtk_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -881,6 +929,8 @@ public class _GtkSpinButtonClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -899,7 +949,7 @@ public class _GtkSpinButtonClass {
         return _gtk_reserved4$LAYOUT;
     }
 
-    private static final long _gtk_reserved4$OFFSET = 1040;
+    private static final long _gtk_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved4"));
 
     /**
      * Offset for field:
@@ -960,7 +1010,7 @@ public class _GtkSpinButtonClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -968,7 +1018,7 @@ public class _GtkSpinButtonClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

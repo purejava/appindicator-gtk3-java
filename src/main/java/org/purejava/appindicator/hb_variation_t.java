@@ -2,15 +2,12 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfFloat;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -50,7 +47,7 @@ public class hb_variation_t {
         return tag$LAYOUT;
     }
 
-    private static final long tag$OFFSET = 0;
+    private static final long tag$OFFSET = $LAYOUT.byteOffset(groupElement("tag"));
 
     /**
      * Offset for field:
@@ -94,7 +91,7 @@ public class hb_variation_t {
         return value$LAYOUT;
     }
 
-    private static final long value$OFFSET = 4;
+    private static final long value$OFFSET = $LAYOUT.byteOffset(groupElement("value"));
 
     /**
      * Offset for field:
@@ -155,7 +152,7 @@ public class hb_variation_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -163,7 +160,7 @@ public class hb_variation_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

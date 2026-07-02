@@ -48,7 +48,7 @@ public class _GString {
         return str$LAYOUT;
     }
 
-    private static final long str$OFFSET = 0;
+    private static final long str$OFFSET = $LAYOUT.byteOffset(groupElement("str"));
 
     /**
      * Offset for field:
@@ -92,7 +92,7 @@ public class _GString {
         return len$LAYOUT;
     }
 
-    private static final long len$OFFSET = 8;
+    private static final long len$OFFSET = $LAYOUT.byteOffset(groupElement("len"));
 
     /**
      * Offset for field:
@@ -136,7 +136,7 @@ public class _GString {
         return allocated_len$LAYOUT;
     }
 
-    private static final long allocated_len$OFFSET = 16;
+    private static final long allocated_len$OFFSET = $LAYOUT.byteOffset(groupElement("allocated_len"));
 
     /**
      * Offset for field:
@@ -197,7 +197,7 @@ public class _GString {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -205,7 +205,7 @@ public class _GString {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -13,7 +13,11 @@ import java.lang.invoke.MethodHandle;
  * typedef void (*GFunc)(gpointer, gpointer)
  * }
  */
-public class GFunc {
+public final class GFunc {
+
+    private GFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -49,9 +53,11 @@ public class GFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment data, MemorySegment user_data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment data, MemorySegment user_data) {
         try {
              DOWN$MH.invokeExact(funcPtr, data, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

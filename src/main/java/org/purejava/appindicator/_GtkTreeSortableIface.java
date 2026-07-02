@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -60,7 +56,7 @@ public class _GtkTreeSortableIface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -97,7 +93,11 @@ public class _GtkTreeSortableIface {
      * void (*sort_column_changed)(GtkTreeSortable *)
      * }
      */
-    public class sort_column_changed {
+    public final static class sort_column_changed {
+
+        private sort_column_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -132,9 +132,11 @@ public class _GtkTreeSortableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -153,7 +155,7 @@ public class _GtkTreeSortableIface {
         return sort_column_changed$LAYOUT;
     }
 
-    private static final long sort_column_changed$OFFSET = 16;
+    private static final long sort_column_changed$OFFSET = $LAYOUT.byteOffset(groupElement("sort_column_changed"));
 
     /**
      * Offset for field:
@@ -190,7 +192,11 @@ public class _GtkTreeSortableIface {
      * gboolean (*get_sort_column_id)(GtkTreeSortable *, gint *, GtkSortType *)
      * }
      */
-    public class get_sort_column_id {
+    public final static class get_sort_column_id {
+
+        private get_sort_column_id() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -228,9 +234,11 @@ public class _GtkTreeSortableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -249,7 +257,7 @@ public class _GtkTreeSortableIface {
         return get_sort_column_id$LAYOUT;
     }
 
-    private static final long get_sort_column_id$OFFSET = 24;
+    private static final long get_sort_column_id$OFFSET = $LAYOUT.byteOffset(groupElement("get_sort_column_id"));
 
     /**
      * Offset for field:
@@ -286,7 +294,11 @@ public class _GtkTreeSortableIface {
      * void (*set_sort_column_id)(GtkTreeSortable *, gint, GtkSortType)
      * }
      */
-    public class set_sort_column_id {
+    public final static class set_sort_column_id {
+
+        private set_sort_column_id() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -323,9 +335,11 @@ public class _GtkTreeSortableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -344,7 +358,7 @@ public class _GtkTreeSortableIface {
         return set_sort_column_id$LAYOUT;
     }
 
-    private static final long set_sort_column_id$OFFSET = 32;
+    private static final long set_sort_column_id$OFFSET = $LAYOUT.byteOffset(groupElement("set_sort_column_id"));
 
     /**
      * Offset for field:
@@ -381,7 +395,11 @@ public class _GtkTreeSortableIface {
      * void (*set_sort_func)(GtkTreeSortable *, gint, GtkTreeIterCompareFunc, gpointer, GDestroyNotify)
      * }
      */
-    public class set_sort_func {
+    public final static class set_sort_func {
+
+        private set_sort_func() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -420,9 +438,11 @@ public class _GtkTreeSortableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -441,7 +461,7 @@ public class _GtkTreeSortableIface {
         return set_sort_func$LAYOUT;
     }
 
-    private static final long set_sort_func$OFFSET = 40;
+    private static final long set_sort_func$OFFSET = $LAYOUT.byteOffset(groupElement("set_sort_func"));
 
     /**
      * Offset for field:
@@ -478,7 +498,11 @@ public class _GtkTreeSortableIface {
      * void (*set_default_sort_func)(GtkTreeSortable *, GtkTreeIterCompareFunc, gpointer, GDestroyNotify)
      * }
      */
-    public class set_default_sort_func {
+    public final static class set_default_sort_func {
+
+        private set_default_sort_func() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -516,9 +540,11 @@ public class _GtkTreeSortableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -537,7 +563,7 @@ public class _GtkTreeSortableIface {
         return set_default_sort_func$LAYOUT;
     }
 
-    private static final long set_default_sort_func$OFFSET = 48;
+    private static final long set_default_sort_func$OFFSET = $LAYOUT.byteOffset(groupElement("set_default_sort_func"));
 
     /**
      * Offset for field:
@@ -574,7 +600,11 @@ public class _GtkTreeSortableIface {
      * gboolean (*has_default_sort_func)(GtkTreeSortable *)
      * }
      */
-    public class has_default_sort_func {
+    public final static class has_default_sort_func {
+
+        private has_default_sort_func() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -610,9 +640,11 @@ public class _GtkTreeSortableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -631,7 +663,7 @@ public class _GtkTreeSortableIface {
         return has_default_sort_func$LAYOUT;
     }
 
-    private static final long has_default_sort_func$OFFSET = 56;
+    private static final long has_default_sort_func$OFFSET = $LAYOUT.byteOffset(groupElement("has_default_sort_func"));
 
     /**
      * Offset for field:
@@ -692,7 +724,7 @@ public class _GtkTreeSortableIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -700,7 +732,7 @@ public class _GtkTreeSortableIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

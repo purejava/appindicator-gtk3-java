@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -98,7 +94,7 @@ public class _GVolumeMonitorClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -135,7 +131,11 @@ public class _GVolumeMonitorClass {
      * void (*volume_added)(GVolumeMonitor *, GVolume *)
      * }
      */
-    public class volume_added {
+    public final static class volume_added {
+
+        private volume_added() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -171,9 +171,11 @@ public class _GVolumeMonitorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -192,7 +194,7 @@ public class _GVolumeMonitorClass {
         return volume_added$LAYOUT;
     }
 
-    private static final long volume_added$OFFSET = 136;
+    private static final long volume_added$OFFSET = $LAYOUT.byteOffset(groupElement("volume_added"));
 
     /**
      * Offset for field:
@@ -229,7 +231,11 @@ public class _GVolumeMonitorClass {
      * void (*volume_removed)(GVolumeMonitor *, GVolume *)
      * }
      */
-    public class volume_removed {
+    public final static class volume_removed {
+
+        private volume_removed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -265,9 +271,11 @@ public class _GVolumeMonitorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -286,7 +294,7 @@ public class _GVolumeMonitorClass {
         return volume_removed$LAYOUT;
     }
 
-    private static final long volume_removed$OFFSET = 144;
+    private static final long volume_removed$OFFSET = $LAYOUT.byteOffset(groupElement("volume_removed"));
 
     /**
      * Offset for field:
@@ -323,7 +331,11 @@ public class _GVolumeMonitorClass {
      * void (*volume_changed)(GVolumeMonitor *, GVolume *)
      * }
      */
-    public class volume_changed {
+    public final static class volume_changed {
+
+        private volume_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -359,9 +371,11 @@ public class _GVolumeMonitorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -380,7 +394,7 @@ public class _GVolumeMonitorClass {
         return volume_changed$LAYOUT;
     }
 
-    private static final long volume_changed$OFFSET = 152;
+    private static final long volume_changed$OFFSET = $LAYOUT.byteOffset(groupElement("volume_changed"));
 
     /**
      * Offset for field:
@@ -417,7 +431,11 @@ public class _GVolumeMonitorClass {
      * void (*mount_added)(GVolumeMonitor *, GMount *)
      * }
      */
-    public class mount_added {
+    public final static class mount_added {
+
+        private mount_added() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -453,9 +471,11 @@ public class _GVolumeMonitorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -474,7 +494,7 @@ public class _GVolumeMonitorClass {
         return mount_added$LAYOUT;
     }
 
-    private static final long mount_added$OFFSET = 160;
+    private static final long mount_added$OFFSET = $LAYOUT.byteOffset(groupElement("mount_added"));
 
     /**
      * Offset for field:
@@ -511,7 +531,11 @@ public class _GVolumeMonitorClass {
      * void (*mount_removed)(GVolumeMonitor *, GMount *)
      * }
      */
-    public class mount_removed {
+    public final static class mount_removed {
+
+        private mount_removed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -547,9 +571,11 @@ public class _GVolumeMonitorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -568,7 +594,7 @@ public class _GVolumeMonitorClass {
         return mount_removed$LAYOUT;
     }
 
-    private static final long mount_removed$OFFSET = 168;
+    private static final long mount_removed$OFFSET = $LAYOUT.byteOffset(groupElement("mount_removed"));
 
     /**
      * Offset for field:
@@ -605,7 +631,11 @@ public class _GVolumeMonitorClass {
      * void (*mount_pre_unmount)(GVolumeMonitor *, GMount *)
      * }
      */
-    public class mount_pre_unmount {
+    public final static class mount_pre_unmount {
+
+        private mount_pre_unmount() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -641,9 +671,11 @@ public class _GVolumeMonitorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -662,7 +694,7 @@ public class _GVolumeMonitorClass {
         return mount_pre_unmount$LAYOUT;
     }
 
-    private static final long mount_pre_unmount$OFFSET = 176;
+    private static final long mount_pre_unmount$OFFSET = $LAYOUT.byteOffset(groupElement("mount_pre_unmount"));
 
     /**
      * Offset for field:
@@ -699,7 +731,11 @@ public class _GVolumeMonitorClass {
      * void (*mount_changed)(GVolumeMonitor *, GMount *)
      * }
      */
-    public class mount_changed {
+    public final static class mount_changed {
+
+        private mount_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -735,9 +771,11 @@ public class _GVolumeMonitorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -756,7 +794,7 @@ public class _GVolumeMonitorClass {
         return mount_changed$LAYOUT;
     }
 
-    private static final long mount_changed$OFFSET = 184;
+    private static final long mount_changed$OFFSET = $LAYOUT.byteOffset(groupElement("mount_changed"));
 
     /**
      * Offset for field:
@@ -793,7 +831,11 @@ public class _GVolumeMonitorClass {
      * void (*drive_connected)(GVolumeMonitor *, GDrive *)
      * }
      */
-    public class drive_connected {
+    public final static class drive_connected {
+
+        private drive_connected() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -829,9 +871,11 @@ public class _GVolumeMonitorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -850,7 +894,7 @@ public class _GVolumeMonitorClass {
         return drive_connected$LAYOUT;
     }
 
-    private static final long drive_connected$OFFSET = 192;
+    private static final long drive_connected$OFFSET = $LAYOUT.byteOffset(groupElement("drive_connected"));
 
     /**
      * Offset for field:
@@ -887,7 +931,11 @@ public class _GVolumeMonitorClass {
      * void (*drive_disconnected)(GVolumeMonitor *, GDrive *)
      * }
      */
-    public class drive_disconnected {
+    public final static class drive_disconnected {
+
+        private drive_disconnected() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -923,9 +971,11 @@ public class _GVolumeMonitorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -944,7 +994,7 @@ public class _GVolumeMonitorClass {
         return drive_disconnected$LAYOUT;
     }
 
-    private static final long drive_disconnected$OFFSET = 200;
+    private static final long drive_disconnected$OFFSET = $LAYOUT.byteOffset(groupElement("drive_disconnected"));
 
     /**
      * Offset for field:
@@ -981,7 +1031,11 @@ public class _GVolumeMonitorClass {
      * void (*drive_changed)(GVolumeMonitor *, GDrive *)
      * }
      */
-    public class drive_changed {
+    public final static class drive_changed {
+
+        private drive_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1017,9 +1071,11 @@ public class _GVolumeMonitorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1038,7 +1094,7 @@ public class _GVolumeMonitorClass {
         return drive_changed$LAYOUT;
     }
 
-    private static final long drive_changed$OFFSET = 208;
+    private static final long drive_changed$OFFSET = $LAYOUT.byteOffset(groupElement("drive_changed"));
 
     /**
      * Offset for field:
@@ -1075,7 +1131,11 @@ public class _GVolumeMonitorClass {
      * gboolean (*is_supported)(void)
      * }
      */
-    public class is_supported {
+    public final static class is_supported {
+
+        private is_supported() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1112,6 +1172,8 @@ public class _GVolumeMonitorClass {
         public static int invoke(MemorySegment funcPtr) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1130,7 +1192,7 @@ public class _GVolumeMonitorClass {
         return is_supported$LAYOUT;
     }
 
-    private static final long is_supported$OFFSET = 216;
+    private static final long is_supported$OFFSET = $LAYOUT.byteOffset(groupElement("is_supported"));
 
     /**
      * Offset for field:
@@ -1167,7 +1229,11 @@ public class _GVolumeMonitorClass {
      * GList *(*get_connected_drives)(GVolumeMonitor *)
      * }
      */
-    public class get_connected_drives {
+    public final static class get_connected_drives {
+
+        private get_connected_drives() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1203,9 +1269,11 @@ public class _GVolumeMonitorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1224,7 +1292,7 @@ public class _GVolumeMonitorClass {
         return get_connected_drives$LAYOUT;
     }
 
-    private static final long get_connected_drives$OFFSET = 224;
+    private static final long get_connected_drives$OFFSET = $LAYOUT.byteOffset(groupElement("get_connected_drives"));
 
     /**
      * Offset for field:
@@ -1261,7 +1329,11 @@ public class _GVolumeMonitorClass {
      * GList *(*get_volumes)(GVolumeMonitor *)
      * }
      */
-    public class get_volumes {
+    public final static class get_volumes {
+
+        private get_volumes() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1297,9 +1369,11 @@ public class _GVolumeMonitorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1318,7 +1392,7 @@ public class _GVolumeMonitorClass {
         return get_volumes$LAYOUT;
     }
 
-    private static final long get_volumes$OFFSET = 232;
+    private static final long get_volumes$OFFSET = $LAYOUT.byteOffset(groupElement("get_volumes"));
 
     /**
      * Offset for field:
@@ -1355,7 +1429,11 @@ public class _GVolumeMonitorClass {
      * GList *(*get_mounts)(GVolumeMonitor *)
      * }
      */
-    public class get_mounts {
+    public final static class get_mounts {
+
+        private get_mounts() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1391,9 +1469,11 @@ public class _GVolumeMonitorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1412,7 +1492,7 @@ public class _GVolumeMonitorClass {
         return get_mounts$LAYOUT;
     }
 
-    private static final long get_mounts$OFFSET = 240;
+    private static final long get_mounts$OFFSET = $LAYOUT.byteOffset(groupElement("get_mounts"));
 
     /**
      * Offset for field:
@@ -1449,7 +1529,11 @@ public class _GVolumeMonitorClass {
      * GVolume *(*get_volume_for_uuid)(GVolumeMonitor *, const char *)
      * }
      */
-    public class get_volume_for_uuid {
+    public final static class get_volume_for_uuid {
+
+        private get_volume_for_uuid() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1486,9 +1570,11 @@ public class _GVolumeMonitorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1507,7 +1593,7 @@ public class _GVolumeMonitorClass {
         return get_volume_for_uuid$LAYOUT;
     }
 
-    private static final long get_volume_for_uuid$OFFSET = 248;
+    private static final long get_volume_for_uuid$OFFSET = $LAYOUT.byteOffset(groupElement("get_volume_for_uuid"));
 
     /**
      * Offset for field:
@@ -1544,7 +1630,11 @@ public class _GVolumeMonitorClass {
      * GMount *(*get_mount_for_uuid)(GVolumeMonitor *, const char *)
      * }
      */
-    public class get_mount_for_uuid {
+    public final static class get_mount_for_uuid {
+
+        private get_mount_for_uuid() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1581,9 +1671,11 @@ public class _GVolumeMonitorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1602,7 +1694,7 @@ public class _GVolumeMonitorClass {
         return get_mount_for_uuid$LAYOUT;
     }
 
-    private static final long get_mount_for_uuid$OFFSET = 256;
+    private static final long get_mount_for_uuid$OFFSET = $LAYOUT.byteOffset(groupElement("get_mount_for_uuid"));
 
     /**
      * Offset for field:
@@ -1639,7 +1731,11 @@ public class _GVolumeMonitorClass {
      * GVolume *(*adopt_orphan_mount)(GMount *, GVolumeMonitor *)
      * }
      */
-    public class adopt_orphan_mount {
+    public final static class adopt_orphan_mount {
+
+        private adopt_orphan_mount() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1676,9 +1772,11 @@ public class _GVolumeMonitorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1697,7 +1795,7 @@ public class _GVolumeMonitorClass {
         return adopt_orphan_mount$LAYOUT;
     }
 
-    private static final long adopt_orphan_mount$OFFSET = 264;
+    private static final long adopt_orphan_mount$OFFSET = $LAYOUT.byteOffset(groupElement("adopt_orphan_mount"));
 
     /**
      * Offset for field:
@@ -1734,7 +1832,11 @@ public class _GVolumeMonitorClass {
      * void (*drive_eject_button)(GVolumeMonitor *, GDrive *)
      * }
      */
-    public class drive_eject_button {
+    public final static class drive_eject_button {
+
+        private drive_eject_button() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1770,9 +1872,11 @@ public class _GVolumeMonitorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1791,7 +1895,7 @@ public class _GVolumeMonitorClass {
         return drive_eject_button$LAYOUT;
     }
 
-    private static final long drive_eject_button$OFFSET = 272;
+    private static final long drive_eject_button$OFFSET = $LAYOUT.byteOffset(groupElement("drive_eject_button"));
 
     /**
      * Offset for field:
@@ -1828,7 +1932,11 @@ public class _GVolumeMonitorClass {
      * void (*drive_stop_button)(GVolumeMonitor *, GDrive *)
      * }
      */
-    public class drive_stop_button {
+    public final static class drive_stop_button {
+
+        private drive_stop_button() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1864,9 +1972,11 @@ public class _GVolumeMonitorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1885,7 +1995,7 @@ public class _GVolumeMonitorClass {
         return drive_stop_button$LAYOUT;
     }
 
-    private static final long drive_stop_button$OFFSET = 280;
+    private static final long drive_stop_button$OFFSET = $LAYOUT.byteOffset(groupElement("drive_stop_button"));
 
     /**
      * Offset for field:
@@ -1922,7 +2032,11 @@ public class _GVolumeMonitorClass {
      * void (*_g_reserved1)(void)
      * }
      */
-    public class _g_reserved1 {
+    public final static class _g_reserved1 {
+
+        private _g_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1958,6 +2072,8 @@ public class _GVolumeMonitorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1976,7 +2092,7 @@ public class _GVolumeMonitorClass {
         return _g_reserved1$LAYOUT;
     }
 
-    private static final long _g_reserved1$OFFSET = 288;
+    private static final long _g_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved1"));
 
     /**
      * Offset for field:
@@ -2013,7 +2129,11 @@ public class _GVolumeMonitorClass {
      * void (*_g_reserved2)(void)
      * }
      */
-    public class _g_reserved2 {
+    public final static class _g_reserved2 {
+
+        private _g_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2049,6 +2169,8 @@ public class _GVolumeMonitorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2067,7 +2189,7 @@ public class _GVolumeMonitorClass {
         return _g_reserved2$LAYOUT;
     }
 
-    private static final long _g_reserved2$OFFSET = 296;
+    private static final long _g_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved2"));
 
     /**
      * Offset for field:
@@ -2104,7 +2226,11 @@ public class _GVolumeMonitorClass {
      * void (*_g_reserved3)(void)
      * }
      */
-    public class _g_reserved3 {
+    public final static class _g_reserved3 {
+
+        private _g_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2140,6 +2266,8 @@ public class _GVolumeMonitorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2158,7 +2286,7 @@ public class _GVolumeMonitorClass {
         return _g_reserved3$LAYOUT;
     }
 
-    private static final long _g_reserved3$OFFSET = 304;
+    private static final long _g_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved3"));
 
     /**
      * Offset for field:
@@ -2195,7 +2323,11 @@ public class _GVolumeMonitorClass {
      * void (*_g_reserved4)(void)
      * }
      */
-    public class _g_reserved4 {
+    public final static class _g_reserved4 {
+
+        private _g_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2231,6 +2363,8 @@ public class _GVolumeMonitorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2249,7 +2383,7 @@ public class _GVolumeMonitorClass {
         return _g_reserved4$LAYOUT;
     }
 
-    private static final long _g_reserved4$OFFSET = 312;
+    private static final long _g_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved4"));
 
     /**
      * Offset for field:
@@ -2286,7 +2420,11 @@ public class _GVolumeMonitorClass {
      * void (*_g_reserved5)(void)
      * }
      */
-    public class _g_reserved5 {
+    public final static class _g_reserved5 {
+
+        private _g_reserved5() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2322,6 +2460,8 @@ public class _GVolumeMonitorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2340,7 +2480,7 @@ public class _GVolumeMonitorClass {
         return _g_reserved5$LAYOUT;
     }
 
-    private static final long _g_reserved5$OFFSET = 320;
+    private static final long _g_reserved5$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved5"));
 
     /**
      * Offset for field:
@@ -2377,7 +2517,11 @@ public class _GVolumeMonitorClass {
      * void (*_g_reserved6)(void)
      * }
      */
-    public class _g_reserved6 {
+    public final static class _g_reserved6 {
+
+        private _g_reserved6() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2413,6 +2557,8 @@ public class _GVolumeMonitorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2431,7 +2577,7 @@ public class _GVolumeMonitorClass {
         return _g_reserved6$LAYOUT;
     }
 
-    private static final long _g_reserved6$OFFSET = 328;
+    private static final long _g_reserved6$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved6"));
 
     /**
      * Offset for field:
@@ -2492,7 +2638,7 @@ public class _GVolumeMonitorClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -2500,7 +2646,7 @@ public class _GVolumeMonitorClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

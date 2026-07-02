@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
@@ -72,7 +68,7 @@ public class _GdkEventButton {
         return type$LAYOUT;
     }
 
-    private static final long type$OFFSET = 0;
+    private static final long type$OFFSET = $LAYOUT.byteOffset(groupElement("type"));
 
     /**
      * Offset for field:
@@ -116,7 +112,7 @@ public class _GdkEventButton {
         return window$LAYOUT;
     }
 
-    private static final long window$OFFSET = 8;
+    private static final long window$OFFSET = $LAYOUT.byteOffset(groupElement("window"));
 
     /**
      * Offset for field:
@@ -160,7 +156,7 @@ public class _GdkEventButton {
         return send_event$LAYOUT;
     }
 
-    private static final long send_event$OFFSET = 16;
+    private static final long send_event$OFFSET = $LAYOUT.byteOffset(groupElement("send_event"));
 
     /**
      * Offset for field:
@@ -204,7 +200,7 @@ public class _GdkEventButton {
         return time$LAYOUT;
     }
 
-    private static final long time$OFFSET = 20;
+    private static final long time$OFFSET = $LAYOUT.byteOffset(groupElement("time"));
 
     /**
      * Offset for field:
@@ -248,7 +244,7 @@ public class _GdkEventButton {
         return x$LAYOUT;
     }
 
-    private static final long x$OFFSET = 24;
+    private static final long x$OFFSET = $LAYOUT.byteOffset(groupElement("x"));
 
     /**
      * Offset for field:
@@ -292,7 +288,7 @@ public class _GdkEventButton {
         return y$LAYOUT;
     }
 
-    private static final long y$OFFSET = 32;
+    private static final long y$OFFSET = $LAYOUT.byteOffset(groupElement("y"));
 
     /**
      * Offset for field:
@@ -336,7 +332,7 @@ public class _GdkEventButton {
         return axes$LAYOUT;
     }
 
-    private static final long axes$OFFSET = 40;
+    private static final long axes$OFFSET = $LAYOUT.byteOffset(groupElement("axes"));
 
     /**
      * Offset for field:
@@ -380,7 +376,7 @@ public class _GdkEventButton {
         return state$LAYOUT;
     }
 
-    private static final long state$OFFSET = 48;
+    private static final long state$OFFSET = $LAYOUT.byteOffset(groupElement("state"));
 
     /**
      * Offset for field:
@@ -424,7 +420,7 @@ public class _GdkEventButton {
         return button$LAYOUT;
     }
 
-    private static final long button$OFFSET = 52;
+    private static final long button$OFFSET = $LAYOUT.byteOffset(groupElement("button"));
 
     /**
      * Offset for field:
@@ -468,7 +464,7 @@ public class _GdkEventButton {
         return device$LAYOUT;
     }
 
-    private static final long device$OFFSET = 56;
+    private static final long device$OFFSET = $LAYOUT.byteOffset(groupElement("device"));
 
     /**
      * Offset for field:
@@ -512,7 +508,7 @@ public class _GdkEventButton {
         return x_root$LAYOUT;
     }
 
-    private static final long x_root$OFFSET = 64;
+    private static final long x_root$OFFSET = $LAYOUT.byteOffset(groupElement("x_root"));
 
     /**
      * Offset for field:
@@ -556,7 +552,7 @@ public class _GdkEventButton {
         return y_root$LAYOUT;
     }
 
-    private static final long y_root$OFFSET = 72;
+    private static final long y_root$OFFSET = $LAYOUT.byteOffset(groupElement("y_root"));
 
     /**
      * Offset for field:
@@ -617,7 +613,7 @@ public class _GdkEventButton {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -625,7 +621,7 @@ public class _GdkEventButton {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

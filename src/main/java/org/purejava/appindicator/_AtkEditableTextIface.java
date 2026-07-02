@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -62,7 +58,7 @@ public class _AtkEditableTextIface {
         return parent_interface$LAYOUT;
     }
 
-    private static final long parent_interface$OFFSET = 0;
+    private static final long parent_interface$OFFSET = $LAYOUT.byteOffset(groupElement("parent_interface"));
 
     /**
      * Offset for field:
@@ -99,7 +95,11 @@ public class _AtkEditableTextIface {
      * gboolean (*set_run_attributes)(AtkEditableText *, AtkAttributeSet *, gint, gint)
      * }
      */
-    public class set_run_attributes {
+    public final static class set_run_attributes {
+
+        private set_run_attributes() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -138,9 +138,11 @@ public class _AtkEditableTextIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -159,7 +161,7 @@ public class _AtkEditableTextIface {
         return set_run_attributes$LAYOUT;
     }
 
-    private static final long set_run_attributes$OFFSET = 16;
+    private static final long set_run_attributes$OFFSET = $LAYOUT.byteOffset(groupElement("set_run_attributes"));
 
     /**
      * Offset for field:
@@ -196,7 +198,11 @@ public class _AtkEditableTextIface {
      * void (*set_text_contents)(AtkEditableText *, const gchar *)
      * }
      */
-    public class set_text_contents {
+    public final static class set_text_contents {
+
+        private set_text_contents() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -232,9 +238,11 @@ public class _AtkEditableTextIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -253,7 +261,7 @@ public class _AtkEditableTextIface {
         return set_text_contents$LAYOUT;
     }
 
-    private static final long set_text_contents$OFFSET = 24;
+    private static final long set_text_contents$OFFSET = $LAYOUT.byteOffset(groupElement("set_text_contents"));
 
     /**
      * Offset for field:
@@ -290,7 +298,11 @@ public class _AtkEditableTextIface {
      * void (*insert_text)(AtkEditableText *, const gchar *, gint, gint *)
      * }
      */
-    public class insert_text {
+    public final static class insert_text {
+
+        private insert_text() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -328,9 +340,11 @@ public class _AtkEditableTextIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -349,7 +363,7 @@ public class _AtkEditableTextIface {
         return insert_text$LAYOUT;
     }
 
-    private static final long insert_text$OFFSET = 32;
+    private static final long insert_text$OFFSET = $LAYOUT.byteOffset(groupElement("insert_text"));
 
     /**
      * Offset for field:
@@ -386,7 +400,11 @@ public class _AtkEditableTextIface {
      * void (*copy_text)(AtkEditableText *, gint, gint)
      * }
      */
-    public class copy_text {
+    public final static class copy_text {
+
+        private copy_text() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -423,9 +441,11 @@ public class _AtkEditableTextIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -444,7 +464,7 @@ public class _AtkEditableTextIface {
         return copy_text$LAYOUT;
     }
 
-    private static final long copy_text$OFFSET = 40;
+    private static final long copy_text$OFFSET = $LAYOUT.byteOffset(groupElement("copy_text"));
 
     /**
      * Offset for field:
@@ -481,7 +501,11 @@ public class _AtkEditableTextIface {
      * void (*cut_text)(AtkEditableText *, gint, gint)
      * }
      */
-    public class cut_text {
+    public final static class cut_text {
+
+        private cut_text() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -518,9 +542,11 @@ public class _AtkEditableTextIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -539,7 +565,7 @@ public class _AtkEditableTextIface {
         return cut_text$LAYOUT;
     }
 
-    private static final long cut_text$OFFSET = 48;
+    private static final long cut_text$OFFSET = $LAYOUT.byteOffset(groupElement("cut_text"));
 
     /**
      * Offset for field:
@@ -576,7 +602,11 @@ public class _AtkEditableTextIface {
      * void (*delete_text)(AtkEditableText *, gint, gint)
      * }
      */
-    public class delete_text {
+    public final static class delete_text {
+
+        private delete_text() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -613,9 +643,11 @@ public class _AtkEditableTextIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -634,7 +666,7 @@ public class _AtkEditableTextIface {
         return delete_text$LAYOUT;
     }
 
-    private static final long delete_text$OFFSET = 56;
+    private static final long delete_text$OFFSET = $LAYOUT.byteOffset(groupElement("delete_text"));
 
     /**
      * Offset for field:
@@ -671,7 +703,11 @@ public class _AtkEditableTextIface {
      * void (*paste_text)(AtkEditableText *, gint)
      * }
      */
-    public class paste_text {
+    public final static class paste_text {
+
+        private paste_text() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -707,9 +743,11 @@ public class _AtkEditableTextIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -728,7 +766,7 @@ public class _AtkEditableTextIface {
         return paste_text$LAYOUT;
     }
 
-    private static final long paste_text$OFFSET = 64;
+    private static final long paste_text$OFFSET = $LAYOUT.byteOffset(groupElement("paste_text"));
 
     /**
      * Offset for field:
@@ -789,7 +827,7 @@ public class _AtkEditableTextIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -797,7 +835,7 @@ public class _AtkEditableTextIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

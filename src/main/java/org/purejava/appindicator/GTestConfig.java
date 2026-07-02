@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -37,7 +33,7 @@ public class GTestConfig {
         app_indicator_h.C_INT.withName("test_verbose"),
         app_indicator_h.C_INT.withName("test_quiet"),
         app_indicator_h.C_INT.withName("test_undefined")
-    ).withName("$anon$649:9");
+    ).withName("$anon$689:9");
 
     /**
      * The layout of this struct
@@ -58,7 +54,7 @@ public class GTestConfig {
         return test_initialized$LAYOUT;
     }
 
-    private static final long test_initialized$OFFSET = 0;
+    private static final long test_initialized$OFFSET = $LAYOUT.byteOffset(groupElement("test_initialized"));
 
     /**
      * Offset for field:
@@ -102,7 +98,7 @@ public class GTestConfig {
         return test_quick$LAYOUT;
     }
 
-    private static final long test_quick$OFFSET = 4;
+    private static final long test_quick$OFFSET = $LAYOUT.byteOffset(groupElement("test_quick"));
 
     /**
      * Offset for field:
@@ -146,7 +142,7 @@ public class GTestConfig {
         return test_perf$LAYOUT;
     }
 
-    private static final long test_perf$OFFSET = 8;
+    private static final long test_perf$OFFSET = $LAYOUT.byteOffset(groupElement("test_perf"));
 
     /**
      * Offset for field:
@@ -190,7 +186,7 @@ public class GTestConfig {
         return test_verbose$LAYOUT;
     }
 
-    private static final long test_verbose$OFFSET = 12;
+    private static final long test_verbose$OFFSET = $LAYOUT.byteOffset(groupElement("test_verbose"));
 
     /**
      * Offset for field:
@@ -234,7 +230,7 @@ public class GTestConfig {
         return test_quiet$LAYOUT;
     }
 
-    private static final long test_quiet$OFFSET = 16;
+    private static final long test_quiet$OFFSET = $LAYOUT.byteOffset(groupElement("test_quiet"));
 
     /**
      * Offset for field:
@@ -278,7 +274,7 @@ public class GTestConfig {
         return test_undefined$LAYOUT;
     }
 
-    private static final long test_undefined$OFFSET = 20;
+    private static final long test_undefined$OFFSET = $LAYOUT.byteOffset(groupElement("test_undefined"));
 
     /**
      * Offset for field:
@@ -339,7 +335,7 @@ public class GTestConfig {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -347,7 +343,7 @@ public class GTestConfig {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

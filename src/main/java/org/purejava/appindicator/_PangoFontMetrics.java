@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -66,7 +62,7 @@ public class _PangoFontMetrics {
         return ref_count$LAYOUT;
     }
 
-    private static final long ref_count$OFFSET = 0;
+    private static final long ref_count$OFFSET = $LAYOUT.byteOffset(groupElement("ref_count"));
 
     /**
      * Offset for field:
@@ -110,7 +106,7 @@ public class _PangoFontMetrics {
         return ascent$LAYOUT;
     }
 
-    private static final long ascent$OFFSET = 4;
+    private static final long ascent$OFFSET = $LAYOUT.byteOffset(groupElement("ascent"));
 
     /**
      * Offset for field:
@@ -154,7 +150,7 @@ public class _PangoFontMetrics {
         return descent$LAYOUT;
     }
 
-    private static final long descent$OFFSET = 8;
+    private static final long descent$OFFSET = $LAYOUT.byteOffset(groupElement("descent"));
 
     /**
      * Offset for field:
@@ -198,7 +194,7 @@ public class _PangoFontMetrics {
         return height$LAYOUT;
     }
 
-    private static final long height$OFFSET = 12;
+    private static final long height$OFFSET = $LAYOUT.byteOffset(groupElement("height"));
 
     /**
      * Offset for field:
@@ -242,7 +238,7 @@ public class _PangoFontMetrics {
         return approximate_char_width$LAYOUT;
     }
 
-    private static final long approximate_char_width$OFFSET = 16;
+    private static final long approximate_char_width$OFFSET = $LAYOUT.byteOffset(groupElement("approximate_char_width"));
 
     /**
      * Offset for field:
@@ -286,7 +282,7 @@ public class _PangoFontMetrics {
         return approximate_digit_width$LAYOUT;
     }
 
-    private static final long approximate_digit_width$OFFSET = 20;
+    private static final long approximate_digit_width$OFFSET = $LAYOUT.byteOffset(groupElement("approximate_digit_width"));
 
     /**
      * Offset for field:
@@ -330,7 +326,7 @@ public class _PangoFontMetrics {
         return underline_position$LAYOUT;
     }
 
-    private static final long underline_position$OFFSET = 24;
+    private static final long underline_position$OFFSET = $LAYOUT.byteOffset(groupElement("underline_position"));
 
     /**
      * Offset for field:
@@ -374,7 +370,7 @@ public class _PangoFontMetrics {
         return underline_thickness$LAYOUT;
     }
 
-    private static final long underline_thickness$OFFSET = 28;
+    private static final long underline_thickness$OFFSET = $LAYOUT.byteOffset(groupElement("underline_thickness"));
 
     /**
      * Offset for field:
@@ -418,7 +414,7 @@ public class _PangoFontMetrics {
         return strikethrough_position$LAYOUT;
     }
 
-    private static final long strikethrough_position$OFFSET = 32;
+    private static final long strikethrough_position$OFFSET = $LAYOUT.byteOffset(groupElement("strikethrough_position"));
 
     /**
      * Offset for field:
@@ -462,7 +458,7 @@ public class _PangoFontMetrics {
         return strikethrough_thickness$LAYOUT;
     }
 
-    private static final long strikethrough_thickness$OFFSET = 36;
+    private static final long strikethrough_thickness$OFFSET = $LAYOUT.byteOffset(groupElement("strikethrough_thickness"));
 
     /**
      * Offset for field:
@@ -523,7 +519,7 @@ public class _PangoFontMetrics {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -531,7 +527,7 @@ public class _PangoFontMetrics {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

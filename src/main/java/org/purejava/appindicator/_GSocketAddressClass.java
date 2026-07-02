@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -54,7 +50,7 @@ public class _GSocketAddressClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -91,7 +87,11 @@ public class _GSocketAddressClass {
      * GSocketFamily (*get_family)(GSocketAddress *)
      * }
      */
-    public class get_family {
+    public final static class get_family {
+
+        private get_family() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -127,9 +127,11 @@ public class _GSocketAddressClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -148,7 +150,7 @@ public class _GSocketAddressClass {
         return get_family$LAYOUT;
     }
 
-    private static final long get_family$OFFSET = 136;
+    private static final long get_family$OFFSET = $LAYOUT.byteOffset(groupElement("get_family"));
 
     /**
      * Offset for field:
@@ -185,7 +187,11 @@ public class _GSocketAddressClass {
      * gssize (*get_native_size)(GSocketAddress *)
      * }
      */
-    public class get_native_size {
+    public final static class get_native_size {
+
+        private get_native_size() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -221,9 +227,11 @@ public class _GSocketAddressClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static long invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static long invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (long) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -242,7 +250,7 @@ public class _GSocketAddressClass {
         return get_native_size$LAYOUT;
     }
 
-    private static final long get_native_size$OFFSET = 144;
+    private static final long get_native_size$OFFSET = $LAYOUT.byteOffset(groupElement("get_native_size"));
 
     /**
      * Offset for field:
@@ -279,7 +287,11 @@ public class _GSocketAddressClass {
      * gboolean (*to_native)(GSocketAddress *, gpointer, gsize, GError **)
      * }
      */
-    public class to_native {
+    public final static class to_native {
+
+        private to_native() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -318,9 +330,11 @@ public class _GSocketAddressClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -339,7 +353,7 @@ public class _GSocketAddressClass {
         return to_native$LAYOUT;
     }
 
-    private static final long to_native$OFFSET = 152;
+    private static final long to_native$OFFSET = $LAYOUT.byteOffset(groupElement("to_native"));
 
     /**
      * Offset for field:
@@ -400,7 +414,7 @@ public class _GSocketAddressClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -408,7 +422,7 @@ public class _GSocketAddressClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -56,7 +52,7 @@ public class _GtkSearchEntryClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -93,7 +89,11 @@ public class _GtkSearchEntryClass {
      * void (*search_changed)(GtkSearchEntry *)
      * }
      */
-    public class search_changed {
+    public final static class search_changed {
+
+        private search_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -128,9 +128,11 @@ public class _GtkSearchEntryClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -149,7 +151,7 @@ public class _GtkSearchEntryClass {
         return search_changed$LAYOUT;
     }
 
-    private static final long search_changed$OFFSET = 976;
+    private static final long search_changed$OFFSET = $LAYOUT.byteOffset(groupElement("search_changed"));
 
     /**
      * Offset for field:
@@ -186,7 +188,11 @@ public class _GtkSearchEntryClass {
      * void (*next_match)(GtkSearchEntry *)
      * }
      */
-    public class next_match {
+    public final static class next_match {
+
+        private next_match() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -221,9 +227,11 @@ public class _GtkSearchEntryClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -242,7 +250,7 @@ public class _GtkSearchEntryClass {
         return next_match$LAYOUT;
     }
 
-    private static final long next_match$OFFSET = 984;
+    private static final long next_match$OFFSET = $LAYOUT.byteOffset(groupElement("next_match"));
 
     /**
      * Offset for field:
@@ -279,7 +287,11 @@ public class _GtkSearchEntryClass {
      * void (*previous_match)(GtkSearchEntry *)
      * }
      */
-    public class previous_match {
+    public final static class previous_match {
+
+        private previous_match() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -314,9 +326,11 @@ public class _GtkSearchEntryClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -335,7 +349,7 @@ public class _GtkSearchEntryClass {
         return previous_match$LAYOUT;
     }
 
-    private static final long previous_match$OFFSET = 992;
+    private static final long previous_match$OFFSET = $LAYOUT.byteOffset(groupElement("previous_match"));
 
     /**
      * Offset for field:
@@ -372,7 +386,11 @@ public class _GtkSearchEntryClass {
      * void (*stop_search)(GtkSearchEntry *)
      * }
      */
-    public class stop_search {
+    public final static class stop_search {
+
+        private stop_search() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -407,9 +425,11 @@ public class _GtkSearchEntryClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -428,7 +448,7 @@ public class _GtkSearchEntryClass {
         return stop_search$LAYOUT;
     }
 
-    private static final long stop_search$OFFSET = 1000;
+    private static final long stop_search$OFFSET = $LAYOUT.byteOffset(groupElement("stop_search"));
 
     /**
      * Offset for field:
@@ -489,7 +509,7 @@ public class _GtkSearchEntryClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -497,7 +517,7 @@ public class _GtkSearchEntryClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

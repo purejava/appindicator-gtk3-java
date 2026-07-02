@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -60,7 +56,7 @@ public class _GStaticRWLock {
         return mutex$LAYOUT;
     }
 
-    private static final long mutex$OFFSET = 0;
+    private static final long mutex$OFFSET = $LAYOUT.byteOffset(groupElement("mutex"));
 
     /**
      * Offset for field:
@@ -104,7 +100,7 @@ public class _GStaticRWLock {
         return read_cond$LAYOUT;
     }
 
-    private static final long read_cond$OFFSET = 56;
+    private static final long read_cond$OFFSET = $LAYOUT.byteOffset(groupElement("read_cond"));
 
     /**
      * Offset for field:
@@ -148,7 +144,7 @@ public class _GStaticRWLock {
         return write_cond$LAYOUT;
     }
 
-    private static final long write_cond$OFFSET = 64;
+    private static final long write_cond$OFFSET = $LAYOUT.byteOffset(groupElement("write_cond"));
 
     /**
      * Offset for field:
@@ -192,7 +188,7 @@ public class _GStaticRWLock {
         return read_counter$LAYOUT;
     }
 
-    private static final long read_counter$OFFSET = 72;
+    private static final long read_counter$OFFSET = $LAYOUT.byteOffset(groupElement("read_counter"));
 
     /**
      * Offset for field:
@@ -236,7 +232,7 @@ public class _GStaticRWLock {
         return have_writer$LAYOUT;
     }
 
-    private static final long have_writer$OFFSET = 76;
+    private static final long have_writer$OFFSET = $LAYOUT.byteOffset(groupElement("have_writer"));
 
     /**
      * Offset for field:
@@ -280,7 +276,7 @@ public class _GStaticRWLock {
         return want_to_read$LAYOUT;
     }
 
-    private static final long want_to_read$OFFSET = 80;
+    private static final long want_to_read$OFFSET = $LAYOUT.byteOffset(groupElement("want_to_read"));
 
     /**
      * Offset for field:
@@ -324,7 +320,7 @@ public class _GStaticRWLock {
         return want_to_write$LAYOUT;
     }
 
-    private static final long want_to_write$OFFSET = 84;
+    private static final long want_to_write$OFFSET = $LAYOUT.byteOffset(groupElement("want_to_write"));
 
     /**
      * Offset for field:
@@ -385,7 +381,7 @@ public class _GStaticRWLock {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -393,7 +389,7 @@ public class _GStaticRWLock {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

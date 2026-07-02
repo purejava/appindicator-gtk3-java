@@ -2,22 +2,22 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
-import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
-
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.Linker;
+import java.lang.foreign.MemorySegment;
+import java.lang.invoke.MethodHandle;
 
 /**
  * {@snippet lang=c :
  * typedef GType (*GDBusProxyTypeFunc)(GDBusObjectManagerClient *, const gchar *, const gchar *, gpointer)
  * }
  */
-public class GDBusProxyTypeFunc {
+public final class GDBusProxyTypeFunc {
+
+    private GDBusProxyTypeFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -56,9 +56,11 @@ public class GDBusProxyTypeFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static long invoke(MemorySegment funcPtr,MemorySegment manager, MemorySegment object_path, MemorySegment interface_name, MemorySegment data) {
+    public static long invoke(MemorySegment funcPtr, MemorySegment manager, MemorySegment object_path, MemorySegment interface_name, MemorySegment data) {
         try {
             return (long) DOWN$MH.invokeExact(funcPtr, manager, object_path, interface_name, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

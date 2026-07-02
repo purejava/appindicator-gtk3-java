@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -55,7 +51,7 @@ public class _GDBusArgInfo {
         return ref_count$LAYOUT;
     }
 
-    private static final long ref_count$OFFSET = 0;
+    private static final long ref_count$OFFSET = $LAYOUT.byteOffset(groupElement("ref_count"));
 
     /**
      * Offset for field:
@@ -99,7 +95,7 @@ public class _GDBusArgInfo {
         return name$LAYOUT;
     }
 
-    private static final long name$OFFSET = 8;
+    private static final long name$OFFSET = $LAYOUT.byteOffset(groupElement("name"));
 
     /**
      * Offset for field:
@@ -143,7 +139,7 @@ public class _GDBusArgInfo {
         return signature$LAYOUT;
     }
 
-    private static final long signature$OFFSET = 16;
+    private static final long signature$OFFSET = $LAYOUT.byteOffset(groupElement("signature"));
 
     /**
      * Offset for field:
@@ -187,7 +183,7 @@ public class _GDBusArgInfo {
         return annotations$LAYOUT;
     }
 
-    private static final long annotations$OFFSET = 24;
+    private static final long annotations$OFFSET = $LAYOUT.byteOffset(groupElement("annotations"));
 
     /**
      * Offset for field:
@@ -248,7 +244,7 @@ public class _GDBusArgInfo {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -256,7 +252,7 @@ public class _GDBusArgInfo {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

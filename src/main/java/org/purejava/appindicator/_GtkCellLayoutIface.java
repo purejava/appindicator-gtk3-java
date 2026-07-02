@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -66,7 +62,7 @@ public class _GtkCellLayoutIface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -103,7 +99,11 @@ public class _GtkCellLayoutIface {
      * void (*pack_start)(GtkCellLayout *, GtkCellRenderer *, gboolean)
      * }
      */
-    public class pack_start {
+    public final static class pack_start {
+
+        private pack_start() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -140,9 +140,11 @@ public class _GtkCellLayoutIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -161,7 +163,7 @@ public class _GtkCellLayoutIface {
         return pack_start$LAYOUT;
     }
 
-    private static final long pack_start$OFFSET = 16;
+    private static final long pack_start$OFFSET = $LAYOUT.byteOffset(groupElement("pack_start"));
 
     /**
      * Offset for field:
@@ -198,7 +200,11 @@ public class _GtkCellLayoutIface {
      * void (*pack_end)(GtkCellLayout *, GtkCellRenderer *, gboolean)
      * }
      */
-    public class pack_end {
+    public final static class pack_end {
+
+        private pack_end() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -235,9 +241,11 @@ public class _GtkCellLayoutIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -256,7 +264,7 @@ public class _GtkCellLayoutIface {
         return pack_end$LAYOUT;
     }
 
-    private static final long pack_end$OFFSET = 24;
+    private static final long pack_end$OFFSET = $LAYOUT.byteOffset(groupElement("pack_end"));
 
     /**
      * Offset for field:
@@ -293,7 +301,11 @@ public class _GtkCellLayoutIface {
      * void (*clear)(GtkCellLayout *)
      * }
      */
-    public class clear {
+    public final static class clear {
+
+        private clear() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -328,9 +340,11 @@ public class _GtkCellLayoutIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -349,7 +363,7 @@ public class _GtkCellLayoutIface {
         return clear$LAYOUT;
     }
 
-    private static final long clear$OFFSET = 32;
+    private static final long clear$OFFSET = $LAYOUT.byteOffset(groupElement("clear"));
 
     /**
      * Offset for field:
@@ -386,7 +400,11 @@ public class _GtkCellLayoutIface {
      * void (*add_attribute)(GtkCellLayout *, GtkCellRenderer *, const gchar *, gint)
      * }
      */
-    public class add_attribute {
+    public final static class add_attribute {
+
+        private add_attribute() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -424,9 +442,11 @@ public class _GtkCellLayoutIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -445,7 +465,7 @@ public class _GtkCellLayoutIface {
         return add_attribute$LAYOUT;
     }
 
-    private static final long add_attribute$OFFSET = 40;
+    private static final long add_attribute$OFFSET = $LAYOUT.byteOffset(groupElement("add_attribute"));
 
     /**
      * Offset for field:
@@ -482,7 +502,11 @@ public class _GtkCellLayoutIface {
      * void (*set_cell_data_func)(GtkCellLayout *, GtkCellRenderer *, GtkCellLayoutDataFunc, gpointer, GDestroyNotify)
      * }
      */
-    public class set_cell_data_func {
+    public final static class set_cell_data_func {
+
+        private set_cell_data_func() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -521,9 +545,11 @@ public class _GtkCellLayoutIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -542,7 +568,7 @@ public class _GtkCellLayoutIface {
         return set_cell_data_func$LAYOUT;
     }
 
-    private static final long set_cell_data_func$OFFSET = 48;
+    private static final long set_cell_data_func$OFFSET = $LAYOUT.byteOffset(groupElement("set_cell_data_func"));
 
     /**
      * Offset for field:
@@ -579,7 +605,11 @@ public class _GtkCellLayoutIface {
      * void (*clear_attributes)(GtkCellLayout *, GtkCellRenderer *)
      * }
      */
-    public class clear_attributes {
+    public final static class clear_attributes {
+
+        private clear_attributes() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -615,9 +645,11 @@ public class _GtkCellLayoutIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -636,7 +668,7 @@ public class _GtkCellLayoutIface {
         return clear_attributes$LAYOUT;
     }
 
-    private static final long clear_attributes$OFFSET = 56;
+    private static final long clear_attributes$OFFSET = $LAYOUT.byteOffset(groupElement("clear_attributes"));
 
     /**
      * Offset for field:
@@ -673,7 +705,11 @@ public class _GtkCellLayoutIface {
      * void (*reorder)(GtkCellLayout *, GtkCellRenderer *, gint)
      * }
      */
-    public class reorder {
+    public final static class reorder {
+
+        private reorder() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -710,9 +746,11 @@ public class _GtkCellLayoutIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -731,7 +769,7 @@ public class _GtkCellLayoutIface {
         return reorder$LAYOUT;
     }
 
-    private static final long reorder$OFFSET = 64;
+    private static final long reorder$OFFSET = $LAYOUT.byteOffset(groupElement("reorder"));
 
     /**
      * Offset for field:
@@ -768,7 +806,11 @@ public class _GtkCellLayoutIface {
      * GList *(*get_cells)(GtkCellLayout *)
      * }
      */
-    public class get_cells {
+    public final static class get_cells {
+
+        private get_cells() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -804,9 +846,11 @@ public class _GtkCellLayoutIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -825,7 +869,7 @@ public class _GtkCellLayoutIface {
         return get_cells$LAYOUT;
     }
 
-    private static final long get_cells$OFFSET = 72;
+    private static final long get_cells$OFFSET = $LAYOUT.byteOffset(groupElement("get_cells"));
 
     /**
      * Offset for field:
@@ -862,7 +906,11 @@ public class _GtkCellLayoutIface {
      * GtkCellArea *(*get_area)(GtkCellLayout *)
      * }
      */
-    public class get_area {
+    public final static class get_area {
+
+        private get_area() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -898,9 +946,11 @@ public class _GtkCellLayoutIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -919,7 +969,7 @@ public class _GtkCellLayoutIface {
         return get_area$LAYOUT;
     }
 
-    private static final long get_area$OFFSET = 80;
+    private static final long get_area$OFFSET = $LAYOUT.byteOffset(groupElement("get_area"));
 
     /**
      * Offset for field:
@@ -980,7 +1030,7 @@ public class _GtkCellLayoutIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -988,7 +1038,7 @@ public class _GtkCellLayoutIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

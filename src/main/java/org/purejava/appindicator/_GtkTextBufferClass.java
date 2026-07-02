@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -82,7 +78,7 @@ public class _GtkTextBufferClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -119,7 +115,11 @@ public class _GtkTextBufferClass {
      * void (*insert_text)(GtkTextBuffer *, GtkTextIter *, const gchar *, gint)
      * }
      */
-    public class insert_text {
+    public final static class insert_text {
+
+        private insert_text() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -157,9 +157,11 @@ public class _GtkTextBufferClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -178,7 +180,7 @@ public class _GtkTextBufferClass {
         return insert_text$LAYOUT;
     }
 
-    private static final long insert_text$OFFSET = 136;
+    private static final long insert_text$OFFSET = $LAYOUT.byteOffset(groupElement("insert_text"));
 
     /**
      * Offset for field:
@@ -215,7 +217,11 @@ public class _GtkTextBufferClass {
      * void (*insert_pixbuf)(GtkTextBuffer *, GtkTextIter *, GdkPixbuf *)
      * }
      */
-    public class insert_pixbuf {
+    public final static class insert_pixbuf {
+
+        private insert_pixbuf() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -252,9 +258,11 @@ public class _GtkTextBufferClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -273,7 +281,7 @@ public class _GtkTextBufferClass {
         return insert_pixbuf$LAYOUT;
     }
 
-    private static final long insert_pixbuf$OFFSET = 144;
+    private static final long insert_pixbuf$OFFSET = $LAYOUT.byteOffset(groupElement("insert_pixbuf"));
 
     /**
      * Offset for field:
@@ -310,7 +318,11 @@ public class _GtkTextBufferClass {
      * void (*insert_child_anchor)(GtkTextBuffer *, GtkTextIter *, GtkTextChildAnchor *)
      * }
      */
-    public class insert_child_anchor {
+    public final static class insert_child_anchor {
+
+        private insert_child_anchor() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -347,9 +359,11 @@ public class _GtkTextBufferClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -368,7 +382,7 @@ public class _GtkTextBufferClass {
         return insert_child_anchor$LAYOUT;
     }
 
-    private static final long insert_child_anchor$OFFSET = 152;
+    private static final long insert_child_anchor$OFFSET = $LAYOUT.byteOffset(groupElement("insert_child_anchor"));
 
     /**
      * Offset for field:
@@ -405,7 +419,11 @@ public class _GtkTextBufferClass {
      * void (*delete_range)(GtkTextBuffer *, GtkTextIter *, GtkTextIter *)
      * }
      */
-    public class delete_range {
+    public final static class delete_range {
+
+        private delete_range() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -442,9 +460,11 @@ public class _GtkTextBufferClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -463,7 +483,7 @@ public class _GtkTextBufferClass {
         return delete_range$LAYOUT;
     }
 
-    private static final long delete_range$OFFSET = 160;
+    private static final long delete_range$OFFSET = $LAYOUT.byteOffset(groupElement("delete_range"));
 
     /**
      * Offset for field:
@@ -500,7 +520,11 @@ public class _GtkTextBufferClass {
      * void (*changed)(GtkTextBuffer *)
      * }
      */
-    public class changed {
+    public final static class changed {
+
+        private changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -535,9 +559,11 @@ public class _GtkTextBufferClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -556,7 +582,7 @@ public class _GtkTextBufferClass {
         return changed$LAYOUT;
     }
 
-    private static final long changed$OFFSET = 168;
+    private static final long changed$OFFSET = $LAYOUT.byteOffset(groupElement("changed"));
 
     /**
      * Offset for field:
@@ -593,7 +619,11 @@ public class _GtkTextBufferClass {
      * void (*modified_changed)(GtkTextBuffer *)
      * }
      */
-    public class modified_changed {
+    public final static class modified_changed {
+
+        private modified_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -628,9 +658,11 @@ public class _GtkTextBufferClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -649,7 +681,7 @@ public class _GtkTextBufferClass {
         return modified_changed$LAYOUT;
     }
 
-    private static final long modified_changed$OFFSET = 176;
+    private static final long modified_changed$OFFSET = $LAYOUT.byteOffset(groupElement("modified_changed"));
 
     /**
      * Offset for field:
@@ -686,7 +718,11 @@ public class _GtkTextBufferClass {
      * void (*mark_set)(GtkTextBuffer *, const GtkTextIter *, GtkTextMark *)
      * }
      */
-    public class mark_set {
+    public final static class mark_set {
+
+        private mark_set() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -723,9 +759,11 @@ public class _GtkTextBufferClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -744,7 +782,7 @@ public class _GtkTextBufferClass {
         return mark_set$LAYOUT;
     }
 
-    private static final long mark_set$OFFSET = 184;
+    private static final long mark_set$OFFSET = $LAYOUT.byteOffset(groupElement("mark_set"));
 
     /**
      * Offset for field:
@@ -781,7 +819,11 @@ public class _GtkTextBufferClass {
      * void (*mark_deleted)(GtkTextBuffer *, GtkTextMark *)
      * }
      */
-    public class mark_deleted {
+    public final static class mark_deleted {
+
+        private mark_deleted() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -817,9 +859,11 @@ public class _GtkTextBufferClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -838,7 +882,7 @@ public class _GtkTextBufferClass {
         return mark_deleted$LAYOUT;
     }
 
-    private static final long mark_deleted$OFFSET = 192;
+    private static final long mark_deleted$OFFSET = $LAYOUT.byteOffset(groupElement("mark_deleted"));
 
     /**
      * Offset for field:
@@ -875,7 +919,11 @@ public class _GtkTextBufferClass {
      * void (*apply_tag)(GtkTextBuffer *, GtkTextTag *, const GtkTextIter *, const GtkTextIter *)
      * }
      */
-    public class apply_tag {
+    public final static class apply_tag {
+
+        private apply_tag() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -913,9 +961,11 @@ public class _GtkTextBufferClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -934,7 +984,7 @@ public class _GtkTextBufferClass {
         return apply_tag$LAYOUT;
     }
 
-    private static final long apply_tag$OFFSET = 200;
+    private static final long apply_tag$OFFSET = $LAYOUT.byteOffset(groupElement("apply_tag"));
 
     /**
      * Offset for field:
@@ -971,7 +1021,11 @@ public class _GtkTextBufferClass {
      * void (*remove_tag)(GtkTextBuffer *, GtkTextTag *, const GtkTextIter *, const GtkTextIter *)
      * }
      */
-    public class remove_tag {
+    public final static class remove_tag {
+
+        private remove_tag() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1009,9 +1063,11 @@ public class _GtkTextBufferClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1030,7 +1086,7 @@ public class _GtkTextBufferClass {
         return remove_tag$LAYOUT;
     }
 
-    private static final long remove_tag$OFFSET = 208;
+    private static final long remove_tag$OFFSET = $LAYOUT.byteOffset(groupElement("remove_tag"));
 
     /**
      * Offset for field:
@@ -1067,7 +1123,11 @@ public class _GtkTextBufferClass {
      * void (*begin_user_action)(GtkTextBuffer *)
      * }
      */
-    public class begin_user_action {
+    public final static class begin_user_action {
+
+        private begin_user_action() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1102,9 +1162,11 @@ public class _GtkTextBufferClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1123,7 +1185,7 @@ public class _GtkTextBufferClass {
         return begin_user_action$LAYOUT;
     }
 
-    private static final long begin_user_action$OFFSET = 216;
+    private static final long begin_user_action$OFFSET = $LAYOUT.byteOffset(groupElement("begin_user_action"));
 
     /**
      * Offset for field:
@@ -1160,7 +1222,11 @@ public class _GtkTextBufferClass {
      * void (*end_user_action)(GtkTextBuffer *)
      * }
      */
-    public class end_user_action {
+    public final static class end_user_action {
+
+        private end_user_action() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1195,9 +1261,11 @@ public class _GtkTextBufferClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1216,7 +1284,7 @@ public class _GtkTextBufferClass {
         return end_user_action$LAYOUT;
     }
 
-    private static final long end_user_action$OFFSET = 224;
+    private static final long end_user_action$OFFSET = $LAYOUT.byteOffset(groupElement("end_user_action"));
 
     /**
      * Offset for field:
@@ -1253,7 +1321,11 @@ public class _GtkTextBufferClass {
      * void (*paste_done)(GtkTextBuffer *, GtkClipboard *)
      * }
      */
-    public class paste_done {
+    public final static class paste_done {
+
+        private paste_done() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1289,9 +1361,11 @@ public class _GtkTextBufferClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1310,7 +1384,7 @@ public class _GtkTextBufferClass {
         return paste_done$LAYOUT;
     }
 
-    private static final long paste_done$OFFSET = 232;
+    private static final long paste_done$OFFSET = $LAYOUT.byteOffset(groupElement("paste_done"));
 
     /**
      * Offset for field:
@@ -1347,7 +1421,11 @@ public class _GtkTextBufferClass {
      * void (*_gtk_reserved1)(void)
      * }
      */
-    public class _gtk_reserved1 {
+    public final static class _gtk_reserved1 {
+
+        private _gtk_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1383,6 +1461,8 @@ public class _GtkTextBufferClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1401,7 +1481,7 @@ public class _GtkTextBufferClass {
         return _gtk_reserved1$LAYOUT;
     }
 
-    private static final long _gtk_reserved1$OFFSET = 240;
+    private static final long _gtk_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved1"));
 
     /**
      * Offset for field:
@@ -1438,7 +1518,11 @@ public class _GtkTextBufferClass {
      * void (*_gtk_reserved2)(void)
      * }
      */
-    public class _gtk_reserved2 {
+    public final static class _gtk_reserved2 {
+
+        private _gtk_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1474,6 +1558,8 @@ public class _GtkTextBufferClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1492,7 +1578,7 @@ public class _GtkTextBufferClass {
         return _gtk_reserved2$LAYOUT;
     }
 
-    private static final long _gtk_reserved2$OFFSET = 248;
+    private static final long _gtk_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved2"));
 
     /**
      * Offset for field:
@@ -1529,7 +1615,11 @@ public class _GtkTextBufferClass {
      * void (*_gtk_reserved3)(void)
      * }
      */
-    public class _gtk_reserved3 {
+    public final static class _gtk_reserved3 {
+
+        private _gtk_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1565,6 +1655,8 @@ public class _GtkTextBufferClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1583,7 +1675,7 @@ public class _GtkTextBufferClass {
         return _gtk_reserved3$LAYOUT;
     }
 
-    private static final long _gtk_reserved3$OFFSET = 256;
+    private static final long _gtk_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved3"));
 
     /**
      * Offset for field:
@@ -1620,7 +1712,11 @@ public class _GtkTextBufferClass {
      * void (*_gtk_reserved4)(void)
      * }
      */
-    public class _gtk_reserved4 {
+    public final static class _gtk_reserved4 {
+
+        private _gtk_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1656,6 +1752,8 @@ public class _GtkTextBufferClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1674,7 +1772,7 @@ public class _GtkTextBufferClass {
         return _gtk_reserved4$LAYOUT;
     }
 
-    private static final long _gtk_reserved4$OFFSET = 264;
+    private static final long _gtk_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved4"));
 
     /**
      * Offset for field:
@@ -1735,7 +1833,7 @@ public class _GtkTextBufferClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1743,7 +1841,7 @@ public class _GtkTextBufferClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

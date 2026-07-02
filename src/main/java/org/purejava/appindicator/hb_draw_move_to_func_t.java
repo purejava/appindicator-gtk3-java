@@ -2,22 +2,22 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
-import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
-
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.Linker;
+import java.lang.foreign.MemorySegment;
+import java.lang.invoke.MethodHandle;
 
 /**
  * {@snippet lang=c :
  * typedef void (*hb_draw_move_to_func_t)(hb_draw_funcs_t *, void *, hb_draw_state_t *, float, float, void *)
  * }
  */
-public class hb_draw_move_to_func_t {
+public final class hb_draw_move_to_func_t {
+
+    private hb_draw_move_to_func_t() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -57,9 +57,11 @@ public class hb_draw_move_to_func_t {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment dfuncs, MemorySegment draw_data, MemorySegment st, float to_x, float to_y, MemorySegment user_data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment dfuncs, MemorySegment draw_data, MemorySegment st, float to_x, float to_y, MemorySegment user_data) {
         try {
              DOWN$MH.invokeExact(funcPtr, dfuncs, draw_data, st, to_x, to_y, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

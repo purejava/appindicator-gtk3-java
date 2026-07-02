@@ -2,37 +2,29 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
 
 /**
  * {@snippet lang=c :
- * struct user_fpsimd_struct {
- *     __uint128_t vregs[32];
- *     unsigned int fpsr;
- *     unsigned int fpcr;
+ * struct _libc_xmmreg {
+ *     __uint32_t element[4];
  * }
  * }
  */
-public class user_fpsimd_struct {
+public class _libc_xmmreg {
 
-    user_fpsimd_struct() {
+    _libc_xmmreg() {
         // Should not be called directly
     }
 
     private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.paddingLayout(512),
-        app_indicator_h.C_INT.withName("fpsr"),
-        app_indicator_h.C_INT.withName("fpcr"),
-        MemoryLayout.paddingLayout(8)
-    ).withName("user_fpsimd_struct");
+        MemoryLayout.sequenceLayout(4, app_indicator_h.C_INT).withName("element")
+    ).withName("_libc_xmmreg");
 
     /**
      * The layout of this struct
@@ -41,92 +33,81 @@ public class user_fpsimd_struct {
         return $LAYOUT;
     }
 
-    private static final OfInt fpsr$LAYOUT = (OfInt)$LAYOUT.select(groupElement("fpsr"));
+    private static final SequenceLayout element$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("element"));
 
     /**
      * Layout for field:
      * {@snippet lang=c :
-     * unsigned int fpsr
+     * __uint32_t element[4]
      * }
      */
-    public static final OfInt fpsr$layout() {
-        return fpsr$LAYOUT;
+    public static final SequenceLayout element$layout() {
+        return element$LAYOUT;
     }
 
-    private static final long fpsr$OFFSET = 512;
+    private static final long element$OFFSET = $LAYOUT.byteOffset(groupElement("element"));
 
     /**
      * Offset for field:
      * {@snippet lang=c :
-     * unsigned int fpsr
+     * __uint32_t element[4]
      * }
      */
-    public static final long fpsr$offset() {
-        return fpsr$OFFSET;
+    public static final long element$offset() {
+        return element$OFFSET;
     }
 
     /**
      * Getter for field:
      * {@snippet lang=c :
-     * unsigned int fpsr
+     * __uint32_t element[4]
      * }
      */
-    public static int fpsr(MemorySegment struct) {
-        return struct.get(fpsr$LAYOUT, fpsr$OFFSET);
+    public static MemorySegment element(MemorySegment struct) {
+        return struct.asSlice(element$OFFSET, element$LAYOUT.byteSize());
     }
 
     /**
      * Setter for field:
      * {@snippet lang=c :
-     * unsigned int fpsr
+     * __uint32_t element[4]
      * }
      */
-    public static void fpsr(MemorySegment struct, int fieldValue) {
-        struct.set(fpsr$LAYOUT, fpsr$OFFSET, fieldValue);
+    public static void element(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, element$OFFSET, element$LAYOUT.byteSize());
     }
 
-    private static final OfInt fpcr$LAYOUT = (OfInt)$LAYOUT.select(groupElement("fpcr"));
+    private static long[] element$DIMS = { 4 };
 
     /**
-     * Layout for field:
+     * Dimensions for array field:
      * {@snippet lang=c :
-     * unsigned int fpcr
+     * __uint32_t element[4]
      * }
      */
-    public static final OfInt fpcr$layout() {
-        return fpcr$LAYOUT;
+    public static long[] element$dimensions() {
+        return element$DIMS;
     }
-
-    private static final long fpcr$OFFSET = 516;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * unsigned int fpcr
-     * }
-     */
-    public static final long fpcr$offset() {
-        return fpcr$OFFSET;
-    }
+    private static final VarHandle element$ELEM_HANDLE = element$LAYOUT.varHandle(sequenceElement());
 
     /**
-     * Getter for field:
+     * Indexed getter for field:
      * {@snippet lang=c :
-     * unsigned int fpcr
+     * __uint32_t element[4]
      * }
      */
-    public static int fpcr(MemorySegment struct) {
-        return struct.get(fpcr$LAYOUT, fpcr$OFFSET);
+    public static int element(MemorySegment struct, long index0) {
+        return (int)element$ELEM_HANDLE.get(struct, element$OFFSET, index0);
     }
 
     /**
-     * Setter for field:
+     * Indexed setter for field:
      * {@snippet lang=c :
-     * unsigned int fpcr
+     * __uint32_t element[4]
      * }
      */
-    public static void fpcr(MemorySegment struct, int fieldValue) {
-        struct.set(fpcr$LAYOUT, fpcr$OFFSET, fieldValue);
+    public static void element(MemorySegment struct, long index0, int fieldValue) {
+        element$ELEM_HANDLE.set(struct, element$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -158,7 +139,7 @@ public class user_fpsimd_struct {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -166,7 +147,7 @@ public class user_fpsimd_struct {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

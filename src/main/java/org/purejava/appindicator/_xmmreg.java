@@ -2,34 +2,29 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
 
 /**
  * {@snippet lang=c :
- * struct _aarch64_ctx {
- *     __u32 magic;
- *     __u32 size;
+ * struct _xmmreg {
+ *     __uint32_t element[4];
  * }
  * }
  */
-public class _aarch64_ctx {
+public class _xmmreg {
 
-    _aarch64_ctx() {
+    _xmmreg() {
         // Should not be called directly
     }
 
     private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-        app_indicator_h.C_INT.withName("magic"),
-        app_indicator_h.C_INT.withName("size")
-    ).withName("_aarch64_ctx");
+        MemoryLayout.sequenceLayout(4, app_indicator_h.C_INT).withName("element")
+    ).withName("_xmmreg");
 
     /**
      * The layout of this struct
@@ -38,92 +33,81 @@ public class _aarch64_ctx {
         return $LAYOUT;
     }
 
-    private static final OfInt magic$LAYOUT = (OfInt)$LAYOUT.select(groupElement("magic"));
+    private static final SequenceLayout element$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("element"));
 
     /**
      * Layout for field:
      * {@snippet lang=c :
-     * __u32 magic
+     * __uint32_t element[4]
      * }
      */
-    public static final OfInt magic$layout() {
-        return magic$LAYOUT;
+    public static final SequenceLayout element$layout() {
+        return element$LAYOUT;
     }
 
-    private static final long magic$OFFSET = 0;
+    private static final long element$OFFSET = $LAYOUT.byteOffset(groupElement("element"));
 
     /**
      * Offset for field:
      * {@snippet lang=c :
-     * __u32 magic
+     * __uint32_t element[4]
      * }
      */
-    public static final long magic$offset() {
-        return magic$OFFSET;
+    public static final long element$offset() {
+        return element$OFFSET;
     }
 
     /**
      * Getter for field:
      * {@snippet lang=c :
-     * __u32 magic
+     * __uint32_t element[4]
      * }
      */
-    public static int magic(MemorySegment struct) {
-        return struct.get(magic$LAYOUT, magic$OFFSET);
+    public static MemorySegment element(MemorySegment struct) {
+        return struct.asSlice(element$OFFSET, element$LAYOUT.byteSize());
     }
 
     /**
      * Setter for field:
      * {@snippet lang=c :
-     * __u32 magic
+     * __uint32_t element[4]
      * }
      */
-    public static void magic(MemorySegment struct, int fieldValue) {
-        struct.set(magic$LAYOUT, magic$OFFSET, fieldValue);
+    public static void element(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, element$OFFSET, element$LAYOUT.byteSize());
     }
 
-    private static final OfInt size$LAYOUT = (OfInt)$LAYOUT.select(groupElement("size"));
+    private static long[] element$DIMS = { 4 };
 
     /**
-     * Layout for field:
+     * Dimensions for array field:
      * {@snippet lang=c :
-     * __u32 size
+     * __uint32_t element[4]
      * }
      */
-    public static final OfInt size$layout() {
-        return size$LAYOUT;
+    public static long[] element$dimensions() {
+        return element$DIMS;
     }
-
-    private static final long size$OFFSET = 4;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * __u32 size
-     * }
-     */
-    public static final long size$offset() {
-        return size$OFFSET;
-    }
+    private static final VarHandle element$ELEM_HANDLE = element$LAYOUT.varHandle(sequenceElement());
 
     /**
-     * Getter for field:
+     * Indexed getter for field:
      * {@snippet lang=c :
-     * __u32 size
+     * __uint32_t element[4]
      * }
      */
-    public static int size(MemorySegment struct) {
-        return struct.get(size$LAYOUT, size$OFFSET);
+    public static int element(MemorySegment struct, long index0) {
+        return (int)element$ELEM_HANDLE.get(struct, element$OFFSET, index0);
     }
 
     /**
-     * Setter for field:
+     * Indexed setter for field:
      * {@snippet lang=c :
-     * __u32 size
+     * __uint32_t element[4]
      * }
      */
-    public static void size(MemorySegment struct, int fieldValue) {
-        struct.set(size$LAYOUT, size$OFFSET, fieldValue);
+    public static void element(MemorySegment struct, long index0, int fieldValue) {
+        element$ELEM_HANDLE.set(struct, element$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -155,7 +139,7 @@ public class _aarch64_ctx {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -163,7 +147,7 @@ public class _aarch64_ctx {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

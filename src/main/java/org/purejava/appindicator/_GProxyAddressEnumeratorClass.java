@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -62,7 +58,7 @@ public class _GProxyAddressEnumeratorClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -99,7 +95,11 @@ public class _GProxyAddressEnumeratorClass {
      * void (*_g_reserved1)(void)
      * }
      */
-    public class _g_reserved1 {
+    public final static class _g_reserved1 {
+
+        private _g_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -135,6 +135,8 @@ public class _GProxyAddressEnumeratorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -153,7 +155,7 @@ public class _GProxyAddressEnumeratorClass {
         return _g_reserved1$LAYOUT;
     }
 
-    private static final long _g_reserved1$OFFSET = 160;
+    private static final long _g_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved1"));
 
     /**
      * Offset for field:
@@ -190,7 +192,11 @@ public class _GProxyAddressEnumeratorClass {
      * void (*_g_reserved2)(void)
      * }
      */
-    public class _g_reserved2 {
+    public final static class _g_reserved2 {
+
+        private _g_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -226,6 +232,8 @@ public class _GProxyAddressEnumeratorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -244,7 +252,7 @@ public class _GProxyAddressEnumeratorClass {
         return _g_reserved2$LAYOUT;
     }
 
-    private static final long _g_reserved2$OFFSET = 168;
+    private static final long _g_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved2"));
 
     /**
      * Offset for field:
@@ -281,7 +289,11 @@ public class _GProxyAddressEnumeratorClass {
      * void (*_g_reserved3)(void)
      * }
      */
-    public class _g_reserved3 {
+    public final static class _g_reserved3 {
+
+        private _g_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -317,6 +329,8 @@ public class _GProxyAddressEnumeratorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -335,7 +349,7 @@ public class _GProxyAddressEnumeratorClass {
         return _g_reserved3$LAYOUT;
     }
 
-    private static final long _g_reserved3$OFFSET = 176;
+    private static final long _g_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved3"));
 
     /**
      * Offset for field:
@@ -372,7 +386,11 @@ public class _GProxyAddressEnumeratorClass {
      * void (*_g_reserved4)(void)
      * }
      */
-    public class _g_reserved4 {
+    public final static class _g_reserved4 {
+
+        private _g_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -408,6 +426,8 @@ public class _GProxyAddressEnumeratorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -426,7 +446,7 @@ public class _GProxyAddressEnumeratorClass {
         return _g_reserved4$LAYOUT;
     }
 
-    private static final long _g_reserved4$OFFSET = 184;
+    private static final long _g_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved4"));
 
     /**
      * Offset for field:
@@ -463,7 +483,11 @@ public class _GProxyAddressEnumeratorClass {
      * void (*_g_reserved5)(void)
      * }
      */
-    public class _g_reserved5 {
+    public final static class _g_reserved5 {
+
+        private _g_reserved5() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -499,6 +523,8 @@ public class _GProxyAddressEnumeratorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -517,7 +543,7 @@ public class _GProxyAddressEnumeratorClass {
         return _g_reserved5$LAYOUT;
     }
 
-    private static final long _g_reserved5$OFFSET = 192;
+    private static final long _g_reserved5$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved5"));
 
     /**
      * Offset for field:
@@ -554,7 +580,11 @@ public class _GProxyAddressEnumeratorClass {
      * void (*_g_reserved6)(void)
      * }
      */
-    public class _g_reserved6 {
+    public final static class _g_reserved6 {
+
+        private _g_reserved6() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -590,6 +620,8 @@ public class _GProxyAddressEnumeratorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -608,7 +640,7 @@ public class _GProxyAddressEnumeratorClass {
         return _g_reserved6$LAYOUT;
     }
 
-    private static final long _g_reserved6$OFFSET = 200;
+    private static final long _g_reserved6$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved6"));
 
     /**
      * Offset for field:
@@ -645,7 +677,11 @@ public class _GProxyAddressEnumeratorClass {
      * void (*_g_reserved7)(void)
      * }
      */
-    public class _g_reserved7 {
+    public final static class _g_reserved7 {
+
+        private _g_reserved7() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -681,6 +717,8 @@ public class _GProxyAddressEnumeratorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -699,7 +737,7 @@ public class _GProxyAddressEnumeratorClass {
         return _g_reserved7$LAYOUT;
     }
 
-    private static final long _g_reserved7$OFFSET = 208;
+    private static final long _g_reserved7$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved7"));
 
     /**
      * Offset for field:
@@ -760,7 +798,7 @@ public class _GProxyAddressEnumeratorClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -768,7 +806,7 @@ public class _GProxyAddressEnumeratorClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

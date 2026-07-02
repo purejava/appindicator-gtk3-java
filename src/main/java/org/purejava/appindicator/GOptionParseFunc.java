@@ -2,22 +2,22 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
-import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
-
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.Linker;
+import java.lang.foreign.MemorySegment;
+import java.lang.invoke.MethodHandle;
 
 /**
  * {@snippet lang=c :
  * typedef gboolean (*GOptionParseFunc)(GOptionContext *, GOptionGroup *, gpointer, GError **)
  * }
  */
-public class GOptionParseFunc {
+public final class GOptionParseFunc {
+
+    private GOptionParseFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -56,9 +56,11 @@ public class GOptionParseFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment context, MemorySegment group, MemorySegment data, MemorySegment error) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment context, MemorySegment group, MemorySegment data, MemorySegment error) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, context, group, data, error);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

@@ -6,26 +6,26 @@ import java.lang.foreign.*;
 import java.util.function.Consumer;
 
 import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
-import static java.lang.foreign.ValueLayout.OfInt;
+import static java.lang.foreign.ValueLayout.OfLong;
 
 /**
  * {@snippet lang=c :
- * struct timezone {
- *     int tz_minuteswest;
- *     int tz_dsttime;
+ * struct {
+ *     long quot;
+ *     long rem;
  * }
  * }
  */
-public class timezone {
+public class imaxdiv_t {
 
-    timezone() {
+    imaxdiv_t() {
         // Should not be called directly
     }
 
     private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-        app_indicator_h.C_INT.withName("tz_minuteswest"),
-        app_indicator_h.C_INT.withName("tz_dsttime")
-    ).withName("timezone");
+        app_indicator_h.C_LONG.withName("quot"),
+        app_indicator_h.C_LONG.withName("rem")
+    ).withName("$anon$337:9");
 
     /**
      * The layout of this struct
@@ -34,92 +34,92 @@ public class timezone {
         return $LAYOUT;
     }
 
-    private static final OfInt tz_minuteswest$LAYOUT = (OfInt)$LAYOUT.select(groupElement("tz_minuteswest"));
+    private static final OfLong quot$LAYOUT = (OfLong)$LAYOUT.select(groupElement("quot"));
 
     /**
      * Layout for field:
      * {@snippet lang=c :
-     * int tz_minuteswest
+     * long quot
      * }
      */
-    public static final OfInt tz_minuteswest$layout() {
-        return tz_minuteswest$LAYOUT;
+    public static final OfLong quot$layout() {
+        return quot$LAYOUT;
     }
 
-    private static final long tz_minuteswest$OFFSET = 0;
+    private static final long quot$OFFSET = $LAYOUT.byteOffset(groupElement("quot"));
 
     /**
      * Offset for field:
      * {@snippet lang=c :
-     * int tz_minuteswest
+     * long quot
      * }
      */
-    public static final long tz_minuteswest$offset() {
-        return tz_minuteswest$OFFSET;
+    public static final long quot$offset() {
+        return quot$OFFSET;
     }
 
     /**
      * Getter for field:
      * {@snippet lang=c :
-     * int tz_minuteswest
+     * long quot
      * }
      */
-    public static int tz_minuteswest(MemorySegment struct) {
-        return struct.get(tz_minuteswest$LAYOUT, tz_minuteswest$OFFSET);
+    public static long quot(MemorySegment struct) {
+        return struct.get(quot$LAYOUT, quot$OFFSET);
     }
 
     /**
      * Setter for field:
      * {@snippet lang=c :
-     * int tz_minuteswest
+     * long quot
      * }
      */
-    public static void tz_minuteswest(MemorySegment struct, int fieldValue) {
-        struct.set(tz_minuteswest$LAYOUT, tz_minuteswest$OFFSET, fieldValue);
+    public static void quot(MemorySegment struct, long fieldValue) {
+        struct.set(quot$LAYOUT, quot$OFFSET, fieldValue);
     }
 
-    private static final OfInt tz_dsttime$LAYOUT = (OfInt)$LAYOUT.select(groupElement("tz_dsttime"));
+    private static final OfLong rem$LAYOUT = (OfLong)$LAYOUT.select(groupElement("rem"));
 
     /**
      * Layout for field:
      * {@snippet lang=c :
-     * int tz_dsttime
+     * long rem
      * }
      */
-    public static final OfInt tz_dsttime$layout() {
-        return tz_dsttime$LAYOUT;
+    public static final OfLong rem$layout() {
+        return rem$LAYOUT;
     }
 
-    private static final long tz_dsttime$OFFSET = 4;
+    private static final long rem$OFFSET = $LAYOUT.byteOffset(groupElement("rem"));
 
     /**
      * Offset for field:
      * {@snippet lang=c :
-     * int tz_dsttime
+     * long rem
      * }
      */
-    public static final long tz_dsttime$offset() {
-        return tz_dsttime$OFFSET;
+    public static final long rem$offset() {
+        return rem$OFFSET;
     }
 
     /**
      * Getter for field:
      * {@snippet lang=c :
-     * int tz_dsttime
+     * long rem
      * }
      */
-    public static int tz_dsttime(MemorySegment struct) {
-        return struct.get(tz_dsttime$LAYOUT, tz_dsttime$OFFSET);
+    public static long rem(MemorySegment struct) {
+        return struct.get(rem$LAYOUT, rem$OFFSET);
     }
 
     /**
      * Setter for field:
      * {@snippet lang=c :
-     * int tz_dsttime
+     * long rem
      * }
      */
-    public static void tz_dsttime(MemorySegment struct, int fieldValue) {
-        struct.set(tz_dsttime$LAYOUT, tz_dsttime$OFFSET, fieldValue);
+    public static void rem(MemorySegment struct, long fieldValue) {
+        struct.set(rem$LAYOUT, rem$OFFSET, fieldValue);
     }
 
     /**
@@ -151,7 +151,7 @@ public class timezone {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -159,7 +159,7 @@ public class timezone {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

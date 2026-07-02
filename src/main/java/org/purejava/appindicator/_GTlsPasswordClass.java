@@ -2,15 +2,13 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
 
 /**
  * {@snippet lang=c :
@@ -56,7 +54,7 @@ public class _GTlsPasswordClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -93,7 +91,11 @@ public class _GTlsPasswordClass {
      * const guchar *(*get_value)(GTlsPassword *, gsize *)
      * }
      */
-    public class get_value {
+    public final static class get_value {
+
+        private get_value() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -130,9 +132,11 @@ public class _GTlsPasswordClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -151,7 +155,7 @@ public class _GTlsPasswordClass {
         return get_value$LAYOUT;
     }
 
-    private static final long get_value$OFFSET = 136;
+    private static final long get_value$OFFSET = $LAYOUT.byteOffset(groupElement("get_value"));
 
     /**
      * Offset for field:
@@ -188,7 +192,11 @@ public class _GTlsPasswordClass {
      * void (*set_value)(GTlsPassword *, guchar *, gssize, GDestroyNotify)
      * }
      */
-    public class set_value {
+    public final static class set_value {
+
+        private set_value() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -226,9 +234,11 @@ public class _GTlsPasswordClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -247,7 +257,7 @@ public class _GTlsPasswordClass {
         return set_value$LAYOUT;
     }
 
-    private static final long set_value$OFFSET = 144;
+    private static final long set_value$OFFSET = $LAYOUT.byteOffset(groupElement("set_value"));
 
     /**
      * Offset for field:
@@ -284,7 +294,11 @@ public class _GTlsPasswordClass {
      * const gchar *(*get_default_warning)(GTlsPassword *)
      * }
      */
-    public class get_default_warning {
+    public final static class get_default_warning {
+
+        private get_default_warning() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -320,9 +334,11 @@ public class _GTlsPasswordClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -341,7 +357,7 @@ public class _GTlsPasswordClass {
         return get_default_warning$LAYOUT;
     }
 
-    private static final long get_default_warning$OFFSET = 152;
+    private static final long get_default_warning$OFFSET = $LAYOUT.byteOffset(groupElement("get_default_warning"));
 
     /**
      * Offset for field:
@@ -385,7 +401,7 @@ public class _GTlsPasswordClass {
         return padding$LAYOUT;
     }
 
-    private static final long padding$OFFSET = 160;
+    private static final long padding$OFFSET = $LAYOUT.byteOffset(groupElement("padding"));
 
     /**
      * Offset for field:
@@ -437,7 +453,7 @@ public class _GTlsPasswordClass {
      * }
      */
     public static MemorySegment padding(MemorySegment struct, long index0) {
-        return (MemorySegment)padding$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)padding$ELEM_HANDLE.get(struct, padding$OFFSET, index0);
     }
 
     /**
@@ -447,7 +463,7 @@ public class _GTlsPasswordClass {
      * }
      */
     public static void padding(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        padding$ELEM_HANDLE.set(struct, padding$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -479,7 +495,7 @@ public class _GTlsPasswordClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -487,7 +503,7 @@ public class _GTlsPasswordClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -27,7 +23,7 @@ public class __cancel_jmp_buf_tag {
     }
 
     private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.sequenceLayout(22, app_indicator_h.C_LONG_LONG).withName("__cancel_jmp_buf"),
+        MemoryLayout.sequenceLayout(8, app_indicator_h.C_LONG).withName("__cancel_jmp_buf"),
         app_indicator_h.C_INT.withName("__mask_was_saved"),
         MemoryLayout.paddingLayout(4)
     ).withName("__cancel_jmp_buf_tag");
@@ -51,7 +47,7 @@ public class __cancel_jmp_buf_tag {
         return __cancel_jmp_buf$LAYOUT;
     }
 
-    private static final long __cancel_jmp_buf$OFFSET = 0;
+    private static final long __cancel_jmp_buf$OFFSET = $LAYOUT.byteOffset(groupElement("__cancel_jmp_buf"));
 
     /**
      * Offset for field:
@@ -95,7 +91,7 @@ public class __cancel_jmp_buf_tag {
         return __mask_was_saved$LAYOUT;
     }
 
-    private static final long __mask_was_saved$OFFSET = 176;
+    private static final long __mask_was_saved$OFFSET = $LAYOUT.byteOffset(groupElement("__mask_was_saved"));
 
     /**
      * Offset for field:
@@ -156,7 +152,7 @@ public class __cancel_jmp_buf_tag {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -164,7 +160,7 @@ public class __cancel_jmp_buf_tag {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

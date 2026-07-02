@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -68,7 +64,7 @@ public class _GtkButtonClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -105,7 +101,11 @@ public class _GtkButtonClass {
      * void (*pressed)(GtkButton *)
      * }
      */
-    public class pressed {
+    public final static class pressed {
+
+        private pressed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -140,9 +140,11 @@ public class _GtkButtonClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -161,7 +163,7 @@ public class _GtkButtonClass {
         return pressed$LAYOUT;
     }
 
-    private static final long pressed$OFFSET = 1008;
+    private static final long pressed$OFFSET = $LAYOUT.byteOffset(groupElement("pressed"));
 
     /**
      * Offset for field:
@@ -198,7 +200,11 @@ public class _GtkButtonClass {
      * void (*released)(GtkButton *)
      * }
      */
-    public class released {
+    public final static class released {
+
+        private released() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -233,9 +239,11 @@ public class _GtkButtonClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -254,7 +262,7 @@ public class _GtkButtonClass {
         return released$LAYOUT;
     }
 
-    private static final long released$OFFSET = 1016;
+    private static final long released$OFFSET = $LAYOUT.byteOffset(groupElement("released"));
 
     /**
      * Offset for field:
@@ -291,7 +299,11 @@ public class _GtkButtonClass {
      * void (*clicked)(GtkButton *)
      * }
      */
-    public class clicked {
+    public final static class clicked {
+
+        private clicked() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -326,9 +338,11 @@ public class _GtkButtonClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -347,7 +361,7 @@ public class _GtkButtonClass {
         return clicked$LAYOUT;
     }
 
-    private static final long clicked$OFFSET = 1024;
+    private static final long clicked$OFFSET = $LAYOUT.byteOffset(groupElement("clicked"));
 
     /**
      * Offset for field:
@@ -384,7 +398,11 @@ public class _GtkButtonClass {
      * void (*enter)(GtkButton *)
      * }
      */
-    public class enter {
+    public final static class enter {
+
+        private enter() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -419,9 +437,11 @@ public class _GtkButtonClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -440,7 +460,7 @@ public class _GtkButtonClass {
         return enter$LAYOUT;
     }
 
-    private static final long enter$OFFSET = 1032;
+    private static final long enter$OFFSET = $LAYOUT.byteOffset(groupElement("enter"));
 
     /**
      * Offset for field:
@@ -477,7 +497,11 @@ public class _GtkButtonClass {
      * void (*leave)(GtkButton *)
      * }
      */
-    public class leave {
+    public final static class leave {
+
+        private leave() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -512,9 +536,11 @@ public class _GtkButtonClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -533,7 +559,7 @@ public class _GtkButtonClass {
         return leave$LAYOUT;
     }
 
-    private static final long leave$OFFSET = 1040;
+    private static final long leave$OFFSET = $LAYOUT.byteOffset(groupElement("leave"));
 
     /**
      * Offset for field:
@@ -570,7 +596,11 @@ public class _GtkButtonClass {
      * void (*activate)(GtkButton *)
      * }
      */
-    public class activate {
+    public final static class activate {
+
+        private activate() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -605,9 +635,11 @@ public class _GtkButtonClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -626,7 +658,7 @@ public class _GtkButtonClass {
         return activate$LAYOUT;
     }
 
-    private static final long activate$OFFSET = 1048;
+    private static final long activate$OFFSET = $LAYOUT.byteOffset(groupElement("activate"));
 
     /**
      * Offset for field:
@@ -663,7 +695,11 @@ public class _GtkButtonClass {
      * void (*_gtk_reserved1)(void)
      * }
      */
-    public class _gtk_reserved1 {
+    public final static class _gtk_reserved1 {
+
+        private _gtk_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -699,6 +735,8 @@ public class _GtkButtonClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -717,7 +755,7 @@ public class _GtkButtonClass {
         return _gtk_reserved1$LAYOUT;
     }
 
-    private static final long _gtk_reserved1$OFFSET = 1056;
+    private static final long _gtk_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved1"));
 
     /**
      * Offset for field:
@@ -754,7 +792,11 @@ public class _GtkButtonClass {
      * void (*_gtk_reserved2)(void)
      * }
      */
-    public class _gtk_reserved2 {
+    public final static class _gtk_reserved2 {
+
+        private _gtk_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -790,6 +832,8 @@ public class _GtkButtonClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -808,7 +852,7 @@ public class _GtkButtonClass {
         return _gtk_reserved2$LAYOUT;
     }
 
-    private static final long _gtk_reserved2$OFFSET = 1064;
+    private static final long _gtk_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved2"));
 
     /**
      * Offset for field:
@@ -845,7 +889,11 @@ public class _GtkButtonClass {
      * void (*_gtk_reserved3)(void)
      * }
      */
-    public class _gtk_reserved3 {
+    public final static class _gtk_reserved3 {
+
+        private _gtk_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -881,6 +929,8 @@ public class _GtkButtonClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -899,7 +949,7 @@ public class _GtkButtonClass {
         return _gtk_reserved3$LAYOUT;
     }
 
-    private static final long _gtk_reserved3$OFFSET = 1072;
+    private static final long _gtk_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved3"));
 
     /**
      * Offset for field:
@@ -936,7 +986,11 @@ public class _GtkButtonClass {
      * void (*_gtk_reserved4)(void)
      * }
      */
-    public class _gtk_reserved4 {
+    public final static class _gtk_reserved4 {
+
+        private _gtk_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -972,6 +1026,8 @@ public class _GtkButtonClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -990,7 +1046,7 @@ public class _GtkButtonClass {
         return _gtk_reserved4$LAYOUT;
     }
 
-    private static final long _gtk_reserved4$OFFSET = 1080;
+    private static final long _gtk_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved4"));
 
     /**
      * Offset for field:
@@ -1051,7 +1107,7 @@ public class _GtkButtonClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1059,7 +1115,7 @@ public class _GtkButtonClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

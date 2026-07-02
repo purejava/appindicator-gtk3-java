@@ -55,7 +55,7 @@ public class dirent {
         return d_ino$LAYOUT;
     }
 
-    private static final long d_ino$OFFSET = 0;
+    private static final long d_ino$OFFSET = $LAYOUT.byteOffset(groupElement("d_ino"));
 
     /**
      * Offset for field:
@@ -99,7 +99,7 @@ public class dirent {
         return d_off$LAYOUT;
     }
 
-    private static final long d_off$OFFSET = 8;
+    private static final long d_off$OFFSET = $LAYOUT.byteOffset(groupElement("d_off"));
 
     /**
      * Offset for field:
@@ -143,7 +143,7 @@ public class dirent {
         return d_reclen$LAYOUT;
     }
 
-    private static final long d_reclen$OFFSET = 16;
+    private static final long d_reclen$OFFSET = $LAYOUT.byteOffset(groupElement("d_reclen"));
 
     /**
      * Offset for field:
@@ -187,7 +187,7 @@ public class dirent {
         return d_type$LAYOUT;
     }
 
-    private static final long d_type$OFFSET = 18;
+    private static final long d_type$OFFSET = $LAYOUT.byteOffset(groupElement("d_type"));
 
     /**
      * Offset for field:
@@ -231,7 +231,7 @@ public class dirent {
         return d_name$LAYOUT;
     }
 
-    private static final long d_name$OFFSET = 19;
+    private static final long d_name$OFFSET = $LAYOUT.byteOffset(groupElement("d_name"));
 
     /**
      * Offset for field:
@@ -283,7 +283,7 @@ public class dirent {
      * }
      */
     public static byte d_name(MemorySegment struct, long index0) {
-        return (byte)d_name$ELEM_HANDLE.get(struct, 0L, index0);
+        return (byte)d_name$ELEM_HANDLE.get(struct, d_name$OFFSET, index0);
     }
 
     /**
@@ -293,7 +293,7 @@ public class dirent {
      * }
      */
     public static void d_name(MemorySegment struct, long index0, byte fieldValue) {
-        d_name$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        d_name$ELEM_HANDLE.set(struct, d_name$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -325,7 +325,7 @@ public class dirent {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -333,7 +333,7 @@ public class dirent {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

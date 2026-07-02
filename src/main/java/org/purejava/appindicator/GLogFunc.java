@@ -13,7 +13,11 @@ import java.lang.invoke.MethodHandle;
  * typedef void (*GLogFunc)(const gchar *, GLogLevelFlags, const gchar *, gpointer)
  * }
  */
-public class GLogFunc {
+public final class GLogFunc {
+
+    private GLogFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -51,9 +55,11 @@ public class GLogFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment log_domain, int log_level, MemorySegment message, MemorySegment user_data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment log_domain, int log_level, MemorySegment message, MemorySegment user_data) {
         try {
              DOWN$MH.invokeExact(funcPtr, log_domain, log_level, message, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

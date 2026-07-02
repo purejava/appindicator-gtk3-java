@@ -2,22 +2,22 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
-import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
-
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.Linker;
+import java.lang.foreign.MemorySegment;
+import java.lang.invoke.MethodHandle;
 
 /**
  * {@snippet lang=c :
  * typedef hb_paint_extend_t (*hb_color_line_get_extend_func_t)(hb_color_line_t *, void *, void *)
  * }
  */
-public class hb_color_line_get_extend_func_t {
+public final class hb_color_line_get_extend_func_t {
+
+    private hb_color_line_get_extend_func_t() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -55,9 +55,11 @@ public class hb_color_line_get_extend_func_t {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment color_line, MemorySegment color_line_data, MemorySegment user_data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment color_line, MemorySegment color_line_data, MemorySegment user_data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, color_line, color_line_data, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

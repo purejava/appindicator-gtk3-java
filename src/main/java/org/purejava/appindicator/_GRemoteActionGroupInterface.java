@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -52,7 +48,7 @@ public class _GRemoteActionGroupInterface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -89,7 +85,11 @@ public class _GRemoteActionGroupInterface {
      * void (*activate_action_full)(GRemoteActionGroup *, const gchar *, GVariant *, GVariant *)
      * }
      */
-    public class activate_action_full {
+    public final static class activate_action_full {
+
+        private activate_action_full() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -127,9 +127,11 @@ public class _GRemoteActionGroupInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -148,7 +150,7 @@ public class _GRemoteActionGroupInterface {
         return activate_action_full$LAYOUT;
     }
 
-    private static final long activate_action_full$OFFSET = 16;
+    private static final long activate_action_full$OFFSET = $LAYOUT.byteOffset(groupElement("activate_action_full"));
 
     /**
      * Offset for field:
@@ -185,7 +187,11 @@ public class _GRemoteActionGroupInterface {
      * void (*change_action_state_full)(GRemoteActionGroup *, const gchar *, GVariant *, GVariant *)
      * }
      */
-    public class change_action_state_full {
+    public final static class change_action_state_full {
+
+        private change_action_state_full() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -223,9 +229,11 @@ public class _GRemoteActionGroupInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -244,7 +252,7 @@ public class _GRemoteActionGroupInterface {
         return change_action_state_full$LAYOUT;
     }
 
-    private static final long change_action_state_full$OFFSET = 24;
+    private static final long change_action_state_full$OFFSET = $LAYOUT.byteOffset(groupElement("change_action_state_full"));
 
     /**
      * Offset for field:
@@ -305,7 +313,7 @@ public class _GRemoteActionGroupInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -313,7 +321,7 @@ public class _GRemoteActionGroupInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

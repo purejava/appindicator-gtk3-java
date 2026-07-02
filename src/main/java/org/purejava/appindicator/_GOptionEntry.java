@@ -2,15 +2,12 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfByte;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -62,7 +59,7 @@ public class _GOptionEntry {
         return long_name$LAYOUT;
     }
 
-    private static final long long_name$OFFSET = 0;
+    private static final long long_name$OFFSET = $LAYOUT.byteOffset(groupElement("long_name"));
 
     /**
      * Offset for field:
@@ -106,7 +103,7 @@ public class _GOptionEntry {
         return short_name$LAYOUT;
     }
 
-    private static final long short_name$OFFSET = 8;
+    private static final long short_name$OFFSET = $LAYOUT.byteOffset(groupElement("short_name"));
 
     /**
      * Offset for field:
@@ -150,7 +147,7 @@ public class _GOptionEntry {
         return flags$LAYOUT;
     }
 
-    private static final long flags$OFFSET = 12;
+    private static final long flags$OFFSET = $LAYOUT.byteOffset(groupElement("flags"));
 
     /**
      * Offset for field:
@@ -194,7 +191,7 @@ public class _GOptionEntry {
         return arg$LAYOUT;
     }
 
-    private static final long arg$OFFSET = 16;
+    private static final long arg$OFFSET = $LAYOUT.byteOffset(groupElement("arg"));
 
     /**
      * Offset for field:
@@ -238,7 +235,7 @@ public class _GOptionEntry {
         return arg_data$LAYOUT;
     }
 
-    private static final long arg_data$OFFSET = 24;
+    private static final long arg_data$OFFSET = $LAYOUT.byteOffset(groupElement("arg_data"));
 
     /**
      * Offset for field:
@@ -282,7 +279,7 @@ public class _GOptionEntry {
         return description$LAYOUT;
     }
 
-    private static final long description$OFFSET = 32;
+    private static final long description$OFFSET = $LAYOUT.byteOffset(groupElement("description"));
 
     /**
      * Offset for field:
@@ -326,7 +323,7 @@ public class _GOptionEntry {
         return arg_description$LAYOUT;
     }
 
-    private static final long arg_description$OFFSET = 40;
+    private static final long arg_description$OFFSET = $LAYOUT.byteOffset(groupElement("arg_description"));
 
     /**
      * Offset for field:
@@ -387,7 +384,7 @@ public class _GOptionEntry {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -395,7 +392,7 @@ public class _GOptionEntry {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

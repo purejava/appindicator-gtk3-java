@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfShort;
 
 /**
  * {@snippet lang=c :
@@ -67,7 +63,7 @@ public class _GtkTableChild {
         return widget$LAYOUT;
     }
 
-    private static final long widget$OFFSET = 0;
+    private static final long widget$OFFSET = $LAYOUT.byteOffset(groupElement("widget"));
 
     /**
      * Offset for field:
@@ -111,7 +107,7 @@ public class _GtkTableChild {
         return left_attach$LAYOUT;
     }
 
-    private static final long left_attach$OFFSET = 8;
+    private static final long left_attach$OFFSET = $LAYOUT.byteOffset(groupElement("left_attach"));
 
     /**
      * Offset for field:
@@ -155,7 +151,7 @@ public class _GtkTableChild {
         return right_attach$LAYOUT;
     }
 
-    private static final long right_attach$OFFSET = 10;
+    private static final long right_attach$OFFSET = $LAYOUT.byteOffset(groupElement("right_attach"));
 
     /**
      * Offset for field:
@@ -199,7 +195,7 @@ public class _GtkTableChild {
         return top_attach$LAYOUT;
     }
 
-    private static final long top_attach$OFFSET = 12;
+    private static final long top_attach$OFFSET = $LAYOUT.byteOffset(groupElement("top_attach"));
 
     /**
      * Offset for field:
@@ -243,7 +239,7 @@ public class _GtkTableChild {
         return bottom_attach$LAYOUT;
     }
 
-    private static final long bottom_attach$OFFSET = 14;
+    private static final long bottom_attach$OFFSET = $LAYOUT.byteOffset(groupElement("bottom_attach"));
 
     /**
      * Offset for field:
@@ -287,7 +283,7 @@ public class _GtkTableChild {
         return xpadding$LAYOUT;
     }
 
-    private static final long xpadding$OFFSET = 16;
+    private static final long xpadding$OFFSET = $LAYOUT.byteOffset(groupElement("xpadding"));
 
     /**
      * Offset for field:
@@ -331,7 +327,7 @@ public class _GtkTableChild {
         return ypadding$LAYOUT;
     }
 
-    private static final long ypadding$OFFSET = 18;
+    private static final long ypadding$OFFSET = $LAYOUT.byteOffset(groupElement("ypadding"));
 
     /**
      * Offset for field:
@@ -392,7 +388,7 @@ public class _GtkTableChild {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -400,7 +396,7 @@ public class _GtkTableChild {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

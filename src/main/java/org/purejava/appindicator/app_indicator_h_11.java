@@ -2,21 +2,766 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.ValueLayout.OfInt;
 
-public class app_indicator_h_11 extends app_indicator_h_12 {
+class app_indicator_h_11 extends app_indicator_h_12 {
 
     app_indicator_h_11() {
         // Should not be called directly
     }
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GFileIOStream_slistautoptr
+     * }
+     */
+    public static final AddressLayout GFileIOStream_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GFileIOStream_queueautoptr
+     * }
+     */
+    public static final AddressLayout GFileIOStream_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GFileMonitor *GFileMonitor_autoptr
+     * }
+     */
+    public static final AddressLayout GFileMonitor_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GFileMonitor_listautoptr
+     * }
+     */
+    public static final AddressLayout GFileMonitor_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GFileMonitor_slistautoptr
+     * }
+     */
+    public static final AddressLayout GFileMonitor_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GFileMonitor_queueautoptr
+     * }
+     */
+    public static final AddressLayout GFileMonitor_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GFilenameCompleter *GFilenameCompleter_autoptr
+     * }
+     */
+    public static final AddressLayout GFilenameCompleter_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GFilenameCompleter_listautoptr
+     * }
+     */
+    public static final AddressLayout GFilenameCompleter_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GFilenameCompleter_slistautoptr
+     * }
+     */
+    public static final AddressLayout GFilenameCompleter_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GFilenameCompleter_queueautoptr
+     * }
+     */
+    public static final AddressLayout GFilenameCompleter_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GFileOutputStream *GFileOutputStream_autoptr
+     * }
+     */
+    public static final AddressLayout GFileOutputStream_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GFileOutputStream_listautoptr
+     * }
+     */
+    public static final AddressLayout GFileOutputStream_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GFileOutputStream_slistautoptr
+     * }
+     */
+    public static final AddressLayout GFileOutputStream_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GFileOutputStream_queueautoptr
+     * }
+     */
+    public static final AddressLayout GFileOutputStream_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GFilterInputStream *GFilterInputStream_autoptr
+     * }
+     */
+    public static final AddressLayout GFilterInputStream_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GFilterInputStream_listautoptr
+     * }
+     */
+    public static final AddressLayout GFilterInputStream_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GFilterInputStream_slistautoptr
+     * }
+     */
+    public static final AddressLayout GFilterInputStream_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GFilterInputStream_queueautoptr
+     * }
+     */
+    public static final AddressLayout GFilterInputStream_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GFilterOutputStream *GFilterOutputStream_autoptr
+     * }
+     */
+    public static final AddressLayout GFilterOutputStream_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GFilterOutputStream_listautoptr
+     * }
+     */
+    public static final AddressLayout GFilterOutputStream_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GFilterOutputStream_slistautoptr
+     * }
+     */
+    public static final AddressLayout GFilterOutputStream_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GFilterOutputStream_queueautoptr
+     * }
+     */
+    public static final AddressLayout GFilterOutputStream_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GIcon *GIcon_autoptr
+     * }
+     */
+    public static final AddressLayout GIcon_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GIcon_listautoptr
+     * }
+     */
+    public static final AddressLayout GIcon_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GIcon_slistautoptr
+     * }
+     */
+    public static final AddressLayout GIcon_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GIcon_queueautoptr
+     * }
+     */
+    public static final AddressLayout GIcon_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GInetAddress *GInetAddress_autoptr
+     * }
+     */
+    public static final AddressLayout GInetAddress_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GInetAddress_listautoptr
+     * }
+     */
+    public static final AddressLayout GInetAddress_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GInetAddress_slistautoptr
+     * }
+     */
+    public static final AddressLayout GInetAddress_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GInetAddress_queueautoptr
+     * }
+     */
+    public static final AddressLayout GInetAddress_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GInetAddressMask *GInetAddressMask_autoptr
+     * }
+     */
+    public static final AddressLayout GInetAddressMask_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GInetAddressMask_listautoptr
+     * }
+     */
+    public static final AddressLayout GInetAddressMask_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GInetAddressMask_slistautoptr
+     * }
+     */
+    public static final AddressLayout GInetAddressMask_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GInetAddressMask_queueautoptr
+     * }
+     */
+    public static final AddressLayout GInetAddressMask_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GInetSocketAddress *GInetSocketAddress_autoptr
+     * }
+     */
+    public static final AddressLayout GInetSocketAddress_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GInetSocketAddress_listautoptr
+     * }
+     */
+    public static final AddressLayout GInetSocketAddress_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GInetSocketAddress_slistautoptr
+     * }
+     */
+    public static final AddressLayout GInetSocketAddress_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GInetSocketAddress_queueautoptr
+     * }
+     */
+    public static final AddressLayout GInetSocketAddress_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GInitable *GInitable_autoptr
+     * }
+     */
+    public static final AddressLayout GInitable_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GInitable_listautoptr
+     * }
+     */
+    public static final AddressLayout GInitable_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GInitable_slistautoptr
+     * }
+     */
+    public static final AddressLayout GInitable_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GInitable_queueautoptr
+     * }
+     */
+    public static final AddressLayout GInitable_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GInputStream *GInputStream_autoptr
+     * }
+     */
+    public static final AddressLayout GInputStream_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GInputStream_listautoptr
+     * }
+     */
+    public static final AddressLayout GInputStream_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GInputStream_slistautoptr
+     * }
+     */
+    public static final AddressLayout GInputStream_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GInputStream_queueautoptr
+     * }
+     */
+    public static final AddressLayout GInputStream_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GIOModule *GIOModule_autoptr
+     * }
+     */
+    public static final AddressLayout GIOModule_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GIOModule_listautoptr
+     * }
+     */
+    public static final AddressLayout GIOModule_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GIOModule_slistautoptr
+     * }
+     */
+    public static final AddressLayout GIOModule_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GIOModule_queueautoptr
+     * }
+     */
+    public static final AddressLayout GIOModule_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GIOStream *GIOStream_autoptr
+     * }
+     */
+    public static final AddressLayout GIOStream_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GIOStream_listautoptr
+     * }
+     */
+    public static final AddressLayout GIOStream_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GIOStream_slistautoptr
+     * }
+     */
+    public static final AddressLayout GIOStream_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GIOStream_queueautoptr
+     * }
+     */
+    public static final AddressLayout GIOStream_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GLoadableIcon *GLoadableIcon_autoptr
+     * }
+     */
+    public static final AddressLayout GLoadableIcon_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GLoadableIcon_listautoptr
+     * }
+     */
+    public static final AddressLayout GLoadableIcon_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GLoadableIcon_slistautoptr
+     * }
+     */
+    public static final AddressLayout GLoadableIcon_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GLoadableIcon_queueautoptr
+     * }
+     */
+    public static final AddressLayout GLoadableIcon_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GMemoryInputStream *GMemoryInputStream_autoptr
+     * }
+     */
+    public static final AddressLayout GMemoryInputStream_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GMemoryInputStream_listautoptr
+     * }
+     */
+    public static final AddressLayout GMemoryInputStream_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GMemoryInputStream_slistautoptr
+     * }
+     */
+    public static final AddressLayout GMemoryInputStream_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GMemoryInputStream_queueautoptr
+     * }
+     */
+    public static final AddressLayout GMemoryInputStream_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GMemoryOutputStream *GMemoryOutputStream_autoptr
+     * }
+     */
+    public static final AddressLayout GMemoryOutputStream_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GMemoryOutputStream_listautoptr
+     * }
+     */
+    public static final AddressLayout GMemoryOutputStream_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GMemoryOutputStream_slistautoptr
+     * }
+     */
+    public static final AddressLayout GMemoryOutputStream_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GMemoryOutputStream_queueautoptr
+     * }
+     */
+    public static final AddressLayout GMemoryOutputStream_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GMenu *GMenu_autoptr
+     * }
+     */
+    public static final AddressLayout GMenu_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GMenu_listautoptr
+     * }
+     */
+    public static final AddressLayout GMenu_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GMenu_slistautoptr
+     * }
+     */
+    public static final AddressLayout GMenu_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GMenu_queueautoptr
+     * }
+     */
+    public static final AddressLayout GMenu_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GMenuItem *GMenuItem_autoptr
+     * }
+     */
+    public static final AddressLayout GMenuItem_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GMenuItem_listautoptr
+     * }
+     */
+    public static final AddressLayout GMenuItem_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GMenuItem_slistautoptr
+     * }
+     */
+    public static final AddressLayout GMenuItem_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GMenuItem_queueautoptr
+     * }
+     */
+    public static final AddressLayout GMenuItem_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GMenuModel *GMenuModel_autoptr
+     * }
+     */
+    public static final AddressLayout GMenuModel_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GMenuModel_listautoptr
+     * }
+     */
+    public static final AddressLayout GMenuModel_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GMenuModel_slistautoptr
+     * }
+     */
+    public static final AddressLayout GMenuModel_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GMenuModel_queueautoptr
+     * }
+     */
+    public static final AddressLayout GMenuModel_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GMenuAttributeIter *GMenuAttributeIter_autoptr
+     * }
+     */
+    public static final AddressLayout GMenuAttributeIter_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GMenuAttributeIter_listautoptr
+     * }
+     */
+    public static final AddressLayout GMenuAttributeIter_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GMenuAttributeIter_slistautoptr
+     * }
+     */
+    public static final AddressLayout GMenuAttributeIter_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GMenuAttributeIter_queueautoptr
+     * }
+     */
+    public static final AddressLayout GMenuAttributeIter_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GMenuLinkIter *GMenuLinkIter_autoptr
+     * }
+     */
+    public static final AddressLayout GMenuLinkIter_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GMenuLinkIter_listautoptr
+     * }
+     */
+    public static final AddressLayout GMenuLinkIter_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GMenuLinkIter_slistautoptr
+     * }
+     */
+    public static final AddressLayout GMenuLinkIter_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GMenuLinkIter_queueautoptr
+     * }
+     */
+    public static final AddressLayout GMenuLinkIter_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GMount *GMount_autoptr
+     * }
+     */
+    public static final AddressLayout GMount_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GMount_listautoptr
+     * }
+     */
+    public static final AddressLayout GMount_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GMount_slistautoptr
+     * }
+     */
+    public static final AddressLayout GMount_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GMount_queueautoptr
+     * }
+     */
+    public static final AddressLayout GMount_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GMountOperation *GMountOperation_autoptr
+     * }
+     */
+    public static final AddressLayout GMountOperation_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GMountOperation_listautoptr
+     * }
+     */
+    public static final AddressLayout GMountOperation_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GMountOperation_slistautoptr
+     * }
+     */
+    public static final AddressLayout GMountOperation_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GMountOperation_queueautoptr
+     * }
+     */
+    public static final AddressLayout GMountOperation_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GNativeVolumeMonitor *GNativeVolumeMonitor_autoptr
+     * }
+     */
+    public static final AddressLayout GNativeVolumeMonitor_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GNativeVolumeMonitor_listautoptr
+     * }
+     */
+    public static final AddressLayout GNativeVolumeMonitor_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GNativeVolumeMonitor_slistautoptr
+     * }
+     */
+    public static final AddressLayout GNativeVolumeMonitor_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GNativeVolumeMonitor_queueautoptr
+     * }
+     */
+    public static final AddressLayout GNativeVolumeMonitor_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GNetworkAddress *GNetworkAddress_autoptr
+     * }
+     */
+    public static final AddressLayout GNetworkAddress_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GNetworkAddress_listautoptr
+     * }
+     */
+    public static final AddressLayout GNetworkAddress_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GNetworkAddress_slistautoptr
+     * }
+     */
+    public static final AddressLayout GNetworkAddress_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GNetworkAddress_queueautoptr
+     * }
+     */
+    public static final AddressLayout GNetworkAddress_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GNetworkMonitor *GNetworkMonitor_autoptr
+     * }
+     */
+    public static final AddressLayout GNetworkMonitor_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GNetworkMonitor_listautoptr
+     * }
+     */
+    public static final AddressLayout GNetworkMonitor_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GNetworkMonitor_slistautoptr
+     * }
+     */
+    public static final AddressLayout GNetworkMonitor_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GNetworkMonitor_queueautoptr
+     * }
+     */
+    public static final AddressLayout GNetworkMonitor_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GNetworkService *GNetworkService_autoptr
+     * }
+     */
+    public static final AddressLayout GNetworkService_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GNetworkService_listautoptr
+     * }
+     */
+    public static final AddressLayout GNetworkService_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GNetworkService_slistautoptr
+     * }
+     */
+    public static final AddressLayout GNetworkService_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GNetworkService_queueautoptr
+     * }
+     */
+    public static final AddressLayout GNetworkService_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GNotification *GNotification_autoptr
+     * }
+     */
+    public static final AddressLayout GNotification_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GNotification_listautoptr
+     * }
+     */
+    public static final AddressLayout GNotification_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GNotification_slistautoptr
+     * }
+     */
+    public static final AddressLayout GNotification_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GNotification_queueautoptr
+     * }
+     */
+    public static final AddressLayout GNotification_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GOutputStream *GOutputStream_autoptr
+     * }
+     */
+    public static final AddressLayout GOutputStream_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GOutputStream_listautoptr
+     * }
+     */
+    public static final AddressLayout GOutputStream_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GOutputStream_slistautoptr
+     * }
+     */
+    public static final AddressLayout GOutputStream_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GOutputStream_queueautoptr
+     * }
+     */
+    public static final AddressLayout GOutputStream_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GPermission *GPermission_autoptr
+     * }
+     */
+    public static final AddressLayout GPermission_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GPermission_listautoptr
+     * }
+     */
+    public static final AddressLayout GPermission_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GPermission_slistautoptr
+     * }
+     */
+    public static final AddressLayout GPermission_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GPermission_queueautoptr
+     * }
+     */
+    public static final AddressLayout GPermission_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GPollableInputStream *GPollableInputStream_autoptr
+     * }
+     */
+    public static final AddressLayout GPollableInputStream_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GPollableInputStream_listautoptr
+     * }
+     */
+    public static final AddressLayout GPollableInputStream_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GPollableInputStream_slistautoptr
+     * }
+     */
+    public static final AddressLayout GPollableInputStream_slistautoptr = app_indicator_h.C_POINTER;
     /**
      * {@snippet lang=c :
      * typedef GQueue *GPollableInputStream_queueautoptr
@@ -625,30 +1370,6 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static final AddressLayout GSocketConnection_queueautoptr = app_indicator_h.C_POINTER;
     /**
      * {@snippet lang=c :
-     * typedef GSocketControlMessage *GSocketControlMessage_autoptr
-     * }
-     */
-    public static final AddressLayout GSocketControlMessage_autoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GList *GSocketControlMessage_listautoptr
-     * }
-     */
-    public static final AddressLayout GSocketControlMessage_listautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GSList *GSocketControlMessage_slistautoptr
-     * }
-     */
-    public static final AddressLayout GSocketControlMessage_slistautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GQueue *GSocketControlMessage_queueautoptr
-     * }
-     */
-    public static final AddressLayout GSocketControlMessage_queueautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
      * typedef GSocket *GSocket_autoptr
      * }
      */
@@ -1249,142 +1970,379 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static final AddressLayout GZlibDecompressor_queueautoptr = app_indicator_h.C_POINTER;
     /**
      * {@snippet lang=c :
-     * typedef __uint8_t uint8_t
+     * typedef int __gwchar_t
      * }
      */
-    public static final OfByte uint8_t = app_indicator_h.C_CHAR;
+    public static final OfInt __gwchar_t = app_indicator_h.C_INT;
+
+    private static class imaxabs {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_LONG
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("imaxabs");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern intmax_t imaxabs(intmax_t __n)
+     * }
+     */
+    public static FunctionDescriptor imaxabs$descriptor() {
+        return imaxabs.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern intmax_t imaxabs(intmax_t __n)
+     * }
+     */
+    public static MethodHandle imaxabs$handle() {
+        return imaxabs.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern intmax_t imaxabs(intmax_t __n)
+     * }
+     */
+    public static MemorySegment imaxabs$address() {
+        return imaxabs.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
-     * typedef __uint16_t uint16_t
+     * extern intmax_t imaxabs(intmax_t __n)
      * }
      */
-    public static final OfShort uint16_t = app_indicator_h.C_SHORT;
+    public static long imaxabs(long __n) {
+        var mh$ = imaxabs.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("imaxabs", __n);
+            }
+            return (long)mh$.invokeExact(__n);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class imaxdiv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            imaxdiv_t.layout(),
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_LONG
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("imaxdiv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern imaxdiv_t imaxdiv(intmax_t __numer, intmax_t __denom)
+     * }
+     */
+    public static FunctionDescriptor imaxdiv$descriptor() {
+        return imaxdiv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern imaxdiv_t imaxdiv(intmax_t __numer, intmax_t __denom)
+     * }
+     */
+    public static MethodHandle imaxdiv$handle() {
+        return imaxdiv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern imaxdiv_t imaxdiv(intmax_t __numer, intmax_t __denom)
+     * }
+     */
+    public static MemorySegment imaxdiv$address() {
+        return imaxdiv.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
-     * typedef __uint32_t uint32_t
+     * extern imaxdiv_t imaxdiv(intmax_t __numer, intmax_t __denom)
      * }
      */
-    public static final OfInt uint32_t = app_indicator_h.C_INT;
+    public static MemorySegment imaxdiv(SegmentAllocator allocator, long __numer, long __denom) {
+        var mh$ = imaxdiv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("imaxdiv", allocator, __numer, __denom);
+            }
+            return (MemorySegment)mh$.invokeExact(allocator, __numer, __denom);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class strtoimax {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("strtoimax");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern intmax_t strtoimax(const char *restrict __nptr, char **restrict __endptr, int __base)
+     * }
+     */
+    public static FunctionDescriptor strtoimax$descriptor() {
+        return strtoimax.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern intmax_t strtoimax(const char *restrict __nptr, char **restrict __endptr, int __base)
+     * }
+     */
+    public static MethodHandle strtoimax$handle() {
+        return strtoimax.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern intmax_t strtoimax(const char *restrict __nptr, char **restrict __endptr, int __base)
+     * }
+     */
+    public static MemorySegment strtoimax$address() {
+        return strtoimax.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
-     * typedef __uint64_t uint64_t
+     * extern intmax_t strtoimax(const char *restrict __nptr, char **restrict __endptr, int __base)
      * }
      */
-    public static final OfLong uint64_t = app_indicator_h.C_LONG;
+    public static long strtoimax(MemorySegment __nptr, MemorySegment __endptr, int __base) {
+        var mh$ = strtoimax.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("strtoimax", __nptr, __endptr, __base);
+            }
+            return (long)mh$.invokeExact(__nptr, __endptr, __base);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class strtoumax {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("strtoumax");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern uintmax_t strtoumax(const char *restrict __nptr, char **restrict __endptr, int __base)
+     * }
+     */
+    public static FunctionDescriptor strtoumax$descriptor() {
+        return strtoumax.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern uintmax_t strtoumax(const char *restrict __nptr, char **restrict __endptr, int __base)
+     * }
+     */
+    public static MethodHandle strtoumax$handle() {
+        return strtoumax.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern uintmax_t strtoumax(const char *restrict __nptr, char **restrict __endptr, int __base)
+     * }
+     */
+    public static MemorySegment strtoumax$address() {
+        return strtoumax.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
-     * typedef __int_least8_t int_least8_t
+     * extern uintmax_t strtoumax(const char *restrict __nptr, char **restrict __endptr, int __base)
      * }
      */
-    public static final OfByte int_least8_t = app_indicator_h.C_CHAR;
+    public static long strtoumax(MemorySegment __nptr, MemorySegment __endptr, int __base) {
+        var mh$ = strtoumax.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("strtoumax", __nptr, __endptr, __base);
+            }
+            return (long)mh$.invokeExact(__nptr, __endptr, __base);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class wcstoimax {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("wcstoimax");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern intmax_t wcstoimax(const __gwchar_t *restrict __nptr, __gwchar_t **restrict __endptr, int __base)
+     * }
+     */
+    public static FunctionDescriptor wcstoimax$descriptor() {
+        return wcstoimax.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern intmax_t wcstoimax(const __gwchar_t *restrict __nptr, __gwchar_t **restrict __endptr, int __base)
+     * }
+     */
+    public static MethodHandle wcstoimax$handle() {
+        return wcstoimax.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern intmax_t wcstoimax(const __gwchar_t *restrict __nptr, __gwchar_t **restrict __endptr, int __base)
+     * }
+     */
+    public static MemorySegment wcstoimax$address() {
+        return wcstoimax.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
-     * typedef __int_least16_t int_least16_t
+     * extern intmax_t wcstoimax(const __gwchar_t *restrict __nptr, __gwchar_t **restrict __endptr, int __base)
      * }
      */
-    public static final OfShort int_least16_t = app_indicator_h.C_SHORT;
+    public static long wcstoimax(MemorySegment __nptr, MemorySegment __endptr, int __base) {
+        var mh$ = wcstoimax.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("wcstoimax", __nptr, __endptr, __base);
+            }
+            return (long)mh$.invokeExact(__nptr, __endptr, __base);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class wcstoumax {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("wcstoumax");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern uintmax_t wcstoumax(const __gwchar_t *restrict __nptr, __gwchar_t **restrict __endptr, int __base)
+     * }
+     */
+    public static FunctionDescriptor wcstoumax$descriptor() {
+        return wcstoumax.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern uintmax_t wcstoumax(const __gwchar_t *restrict __nptr, __gwchar_t **restrict __endptr, int __base)
+     * }
+     */
+    public static MethodHandle wcstoumax$handle() {
+        return wcstoumax.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern uintmax_t wcstoumax(const __gwchar_t *restrict __nptr, __gwchar_t **restrict __endptr, int __base)
+     * }
+     */
+    public static MemorySegment wcstoumax$address() {
+        return wcstoumax.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
-     * typedef __int_least32_t int_least32_t
+     * extern uintmax_t wcstoumax(const __gwchar_t *restrict __nptr, __gwchar_t **restrict __endptr, int __base)
      * }
      */
-    public static final OfInt int_least32_t = app_indicator_h.C_INT;
-    /**
-     * {@snippet lang=c :
-     * typedef __int_least64_t int_least64_t
-     * }
-     */
-    public static final OfLong int_least64_t = app_indicator_h.C_LONG;
-    /**
-     * {@snippet lang=c :
-     * typedef __uint_least8_t uint_least8_t
-     * }
-     */
-    public static final OfByte uint_least8_t = app_indicator_h.C_CHAR;
-    /**
-     * {@snippet lang=c :
-     * typedef __uint_least16_t uint_least16_t
-     * }
-     */
-    public static final OfShort uint_least16_t = app_indicator_h.C_SHORT;
-    /**
-     * {@snippet lang=c :
-     * typedef __uint_least32_t uint_least32_t
-     * }
-     */
-    public static final OfInt uint_least32_t = app_indicator_h.C_INT;
-    /**
-     * {@snippet lang=c :
-     * typedef __uint_least64_t uint_least64_t
-     * }
-     */
-    public static final OfLong uint_least64_t = app_indicator_h.C_LONG;
-    /**
-     * {@snippet lang=c :
-     * typedef signed char int_fast8_t
-     * }
-     */
-    public static final OfByte int_fast8_t = app_indicator_h.C_CHAR;
-    /**
-     * {@snippet lang=c :
-     * typedef long int_fast16_t
-     * }
-     */
-    public static final OfLong int_fast16_t = app_indicator_h.C_LONG;
-    /**
-     * {@snippet lang=c :
-     * typedef long int_fast32_t
-     * }
-     */
-    public static final OfLong int_fast32_t = app_indicator_h.C_LONG;
-    /**
-     * {@snippet lang=c :
-     * typedef long int_fast64_t
-     * }
-     */
-    public static final OfLong int_fast64_t = app_indicator_h.C_LONG;
-    /**
-     * {@snippet lang=c :
-     * typedef unsigned char uint_fast8_t
-     * }
-     */
-    public static final OfByte uint_fast8_t = app_indicator_h.C_CHAR;
-    /**
-     * {@snippet lang=c :
-     * typedef unsigned long uint_fast16_t
-     * }
-     */
-    public static final OfLong uint_fast16_t = app_indicator_h.C_LONG;
-    /**
-     * {@snippet lang=c :
-     * typedef unsigned long uint_fast32_t
-     * }
-     */
-    public static final OfLong uint_fast32_t = app_indicator_h.C_LONG;
-    /**
-     * {@snippet lang=c :
-     * typedef unsigned long uint_fast64_t
-     * }
-     */
-    public static final OfLong uint_fast64_t = app_indicator_h.C_LONG;
-    /**
-     * {@snippet lang=c :
-     * typedef unsigned long uintptr_t
-     * }
-     */
-    public static final OfLong uintptr_t = app_indicator_h.C_LONG;
-    /**
-     * {@snippet lang=c :
-     * typedef __intmax_t intmax_t
-     * }
-     */
-    public static final OfLong intmax_t = app_indicator_h.C_LONG;
-    /**
-     * {@snippet lang=c :
-     * typedef __uintmax_t uintmax_t
-     * }
-     */
-    public static final OfLong uintmax_t = app_indicator_h.C_LONG;
+    public static long wcstoumax(MemorySegment __nptr, MemorySegment __endptr, int __base) {
+        var mh$ = wcstoumax.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("wcstoumax", __nptr, __endptr, __base);
+            }
+            return (long)mh$.invokeExact(__nptr, __endptr, __base);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
     /**
      * {@snippet lang=c :
      * typedef int hb_bool_t
@@ -1423,9 +2381,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_tag_from_string"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_tag_from_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1447,6 +2405,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_tag_from_string$handle() {
         return hb_tag_from_string.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_tag_t hb_tag_from_string(const char *str, int len)
+     * }
+     */
+    public static MemorySegment hb_tag_from_string$address() {
+        return hb_tag_from_string.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_tag_t hb_tag_from_string(const char *str, int len)
@@ -1459,6 +2428,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_tag_from_string", str, len);
             }
             return (int)mh$.invokeExact(str, len);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1470,9 +2441,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_tag_to_string"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_tag_to_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1494,6 +2465,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_tag_to_string$handle() {
         return hb_tag_to_string.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_tag_to_string(hb_tag_t tag, char *buf)
+     * }
+     */
+    public static MemorySegment hb_tag_to_string$address() {
+        return hb_tag_to_string.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_tag_to_string(hb_tag_t tag, char *buf)
@@ -1506,6 +2488,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_tag_to_string", tag, buf);
             }
             mh$.invokeExact(tag, buf);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1563,9 +2547,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_direction_from_string"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_direction_from_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1587,6 +2571,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_direction_from_string$handle() {
         return hb_direction_from_string.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_direction_t hb_direction_from_string(const char *str, int len)
+     * }
+     */
+    public static MemorySegment hb_direction_from_string$address() {
+        return hb_direction_from_string.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_direction_t hb_direction_from_string(const char *str, int len)
@@ -1599,6 +2594,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_direction_from_string", str, len);
             }
             return (int)mh$.invokeExact(str, len);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1610,9 +2607,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_direction_to_string"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_direction_to_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1634,6 +2631,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_direction_to_string$handle() {
         return hb_direction_to_string.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern const char *hb_direction_to_string(hb_direction_t direction)
+     * }
+     */
+    public static MemorySegment hb_direction_to_string$address() {
+        return hb_direction_to_string.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern const char *hb_direction_to_string(hb_direction_t direction)
@@ -1646,6 +2654,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_direction_to_string", direction);
             }
             return (MemorySegment)mh$.invokeExact(direction);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1664,9 +2674,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_language_from_string"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_language_from_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1688,6 +2698,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_language_from_string$handle() {
         return hb_language_from_string.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_language_t hb_language_from_string(const char *str, int len)
+     * }
+     */
+    public static MemorySegment hb_language_from_string$address() {
+        return hb_language_from_string.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_language_t hb_language_from_string(const char *str, int len)
@@ -1700,6 +2721,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_language_from_string", str, len);
             }
             return (MemorySegment)mh$.invokeExact(str, len);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1711,9 +2734,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_language_to_string"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_language_to_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1735,6 +2758,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_language_to_string$handle() {
         return hb_language_to_string.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern const char *hb_language_to_string(hb_language_t language)
+     * }
+     */
+    public static MemorySegment hb_language_to_string$address() {
+        return hb_language_to_string.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern const char *hb_language_to_string(hb_language_t language)
@@ -1747,6 +2781,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_language_to_string", language);
             }
             return (MemorySegment)mh$.invokeExact(language);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1756,9 +2792,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_language_get_default"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_language_get_default");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1780,6 +2816,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_language_get_default$handle() {
         return hb_language_get_default.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_language_t hb_language_get_default()
+     * }
+     */
+    public static MemorySegment hb_language_get_default$address() {
+        return hb_language_get_default.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_language_t hb_language_get_default()
@@ -1792,6 +2839,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_language_get_default");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1804,9 +2853,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_language_matches"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_language_matches");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1828,6 +2877,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_language_matches$handle() {
         return hb_language_matches.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_language_matches(hb_language_t language, hb_language_t specific)
+     * }
+     */
+    public static MemorySegment hb_language_matches$address() {
+        return hb_language_matches.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_language_matches(hb_language_t language, hb_language_t specific)
@@ -1840,6 +2900,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_language_matches", language, specific);
             }
             return (int)mh$.invokeExact(language, specific);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3329,6 +4391,105 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static int HB_SCRIPT_NAG_MUNDARI() {
         return HB_SCRIPT_NAG_MUNDARI;
     }
+    private static final int HB_SCRIPT_GARAY = (int)1197568609L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.HB_SCRIPT_GARAY = 1197568609
+     * }
+     */
+    public static int HB_SCRIPT_GARAY() {
+        return HB_SCRIPT_GARAY;
+    }
+    private static final int HB_SCRIPT_GURUNG_KHEMA = (int)1198877544L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.HB_SCRIPT_GURUNG_KHEMA = 1198877544
+     * }
+     */
+    public static int HB_SCRIPT_GURUNG_KHEMA() {
+        return HB_SCRIPT_GURUNG_KHEMA;
+    }
+    private static final int HB_SCRIPT_KIRAT_RAI = (int)1265787241L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.HB_SCRIPT_KIRAT_RAI = 1265787241
+     * }
+     */
+    public static int HB_SCRIPT_KIRAT_RAI() {
+        return HB_SCRIPT_KIRAT_RAI;
+    }
+    private static final int HB_SCRIPT_OL_ONAL = (int)1332633967L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.HB_SCRIPT_OL_ONAL = 1332633967
+     * }
+     */
+    public static int HB_SCRIPT_OL_ONAL() {
+        return HB_SCRIPT_OL_ONAL;
+    }
+    private static final int HB_SCRIPT_SUNUWAR = (int)1400204917L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.HB_SCRIPT_SUNUWAR = 1400204917
+     * }
+     */
+    public static int HB_SCRIPT_SUNUWAR() {
+        return HB_SCRIPT_SUNUWAR;
+    }
+    private static final int HB_SCRIPT_TODHRI = (int)1416586354L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.HB_SCRIPT_TODHRI = 1416586354
+     * }
+     */
+    public static int HB_SCRIPT_TODHRI() {
+        return HB_SCRIPT_TODHRI;
+    }
+    private static final int HB_SCRIPT_TULU_TIGALARI = (int)1416983655L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.HB_SCRIPT_TULU_TIGALARI = 1416983655
+     * }
+     */
+    public static int HB_SCRIPT_TULU_TIGALARI() {
+        return HB_SCRIPT_TULU_TIGALARI;
+    }
+    private static final int HB_SCRIPT_BERIA_ERFE = (int)1113944678L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.HB_SCRIPT_BERIA_ERFE = 1113944678
+     * }
+     */
+    public static int HB_SCRIPT_BERIA_ERFE() {
+        return HB_SCRIPT_BERIA_ERFE;
+    }
+    private static final int HB_SCRIPT_SIDETIC = (int)1399415924L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.HB_SCRIPT_SIDETIC = 1399415924
+     * }
+     */
+    public static int HB_SCRIPT_SIDETIC() {
+        return HB_SCRIPT_SIDETIC;
+    }
+    private static final int HB_SCRIPT_TAI_YO = (int)1415674223L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.HB_SCRIPT_TAI_YO = 1415674223
+     * }
+     */
+    public static int HB_SCRIPT_TAI_YO() {
+        return HB_SCRIPT_TAI_YO;
+    }
+    private static final int HB_SCRIPT_TOLONG_SIKI = (int)1416588403L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.HB_SCRIPT_TOLONG_SIKI = 1416588403
+     * }
+     */
+    public static int HB_SCRIPT_TOLONG_SIKI() {
+        return HB_SCRIPT_TOLONG_SIKI;
+    }
     private static final int HB_SCRIPT_INVALID = (int)0L;
     /**
      * {@snippet lang=c :
@@ -3363,9 +4524,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_script_from_iso15924_tag"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_script_from_iso15924_tag");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -3387,6 +4548,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_script_from_iso15924_tag$handle() {
         return hb_script_from_iso15924_tag.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_script_t hb_script_from_iso15924_tag(hb_tag_t tag)
+     * }
+     */
+    public static MemorySegment hb_script_from_iso15924_tag$address() {
+        return hb_script_from_iso15924_tag.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_script_t hb_script_from_iso15924_tag(hb_tag_t tag)
@@ -3399,6 +4571,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_script_from_iso15924_tag", tag);
             }
             return (int)mh$.invokeExact(tag);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3411,9 +4585,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_script_from_string"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_script_from_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -3435,6 +4609,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_script_from_string$handle() {
         return hb_script_from_string.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_script_t hb_script_from_string(const char *str, int len)
+     * }
+     */
+    public static MemorySegment hb_script_from_string$address() {
+        return hb_script_from_string.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_script_t hb_script_from_string(const char *str, int len)
@@ -3447,6 +4632,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_script_from_string", str, len);
             }
             return (int)mh$.invokeExact(str, len);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3458,9 +4645,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_script_to_iso15924_tag"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_script_to_iso15924_tag");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -3482,6 +4669,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_script_to_iso15924_tag$handle() {
         return hb_script_to_iso15924_tag.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_tag_t hb_script_to_iso15924_tag(hb_script_t script)
+     * }
+     */
+    public static MemorySegment hb_script_to_iso15924_tag$address() {
+        return hb_script_to_iso15924_tag.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_tag_t hb_script_to_iso15924_tag(hb_script_t script)
@@ -3494,6 +4692,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_script_to_iso15924_tag", script);
             }
             return (int)mh$.invokeExact(script);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3505,9 +4705,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_script_get_horizontal_direction"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_script_get_horizontal_direction");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -3529,6 +4729,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_script_get_horizontal_direction$handle() {
         return hb_script_get_horizontal_direction.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_direction_t hb_script_get_horizontal_direction(hb_script_t script)
+     * }
+     */
+    public static MemorySegment hb_script_get_horizontal_direction$address() {
+        return hb_script_get_horizontal_direction.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_direction_t hb_script_get_horizontal_direction(hb_script_t script)
@@ -3541,6 +4752,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_script_get_horizontal_direction", script);
             }
             return (int)mh$.invokeExact(script);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3554,9 +4767,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_feature_from_string"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_feature_from_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -3578,6 +4791,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_feature_from_string$handle() {
         return hb_feature_from_string.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_feature_from_string(const char *str, int len, hb_feature_t *feature)
+     * }
+     */
+    public static MemorySegment hb_feature_from_string$address() {
+        return hb_feature_from_string.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_feature_from_string(const char *str, int len, hb_feature_t *feature)
@@ -3590,6 +4814,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_feature_from_string", str, len, feature);
             }
             return (int)mh$.invokeExact(str, len, feature);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3602,9 +4828,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_feature_to_string"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_feature_to_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -3626,6 +4852,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_feature_to_string$handle() {
         return hb_feature_to_string.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_feature_to_string(hb_feature_t *feature, char *buf, unsigned int size)
+     * }
+     */
+    public static MemorySegment hb_feature_to_string$address() {
+        return hb_feature_to_string.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_feature_to_string(hb_feature_t *feature, char *buf, unsigned int size)
@@ -3638,6 +4875,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_feature_to_string", feature, buf, size);
             }
             mh$.invokeExact(feature, buf, size);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3651,9 +4890,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_variation_from_string"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_variation_from_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -3675,6 +4914,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_variation_from_string$handle() {
         return hb_variation_from_string.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_variation_from_string(const char *str, int len, hb_variation_t *variation)
+     * }
+     */
+    public static MemorySegment hb_variation_from_string$address() {
+        return hb_variation_from_string.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_variation_from_string(const char *str, int len, hb_variation_t *variation)
@@ -3687,6 +4937,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_variation_from_string", str, len, variation);
             }
             return (int)mh$.invokeExact(str, len, variation);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3699,9 +4951,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_variation_to_string"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_variation_to_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -3723,6 +4975,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_variation_to_string$handle() {
         return hb_variation_to_string.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_variation_to_string(hb_variation_t *variation, char *buf, unsigned int size)
+     * }
+     */
+    public static MemorySegment hb_variation_to_string$address() {
+        return hb_variation_to_string.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_variation_to_string(hb_variation_t *variation, char *buf, unsigned int size)
@@ -3735,6 +4998,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_variation_to_string", variation, buf, size);
             }
             mh$.invokeExact(variation, buf, size);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3752,9 +5017,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_color_get_alpha"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_color_get_alpha");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -3776,6 +5041,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_color_get_alpha$handle() {
         return hb_color_get_alpha.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern uint8_t hb_color_get_alpha(hb_color_t color)
+     * }
+     */
+    public static MemorySegment hb_color_get_alpha$address() {
+        return hb_color_get_alpha.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern uint8_t hb_color_get_alpha(hb_color_t color)
@@ -3788,6 +5064,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_color_get_alpha", color);
             }
             return (byte)mh$.invokeExact(color);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3799,9 +5077,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_color_get_red"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_color_get_red");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -3823,6 +5101,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_color_get_red$handle() {
         return hb_color_get_red.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern uint8_t hb_color_get_red(hb_color_t color)
+     * }
+     */
+    public static MemorySegment hb_color_get_red$address() {
+        return hb_color_get_red.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern uint8_t hb_color_get_red(hb_color_t color)
@@ -3835,6 +5124,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_color_get_red", color);
             }
             return (byte)mh$.invokeExact(color);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3846,9 +5137,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_color_get_green"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_color_get_green");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -3870,6 +5161,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_color_get_green$handle() {
         return hb_color_get_green.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern uint8_t hb_color_get_green(hb_color_t color)
+     * }
+     */
+    public static MemorySegment hb_color_get_green$address() {
+        return hb_color_get_green.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern uint8_t hb_color_get_green(hb_color_t color)
@@ -3882,6 +5184,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_color_get_green", color);
             }
             return (byte)mh$.invokeExact(color);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3893,9 +5197,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_color_get_blue"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_color_get_blue");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -3917,6 +5221,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_color_get_blue$handle() {
         return hb_color_get_blue.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern uint8_t hb_color_get_blue(hb_color_t color)
+     * }
+     */
+    public static MemorySegment hb_color_get_blue$address() {
+        return hb_color_get_blue.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern uint8_t hb_color_get_blue(hb_color_t color)
@@ -3929,6 +5244,249 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_color_get_blue", color);
             }
             return (byte)mh$.invokeExact(color);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_malloc {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_malloc");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void *hb_malloc(size_t size)
+     * }
+     */
+    public static FunctionDescriptor hb_malloc$descriptor() {
+        return hb_malloc.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void *hb_malloc(size_t size)
+     * }
+     */
+    public static MethodHandle hb_malloc$handle() {
+        return hb_malloc.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void *hb_malloc(size_t size)
+     * }
+     */
+    public static MemorySegment hb_malloc$address() {
+        return hb_malloc.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void *hb_malloc(size_t size)
+     * }
+     */
+    public static MemorySegment hb_malloc(long size) {
+        var mh$ = hb_malloc.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_malloc", size);
+            }
+            return (MemorySegment)mh$.invokeExact(size);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_calloc {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_LONG
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_calloc");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void *hb_calloc(size_t nmemb, size_t size)
+     * }
+     */
+    public static FunctionDescriptor hb_calloc$descriptor() {
+        return hb_calloc.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void *hb_calloc(size_t nmemb, size_t size)
+     * }
+     */
+    public static MethodHandle hb_calloc$handle() {
+        return hb_calloc.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void *hb_calloc(size_t nmemb, size_t size)
+     * }
+     */
+    public static MemorySegment hb_calloc$address() {
+        return hb_calloc.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void *hb_calloc(size_t nmemb, size_t size)
+     * }
+     */
+    public static MemorySegment hb_calloc(long nmemb, long size) {
+        var mh$ = hb_calloc.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_calloc", nmemb, size);
+            }
+            return (MemorySegment)mh$.invokeExact(nmemb, size);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_realloc {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_realloc");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void *hb_realloc(void *ptr, size_t size)
+     * }
+     */
+    public static FunctionDescriptor hb_realloc$descriptor() {
+        return hb_realloc.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void *hb_realloc(void *ptr, size_t size)
+     * }
+     */
+    public static MethodHandle hb_realloc$handle() {
+        return hb_realloc.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void *hb_realloc(void *ptr, size_t size)
+     * }
+     */
+    public static MemorySegment hb_realloc$address() {
+        return hb_realloc.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void *hb_realloc(void *ptr, size_t size)
+     * }
+     */
+    public static MemorySegment hb_realloc(MemorySegment ptr, long size) {
+        var mh$ = hb_realloc.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_realloc", ptr, size);
+            }
+            return (MemorySegment)mh$.invokeExact(ptr, size);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_free {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_free");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_free(void *ptr)
+     * }
+     */
+    public static FunctionDescriptor hb_free$descriptor() {
+        return hb_free.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_free(void *ptr)
+     * }
+     */
+    public static MethodHandle hb_free$handle() {
+        return hb_free.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_free(void *ptr)
+     * }
+     */
+    public static MemorySegment hb_free$address() {
+        return hb_free.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_free(void *ptr)
+     * }
+     */
+    public static void hb_free(MemorySegment ptr) {
+        var mh$ = hb_free.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_free", ptr);
+            }
+            mh$.invokeExact(ptr);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3980,9 +5538,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_blob_create"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_blob_create");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4004,6 +5562,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_blob_create$handle() {
         return hb_blob_create.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_blob_t *hb_blob_create(const char *data, unsigned int length, hb_memory_mode_t mode, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_blob_create$address() {
+        return hb_blob_create.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_blob_t *hb_blob_create(const char *data, unsigned int length, hb_memory_mode_t mode, void *user_data, hb_destroy_func_t destroy)
@@ -4016,6 +5585,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_blob_create", data, length, mode, user_data, destroy);
             }
             return (MemorySegment)mh$.invokeExact(data, length, mode, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4031,9 +5602,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_blob_create_or_fail"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_blob_create_or_fail");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4055,6 +5626,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_blob_create_or_fail$handle() {
         return hb_blob_create_or_fail.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_blob_t *hb_blob_create_or_fail(const char *data, unsigned int length, hb_memory_mode_t mode, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_blob_create_or_fail$address() {
+        return hb_blob_create_or_fail.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_blob_t *hb_blob_create_or_fail(const char *data, unsigned int length, hb_memory_mode_t mode, void *user_data, hb_destroy_func_t destroy)
@@ -4067,6 +5649,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_blob_create_or_fail", data, length, mode, user_data, destroy);
             }
             return (MemorySegment)mh$.invokeExact(data, length, mode, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4078,9 +5662,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_blob_create_from_file"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_blob_create_from_file");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4102,6 +5686,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_blob_create_from_file$handle() {
         return hb_blob_create_from_file.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_blob_t *hb_blob_create_from_file(const char *file_name)
+     * }
+     */
+    public static MemorySegment hb_blob_create_from_file$address() {
+        return hb_blob_create_from_file.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_blob_t *hb_blob_create_from_file(const char *file_name)
@@ -4114,6 +5709,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_blob_create_from_file", file_name);
             }
             return (MemorySegment)mh$.invokeExact(file_name);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4125,9 +5722,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_blob_create_from_file_or_fail"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_blob_create_from_file_or_fail");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4149,6 +5746,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_blob_create_from_file_or_fail$handle() {
         return hb_blob_create_from_file_or_fail.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_blob_t *hb_blob_create_from_file_or_fail(const char *file_name)
+     * }
+     */
+    public static MemorySegment hb_blob_create_from_file_or_fail$address() {
+        return hb_blob_create_from_file_or_fail.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_blob_t *hb_blob_create_from_file_or_fail(const char *file_name)
@@ -4161,6 +5769,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_blob_create_from_file_or_fail", file_name);
             }
             return (MemorySegment)mh$.invokeExact(file_name);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4174,9 +5784,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_blob_create_sub_blob"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_blob_create_sub_blob");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4198,6 +5808,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_blob_create_sub_blob$handle() {
         return hb_blob_create_sub_blob.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_blob_t *hb_blob_create_sub_blob(hb_blob_t *parent, unsigned int offset, unsigned int length)
+     * }
+     */
+    public static MemorySegment hb_blob_create_sub_blob$address() {
+        return hb_blob_create_sub_blob.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_blob_t *hb_blob_create_sub_blob(hb_blob_t *parent, unsigned int offset, unsigned int length)
@@ -4210,6 +5831,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_blob_create_sub_blob", parent, offset, length);
             }
             return (MemorySegment)mh$.invokeExact(parent, offset, length);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4221,9 +5844,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_blob_copy_writable_or_fail"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_blob_copy_writable_or_fail");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4245,6 +5868,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_blob_copy_writable_or_fail$handle() {
         return hb_blob_copy_writable_or_fail.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_blob_t *hb_blob_copy_writable_or_fail(hb_blob_t *blob)
+     * }
+     */
+    public static MemorySegment hb_blob_copy_writable_or_fail$address() {
+        return hb_blob_copy_writable_or_fail.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_blob_t *hb_blob_copy_writable_or_fail(hb_blob_t *blob)
@@ -4257,6 +5891,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_blob_copy_writable_or_fail", blob);
             }
             return (MemorySegment)mh$.invokeExact(blob);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4266,9 +5902,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_blob_get_empty"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_blob_get_empty");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4290,6 +5926,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_blob_get_empty$handle() {
         return hb_blob_get_empty.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_blob_t *hb_blob_get_empty()
+     * }
+     */
+    public static MemorySegment hb_blob_get_empty$address() {
+        return hb_blob_get_empty.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_blob_t *hb_blob_get_empty()
@@ -4302,6 +5949,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_blob_get_empty");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4313,9 +5962,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_blob_reference"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_blob_reference");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4337,6 +5986,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_blob_reference$handle() {
         return hb_blob_reference.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_blob_t *hb_blob_reference(hb_blob_t *blob)
+     * }
+     */
+    public static MemorySegment hb_blob_reference$address() {
+        return hb_blob_reference.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_blob_t *hb_blob_reference(hb_blob_t *blob)
@@ -4349,6 +6009,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_blob_reference", blob);
             }
             return (MemorySegment)mh$.invokeExact(blob);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4359,9 +6021,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_blob_destroy"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_blob_destroy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4383,6 +6045,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_blob_destroy$handle() {
         return hb_blob_destroy.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_blob_destroy(hb_blob_t *blob)
+     * }
+     */
+    public static MemorySegment hb_blob_destroy$address() {
+        return hb_blob_destroy.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_blob_destroy(hb_blob_t *blob)
@@ -4395,6 +6068,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_blob_destroy", blob);
             }
             mh$.invokeExact(blob);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4410,9 +6085,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_blob_set_user_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_blob_set_user_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4434,6 +6109,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_blob_set_user_data$handle() {
         return hb_blob_set_user_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_blob_set_user_data(hb_blob_t *blob, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
+     * }
+     */
+    public static MemorySegment hb_blob_set_user_data$address() {
+        return hb_blob_set_user_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_blob_set_user_data(hb_blob_t *blob, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
@@ -4446,6 +6132,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_blob_set_user_data", blob, key, data, destroy, replace);
             }
             return (int)mh$.invokeExact(blob, key, data, destroy, replace);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4458,9 +6146,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_blob_get_user_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_blob_get_user_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4482,6 +6170,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_blob_get_user_data$handle() {
         return hb_blob_get_user_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void *hb_blob_get_user_data(const hb_blob_t *blob, hb_user_data_key_t *key)
+     * }
+     */
+    public static MemorySegment hb_blob_get_user_data$address() {
+        return hb_blob_get_user_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void *hb_blob_get_user_data(const hb_blob_t *blob, hb_user_data_key_t *key)
@@ -4494,6 +6193,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_blob_get_user_data", blob, key);
             }
             return (MemorySegment)mh$.invokeExact(blob, key);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4504,9 +6205,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_blob_make_immutable"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_blob_make_immutable");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4528,6 +6229,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_blob_make_immutable$handle() {
         return hb_blob_make_immutable.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_blob_make_immutable(hb_blob_t *blob)
+     * }
+     */
+    public static MemorySegment hb_blob_make_immutable$address() {
+        return hb_blob_make_immutable.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_blob_make_immutable(hb_blob_t *blob)
@@ -4540,6 +6252,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_blob_make_immutable", blob);
             }
             mh$.invokeExact(blob);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4551,9 +6265,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_blob_is_immutable"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_blob_is_immutable");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4575,6 +6289,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_blob_is_immutable$handle() {
         return hb_blob_is_immutable.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_blob_is_immutable(hb_blob_t *blob)
+     * }
+     */
+    public static MemorySegment hb_blob_is_immutable$address() {
+        return hb_blob_is_immutable.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_blob_is_immutable(hb_blob_t *blob)
@@ -4587,6 +6312,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_blob_is_immutable", blob);
             }
             return (int)mh$.invokeExact(blob);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4598,9 +6325,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_blob_get_length"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_blob_get_length");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4622,6 +6349,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_blob_get_length$handle() {
         return hb_blob_get_length.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern unsigned int hb_blob_get_length(hb_blob_t *blob)
+     * }
+     */
+    public static MemorySegment hb_blob_get_length$address() {
+        return hb_blob_get_length.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern unsigned int hb_blob_get_length(hb_blob_t *blob)
@@ -4634,6 +6372,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_blob_get_length", blob);
             }
             return (int)mh$.invokeExact(blob);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4646,9 +6386,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_blob_get_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_blob_get_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4670,6 +6410,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_blob_get_data$handle() {
         return hb_blob_get_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern const char *hb_blob_get_data(hb_blob_t *blob, unsigned int *length)
+     * }
+     */
+    public static MemorySegment hb_blob_get_data$address() {
+        return hb_blob_get_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern const char *hb_blob_get_data(hb_blob_t *blob, unsigned int *length)
@@ -4682,6 +6433,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_blob_get_data", blob, length);
             }
             return (MemorySegment)mh$.invokeExact(blob, length);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4694,9 +6447,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_blob_get_data_writable"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_blob_get_data_writable");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4718,6 +6471,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_blob_get_data_writable$handle() {
         return hb_blob_get_data_writable.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern char *hb_blob_get_data_writable(hb_blob_t *blob, unsigned int *length)
+     * }
+     */
+    public static MemorySegment hb_blob_get_data_writable$address() {
+        return hb_blob_get_data_writable.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern char *hb_blob_get_data_writable(hb_blob_t *blob, unsigned int *length)
@@ -4730,6 +6494,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_blob_get_data_writable", blob, length);
             }
             return (MemorySegment)mh$.invokeExact(blob, length);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5522,9 +7288,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_funcs_get_default"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_unicode_funcs_get_default");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5546,6 +7312,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_unicode_funcs_get_default$handle() {
         return hb_unicode_funcs_get_default.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_unicode_funcs_t *hb_unicode_funcs_get_default()
+     * }
+     */
+    public static MemorySegment hb_unicode_funcs_get_default$address() {
+        return hb_unicode_funcs_get_default.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_unicode_funcs_t *hb_unicode_funcs_get_default()
@@ -5558,6 +7335,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_unicode_funcs_get_default");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5569,9 +7348,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_funcs_create"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_unicode_funcs_create");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5593,6 +7372,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_unicode_funcs_create$handle() {
         return hb_unicode_funcs_create.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_unicode_funcs_t *hb_unicode_funcs_create(hb_unicode_funcs_t *parent)
+     * }
+     */
+    public static MemorySegment hb_unicode_funcs_create$address() {
+        return hb_unicode_funcs_create.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_unicode_funcs_t *hb_unicode_funcs_create(hb_unicode_funcs_t *parent)
@@ -5605,6 +7395,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_unicode_funcs_create", parent);
             }
             return (MemorySegment)mh$.invokeExact(parent);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5614,9 +7406,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_funcs_get_empty"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_unicode_funcs_get_empty");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5638,6 +7430,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_unicode_funcs_get_empty$handle() {
         return hb_unicode_funcs_get_empty.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_unicode_funcs_t *hb_unicode_funcs_get_empty()
+     * }
+     */
+    public static MemorySegment hb_unicode_funcs_get_empty$address() {
+        return hb_unicode_funcs_get_empty.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_unicode_funcs_t *hb_unicode_funcs_get_empty()
@@ -5650,6 +7453,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_unicode_funcs_get_empty");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5661,9 +7466,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_funcs_reference"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_unicode_funcs_reference");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5685,6 +7490,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_unicode_funcs_reference$handle() {
         return hb_unicode_funcs_reference.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_unicode_funcs_t *hb_unicode_funcs_reference(hb_unicode_funcs_t *ufuncs)
+     * }
+     */
+    public static MemorySegment hb_unicode_funcs_reference$address() {
+        return hb_unicode_funcs_reference.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_unicode_funcs_t *hb_unicode_funcs_reference(hb_unicode_funcs_t *ufuncs)
@@ -5697,6 +7513,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_unicode_funcs_reference", ufuncs);
             }
             return (MemorySegment)mh$.invokeExact(ufuncs);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5707,9 +7525,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_funcs_destroy"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_unicode_funcs_destroy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5731,6 +7549,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_unicode_funcs_destroy$handle() {
         return hb_unicode_funcs_destroy.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_unicode_funcs_destroy(hb_unicode_funcs_t *ufuncs)
+     * }
+     */
+    public static MemorySegment hb_unicode_funcs_destroy$address() {
+        return hb_unicode_funcs_destroy.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_unicode_funcs_destroy(hb_unicode_funcs_t *ufuncs)
@@ -5743,6 +7572,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_unicode_funcs_destroy", ufuncs);
             }
             mh$.invokeExact(ufuncs);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5758,9 +7589,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_funcs_set_user_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_unicode_funcs_set_user_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5782,6 +7613,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_unicode_funcs_set_user_data$handle() {
         return hb_unicode_funcs_set_user_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_unicode_funcs_set_user_data(hb_unicode_funcs_t *ufuncs, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
+     * }
+     */
+    public static MemorySegment hb_unicode_funcs_set_user_data$address() {
+        return hb_unicode_funcs_set_user_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_unicode_funcs_set_user_data(hb_unicode_funcs_t *ufuncs, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
@@ -5794,6 +7636,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_unicode_funcs_set_user_data", ufuncs, key, data, destroy, replace);
             }
             return (int)mh$.invokeExact(ufuncs, key, data, destroy, replace);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5806,9 +7650,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_funcs_get_user_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_unicode_funcs_get_user_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5830,6 +7674,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_unicode_funcs_get_user_data$handle() {
         return hb_unicode_funcs_get_user_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void *hb_unicode_funcs_get_user_data(const hb_unicode_funcs_t *ufuncs, hb_user_data_key_t *key)
+     * }
+     */
+    public static MemorySegment hb_unicode_funcs_get_user_data$address() {
+        return hb_unicode_funcs_get_user_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void *hb_unicode_funcs_get_user_data(const hb_unicode_funcs_t *ufuncs, hb_user_data_key_t *key)
@@ -5842,6 +7697,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_unicode_funcs_get_user_data", ufuncs, key);
             }
             return (MemorySegment)mh$.invokeExact(ufuncs, key);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5852,9 +7709,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_funcs_make_immutable"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_unicode_funcs_make_immutable");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5876,6 +7733,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_unicode_funcs_make_immutable$handle() {
         return hb_unicode_funcs_make_immutable.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_unicode_funcs_make_immutable(hb_unicode_funcs_t *ufuncs)
+     * }
+     */
+    public static MemorySegment hb_unicode_funcs_make_immutable$address() {
+        return hb_unicode_funcs_make_immutable.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_unicode_funcs_make_immutable(hb_unicode_funcs_t *ufuncs)
@@ -5888,6 +7756,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_unicode_funcs_make_immutable", ufuncs);
             }
             mh$.invokeExact(ufuncs);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5899,9 +7769,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_funcs_is_immutable"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_unicode_funcs_is_immutable");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5923,6 +7793,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_unicode_funcs_is_immutable$handle() {
         return hb_unicode_funcs_is_immutable.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_unicode_funcs_is_immutable(hb_unicode_funcs_t *ufuncs)
+     * }
+     */
+    public static MemorySegment hb_unicode_funcs_is_immutable$address() {
+        return hb_unicode_funcs_is_immutable.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_unicode_funcs_is_immutable(hb_unicode_funcs_t *ufuncs)
@@ -5935,6 +7816,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_unicode_funcs_is_immutable", ufuncs);
             }
             return (int)mh$.invokeExact(ufuncs);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5946,9 +7829,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_funcs_get_parent"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_unicode_funcs_get_parent");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5970,6 +7853,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_unicode_funcs_get_parent$handle() {
         return hb_unicode_funcs_get_parent.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_unicode_funcs_t *hb_unicode_funcs_get_parent(hb_unicode_funcs_t *ufuncs)
+     * }
+     */
+    public static MemorySegment hb_unicode_funcs_get_parent$address() {
+        return hb_unicode_funcs_get_parent.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_unicode_funcs_t *hb_unicode_funcs_get_parent(hb_unicode_funcs_t *ufuncs)
@@ -5982,6 +7876,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_unicode_funcs_get_parent", ufuncs);
             }
             return (MemorySegment)mh$.invokeExact(ufuncs);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5995,9 +7891,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_funcs_set_combining_class_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_unicode_funcs_set_combining_class_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6019,6 +7915,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_unicode_funcs_set_combining_class_func$handle() {
         return hb_unicode_funcs_set_combining_class_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_unicode_funcs_set_combining_class_func(hb_unicode_funcs_t *ufuncs, hb_unicode_combining_class_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_unicode_funcs_set_combining_class_func$address() {
+        return hb_unicode_funcs_set_combining_class_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_unicode_funcs_set_combining_class_func(hb_unicode_funcs_t *ufuncs, hb_unicode_combining_class_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -6031,6 +7938,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_unicode_funcs_set_combining_class_func", ufuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ufuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6044,9 +7953,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_funcs_set_general_category_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_unicode_funcs_set_general_category_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6068,6 +7977,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_unicode_funcs_set_general_category_func$handle() {
         return hb_unicode_funcs_set_general_category_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_unicode_funcs_set_general_category_func(hb_unicode_funcs_t *ufuncs, hb_unicode_general_category_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_unicode_funcs_set_general_category_func$address() {
+        return hb_unicode_funcs_set_general_category_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_unicode_funcs_set_general_category_func(hb_unicode_funcs_t *ufuncs, hb_unicode_general_category_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -6080,6 +8000,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_unicode_funcs_set_general_category_func", ufuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ufuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6093,9 +8015,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_funcs_set_mirroring_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_unicode_funcs_set_mirroring_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6117,6 +8039,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_unicode_funcs_set_mirroring_func$handle() {
         return hb_unicode_funcs_set_mirroring_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_unicode_funcs_set_mirroring_func(hb_unicode_funcs_t *ufuncs, hb_unicode_mirroring_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_unicode_funcs_set_mirroring_func$address() {
+        return hb_unicode_funcs_set_mirroring_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_unicode_funcs_set_mirroring_func(hb_unicode_funcs_t *ufuncs, hb_unicode_mirroring_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -6129,6 +8062,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_unicode_funcs_set_mirroring_func", ufuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ufuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6142,9 +8077,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_funcs_set_script_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_unicode_funcs_set_script_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6166,6 +8101,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_unicode_funcs_set_script_func$handle() {
         return hb_unicode_funcs_set_script_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_unicode_funcs_set_script_func(hb_unicode_funcs_t *ufuncs, hb_unicode_script_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_unicode_funcs_set_script_func$address() {
+        return hb_unicode_funcs_set_script_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_unicode_funcs_set_script_func(hb_unicode_funcs_t *ufuncs, hb_unicode_script_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -6178,6 +8124,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_unicode_funcs_set_script_func", ufuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ufuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6191,9 +8139,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_funcs_set_compose_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_unicode_funcs_set_compose_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6215,6 +8163,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_unicode_funcs_set_compose_func$handle() {
         return hb_unicode_funcs_set_compose_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_unicode_funcs_set_compose_func(hb_unicode_funcs_t *ufuncs, hb_unicode_compose_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_unicode_funcs_set_compose_func$address() {
+        return hb_unicode_funcs_set_compose_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_unicode_funcs_set_compose_func(hb_unicode_funcs_t *ufuncs, hb_unicode_compose_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -6227,6 +8186,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_unicode_funcs_set_compose_func", ufuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ufuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6240,9 +8201,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_funcs_set_decompose_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_unicode_funcs_set_decompose_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6264,6 +8225,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_unicode_funcs_set_decompose_func$handle() {
         return hb_unicode_funcs_set_decompose_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_unicode_funcs_set_decompose_func(hb_unicode_funcs_t *ufuncs, hb_unicode_decompose_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_unicode_funcs_set_decompose_func$address() {
+        return hb_unicode_funcs_set_decompose_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_unicode_funcs_set_decompose_func(hb_unicode_funcs_t *ufuncs, hb_unicode_decompose_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -6276,6 +8248,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_unicode_funcs_set_decompose_func", ufuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ufuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6288,9 +8262,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_combining_class"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_unicode_combining_class");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6312,6 +8286,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_unicode_combining_class$handle() {
         return hb_unicode_combining_class.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_unicode_combining_class_t hb_unicode_combining_class(hb_unicode_funcs_t *ufuncs, hb_codepoint_t unicode)
+     * }
+     */
+    public static MemorySegment hb_unicode_combining_class$address() {
+        return hb_unicode_combining_class.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_unicode_combining_class_t hb_unicode_combining_class(hb_unicode_funcs_t *ufuncs, hb_codepoint_t unicode)
@@ -6324,6 +8309,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_unicode_combining_class", ufuncs, unicode);
             }
             return (int)mh$.invokeExact(ufuncs, unicode);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6336,9 +8323,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_general_category"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_unicode_general_category");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6360,6 +8347,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_unicode_general_category$handle() {
         return hb_unicode_general_category.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_unicode_general_category_t hb_unicode_general_category(hb_unicode_funcs_t *ufuncs, hb_codepoint_t unicode)
+     * }
+     */
+    public static MemorySegment hb_unicode_general_category$address() {
+        return hb_unicode_general_category.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_unicode_general_category_t hb_unicode_general_category(hb_unicode_funcs_t *ufuncs, hb_codepoint_t unicode)
@@ -6372,6 +8370,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_unicode_general_category", ufuncs, unicode);
             }
             return (int)mh$.invokeExact(ufuncs, unicode);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6384,9 +8384,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_mirroring"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_unicode_mirroring");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6408,6 +8408,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_unicode_mirroring$handle() {
         return hb_unicode_mirroring.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_codepoint_t hb_unicode_mirroring(hb_unicode_funcs_t *ufuncs, hb_codepoint_t unicode)
+     * }
+     */
+    public static MemorySegment hb_unicode_mirroring$address() {
+        return hb_unicode_mirroring.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_codepoint_t hb_unicode_mirroring(hb_unicode_funcs_t *ufuncs, hb_codepoint_t unicode)
@@ -6420,6 +8431,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_unicode_mirroring", ufuncs, unicode);
             }
             return (int)mh$.invokeExact(ufuncs, unicode);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6432,9 +8445,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_script"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_unicode_script");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6456,6 +8469,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_unicode_script$handle() {
         return hb_unicode_script.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_script_t hb_unicode_script(hb_unicode_funcs_t *ufuncs, hb_codepoint_t unicode)
+     * }
+     */
+    public static MemorySegment hb_unicode_script$address() {
+        return hb_unicode_script.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_script_t hb_unicode_script(hb_unicode_funcs_t *ufuncs, hb_codepoint_t unicode)
@@ -6468,6 +8492,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_unicode_script", ufuncs, unicode);
             }
             return (int)mh$.invokeExact(ufuncs, unicode);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6482,9 +8508,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_compose"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_unicode_compose");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6506,6 +8532,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_unicode_compose$handle() {
         return hb_unicode_compose.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_unicode_compose(hb_unicode_funcs_t *ufuncs, hb_codepoint_t a, hb_codepoint_t b, hb_codepoint_t *ab)
+     * }
+     */
+    public static MemorySegment hb_unicode_compose$address() {
+        return hb_unicode_compose.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_unicode_compose(hb_unicode_funcs_t *ufuncs, hb_codepoint_t a, hb_codepoint_t b, hb_codepoint_t *ab)
@@ -6518,6 +8555,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_unicode_compose", ufuncs, a, b, ab);
             }
             return (int)mh$.invokeExact(ufuncs, a, b, ab);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6532,9 +8571,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_decompose"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_unicode_decompose");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6556,6 +8595,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_unicode_decompose$handle() {
         return hb_unicode_decompose.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_unicode_decompose(hb_unicode_funcs_t *ufuncs, hb_codepoint_t ab, hb_codepoint_t *a, hb_codepoint_t *b)
+     * }
+     */
+    public static MemorySegment hb_unicode_decompose$address() {
+        return hb_unicode_decompose.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_unicode_decompose(hb_unicode_funcs_t *ufuncs, hb_codepoint_t ab, hb_codepoint_t *a, hb_codepoint_t *b)
@@ -6568,6 +8618,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_unicode_decompose", ufuncs, ab, a, b);
             }
             return (int)mh$.invokeExact(ufuncs, ab, a, b);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6577,9 +8629,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_create"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_create");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6601,6 +8653,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_create$handle() {
         return hb_set_create.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_set_t *hb_set_create()
+     * }
+     */
+    public static MemorySegment hb_set_create$address() {
+        return hb_set_create.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_set_t *hb_set_create()
@@ -6613,6 +8676,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_create");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6622,9 +8687,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_get_empty"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_get_empty");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6646,6 +8711,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_get_empty$handle() {
         return hb_set_get_empty.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_set_t *hb_set_get_empty()
+     * }
+     */
+    public static MemorySegment hb_set_get_empty$address() {
+        return hb_set_get_empty.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_set_t *hb_set_get_empty()
@@ -6658,6 +8734,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_get_empty");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6669,9 +8747,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_reference"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_reference");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6693,6 +8771,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_reference$handle() {
         return hb_set_reference.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_set_t *hb_set_reference(hb_set_t *set)
+     * }
+     */
+    public static MemorySegment hb_set_reference$address() {
+        return hb_set_reference.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_set_t *hb_set_reference(hb_set_t *set)
@@ -6705,6 +8794,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_reference", set);
             }
             return (MemorySegment)mh$.invokeExact(set);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6715,9 +8806,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_destroy"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_destroy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6739,6 +8830,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_destroy$handle() {
         return hb_set_destroy.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_set_destroy(hb_set_t *set)
+     * }
+     */
+    public static MemorySegment hb_set_destroy$address() {
+        return hb_set_destroy.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_set_destroy(hb_set_t *set)
@@ -6751,6 +8853,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_destroy", set);
             }
             mh$.invokeExact(set);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6766,9 +8870,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_set_user_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_set_user_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6790,6 +8894,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_set_user_data$handle() {
         return hb_set_set_user_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_set_set_user_data(hb_set_t *set, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
+     * }
+     */
+    public static MemorySegment hb_set_set_user_data$address() {
+        return hb_set_set_user_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_set_set_user_data(hb_set_t *set, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
@@ -6802,6 +8917,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_set_user_data", set, key, data, destroy, replace);
             }
             return (int)mh$.invokeExact(set, key, data, destroy, replace);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6814,9 +8931,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_get_user_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_get_user_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6838,6 +8955,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_get_user_data$handle() {
         return hb_set_get_user_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void *hb_set_get_user_data(const hb_set_t *set, hb_user_data_key_t *key)
+     * }
+     */
+    public static MemorySegment hb_set_get_user_data$address() {
+        return hb_set_get_user_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void *hb_set_get_user_data(const hb_set_t *set, hb_user_data_key_t *key)
@@ -6850,6 +8978,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_get_user_data", set, key);
             }
             return (MemorySegment)mh$.invokeExact(set, key);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6861,9 +8991,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_allocation_successful"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_allocation_successful");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6885,6 +9015,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_allocation_successful$handle() {
         return hb_set_allocation_successful.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_set_allocation_successful(const hb_set_t *set)
+     * }
+     */
+    public static MemorySegment hb_set_allocation_successful$address() {
+        return hb_set_allocation_successful.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_set_allocation_successful(const hb_set_t *set)
@@ -6897,6 +9038,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_allocation_successful", set);
             }
             return (int)mh$.invokeExact(set);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6908,9 +9051,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_copy"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_copy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6932,6 +9075,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_copy$handle() {
         return hb_set_copy.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_set_t *hb_set_copy(const hb_set_t *set)
+     * }
+     */
+    public static MemorySegment hb_set_copy$address() {
+        return hb_set_copy.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_set_t *hb_set_copy(const hb_set_t *set)
@@ -6944,6 +9098,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_copy", set);
             }
             return (MemorySegment)mh$.invokeExact(set);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6954,9 +9110,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_clear"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_clear");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6978,6 +9134,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_clear$handle() {
         return hb_set_clear.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_set_clear(hb_set_t *set)
+     * }
+     */
+    public static MemorySegment hb_set_clear$address() {
+        return hb_set_clear.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_set_clear(hb_set_t *set)
@@ -6990,6 +9157,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_clear", set);
             }
             mh$.invokeExact(set);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7001,9 +9170,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_is_empty"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_is_empty");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7025,6 +9194,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_is_empty$handle() {
         return hb_set_is_empty.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_set_is_empty(const hb_set_t *set)
+     * }
+     */
+    public static MemorySegment hb_set_is_empty$address() {
+        return hb_set_is_empty.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_set_is_empty(const hb_set_t *set)
@@ -7037,6 +9217,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_is_empty", set);
             }
             return (int)mh$.invokeExact(set);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7047,9 +9229,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_invert"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_invert");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7071,6 +9253,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_invert$handle() {
         return hb_set_invert.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_set_invert(hb_set_t *set)
+     * }
+     */
+    public static MemorySegment hb_set_invert$address() {
+        return hb_set_invert.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_set_invert(hb_set_t *set)
@@ -7083,6 +9276,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_invert", set);
             }
             mh$.invokeExact(set);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7094,9 +9289,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_is_inverted"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_is_inverted");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7118,6 +9313,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_is_inverted$handle() {
         return hb_set_is_inverted.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_set_is_inverted(const hb_set_t *set)
+     * }
+     */
+    public static MemorySegment hb_set_is_inverted$address() {
+        return hb_set_is_inverted.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_set_is_inverted(const hb_set_t *set)
@@ -7130,6 +9336,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_is_inverted", set);
             }
             return (int)mh$.invokeExact(set);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7142,9 +9350,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_has"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_has");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7166,6 +9374,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_has$handle() {
         return hb_set_has.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_set_has(const hb_set_t *set, hb_codepoint_t codepoint)
+     * }
+     */
+    public static MemorySegment hb_set_has$address() {
+        return hb_set_has.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_set_has(const hb_set_t *set, hb_codepoint_t codepoint)
@@ -7178,6 +9397,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_has", set, codepoint);
             }
             return (int)mh$.invokeExact(set, codepoint);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7189,9 +9410,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_add"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_add");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7213,6 +9434,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_add$handle() {
         return hb_set_add.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_set_add(hb_set_t *set, hb_codepoint_t codepoint)
+     * }
+     */
+    public static MemorySegment hb_set_add$address() {
+        return hb_set_add.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_set_add(hb_set_t *set, hb_codepoint_t codepoint)
@@ -7225,6 +9457,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_add", set, codepoint);
             }
             mh$.invokeExact(set, codepoint);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7237,9 +9471,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_add_range"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_add_range");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7261,6 +9495,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_add_range$handle() {
         return hb_set_add_range.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_set_add_range(hb_set_t *set, hb_codepoint_t first, hb_codepoint_t last)
+     * }
+     */
+    public static MemorySegment hb_set_add_range$address() {
+        return hb_set_add_range.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_set_add_range(hb_set_t *set, hb_codepoint_t first, hb_codepoint_t last)
@@ -7273,6 +9518,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_add_range", set, first, last);
             }
             mh$.invokeExact(set, first, last);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7285,9 +9532,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_add_sorted_array"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_add_sorted_array");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7309,6 +9556,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_add_sorted_array$handle() {
         return hb_set_add_sorted_array.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_set_add_sorted_array(hb_set_t *set, const hb_codepoint_t *sorted_codepoints, unsigned int num_codepoints)
+     * }
+     */
+    public static MemorySegment hb_set_add_sorted_array$address() {
+        return hb_set_add_sorted_array.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_set_add_sorted_array(hb_set_t *set, const hb_codepoint_t *sorted_codepoints, unsigned int num_codepoints)
@@ -7321,6 +9579,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_add_sorted_array", set, sorted_codepoints, num_codepoints);
             }
             mh$.invokeExact(set, sorted_codepoints, num_codepoints);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7332,9 +9592,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_del"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_del");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7356,6 +9616,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_del$handle() {
         return hb_set_del.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_set_del(hb_set_t *set, hb_codepoint_t codepoint)
+     * }
+     */
+    public static MemorySegment hb_set_del$address() {
+        return hb_set_del.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_set_del(hb_set_t *set, hb_codepoint_t codepoint)
@@ -7368,6 +9639,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_del", set, codepoint);
             }
             mh$.invokeExact(set, codepoint);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7380,9 +9653,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_del_range"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_del_range");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7404,6 +9677,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_del_range$handle() {
         return hb_set_del_range.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_set_del_range(hb_set_t *set, hb_codepoint_t first, hb_codepoint_t last)
+     * }
+     */
+    public static MemorySegment hb_set_del_range$address() {
+        return hb_set_del_range.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_set_del_range(hb_set_t *set, hb_codepoint_t first, hb_codepoint_t last)
@@ -7416,6 +9700,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_del_range", set, first, last);
             }
             mh$.invokeExact(set, first, last);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7428,9 +9714,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_is_equal"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_is_equal");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7452,6 +9738,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_is_equal$handle() {
         return hb_set_is_equal.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_set_is_equal(const hb_set_t *set, const hb_set_t *other)
+     * }
+     */
+    public static MemorySegment hb_set_is_equal$address() {
+        return hb_set_is_equal.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_set_is_equal(const hb_set_t *set, const hb_set_t *other)
@@ -7464,6 +9761,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_is_equal", set, other);
             }
             return (int)mh$.invokeExact(set, other);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7475,9 +9774,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_hash"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_hash");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7499,6 +9798,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_hash$handle() {
         return hb_set_hash.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern unsigned int hb_set_hash(const hb_set_t *set)
+     * }
+     */
+    public static MemorySegment hb_set_hash$address() {
+        return hb_set_hash.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern unsigned int hb_set_hash(const hb_set_t *set)
@@ -7511,6 +9821,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_hash", set);
             }
             return (int)mh$.invokeExact(set);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7523,9 +9835,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_is_subset"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_is_subset");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7547,6 +9859,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_is_subset$handle() {
         return hb_set_is_subset.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_set_is_subset(const hb_set_t *set, const hb_set_t *larger_set)
+     * }
+     */
+    public static MemorySegment hb_set_is_subset$address() {
+        return hb_set_is_subset.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_set_is_subset(const hb_set_t *set, const hb_set_t *larger_set)
@@ -7559,6 +9882,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_is_subset", set, larger_set);
             }
             return (int)mh$.invokeExact(set, larger_set);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7570,9 +9895,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_set"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_set");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7594,6 +9919,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_set$handle() {
         return hb_set_set.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_set_set(hb_set_t *set, const hb_set_t *other)
+     * }
+     */
+    public static MemorySegment hb_set_set$address() {
+        return hb_set_set.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_set_set(hb_set_t *set, const hb_set_t *other)
@@ -7606,6 +9942,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_set", set, other);
             }
             mh$.invokeExact(set, other);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7617,9 +9955,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_union"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_union");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7641,6 +9979,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_union$handle() {
         return hb_set_union.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_set_union(hb_set_t *set, const hb_set_t *other)
+     * }
+     */
+    public static MemorySegment hb_set_union$address() {
+        return hb_set_union.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_set_union(hb_set_t *set, const hb_set_t *other)
@@ -7653,6 +10002,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_union", set, other);
             }
             mh$.invokeExact(set, other);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7664,9 +10015,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_intersect"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_intersect");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7688,6 +10039,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_intersect$handle() {
         return hb_set_intersect.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_set_intersect(hb_set_t *set, const hb_set_t *other)
+     * }
+     */
+    public static MemorySegment hb_set_intersect$address() {
+        return hb_set_intersect.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_set_intersect(hb_set_t *set, const hb_set_t *other)
@@ -7700,6 +10062,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_intersect", set, other);
             }
             mh$.invokeExact(set, other);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7711,9 +10075,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_subtract"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_subtract");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7735,6 +10099,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_subtract$handle() {
         return hb_set_subtract.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_set_subtract(hb_set_t *set, const hb_set_t *other)
+     * }
+     */
+    public static MemorySegment hb_set_subtract$address() {
+        return hb_set_subtract.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_set_subtract(hb_set_t *set, const hb_set_t *other)
@@ -7747,6 +10122,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_subtract", set, other);
             }
             mh$.invokeExact(set, other);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7758,9 +10135,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_symmetric_difference"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_symmetric_difference");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7782,6 +10159,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_symmetric_difference$handle() {
         return hb_set_symmetric_difference.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_set_symmetric_difference(hb_set_t *set, const hb_set_t *other)
+     * }
+     */
+    public static MemorySegment hb_set_symmetric_difference$address() {
+        return hb_set_symmetric_difference.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_set_symmetric_difference(hb_set_t *set, const hb_set_t *other)
@@ -7794,6 +10182,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_symmetric_difference", set, other);
             }
             mh$.invokeExact(set, other);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7805,9 +10195,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_get_population"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_get_population");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7829,6 +10219,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_get_population$handle() {
         return hb_set_get_population.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern unsigned int hb_set_get_population(const hb_set_t *set)
+     * }
+     */
+    public static MemorySegment hb_set_get_population$address() {
+        return hb_set_get_population.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern unsigned int hb_set_get_population(const hb_set_t *set)
@@ -7841,6 +10242,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_get_population", set);
             }
             return (int)mh$.invokeExact(set);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7852,9 +10255,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_get_min"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_get_min");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7876,6 +10279,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_get_min$handle() {
         return hb_set_get_min.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_codepoint_t hb_set_get_min(const hb_set_t *set)
+     * }
+     */
+    public static MemorySegment hb_set_get_min$address() {
+        return hb_set_get_min.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_codepoint_t hb_set_get_min(const hb_set_t *set)
@@ -7888,6 +10302,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_get_min", set);
             }
             return (int)mh$.invokeExact(set);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7899,9 +10315,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_get_max"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_get_max");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7923,6 +10339,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_get_max$handle() {
         return hb_set_get_max.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_codepoint_t hb_set_get_max(const hb_set_t *set)
+     * }
+     */
+    public static MemorySegment hb_set_get_max$address() {
+        return hb_set_get_max.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_codepoint_t hb_set_get_max(const hb_set_t *set)
@@ -7935,6 +10362,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_get_max", set);
             }
             return (int)mh$.invokeExact(set);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7947,9 +10376,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_next"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_next");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7971,6 +10400,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_next$handle() {
         return hb_set_next.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_set_next(const hb_set_t *set, hb_codepoint_t *codepoint)
+     * }
+     */
+    public static MemorySegment hb_set_next$address() {
+        return hb_set_next.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_set_next(const hb_set_t *set, hb_codepoint_t *codepoint)
@@ -7983,6 +10423,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_next", set, codepoint);
             }
             return (int)mh$.invokeExact(set, codepoint);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7995,9 +10437,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_previous"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_previous");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8019,6 +10461,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_previous$handle() {
         return hb_set_previous.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_set_previous(const hb_set_t *set, hb_codepoint_t *codepoint)
+     * }
+     */
+    public static MemorySegment hb_set_previous$address() {
+        return hb_set_previous.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_set_previous(const hb_set_t *set, hb_codepoint_t *codepoint)
@@ -8031,6 +10484,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_previous", set, codepoint);
             }
             return (int)mh$.invokeExact(set, codepoint);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8044,9 +10499,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_next_range"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_next_range");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8068,6 +10523,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_next_range$handle() {
         return hb_set_next_range.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_set_next_range(const hb_set_t *set, hb_codepoint_t *first, hb_codepoint_t *last)
+     * }
+     */
+    public static MemorySegment hb_set_next_range$address() {
+        return hb_set_next_range.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_set_next_range(const hb_set_t *set, hb_codepoint_t *first, hb_codepoint_t *last)
@@ -8080,6 +10546,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_next_range", set, first, last);
             }
             return (int)mh$.invokeExact(set, first, last);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8093,9 +10561,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_previous_range"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_previous_range");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8117,6 +10585,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_previous_range$handle() {
         return hb_set_previous_range.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_set_previous_range(const hb_set_t *set, hb_codepoint_t *first, hb_codepoint_t *last)
+     * }
+     */
+    public static MemorySegment hb_set_previous_range$address() {
+        return hb_set_previous_range.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_set_previous_range(const hb_set_t *set, hb_codepoint_t *first, hb_codepoint_t *last)
@@ -8129,6 +10608,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_previous_range", set, first, last);
             }
             return (int)mh$.invokeExact(set, first, last);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8143,9 +10624,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_set_next_many"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_next_many");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8167,6 +10648,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_set_next_many$handle() {
         return hb_set_next_many.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern unsigned int hb_set_next_many(const hb_set_t *set, hb_codepoint_t codepoint, hb_codepoint_t *out, unsigned int size)
+     * }
+     */
+    public static MemorySegment hb_set_next_many$address() {
+        return hb_set_next_many.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern unsigned int hb_set_next_many(const hb_set_t *set, hb_codepoint_t codepoint, hb_codepoint_t *out, unsigned int size)
@@ -8179,6 +10671,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_set_next_many", set, codepoint, out, size);
             }
             return (int)mh$.invokeExact(set, codepoint, out, size);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8188,9 +10682,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_map_create"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_map_create");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8212,6 +10706,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_map_create$handle() {
         return hb_map_create.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_map_t *hb_map_create()
+     * }
+     */
+    public static MemorySegment hb_map_create$address() {
+        return hb_map_create.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_map_t *hb_map_create()
@@ -8224,6 +10729,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_map_create");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8233,9 +10740,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_map_get_empty"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_map_get_empty");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8257,6 +10764,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_map_get_empty$handle() {
         return hb_map_get_empty.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_map_t *hb_map_get_empty()
+     * }
+     */
+    public static MemorySegment hb_map_get_empty$address() {
+        return hb_map_get_empty.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_map_t *hb_map_get_empty()
@@ -8269,6 +10787,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_map_get_empty");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8280,9 +10800,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_map_reference"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_map_reference");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8304,6 +10824,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_map_reference$handle() {
         return hb_map_reference.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_map_t *hb_map_reference(hb_map_t *map)
+     * }
+     */
+    public static MemorySegment hb_map_reference$address() {
+        return hb_map_reference.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_map_t *hb_map_reference(hb_map_t *map)
@@ -8316,6 +10847,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_map_reference", map);
             }
             return (MemorySegment)mh$.invokeExact(map);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8326,9 +10859,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_map_destroy"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_map_destroy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8350,6 +10883,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_map_destroy$handle() {
         return hb_map_destroy.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_map_destroy(hb_map_t *map)
+     * }
+     */
+    public static MemorySegment hb_map_destroy$address() {
+        return hb_map_destroy.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_map_destroy(hb_map_t *map)
@@ -8362,6 +10906,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_map_destroy", map);
             }
             mh$.invokeExact(map);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8377,9 +10923,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_map_set_user_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_map_set_user_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8401,6 +10947,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_map_set_user_data$handle() {
         return hb_map_set_user_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_map_set_user_data(hb_map_t *map, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
+     * }
+     */
+    public static MemorySegment hb_map_set_user_data$address() {
+        return hb_map_set_user_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_map_set_user_data(hb_map_t *map, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
@@ -8413,6 +10970,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_map_set_user_data", map, key, data, destroy, replace);
             }
             return (int)mh$.invokeExact(map, key, data, destroy, replace);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8425,9 +10984,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_map_get_user_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_map_get_user_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8449,6 +11008,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_map_get_user_data$handle() {
         return hb_map_get_user_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void *hb_map_get_user_data(const hb_map_t *map, hb_user_data_key_t *key)
+     * }
+     */
+    public static MemorySegment hb_map_get_user_data$address() {
+        return hb_map_get_user_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void *hb_map_get_user_data(const hb_map_t *map, hb_user_data_key_t *key)
@@ -8461,6 +11031,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_map_get_user_data", map, key);
             }
             return (MemorySegment)mh$.invokeExact(map, key);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8472,9 +11044,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_map_allocation_successful"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_map_allocation_successful");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8496,6 +11068,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_map_allocation_successful$handle() {
         return hb_map_allocation_successful.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_map_allocation_successful(const hb_map_t *map)
+     * }
+     */
+    public static MemorySegment hb_map_allocation_successful$address() {
+        return hb_map_allocation_successful.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_map_allocation_successful(const hb_map_t *map)
@@ -8508,6 +11091,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_map_allocation_successful", map);
             }
             return (int)mh$.invokeExact(map);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8519,9 +11104,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_map_copy"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_map_copy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8543,6 +11128,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_map_copy$handle() {
         return hb_map_copy.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_map_t *hb_map_copy(const hb_map_t *map)
+     * }
+     */
+    public static MemorySegment hb_map_copy$address() {
+        return hb_map_copy.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_map_t *hb_map_copy(const hb_map_t *map)
@@ -8555,6 +11151,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_map_copy", map);
             }
             return (MemorySegment)mh$.invokeExact(map);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8565,9 +11163,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_map_clear"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_map_clear");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8589,6 +11187,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_map_clear$handle() {
         return hb_map_clear.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_map_clear(hb_map_t *map)
+     * }
+     */
+    public static MemorySegment hb_map_clear$address() {
+        return hb_map_clear.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_map_clear(hb_map_t *map)
@@ -8601,6 +11210,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_map_clear", map);
             }
             mh$.invokeExact(map);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8612,9 +11223,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_map_is_empty"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_map_is_empty");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8636,6 +11247,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_map_is_empty$handle() {
         return hb_map_is_empty.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_map_is_empty(const hb_map_t *map)
+     * }
+     */
+    public static MemorySegment hb_map_is_empty$address() {
+        return hb_map_is_empty.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_map_is_empty(const hb_map_t *map)
@@ -8648,6 +11270,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_map_is_empty", map);
             }
             return (int)mh$.invokeExact(map);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8659,9 +11283,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_map_get_population"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_map_get_population");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8683,6 +11307,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_map_get_population$handle() {
         return hb_map_get_population.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern unsigned int hb_map_get_population(const hb_map_t *map)
+     * }
+     */
+    public static MemorySegment hb_map_get_population$address() {
+        return hb_map_get_population.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern unsigned int hb_map_get_population(const hb_map_t *map)
@@ -8695,6 +11330,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_map_get_population", map);
             }
             return (int)mh$.invokeExact(map);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8707,9 +11344,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_map_is_equal"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_map_is_equal");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8731,6 +11368,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_map_is_equal$handle() {
         return hb_map_is_equal.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_map_is_equal(const hb_map_t *map, const hb_map_t *other)
+     * }
+     */
+    public static MemorySegment hb_map_is_equal$address() {
+        return hb_map_is_equal.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_map_is_equal(const hb_map_t *map, const hb_map_t *other)
@@ -8743,6 +11391,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_map_is_equal", map, other);
             }
             return (int)mh$.invokeExact(map, other);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8754,9 +11404,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_map_hash"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_map_hash");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8778,6 +11428,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_map_hash$handle() {
         return hb_map_hash.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern unsigned int hb_map_hash(const hb_map_t *map)
+     * }
+     */
+    public static MemorySegment hb_map_hash$address() {
+        return hb_map_hash.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern unsigned int hb_map_hash(const hb_map_t *map)
@@ -8790,6 +11451,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_map_hash", map);
             }
             return (int)mh$.invokeExact(map);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8802,9 +11465,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_map_set"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_map_set");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8826,6 +11489,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_map_set$handle() {
         return hb_map_set.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_map_set(hb_map_t *map, hb_codepoint_t key, hb_codepoint_t value)
+     * }
+     */
+    public static MemorySegment hb_map_set$address() {
+        return hb_map_set.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_map_set(hb_map_t *map, hb_codepoint_t key, hb_codepoint_t value)
@@ -8838,6 +11512,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_map_set", map, key, value);
             }
             mh$.invokeExact(map, key, value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8850,9 +11526,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_map_get"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_map_get");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8874,6 +11550,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_map_get$handle() {
         return hb_map_get.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_codepoint_t hb_map_get(const hb_map_t *map, hb_codepoint_t key)
+     * }
+     */
+    public static MemorySegment hb_map_get$address() {
+        return hb_map_get.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_codepoint_t hb_map_get(const hb_map_t *map, hb_codepoint_t key)
@@ -8886,6 +11573,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_map_get", map, key);
             }
             return (int)mh$.invokeExact(map, key);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8897,9 +11586,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_map_del"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_map_del");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8921,6 +11610,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_map_del$handle() {
         return hb_map_del.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_map_del(hb_map_t *map, hb_codepoint_t key)
+     * }
+     */
+    public static MemorySegment hb_map_del$address() {
+        return hb_map_del.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_map_del(hb_map_t *map, hb_codepoint_t key)
@@ -8933,6 +11633,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_map_del", map, key);
             }
             mh$.invokeExact(map, key);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8945,9 +11647,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_map_has"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_map_has");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8969,6 +11671,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_map_has$handle() {
         return hb_map_has.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_map_has(const hb_map_t *map, hb_codepoint_t key)
+     * }
+     */
+    public static MemorySegment hb_map_has$address() {
+        return hb_map_has.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_map_has(const hb_map_t *map, hb_codepoint_t key)
@@ -8981,6 +11694,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_map_has", map, key);
             }
             return (int)mh$.invokeExact(map, key);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8992,9 +11707,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_map_update"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_map_update");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9016,6 +11731,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_map_update$handle() {
         return hb_map_update.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_map_update(hb_map_t *map, const hb_map_t *other)
+     * }
+     */
+    public static MemorySegment hb_map_update$address() {
+        return hb_map_update.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_map_update(hb_map_t *map, const hb_map_t *other)
@@ -9028,6 +11754,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_map_update", map, other);
             }
             mh$.invokeExact(map, other);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9042,9 +11770,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_map_next"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_map_next");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9066,6 +11794,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_map_next$handle() {
         return hb_map_next.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_map_next(const hb_map_t *map, int *idx, hb_codepoint_t *key, hb_codepoint_t *value)
+     * }
+     */
+    public static MemorySegment hb_map_next$address() {
+        return hb_map_next.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_map_next(const hb_map_t *map, int *idx, hb_codepoint_t *key, hb_codepoint_t *value)
@@ -9078,6 +11817,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_map_next", map, idx, key, value);
             }
             return (int)mh$.invokeExact(map, idx, key, value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9089,9 +11830,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_map_keys"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_map_keys");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9113,6 +11854,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_map_keys$handle() {
         return hb_map_keys.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_map_keys(const hb_map_t *map, hb_set_t *keys)
+     * }
+     */
+    public static MemorySegment hb_map_keys$address() {
+        return hb_map_keys.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_map_keys(const hb_map_t *map, hb_set_t *keys)
@@ -9125,6 +11877,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_map_keys", map, keys);
             }
             mh$.invokeExact(map, keys);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9136,9 +11890,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_map_values"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_map_values");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9160,6 +11914,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_map_values$handle() {
         return hb_map_values.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_map_values(const hb_map_t *map, hb_set_t *values)
+     * }
+     */
+    public static MemorySegment hb_map_values$address() {
+        return hb_map_values.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_map_values(const hb_map_t *map, hb_set_t *values)
@@ -9172,6 +11937,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_map_values", map, values);
             }
             mh$.invokeExact(map, values);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9183,9 +11950,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_count"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_count");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9207,6 +11974,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_count$handle() {
         return hb_face_count.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern unsigned int hb_face_count(hb_blob_t *blob)
+     * }
+     */
+    public static MemorySegment hb_face_count$address() {
+        return hb_face_count.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern unsigned int hb_face_count(hb_blob_t *blob)
@@ -9219,6 +11997,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_count", blob);
             }
             return (int)mh$.invokeExact(blob);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9231,9 +12011,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_create"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_create");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9255,6 +12035,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_create$handle() {
         return hb_face_create.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_face_t *hb_face_create(hb_blob_t *blob, unsigned int index)
+     * }
+     */
+    public static MemorySegment hb_face_create$address() {
+        return hb_face_create.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_face_t *hb_face_create(hb_blob_t *blob, unsigned int index)
@@ -9267,6 +12058,312 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_create", blob, index);
             }
             return (MemorySegment)mh$.invokeExact(blob, index);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_face_create_or_fail {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_create_or_fail");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern hb_face_t *hb_face_create_or_fail(hb_blob_t *blob, unsigned int index)
+     * }
+     */
+    public static FunctionDescriptor hb_face_create_or_fail$descriptor() {
+        return hb_face_create_or_fail.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern hb_face_t *hb_face_create_or_fail(hb_blob_t *blob, unsigned int index)
+     * }
+     */
+    public static MethodHandle hb_face_create_or_fail$handle() {
+        return hb_face_create_or_fail.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_face_t *hb_face_create_or_fail(hb_blob_t *blob, unsigned int index)
+     * }
+     */
+    public static MemorySegment hb_face_create_or_fail$address() {
+        return hb_face_create_or_fail.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern hb_face_t *hb_face_create_or_fail(hb_blob_t *blob, unsigned int index)
+     * }
+     */
+    public static MemorySegment hb_face_create_or_fail(MemorySegment blob, int index) {
+        var mh$ = hb_face_create_or_fail.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_face_create_or_fail", blob, index);
+            }
+            return (MemorySegment)mh$.invokeExact(blob, index);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_face_create_or_fail_using {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_create_or_fail_using");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern hb_face_t *hb_face_create_or_fail_using(hb_blob_t *blob, unsigned int index, const char *loader_name)
+     * }
+     */
+    public static FunctionDescriptor hb_face_create_or_fail_using$descriptor() {
+        return hb_face_create_or_fail_using.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern hb_face_t *hb_face_create_or_fail_using(hb_blob_t *blob, unsigned int index, const char *loader_name)
+     * }
+     */
+    public static MethodHandle hb_face_create_or_fail_using$handle() {
+        return hb_face_create_or_fail_using.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_face_t *hb_face_create_or_fail_using(hb_blob_t *blob, unsigned int index, const char *loader_name)
+     * }
+     */
+    public static MemorySegment hb_face_create_or_fail_using$address() {
+        return hb_face_create_or_fail_using.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern hb_face_t *hb_face_create_or_fail_using(hb_blob_t *blob, unsigned int index, const char *loader_name)
+     * }
+     */
+    public static MemorySegment hb_face_create_or_fail_using(MemorySegment blob, int index, MemorySegment loader_name) {
+        var mh$ = hb_face_create_or_fail_using.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_face_create_or_fail_using", blob, index, loader_name);
+            }
+            return (MemorySegment)mh$.invokeExact(blob, index, loader_name);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_face_create_from_file_or_fail {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_create_from_file_or_fail");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern hb_face_t *hb_face_create_from_file_or_fail(const char *file_name, unsigned int index)
+     * }
+     */
+    public static FunctionDescriptor hb_face_create_from_file_or_fail$descriptor() {
+        return hb_face_create_from_file_or_fail.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern hb_face_t *hb_face_create_from_file_or_fail(const char *file_name, unsigned int index)
+     * }
+     */
+    public static MethodHandle hb_face_create_from_file_or_fail$handle() {
+        return hb_face_create_from_file_or_fail.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_face_t *hb_face_create_from_file_or_fail(const char *file_name, unsigned int index)
+     * }
+     */
+    public static MemorySegment hb_face_create_from_file_or_fail$address() {
+        return hb_face_create_from_file_or_fail.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern hb_face_t *hb_face_create_from_file_or_fail(const char *file_name, unsigned int index)
+     * }
+     */
+    public static MemorySegment hb_face_create_from_file_or_fail(MemorySegment file_name, int index) {
+        var mh$ = hb_face_create_from_file_or_fail.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_face_create_from_file_or_fail", file_name, index);
+            }
+            return (MemorySegment)mh$.invokeExact(file_name, index);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_face_create_from_file_or_fail_using {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_create_from_file_or_fail_using");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern hb_face_t *hb_face_create_from_file_or_fail_using(const char *file_name, unsigned int index, const char *loader_name)
+     * }
+     */
+    public static FunctionDescriptor hb_face_create_from_file_or_fail_using$descriptor() {
+        return hb_face_create_from_file_or_fail_using.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern hb_face_t *hb_face_create_from_file_or_fail_using(const char *file_name, unsigned int index, const char *loader_name)
+     * }
+     */
+    public static MethodHandle hb_face_create_from_file_or_fail_using$handle() {
+        return hb_face_create_from_file_or_fail_using.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_face_t *hb_face_create_from_file_or_fail_using(const char *file_name, unsigned int index, const char *loader_name)
+     * }
+     */
+    public static MemorySegment hb_face_create_from_file_or_fail_using$address() {
+        return hb_face_create_from_file_or_fail_using.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern hb_face_t *hb_face_create_from_file_or_fail_using(const char *file_name, unsigned int index, const char *loader_name)
+     * }
+     */
+    public static MemorySegment hb_face_create_from_file_or_fail_using(MemorySegment file_name, int index, MemorySegment loader_name) {
+        var mh$ = hb_face_create_from_file_or_fail_using.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_face_create_from_file_or_fail_using", file_name, index, loader_name);
+            }
+            return (MemorySegment)mh$.invokeExact(file_name, index, loader_name);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_face_list_loaders {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER    );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_list_loaders");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern const char **hb_face_list_loaders()
+     * }
+     */
+    public static FunctionDescriptor hb_face_list_loaders$descriptor() {
+        return hb_face_list_loaders.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern const char **hb_face_list_loaders()
+     * }
+     */
+    public static MethodHandle hb_face_list_loaders$handle() {
+        return hb_face_list_loaders.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern const char **hb_face_list_loaders()
+     * }
+     */
+    public static MemorySegment hb_face_list_loaders$address() {
+        return hb_face_list_loaders.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern const char **hb_face_list_loaders()
+     * }
+     */
+    public static MemorySegment hb_face_list_loaders() {
+        var mh$ = hb_face_list_loaders.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_face_list_loaders");
+            }
+            return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9280,9 +12377,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_create_for_tables"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_create_for_tables");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9304,6 +12401,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_create_for_tables$handle() {
         return hb_face_create_for_tables.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_face_t *hb_face_create_for_tables(hb_reference_table_func_t reference_table_func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_face_create_for_tables$address() {
+        return hb_face_create_for_tables.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_face_t *hb_face_create_for_tables(hb_reference_table_func_t reference_table_func, void *user_data, hb_destroy_func_t destroy)
@@ -9316,6 +12424,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_create_for_tables", reference_table_func, user_data, destroy);
             }
             return (MemorySegment)mh$.invokeExact(reference_table_func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9325,9 +12435,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_get_empty"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_get_empty");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9349,6 +12459,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_get_empty$handle() {
         return hb_face_get_empty.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_face_t *hb_face_get_empty()
+     * }
+     */
+    public static MemorySegment hb_face_get_empty$address() {
+        return hb_face_get_empty.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_face_t *hb_face_get_empty()
@@ -9361,6 +12482,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_get_empty");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9372,9 +12495,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_reference"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_reference");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9396,6 +12519,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_reference$handle() {
         return hb_face_reference.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_face_t *hb_face_reference(hb_face_t *face)
+     * }
+     */
+    public static MemorySegment hb_face_reference$address() {
+        return hb_face_reference.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_face_t *hb_face_reference(hb_face_t *face)
@@ -9408,6 +12542,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_reference", face);
             }
             return (MemorySegment)mh$.invokeExact(face);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9418,9 +12554,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_destroy"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_destroy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9442,6 +12578,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_destroy$handle() {
         return hb_face_destroy.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_face_destroy(hb_face_t *face)
+     * }
+     */
+    public static MemorySegment hb_face_destroy$address() {
+        return hb_face_destroy.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_face_destroy(hb_face_t *face)
@@ -9454,6 +12601,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_destroy", face);
             }
             mh$.invokeExact(face);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9469,9 +12618,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_set_user_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_set_user_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9493,6 +12642,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_set_user_data$handle() {
         return hb_face_set_user_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_face_set_user_data(hb_face_t *face, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
+     * }
+     */
+    public static MemorySegment hb_face_set_user_data$address() {
+        return hb_face_set_user_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_face_set_user_data(hb_face_t *face, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
@@ -9505,6 +12665,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_set_user_data", face, key, data, destroy, replace);
             }
             return (int)mh$.invokeExact(face, key, data, destroy, replace);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9517,9 +12679,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_get_user_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_get_user_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9541,6 +12703,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_get_user_data$handle() {
         return hb_face_get_user_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void *hb_face_get_user_data(const hb_face_t *face, hb_user_data_key_t *key)
+     * }
+     */
+    public static MemorySegment hb_face_get_user_data$address() {
+        return hb_face_get_user_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void *hb_face_get_user_data(const hb_face_t *face, hb_user_data_key_t *key)
@@ -9553,6 +12726,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_get_user_data", face, key);
             }
             return (MemorySegment)mh$.invokeExact(face, key);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9563,9 +12738,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_make_immutable"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_make_immutable");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9587,6 +12762,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_make_immutable$handle() {
         return hb_face_make_immutable.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_face_make_immutable(hb_face_t *face)
+     * }
+     */
+    public static MemorySegment hb_face_make_immutable$address() {
+        return hb_face_make_immutable.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_face_make_immutable(hb_face_t *face)
@@ -9599,6 +12785,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_make_immutable", face);
             }
             mh$.invokeExact(face);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9610,15 +12798,15 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_is_immutable"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_is_immutable");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
      * Function descriptor for:
      * {@snippet lang=c :
-     * extern hb_bool_t hb_face_is_immutable(const hb_face_t *face)
+     * extern hb_bool_t hb_face_is_immutable(hb_face_t *face)
      * }
      */
     public static FunctionDescriptor hb_face_is_immutable$descriptor() {
@@ -9628,15 +12816,26 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     /**
      * Downcall method handle for:
      * {@snippet lang=c :
-     * extern hb_bool_t hb_face_is_immutable(const hb_face_t *face)
+     * extern hb_bool_t hb_face_is_immutable(hb_face_t *face)
      * }
      */
     public static MethodHandle hb_face_is_immutable$handle() {
         return hb_face_is_immutable.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_face_is_immutable(hb_face_t *face)
+     * }
+     */
+    public static MemorySegment hb_face_is_immutable$address() {
+        return hb_face_is_immutable.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
-     * extern hb_bool_t hb_face_is_immutable(const hb_face_t *face)
+     * extern hb_bool_t hb_face_is_immutable(hb_face_t *face)
      * }
      */
     public static int hb_face_is_immutable(MemorySegment face) {
@@ -9646,6 +12845,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_is_immutable", face);
             }
             return (int)mh$.invokeExact(face);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9658,9 +12859,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_reference_table"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_reference_table");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9682,6 +12883,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_reference_table$handle() {
         return hb_face_reference_table.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_blob_t *hb_face_reference_table(const hb_face_t *face, hb_tag_t tag)
+     * }
+     */
+    public static MemorySegment hb_face_reference_table$address() {
+        return hb_face_reference_table.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_blob_t *hb_face_reference_table(const hb_face_t *face, hb_tag_t tag)
@@ -9694,6 +12906,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_reference_table", face, tag);
             }
             return (MemorySegment)mh$.invokeExact(face, tag);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9705,9 +12919,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_reference_blob"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_reference_blob");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9729,6 +12943,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_reference_blob$handle() {
         return hb_face_reference_blob.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_blob_t *hb_face_reference_blob(hb_face_t *face)
+     * }
+     */
+    public static MemorySegment hb_face_reference_blob$address() {
+        return hb_face_reference_blob.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_blob_t *hb_face_reference_blob(hb_face_t *face)
@@ -9741,6 +12966,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_reference_blob", face);
             }
             return (MemorySegment)mh$.invokeExact(face);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9752,9 +12979,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_set_index"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_set_index");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9776,6 +13003,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_set_index$handle() {
         return hb_face_set_index.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_face_set_index(hb_face_t *face, unsigned int index)
+     * }
+     */
+    public static MemorySegment hb_face_set_index$address() {
+        return hb_face_set_index.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_face_set_index(hb_face_t *face, unsigned int index)
@@ -9788,6 +13026,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_set_index", face, index);
             }
             mh$.invokeExact(face, index);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9799,9 +13039,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_get_index"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_get_index");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9823,6 +13063,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_get_index$handle() {
         return hb_face_get_index.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern unsigned int hb_face_get_index(const hb_face_t *face)
+     * }
+     */
+    public static MemorySegment hb_face_get_index$address() {
+        return hb_face_get_index.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern unsigned int hb_face_get_index(const hb_face_t *face)
@@ -9835,6 +13086,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_get_index", face);
             }
             return (int)mh$.invokeExact(face);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9846,9 +13099,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_set_upem"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_set_upem");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9870,6 +13123,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_set_upem$handle() {
         return hb_face_set_upem.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_face_set_upem(hb_face_t *face, unsigned int upem)
+     * }
+     */
+    public static MemorySegment hb_face_set_upem$address() {
+        return hb_face_set_upem.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_face_set_upem(hb_face_t *face, unsigned int upem)
@@ -9882,6 +13146,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_set_upem", face, upem);
             }
             mh$.invokeExact(face, upem);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9893,9 +13159,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_get_upem"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_get_upem");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9917,6 +13183,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_get_upem$handle() {
         return hb_face_get_upem.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern unsigned int hb_face_get_upem(const hb_face_t *face)
+     * }
+     */
+    public static MemorySegment hb_face_get_upem$address() {
+        return hb_face_get_upem.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern unsigned int hb_face_get_upem(const hb_face_t *face)
@@ -9929,6 +13206,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_get_upem", face);
             }
             return (int)mh$.invokeExact(face);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9940,9 +13219,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_set_glyph_count"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_set_glyph_count");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9964,6 +13243,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_set_glyph_count$handle() {
         return hb_face_set_glyph_count.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_face_set_glyph_count(hb_face_t *face, unsigned int glyph_count)
+     * }
+     */
+    public static MemorySegment hb_face_set_glyph_count$address() {
+        return hb_face_set_glyph_count.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_face_set_glyph_count(hb_face_t *face, unsigned int glyph_count)
@@ -9976,6 +13266,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_set_glyph_count", face, glyph_count);
             }
             mh$.invokeExact(face, glyph_count);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9987,9 +13279,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_get_glyph_count"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_get_glyph_count");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10011,6 +13303,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_get_glyph_count$handle() {
         return hb_face_get_glyph_count.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern unsigned int hb_face_get_glyph_count(const hb_face_t *face)
+     * }
+     */
+    public static MemorySegment hb_face_get_glyph_count$address() {
+        return hb_face_get_glyph_count.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern unsigned int hb_face_get_glyph_count(const hb_face_t *face)
@@ -10023,6 +13326,70 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_get_glyph_count", face);
             }
             return (int)mh$.invokeExact(face);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_face_set_get_table_tags_func {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_set_get_table_tags_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_face_set_get_table_tags_func(hb_face_t *face, hb_get_table_tags_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static FunctionDescriptor hb_face_set_get_table_tags_func$descriptor() {
+        return hb_face_set_get_table_tags_func.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_face_set_get_table_tags_func(hb_face_t *face, hb_get_table_tags_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MethodHandle hb_face_set_get_table_tags_func$handle() {
+        return hb_face_set_get_table_tags_func.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_face_set_get_table_tags_func(hb_face_t *face, hb_get_table_tags_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_face_set_get_table_tags_func$address() {
+        return hb_face_set_get_table_tags_func.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_face_set_get_table_tags_func(hb_face_t *face, hb_get_table_tags_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static void hb_face_set_get_table_tags_func(MemorySegment face, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_face_set_get_table_tags_func.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_face_set_get_table_tags_func", face, func, user_data, destroy);
+            }
+            mh$.invokeExact(face, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10037,9 +13404,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_get_table_tags"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_get_table_tags");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10061,6 +13428,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_get_table_tags$handle() {
         return hb_face_get_table_tags.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern unsigned int hb_face_get_table_tags(const hb_face_t *face, unsigned int start_offset, unsigned int *table_count, hb_tag_t *table_tags)
+     * }
+     */
+    public static MemorySegment hb_face_get_table_tags$address() {
+        return hb_face_get_table_tags.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern unsigned int hb_face_get_table_tags(const hb_face_t *face, unsigned int start_offset, unsigned int *table_count, hb_tag_t *table_tags)
@@ -10073,6 +13451,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_get_table_tags", face, start_offset, table_count, table_tags);
             }
             return (int)mh$.invokeExact(face, start_offset, table_count, table_tags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10084,9 +13464,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_collect_unicodes"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_collect_unicodes");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10108,6 +13488,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_collect_unicodes$handle() {
         return hb_face_collect_unicodes.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_face_collect_unicodes(hb_face_t *face, hb_set_t *out)
+     * }
+     */
+    public static MemorySegment hb_face_collect_unicodes$address() {
+        return hb_face_collect_unicodes.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_face_collect_unicodes(hb_face_t *face, hb_set_t *out)
@@ -10120,6 +13511,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_collect_unicodes", face, out);
             }
             mh$.invokeExact(face, out);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10132,9 +13525,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_collect_nominal_glyph_mapping"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_collect_nominal_glyph_mapping");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10156,6 +13549,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_collect_nominal_glyph_mapping$handle() {
         return hb_face_collect_nominal_glyph_mapping.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_face_collect_nominal_glyph_mapping(hb_face_t *face, hb_map_t *mapping, hb_set_t *unicodes)
+     * }
+     */
+    public static MemorySegment hb_face_collect_nominal_glyph_mapping$address() {
+        return hb_face_collect_nominal_glyph_mapping.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_face_collect_nominal_glyph_mapping(hb_face_t *face, hb_map_t *mapping, hb_set_t *unicodes)
@@ -10168,6 +13572,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_collect_nominal_glyph_mapping", face, mapping, unicodes);
             }
             mh$.invokeExact(face, mapping, unicodes);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10179,9 +13585,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_collect_variation_selectors"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_collect_variation_selectors");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10203,6 +13609,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_collect_variation_selectors$handle() {
         return hb_face_collect_variation_selectors.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_face_collect_variation_selectors(hb_face_t *face, hb_set_t *out)
+     * }
+     */
+    public static MemorySegment hb_face_collect_variation_selectors$address() {
+        return hb_face_collect_variation_selectors.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_face_collect_variation_selectors(hb_face_t *face, hb_set_t *out)
@@ -10215,6 +13632,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_collect_variation_selectors", face, out);
             }
             mh$.invokeExact(face, out);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10227,9 +13646,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_collect_variation_unicodes"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_collect_variation_unicodes");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10251,6 +13670,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_collect_variation_unicodes$handle() {
         return hb_face_collect_variation_unicodes.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_face_collect_variation_unicodes(hb_face_t *face, hb_codepoint_t variation_selector, hb_set_t *out)
+     * }
+     */
+    public static MemorySegment hb_face_collect_variation_unicodes$address() {
+        return hb_face_collect_variation_unicodes.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_face_collect_variation_unicodes(hb_face_t *face, hb_codepoint_t variation_selector, hb_set_t *out)
@@ -10263,6 +13693,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_collect_variation_unicodes", face, variation_selector, out);
             }
             mh$.invokeExact(face, variation_selector, out);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10272,9 +13704,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_builder_create"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_builder_create");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10296,6 +13728,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_builder_create$handle() {
         return hb_face_builder_create.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_face_t *hb_face_builder_create()
+     * }
+     */
+    public static MemorySegment hb_face_builder_create$address() {
+        return hb_face_builder_create.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_face_t *hb_face_builder_create()
@@ -10308,6 +13751,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_builder_create");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10321,9 +13766,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_builder_add_table"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_builder_add_table");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10345,6 +13790,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_builder_add_table$handle() {
         return hb_face_builder_add_table.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_face_builder_add_table(hb_face_t *face, hb_tag_t tag, hb_blob_t *blob)
+     * }
+     */
+    public static MemorySegment hb_face_builder_add_table$address() {
+        return hb_face_builder_add_table.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_face_builder_add_table(hb_face_t *face, hb_tag_t tag, hb_blob_t *blob)
@@ -10357,6 +13813,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_builder_add_table", face, tag, blob);
             }
             return (int)mh$.invokeExact(face, tag, blob);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10368,9 +13826,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_face_builder_sort_tables"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_face_builder_sort_tables");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10392,6 +13850,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_face_builder_sort_tables$handle() {
         return hb_face_builder_sort_tables.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_face_builder_sort_tables(hb_face_t *face, const hb_tag_t *tags)
+     * }
+     */
+    public static MemorySegment hb_face_builder_sort_tables$address() {
+        return hb_face_builder_sort_tables.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_face_builder_sort_tables(hb_face_t *face, const hb_tag_t *tags)
@@ -10404,6 +13873,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_face_builder_sort_tables", face, tags);
             }
             mh$.invokeExact(face, tags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10417,9 +13888,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_draw_funcs_set_move_to_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_funcs_set_move_to_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10441,6 +13912,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_draw_funcs_set_move_to_func$handle() {
         return hb_draw_funcs_set_move_to_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_draw_funcs_set_move_to_func(hb_draw_funcs_t *dfuncs, hb_draw_move_to_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_draw_funcs_set_move_to_func$address() {
+        return hb_draw_funcs_set_move_to_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_draw_funcs_set_move_to_func(hb_draw_funcs_t *dfuncs, hb_draw_move_to_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -10453,6 +13935,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_draw_funcs_set_move_to_func", dfuncs, func, user_data, destroy);
             }
             mh$.invokeExact(dfuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10466,9 +13950,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_draw_funcs_set_line_to_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_funcs_set_line_to_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10490,6 +13974,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_draw_funcs_set_line_to_func$handle() {
         return hb_draw_funcs_set_line_to_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_draw_funcs_set_line_to_func(hb_draw_funcs_t *dfuncs, hb_draw_line_to_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_draw_funcs_set_line_to_func$address() {
+        return hb_draw_funcs_set_line_to_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_draw_funcs_set_line_to_func(hb_draw_funcs_t *dfuncs, hb_draw_line_to_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -10502,6 +13997,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_draw_funcs_set_line_to_func", dfuncs, func, user_data, destroy);
             }
             mh$.invokeExact(dfuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10515,9 +14012,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_draw_funcs_set_quadratic_to_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_funcs_set_quadratic_to_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10539,6 +14036,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_draw_funcs_set_quadratic_to_func$handle() {
         return hb_draw_funcs_set_quadratic_to_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_draw_funcs_set_quadratic_to_func(hb_draw_funcs_t *dfuncs, hb_draw_quadratic_to_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_draw_funcs_set_quadratic_to_func$address() {
+        return hb_draw_funcs_set_quadratic_to_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_draw_funcs_set_quadratic_to_func(hb_draw_funcs_t *dfuncs, hb_draw_quadratic_to_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -10551,6 +14059,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_draw_funcs_set_quadratic_to_func", dfuncs, func, user_data, destroy);
             }
             mh$.invokeExact(dfuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10564,9 +14074,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_draw_funcs_set_cubic_to_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_funcs_set_cubic_to_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10588,6 +14098,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_draw_funcs_set_cubic_to_func$handle() {
         return hb_draw_funcs_set_cubic_to_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_draw_funcs_set_cubic_to_func(hb_draw_funcs_t *dfuncs, hb_draw_cubic_to_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_draw_funcs_set_cubic_to_func$address() {
+        return hb_draw_funcs_set_cubic_to_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_draw_funcs_set_cubic_to_func(hb_draw_funcs_t *dfuncs, hb_draw_cubic_to_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -10600,6 +14121,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_draw_funcs_set_cubic_to_func", dfuncs, func, user_data, destroy);
             }
             mh$.invokeExact(dfuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10613,9 +14136,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_draw_funcs_set_close_path_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_funcs_set_close_path_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10637,6 +14160,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_draw_funcs_set_close_path_func$handle() {
         return hb_draw_funcs_set_close_path_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_draw_funcs_set_close_path_func(hb_draw_funcs_t *dfuncs, hb_draw_close_path_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_draw_funcs_set_close_path_func$address() {
+        return hb_draw_funcs_set_close_path_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_draw_funcs_set_close_path_func(hb_draw_funcs_t *dfuncs, hb_draw_close_path_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -10649,6 +14183,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_draw_funcs_set_close_path_func", dfuncs, func, user_data, destroy);
             }
             mh$.invokeExact(dfuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10658,9 +14194,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_draw_funcs_create"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_funcs_create");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10682,6 +14218,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_draw_funcs_create$handle() {
         return hb_draw_funcs_create.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_draw_funcs_t *hb_draw_funcs_create()
+     * }
+     */
+    public static MemorySegment hb_draw_funcs_create$address() {
+        return hb_draw_funcs_create.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_draw_funcs_t *hb_draw_funcs_create()
@@ -10694,6 +14241,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_draw_funcs_create");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10703,9 +14252,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_draw_funcs_get_empty"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_funcs_get_empty");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10727,6 +14276,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_draw_funcs_get_empty$handle() {
         return hb_draw_funcs_get_empty.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_draw_funcs_t *hb_draw_funcs_get_empty()
+     * }
+     */
+    public static MemorySegment hb_draw_funcs_get_empty$address() {
+        return hb_draw_funcs_get_empty.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_draw_funcs_t *hb_draw_funcs_get_empty()
@@ -10739,6 +14299,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_draw_funcs_get_empty");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10750,9 +14312,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_draw_funcs_reference"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_funcs_reference");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10774,6 +14336,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_draw_funcs_reference$handle() {
         return hb_draw_funcs_reference.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_draw_funcs_t *hb_draw_funcs_reference(hb_draw_funcs_t *dfuncs)
+     * }
+     */
+    public static MemorySegment hb_draw_funcs_reference$address() {
+        return hb_draw_funcs_reference.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_draw_funcs_t *hb_draw_funcs_reference(hb_draw_funcs_t *dfuncs)
@@ -10786,6 +14359,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_draw_funcs_reference", dfuncs);
             }
             return (MemorySegment)mh$.invokeExact(dfuncs);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10796,9 +14371,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_draw_funcs_destroy"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_funcs_destroy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10820,6 +14395,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_draw_funcs_destroy$handle() {
         return hb_draw_funcs_destroy.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_draw_funcs_destroy(hb_draw_funcs_t *dfuncs)
+     * }
+     */
+    public static MemorySegment hb_draw_funcs_destroy$address() {
+        return hb_draw_funcs_destroy.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_draw_funcs_destroy(hb_draw_funcs_t *dfuncs)
@@ -10832,6 +14418,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_draw_funcs_destroy", dfuncs);
             }
             mh$.invokeExact(dfuncs);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10847,9 +14435,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_draw_funcs_set_user_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_funcs_set_user_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10871,6 +14459,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_draw_funcs_set_user_data$handle() {
         return hb_draw_funcs_set_user_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_draw_funcs_set_user_data(hb_draw_funcs_t *dfuncs, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
+     * }
+     */
+    public static MemorySegment hb_draw_funcs_set_user_data$address() {
+        return hb_draw_funcs_set_user_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_draw_funcs_set_user_data(hb_draw_funcs_t *dfuncs, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
@@ -10883,6 +14482,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_draw_funcs_set_user_data", dfuncs, key, data, destroy, replace);
             }
             return (int)mh$.invokeExact(dfuncs, key, data, destroy, replace);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10895,9 +14496,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_draw_funcs_get_user_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_funcs_get_user_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10919,6 +14520,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_draw_funcs_get_user_data$handle() {
         return hb_draw_funcs_get_user_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void *hb_draw_funcs_get_user_data(const hb_draw_funcs_t *dfuncs, hb_user_data_key_t *key)
+     * }
+     */
+    public static MemorySegment hb_draw_funcs_get_user_data$address() {
+        return hb_draw_funcs_get_user_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void *hb_draw_funcs_get_user_data(const hb_draw_funcs_t *dfuncs, hb_user_data_key_t *key)
@@ -10931,6 +14543,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_draw_funcs_get_user_data", dfuncs, key);
             }
             return (MemorySegment)mh$.invokeExact(dfuncs, key);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10941,9 +14555,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_draw_funcs_make_immutable"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_funcs_make_immutable");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10965,6 +14579,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_draw_funcs_make_immutable$handle() {
         return hb_draw_funcs_make_immutable.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_draw_funcs_make_immutable(hb_draw_funcs_t *dfuncs)
+     * }
+     */
+    public static MemorySegment hb_draw_funcs_make_immutable$address() {
+        return hb_draw_funcs_make_immutable.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_draw_funcs_make_immutable(hb_draw_funcs_t *dfuncs)
@@ -10977,6 +14602,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_draw_funcs_make_immutable", dfuncs);
             }
             mh$.invokeExact(dfuncs);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10988,9 +14615,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_draw_funcs_is_immutable"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_funcs_is_immutable");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11012,6 +14639,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_draw_funcs_is_immutable$handle() {
         return hb_draw_funcs_is_immutable.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_draw_funcs_is_immutable(hb_draw_funcs_t *dfuncs)
+     * }
+     */
+    public static MemorySegment hb_draw_funcs_is_immutable$address() {
+        return hb_draw_funcs_is_immutable.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_draw_funcs_is_immutable(hb_draw_funcs_t *dfuncs)
@@ -11024,6 +14662,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_draw_funcs_is_immutable", dfuncs);
             }
             return (int)mh$.invokeExact(dfuncs);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11038,9 +14678,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_FLOAT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_draw_move_to"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_move_to");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11062,6 +14702,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_draw_move_to$handle() {
         return hb_draw_move_to.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_draw_move_to(hb_draw_funcs_t *dfuncs, void *draw_data, hb_draw_state_t *st, float to_x, float to_y)
+     * }
+     */
+    public static MemorySegment hb_draw_move_to$address() {
+        return hb_draw_move_to.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_draw_move_to(hb_draw_funcs_t *dfuncs, void *draw_data, hb_draw_state_t *st, float to_x, float to_y)
@@ -11074,6 +14725,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_draw_move_to", dfuncs, draw_data, st, to_x, to_y);
             }
             mh$.invokeExact(dfuncs, draw_data, st, to_x, to_y);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11088,9 +14741,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_FLOAT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_draw_line_to"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_line_to");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11112,6 +14765,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_draw_line_to$handle() {
         return hb_draw_line_to.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_draw_line_to(hb_draw_funcs_t *dfuncs, void *draw_data, hb_draw_state_t *st, float to_x, float to_y)
+     * }
+     */
+    public static MemorySegment hb_draw_line_to$address() {
+        return hb_draw_line_to.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_draw_line_to(hb_draw_funcs_t *dfuncs, void *draw_data, hb_draw_state_t *st, float to_x, float to_y)
@@ -11124,6 +14788,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_draw_line_to", dfuncs, draw_data, st, to_x, to_y);
             }
             mh$.invokeExact(dfuncs, draw_data, st, to_x, to_y);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11140,9 +14806,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_FLOAT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_draw_quadratic_to"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_quadratic_to");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11164,6 +14830,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_draw_quadratic_to$handle() {
         return hb_draw_quadratic_to.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_draw_quadratic_to(hb_draw_funcs_t *dfuncs, void *draw_data, hb_draw_state_t *st, float control_x, float control_y, float to_x, float to_y)
+     * }
+     */
+    public static MemorySegment hb_draw_quadratic_to$address() {
+        return hb_draw_quadratic_to.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_draw_quadratic_to(hb_draw_funcs_t *dfuncs, void *draw_data, hb_draw_state_t *st, float control_x, float control_y, float to_x, float to_y)
@@ -11176,6 +14853,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_draw_quadratic_to", dfuncs, draw_data, st, control_x, control_y, to_x, to_y);
             }
             mh$.invokeExact(dfuncs, draw_data, st, control_x, control_y, to_x, to_y);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11194,9 +14873,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_FLOAT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_draw_cubic_to"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_cubic_to");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11218,6 +14897,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_draw_cubic_to$handle() {
         return hb_draw_cubic_to.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_draw_cubic_to(hb_draw_funcs_t *dfuncs, void *draw_data, hb_draw_state_t *st, float control1_x, float control1_y, float control2_x, float control2_y, float to_x, float to_y)
+     * }
+     */
+    public static MemorySegment hb_draw_cubic_to$address() {
+        return hb_draw_cubic_to.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_draw_cubic_to(hb_draw_funcs_t *dfuncs, void *draw_data, hb_draw_state_t *st, float control1_x, float control1_y, float control2_x, float control2_y, float to_x, float to_y)
@@ -11230,6 +14920,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_draw_cubic_to", dfuncs, draw_data, st, control1_x, control1_y, control2_x, control2_y, to_x, to_y);
             }
             mh$.invokeExact(dfuncs, draw_data, st, control1_x, control1_y, control2_x, control2_y, to_x, to_y);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11242,9 +14934,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_draw_close_path"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_close_path");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11266,6 +14958,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_draw_close_path$handle() {
         return hb_draw_close_path.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_draw_close_path(hb_draw_funcs_t *dfuncs, void *draw_data, hb_draw_state_t *st)
+     * }
+     */
+    public static MemorySegment hb_draw_close_path$address() {
+        return hb_draw_close_path.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_draw_close_path(hb_draw_funcs_t *dfuncs, void *draw_data, hb_draw_state_t *st)
@@ -11278,6 +14981,225 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_draw_close_path", dfuncs, draw_data, st);
             }
             mh$.invokeExact(dfuncs, draw_data, st);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    private static final int HB_DRAW_LINE_CAP_BUTT = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.HB_DRAW_LINE_CAP_BUTT = 0
+     * }
+     */
+    public static int HB_DRAW_LINE_CAP_BUTT() {
+        return HB_DRAW_LINE_CAP_BUTT;
+    }
+    private static final int HB_DRAW_LINE_CAP_SQUARE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.HB_DRAW_LINE_CAP_SQUARE = 1
+     * }
+     */
+    public static int HB_DRAW_LINE_CAP_SQUARE() {
+        return HB_DRAW_LINE_CAP_SQUARE;
+    }
+
+    private static class hb_draw_line {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_FLOAT,
+            app_indicator_h.C_FLOAT,
+            app_indicator_h.C_FLOAT,
+            app_indicator_h.C_FLOAT,
+            app_indicator_h.C_FLOAT,
+            app_indicator_h.C_FLOAT,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_line");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_draw_line(hb_draw_funcs_t *dfuncs, void *draw_data, hb_draw_state_t *st, float x0, float y0, float w0, float x1, float y1, float w1, hb_draw_line_cap_t cap)
+     * }
+     */
+    public static FunctionDescriptor hb_draw_line$descriptor() {
+        return hb_draw_line.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_draw_line(hb_draw_funcs_t *dfuncs, void *draw_data, hb_draw_state_t *st, float x0, float y0, float w0, float x1, float y1, float w1, hb_draw_line_cap_t cap)
+     * }
+     */
+    public static MethodHandle hb_draw_line$handle() {
+        return hb_draw_line.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_draw_line(hb_draw_funcs_t *dfuncs, void *draw_data, hb_draw_state_t *st, float x0, float y0, float w0, float x1, float y1, float w1, hb_draw_line_cap_t cap)
+     * }
+     */
+    public static MemorySegment hb_draw_line$address() {
+        return hb_draw_line.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_draw_line(hb_draw_funcs_t *dfuncs, void *draw_data, hb_draw_state_t *st, float x0, float y0, float w0, float x1, float y1, float w1, hb_draw_line_cap_t cap)
+     * }
+     */
+    public static void hb_draw_line(MemorySegment dfuncs, MemorySegment draw_data, MemorySegment st, float x0, float y0, float w0, float x1, float y1, float w1, int cap) {
+        var mh$ = hb_draw_line.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_draw_line", dfuncs, draw_data, st, x0, y0, w0, x1, y1, w1, cap);
+            }
+            mh$.invokeExact(dfuncs, draw_data, st, x0, y0, w0, x1, y1, w1, cap);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_draw_rectangle {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_FLOAT,
+            app_indicator_h.C_FLOAT,
+            app_indicator_h.C_FLOAT,
+            app_indicator_h.C_FLOAT,
+            app_indicator_h.C_FLOAT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_rectangle");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_draw_rectangle(hb_draw_funcs_t *dfuncs, void *draw_data, hb_draw_state_t *st, float x, float y, float w, float h, float stroke_width)
+     * }
+     */
+    public static FunctionDescriptor hb_draw_rectangle$descriptor() {
+        return hb_draw_rectangle.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_draw_rectangle(hb_draw_funcs_t *dfuncs, void *draw_data, hb_draw_state_t *st, float x, float y, float w, float h, float stroke_width)
+     * }
+     */
+    public static MethodHandle hb_draw_rectangle$handle() {
+        return hb_draw_rectangle.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_draw_rectangle(hb_draw_funcs_t *dfuncs, void *draw_data, hb_draw_state_t *st, float x, float y, float w, float h, float stroke_width)
+     * }
+     */
+    public static MemorySegment hb_draw_rectangle$address() {
+        return hb_draw_rectangle.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_draw_rectangle(hb_draw_funcs_t *dfuncs, void *draw_data, hb_draw_state_t *st, float x, float y, float w, float h, float stroke_width)
+     * }
+     */
+    public static void hb_draw_rectangle(MemorySegment dfuncs, MemorySegment draw_data, MemorySegment st, float x, float y, float w, float h, float stroke_width) {
+        var mh$ = hb_draw_rectangle.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_draw_rectangle", dfuncs, draw_data, st, x, y, w, h, stroke_width);
+            }
+            mh$.invokeExact(dfuncs, draw_data, st, x, y, w, h, stroke_width);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_draw_circle {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_FLOAT,
+            app_indicator_h.C_FLOAT,
+            app_indicator_h.C_FLOAT,
+            app_indicator_h.C_FLOAT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_circle");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_draw_circle(hb_draw_funcs_t *dfuncs, void *draw_data, hb_draw_state_t *st, float cx, float cy, float r, float stroke_width)
+     * }
+     */
+    public static FunctionDescriptor hb_draw_circle$descriptor() {
+        return hb_draw_circle.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_draw_circle(hb_draw_funcs_t *dfuncs, void *draw_data, hb_draw_state_t *st, float cx, float cy, float r, float stroke_width)
+     * }
+     */
+    public static MethodHandle hb_draw_circle$handle() {
+        return hb_draw_circle.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_draw_circle(hb_draw_funcs_t *dfuncs, void *draw_data, hb_draw_state_t *st, float cx, float cy, float r, float stroke_width)
+     * }
+     */
+    public static MemorySegment hb_draw_circle$address() {
+        return hb_draw_circle.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_draw_circle(hb_draw_funcs_t *dfuncs, void *draw_data, hb_draw_state_t *st, float cx, float cy, float r, float stroke_width)
+     * }
+     */
+    public static void hb_draw_circle(MemorySegment dfuncs, MemorySegment draw_data, MemorySegment st, float cx, float cy, float r, float stroke_width) {
+        var mh$ = hb_draw_circle.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_draw_circle", dfuncs, draw_data, st, cx, cy, r, stroke_width);
+            }
+            mh$.invokeExact(dfuncs, draw_data, st, cx, cy, r, stroke_width);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11287,9 +15209,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_funcs_create"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_create");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11311,6 +15233,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_funcs_create$handle() {
         return hb_paint_funcs_create.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_paint_funcs_t *hb_paint_funcs_create()
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_create$address() {
+        return hb_paint_funcs_create.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_paint_funcs_t *hb_paint_funcs_create()
@@ -11323,6 +15256,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_funcs_create");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11332,9 +15267,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_funcs_get_empty"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_get_empty");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11356,6 +15291,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_funcs_get_empty$handle() {
         return hb_paint_funcs_get_empty.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_paint_funcs_t *hb_paint_funcs_get_empty()
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_get_empty$address() {
+        return hb_paint_funcs_get_empty.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_paint_funcs_t *hb_paint_funcs_get_empty()
@@ -11368,6 +15314,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_funcs_get_empty");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11379,9 +15327,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_funcs_reference"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_reference");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11403,6 +15351,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_funcs_reference$handle() {
         return hb_paint_funcs_reference.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_paint_funcs_t *hb_paint_funcs_reference(hb_paint_funcs_t *funcs)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_reference$address() {
+        return hb_paint_funcs_reference.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_paint_funcs_t *hb_paint_funcs_reference(hb_paint_funcs_t *funcs)
@@ -11415,6 +15374,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_funcs_reference", funcs);
             }
             return (MemorySegment)mh$.invokeExact(funcs);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11425,9 +15386,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_funcs_destroy"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_destroy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11449,6 +15410,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_funcs_destroy$handle() {
         return hb_paint_funcs_destroy.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_destroy(hb_paint_funcs_t *funcs)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_destroy$address() {
+        return hb_paint_funcs_destroy.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_funcs_destroy(hb_paint_funcs_t *funcs)
@@ -11461,6 +15433,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_funcs_destroy", funcs);
             }
             mh$.invokeExact(funcs);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11476,9 +15450,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_funcs_set_user_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_set_user_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11500,6 +15474,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_funcs_set_user_data$handle() {
         return hb_paint_funcs_set_user_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_paint_funcs_set_user_data(hb_paint_funcs_t *funcs, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_set_user_data$address() {
+        return hb_paint_funcs_set_user_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_paint_funcs_set_user_data(hb_paint_funcs_t *funcs, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
@@ -11512,6 +15497,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_funcs_set_user_data", funcs, key, data, destroy, replace);
             }
             return (int)mh$.invokeExact(funcs, key, data, destroy, replace);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11524,9 +15511,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_funcs_get_user_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_get_user_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11548,6 +15535,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_funcs_get_user_data$handle() {
         return hb_paint_funcs_get_user_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void *hb_paint_funcs_get_user_data(const hb_paint_funcs_t *funcs, hb_user_data_key_t *key)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_get_user_data$address() {
+        return hb_paint_funcs_get_user_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void *hb_paint_funcs_get_user_data(const hb_paint_funcs_t *funcs, hb_user_data_key_t *key)
@@ -11560,6 +15558,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_funcs_get_user_data", funcs, key);
             }
             return (MemorySegment)mh$.invokeExact(funcs, key);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11570,9 +15570,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_funcs_make_immutable"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_make_immutable");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11594,6 +15594,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_funcs_make_immutable$handle() {
         return hb_paint_funcs_make_immutable.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_make_immutable(hb_paint_funcs_t *funcs)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_make_immutable$address() {
+        return hb_paint_funcs_make_immutable.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_funcs_make_immutable(hb_paint_funcs_t *funcs)
@@ -11606,6 +15617,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_funcs_make_immutable", funcs);
             }
             mh$.invokeExact(funcs);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11617,9 +15630,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_funcs_is_immutable"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_is_immutable");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11641,6 +15654,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_funcs_is_immutable$handle() {
         return hb_paint_funcs_is_immutable.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_paint_funcs_is_immutable(hb_paint_funcs_t *funcs)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_is_immutable$address() {
+        return hb_paint_funcs_is_immutable.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_paint_funcs_is_immutable(hb_paint_funcs_t *funcs)
@@ -11653,6 +15677,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_funcs_is_immutable", funcs);
             }
             return (int)mh$.invokeExact(funcs);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11694,9 +15720,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_color_line_get_color_stops"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_color_line_get_color_stops");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11718,6 +15744,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_color_line_get_color_stops$handle() {
         return hb_color_line_get_color_stops.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern unsigned int hb_color_line_get_color_stops(hb_color_line_t *color_line, unsigned int start, unsigned int *count, hb_color_stop_t *color_stops)
+     * }
+     */
+    public static MemorySegment hb_color_line_get_color_stops$address() {
+        return hb_color_line_get_color_stops.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern unsigned int hb_color_line_get_color_stops(hb_color_line_t *color_line, unsigned int start, unsigned int *count, hb_color_stop_t *color_stops)
@@ -11730,6 +15767,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_color_line_get_color_stops", color_line, start, count, color_stops);
             }
             return (int)mh$.invokeExact(color_line, start, count, color_stops);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11741,9 +15780,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_color_line_get_extend"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_color_line_get_extend");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11765,6 +15804,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_color_line_get_extend$handle() {
         return hb_color_line_get_extend.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_paint_extend_t hb_color_line_get_extend(hb_color_line_t *color_line)
+     * }
+     */
+    public static MemorySegment hb_color_line_get_extend$address() {
+        return hb_color_line_get_extend.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_paint_extend_t hb_color_line_get_extend(hb_color_line_t *color_line)
@@ -11777,6 +15827,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_color_line_get_extend", color_line);
             }
             return (int)mh$.invokeExact(color_line);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12042,9 +16094,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_funcs_set_push_transform_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_set_push_transform_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12066,6 +16118,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_funcs_set_push_transform_func$handle() {
         return hb_paint_funcs_set_push_transform_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_push_transform_func(hb_paint_funcs_t *funcs, hb_paint_push_transform_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_set_push_transform_func$address() {
+        return hb_paint_funcs_set_push_transform_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_funcs_set_push_transform_func(hb_paint_funcs_t *funcs, hb_paint_push_transform_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -12078,6 +16141,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_funcs_set_push_transform_func", funcs, func, user_data, destroy);
             }
             mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12091,9 +16156,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_funcs_set_pop_transform_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_set_pop_transform_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12115,6 +16180,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_funcs_set_pop_transform_func$handle() {
         return hb_paint_funcs_set_pop_transform_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_pop_transform_func(hb_paint_funcs_t *funcs, hb_paint_pop_transform_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_set_pop_transform_func$address() {
+        return hb_paint_funcs_set_pop_transform_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_funcs_set_pop_transform_func(hb_paint_funcs_t *funcs, hb_paint_pop_transform_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -12127,6 +16203,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_funcs_set_pop_transform_func", funcs, func, user_data, destroy);
             }
             mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12140,9 +16218,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_funcs_set_color_glyph_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_set_color_glyph_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12164,6 +16242,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_funcs_set_color_glyph_func$handle() {
         return hb_paint_funcs_set_color_glyph_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_color_glyph_func(hb_paint_funcs_t *funcs, hb_paint_color_glyph_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_set_color_glyph_func$address() {
+        return hb_paint_funcs_set_color_glyph_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_funcs_set_color_glyph_func(hb_paint_funcs_t *funcs, hb_paint_color_glyph_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -12176,6 +16265,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_funcs_set_color_glyph_func", funcs, func, user_data, destroy);
             }
             mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12189,9 +16280,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_funcs_set_push_clip_glyph_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_set_push_clip_glyph_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12213,6 +16304,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_funcs_set_push_clip_glyph_func$handle() {
         return hb_paint_funcs_set_push_clip_glyph_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_push_clip_glyph_func(hb_paint_funcs_t *funcs, hb_paint_push_clip_glyph_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_set_push_clip_glyph_func$address() {
+        return hb_paint_funcs_set_push_clip_glyph_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_funcs_set_push_clip_glyph_func(hb_paint_funcs_t *funcs, hb_paint_push_clip_glyph_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -12225,6 +16327,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_funcs_set_push_clip_glyph_func", funcs, func, user_data, destroy);
             }
             mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12238,9 +16342,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_funcs_set_push_clip_rectangle_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_set_push_clip_rectangle_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12262,6 +16366,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_funcs_set_push_clip_rectangle_func$handle() {
         return hb_paint_funcs_set_push_clip_rectangle_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_push_clip_rectangle_func(hb_paint_funcs_t *funcs, hb_paint_push_clip_rectangle_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_set_push_clip_rectangle_func$address() {
+        return hb_paint_funcs_set_push_clip_rectangle_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_funcs_set_push_clip_rectangle_func(hb_paint_funcs_t *funcs, hb_paint_push_clip_rectangle_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -12274,6 +16389,132 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_funcs_set_push_clip_rectangle_func", funcs, func, user_data, destroy);
             }
             mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_paint_funcs_set_push_clip_path_start_func {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_set_push_clip_path_start_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_push_clip_path_start_func(hb_paint_funcs_t *funcs, hb_paint_push_clip_path_start_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static FunctionDescriptor hb_paint_funcs_set_push_clip_path_start_func$descriptor() {
+        return hb_paint_funcs_set_push_clip_path_start_func.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_push_clip_path_start_func(hb_paint_funcs_t *funcs, hb_paint_push_clip_path_start_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MethodHandle hb_paint_funcs_set_push_clip_path_start_func$handle() {
+        return hb_paint_funcs_set_push_clip_path_start_func.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_push_clip_path_start_func(hb_paint_funcs_t *funcs, hb_paint_push_clip_path_start_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_set_push_clip_path_start_func$address() {
+        return hb_paint_funcs_set_push_clip_path_start_func.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_push_clip_path_start_func(hb_paint_funcs_t *funcs, hb_paint_push_clip_path_start_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static void hb_paint_funcs_set_push_clip_path_start_func(MemorySegment funcs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_paint_funcs_set_push_clip_path_start_func.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_paint_funcs_set_push_clip_path_start_func", funcs, func, user_data, destroy);
+            }
+            mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_paint_funcs_set_push_clip_path_end_func {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_set_push_clip_path_end_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_push_clip_path_end_func(hb_paint_funcs_t *funcs, hb_paint_push_clip_path_end_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static FunctionDescriptor hb_paint_funcs_set_push_clip_path_end_func$descriptor() {
+        return hb_paint_funcs_set_push_clip_path_end_func.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_push_clip_path_end_func(hb_paint_funcs_t *funcs, hb_paint_push_clip_path_end_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MethodHandle hb_paint_funcs_set_push_clip_path_end_func$handle() {
+        return hb_paint_funcs_set_push_clip_path_end_func.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_push_clip_path_end_func(hb_paint_funcs_t *funcs, hb_paint_push_clip_path_end_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_set_push_clip_path_end_func$address() {
+        return hb_paint_funcs_set_push_clip_path_end_func.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_push_clip_path_end_func(hb_paint_funcs_t *funcs, hb_paint_push_clip_path_end_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static void hb_paint_funcs_set_push_clip_path_end_func(MemorySegment funcs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_paint_funcs_set_push_clip_path_end_func.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_paint_funcs_set_push_clip_path_end_func", funcs, func, user_data, destroy);
+            }
+            mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12287,9 +16528,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_funcs_set_pop_clip_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_set_pop_clip_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12311,6 +16552,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_funcs_set_pop_clip_func$handle() {
         return hb_paint_funcs_set_pop_clip_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_pop_clip_func(hb_paint_funcs_t *funcs, hb_paint_pop_clip_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_set_pop_clip_func$address() {
+        return hb_paint_funcs_set_pop_clip_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_funcs_set_pop_clip_func(hb_paint_funcs_t *funcs, hb_paint_pop_clip_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -12323,6 +16575,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_funcs_set_pop_clip_func", funcs, func, user_data, destroy);
             }
             mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12336,9 +16590,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_funcs_set_color_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_set_color_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12360,6 +16614,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_funcs_set_color_func$handle() {
         return hb_paint_funcs_set_color_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_color_func(hb_paint_funcs_t *funcs, hb_paint_color_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_set_color_func$address() {
+        return hb_paint_funcs_set_color_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_funcs_set_color_func(hb_paint_funcs_t *funcs, hb_paint_color_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -12372,6 +16637,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_funcs_set_color_func", funcs, func, user_data, destroy);
             }
             mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12385,9 +16652,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_funcs_set_image_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_set_image_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12409,6 +16676,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_funcs_set_image_func$handle() {
         return hb_paint_funcs_set_image_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_image_func(hb_paint_funcs_t *funcs, hb_paint_image_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_set_image_func$address() {
+        return hb_paint_funcs_set_image_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_funcs_set_image_func(hb_paint_funcs_t *funcs, hb_paint_image_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -12421,6 +16699,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_funcs_set_image_func", funcs, func, user_data, destroy);
             }
             mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12434,9 +16714,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_funcs_set_linear_gradient_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_set_linear_gradient_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12458,6 +16738,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_funcs_set_linear_gradient_func$handle() {
         return hb_paint_funcs_set_linear_gradient_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_linear_gradient_func(hb_paint_funcs_t *funcs, hb_paint_linear_gradient_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_set_linear_gradient_func$address() {
+        return hb_paint_funcs_set_linear_gradient_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_funcs_set_linear_gradient_func(hb_paint_funcs_t *funcs, hb_paint_linear_gradient_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -12470,6 +16761,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_funcs_set_linear_gradient_func", funcs, func, user_data, destroy);
             }
             mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12483,9 +16776,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_funcs_set_radial_gradient_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_set_radial_gradient_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12507,6 +16800,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_funcs_set_radial_gradient_func$handle() {
         return hb_paint_funcs_set_radial_gradient_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_radial_gradient_func(hb_paint_funcs_t *funcs, hb_paint_radial_gradient_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_set_radial_gradient_func$address() {
+        return hb_paint_funcs_set_radial_gradient_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_funcs_set_radial_gradient_func(hb_paint_funcs_t *funcs, hb_paint_radial_gradient_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -12519,6 +16823,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_funcs_set_radial_gradient_func", funcs, func, user_data, destroy);
             }
             mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12532,9 +16838,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_funcs_set_sweep_gradient_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_set_sweep_gradient_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12556,6 +16862,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_funcs_set_sweep_gradient_func$handle() {
         return hb_paint_funcs_set_sweep_gradient_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_sweep_gradient_func(hb_paint_funcs_t *funcs, hb_paint_sweep_gradient_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_set_sweep_gradient_func$address() {
+        return hb_paint_funcs_set_sweep_gradient_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_funcs_set_sweep_gradient_func(hb_paint_funcs_t *funcs, hb_paint_sweep_gradient_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -12568,6 +16885,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_funcs_set_sweep_gradient_func", funcs, func, user_data, destroy);
             }
             mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12581,9 +16900,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_funcs_set_push_group_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_set_push_group_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12605,6 +16924,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_funcs_set_push_group_func$handle() {
         return hb_paint_funcs_set_push_group_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_push_group_func(hb_paint_funcs_t *funcs, hb_paint_push_group_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_set_push_group_func$address() {
+        return hb_paint_funcs_set_push_group_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_funcs_set_push_group_func(hb_paint_funcs_t *funcs, hb_paint_push_group_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -12617,6 +16947,70 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_funcs_set_push_group_func", funcs, func, user_data, destroy);
             }
             mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_paint_funcs_set_push_group_for_func {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_set_push_group_for_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_push_group_for_func(hb_paint_funcs_t *funcs, hb_paint_push_group_for_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static FunctionDescriptor hb_paint_funcs_set_push_group_for_func$descriptor() {
+        return hb_paint_funcs_set_push_group_for_func.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_push_group_for_func(hb_paint_funcs_t *funcs, hb_paint_push_group_for_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MethodHandle hb_paint_funcs_set_push_group_for_func$handle() {
+        return hb_paint_funcs_set_push_group_for_func.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_push_group_for_func(hb_paint_funcs_t *funcs, hb_paint_push_group_for_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_set_push_group_for_func$address() {
+        return hb_paint_funcs_set_push_group_for_func.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_push_group_for_func(hb_paint_funcs_t *funcs, hb_paint_push_group_for_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static void hb_paint_funcs_set_push_group_for_func(MemorySegment funcs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_paint_funcs_set_push_group_for_func.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_paint_funcs_set_push_group_for_func", funcs, func, user_data, destroy);
+            }
+            mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12630,9 +17024,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_funcs_set_pop_group_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_set_pop_group_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12654,6 +17048,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_funcs_set_pop_group_func$handle() {
         return hb_paint_funcs_set_pop_group_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_pop_group_func(hb_paint_funcs_t *funcs, hb_paint_pop_group_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_set_pop_group_func$address() {
+        return hb_paint_funcs_set_pop_group_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_funcs_set_pop_group_func(hb_paint_funcs_t *funcs, hb_paint_pop_group_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -12666,6 +17071,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_funcs_set_pop_group_func", funcs, func, user_data, destroy);
             }
             mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12679,9 +17086,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_funcs_set_custom_palette_color_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_set_custom_palette_color_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12703,6 +17110,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_funcs_set_custom_palette_color_func$handle() {
         return hb_paint_funcs_set_custom_palette_color_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_custom_palette_color_func(hb_paint_funcs_t *funcs, hb_paint_custom_palette_color_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_set_custom_palette_color_func$address() {
+        return hb_paint_funcs_set_custom_palette_color_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_funcs_set_custom_palette_color_func(hb_paint_funcs_t *funcs, hb_paint_custom_palette_color_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -12715,6 +17133,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_funcs_set_custom_palette_color_func", funcs, func, user_data, destroy);
             }
             mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12732,9 +17152,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_FLOAT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_push_transform"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_push_transform");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12756,6 +17176,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_push_transform$handle() {
         return hb_paint_push_transform.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_push_transform(hb_paint_funcs_t *funcs, void *paint_data, float xx, float yx, float xy, float yy, float dx, float dy)
+     * }
+     */
+    public static MemorySegment hb_paint_push_transform$address() {
+        return hb_paint_push_transform.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_push_transform(hb_paint_funcs_t *funcs, void *paint_data, float xx, float yx, float xy, float yy, float dx, float dy)
@@ -12768,6 +17199,130 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_push_transform", funcs, paint_data, xx, yx, xy, yy, dx, dy);
             }
             mh$.invokeExact(funcs, paint_data, xx, yx, xy, yy, dx, dy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_paint_push_font_transform {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_push_font_transform");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_paint_push_font_transform(hb_paint_funcs_t *funcs, void *paint_data, const hb_font_t *font)
+     * }
+     */
+    public static FunctionDescriptor hb_paint_push_font_transform$descriptor() {
+        return hb_paint_push_font_transform.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_paint_push_font_transform(hb_paint_funcs_t *funcs, void *paint_data, const hb_font_t *font)
+     * }
+     */
+    public static MethodHandle hb_paint_push_font_transform$handle() {
+        return hb_paint_push_font_transform.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_push_font_transform(hb_paint_funcs_t *funcs, void *paint_data, const hb_font_t *font)
+     * }
+     */
+    public static MemorySegment hb_paint_push_font_transform$address() {
+        return hb_paint_push_font_transform.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_paint_push_font_transform(hb_paint_funcs_t *funcs, void *paint_data, const hb_font_t *font)
+     * }
+     */
+    public static void hb_paint_push_font_transform(MemorySegment funcs, MemorySegment paint_data, MemorySegment font) {
+        var mh$ = hb_paint_push_font_transform.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_paint_push_font_transform", funcs, paint_data, font);
+            }
+            mh$.invokeExact(funcs, paint_data, font);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_paint_push_inverse_font_transform {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_push_inverse_font_transform");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_paint_push_inverse_font_transform(hb_paint_funcs_t *funcs, void *paint_data, const hb_font_t *font)
+     * }
+     */
+    public static FunctionDescriptor hb_paint_push_inverse_font_transform$descriptor() {
+        return hb_paint_push_inverse_font_transform.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_paint_push_inverse_font_transform(hb_paint_funcs_t *funcs, void *paint_data, const hb_font_t *font)
+     * }
+     */
+    public static MethodHandle hb_paint_push_inverse_font_transform$handle() {
+        return hb_paint_push_inverse_font_transform.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_push_inverse_font_transform(hb_paint_funcs_t *funcs, void *paint_data, const hb_font_t *font)
+     * }
+     */
+    public static MemorySegment hb_paint_push_inverse_font_transform$address() {
+        return hb_paint_push_inverse_font_transform.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_paint_push_inverse_font_transform(hb_paint_funcs_t *funcs, void *paint_data, const hb_font_t *font)
+     * }
+     */
+    public static void hb_paint_push_inverse_font_transform(MemorySegment funcs, MemorySegment paint_data, MemorySegment font) {
+        var mh$ = hb_paint_push_inverse_font_transform.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_paint_push_inverse_font_transform", funcs, paint_data, font);
+            }
+            mh$.invokeExact(funcs, paint_data, font);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12779,9 +17334,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_pop_transform"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_pop_transform");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12803,6 +17358,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_pop_transform$handle() {
         return hb_paint_pop_transform.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_pop_transform(hb_paint_funcs_t *funcs, void *paint_data)
+     * }
+     */
+    public static MemorySegment hb_paint_pop_transform$address() {
+        return hb_paint_pop_transform.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_pop_transform(hb_paint_funcs_t *funcs, void *paint_data)
@@ -12815,6 +17381,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_pop_transform", funcs, paint_data);
             }
             mh$.invokeExact(funcs, paint_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12829,9 +17397,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_color_glyph"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_color_glyph");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12853,6 +17421,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_color_glyph$handle() {
         return hb_paint_color_glyph.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_paint_color_glyph(hb_paint_funcs_t *funcs, void *paint_data, hb_codepoint_t glyph, hb_font_t *font)
+     * }
+     */
+    public static MemorySegment hb_paint_color_glyph$address() {
+        return hb_paint_color_glyph.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_paint_color_glyph(hb_paint_funcs_t *funcs, void *paint_data, hb_codepoint_t glyph, hb_font_t *font)
@@ -12865,6 +17444,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_color_glyph", funcs, paint_data, glyph, font);
             }
             return (int)mh$.invokeExact(funcs, paint_data, glyph, font);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12878,9 +17459,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_push_clip_glyph"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_push_clip_glyph");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12902,6 +17483,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_push_clip_glyph$handle() {
         return hb_paint_push_clip_glyph.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_push_clip_glyph(hb_paint_funcs_t *funcs, void *paint_data, hb_codepoint_t glyph, hb_font_t *font)
+     * }
+     */
+    public static MemorySegment hb_paint_push_clip_glyph$address() {
+        return hb_paint_push_clip_glyph.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_push_clip_glyph(hb_paint_funcs_t *funcs, void *paint_data, hb_codepoint_t glyph, hb_font_t *font)
@@ -12914,6 +17506,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_push_clip_glyph", funcs, paint_data, glyph, font);
             }
             mh$.invokeExact(funcs, paint_data, glyph, font);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12929,9 +17523,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_FLOAT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_push_clip_rectangle"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_push_clip_rectangle");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12953,6 +17547,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_push_clip_rectangle$handle() {
         return hb_paint_push_clip_rectangle.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_push_clip_rectangle(hb_paint_funcs_t *funcs, void *paint_data, float xmin, float ymin, float xmax, float ymax)
+     * }
+     */
+    public static MemorySegment hb_paint_push_clip_rectangle$address() {
+        return hb_paint_push_clip_rectangle.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_push_clip_rectangle(hb_paint_funcs_t *funcs, void *paint_data, float xmin, float ymin, float xmax, float ymax)
@@ -12965,6 +17570,130 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_push_clip_rectangle", funcs, paint_data, xmin, ymin, xmax, ymax);
             }
             mh$.invokeExact(funcs, paint_data, xmin, ymin, xmax, ymax);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_paint_push_clip_path_start {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_push_clip_path_start");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern hb_draw_funcs_t *hb_paint_push_clip_path_start(hb_paint_funcs_t *funcs, void *paint_data, void **draw_data)
+     * }
+     */
+    public static FunctionDescriptor hb_paint_push_clip_path_start$descriptor() {
+        return hb_paint_push_clip_path_start.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern hb_draw_funcs_t *hb_paint_push_clip_path_start(hb_paint_funcs_t *funcs, void *paint_data, void **draw_data)
+     * }
+     */
+    public static MethodHandle hb_paint_push_clip_path_start$handle() {
+        return hb_paint_push_clip_path_start.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_draw_funcs_t *hb_paint_push_clip_path_start(hb_paint_funcs_t *funcs, void *paint_data, void **draw_data)
+     * }
+     */
+    public static MemorySegment hb_paint_push_clip_path_start$address() {
+        return hb_paint_push_clip_path_start.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern hb_draw_funcs_t *hb_paint_push_clip_path_start(hb_paint_funcs_t *funcs, void *paint_data, void **draw_data)
+     * }
+     */
+    public static MemorySegment hb_paint_push_clip_path_start(MemorySegment funcs, MemorySegment paint_data, MemorySegment draw_data) {
+        var mh$ = hb_paint_push_clip_path_start.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_paint_push_clip_path_start", funcs, paint_data, draw_data);
+            }
+            return (MemorySegment)mh$.invokeExact(funcs, paint_data, draw_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_paint_push_clip_path_end {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_push_clip_path_end");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_paint_push_clip_path_end(hb_paint_funcs_t *funcs, void *paint_data)
+     * }
+     */
+    public static FunctionDescriptor hb_paint_push_clip_path_end$descriptor() {
+        return hb_paint_push_clip_path_end.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_paint_push_clip_path_end(hb_paint_funcs_t *funcs, void *paint_data)
+     * }
+     */
+    public static MethodHandle hb_paint_push_clip_path_end$handle() {
+        return hb_paint_push_clip_path_end.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_push_clip_path_end(hb_paint_funcs_t *funcs, void *paint_data)
+     * }
+     */
+    public static MemorySegment hb_paint_push_clip_path_end$address() {
+        return hb_paint_push_clip_path_end.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_paint_push_clip_path_end(hb_paint_funcs_t *funcs, void *paint_data)
+     * }
+     */
+    public static void hb_paint_push_clip_path_end(MemorySegment funcs, MemorySegment paint_data) {
+        var mh$ = hb_paint_push_clip_path_end.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_paint_push_clip_path_end", funcs, paint_data);
+            }
+            mh$.invokeExact(funcs, paint_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12976,9 +17705,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_pop_clip"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_pop_clip");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13000,6 +17729,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_pop_clip$handle() {
         return hb_paint_pop_clip.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_pop_clip(hb_paint_funcs_t *funcs, void *paint_data)
+     * }
+     */
+    public static MemorySegment hb_paint_pop_clip$address() {
+        return hb_paint_pop_clip.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_pop_clip(hb_paint_funcs_t *funcs, void *paint_data)
@@ -13012,6 +17752,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_pop_clip", funcs, paint_data);
             }
             mh$.invokeExact(funcs, paint_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13025,9 +17767,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_color"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_color");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13049,6 +17791,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_color$handle() {
         return hb_paint_color.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_color(hb_paint_funcs_t *funcs, void *paint_data, hb_bool_t is_foreground, hb_color_t color)
+     * }
+     */
+    public static MemorySegment hb_paint_color$address() {
+        return hb_paint_color.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_color(hb_paint_funcs_t *funcs, void *paint_data, hb_bool_t is_foreground, hb_color_t color)
@@ -13061,6 +17814,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_color", funcs, paint_data, is_foreground, color);
             }
             mh$.invokeExact(funcs, paint_data, is_foreground, color);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13078,9 +17833,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_image"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_image");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13102,6 +17857,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_image$handle() {
         return hb_paint_image.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_image(hb_paint_funcs_t *funcs, void *paint_data, hb_blob_t *image, unsigned int width, unsigned int height, hb_tag_t format, float slant, hb_glyph_extents_t *extents)
+     * }
+     */
+    public static MemorySegment hb_paint_image$address() {
+        return hb_paint_image.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_image(hb_paint_funcs_t *funcs, void *paint_data, hb_blob_t *image, unsigned int width, unsigned int height, hb_tag_t format, float slant, hb_glyph_extents_t *extents)
@@ -13114,6 +17880,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_image", funcs, paint_data, image, width, height, format, slant, extents);
             }
             mh$.invokeExact(funcs, paint_data, image, width, height, format, slant, extents);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13132,9 +17900,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_FLOAT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_linear_gradient"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_linear_gradient");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13156,6 +17924,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_linear_gradient$handle() {
         return hb_paint_linear_gradient.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_linear_gradient(hb_paint_funcs_t *funcs, void *paint_data, hb_color_line_t *color_line, float x0, float y0, float x1, float y1, float x2, float y2)
+     * }
+     */
+    public static MemorySegment hb_paint_linear_gradient$address() {
+        return hb_paint_linear_gradient.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_linear_gradient(hb_paint_funcs_t *funcs, void *paint_data, hb_color_line_t *color_line, float x0, float y0, float x1, float y1, float x2, float y2)
@@ -13168,6 +17947,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_linear_gradient", funcs, paint_data, color_line, x0, y0, x1, y1, x2, y2);
             }
             mh$.invokeExact(funcs, paint_data, color_line, x0, y0, x1, y1, x2, y2);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13186,9 +17967,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_FLOAT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_radial_gradient"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_radial_gradient");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13210,6 +17991,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_radial_gradient$handle() {
         return hb_paint_radial_gradient.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_radial_gradient(hb_paint_funcs_t *funcs, void *paint_data, hb_color_line_t *color_line, float x0, float y0, float r0, float x1, float y1, float r1)
+     * }
+     */
+    public static MemorySegment hb_paint_radial_gradient$address() {
+        return hb_paint_radial_gradient.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_radial_gradient(hb_paint_funcs_t *funcs, void *paint_data, hb_color_line_t *color_line, float x0, float y0, float r0, float x1, float y1, float r1)
@@ -13222,6 +18014,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_radial_gradient", funcs, paint_data, color_line, x0, y0, r0, x1, y1, r1);
             }
             mh$.invokeExact(funcs, paint_data, color_line, x0, y0, r0, x1, y1, r1);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13238,9 +18032,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_FLOAT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_sweep_gradient"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_sweep_gradient");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13262,6 +18056,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_sweep_gradient$handle() {
         return hb_paint_sweep_gradient.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_sweep_gradient(hb_paint_funcs_t *funcs, void *paint_data, hb_color_line_t *color_line, float x0, float y0, float start_angle, float end_angle)
+     * }
+     */
+    public static MemorySegment hb_paint_sweep_gradient$address() {
+        return hb_paint_sweep_gradient.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_sweep_gradient(hb_paint_funcs_t *funcs, void *paint_data, hb_color_line_t *color_line, float x0, float y0, float start_angle, float end_angle)
@@ -13274,6 +18079,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_sweep_gradient", funcs, paint_data, color_line, x0, y0, start_angle, end_angle);
             }
             mh$.invokeExact(funcs, paint_data, color_line, x0, y0, start_angle, end_angle);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13285,9 +18092,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_push_group"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_push_group");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13309,6 +18116,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_push_group$handle() {
         return hb_paint_push_group.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_push_group(hb_paint_funcs_t *funcs, void *paint_data)
+     * }
+     */
+    public static MemorySegment hb_paint_push_group$address() {
+        return hb_paint_push_group.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_push_group(hb_paint_funcs_t *funcs, void *paint_data)
@@ -13321,6 +18139,69 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_push_group", funcs, paint_data);
             }
             mh$.invokeExact(funcs, paint_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_paint_push_group_for {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_push_group_for");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_paint_push_group_for(hb_paint_funcs_t *funcs, void *paint_data, hb_paint_composite_mode_t mode)
+     * }
+     */
+    public static FunctionDescriptor hb_paint_push_group_for$descriptor() {
+        return hb_paint_push_group_for.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_paint_push_group_for(hb_paint_funcs_t *funcs, void *paint_data, hb_paint_composite_mode_t mode)
+     * }
+     */
+    public static MethodHandle hb_paint_push_group_for$handle() {
+        return hb_paint_push_group_for.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_push_group_for(hb_paint_funcs_t *funcs, void *paint_data, hb_paint_composite_mode_t mode)
+     * }
+     */
+    public static MemorySegment hb_paint_push_group_for$address() {
+        return hb_paint_push_group_for.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_paint_push_group_for(hb_paint_funcs_t *funcs, void *paint_data, hb_paint_composite_mode_t mode)
+     * }
+     */
+    public static void hb_paint_push_group_for(MemorySegment funcs, MemorySegment paint_data, int mode) {
+        var mh$ = hb_paint_push_group_for.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_paint_push_group_for", funcs, paint_data, mode);
+            }
+            mh$.invokeExact(funcs, paint_data, mode);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13333,9 +18214,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_pop_group"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_pop_group");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13357,6 +18238,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_pop_group$handle() {
         return hb_paint_pop_group.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_pop_group(hb_paint_funcs_t *funcs, void *paint_data, hb_paint_composite_mode_t mode)
+     * }
+     */
+    public static MemorySegment hb_paint_pop_group$address() {
+        return hb_paint_pop_group.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_paint_pop_group(hb_paint_funcs_t *funcs, void *paint_data, hb_paint_composite_mode_t mode)
@@ -13369,6 +18261,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_pop_group", funcs, paint_data, mode);
             }
             mh$.invokeExact(funcs, paint_data, mode);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13383,9 +18277,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_paint_custom_palette_color"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_custom_palette_color");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13407,6 +18301,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_paint_custom_palette_color$handle() {
         return hb_paint_custom_palette_color.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_paint_custom_palette_color(hb_paint_funcs_t *funcs, void *paint_data, unsigned int color_index, hb_color_t *color)
+     * }
+     */
+    public static MemorySegment hb_paint_custom_palette_color$address() {
+        return hb_paint_custom_palette_color.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_paint_custom_palette_color(hb_paint_funcs_t *funcs, void *paint_data, unsigned int color_index, hb_color_t *color)
@@ -13419,6 +18324,203 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_custom_palette_color", funcs, paint_data, color_index, color);
             }
             return (int)mh$.invokeExact(funcs, paint_data, color_index, color);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_paint_reduce_linear_anchors {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_FLOAT,
+            app_indicator_h.C_FLOAT,
+            app_indicator_h.C_FLOAT,
+            app_indicator_h.C_FLOAT,
+            app_indicator_h.C_FLOAT,
+            app_indicator_h.C_FLOAT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_reduce_linear_anchors");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_paint_reduce_linear_anchors(float x0, float y0, float x1, float y1, float x2, float y2, float *xx0, float *yy0, float *xx1, float *yy1)
+     * }
+     */
+    public static FunctionDescriptor hb_paint_reduce_linear_anchors$descriptor() {
+        return hb_paint_reduce_linear_anchors.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_paint_reduce_linear_anchors(float x0, float y0, float x1, float y1, float x2, float y2, float *xx0, float *yy0, float *xx1, float *yy1)
+     * }
+     */
+    public static MethodHandle hb_paint_reduce_linear_anchors$handle() {
+        return hb_paint_reduce_linear_anchors.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_reduce_linear_anchors(float x0, float y0, float x1, float y1, float x2, float y2, float *xx0, float *yy0, float *xx1, float *yy1)
+     * }
+     */
+    public static MemorySegment hb_paint_reduce_linear_anchors$address() {
+        return hb_paint_reduce_linear_anchors.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_paint_reduce_linear_anchors(float x0, float y0, float x1, float y1, float x2, float y2, float *xx0, float *yy0, float *xx1, float *yy1)
+     * }
+     */
+    public static void hb_paint_reduce_linear_anchors(float x0, float y0, float x1, float y1, float x2, float y2, MemorySegment xx0, MemorySegment yy0, MemorySegment xx1, MemorySegment yy1) {
+        var mh$ = hb_paint_reduce_linear_anchors.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_paint_reduce_linear_anchors", x0, y0, x1, y1, x2, y2, xx0, yy0, xx1, yy1);
+            }
+            mh$.invokeExact(x0, y0, x1, y1, x2, y2, xx0, yy0, xx1, yy1);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_paint_normalize_color_line {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_normalize_color_line");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_paint_normalize_color_line(hb_color_stop_t *stops, unsigned int len, float *min, float *max)
+     * }
+     */
+    public static FunctionDescriptor hb_paint_normalize_color_line$descriptor() {
+        return hb_paint_normalize_color_line.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_paint_normalize_color_line(hb_color_stop_t *stops, unsigned int len, float *min, float *max)
+     * }
+     */
+    public static MethodHandle hb_paint_normalize_color_line$handle() {
+        return hb_paint_normalize_color_line.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_normalize_color_line(hb_color_stop_t *stops, unsigned int len, float *min, float *max)
+     * }
+     */
+    public static MemorySegment hb_paint_normalize_color_line$address() {
+        return hb_paint_normalize_color_line.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_paint_normalize_color_line(hb_color_stop_t *stops, unsigned int len, float *min, float *max)
+     * }
+     */
+    public static void hb_paint_normalize_color_line(MemorySegment stops, int len, MemorySegment min, MemorySegment max) {
+        var mh$ = hb_paint_normalize_color_line.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_paint_normalize_color_line", stops, len, min, max);
+            }
+            mh$.invokeExact(stops, len, min, max);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_paint_sweep_gradient_tiles {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_FLOAT,
+            app_indicator_h.C_FLOAT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_sweep_gradient_tiles");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_paint_sweep_gradient_tiles(hb_color_stop_t *stops, unsigned int n_stops, hb_paint_extend_t extend, float start_angle, float end_angle, hb_paint_sweep_gradient_tile_func_t emit_patch, void *user_data)
+     * }
+     */
+    public static FunctionDescriptor hb_paint_sweep_gradient_tiles$descriptor() {
+        return hb_paint_sweep_gradient_tiles.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_paint_sweep_gradient_tiles(hb_color_stop_t *stops, unsigned int n_stops, hb_paint_extend_t extend, float start_angle, float end_angle, hb_paint_sweep_gradient_tile_func_t emit_patch, void *user_data)
+     * }
+     */
+    public static MethodHandle hb_paint_sweep_gradient_tiles$handle() {
+        return hb_paint_sweep_gradient_tiles.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_sweep_gradient_tiles(hb_color_stop_t *stops, unsigned int n_stops, hb_paint_extend_t extend, float start_angle, float end_angle, hb_paint_sweep_gradient_tile_func_t emit_patch, void *user_data)
+     * }
+     */
+    public static MemorySegment hb_paint_sweep_gradient_tiles$address() {
+        return hb_paint_sweep_gradient_tiles.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_paint_sweep_gradient_tiles(hb_color_stop_t *stops, unsigned int n_stops, hb_paint_extend_t extend, float start_angle, float end_angle, hb_paint_sweep_gradient_tile_func_t emit_patch, void *user_data)
+     * }
+     */
+    public static void hb_paint_sweep_gradient_tiles(MemorySegment stops, int n_stops, int extend, float start_angle, float end_angle, MemorySegment emit_patch, MemorySegment user_data) {
+        var mh$ = hb_paint_sweep_gradient_tiles.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_paint_sweep_gradient_tiles", stops, n_stops, extend, start_angle, end_angle, emit_patch, user_data);
+            }
+            mh$.invokeExact(stops, n_stops, extend, start_angle, end_angle, emit_patch, user_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13428,9 +18530,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_create"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_create");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13452,6 +18554,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_create$handle() {
         return hb_font_funcs_create.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_font_funcs_t *hb_font_funcs_create()
+     * }
+     */
+    public static MemorySegment hb_font_funcs_create$address() {
+        return hb_font_funcs_create.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_font_funcs_t *hb_font_funcs_create()
@@ -13464,6 +18577,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_create");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13473,9 +18588,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_get_empty"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_get_empty");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13497,6 +18612,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_get_empty$handle() {
         return hb_font_funcs_get_empty.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_font_funcs_t *hb_font_funcs_get_empty()
+     * }
+     */
+    public static MemorySegment hb_font_funcs_get_empty$address() {
+        return hb_font_funcs_get_empty.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_font_funcs_t *hb_font_funcs_get_empty()
@@ -13509,6 +18635,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_get_empty");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13520,9 +18648,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_reference"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_reference");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13544,6 +18672,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_reference$handle() {
         return hb_font_funcs_reference.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_font_funcs_t *hb_font_funcs_reference(hb_font_funcs_t *ffuncs)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_reference$address() {
+        return hb_font_funcs_reference.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_font_funcs_t *hb_font_funcs_reference(hb_font_funcs_t *ffuncs)
@@ -13556,6 +18695,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_reference", ffuncs);
             }
             return (MemorySegment)mh$.invokeExact(ffuncs);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13566,9 +18707,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_destroy"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_destroy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13590,6 +18731,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_destroy$handle() {
         return hb_font_funcs_destroy.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_destroy(hb_font_funcs_t *ffuncs)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_destroy$address() {
+        return hb_font_funcs_destroy.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_funcs_destroy(hb_font_funcs_t *ffuncs)
@@ -13602,6 +18754,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_destroy", ffuncs);
             }
             mh$.invokeExact(ffuncs);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13617,9 +18771,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_set_user_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_set_user_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13641,6 +18795,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_set_user_data$handle() {
         return hb_font_funcs_set_user_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_funcs_set_user_data(hb_font_funcs_t *ffuncs, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_set_user_data$address() {
+        return hb_font_funcs_set_user_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_font_funcs_set_user_data(hb_font_funcs_t *ffuncs, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
@@ -13653,6 +18818,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_set_user_data", ffuncs, key, data, destroy, replace);
             }
             return (int)mh$.invokeExact(ffuncs, key, data, destroy, replace);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13665,9 +18832,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_get_user_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_get_user_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13689,6 +18856,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_get_user_data$handle() {
         return hb_font_funcs_get_user_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void *hb_font_funcs_get_user_data(const hb_font_funcs_t *ffuncs, hb_user_data_key_t *key)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_get_user_data$address() {
+        return hb_font_funcs_get_user_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void *hb_font_funcs_get_user_data(const hb_font_funcs_t *ffuncs, hb_user_data_key_t *key)
@@ -13701,6 +18879,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_get_user_data", ffuncs, key);
             }
             return (MemorySegment)mh$.invokeExact(ffuncs, key);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13711,9 +18891,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_make_immutable"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_make_immutable");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13735,6 +18915,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_make_immutable$handle() {
         return hb_font_funcs_make_immutable.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_make_immutable(hb_font_funcs_t *ffuncs)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_make_immutable$address() {
+        return hb_font_funcs_make_immutable.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_funcs_make_immutable(hb_font_funcs_t *ffuncs)
@@ -13747,6 +18938,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_make_immutable", ffuncs);
             }
             mh$.invokeExact(ffuncs);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13758,9 +18951,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_is_immutable"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_is_immutable");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13782,6 +18975,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_is_immutable$handle() {
         return hb_font_funcs_is_immutable.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_funcs_is_immutable(hb_font_funcs_t *ffuncs)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_is_immutable$address() {
+        return hb_font_funcs_is_immutable.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_font_funcs_is_immutable(hb_font_funcs_t *ffuncs)
@@ -13794,6 +18998,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_is_immutable", ffuncs);
             }
             return (int)mh$.invokeExact(ffuncs);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13807,9 +19013,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_set_font_h_extents_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_set_font_h_extents_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13831,6 +19037,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_set_font_h_extents_func$handle() {
         return hb_font_funcs_set_font_h_extents_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_font_h_extents_func(hb_font_funcs_t *ffuncs, hb_font_get_font_h_extents_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_set_font_h_extents_func$address() {
+        return hb_font_funcs_set_font_h_extents_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_funcs_set_font_h_extents_func(hb_font_funcs_t *ffuncs, hb_font_get_font_h_extents_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -13843,6 +19060,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_set_font_h_extents_func", ffuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13856,9 +19075,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_set_font_v_extents_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_set_font_v_extents_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13880,6 +19099,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_set_font_v_extents_func$handle() {
         return hb_font_funcs_set_font_v_extents_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_font_v_extents_func(hb_font_funcs_t *ffuncs, hb_font_get_font_v_extents_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_set_font_v_extents_func$address() {
+        return hb_font_funcs_set_font_v_extents_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_funcs_set_font_v_extents_func(hb_font_funcs_t *ffuncs, hb_font_get_font_v_extents_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -13892,6 +19122,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_set_font_v_extents_func", ffuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13905,9 +19137,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_set_nominal_glyph_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_set_nominal_glyph_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13929,6 +19161,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_set_nominal_glyph_func$handle() {
         return hb_font_funcs_set_nominal_glyph_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_nominal_glyph_func(hb_font_funcs_t *ffuncs, hb_font_get_nominal_glyph_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_set_nominal_glyph_func$address() {
+        return hb_font_funcs_set_nominal_glyph_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_funcs_set_nominal_glyph_func(hb_font_funcs_t *ffuncs, hb_font_get_nominal_glyph_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -13941,6 +19184,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_set_nominal_glyph_func", ffuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13954,9 +19199,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_set_nominal_glyphs_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_set_nominal_glyphs_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13978,6 +19223,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_set_nominal_glyphs_func$handle() {
         return hb_font_funcs_set_nominal_glyphs_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_nominal_glyphs_func(hb_font_funcs_t *ffuncs, hb_font_get_nominal_glyphs_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_set_nominal_glyphs_func$address() {
+        return hb_font_funcs_set_nominal_glyphs_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_funcs_set_nominal_glyphs_func(hb_font_funcs_t *ffuncs, hb_font_get_nominal_glyphs_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -13990,6 +19246,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_set_nominal_glyphs_func", ffuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14003,9 +19261,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_set_variation_glyph_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_set_variation_glyph_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14027,6 +19285,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_set_variation_glyph_func$handle() {
         return hb_font_funcs_set_variation_glyph_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_variation_glyph_func(hb_font_funcs_t *ffuncs, hb_font_get_variation_glyph_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_set_variation_glyph_func$address() {
+        return hb_font_funcs_set_variation_glyph_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_funcs_set_variation_glyph_func(hb_font_funcs_t *ffuncs, hb_font_get_variation_glyph_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -14039,6 +19308,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_set_variation_glyph_func", ffuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14052,9 +19323,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_set_glyph_h_advance_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_set_glyph_h_advance_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14076,6 +19347,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_set_glyph_h_advance_func$handle() {
         return hb_font_funcs_set_glyph_h_advance_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_glyph_h_advance_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_h_advance_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_set_glyph_h_advance_func$address() {
+        return hb_font_funcs_set_glyph_h_advance_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_funcs_set_glyph_h_advance_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_h_advance_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -14088,6 +19370,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_set_glyph_h_advance_func", ffuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14101,9 +19385,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_set_glyph_v_advance_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_set_glyph_v_advance_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14125,6 +19409,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_set_glyph_v_advance_func$handle() {
         return hb_font_funcs_set_glyph_v_advance_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_glyph_v_advance_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_v_advance_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_set_glyph_v_advance_func$address() {
+        return hb_font_funcs_set_glyph_v_advance_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_funcs_set_glyph_v_advance_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_v_advance_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -14137,6 +19432,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_set_glyph_v_advance_func", ffuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14150,9 +19447,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_set_glyph_h_advances_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_set_glyph_h_advances_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14174,6 +19471,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_set_glyph_h_advances_func$handle() {
         return hb_font_funcs_set_glyph_h_advances_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_glyph_h_advances_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_h_advances_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_set_glyph_h_advances_func$address() {
+        return hb_font_funcs_set_glyph_h_advances_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_funcs_set_glyph_h_advances_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_h_advances_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -14186,6 +19494,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_set_glyph_h_advances_func", ffuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14199,9 +19509,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_set_glyph_v_advances_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_set_glyph_v_advances_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14223,6 +19533,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_set_glyph_v_advances_func$handle() {
         return hb_font_funcs_set_glyph_v_advances_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_glyph_v_advances_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_v_advances_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_set_glyph_v_advances_func$address() {
+        return hb_font_funcs_set_glyph_v_advances_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_funcs_set_glyph_v_advances_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_v_advances_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -14235,6 +19556,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_set_glyph_v_advances_func", ffuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14248,9 +19571,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_set_glyph_h_origin_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_set_glyph_h_origin_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14272,6 +19595,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_set_glyph_h_origin_func$handle() {
         return hb_font_funcs_set_glyph_h_origin_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_glyph_h_origin_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_h_origin_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_set_glyph_h_origin_func$address() {
+        return hb_font_funcs_set_glyph_h_origin_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_funcs_set_glyph_h_origin_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_h_origin_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -14284,6 +19618,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_set_glyph_h_origin_func", ffuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14297,9 +19633,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_set_glyph_v_origin_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_set_glyph_v_origin_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14321,6 +19657,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_set_glyph_v_origin_func$handle() {
         return hb_font_funcs_set_glyph_v_origin_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_glyph_v_origin_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_v_origin_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_set_glyph_v_origin_func$address() {
+        return hb_font_funcs_set_glyph_v_origin_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_funcs_set_glyph_v_origin_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_v_origin_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -14333,6 +19680,132 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_set_glyph_v_origin_func", ffuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_font_funcs_set_glyph_h_origins_func {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_set_glyph_h_origins_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_glyph_h_origins_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_h_origins_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static FunctionDescriptor hb_font_funcs_set_glyph_h_origins_func$descriptor() {
+        return hb_font_funcs_set_glyph_h_origins_func.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_glyph_h_origins_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_h_origins_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MethodHandle hb_font_funcs_set_glyph_h_origins_func$handle() {
+        return hb_font_funcs_set_glyph_h_origins_func.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_glyph_h_origins_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_h_origins_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_set_glyph_h_origins_func$address() {
+        return hb_font_funcs_set_glyph_h_origins_func.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_glyph_h_origins_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_h_origins_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static void hb_font_funcs_set_glyph_h_origins_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_glyph_h_origins_func.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_font_funcs_set_glyph_h_origins_func", ffuncs, func, user_data, destroy);
+            }
+            mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_font_funcs_set_glyph_v_origins_func {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_set_glyph_v_origins_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_glyph_v_origins_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_v_origins_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static FunctionDescriptor hb_font_funcs_set_glyph_v_origins_func$descriptor() {
+        return hb_font_funcs_set_glyph_v_origins_func.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_glyph_v_origins_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_v_origins_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MethodHandle hb_font_funcs_set_glyph_v_origins_func$handle() {
+        return hb_font_funcs_set_glyph_v_origins_func.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_glyph_v_origins_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_v_origins_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_set_glyph_v_origins_func$address() {
+        return hb_font_funcs_set_glyph_v_origins_func.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_glyph_v_origins_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_v_origins_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static void hb_font_funcs_set_glyph_v_origins_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_glyph_v_origins_func.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_font_funcs_set_glyph_v_origins_func", ffuncs, func, user_data, destroy);
+            }
+            mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14346,9 +19819,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_set_glyph_h_kerning_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_set_glyph_h_kerning_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14370,6 +19843,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_set_glyph_h_kerning_func$handle() {
         return hb_font_funcs_set_glyph_h_kerning_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_glyph_h_kerning_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_h_kerning_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_set_glyph_h_kerning_func$address() {
+        return hb_font_funcs_set_glyph_h_kerning_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_funcs_set_glyph_h_kerning_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_h_kerning_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -14382,6 +19866,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_set_glyph_h_kerning_func", ffuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14395,9 +19881,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_set_glyph_extents_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_set_glyph_extents_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14419,6 +19905,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_set_glyph_extents_func$handle() {
         return hb_font_funcs_set_glyph_extents_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_glyph_extents_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_extents_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_set_glyph_extents_func$address() {
+        return hb_font_funcs_set_glyph_extents_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_funcs_set_glyph_extents_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_extents_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -14431,6 +19928,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_set_glyph_extents_func", ffuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14444,9 +19943,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_set_glyph_contour_point_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_set_glyph_contour_point_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14468,6 +19967,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_set_glyph_contour_point_func$handle() {
         return hb_font_funcs_set_glyph_contour_point_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_glyph_contour_point_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_contour_point_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_set_glyph_contour_point_func$address() {
+        return hb_font_funcs_set_glyph_contour_point_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_funcs_set_glyph_contour_point_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_contour_point_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -14480,6 +19990,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_set_glyph_contour_point_func", ffuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14493,9 +20005,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_set_glyph_name_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_set_glyph_name_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14517,6 +20029,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_set_glyph_name_func$handle() {
         return hb_font_funcs_set_glyph_name_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_glyph_name_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_name_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_set_glyph_name_func$address() {
+        return hb_font_funcs_set_glyph_name_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_funcs_set_glyph_name_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_name_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -14529,6 +20052,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_set_glyph_name_func", ffuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14542,9 +20067,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_set_glyph_from_name_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_set_glyph_from_name_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14566,6 +20091,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_funcs_set_glyph_from_name_func$handle() {
         return hb_font_funcs_set_glyph_from_name_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_glyph_from_name_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_from_name_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_set_glyph_from_name_func$address() {
+        return hb_font_funcs_set_glyph_from_name_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_funcs_set_glyph_from_name_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_from_name_func_t func, void *user_data, hb_destroy_func_t destroy)
@@ -14578,12 +20114,14 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_funcs_set_glyph_from_name_func", ffuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
     }
 
-    private static class hb_font_funcs_set_draw_glyph_func {
+    private static class hb_font_funcs_set_draw_glyph_or_fail_func {
         public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
             app_indicator_h.C_POINTER,
             app_indicator_h.C_POINTER,
@@ -14591,48 +20129,61 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_set_draw_glyph_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_set_draw_glyph_or_fail_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
      * Function descriptor for:
      * {@snippet lang=c :
-     * extern void hb_font_funcs_set_draw_glyph_func(hb_font_funcs_t *ffuncs, hb_font_draw_glyph_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * extern void hb_font_funcs_set_draw_glyph_or_fail_func(hb_font_funcs_t *ffuncs, hb_font_draw_glyph_or_fail_func_t func, void *user_data, hb_destroy_func_t destroy)
      * }
      */
-    public static FunctionDescriptor hb_font_funcs_set_draw_glyph_func$descriptor() {
-        return hb_font_funcs_set_draw_glyph_func.DESC;
+    public static FunctionDescriptor hb_font_funcs_set_draw_glyph_or_fail_func$descriptor() {
+        return hb_font_funcs_set_draw_glyph_or_fail_func.DESC;
     }
 
     /**
      * Downcall method handle for:
      * {@snippet lang=c :
-     * extern void hb_font_funcs_set_draw_glyph_func(hb_font_funcs_t *ffuncs, hb_font_draw_glyph_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * extern void hb_font_funcs_set_draw_glyph_or_fail_func(hb_font_funcs_t *ffuncs, hb_font_draw_glyph_or_fail_func_t func, void *user_data, hb_destroy_func_t destroy)
      * }
      */
-    public static MethodHandle hb_font_funcs_set_draw_glyph_func$handle() {
-        return hb_font_funcs_set_draw_glyph_func.HANDLE;
+    public static MethodHandle hb_font_funcs_set_draw_glyph_or_fail_func$handle() {
+        return hb_font_funcs_set_draw_glyph_or_fail_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_draw_glyph_or_fail_func(hb_font_funcs_t *ffuncs, hb_font_draw_glyph_or_fail_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_set_draw_glyph_or_fail_func$address() {
+        return hb_font_funcs_set_draw_glyph_or_fail_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
-     * extern void hb_font_funcs_set_draw_glyph_func(hb_font_funcs_t *ffuncs, hb_font_draw_glyph_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * extern void hb_font_funcs_set_draw_glyph_or_fail_func(hb_font_funcs_t *ffuncs, hb_font_draw_glyph_or_fail_func_t func, void *user_data, hb_destroy_func_t destroy)
      * }
      */
-    public static void hb_font_funcs_set_draw_glyph_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
-        var mh$ = hb_font_funcs_set_draw_glyph_func.HANDLE;
+    public static void hb_font_funcs_set_draw_glyph_or_fail_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_draw_glyph_or_fail_func.HANDLE;
         try {
             if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_font_funcs_set_draw_glyph_func", ffuncs, func, user_data, destroy);
+                traceDowncall("hb_font_funcs_set_draw_glyph_or_fail_func", ffuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
     }
 
-    private static class hb_font_funcs_set_paint_glyph_func {
+    private static class hb_font_funcs_set_paint_glyph_or_fail_func {
         public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
             app_indicator_h.C_POINTER,
             app_indicator_h.C_POINTER,
@@ -14640,42 +20191,55 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_set_paint_glyph_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_funcs_set_paint_glyph_or_fail_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
      * Function descriptor for:
      * {@snippet lang=c :
-     * extern void hb_font_funcs_set_paint_glyph_func(hb_font_funcs_t *ffuncs, hb_font_paint_glyph_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * extern void hb_font_funcs_set_paint_glyph_or_fail_func(hb_font_funcs_t *ffuncs, hb_font_paint_glyph_or_fail_func_t func, void *user_data, hb_destroy_func_t destroy)
      * }
      */
-    public static FunctionDescriptor hb_font_funcs_set_paint_glyph_func$descriptor() {
-        return hb_font_funcs_set_paint_glyph_func.DESC;
+    public static FunctionDescriptor hb_font_funcs_set_paint_glyph_or_fail_func$descriptor() {
+        return hb_font_funcs_set_paint_glyph_or_fail_func.DESC;
     }
 
     /**
      * Downcall method handle for:
      * {@snippet lang=c :
-     * extern void hb_font_funcs_set_paint_glyph_func(hb_font_funcs_t *ffuncs, hb_font_paint_glyph_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * extern void hb_font_funcs_set_paint_glyph_or_fail_func(hb_font_funcs_t *ffuncs, hb_font_paint_glyph_or_fail_func_t func, void *user_data, hb_destroy_func_t destroy)
      * }
      */
-    public static MethodHandle hb_font_funcs_set_paint_glyph_func$handle() {
-        return hb_font_funcs_set_paint_glyph_func.HANDLE;
+    public static MethodHandle hb_font_funcs_set_paint_glyph_or_fail_func$handle() {
+        return hb_font_funcs_set_paint_glyph_or_fail_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_funcs_set_paint_glyph_or_fail_func(hb_font_funcs_t *ffuncs, hb_font_paint_glyph_or_fail_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_font_funcs_set_paint_glyph_or_fail_func$address() {
+        return hb_font_funcs_set_paint_glyph_or_fail_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
-     * extern void hb_font_funcs_set_paint_glyph_func(hb_font_funcs_t *ffuncs, hb_font_paint_glyph_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * extern void hb_font_funcs_set_paint_glyph_or_fail_func(hb_font_funcs_t *ffuncs, hb_font_paint_glyph_or_fail_func_t func, void *user_data, hb_destroy_func_t destroy)
      * }
      */
-    public static void hb_font_funcs_set_paint_glyph_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
-        var mh$ = hb_font_funcs_set_paint_glyph_func.HANDLE;
+    public static void hb_font_funcs_set_paint_glyph_or_fail_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_paint_glyph_or_fail_func.HANDLE;
         try {
             if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_font_funcs_set_paint_glyph_func", ffuncs, func, user_data, destroy);
+                traceDowncall("hb_font_funcs_set_paint_glyph_or_fail_func", ffuncs, func, user_data, destroy);
             }
             mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14688,9 +20252,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_h_extents"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_h_extents");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14712,6 +20276,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_h_extents$handle() {
         return hb_font_get_h_extents.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_get_h_extents(hb_font_t *font, hb_font_extents_t *extents)
+     * }
+     */
+    public static MemorySegment hb_font_get_h_extents$address() {
+        return hb_font_get_h_extents.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_font_get_h_extents(hb_font_t *font, hb_font_extents_t *extents)
@@ -14724,6 +20299,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_h_extents", font, extents);
             }
             return (int)mh$.invokeExact(font, extents);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14736,9 +20313,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_v_extents"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_v_extents");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14760,6 +20337,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_v_extents$handle() {
         return hb_font_get_v_extents.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_get_v_extents(hb_font_t *font, hb_font_extents_t *extents)
+     * }
+     */
+    public static MemorySegment hb_font_get_v_extents$address() {
+        return hb_font_get_v_extents.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_font_get_v_extents(hb_font_t *font, hb_font_extents_t *extents)
@@ -14772,6 +20360,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_v_extents", font, extents);
             }
             return (int)mh$.invokeExact(font, extents);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14785,9 +20375,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_nominal_glyph"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_nominal_glyph");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14809,6 +20399,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_nominal_glyph$handle() {
         return hb_font_get_nominal_glyph.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_get_nominal_glyph(hb_font_t *font, hb_codepoint_t unicode, hb_codepoint_t *glyph)
+     * }
+     */
+    public static MemorySegment hb_font_get_nominal_glyph$address() {
+        return hb_font_get_nominal_glyph.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_font_get_nominal_glyph(hb_font_t *font, hb_codepoint_t unicode, hb_codepoint_t *glyph)
@@ -14821,6 +20422,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_nominal_glyph", font, unicode, glyph);
             }
             return (int)mh$.invokeExact(font, unicode, glyph);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14835,9 +20438,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_variation_glyph"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_variation_glyph");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14859,6 +20462,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_variation_glyph$handle() {
         return hb_font_get_variation_glyph.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_get_variation_glyph(hb_font_t *font, hb_codepoint_t unicode, hb_codepoint_t variation_selector, hb_codepoint_t *glyph)
+     * }
+     */
+    public static MemorySegment hb_font_get_variation_glyph$address() {
+        return hb_font_get_variation_glyph.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_font_get_variation_glyph(hb_font_t *font, hb_codepoint_t unicode, hb_codepoint_t variation_selector, hb_codepoint_t *glyph)
@@ -14871,6 +20485,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_variation_glyph", font, unicode, variation_selector, glyph);
             }
             return (int)mh$.invokeExact(font, unicode, variation_selector, glyph);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14887,9 +20503,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_nominal_glyphs"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_nominal_glyphs");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14911,6 +20527,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_nominal_glyphs$handle() {
         return hb_font_get_nominal_glyphs.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern unsigned int hb_font_get_nominal_glyphs(hb_font_t *font, unsigned int count, const hb_codepoint_t *first_unicode, unsigned int unicode_stride, hb_codepoint_t *first_glyph, unsigned int glyph_stride)
+     * }
+     */
+    public static MemorySegment hb_font_get_nominal_glyphs$address() {
+        return hb_font_get_nominal_glyphs.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern unsigned int hb_font_get_nominal_glyphs(hb_font_t *font, unsigned int count, const hb_codepoint_t *first_unicode, unsigned int unicode_stride, hb_codepoint_t *first_glyph, unsigned int glyph_stride)
@@ -14923,6 +20550,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_nominal_glyphs", font, count, first_unicode, unicode_stride, first_glyph, glyph_stride);
             }
             return (int)mh$.invokeExact(font, count, first_unicode, unicode_stride, first_glyph, glyph_stride);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14935,9 +20564,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_glyph_h_advance"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_glyph_h_advance");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14959,6 +20588,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_glyph_h_advance$handle() {
         return hb_font_get_glyph_h_advance.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_position_t hb_font_get_glyph_h_advance(hb_font_t *font, hb_codepoint_t glyph)
+     * }
+     */
+    public static MemorySegment hb_font_get_glyph_h_advance$address() {
+        return hb_font_get_glyph_h_advance.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_position_t hb_font_get_glyph_h_advance(hb_font_t *font, hb_codepoint_t glyph)
@@ -14971,6 +20611,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_glyph_h_advance", font, glyph);
             }
             return (int)mh$.invokeExact(font, glyph);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14983,9 +20625,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_glyph_v_advance"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_glyph_v_advance");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15007,6 +20649,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_glyph_v_advance$handle() {
         return hb_font_get_glyph_v_advance.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_position_t hb_font_get_glyph_v_advance(hb_font_t *font, hb_codepoint_t glyph)
+     * }
+     */
+    public static MemorySegment hb_font_get_glyph_v_advance$address() {
+        return hb_font_get_glyph_v_advance.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_position_t hb_font_get_glyph_v_advance(hb_font_t *font, hb_codepoint_t glyph)
@@ -15019,6 +20672,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_glyph_v_advance", font, glyph);
             }
             return (int)mh$.invokeExact(font, glyph);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15034,9 +20689,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_glyph_h_advances"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_glyph_h_advances");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15058,6 +20713,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_glyph_h_advances$handle() {
         return hb_font_get_glyph_h_advances.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_get_glyph_h_advances(hb_font_t *font, unsigned int count, const hb_codepoint_t *first_glyph, unsigned int glyph_stride, hb_position_t *first_advance, unsigned int advance_stride)
+     * }
+     */
+    public static MemorySegment hb_font_get_glyph_h_advances$address() {
+        return hb_font_get_glyph_h_advances.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_get_glyph_h_advances(hb_font_t *font, unsigned int count, const hb_codepoint_t *first_glyph, unsigned int glyph_stride, hb_position_t *first_advance, unsigned int advance_stride)
@@ -15070,6 +20736,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_glyph_h_advances", font, count, first_glyph, glyph_stride, first_advance, advance_stride);
             }
             mh$.invokeExact(font, count, first_glyph, glyph_stride, first_advance, advance_stride);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15085,9 +20753,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_glyph_v_advances"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_glyph_v_advances");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15109,6 +20777,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_glyph_v_advances$handle() {
         return hb_font_get_glyph_v_advances.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_get_glyph_v_advances(hb_font_t *font, unsigned int count, const hb_codepoint_t *first_glyph, unsigned int glyph_stride, hb_position_t *first_advance, unsigned int advance_stride)
+     * }
+     */
+    public static MemorySegment hb_font_get_glyph_v_advances$address() {
+        return hb_font_get_glyph_v_advances.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_get_glyph_v_advances(hb_font_t *font, unsigned int count, const hb_codepoint_t *first_glyph, unsigned int glyph_stride, hb_position_t *first_advance, unsigned int advance_stride)
@@ -15121,6 +20800,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_glyph_v_advances", font, count, first_glyph, glyph_stride, first_advance, advance_stride);
             }
             mh$.invokeExact(font, count, first_glyph, glyph_stride, first_advance, advance_stride);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15135,9 +20816,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_glyph_h_origin"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_glyph_h_origin");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15159,6 +20840,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_glyph_h_origin$handle() {
         return hb_font_get_glyph_h_origin.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_get_glyph_h_origin(hb_font_t *font, hb_codepoint_t glyph, hb_position_t *x, hb_position_t *y)
+     * }
+     */
+    public static MemorySegment hb_font_get_glyph_h_origin$address() {
+        return hb_font_get_glyph_h_origin.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_font_get_glyph_h_origin(hb_font_t *font, hb_codepoint_t glyph, hb_position_t *x, hb_position_t *y)
@@ -15171,6 +20863,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_glyph_h_origin", font, glyph, x, y);
             }
             return (int)mh$.invokeExact(font, glyph, x, y);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15185,9 +20879,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_glyph_v_origin"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_glyph_v_origin");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15209,6 +20903,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_glyph_v_origin$handle() {
         return hb_font_get_glyph_v_origin.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_get_glyph_v_origin(hb_font_t *font, hb_codepoint_t glyph, hb_position_t *x, hb_position_t *y)
+     * }
+     */
+    public static MemorySegment hb_font_get_glyph_v_origin$address() {
+        return hb_font_get_glyph_v_origin.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_font_get_glyph_v_origin(hb_font_t *font, hb_codepoint_t glyph, hb_position_t *x, hb_position_t *y)
@@ -15221,6 +20926,142 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_glyph_v_origin", font, glyph, x, y);
             }
             return (int)mh$.invokeExact(font, glyph, x, y);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_font_get_glyph_h_origins {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_glyph_h_origins");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_get_glyph_h_origins(hb_font_t *font, unsigned int count, const hb_codepoint_t *first_glyph, unsigned int glyph_stride, hb_position_t *first_x, unsigned int x_stride, hb_position_t *first_y, unsigned int y_stride)
+     * }
+     */
+    public static FunctionDescriptor hb_font_get_glyph_h_origins$descriptor() {
+        return hb_font_get_glyph_h_origins.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_get_glyph_h_origins(hb_font_t *font, unsigned int count, const hb_codepoint_t *first_glyph, unsigned int glyph_stride, hb_position_t *first_x, unsigned int x_stride, hb_position_t *first_y, unsigned int y_stride)
+     * }
+     */
+    public static MethodHandle hb_font_get_glyph_h_origins$handle() {
+        return hb_font_get_glyph_h_origins.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_get_glyph_h_origins(hb_font_t *font, unsigned int count, const hb_codepoint_t *first_glyph, unsigned int glyph_stride, hb_position_t *first_x, unsigned int x_stride, hb_position_t *first_y, unsigned int y_stride)
+     * }
+     */
+    public static MemorySegment hb_font_get_glyph_h_origins$address() {
+        return hb_font_get_glyph_h_origins.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_get_glyph_h_origins(hb_font_t *font, unsigned int count, const hb_codepoint_t *first_glyph, unsigned int glyph_stride, hb_position_t *first_x, unsigned int x_stride, hb_position_t *first_y, unsigned int y_stride)
+     * }
+     */
+    public static int hb_font_get_glyph_h_origins(MemorySegment font, int count, MemorySegment first_glyph, int glyph_stride, MemorySegment first_x, int x_stride, MemorySegment first_y, int y_stride) {
+        var mh$ = hb_font_get_glyph_h_origins.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_font_get_glyph_h_origins", font, count, first_glyph, glyph_stride, first_x, x_stride, first_y, y_stride);
+            }
+            return (int)mh$.invokeExact(font, count, first_glyph, glyph_stride, first_x, x_stride, first_y, y_stride);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_font_get_glyph_v_origins {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_glyph_v_origins");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_get_glyph_v_origins(hb_font_t *font, unsigned int count, const hb_codepoint_t *first_glyph, unsigned int glyph_stride, hb_position_t *first_x, unsigned int x_stride, hb_position_t *first_y, unsigned int y_stride)
+     * }
+     */
+    public static FunctionDescriptor hb_font_get_glyph_v_origins$descriptor() {
+        return hb_font_get_glyph_v_origins.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_get_glyph_v_origins(hb_font_t *font, unsigned int count, const hb_codepoint_t *first_glyph, unsigned int glyph_stride, hb_position_t *first_x, unsigned int x_stride, hb_position_t *first_y, unsigned int y_stride)
+     * }
+     */
+    public static MethodHandle hb_font_get_glyph_v_origins$handle() {
+        return hb_font_get_glyph_v_origins.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_get_glyph_v_origins(hb_font_t *font, unsigned int count, const hb_codepoint_t *first_glyph, unsigned int glyph_stride, hb_position_t *first_x, unsigned int x_stride, hb_position_t *first_y, unsigned int y_stride)
+     * }
+     */
+    public static MemorySegment hb_font_get_glyph_v_origins$address() {
+        return hb_font_get_glyph_v_origins.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_get_glyph_v_origins(hb_font_t *font, unsigned int count, const hb_codepoint_t *first_glyph, unsigned int glyph_stride, hb_position_t *first_x, unsigned int x_stride, hb_position_t *first_y, unsigned int y_stride)
+     * }
+     */
+    public static int hb_font_get_glyph_v_origins(MemorySegment font, int count, MemorySegment first_glyph, int glyph_stride, MemorySegment first_x, int x_stride, MemorySegment first_y, int y_stride) {
+        var mh$ = hb_font_get_glyph_v_origins.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_font_get_glyph_v_origins", font, count, first_glyph, glyph_stride, first_x, x_stride, first_y, y_stride);
+            }
+            return (int)mh$.invokeExact(font, count, first_glyph, glyph_stride, first_x, x_stride, first_y, y_stride);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15234,9 +21075,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_glyph_h_kerning"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_glyph_h_kerning");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15258,6 +21099,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_glyph_h_kerning$handle() {
         return hb_font_get_glyph_h_kerning.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_position_t hb_font_get_glyph_h_kerning(hb_font_t *font, hb_codepoint_t left_glyph, hb_codepoint_t right_glyph)
+     * }
+     */
+    public static MemorySegment hb_font_get_glyph_h_kerning$address() {
+        return hb_font_get_glyph_h_kerning.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_position_t hb_font_get_glyph_h_kerning(hb_font_t *font, hb_codepoint_t left_glyph, hb_codepoint_t right_glyph)
@@ -15270,6 +21122,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_glyph_h_kerning", font, left_glyph, right_glyph);
             }
             return (int)mh$.invokeExact(font, left_glyph, right_glyph);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15283,9 +21137,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_glyph_extents"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_glyph_extents");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15307,6 +21161,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_glyph_extents$handle() {
         return hb_font_get_glyph_extents.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_get_glyph_extents(hb_font_t *font, hb_codepoint_t glyph, hb_glyph_extents_t *extents)
+     * }
+     */
+    public static MemorySegment hb_font_get_glyph_extents$address() {
+        return hb_font_get_glyph_extents.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_font_get_glyph_extents(hb_font_t *font, hb_codepoint_t glyph, hb_glyph_extents_t *extents)
@@ -15319,6 +21184,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_glyph_extents", font, glyph, extents);
             }
             return (int)mh$.invokeExact(font, glyph, extents);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15334,9 +21201,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_glyph_contour_point"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_glyph_contour_point");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15358,6 +21225,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_glyph_contour_point$handle() {
         return hb_font_get_glyph_contour_point.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_get_glyph_contour_point(hb_font_t *font, hb_codepoint_t glyph, unsigned int point_index, hb_position_t *x, hb_position_t *y)
+     * }
+     */
+    public static MemorySegment hb_font_get_glyph_contour_point$address() {
+        return hb_font_get_glyph_contour_point.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_font_get_glyph_contour_point(hb_font_t *font, hb_codepoint_t glyph, unsigned int point_index, hb_position_t *x, hb_position_t *y)
@@ -15370,6 +21248,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_glyph_contour_point", font, glyph, point_index, x, y);
             }
             return (int)mh$.invokeExact(font, glyph, point_index, x, y);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15384,9 +21264,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_glyph_name"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_glyph_name");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15408,6 +21288,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_glyph_name$handle() {
         return hb_font_get_glyph_name.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_get_glyph_name(hb_font_t *font, hb_codepoint_t glyph, char *name, unsigned int size)
+     * }
+     */
+    public static MemorySegment hb_font_get_glyph_name$address() {
+        return hb_font_get_glyph_name.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_font_get_glyph_name(hb_font_t *font, hb_codepoint_t glyph, char *name, unsigned int size)
@@ -15420,6 +21311,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_glyph_name", font, glyph, name, size);
             }
             return (int)mh$.invokeExact(font, glyph, name, size);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15434,9 +21327,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_glyph_from_name"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_glyph_from_name");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15458,6 +21351,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_glyph_from_name$handle() {
         return hb_font_get_glyph_from_name.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_get_glyph_from_name(hb_font_t *font, const char *name, int len, hb_codepoint_t *glyph)
+     * }
+     */
+    public static MemorySegment hb_font_get_glyph_from_name$address() {
+        return hb_font_get_glyph_from_name.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_font_get_glyph_from_name(hb_font_t *font, const char *name, int len, hb_codepoint_t *glyph)
@@ -15470,62 +21374,79 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_glyph_from_name", font, name, len, glyph);
             }
             return (int)mh$.invokeExact(font, name, len, glyph);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
     }
 
-    private static class hb_font_draw_glyph {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+    private static class hb_font_draw_glyph_or_fail {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
             app_indicator_h.C_POINTER,
             app_indicator_h.C_INT,
             app_indicator_h.C_POINTER,
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_draw_glyph"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_draw_glyph_or_fail");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
      * Function descriptor for:
      * {@snippet lang=c :
-     * extern void hb_font_draw_glyph(hb_font_t *font, hb_codepoint_t glyph, hb_draw_funcs_t *dfuncs, void *draw_data)
+     * extern hb_bool_t hb_font_draw_glyph_or_fail(hb_font_t *font, hb_codepoint_t glyph, hb_draw_funcs_t *dfuncs, void *draw_data)
      * }
      */
-    public static FunctionDescriptor hb_font_draw_glyph$descriptor() {
-        return hb_font_draw_glyph.DESC;
+    public static FunctionDescriptor hb_font_draw_glyph_or_fail$descriptor() {
+        return hb_font_draw_glyph_or_fail.DESC;
     }
 
     /**
      * Downcall method handle for:
      * {@snippet lang=c :
-     * extern void hb_font_draw_glyph(hb_font_t *font, hb_codepoint_t glyph, hb_draw_funcs_t *dfuncs, void *draw_data)
+     * extern hb_bool_t hb_font_draw_glyph_or_fail(hb_font_t *font, hb_codepoint_t glyph, hb_draw_funcs_t *dfuncs, void *draw_data)
      * }
      */
-    public static MethodHandle hb_font_draw_glyph$handle() {
-        return hb_font_draw_glyph.HANDLE;
+    public static MethodHandle hb_font_draw_glyph_or_fail$handle() {
+        return hb_font_draw_glyph_or_fail.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_draw_glyph_or_fail(hb_font_t *font, hb_codepoint_t glyph, hb_draw_funcs_t *dfuncs, void *draw_data)
+     * }
+     */
+    public static MemorySegment hb_font_draw_glyph_or_fail$address() {
+        return hb_font_draw_glyph_or_fail.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
-     * extern void hb_font_draw_glyph(hb_font_t *font, hb_codepoint_t glyph, hb_draw_funcs_t *dfuncs, void *draw_data)
+     * extern hb_bool_t hb_font_draw_glyph_or_fail(hb_font_t *font, hb_codepoint_t glyph, hb_draw_funcs_t *dfuncs, void *draw_data)
      * }
      */
-    public static void hb_font_draw_glyph(MemorySegment font, int glyph, MemorySegment dfuncs, MemorySegment draw_data) {
-        var mh$ = hb_font_draw_glyph.HANDLE;
+    public static int hb_font_draw_glyph_or_fail(MemorySegment font, int glyph, MemorySegment dfuncs, MemorySegment draw_data) {
+        var mh$ = hb_font_draw_glyph_or_fail.HANDLE;
         try {
             if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_font_draw_glyph", font, glyph, dfuncs, draw_data);
+                traceDowncall("hb_font_draw_glyph_or_fail", font, glyph, dfuncs, draw_data);
             }
-            mh$.invokeExact(font, glyph, dfuncs, draw_data);
+            return (int)mh$.invokeExact(font, glyph, dfuncs, draw_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
     }
 
-    private static class hb_font_paint_glyph {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+    private static class hb_font_paint_glyph_or_fail {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
             app_indicator_h.C_POINTER,
             app_indicator_h.C_INT,
             app_indicator_h.C_POINTER,
@@ -15534,42 +21455,55 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_paint_glyph"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_paint_glyph_or_fail");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
      * Function descriptor for:
      * {@snippet lang=c :
-     * extern void hb_font_paint_glyph(hb_font_t *font, hb_codepoint_t glyph, hb_paint_funcs_t *pfuncs, void *paint_data, unsigned int palette_index, hb_color_t foreground)
+     * extern hb_bool_t hb_font_paint_glyph_or_fail(hb_font_t *font, hb_codepoint_t glyph, hb_paint_funcs_t *pfuncs, void *paint_data, unsigned int palette_index, hb_color_t foreground)
      * }
      */
-    public static FunctionDescriptor hb_font_paint_glyph$descriptor() {
-        return hb_font_paint_glyph.DESC;
+    public static FunctionDescriptor hb_font_paint_glyph_or_fail$descriptor() {
+        return hb_font_paint_glyph_or_fail.DESC;
     }
 
     /**
      * Downcall method handle for:
      * {@snippet lang=c :
-     * extern void hb_font_paint_glyph(hb_font_t *font, hb_codepoint_t glyph, hb_paint_funcs_t *pfuncs, void *paint_data, unsigned int palette_index, hb_color_t foreground)
+     * extern hb_bool_t hb_font_paint_glyph_or_fail(hb_font_t *font, hb_codepoint_t glyph, hb_paint_funcs_t *pfuncs, void *paint_data, unsigned int palette_index, hb_color_t foreground)
      * }
      */
-    public static MethodHandle hb_font_paint_glyph$handle() {
-        return hb_font_paint_glyph.HANDLE;
+    public static MethodHandle hb_font_paint_glyph_or_fail$handle() {
+        return hb_font_paint_glyph_or_fail.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_paint_glyph_or_fail(hb_font_t *font, hb_codepoint_t glyph, hb_paint_funcs_t *pfuncs, void *paint_data, unsigned int palette_index, hb_color_t foreground)
+     * }
+     */
+    public static MemorySegment hb_font_paint_glyph_or_fail$address() {
+        return hb_font_paint_glyph_or_fail.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
-     * extern void hb_font_paint_glyph(hb_font_t *font, hb_codepoint_t glyph, hb_paint_funcs_t *pfuncs, void *paint_data, unsigned int palette_index, hb_color_t foreground)
+     * extern hb_bool_t hb_font_paint_glyph_or_fail(hb_font_t *font, hb_codepoint_t glyph, hb_paint_funcs_t *pfuncs, void *paint_data, unsigned int palette_index, hb_color_t foreground)
      * }
      */
-    public static void hb_font_paint_glyph(MemorySegment font, int glyph, MemorySegment pfuncs, MemorySegment paint_data, int palette_index, int foreground) {
-        var mh$ = hb_font_paint_glyph.HANDLE;
+    public static int hb_font_paint_glyph_or_fail(MemorySegment font, int glyph, MemorySegment pfuncs, MemorySegment paint_data, int palette_index, int foreground) {
+        var mh$ = hb_font_paint_glyph_or_fail.HANDLE;
         try {
             if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_font_paint_glyph", font, glyph, pfuncs, paint_data, palette_index, foreground);
+                traceDowncall("hb_font_paint_glyph_or_fail", font, glyph, pfuncs, paint_data, palette_index, foreground);
             }
-            mh$.invokeExact(font, glyph, pfuncs, paint_data, palette_index, foreground);
+            return (int)mh$.invokeExact(font, glyph, pfuncs, paint_data, palette_index, foreground);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15584,9 +21518,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_glyph"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_glyph");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15608,6 +21542,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_glyph$handle() {
         return hb_font_get_glyph.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_get_glyph(hb_font_t *font, hb_codepoint_t unicode, hb_codepoint_t variation_selector, hb_codepoint_t *glyph)
+     * }
+     */
+    public static MemorySegment hb_font_get_glyph$address() {
+        return hb_font_get_glyph.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_font_get_glyph(hb_font_t *font, hb_codepoint_t unicode, hb_codepoint_t variation_selector, hb_codepoint_t *glyph)
@@ -15620,6 +21565,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_glyph", font, unicode, variation_selector, glyph);
             }
             return (int)mh$.invokeExact(font, unicode, variation_selector, glyph);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15632,9 +21579,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_extents_for_direction"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_extents_for_direction");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15656,6 +21603,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_extents_for_direction$handle() {
         return hb_font_get_extents_for_direction.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_get_extents_for_direction(hb_font_t *font, hb_direction_t direction, hb_font_extents_t *extents)
+     * }
+     */
+    public static MemorySegment hb_font_get_extents_for_direction$address() {
+        return hb_font_get_extents_for_direction.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_get_extents_for_direction(hb_font_t *font, hb_direction_t direction, hb_font_extents_t *extents)
@@ -15668,6 +21626,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_extents_for_direction", font, direction, extents);
             }
             mh$.invokeExact(font, direction, extents);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15682,9 +21642,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_glyph_advance_for_direction"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_glyph_advance_for_direction");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15706,6 +21666,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_glyph_advance_for_direction$handle() {
         return hb_font_get_glyph_advance_for_direction.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_get_glyph_advance_for_direction(hb_font_t *font, hb_codepoint_t glyph, hb_direction_t direction, hb_position_t *x, hb_position_t *y)
+     * }
+     */
+    public static MemorySegment hb_font_get_glyph_advance_for_direction$address() {
+        return hb_font_get_glyph_advance_for_direction.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_get_glyph_advance_for_direction(hb_font_t *font, hb_codepoint_t glyph, hb_direction_t direction, hb_position_t *x, hb_position_t *y)
@@ -15718,6 +21689,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_glyph_advance_for_direction", font, glyph, direction, x, y);
             }
             mh$.invokeExact(font, glyph, direction, x, y);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15734,9 +21707,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_glyph_advances_for_direction"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_glyph_advances_for_direction");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15758,6 +21731,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_glyph_advances_for_direction$handle() {
         return hb_font_get_glyph_advances_for_direction.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_get_glyph_advances_for_direction(hb_font_t *font, hb_direction_t direction, unsigned int count, const hb_codepoint_t *first_glyph, unsigned int glyph_stride, hb_position_t *first_advance, unsigned int advance_stride)
+     * }
+     */
+    public static MemorySegment hb_font_get_glyph_advances_for_direction$address() {
+        return hb_font_get_glyph_advances_for_direction.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_get_glyph_advances_for_direction(hb_font_t *font, hb_direction_t direction, unsigned int count, const hb_codepoint_t *first_glyph, unsigned int glyph_stride, hb_position_t *first_advance, unsigned int advance_stride)
@@ -15770,6 +21754,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_glyph_advances_for_direction", font, direction, count, first_glyph, glyph_stride, first_advance, advance_stride);
             }
             mh$.invokeExact(font, direction, count, first_glyph, glyph_stride, first_advance, advance_stride);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15784,9 +21770,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_glyph_origin_for_direction"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_glyph_origin_for_direction");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15808,6 +21794,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_glyph_origin_for_direction$handle() {
         return hb_font_get_glyph_origin_for_direction.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_get_glyph_origin_for_direction(hb_font_t *font, hb_codepoint_t glyph, hb_direction_t direction, hb_position_t *x, hb_position_t *y)
+     * }
+     */
+    public static MemorySegment hb_font_get_glyph_origin_for_direction$address() {
+        return hb_font_get_glyph_origin_for_direction.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_get_glyph_origin_for_direction(hb_font_t *font, hb_codepoint_t glyph, hb_direction_t direction, hb_position_t *x, hb_position_t *y)
@@ -15820,6 +21817,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_glyph_origin_for_direction", font, glyph, direction, x, y);
             }
             mh$.invokeExact(font, glyph, direction, x, y);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15834,9 +21833,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_add_glyph_origin_for_direction"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_add_glyph_origin_for_direction");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15858,6 +21857,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_add_glyph_origin_for_direction$handle() {
         return hb_font_add_glyph_origin_for_direction.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_add_glyph_origin_for_direction(hb_font_t *font, hb_codepoint_t glyph, hb_direction_t direction, hb_position_t *x, hb_position_t *y)
+     * }
+     */
+    public static MemorySegment hb_font_add_glyph_origin_for_direction$address() {
+        return hb_font_add_glyph_origin_for_direction.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_add_glyph_origin_for_direction(hb_font_t *font, hb_codepoint_t glyph, hb_direction_t direction, hb_position_t *x, hb_position_t *y)
@@ -15870,6 +21880,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_add_glyph_origin_for_direction", font, glyph, direction, x, y);
             }
             mh$.invokeExact(font, glyph, direction, x, y);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15884,9 +21896,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_subtract_glyph_origin_for_direction"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_subtract_glyph_origin_for_direction");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15908,6 +21920,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_subtract_glyph_origin_for_direction$handle() {
         return hb_font_subtract_glyph_origin_for_direction.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_subtract_glyph_origin_for_direction(hb_font_t *font, hb_codepoint_t glyph, hb_direction_t direction, hb_position_t *x, hb_position_t *y)
+     * }
+     */
+    public static MemorySegment hb_font_subtract_glyph_origin_for_direction$address() {
+        return hb_font_subtract_glyph_origin_for_direction.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_subtract_glyph_origin_for_direction(hb_font_t *font, hb_codepoint_t glyph, hb_direction_t direction, hb_position_t *x, hb_position_t *y)
@@ -15920,6 +21943,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_subtract_glyph_origin_for_direction", font, glyph, direction, x, y);
             }
             mh$.invokeExact(font, glyph, direction, x, y);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15935,9 +21960,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_glyph_kerning_for_direction"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_glyph_kerning_for_direction");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15959,6 +21984,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_glyph_kerning_for_direction$handle() {
         return hb_font_get_glyph_kerning_for_direction.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_get_glyph_kerning_for_direction(hb_font_t *font, hb_codepoint_t first_glyph, hb_codepoint_t second_glyph, hb_direction_t direction, hb_position_t *x, hb_position_t *y)
+     * }
+     */
+    public static MemorySegment hb_font_get_glyph_kerning_for_direction$address() {
+        return hb_font_get_glyph_kerning_for_direction.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_get_glyph_kerning_for_direction(hb_font_t *font, hb_codepoint_t first_glyph, hb_codepoint_t second_glyph, hb_direction_t direction, hb_position_t *x, hb_position_t *y)
@@ -15971,6 +22007,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_glyph_kerning_for_direction", font, first_glyph, second_glyph, direction, x, y);
             }
             mh$.invokeExact(font, first_glyph, second_glyph, direction, x, y);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15985,9 +22023,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_glyph_extents_for_origin"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_glyph_extents_for_origin");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16009,6 +22047,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_glyph_extents_for_origin$handle() {
         return hb_font_get_glyph_extents_for_origin.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_get_glyph_extents_for_origin(hb_font_t *font, hb_codepoint_t glyph, hb_direction_t direction, hb_glyph_extents_t *extents)
+     * }
+     */
+    public static MemorySegment hb_font_get_glyph_extents_for_origin$address() {
+        return hb_font_get_glyph_extents_for_origin.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_font_get_glyph_extents_for_origin(hb_font_t *font, hb_codepoint_t glyph, hb_direction_t direction, hb_glyph_extents_t *extents)
@@ -16021,6 +22070,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_glyph_extents_for_origin", font, glyph, direction, extents);
             }
             return (int)mh$.invokeExact(font, glyph, direction, extents);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16037,9 +22088,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_glyph_contour_point_for_origin"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_glyph_contour_point_for_origin");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16061,6 +22112,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_glyph_contour_point_for_origin$handle() {
         return hb_font_get_glyph_contour_point_for_origin.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_get_glyph_contour_point_for_origin(hb_font_t *font, hb_codepoint_t glyph, unsigned int point_index, hb_direction_t direction, hb_position_t *x, hb_position_t *y)
+     * }
+     */
+    public static MemorySegment hb_font_get_glyph_contour_point_for_origin$address() {
+        return hb_font_get_glyph_contour_point_for_origin.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_font_get_glyph_contour_point_for_origin(hb_font_t *font, hb_codepoint_t glyph, unsigned int point_index, hb_direction_t direction, hb_position_t *x, hb_position_t *y)
@@ -16073,6 +22135,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_glyph_contour_point_for_origin", font, glyph, point_index, direction, x, y);
             }
             return (int)mh$.invokeExact(font, glyph, point_index, direction, x, y);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16086,9 +22150,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_glyph_to_string"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_glyph_to_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16110,6 +22174,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_glyph_to_string$handle() {
         return hb_font_glyph_to_string.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_glyph_to_string(hb_font_t *font, hb_codepoint_t glyph, char *s, unsigned int size)
+     * }
+     */
+    public static MemorySegment hb_font_glyph_to_string$address() {
+        return hb_font_glyph_to_string.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_glyph_to_string(hb_font_t *font, hb_codepoint_t glyph, char *s, unsigned int size)
@@ -16122,6 +22197,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_glyph_to_string", font, glyph, s, size);
             }
             mh$.invokeExact(font, glyph, s, size);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16136,9 +22213,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_glyph_from_string"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_glyph_from_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16160,6 +22237,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_glyph_from_string$handle() {
         return hb_font_glyph_from_string.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_glyph_from_string(hb_font_t *font, const char *s, int len, hb_codepoint_t *glyph)
+     * }
+     */
+    public static MemorySegment hb_font_glyph_from_string$address() {
+        return hb_font_glyph_from_string.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_font_glyph_from_string(hb_font_t *font, const char *s, int len, hb_codepoint_t *glyph)
@@ -16172,6 +22260,134 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_glyph_from_string", font, s, len, glyph);
             }
             return (int)mh$.invokeExact(font, s, len, glyph);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_font_draw_glyph {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_draw_glyph");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_font_draw_glyph(hb_font_t *font, hb_codepoint_t glyph, hb_draw_funcs_t *dfuncs, void *draw_data)
+     * }
+     */
+    public static FunctionDescriptor hb_font_draw_glyph$descriptor() {
+        return hb_font_draw_glyph.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_font_draw_glyph(hb_font_t *font, hb_codepoint_t glyph, hb_draw_funcs_t *dfuncs, void *draw_data)
+     * }
+     */
+    public static MethodHandle hb_font_draw_glyph$handle() {
+        return hb_font_draw_glyph.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_draw_glyph(hb_font_t *font, hb_codepoint_t glyph, hb_draw_funcs_t *dfuncs, void *draw_data)
+     * }
+     */
+    public static MemorySegment hb_font_draw_glyph$address() {
+        return hb_font_draw_glyph.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_font_draw_glyph(hb_font_t *font, hb_codepoint_t glyph, hb_draw_funcs_t *dfuncs, void *draw_data)
+     * }
+     */
+    public static void hb_font_draw_glyph(MemorySegment font, int glyph, MemorySegment dfuncs, MemorySegment draw_data) {
+        var mh$ = hb_font_draw_glyph.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_font_draw_glyph", font, glyph, dfuncs, draw_data);
+            }
+            mh$.invokeExact(font, glyph, dfuncs, draw_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_font_paint_glyph {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_paint_glyph");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_font_paint_glyph(hb_font_t *font, hb_codepoint_t glyph, hb_paint_funcs_t *pfuncs, void *paint_data, unsigned int palette_index, hb_color_t foreground)
+     * }
+     */
+    public static FunctionDescriptor hb_font_paint_glyph$descriptor() {
+        return hb_font_paint_glyph.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_font_paint_glyph(hb_font_t *font, hb_codepoint_t glyph, hb_paint_funcs_t *pfuncs, void *paint_data, unsigned int palette_index, hb_color_t foreground)
+     * }
+     */
+    public static MethodHandle hb_font_paint_glyph$handle() {
+        return hb_font_paint_glyph.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_paint_glyph(hb_font_t *font, hb_codepoint_t glyph, hb_paint_funcs_t *pfuncs, void *paint_data, unsigned int palette_index, hb_color_t foreground)
+     * }
+     */
+    public static MemorySegment hb_font_paint_glyph$address() {
+        return hb_font_paint_glyph.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_font_paint_glyph(hb_font_t *font, hb_codepoint_t glyph, hb_paint_funcs_t *pfuncs, void *paint_data, unsigned int palette_index, hb_color_t foreground)
+     * }
+     */
+    public static void hb_font_paint_glyph(MemorySegment font, int glyph, MemorySegment pfuncs, MemorySegment paint_data, int palette_index, int foreground) {
+        var mh$ = hb_font_paint_glyph.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_font_paint_glyph", font, glyph, pfuncs, paint_data, palette_index, foreground);
+            }
+            mh$.invokeExact(font, glyph, pfuncs, paint_data, palette_index, foreground);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16183,9 +22399,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_create"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_create");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16207,6 +22423,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_create$handle() {
         return hb_font_create.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_font_t *hb_font_create(hb_face_t *face)
+     * }
+     */
+    public static MemorySegment hb_font_create$address() {
+        return hb_font_create.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_font_t *hb_font_create(hb_face_t *face)
@@ -16219,6 +22446,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_create", face);
             }
             return (MemorySegment)mh$.invokeExact(face);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16230,9 +22459,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_create_sub_font"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_create_sub_font");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16254,6 +22483,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_create_sub_font$handle() {
         return hb_font_create_sub_font.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_font_t *hb_font_create_sub_font(hb_font_t *parent)
+     * }
+     */
+    public static MemorySegment hb_font_create_sub_font$address() {
+        return hb_font_create_sub_font.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_font_t *hb_font_create_sub_font(hb_font_t *parent)
@@ -16266,6 +22506,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_create_sub_font", parent);
             }
             return (MemorySegment)mh$.invokeExact(parent);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16275,9 +22517,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_empty"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_empty");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16299,6 +22541,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_empty$handle() {
         return hb_font_get_empty.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_font_t *hb_font_get_empty()
+     * }
+     */
+    public static MemorySegment hb_font_get_empty$address() {
+        return hb_font_get_empty.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_font_t *hb_font_get_empty()
@@ -16311,6 +22564,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_empty");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16322,9 +22577,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_reference"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_reference");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16346,6 +22601,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_reference$handle() {
         return hb_font_reference.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_font_t *hb_font_reference(hb_font_t *font)
+     * }
+     */
+    public static MemorySegment hb_font_reference$address() {
+        return hb_font_reference.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_font_t *hb_font_reference(hb_font_t *font)
@@ -16358,6 +22624,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_reference", font);
             }
             return (MemorySegment)mh$.invokeExact(font);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16368,9 +22636,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_destroy"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_destroy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16392,6 +22660,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_destroy$handle() {
         return hb_font_destroy.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_destroy(hb_font_t *font)
+     * }
+     */
+    public static MemorySegment hb_font_destroy$address() {
+        return hb_font_destroy.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_destroy(hb_font_t *font)
@@ -16404,6 +22683,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_destroy", font);
             }
             mh$.invokeExact(font);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16419,9 +22700,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_set_user_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_set_user_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16443,6 +22724,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_set_user_data$handle() {
         return hb_font_set_user_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_set_user_data(hb_font_t *font, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
+     * }
+     */
+    public static MemorySegment hb_font_set_user_data$address() {
+        return hb_font_set_user_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_font_set_user_data(hb_font_t *font, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
@@ -16455,6 +22747,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_set_user_data", font, key, data, destroy, replace);
             }
             return (int)mh$.invokeExact(font, key, data, destroy, replace);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16467,9 +22761,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_user_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_user_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16491,6 +22785,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_user_data$handle() {
         return hb_font_get_user_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void *hb_font_get_user_data(const hb_font_t *font, hb_user_data_key_t *key)
+     * }
+     */
+    public static MemorySegment hb_font_get_user_data$address() {
+        return hb_font_get_user_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void *hb_font_get_user_data(const hb_font_t *font, hb_user_data_key_t *key)
@@ -16503,6 +22808,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_user_data", font, key);
             }
             return (MemorySegment)mh$.invokeExact(font, key);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16513,9 +22820,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_make_immutable"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_make_immutable");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16537,6 +22844,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_make_immutable$handle() {
         return hb_font_make_immutable.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_make_immutable(hb_font_t *font)
+     * }
+     */
+    public static MemorySegment hb_font_make_immutable$address() {
+        return hb_font_make_immutable.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_make_immutable(hb_font_t *font)
@@ -16549,6 +22867,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_make_immutable", font);
             }
             mh$.invokeExact(font);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16560,9 +22880,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_is_immutable"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_is_immutable");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16584,6 +22904,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_is_immutable$handle() {
         return hb_font_is_immutable.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_is_immutable(hb_font_t *font)
+     * }
+     */
+    public static MemorySegment hb_font_is_immutable$address() {
+        return hb_font_is_immutable.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_font_is_immutable(hb_font_t *font)
@@ -16596,6 +22927,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_is_immutable", font);
             }
             return (int)mh$.invokeExact(font);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16607,9 +22940,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_serial"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_serial");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16631,6 +22964,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_serial$handle() {
         return hb_font_get_serial.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern unsigned int hb_font_get_serial(hb_font_t *font)
+     * }
+     */
+    public static MemorySegment hb_font_get_serial$address() {
+        return hb_font_get_serial.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern unsigned int hb_font_get_serial(hb_font_t *font)
@@ -16643,6 +22987,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_serial", font);
             }
             return (int)mh$.invokeExact(font);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16653,9 +22999,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_changed"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_changed");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16677,6 +23023,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_changed$handle() {
         return hb_font_changed.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_changed(hb_font_t *font)
+     * }
+     */
+    public static MemorySegment hb_font_changed$address() {
+        return hb_font_changed.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_changed(hb_font_t *font)
@@ -16689,6 +23046,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_changed", font);
             }
             mh$.invokeExact(font);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16700,9 +23059,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_set_parent"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_set_parent");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16724,6 +23083,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_set_parent$handle() {
         return hb_font_set_parent.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_set_parent(hb_font_t *font, hb_font_t *parent)
+     * }
+     */
+    public static MemorySegment hb_font_set_parent$address() {
+        return hb_font_set_parent.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_set_parent(hb_font_t *font, hb_font_t *parent)
@@ -16736,6 +23106,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_set_parent", font, parent);
             }
             mh$.invokeExact(font, parent);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16747,9 +23119,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_parent"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_parent");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16771,6 +23143,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_parent$handle() {
         return hb_font_get_parent.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_font_t *hb_font_get_parent(hb_font_t *font)
+     * }
+     */
+    public static MemorySegment hb_font_get_parent$address() {
+        return hb_font_get_parent.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_font_t *hb_font_get_parent(hb_font_t *font)
@@ -16783,6 +23166,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_parent", font);
             }
             return (MemorySegment)mh$.invokeExact(font);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16794,9 +23179,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_set_face"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_set_face");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16818,6 +23203,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_set_face$handle() {
         return hb_font_set_face.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_set_face(hb_font_t *font, hb_face_t *face)
+     * }
+     */
+    public static MemorySegment hb_font_set_face$address() {
+        return hb_font_set_face.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_set_face(hb_font_t *font, hb_face_t *face)
@@ -16830,6 +23226,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_set_face", font, face);
             }
             mh$.invokeExact(font, face);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16841,9 +23239,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_face"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_face");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16865,6 +23263,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_face$handle() {
         return hb_font_get_face.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_face_t *hb_font_get_face(hb_font_t *font)
+     * }
+     */
+    public static MemorySegment hb_font_get_face$address() {
+        return hb_font_get_face.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_face_t *hb_font_get_face(hb_font_t *font)
@@ -16877,6 +23286,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_face", font);
             }
             return (MemorySegment)mh$.invokeExact(font);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16890,9 +23301,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_set_funcs"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_set_funcs");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16914,6 +23325,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_set_funcs$handle() {
         return hb_font_set_funcs.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_set_funcs(hb_font_t *font, hb_font_funcs_t *klass, void *font_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_font_set_funcs$address() {
+        return hb_font_set_funcs.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_set_funcs(hb_font_t *font, hb_font_funcs_t *klass, void *font_data, hb_destroy_func_t destroy)
@@ -16926,6 +23348,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_set_funcs", font, klass, font_data, destroy);
             }
             mh$.invokeExact(font, klass, font_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16938,9 +23362,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_set_funcs_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_set_funcs_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16962,6 +23386,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_set_funcs_data$handle() {
         return hb_font_set_funcs_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_set_funcs_data(hb_font_t *font, void *font_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_font_set_funcs_data$address() {
+        return hb_font_set_funcs_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_set_funcs_data(hb_font_t *font, void *font_data, hb_destroy_func_t destroy)
@@ -16974,6 +23409,127 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_set_funcs_data", font, font_data, destroy);
             }
             mh$.invokeExact(font, font_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_font_set_funcs_using {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_set_funcs_using");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_set_funcs_using(hb_font_t *font, const char *name)
+     * }
+     */
+    public static FunctionDescriptor hb_font_set_funcs_using$descriptor() {
+        return hb_font_set_funcs_using.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_set_funcs_using(hb_font_t *font, const char *name)
+     * }
+     */
+    public static MethodHandle hb_font_set_funcs_using$handle() {
+        return hb_font_set_funcs_using.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_set_funcs_using(hb_font_t *font, const char *name)
+     * }
+     */
+    public static MemorySegment hb_font_set_funcs_using$address() {
+        return hb_font_set_funcs_using.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_set_funcs_using(hb_font_t *font, const char *name)
+     * }
+     */
+    public static int hb_font_set_funcs_using(MemorySegment font, MemorySegment name) {
+        var mh$ = hb_font_set_funcs_using.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_font_set_funcs_using", font, name);
+            }
+            return (int)mh$.invokeExact(font, name);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_font_list_funcs {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER    );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_list_funcs");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern const char **hb_font_list_funcs()
+     * }
+     */
+    public static FunctionDescriptor hb_font_list_funcs$descriptor() {
+        return hb_font_list_funcs.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern const char **hb_font_list_funcs()
+     * }
+     */
+    public static MethodHandle hb_font_list_funcs$handle() {
+        return hb_font_list_funcs.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern const char **hb_font_list_funcs()
+     * }
+     */
+    public static MemorySegment hb_font_list_funcs$address() {
+        return hb_font_list_funcs.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern const char **hb_font_list_funcs()
+     * }
+     */
+    public static MemorySegment hb_font_list_funcs() {
+        var mh$ = hb_font_list_funcs.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_font_list_funcs");
+            }
+            return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16986,9 +23542,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_set_scale"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_set_scale");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17010,6 +23566,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_set_scale$handle() {
         return hb_font_set_scale.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_set_scale(hb_font_t *font, int x_scale, int y_scale)
+     * }
+     */
+    public static MemorySegment hb_font_set_scale$address() {
+        return hb_font_set_scale.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_set_scale(hb_font_t *font, int x_scale, int y_scale)
@@ -17022,6 +23589,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_set_scale", font, x_scale, y_scale);
             }
             mh$.invokeExact(font, x_scale, y_scale);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17034,9 +23603,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_scale"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_scale");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17058,6 +23627,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_scale$handle() {
         return hb_font_get_scale.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_get_scale(hb_font_t *font, int *x_scale, int *y_scale)
+     * }
+     */
+    public static MemorySegment hb_font_get_scale$address() {
+        return hb_font_get_scale.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_get_scale(hb_font_t *font, int *x_scale, int *y_scale)
@@ -17070,6 +23650,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_scale", font, x_scale, y_scale);
             }
             mh$.invokeExact(font, x_scale, y_scale);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17082,9 +23664,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_set_ppem"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_set_ppem");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17106,6 +23688,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_set_ppem$handle() {
         return hb_font_set_ppem.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_set_ppem(hb_font_t *font, unsigned int x_ppem, unsigned int y_ppem)
+     * }
+     */
+    public static MemorySegment hb_font_set_ppem$address() {
+        return hb_font_set_ppem.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_set_ppem(hb_font_t *font, unsigned int x_ppem, unsigned int y_ppem)
@@ -17118,6 +23711,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_set_ppem", font, x_ppem, y_ppem);
             }
             mh$.invokeExact(font, x_ppem, y_ppem);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17130,9 +23725,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_ppem"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_ppem");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17154,6 +23749,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_ppem$handle() {
         return hb_font_get_ppem.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_get_ppem(hb_font_t *font, unsigned int *x_ppem, unsigned int *y_ppem)
+     * }
+     */
+    public static MemorySegment hb_font_get_ppem$address() {
+        return hb_font_get_ppem.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_get_ppem(hb_font_t *font, unsigned int *x_ppem, unsigned int *y_ppem)
@@ -17166,6 +23772,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_ppem", font, x_ppem, y_ppem);
             }
             mh$.invokeExact(font, x_ppem, y_ppem);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17177,9 +23785,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_FLOAT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_set_ptem"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_set_ptem");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17201,6 +23809,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_set_ptem$handle() {
         return hb_font_set_ptem.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_set_ptem(hb_font_t *font, float ptem)
+     * }
+     */
+    public static MemorySegment hb_font_set_ptem$address() {
+        return hb_font_set_ptem.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_set_ptem(hb_font_t *font, float ptem)
@@ -17213,6 +23832,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_set_ptem", font, ptem);
             }
             mh$.invokeExact(font, ptem);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17224,9 +23845,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_ptem"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_ptem");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17248,6 +23869,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_ptem$handle() {
         return hb_font_get_ptem.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern float hb_font_get_ptem(hb_font_t *font)
+     * }
+     */
+    public static MemorySegment hb_font_get_ptem$address() {
+        return hb_font_get_ptem.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern float hb_font_get_ptem(hb_font_t *font)
@@ -17260,6 +23892,68 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_ptem", font);
             }
             return (float)mh$.invokeExact(font);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_font_is_synthetic {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_is_synthetic");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_is_synthetic(hb_font_t *font)
+     * }
+     */
+    public static FunctionDescriptor hb_font_is_synthetic$descriptor() {
+        return hb_font_is_synthetic.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_is_synthetic(hb_font_t *font)
+     * }
+     */
+    public static MethodHandle hb_font_is_synthetic$handle() {
+        return hb_font_is_synthetic.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_is_synthetic(hb_font_t *font)
+     * }
+     */
+    public static MemorySegment hb_font_is_synthetic$address() {
+        return hb_font_is_synthetic.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_font_is_synthetic(hb_font_t *font)
+     * }
+     */
+    public static int hb_font_is_synthetic(MemorySegment font) {
+        var mh$ = hb_font_is_synthetic.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_font_is_synthetic", font);
+            }
+            return (int)mh$.invokeExact(font);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17273,9 +23967,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_set_synthetic_bold"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_set_synthetic_bold");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17297,6 +23991,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_set_synthetic_bold$handle() {
         return hb_font_set_synthetic_bold.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_set_synthetic_bold(hb_font_t *font, float x_embolden, float y_embolden, hb_bool_t in_place)
+     * }
+     */
+    public static MemorySegment hb_font_set_synthetic_bold$address() {
+        return hb_font_set_synthetic_bold.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_set_synthetic_bold(hb_font_t *font, float x_embolden, float y_embolden, hb_bool_t in_place)
@@ -17309,6 +24014,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_set_synthetic_bold", font, x_embolden, y_embolden, in_place);
             }
             mh$.invokeExact(font, x_embolden, y_embolden, in_place);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17322,9 +24029,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_synthetic_bold"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_synthetic_bold");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17346,6 +24053,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_synthetic_bold$handle() {
         return hb_font_get_synthetic_bold.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_get_synthetic_bold(hb_font_t *font, float *x_embolden, float *y_embolden, hb_bool_t *in_place)
+     * }
+     */
+    public static MemorySegment hb_font_get_synthetic_bold$address() {
+        return hb_font_get_synthetic_bold.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_get_synthetic_bold(hb_font_t *font, float *x_embolden, float *y_embolden, hb_bool_t *in_place)
@@ -17358,6 +24076,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_synthetic_bold", font, x_embolden, y_embolden, in_place);
             }
             mh$.invokeExact(font, x_embolden, y_embolden, in_place);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17369,9 +24089,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_FLOAT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_set_synthetic_slant"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_set_synthetic_slant");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17393,6 +24113,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_set_synthetic_slant$handle() {
         return hb_font_set_synthetic_slant.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_set_synthetic_slant(hb_font_t *font, float slant)
+     * }
+     */
+    public static MemorySegment hb_font_set_synthetic_slant$address() {
+        return hb_font_set_synthetic_slant.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_set_synthetic_slant(hb_font_t *font, float slant)
@@ -17405,6 +24136,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_set_synthetic_slant", font, slant);
             }
             mh$.invokeExact(font, slant);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17416,9 +24149,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_synthetic_slant"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_synthetic_slant");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17440,6 +24173,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_synthetic_slant$handle() {
         return hb_font_get_synthetic_slant.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern float hb_font_get_synthetic_slant(hb_font_t *font)
+     * }
+     */
+    public static MemorySegment hb_font_get_synthetic_slant$address() {
+        return hb_font_get_synthetic_slant.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern float hb_font_get_synthetic_slant(hb_font_t *font)
@@ -17452,6 +24196,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_synthetic_slant", font);
             }
             return (float)mh$.invokeExact(font);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17464,9 +24210,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_set_variations"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_set_variations");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17488,6 +24234,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_set_variations$handle() {
         return hb_font_set_variations.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_set_variations(hb_font_t *font, const hb_variation_t *variations, unsigned int variations_length)
+     * }
+     */
+    public static MemorySegment hb_font_set_variations$address() {
+        return hb_font_set_variations.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_set_variations(hb_font_t *font, const hb_variation_t *variations, unsigned int variations_length)
@@ -17500,6 +24257,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_set_variations", font, variations, variations_length);
             }
             mh$.invokeExact(font, variations, variations_length);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17512,9 +24271,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_FLOAT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_set_variation"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_set_variation");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17536,6 +24295,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_set_variation$handle() {
         return hb_font_set_variation.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_set_variation(hb_font_t *font, hb_tag_t tag, float value)
+     * }
+     */
+    public static MemorySegment hb_font_set_variation$address() {
+        return hb_font_set_variation.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_set_variation(hb_font_t *font, hb_tag_t tag, float value)
@@ -17548,6 +24318,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_set_variation", font, tag, value);
             }
             mh$.invokeExact(font, tag, value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17560,9 +24332,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_set_var_coords_design"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_set_var_coords_design");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17584,6 +24356,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_set_var_coords_design$handle() {
         return hb_font_set_var_coords_design.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_set_var_coords_design(hb_font_t *font, const float *coords, unsigned int coords_length)
+     * }
+     */
+    public static MemorySegment hb_font_set_var_coords_design$address() {
+        return hb_font_set_var_coords_design.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_set_var_coords_design(hb_font_t *font, const float *coords, unsigned int coords_length)
@@ -17596,6 +24379,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_set_var_coords_design", font, coords, coords_length);
             }
             mh$.invokeExact(font, coords, coords_length);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17608,9 +24393,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_var_coords_design"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_var_coords_design");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17632,6 +24417,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_var_coords_design$handle() {
         return hb_font_get_var_coords_design.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern const float *hb_font_get_var_coords_design(hb_font_t *font, unsigned int *length)
+     * }
+     */
+    public static MemorySegment hb_font_get_var_coords_design$address() {
+        return hb_font_get_var_coords_design.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern const float *hb_font_get_var_coords_design(hb_font_t *font, unsigned int *length)
@@ -17644,6 +24440,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_var_coords_design", font, length);
             }
             return (MemorySegment)mh$.invokeExact(font, length);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17656,9 +24454,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_set_var_coords_normalized"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_set_var_coords_normalized");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17680,6 +24478,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_set_var_coords_normalized$handle() {
         return hb_font_set_var_coords_normalized.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_set_var_coords_normalized(hb_font_t *font, const int *coords, unsigned int coords_length)
+     * }
+     */
+    public static MemorySegment hb_font_set_var_coords_normalized$address() {
+        return hb_font_set_var_coords_normalized.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_set_var_coords_normalized(hb_font_t *font, const int *coords, unsigned int coords_length)
@@ -17692,6 +24501,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_set_var_coords_normalized", font, coords, coords_length);
             }
             mh$.invokeExact(font, coords, coords_length);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17704,9 +24515,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_var_coords_normalized"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_var_coords_normalized");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17728,6 +24539,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_var_coords_normalized$handle() {
         return hb_font_get_var_coords_normalized.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern const int *hb_font_get_var_coords_normalized(hb_font_t *font, unsigned int *length)
+     * }
+     */
+    public static MemorySegment hb_font_get_var_coords_normalized$address() {
+        return hb_font_get_var_coords_normalized.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern const int *hb_font_get_var_coords_normalized(hb_font_t *font, unsigned int *length)
@@ -17740,6 +24562,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_var_coords_normalized", font, length);
             }
             return (MemorySegment)mh$.invokeExact(font, length);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17751,9 +24575,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_set_var_named_instance"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_set_var_named_instance");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17775,6 +24599,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_set_var_named_instance$handle() {
         return hb_font_set_var_named_instance.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_font_set_var_named_instance(hb_font_t *font, unsigned int instance_index)
+     * }
+     */
+    public static MemorySegment hb_font_set_var_named_instance$address() {
+        return hb_font_set_var_named_instance.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_font_set_var_named_instance(hb_font_t *font, unsigned int instance_index)
@@ -17787,6 +24622,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_set_var_named_instance", font, instance_index);
             }
             mh$.invokeExact(font, instance_index);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17798,9 +24635,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_var_named_instance"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_var_named_instance");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17822,6 +24659,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_font_get_var_named_instance$handle() {
         return hb_font_get_var_named_instance.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern unsigned int hb_font_get_var_named_instance(hb_font_t *font)
+     * }
+     */
+    public static MemorySegment hb_font_get_var_named_instance$address() {
+        return hb_font_get_var_named_instance.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern unsigned int hb_font_get_var_named_instance(hb_font_t *font)
@@ -17834,6 +24682,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_font_get_var_named_instance", font);
             }
             return (int)mh$.invokeExact(font);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17881,9 +24731,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_glyph_info_get_glyph_flags"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_glyph_info_get_glyph_flags");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17905,6 +24755,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_glyph_info_get_glyph_flags$handle() {
         return hb_glyph_info_get_glyph_flags.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_glyph_flags_t hb_glyph_info_get_glyph_flags(const hb_glyph_info_t *info)
+     * }
+     */
+    public static MemorySegment hb_glyph_info_get_glyph_flags$address() {
+        return hb_glyph_info_get_glyph_flags.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_glyph_flags_t hb_glyph_info_get_glyph_flags(const hb_glyph_info_t *info)
@@ -17917,6 +24778,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_glyph_info_get_glyph_flags", info);
             }
             return (int)mh$.invokeExact(info);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17929,9 +24792,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_segment_properties_equal"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_segment_properties_equal");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17953,6 +24816,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_segment_properties_equal$handle() {
         return hb_segment_properties_equal.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_segment_properties_equal(const hb_segment_properties_t *a, const hb_segment_properties_t *b)
+     * }
+     */
+    public static MemorySegment hb_segment_properties_equal$address() {
+        return hb_segment_properties_equal.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_segment_properties_equal(const hb_segment_properties_t *a, const hb_segment_properties_t *b)
@@ -17965,6 +24839,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_segment_properties_equal", a, b);
             }
             return (int)mh$.invokeExact(a, b);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17976,9 +24852,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_segment_properties_hash"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_segment_properties_hash");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18000,6 +24876,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_segment_properties_hash$handle() {
         return hb_segment_properties_hash.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern unsigned int hb_segment_properties_hash(const hb_segment_properties_t *p)
+     * }
+     */
+    public static MemorySegment hb_segment_properties_hash$address() {
+        return hb_segment_properties_hash.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern unsigned int hb_segment_properties_hash(const hb_segment_properties_t *p)
@@ -18012,6 +24899,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_segment_properties_hash", p);
             }
             return (int)mh$.invokeExact(p);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18023,9 +24912,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_segment_properties_overlay"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_segment_properties_overlay");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18047,6 +24936,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_segment_properties_overlay$handle() {
         return hb_segment_properties_overlay.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_segment_properties_overlay(hb_segment_properties_t *p, const hb_segment_properties_t *src)
+     * }
+     */
+    public static MemorySegment hb_segment_properties_overlay$address() {
+        return hb_segment_properties_overlay.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_segment_properties_overlay(hb_segment_properties_t *p, const hb_segment_properties_t *src)
@@ -18059,6 +24959,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_segment_properties_overlay", p, src);
             }
             mh$.invokeExact(p, src);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18068,9 +24970,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_create"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_create");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18092,6 +24994,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_buffer_create$handle() {
         return hb_buffer_create.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_buffer_t *hb_buffer_create()
+     * }
+     */
+    public static MemorySegment hb_buffer_create$address() {
+        return hb_buffer_create.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_buffer_t *hb_buffer_create()
@@ -18104,6 +25017,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_buffer_create");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18115,9 +25030,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_create_similar"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_create_similar");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18139,6 +25054,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_buffer_create_similar$handle() {
         return hb_buffer_create_similar.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_buffer_t *hb_buffer_create_similar(const hb_buffer_t *src)
+     * }
+     */
+    public static MemorySegment hb_buffer_create_similar$address() {
+        return hb_buffer_create_similar.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_buffer_t *hb_buffer_create_similar(const hb_buffer_t *src)
@@ -18151,6 +25077,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_buffer_create_similar", src);
             }
             return (MemorySegment)mh$.invokeExact(src);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18161,9 +25089,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_reset"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_reset");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18185,6 +25113,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_buffer_reset$handle() {
         return hb_buffer_reset.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_buffer_reset(hb_buffer_t *buffer)
+     * }
+     */
+    public static MemorySegment hb_buffer_reset$address() {
+        return hb_buffer_reset.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_buffer_reset(hb_buffer_t *buffer)
@@ -18197,6 +25136,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_buffer_reset", buffer);
             }
             mh$.invokeExact(buffer);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18206,9 +25147,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_get_empty"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_get_empty");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18230,6 +25171,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_buffer_get_empty$handle() {
         return hb_buffer_get_empty.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_buffer_t *hb_buffer_get_empty()
+     * }
+     */
+    public static MemorySegment hb_buffer_get_empty$address() {
+        return hb_buffer_get_empty.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_buffer_t *hb_buffer_get_empty()
@@ -18242,6 +25194,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_buffer_get_empty");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18253,9 +25207,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_reference"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_reference");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18277,6 +25231,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_buffer_reference$handle() {
         return hb_buffer_reference.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_buffer_t *hb_buffer_reference(hb_buffer_t *buffer)
+     * }
+     */
+    public static MemorySegment hb_buffer_reference$address() {
+        return hb_buffer_reference.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_buffer_t *hb_buffer_reference(hb_buffer_t *buffer)
@@ -18289,6 +25254,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_buffer_reference", buffer);
             }
             return (MemorySegment)mh$.invokeExact(buffer);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18299,9 +25266,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_destroy"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_destroy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18323,6 +25290,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_buffer_destroy$handle() {
         return hb_buffer_destroy.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_buffer_destroy(hb_buffer_t *buffer)
+     * }
+     */
+    public static MemorySegment hb_buffer_destroy$address() {
+        return hb_buffer_destroy.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_buffer_destroy(hb_buffer_t *buffer)
@@ -18335,6 +25313,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_buffer_destroy", buffer);
             }
             mh$.invokeExact(buffer);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18350,9 +25330,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_set_user_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_set_user_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18374,6 +25354,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_buffer_set_user_data$handle() {
         return hb_buffer_set_user_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_buffer_set_user_data(hb_buffer_t *buffer, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
+     * }
+     */
+    public static MemorySegment hb_buffer_set_user_data$address() {
+        return hb_buffer_set_user_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_bool_t hb_buffer_set_user_data(hb_buffer_t *buffer, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
@@ -18386,6 +25377,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_buffer_set_user_data", buffer, key, data, destroy, replace);
             }
             return (int)mh$.invokeExact(buffer, key, data, destroy, replace);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18398,9 +25391,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_get_user_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_get_user_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18422,6 +25415,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_buffer_get_user_data$handle() {
         return hb_buffer_get_user_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void *hb_buffer_get_user_data(const hb_buffer_t *buffer, hb_user_data_key_t *key)
+     * }
+     */
+    public static MemorySegment hb_buffer_get_user_data$address() {
+        return hb_buffer_get_user_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void *hb_buffer_get_user_data(const hb_buffer_t *buffer, hb_user_data_key_t *key)
@@ -18434,6 +25438,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_buffer_get_user_data", buffer, key);
             }
             return (MemorySegment)mh$.invokeExact(buffer, key);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18472,9 +25478,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_set_content_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_set_content_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18496,6 +25502,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_buffer_set_content_type$handle() {
         return hb_buffer_set_content_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_buffer_set_content_type(hb_buffer_t *buffer, hb_buffer_content_type_t content_type)
+     * }
+     */
+    public static MemorySegment hb_buffer_set_content_type$address() {
+        return hb_buffer_set_content_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_buffer_set_content_type(hb_buffer_t *buffer, hb_buffer_content_type_t content_type)
@@ -18508,6 +25525,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_buffer_set_content_type", buffer, content_type);
             }
             mh$.invokeExact(buffer, content_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18519,9 +25538,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_get_content_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_get_content_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18543,6 +25562,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_buffer_get_content_type$handle() {
         return hb_buffer_get_content_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_buffer_content_type_t hb_buffer_get_content_type(const hb_buffer_t *buffer)
+     * }
+     */
+    public static MemorySegment hb_buffer_get_content_type$address() {
+        return hb_buffer_get_content_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_buffer_content_type_t hb_buffer_get_content_type(const hb_buffer_t *buffer)
@@ -18555,6 +25585,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_buffer_get_content_type", buffer);
             }
             return (int)mh$.invokeExact(buffer);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18566,9 +25598,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_set_unicode_funcs"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_set_unicode_funcs");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18590,6 +25622,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_buffer_set_unicode_funcs$handle() {
         return hb_buffer_set_unicode_funcs.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_buffer_set_unicode_funcs(hb_buffer_t *buffer, hb_unicode_funcs_t *unicode_funcs)
+     * }
+     */
+    public static MemorySegment hb_buffer_set_unicode_funcs$address() {
+        return hb_buffer_set_unicode_funcs.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_buffer_set_unicode_funcs(hb_buffer_t *buffer, hb_unicode_funcs_t *unicode_funcs)
@@ -18602,6 +25645,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_buffer_set_unicode_funcs", buffer, unicode_funcs);
             }
             mh$.invokeExact(buffer, unicode_funcs);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18613,9 +25658,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_get_unicode_funcs"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_get_unicode_funcs");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18637,6 +25682,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_buffer_get_unicode_funcs$handle() {
         return hb_buffer_get_unicode_funcs.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_unicode_funcs_t *hb_buffer_get_unicode_funcs(const hb_buffer_t *buffer)
+     * }
+     */
+    public static MemorySegment hb_buffer_get_unicode_funcs$address() {
+        return hb_buffer_get_unicode_funcs.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_unicode_funcs_t *hb_buffer_get_unicode_funcs(const hb_buffer_t *buffer)
@@ -18649,6 +25705,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_buffer_get_unicode_funcs", buffer);
             }
             return (MemorySegment)mh$.invokeExact(buffer);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18660,9 +25718,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_set_direction"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_set_direction");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18684,6 +25742,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_buffer_set_direction$handle() {
         return hb_buffer_set_direction.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_buffer_set_direction(hb_buffer_t *buffer, hb_direction_t direction)
+     * }
+     */
+    public static MemorySegment hb_buffer_set_direction$address() {
+        return hb_buffer_set_direction.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_buffer_set_direction(hb_buffer_t *buffer, hb_direction_t direction)
@@ -18696,6 +25765,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_buffer_set_direction", buffer, direction);
             }
             mh$.invokeExact(buffer, direction);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18707,9 +25778,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_get_direction"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_get_direction");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18731,6 +25802,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_buffer_get_direction$handle() {
         return hb_buffer_get_direction.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_direction_t hb_buffer_get_direction(const hb_buffer_t *buffer)
+     * }
+     */
+    public static MemorySegment hb_buffer_get_direction$address() {
+        return hb_buffer_get_direction.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_direction_t hb_buffer_get_direction(const hb_buffer_t *buffer)
@@ -18743,6 +25825,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_buffer_get_direction", buffer);
             }
             return (int)mh$.invokeExact(buffer);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18754,9 +25838,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_set_script"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_set_script");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18778,6 +25862,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_buffer_set_script$handle() {
         return hb_buffer_set_script.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_buffer_set_script(hb_buffer_t *buffer, hb_script_t script)
+     * }
+     */
+    public static MemorySegment hb_buffer_set_script$address() {
+        return hb_buffer_set_script.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_buffer_set_script(hb_buffer_t *buffer, hb_script_t script)
@@ -18790,6 +25885,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_buffer_set_script", buffer, script);
             }
             mh$.invokeExact(buffer, script);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18801,9 +25898,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_get_script"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_get_script");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18825,6 +25922,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_buffer_get_script$handle() {
         return hb_buffer_get_script.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_script_t hb_buffer_get_script(const hb_buffer_t *buffer)
+     * }
+     */
+    public static MemorySegment hb_buffer_get_script$address() {
+        return hb_buffer_get_script.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_script_t hb_buffer_get_script(const hb_buffer_t *buffer)
@@ -18837,6 +25945,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_buffer_get_script", buffer);
             }
             return (int)mh$.invokeExact(buffer);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18848,9 +25958,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_set_language"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_set_language");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18872,6 +25982,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_buffer_set_language$handle() {
         return hb_buffer_set_language.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_buffer_set_language(hb_buffer_t *buffer, hb_language_t language)
+     * }
+     */
+    public static MemorySegment hb_buffer_set_language$address() {
+        return hb_buffer_set_language.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_buffer_set_language(hb_buffer_t *buffer, hb_language_t language)
@@ -18884,6 +26005,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_buffer_set_language", buffer, language);
             }
             mh$.invokeExact(buffer, language);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18895,9 +26018,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_get_language"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_get_language");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18919,6 +26042,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_buffer_get_language$handle() {
         return hb_buffer_get_language.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_language_t hb_buffer_get_language(const hb_buffer_t *buffer)
+     * }
+     */
+    public static MemorySegment hb_buffer_get_language$address() {
+        return hb_buffer_get_language.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern hb_language_t hb_buffer_get_language(const hb_buffer_t *buffer)
@@ -18931,6 +26065,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_buffer_get_language", buffer);
             }
             return (MemorySegment)mh$.invokeExact(buffer);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18942,9 +26078,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_set_segment_properties"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_set_segment_properties");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18966,6 +26102,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_buffer_set_segment_properties$handle() {
         return hb_buffer_set_segment_properties.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_buffer_set_segment_properties(hb_buffer_t *buffer, const hb_segment_properties_t *props)
+     * }
+     */
+    public static MemorySegment hb_buffer_set_segment_properties$address() {
+        return hb_buffer_set_segment_properties.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_buffer_set_segment_properties(hb_buffer_t *buffer, const hb_segment_properties_t *props)
@@ -18978,6 +26125,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_buffer_set_segment_properties", buffer, props);
             }
             mh$.invokeExact(buffer, props);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18989,9 +26138,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_get_segment_properties"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_get_segment_properties");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -19013,6 +26162,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_buffer_get_segment_properties$handle() {
         return hb_buffer_get_segment_properties.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_buffer_get_segment_properties(const hb_buffer_t *buffer, hb_segment_properties_t *props)
+     * }
+     */
+    public static MemorySegment hb_buffer_get_segment_properties$address() {
+        return hb_buffer_get_segment_properties.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_buffer_get_segment_properties(const hb_buffer_t *buffer, hb_segment_properties_t *props)
@@ -19025,6 +26185,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_buffer_get_segment_properties", buffer, props);
             }
             mh$.invokeExact(buffer, props);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -19035,9 +26197,9 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_guess_segment_properties"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_guess_segment_properties");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -19059,6 +26221,17 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
     public static MethodHandle hb_buffer_guess_segment_properties$handle() {
         return hb_buffer_guess_segment_properties.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_buffer_guess_segment_properties(hb_buffer_t *buffer)
+     * }
+     */
+    public static MemorySegment hb_buffer_guess_segment_properties$address() {
+        return hb_buffer_guess_segment_properties.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void hb_buffer_guess_segment_properties(hb_buffer_t *buffer)
@@ -19071,6 +26244,8 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_buffer_guess_segment_properties", buffer);
             }
             mh$.invokeExact(buffer);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -19083,5036 +26258,6 @@ public class app_indicator_h_11 extends app_indicator_h_12 {
      */
     public static int HB_BUFFER_FLAG_DEFAULT() {
         return HB_BUFFER_FLAG_DEFAULT;
-    }
-    private static final int HB_BUFFER_FLAG_BOT = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_FLAG_BOT = 1
-     * }
-     */
-    public static int HB_BUFFER_FLAG_BOT() {
-        return HB_BUFFER_FLAG_BOT;
-    }
-    private static final int HB_BUFFER_FLAG_EOT = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_FLAG_EOT = 2
-     * }
-     */
-    public static int HB_BUFFER_FLAG_EOT() {
-        return HB_BUFFER_FLAG_EOT;
-    }
-    private static final int HB_BUFFER_FLAG_PRESERVE_DEFAULT_IGNORABLES = (int)4L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_FLAG_PRESERVE_DEFAULT_IGNORABLES = 4
-     * }
-     */
-    public static int HB_BUFFER_FLAG_PRESERVE_DEFAULT_IGNORABLES() {
-        return HB_BUFFER_FLAG_PRESERVE_DEFAULT_IGNORABLES;
-    }
-    private static final int HB_BUFFER_FLAG_REMOVE_DEFAULT_IGNORABLES = (int)8L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_FLAG_REMOVE_DEFAULT_IGNORABLES = 8
-     * }
-     */
-    public static int HB_BUFFER_FLAG_REMOVE_DEFAULT_IGNORABLES() {
-        return HB_BUFFER_FLAG_REMOVE_DEFAULT_IGNORABLES;
-    }
-    private static final int HB_BUFFER_FLAG_DO_NOT_INSERT_DOTTED_CIRCLE = (int)16L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_FLAG_DO_NOT_INSERT_DOTTED_CIRCLE = 16
-     * }
-     */
-    public static int HB_BUFFER_FLAG_DO_NOT_INSERT_DOTTED_CIRCLE() {
-        return HB_BUFFER_FLAG_DO_NOT_INSERT_DOTTED_CIRCLE;
-    }
-    private static final int HB_BUFFER_FLAG_VERIFY = (int)32L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_FLAG_VERIFY = 32
-     * }
-     */
-    public static int HB_BUFFER_FLAG_VERIFY() {
-        return HB_BUFFER_FLAG_VERIFY;
-    }
-    private static final int HB_BUFFER_FLAG_PRODUCE_UNSAFE_TO_CONCAT = (int)64L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_FLAG_PRODUCE_UNSAFE_TO_CONCAT = 64
-     * }
-     */
-    public static int HB_BUFFER_FLAG_PRODUCE_UNSAFE_TO_CONCAT() {
-        return HB_BUFFER_FLAG_PRODUCE_UNSAFE_TO_CONCAT;
-    }
-    private static final int HB_BUFFER_FLAG_PRODUCE_SAFE_TO_INSERT_TATWEEL = (int)128L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_FLAG_PRODUCE_SAFE_TO_INSERT_TATWEEL = 128
-     * }
-     */
-    public static int HB_BUFFER_FLAG_PRODUCE_SAFE_TO_INSERT_TATWEEL() {
-        return HB_BUFFER_FLAG_PRODUCE_SAFE_TO_INSERT_TATWEEL;
-    }
-    private static final int HB_BUFFER_FLAG_DEFINED = (int)255L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_FLAG_DEFINED = 255
-     * }
-     */
-    public static int HB_BUFFER_FLAG_DEFINED() {
-        return HB_BUFFER_FLAG_DEFINED;
-    }
-
-    private static class hb_buffer_set_flags {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_set_flags"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_flags(hb_buffer_t *buffer, hb_buffer_flags_t flags)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_set_flags$descriptor() {
-        return hb_buffer_set_flags.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_flags(hb_buffer_t *buffer, hb_buffer_flags_t flags)
-     * }
-     */
-    public static MethodHandle hb_buffer_set_flags$handle() {
-        return hb_buffer_set_flags.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_flags(hb_buffer_t *buffer, hb_buffer_flags_t flags)
-     * }
-     */
-    public static void hb_buffer_set_flags(MemorySegment buffer, int flags) {
-        var mh$ = hb_buffer_set_flags.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_set_flags", buffer, flags);
-            }
-            mh$.invokeExact(buffer, flags);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_get_flags {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_get_flags"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_buffer_flags_t hb_buffer_get_flags(const hb_buffer_t *buffer)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_get_flags$descriptor() {
-        return hb_buffer_get_flags.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_buffer_flags_t hb_buffer_get_flags(const hb_buffer_t *buffer)
-     * }
-     */
-    public static MethodHandle hb_buffer_get_flags$handle() {
-        return hb_buffer_get_flags.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_buffer_flags_t hb_buffer_get_flags(const hb_buffer_t *buffer)
-     * }
-     */
-    public static int hb_buffer_get_flags(MemorySegment buffer) {
-        var mh$ = hb_buffer_get_flags.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_get_flags", buffer);
-            }
-            return (int)mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    private static final int HB_BUFFER_CLUSTER_LEVEL_MONOTONE_GRAPHEMES = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_CLUSTER_LEVEL_MONOTONE_GRAPHEMES = 0
-     * }
-     */
-    public static int HB_BUFFER_CLUSTER_LEVEL_MONOTONE_GRAPHEMES() {
-        return HB_BUFFER_CLUSTER_LEVEL_MONOTONE_GRAPHEMES;
-    }
-    private static final int HB_BUFFER_CLUSTER_LEVEL_MONOTONE_CHARACTERS = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_CLUSTER_LEVEL_MONOTONE_CHARACTERS = 1
-     * }
-     */
-    public static int HB_BUFFER_CLUSTER_LEVEL_MONOTONE_CHARACTERS() {
-        return HB_BUFFER_CLUSTER_LEVEL_MONOTONE_CHARACTERS;
-    }
-    private static final int HB_BUFFER_CLUSTER_LEVEL_CHARACTERS = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_CLUSTER_LEVEL_CHARACTERS = 2
-     * }
-     */
-    public static int HB_BUFFER_CLUSTER_LEVEL_CHARACTERS() {
-        return HB_BUFFER_CLUSTER_LEVEL_CHARACTERS;
-    }
-    private static final int HB_BUFFER_CLUSTER_LEVEL_DEFAULT = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_CLUSTER_LEVEL_DEFAULT = 0
-     * }
-     */
-    public static int HB_BUFFER_CLUSTER_LEVEL_DEFAULT() {
-        return HB_BUFFER_CLUSTER_LEVEL_DEFAULT;
-    }
-
-    private static class hb_buffer_set_cluster_level {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_set_cluster_level"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_cluster_level(hb_buffer_t *buffer, hb_buffer_cluster_level_t cluster_level)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_set_cluster_level$descriptor() {
-        return hb_buffer_set_cluster_level.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_cluster_level(hb_buffer_t *buffer, hb_buffer_cluster_level_t cluster_level)
-     * }
-     */
-    public static MethodHandle hb_buffer_set_cluster_level$handle() {
-        return hb_buffer_set_cluster_level.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_cluster_level(hb_buffer_t *buffer, hb_buffer_cluster_level_t cluster_level)
-     * }
-     */
-    public static void hb_buffer_set_cluster_level(MemorySegment buffer, int cluster_level) {
-        var mh$ = hb_buffer_set_cluster_level.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_set_cluster_level", buffer, cluster_level);
-            }
-            mh$.invokeExact(buffer, cluster_level);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_get_cluster_level {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_get_cluster_level"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_buffer_cluster_level_t hb_buffer_get_cluster_level(const hb_buffer_t *buffer)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_get_cluster_level$descriptor() {
-        return hb_buffer_get_cluster_level.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_buffer_cluster_level_t hb_buffer_get_cluster_level(const hb_buffer_t *buffer)
-     * }
-     */
-    public static MethodHandle hb_buffer_get_cluster_level$handle() {
-        return hb_buffer_get_cluster_level.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_buffer_cluster_level_t hb_buffer_get_cluster_level(const hb_buffer_t *buffer)
-     * }
-     */
-    public static int hb_buffer_get_cluster_level(MemorySegment buffer) {
-        var mh$ = hb_buffer_get_cluster_level.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_get_cluster_level", buffer);
-            }
-            return (int)mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_set_replacement_codepoint {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_set_replacement_codepoint"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_replacement_codepoint(hb_buffer_t *buffer, hb_codepoint_t replacement)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_set_replacement_codepoint$descriptor() {
-        return hb_buffer_set_replacement_codepoint.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_replacement_codepoint(hb_buffer_t *buffer, hb_codepoint_t replacement)
-     * }
-     */
-    public static MethodHandle hb_buffer_set_replacement_codepoint$handle() {
-        return hb_buffer_set_replacement_codepoint.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_replacement_codepoint(hb_buffer_t *buffer, hb_codepoint_t replacement)
-     * }
-     */
-    public static void hb_buffer_set_replacement_codepoint(MemorySegment buffer, int replacement) {
-        var mh$ = hb_buffer_set_replacement_codepoint.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_set_replacement_codepoint", buffer, replacement);
-            }
-            mh$.invokeExact(buffer, replacement);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_get_replacement_codepoint {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_get_replacement_codepoint"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_codepoint_t hb_buffer_get_replacement_codepoint(const hb_buffer_t *buffer)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_get_replacement_codepoint$descriptor() {
-        return hb_buffer_get_replacement_codepoint.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_codepoint_t hb_buffer_get_replacement_codepoint(const hb_buffer_t *buffer)
-     * }
-     */
-    public static MethodHandle hb_buffer_get_replacement_codepoint$handle() {
-        return hb_buffer_get_replacement_codepoint.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_codepoint_t hb_buffer_get_replacement_codepoint(const hb_buffer_t *buffer)
-     * }
-     */
-    public static int hb_buffer_get_replacement_codepoint(MemorySegment buffer) {
-        var mh$ = hb_buffer_get_replacement_codepoint.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_get_replacement_codepoint", buffer);
-            }
-            return (int)mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_set_invisible_glyph {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_set_invisible_glyph"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_invisible_glyph(hb_buffer_t *buffer, hb_codepoint_t invisible)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_set_invisible_glyph$descriptor() {
-        return hb_buffer_set_invisible_glyph.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_invisible_glyph(hb_buffer_t *buffer, hb_codepoint_t invisible)
-     * }
-     */
-    public static MethodHandle hb_buffer_set_invisible_glyph$handle() {
-        return hb_buffer_set_invisible_glyph.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_invisible_glyph(hb_buffer_t *buffer, hb_codepoint_t invisible)
-     * }
-     */
-    public static void hb_buffer_set_invisible_glyph(MemorySegment buffer, int invisible) {
-        var mh$ = hb_buffer_set_invisible_glyph.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_set_invisible_glyph", buffer, invisible);
-            }
-            mh$.invokeExact(buffer, invisible);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_get_invisible_glyph {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_get_invisible_glyph"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_codepoint_t hb_buffer_get_invisible_glyph(const hb_buffer_t *buffer)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_get_invisible_glyph$descriptor() {
-        return hb_buffer_get_invisible_glyph.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_codepoint_t hb_buffer_get_invisible_glyph(const hb_buffer_t *buffer)
-     * }
-     */
-    public static MethodHandle hb_buffer_get_invisible_glyph$handle() {
-        return hb_buffer_get_invisible_glyph.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_codepoint_t hb_buffer_get_invisible_glyph(const hb_buffer_t *buffer)
-     * }
-     */
-    public static int hb_buffer_get_invisible_glyph(MemorySegment buffer) {
-        var mh$ = hb_buffer_get_invisible_glyph.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_get_invisible_glyph", buffer);
-            }
-            return (int)mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_set_not_found_glyph {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_set_not_found_glyph"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_not_found_glyph(hb_buffer_t *buffer, hb_codepoint_t not_found)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_set_not_found_glyph$descriptor() {
-        return hb_buffer_set_not_found_glyph.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_not_found_glyph(hb_buffer_t *buffer, hb_codepoint_t not_found)
-     * }
-     */
-    public static MethodHandle hb_buffer_set_not_found_glyph$handle() {
-        return hb_buffer_set_not_found_glyph.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_not_found_glyph(hb_buffer_t *buffer, hb_codepoint_t not_found)
-     * }
-     */
-    public static void hb_buffer_set_not_found_glyph(MemorySegment buffer, int not_found) {
-        var mh$ = hb_buffer_set_not_found_glyph.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_set_not_found_glyph", buffer, not_found);
-            }
-            mh$.invokeExact(buffer, not_found);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_get_not_found_glyph {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_get_not_found_glyph"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_codepoint_t hb_buffer_get_not_found_glyph(const hb_buffer_t *buffer)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_get_not_found_glyph$descriptor() {
-        return hb_buffer_get_not_found_glyph.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_codepoint_t hb_buffer_get_not_found_glyph(const hb_buffer_t *buffer)
-     * }
-     */
-    public static MethodHandle hb_buffer_get_not_found_glyph$handle() {
-        return hb_buffer_get_not_found_glyph.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_codepoint_t hb_buffer_get_not_found_glyph(const hb_buffer_t *buffer)
-     * }
-     */
-    public static int hb_buffer_get_not_found_glyph(MemorySegment buffer) {
-        var mh$ = hb_buffer_get_not_found_glyph.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_get_not_found_glyph", buffer);
-            }
-            return (int)mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_clear_contents {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_clear_contents"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_clear_contents(hb_buffer_t *buffer)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_clear_contents$descriptor() {
-        return hb_buffer_clear_contents.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_clear_contents(hb_buffer_t *buffer)
-     * }
-     */
-    public static MethodHandle hb_buffer_clear_contents$handle() {
-        return hb_buffer_clear_contents.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_clear_contents(hb_buffer_t *buffer)
-     * }
-     */
-    public static void hb_buffer_clear_contents(MemorySegment buffer) {
-        var mh$ = hb_buffer_clear_contents.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_clear_contents", buffer);
-            }
-            mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_pre_allocate {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_pre_allocate"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_buffer_pre_allocate(hb_buffer_t *buffer, unsigned int size)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_pre_allocate$descriptor() {
-        return hb_buffer_pre_allocate.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_buffer_pre_allocate(hb_buffer_t *buffer, unsigned int size)
-     * }
-     */
-    public static MethodHandle hb_buffer_pre_allocate$handle() {
-        return hb_buffer_pre_allocate.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_buffer_pre_allocate(hb_buffer_t *buffer, unsigned int size)
-     * }
-     */
-    public static int hb_buffer_pre_allocate(MemorySegment buffer, int size) {
-        var mh$ = hb_buffer_pre_allocate.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_pre_allocate", buffer, size);
-            }
-            return (int)mh$.invokeExact(buffer, size);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_allocation_successful {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_allocation_successful"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_buffer_allocation_successful(hb_buffer_t *buffer)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_allocation_successful$descriptor() {
-        return hb_buffer_allocation_successful.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_buffer_allocation_successful(hb_buffer_t *buffer)
-     * }
-     */
-    public static MethodHandle hb_buffer_allocation_successful$handle() {
-        return hb_buffer_allocation_successful.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_buffer_allocation_successful(hb_buffer_t *buffer)
-     * }
-     */
-    public static int hb_buffer_allocation_successful(MemorySegment buffer) {
-        var mh$ = hb_buffer_allocation_successful.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_allocation_successful", buffer);
-            }
-            return (int)mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_reverse {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_reverse"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_reverse(hb_buffer_t *buffer)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_reverse$descriptor() {
-        return hb_buffer_reverse.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_reverse(hb_buffer_t *buffer)
-     * }
-     */
-    public static MethodHandle hb_buffer_reverse$handle() {
-        return hb_buffer_reverse.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_reverse(hb_buffer_t *buffer)
-     * }
-     */
-    public static void hb_buffer_reverse(MemorySegment buffer) {
-        var mh$ = hb_buffer_reverse.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_reverse", buffer);
-            }
-            mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_reverse_range {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_reverse_range"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_reverse_range(hb_buffer_t *buffer, unsigned int start, unsigned int end)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_reverse_range$descriptor() {
-        return hb_buffer_reverse_range.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_reverse_range(hb_buffer_t *buffer, unsigned int start, unsigned int end)
-     * }
-     */
-    public static MethodHandle hb_buffer_reverse_range$handle() {
-        return hb_buffer_reverse_range.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_reverse_range(hb_buffer_t *buffer, unsigned int start, unsigned int end)
-     * }
-     */
-    public static void hb_buffer_reverse_range(MemorySegment buffer, int start, int end) {
-        var mh$ = hb_buffer_reverse_range.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_reverse_range", buffer, start, end);
-            }
-            mh$.invokeExact(buffer, start, end);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_reverse_clusters {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_reverse_clusters"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_reverse_clusters(hb_buffer_t *buffer)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_reverse_clusters$descriptor() {
-        return hb_buffer_reverse_clusters.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_reverse_clusters(hb_buffer_t *buffer)
-     * }
-     */
-    public static MethodHandle hb_buffer_reverse_clusters$handle() {
-        return hb_buffer_reverse_clusters.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_reverse_clusters(hb_buffer_t *buffer)
-     * }
-     */
-    public static void hb_buffer_reverse_clusters(MemorySegment buffer) {
-        var mh$ = hb_buffer_reverse_clusters.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_reverse_clusters", buffer);
-            }
-            mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_add {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_add"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_add(hb_buffer_t *buffer, hb_codepoint_t codepoint, unsigned int cluster)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_add$descriptor() {
-        return hb_buffer_add.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_add(hb_buffer_t *buffer, hb_codepoint_t codepoint, unsigned int cluster)
-     * }
-     */
-    public static MethodHandle hb_buffer_add$handle() {
-        return hb_buffer_add.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_add(hb_buffer_t *buffer, hb_codepoint_t codepoint, unsigned int cluster)
-     * }
-     */
-    public static void hb_buffer_add(MemorySegment buffer, int codepoint, int cluster) {
-        var mh$ = hb_buffer_add.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_add", buffer, codepoint, cluster);
-            }
-            mh$.invokeExact(buffer, codepoint, cluster);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_add_utf8 {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_add_utf8"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_add_utf8(hb_buffer_t *buffer, const char *text, int text_length, unsigned int item_offset, int item_length)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_add_utf8$descriptor() {
-        return hb_buffer_add_utf8.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_add_utf8(hb_buffer_t *buffer, const char *text, int text_length, unsigned int item_offset, int item_length)
-     * }
-     */
-    public static MethodHandle hb_buffer_add_utf8$handle() {
-        return hb_buffer_add_utf8.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_add_utf8(hb_buffer_t *buffer, const char *text, int text_length, unsigned int item_offset, int item_length)
-     * }
-     */
-    public static void hb_buffer_add_utf8(MemorySegment buffer, MemorySegment text, int text_length, int item_offset, int item_length) {
-        var mh$ = hb_buffer_add_utf8.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_add_utf8", buffer, text, text_length, item_offset, item_length);
-            }
-            mh$.invokeExact(buffer, text, text_length, item_offset, item_length);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_add_utf16 {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_add_utf16"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_add_utf16(hb_buffer_t *buffer, const uint16_t *text, int text_length, unsigned int item_offset, int item_length)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_add_utf16$descriptor() {
-        return hb_buffer_add_utf16.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_add_utf16(hb_buffer_t *buffer, const uint16_t *text, int text_length, unsigned int item_offset, int item_length)
-     * }
-     */
-    public static MethodHandle hb_buffer_add_utf16$handle() {
-        return hb_buffer_add_utf16.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_add_utf16(hb_buffer_t *buffer, const uint16_t *text, int text_length, unsigned int item_offset, int item_length)
-     * }
-     */
-    public static void hb_buffer_add_utf16(MemorySegment buffer, MemorySegment text, int text_length, int item_offset, int item_length) {
-        var mh$ = hb_buffer_add_utf16.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_add_utf16", buffer, text, text_length, item_offset, item_length);
-            }
-            mh$.invokeExact(buffer, text, text_length, item_offset, item_length);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_add_utf32 {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_add_utf32"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_add_utf32(hb_buffer_t *buffer, const uint32_t *text, int text_length, unsigned int item_offset, int item_length)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_add_utf32$descriptor() {
-        return hb_buffer_add_utf32.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_add_utf32(hb_buffer_t *buffer, const uint32_t *text, int text_length, unsigned int item_offset, int item_length)
-     * }
-     */
-    public static MethodHandle hb_buffer_add_utf32$handle() {
-        return hb_buffer_add_utf32.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_add_utf32(hb_buffer_t *buffer, const uint32_t *text, int text_length, unsigned int item_offset, int item_length)
-     * }
-     */
-    public static void hb_buffer_add_utf32(MemorySegment buffer, MemorySegment text, int text_length, int item_offset, int item_length) {
-        var mh$ = hb_buffer_add_utf32.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_add_utf32", buffer, text, text_length, item_offset, item_length);
-            }
-            mh$.invokeExact(buffer, text, text_length, item_offset, item_length);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_add_latin1 {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_add_latin1"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_add_latin1(hb_buffer_t *buffer, const uint8_t *text, int text_length, unsigned int item_offset, int item_length)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_add_latin1$descriptor() {
-        return hb_buffer_add_latin1.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_add_latin1(hb_buffer_t *buffer, const uint8_t *text, int text_length, unsigned int item_offset, int item_length)
-     * }
-     */
-    public static MethodHandle hb_buffer_add_latin1$handle() {
-        return hb_buffer_add_latin1.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_add_latin1(hb_buffer_t *buffer, const uint8_t *text, int text_length, unsigned int item_offset, int item_length)
-     * }
-     */
-    public static void hb_buffer_add_latin1(MemorySegment buffer, MemorySegment text, int text_length, int item_offset, int item_length) {
-        var mh$ = hb_buffer_add_latin1.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_add_latin1", buffer, text, text_length, item_offset, item_length);
-            }
-            mh$.invokeExact(buffer, text, text_length, item_offset, item_length);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_add_codepoints {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_add_codepoints"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_add_codepoints(hb_buffer_t *buffer, const hb_codepoint_t *text, int text_length, unsigned int item_offset, int item_length)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_add_codepoints$descriptor() {
-        return hb_buffer_add_codepoints.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_add_codepoints(hb_buffer_t *buffer, const hb_codepoint_t *text, int text_length, unsigned int item_offset, int item_length)
-     * }
-     */
-    public static MethodHandle hb_buffer_add_codepoints$handle() {
-        return hb_buffer_add_codepoints.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_add_codepoints(hb_buffer_t *buffer, const hb_codepoint_t *text, int text_length, unsigned int item_offset, int item_length)
-     * }
-     */
-    public static void hb_buffer_add_codepoints(MemorySegment buffer, MemorySegment text, int text_length, int item_offset, int item_length) {
-        var mh$ = hb_buffer_add_codepoints.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_add_codepoints", buffer, text, text_length, item_offset, item_length);
-            }
-            mh$.invokeExact(buffer, text, text_length, item_offset, item_length);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_append {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_append"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_append(hb_buffer_t *buffer, const hb_buffer_t *source, unsigned int start, unsigned int end)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_append$descriptor() {
-        return hb_buffer_append.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_append(hb_buffer_t *buffer, const hb_buffer_t *source, unsigned int start, unsigned int end)
-     * }
-     */
-    public static MethodHandle hb_buffer_append$handle() {
-        return hb_buffer_append.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_append(hb_buffer_t *buffer, const hb_buffer_t *source, unsigned int start, unsigned int end)
-     * }
-     */
-    public static void hb_buffer_append(MemorySegment buffer, MemorySegment source, int start, int end) {
-        var mh$ = hb_buffer_append.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_append", buffer, source, start, end);
-            }
-            mh$.invokeExact(buffer, source, start, end);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_set_length {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_set_length"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_buffer_set_length(hb_buffer_t *buffer, unsigned int length)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_set_length$descriptor() {
-        return hb_buffer_set_length.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_buffer_set_length(hb_buffer_t *buffer, unsigned int length)
-     * }
-     */
-    public static MethodHandle hb_buffer_set_length$handle() {
-        return hb_buffer_set_length.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_buffer_set_length(hb_buffer_t *buffer, unsigned int length)
-     * }
-     */
-    public static int hb_buffer_set_length(MemorySegment buffer, int length) {
-        var mh$ = hb_buffer_set_length.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_set_length", buffer, length);
-            }
-            return (int)mh$.invokeExact(buffer, length);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_get_length {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_get_length"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern unsigned int hb_buffer_get_length(const hb_buffer_t *buffer)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_get_length$descriptor() {
-        return hb_buffer_get_length.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern unsigned int hb_buffer_get_length(const hb_buffer_t *buffer)
-     * }
-     */
-    public static MethodHandle hb_buffer_get_length$handle() {
-        return hb_buffer_get_length.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern unsigned int hb_buffer_get_length(const hb_buffer_t *buffer)
-     * }
-     */
-    public static int hb_buffer_get_length(MemorySegment buffer) {
-        var mh$ = hb_buffer_get_length.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_get_length", buffer);
-            }
-            return (int)mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_get_glyph_infos {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_get_glyph_infos"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_glyph_info_t *hb_buffer_get_glyph_infos(hb_buffer_t *buffer, unsigned int *length)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_get_glyph_infos$descriptor() {
-        return hb_buffer_get_glyph_infos.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_glyph_info_t *hb_buffer_get_glyph_infos(hb_buffer_t *buffer, unsigned int *length)
-     * }
-     */
-    public static MethodHandle hb_buffer_get_glyph_infos$handle() {
-        return hb_buffer_get_glyph_infos.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_glyph_info_t *hb_buffer_get_glyph_infos(hb_buffer_t *buffer, unsigned int *length)
-     * }
-     */
-    public static MemorySegment hb_buffer_get_glyph_infos(MemorySegment buffer, MemorySegment length) {
-        var mh$ = hb_buffer_get_glyph_infos.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_get_glyph_infos", buffer, length);
-            }
-            return (MemorySegment)mh$.invokeExact(buffer, length);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_get_glyph_positions {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_get_glyph_positions"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_glyph_position_t *hb_buffer_get_glyph_positions(hb_buffer_t *buffer, unsigned int *length)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_get_glyph_positions$descriptor() {
-        return hb_buffer_get_glyph_positions.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_glyph_position_t *hb_buffer_get_glyph_positions(hb_buffer_t *buffer, unsigned int *length)
-     * }
-     */
-    public static MethodHandle hb_buffer_get_glyph_positions$handle() {
-        return hb_buffer_get_glyph_positions.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_glyph_position_t *hb_buffer_get_glyph_positions(hb_buffer_t *buffer, unsigned int *length)
-     * }
-     */
-    public static MemorySegment hb_buffer_get_glyph_positions(MemorySegment buffer, MemorySegment length) {
-        var mh$ = hb_buffer_get_glyph_positions.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_get_glyph_positions", buffer, length);
-            }
-            return (MemorySegment)mh$.invokeExact(buffer, length);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_has_positions {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_has_positions"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_buffer_has_positions(hb_buffer_t *buffer)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_has_positions$descriptor() {
-        return hb_buffer_has_positions.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_buffer_has_positions(hb_buffer_t *buffer)
-     * }
-     */
-    public static MethodHandle hb_buffer_has_positions$handle() {
-        return hb_buffer_has_positions.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_buffer_has_positions(hb_buffer_t *buffer)
-     * }
-     */
-    public static int hb_buffer_has_positions(MemorySegment buffer) {
-        var mh$ = hb_buffer_has_positions.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_has_positions", buffer);
-            }
-            return (int)mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_normalize_glyphs {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_normalize_glyphs"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_normalize_glyphs(hb_buffer_t *buffer)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_normalize_glyphs$descriptor() {
-        return hb_buffer_normalize_glyphs.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_normalize_glyphs(hb_buffer_t *buffer)
-     * }
-     */
-    public static MethodHandle hb_buffer_normalize_glyphs$handle() {
-        return hb_buffer_normalize_glyphs.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_normalize_glyphs(hb_buffer_t *buffer)
-     * }
-     */
-    public static void hb_buffer_normalize_glyphs(MemorySegment buffer) {
-        var mh$ = hb_buffer_normalize_glyphs.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_normalize_glyphs", buffer);
-            }
-            mh$.invokeExact(buffer);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    private static final int HB_BUFFER_SERIALIZE_FLAG_DEFAULT = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_SERIALIZE_FLAG_DEFAULT = 0
-     * }
-     */
-    public static int HB_BUFFER_SERIALIZE_FLAG_DEFAULT() {
-        return HB_BUFFER_SERIALIZE_FLAG_DEFAULT;
-    }
-    private static final int HB_BUFFER_SERIALIZE_FLAG_NO_CLUSTERS = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_SERIALIZE_FLAG_NO_CLUSTERS = 1
-     * }
-     */
-    public static int HB_BUFFER_SERIALIZE_FLAG_NO_CLUSTERS() {
-        return HB_BUFFER_SERIALIZE_FLAG_NO_CLUSTERS;
-    }
-    private static final int HB_BUFFER_SERIALIZE_FLAG_NO_POSITIONS = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_SERIALIZE_FLAG_NO_POSITIONS = 2
-     * }
-     */
-    public static int HB_BUFFER_SERIALIZE_FLAG_NO_POSITIONS() {
-        return HB_BUFFER_SERIALIZE_FLAG_NO_POSITIONS;
-    }
-    private static final int HB_BUFFER_SERIALIZE_FLAG_NO_GLYPH_NAMES = (int)4L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_SERIALIZE_FLAG_NO_GLYPH_NAMES = 4
-     * }
-     */
-    public static int HB_BUFFER_SERIALIZE_FLAG_NO_GLYPH_NAMES() {
-        return HB_BUFFER_SERIALIZE_FLAG_NO_GLYPH_NAMES;
-    }
-    private static final int HB_BUFFER_SERIALIZE_FLAG_GLYPH_EXTENTS = (int)8L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_SERIALIZE_FLAG_GLYPH_EXTENTS = 8
-     * }
-     */
-    public static int HB_BUFFER_SERIALIZE_FLAG_GLYPH_EXTENTS() {
-        return HB_BUFFER_SERIALIZE_FLAG_GLYPH_EXTENTS;
-    }
-    private static final int HB_BUFFER_SERIALIZE_FLAG_GLYPH_FLAGS = (int)16L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_SERIALIZE_FLAG_GLYPH_FLAGS = 16
-     * }
-     */
-    public static int HB_BUFFER_SERIALIZE_FLAG_GLYPH_FLAGS() {
-        return HB_BUFFER_SERIALIZE_FLAG_GLYPH_FLAGS;
-    }
-    private static final int HB_BUFFER_SERIALIZE_FLAG_NO_ADVANCES = (int)32L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_SERIALIZE_FLAG_NO_ADVANCES = 32
-     * }
-     */
-    public static int HB_BUFFER_SERIALIZE_FLAG_NO_ADVANCES() {
-        return HB_BUFFER_SERIALIZE_FLAG_NO_ADVANCES;
-    }
-    private static final int HB_BUFFER_SERIALIZE_FLAG_DEFINED = (int)63L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_SERIALIZE_FLAG_DEFINED = 63
-     * }
-     */
-    public static int HB_BUFFER_SERIALIZE_FLAG_DEFINED() {
-        return HB_BUFFER_SERIALIZE_FLAG_DEFINED;
-    }
-    private static final int HB_BUFFER_SERIALIZE_FORMAT_TEXT = (int)1413830740L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_SERIALIZE_FORMAT_TEXT = 1413830740
-     * }
-     */
-    public static int HB_BUFFER_SERIALIZE_FORMAT_TEXT() {
-        return HB_BUFFER_SERIALIZE_FORMAT_TEXT;
-    }
-    private static final int HB_BUFFER_SERIALIZE_FORMAT_JSON = (int)1246973774L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_SERIALIZE_FORMAT_JSON = 1246973774
-     * }
-     */
-    public static int HB_BUFFER_SERIALIZE_FORMAT_JSON() {
-        return HB_BUFFER_SERIALIZE_FORMAT_JSON;
-    }
-    private static final int HB_BUFFER_SERIALIZE_FORMAT_INVALID = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_SERIALIZE_FORMAT_INVALID = 0
-     * }
-     */
-    public static int HB_BUFFER_SERIALIZE_FORMAT_INVALID() {
-        return HB_BUFFER_SERIALIZE_FORMAT_INVALID;
-    }
-
-    private static class hb_buffer_serialize_format_from_string {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_serialize_format_from_string"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_buffer_serialize_format_t hb_buffer_serialize_format_from_string(const char *str, int len)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_serialize_format_from_string$descriptor() {
-        return hb_buffer_serialize_format_from_string.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_buffer_serialize_format_t hb_buffer_serialize_format_from_string(const char *str, int len)
-     * }
-     */
-    public static MethodHandle hb_buffer_serialize_format_from_string$handle() {
-        return hb_buffer_serialize_format_from_string.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_buffer_serialize_format_t hb_buffer_serialize_format_from_string(const char *str, int len)
-     * }
-     */
-    public static int hb_buffer_serialize_format_from_string(MemorySegment str, int len) {
-        var mh$ = hb_buffer_serialize_format_from_string.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_serialize_format_from_string", str, len);
-            }
-            return (int)mh$.invokeExact(str, len);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_serialize_format_to_string {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_serialize_format_to_string"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern const char *hb_buffer_serialize_format_to_string(hb_buffer_serialize_format_t format)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_serialize_format_to_string$descriptor() {
-        return hb_buffer_serialize_format_to_string.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern const char *hb_buffer_serialize_format_to_string(hb_buffer_serialize_format_t format)
-     * }
-     */
-    public static MethodHandle hb_buffer_serialize_format_to_string$handle() {
-        return hb_buffer_serialize_format_to_string.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern const char *hb_buffer_serialize_format_to_string(hb_buffer_serialize_format_t format)
-     * }
-     */
-    public static MemorySegment hb_buffer_serialize_format_to_string(int format) {
-        var mh$ = hb_buffer_serialize_format_to_string.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_serialize_format_to_string", format);
-            }
-            return (MemorySegment)mh$.invokeExact(format);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_serialize_list_formats {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER    );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_serialize_list_formats"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern const char **hb_buffer_serialize_list_formats()
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_serialize_list_formats$descriptor() {
-        return hb_buffer_serialize_list_formats.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern const char **hb_buffer_serialize_list_formats()
-     * }
-     */
-    public static MethodHandle hb_buffer_serialize_list_formats$handle() {
-        return hb_buffer_serialize_list_formats.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern const char **hb_buffer_serialize_list_formats()
-     * }
-     */
-    public static MemorySegment hb_buffer_serialize_list_formats() {
-        var mh$ = hb_buffer_serialize_list_formats.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_serialize_list_formats");
-            }
-            return (MemorySegment)mh$.invokeExact();
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_serialize_glyphs {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_serialize_glyphs"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern unsigned int hb_buffer_serialize_glyphs(hb_buffer_t *buffer, unsigned int start, unsigned int end, char *buf, unsigned int buf_size, unsigned int *buf_consumed, hb_font_t *font, hb_buffer_serialize_format_t format, hb_buffer_serialize_flags_t flags)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_serialize_glyphs$descriptor() {
-        return hb_buffer_serialize_glyphs.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern unsigned int hb_buffer_serialize_glyphs(hb_buffer_t *buffer, unsigned int start, unsigned int end, char *buf, unsigned int buf_size, unsigned int *buf_consumed, hb_font_t *font, hb_buffer_serialize_format_t format, hb_buffer_serialize_flags_t flags)
-     * }
-     */
-    public static MethodHandle hb_buffer_serialize_glyphs$handle() {
-        return hb_buffer_serialize_glyphs.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern unsigned int hb_buffer_serialize_glyphs(hb_buffer_t *buffer, unsigned int start, unsigned int end, char *buf, unsigned int buf_size, unsigned int *buf_consumed, hb_font_t *font, hb_buffer_serialize_format_t format, hb_buffer_serialize_flags_t flags)
-     * }
-     */
-    public static int hb_buffer_serialize_glyphs(MemorySegment buffer, int start, int end, MemorySegment buf, int buf_size, MemorySegment buf_consumed, MemorySegment font, int format, int flags) {
-        var mh$ = hb_buffer_serialize_glyphs.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_serialize_glyphs", buffer, start, end, buf, buf_size, buf_consumed, font, format, flags);
-            }
-            return (int)mh$.invokeExact(buffer, start, end, buf, buf_size, buf_consumed, font, format, flags);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_serialize_unicode {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_serialize_unicode"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern unsigned int hb_buffer_serialize_unicode(hb_buffer_t *buffer, unsigned int start, unsigned int end, char *buf, unsigned int buf_size, unsigned int *buf_consumed, hb_buffer_serialize_format_t format, hb_buffer_serialize_flags_t flags)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_serialize_unicode$descriptor() {
-        return hb_buffer_serialize_unicode.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern unsigned int hb_buffer_serialize_unicode(hb_buffer_t *buffer, unsigned int start, unsigned int end, char *buf, unsigned int buf_size, unsigned int *buf_consumed, hb_buffer_serialize_format_t format, hb_buffer_serialize_flags_t flags)
-     * }
-     */
-    public static MethodHandle hb_buffer_serialize_unicode$handle() {
-        return hb_buffer_serialize_unicode.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern unsigned int hb_buffer_serialize_unicode(hb_buffer_t *buffer, unsigned int start, unsigned int end, char *buf, unsigned int buf_size, unsigned int *buf_consumed, hb_buffer_serialize_format_t format, hb_buffer_serialize_flags_t flags)
-     * }
-     */
-    public static int hb_buffer_serialize_unicode(MemorySegment buffer, int start, int end, MemorySegment buf, int buf_size, MemorySegment buf_consumed, int format, int flags) {
-        var mh$ = hb_buffer_serialize_unicode.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_serialize_unicode", buffer, start, end, buf, buf_size, buf_consumed, format, flags);
-            }
-            return (int)mh$.invokeExact(buffer, start, end, buf, buf_size, buf_consumed, format, flags);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_serialize {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_serialize"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern unsigned int hb_buffer_serialize(hb_buffer_t *buffer, unsigned int start, unsigned int end, char *buf, unsigned int buf_size, unsigned int *buf_consumed, hb_font_t *font, hb_buffer_serialize_format_t format, hb_buffer_serialize_flags_t flags)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_serialize$descriptor() {
-        return hb_buffer_serialize.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern unsigned int hb_buffer_serialize(hb_buffer_t *buffer, unsigned int start, unsigned int end, char *buf, unsigned int buf_size, unsigned int *buf_consumed, hb_font_t *font, hb_buffer_serialize_format_t format, hb_buffer_serialize_flags_t flags)
-     * }
-     */
-    public static MethodHandle hb_buffer_serialize$handle() {
-        return hb_buffer_serialize.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern unsigned int hb_buffer_serialize(hb_buffer_t *buffer, unsigned int start, unsigned int end, char *buf, unsigned int buf_size, unsigned int *buf_consumed, hb_font_t *font, hb_buffer_serialize_format_t format, hb_buffer_serialize_flags_t flags)
-     * }
-     */
-    public static int hb_buffer_serialize(MemorySegment buffer, int start, int end, MemorySegment buf, int buf_size, MemorySegment buf_consumed, MemorySegment font, int format, int flags) {
-        var mh$ = hb_buffer_serialize.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_serialize", buffer, start, end, buf, buf_size, buf_consumed, font, format, flags);
-            }
-            return (int)mh$.invokeExact(buffer, start, end, buf, buf_size, buf_consumed, font, format, flags);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_deserialize_glyphs {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_deserialize_glyphs"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_buffer_deserialize_glyphs(hb_buffer_t *buffer, const char *buf, int buf_len, const char **end_ptr, hb_font_t *font, hb_buffer_serialize_format_t format)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_deserialize_glyphs$descriptor() {
-        return hb_buffer_deserialize_glyphs.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_buffer_deserialize_glyphs(hb_buffer_t *buffer, const char *buf, int buf_len, const char **end_ptr, hb_font_t *font, hb_buffer_serialize_format_t format)
-     * }
-     */
-    public static MethodHandle hb_buffer_deserialize_glyphs$handle() {
-        return hb_buffer_deserialize_glyphs.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_buffer_deserialize_glyphs(hb_buffer_t *buffer, const char *buf, int buf_len, const char **end_ptr, hb_font_t *font, hb_buffer_serialize_format_t format)
-     * }
-     */
-    public static int hb_buffer_deserialize_glyphs(MemorySegment buffer, MemorySegment buf, int buf_len, MemorySegment end_ptr, MemorySegment font, int format) {
-        var mh$ = hb_buffer_deserialize_glyphs.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_deserialize_glyphs", buffer, buf, buf_len, end_ptr, font, format);
-            }
-            return (int)mh$.invokeExact(buffer, buf, buf_len, end_ptr, font, format);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_deserialize_unicode {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_deserialize_unicode"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_buffer_deserialize_unicode(hb_buffer_t *buffer, const char *buf, int buf_len, const char **end_ptr, hb_buffer_serialize_format_t format)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_deserialize_unicode$descriptor() {
-        return hb_buffer_deserialize_unicode.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_buffer_deserialize_unicode(hb_buffer_t *buffer, const char *buf, int buf_len, const char **end_ptr, hb_buffer_serialize_format_t format)
-     * }
-     */
-    public static MethodHandle hb_buffer_deserialize_unicode$handle() {
-        return hb_buffer_deserialize_unicode.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_buffer_deserialize_unicode(hb_buffer_t *buffer, const char *buf, int buf_len, const char **end_ptr, hb_buffer_serialize_format_t format)
-     * }
-     */
-    public static int hb_buffer_deserialize_unicode(MemorySegment buffer, MemorySegment buf, int buf_len, MemorySegment end_ptr, int format) {
-        var mh$ = hb_buffer_deserialize_unicode.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_deserialize_unicode", buffer, buf, buf_len, end_ptr, format);
-            }
-            return (int)mh$.invokeExact(buffer, buf, buf_len, end_ptr, format);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    private static final int HB_BUFFER_DIFF_FLAG_EQUAL = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_DIFF_FLAG_EQUAL = 0
-     * }
-     */
-    public static int HB_BUFFER_DIFF_FLAG_EQUAL() {
-        return HB_BUFFER_DIFF_FLAG_EQUAL;
-    }
-    private static final int HB_BUFFER_DIFF_FLAG_CONTENT_TYPE_MISMATCH = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_DIFF_FLAG_CONTENT_TYPE_MISMATCH = 1
-     * }
-     */
-    public static int HB_BUFFER_DIFF_FLAG_CONTENT_TYPE_MISMATCH() {
-        return HB_BUFFER_DIFF_FLAG_CONTENT_TYPE_MISMATCH;
-    }
-    private static final int HB_BUFFER_DIFF_FLAG_LENGTH_MISMATCH = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_DIFF_FLAG_LENGTH_MISMATCH = 2
-     * }
-     */
-    public static int HB_BUFFER_DIFF_FLAG_LENGTH_MISMATCH() {
-        return HB_BUFFER_DIFF_FLAG_LENGTH_MISMATCH;
-    }
-    private static final int HB_BUFFER_DIFF_FLAG_NOTDEF_PRESENT = (int)4L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_DIFF_FLAG_NOTDEF_PRESENT = 4
-     * }
-     */
-    public static int HB_BUFFER_DIFF_FLAG_NOTDEF_PRESENT() {
-        return HB_BUFFER_DIFF_FLAG_NOTDEF_PRESENT;
-    }
-    private static final int HB_BUFFER_DIFF_FLAG_DOTTED_CIRCLE_PRESENT = (int)8L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_DIFF_FLAG_DOTTED_CIRCLE_PRESENT = 8
-     * }
-     */
-    public static int HB_BUFFER_DIFF_FLAG_DOTTED_CIRCLE_PRESENT() {
-        return HB_BUFFER_DIFF_FLAG_DOTTED_CIRCLE_PRESENT;
-    }
-    private static final int HB_BUFFER_DIFF_FLAG_CODEPOINT_MISMATCH = (int)16L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_DIFF_FLAG_CODEPOINT_MISMATCH = 16
-     * }
-     */
-    public static int HB_BUFFER_DIFF_FLAG_CODEPOINT_MISMATCH() {
-        return HB_BUFFER_DIFF_FLAG_CODEPOINT_MISMATCH;
-    }
-    private static final int HB_BUFFER_DIFF_FLAG_CLUSTER_MISMATCH = (int)32L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_DIFF_FLAG_CLUSTER_MISMATCH = 32
-     * }
-     */
-    public static int HB_BUFFER_DIFF_FLAG_CLUSTER_MISMATCH() {
-        return HB_BUFFER_DIFF_FLAG_CLUSTER_MISMATCH;
-    }
-    private static final int HB_BUFFER_DIFF_FLAG_GLYPH_FLAGS_MISMATCH = (int)64L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_DIFF_FLAG_GLYPH_FLAGS_MISMATCH = 64
-     * }
-     */
-    public static int HB_BUFFER_DIFF_FLAG_GLYPH_FLAGS_MISMATCH() {
-        return HB_BUFFER_DIFF_FLAG_GLYPH_FLAGS_MISMATCH;
-    }
-    private static final int HB_BUFFER_DIFF_FLAG_POSITION_MISMATCH = (int)128L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_DIFF_FLAG_POSITION_MISMATCH = 128
-     * }
-     */
-    public static int HB_BUFFER_DIFF_FLAG_POSITION_MISMATCH() {
-        return HB_BUFFER_DIFF_FLAG_POSITION_MISMATCH;
-    }
-
-    private static class hb_buffer_diff {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_diff"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_buffer_diff_flags_t hb_buffer_diff(hb_buffer_t *buffer, hb_buffer_t *reference, hb_codepoint_t dottedcircle_glyph, unsigned int position_fuzz)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_diff$descriptor() {
-        return hb_buffer_diff.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_buffer_diff_flags_t hb_buffer_diff(hb_buffer_t *buffer, hb_buffer_t *reference, hb_codepoint_t dottedcircle_glyph, unsigned int position_fuzz)
-     * }
-     */
-    public static MethodHandle hb_buffer_diff$handle() {
-        return hb_buffer_diff.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_buffer_diff_flags_t hb_buffer_diff(hb_buffer_t *buffer, hb_buffer_t *reference, hb_codepoint_t dottedcircle_glyph, unsigned int position_fuzz)
-     * }
-     */
-    public static int hb_buffer_diff(MemorySegment buffer, MemorySegment reference, int dottedcircle_glyph, int position_fuzz) {
-        var mh$ = hb_buffer_diff.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_diff", buffer, reference, dottedcircle_glyph, position_fuzz);
-            }
-            return (int)mh$.invokeExact(buffer, reference, dottedcircle_glyph, position_fuzz);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_set_message_func {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_buffer_set_message_func"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_message_func(hb_buffer_t *buffer, hb_buffer_message_func_t func, void *user_data, hb_destroy_func_t destroy)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_set_message_func$descriptor() {
-        return hb_buffer_set_message_func.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_message_func(hb_buffer_t *buffer, hb_buffer_message_func_t func, void *user_data, hb_destroy_func_t destroy)
-     * }
-     */
-    public static MethodHandle hb_buffer_set_message_func$handle() {
-        return hb_buffer_set_message_func.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_message_func(hb_buffer_t *buffer, hb_buffer_message_func_t func, void *user_data, hb_destroy_func_t destroy)
-     * }
-     */
-    public static void hb_buffer_set_message_func(MemorySegment buffer, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
-        var mh$ = hb_buffer_set_message_func.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_set_message_func", buffer, func, user_data, destroy);
-            }
-            mh$.invokeExact(buffer, func, user_data, destroy);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_font_funcs_set_glyph_func {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_set_glyph_func"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_font_funcs_set_glyph_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_func_t func, void *user_data, hb_destroy_func_t destroy)
-     * }
-     */
-    public static FunctionDescriptor hb_font_funcs_set_glyph_func$descriptor() {
-        return hb_font_funcs_set_glyph_func.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_font_funcs_set_glyph_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_func_t func, void *user_data, hb_destroy_func_t destroy)
-     * }
-     */
-    public static MethodHandle hb_font_funcs_set_glyph_func$handle() {
-        return hb_font_funcs_set_glyph_func.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_font_funcs_set_glyph_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_func_t func, void *user_data, hb_destroy_func_t destroy)
-     * }
-     */
-    public static void hb_font_funcs_set_glyph_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
-        var mh$ = hb_font_funcs_set_glyph_func.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_font_funcs_set_glyph_func", ffuncs, func, user_data, destroy);
-            }
-            mh$.invokeExact(ffuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_unicode_funcs_set_eastasian_width_func {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_funcs_set_eastasian_width_func"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_unicode_funcs_set_eastasian_width_func(hb_unicode_funcs_t *ufuncs, hb_unicode_eastasian_width_func_t func, void *user_data, hb_destroy_func_t destroy)
-     * }
-     */
-    public static FunctionDescriptor hb_unicode_funcs_set_eastasian_width_func$descriptor() {
-        return hb_unicode_funcs_set_eastasian_width_func.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_unicode_funcs_set_eastasian_width_func(hb_unicode_funcs_t *ufuncs, hb_unicode_eastasian_width_func_t func, void *user_data, hb_destroy_func_t destroy)
-     * }
-     */
-    public static MethodHandle hb_unicode_funcs_set_eastasian_width_func$handle() {
-        return hb_unicode_funcs_set_eastasian_width_func.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_unicode_funcs_set_eastasian_width_func(hb_unicode_funcs_t *ufuncs, hb_unicode_eastasian_width_func_t func, void *user_data, hb_destroy_func_t destroy)
-     * }
-     */
-    public static void hb_unicode_funcs_set_eastasian_width_func(MemorySegment ufuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
-        var mh$ = hb_unicode_funcs_set_eastasian_width_func.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_unicode_funcs_set_eastasian_width_func", ufuncs, func, user_data, destroy);
-            }
-            mh$.invokeExact(ufuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_unicode_eastasian_width {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_eastasian_width"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern unsigned int hb_unicode_eastasian_width(hb_unicode_funcs_t *ufuncs, hb_codepoint_t unicode)
-     * }
-     */
-    public static FunctionDescriptor hb_unicode_eastasian_width$descriptor() {
-        return hb_unicode_eastasian_width.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern unsigned int hb_unicode_eastasian_width(hb_unicode_funcs_t *ufuncs, hb_codepoint_t unicode)
-     * }
-     */
-    public static MethodHandle hb_unicode_eastasian_width$handle() {
-        return hb_unicode_eastasian_width.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern unsigned int hb_unicode_eastasian_width(hb_unicode_funcs_t *ufuncs, hb_codepoint_t unicode)
-     * }
-     */
-    public static int hb_unicode_eastasian_width(MemorySegment ufuncs, int unicode) {
-        var mh$ = hb_unicode_eastasian_width.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_unicode_eastasian_width", ufuncs, unicode);
-            }
-            return (int)mh$.invokeExact(ufuncs, unicode);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_unicode_funcs_set_decompose_compatibility_func {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_funcs_set_decompose_compatibility_func"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_unicode_funcs_set_decompose_compatibility_func(hb_unicode_funcs_t *ufuncs, hb_unicode_decompose_compatibility_func_t func, void *user_data, hb_destroy_func_t destroy)
-     * }
-     */
-    public static FunctionDescriptor hb_unicode_funcs_set_decompose_compatibility_func$descriptor() {
-        return hb_unicode_funcs_set_decompose_compatibility_func.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_unicode_funcs_set_decompose_compatibility_func(hb_unicode_funcs_t *ufuncs, hb_unicode_decompose_compatibility_func_t func, void *user_data, hb_destroy_func_t destroy)
-     * }
-     */
-    public static MethodHandle hb_unicode_funcs_set_decompose_compatibility_func$handle() {
-        return hb_unicode_funcs_set_decompose_compatibility_func.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_unicode_funcs_set_decompose_compatibility_func(hb_unicode_funcs_t *ufuncs, hb_unicode_decompose_compatibility_func_t func, void *user_data, hb_destroy_func_t destroy)
-     * }
-     */
-    public static void hb_unicode_funcs_set_decompose_compatibility_func(MemorySegment ufuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
-        var mh$ = hb_unicode_funcs_set_decompose_compatibility_func.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_unicode_funcs_set_decompose_compatibility_func", ufuncs, func, user_data, destroy);
-            }
-            mh$.invokeExact(ufuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_unicode_decompose_compatibility {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_unicode_decompose_compatibility"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern unsigned int hb_unicode_decompose_compatibility(hb_unicode_funcs_t *ufuncs, hb_codepoint_t u, hb_codepoint_t *decomposed)
-     * }
-     */
-    public static FunctionDescriptor hb_unicode_decompose_compatibility$descriptor() {
-        return hb_unicode_decompose_compatibility.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern unsigned int hb_unicode_decompose_compatibility(hb_unicode_funcs_t *ufuncs, hb_codepoint_t u, hb_codepoint_t *decomposed)
-     * }
-     */
-    public static MethodHandle hb_unicode_decompose_compatibility$handle() {
-        return hb_unicode_decompose_compatibility.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern unsigned int hb_unicode_decompose_compatibility(hb_unicode_funcs_t *ufuncs, hb_codepoint_t u, hb_codepoint_t *decomposed)
-     * }
-     */
-    public static int hb_unicode_decompose_compatibility(MemorySegment ufuncs, int u, MemorySegment decomposed) {
-        var mh$ = hb_unicode_decompose_compatibility.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_unicode_decompose_compatibility", ufuncs, u, decomposed);
-            }
-            return (int)mh$.invokeExact(ufuncs, u, decomposed);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_font_funcs_set_glyph_v_kerning_func {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_set_glyph_v_kerning_func"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_font_funcs_set_glyph_v_kerning_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_v_kerning_func_t func, void *user_data, hb_destroy_func_t destroy)
-     * }
-     */
-    public static FunctionDescriptor hb_font_funcs_set_glyph_v_kerning_func$descriptor() {
-        return hb_font_funcs_set_glyph_v_kerning_func.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_font_funcs_set_glyph_v_kerning_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_v_kerning_func_t func, void *user_data, hb_destroy_func_t destroy)
-     * }
-     */
-    public static MethodHandle hb_font_funcs_set_glyph_v_kerning_func$handle() {
-        return hb_font_funcs_set_glyph_v_kerning_func.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_font_funcs_set_glyph_v_kerning_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_v_kerning_func_t func, void *user_data, hb_destroy_func_t destroy)
-     * }
-     */
-    public static void hb_font_funcs_set_glyph_v_kerning_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
-        var mh$ = hb_font_funcs_set_glyph_v_kerning_func.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_font_funcs_set_glyph_v_kerning_func", ffuncs, func, user_data, destroy);
-            }
-            mh$.invokeExact(ffuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_font_get_glyph_v_kerning {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_glyph_v_kerning"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_position_t hb_font_get_glyph_v_kerning(hb_font_t *font, hb_codepoint_t top_glyph, hb_codepoint_t bottom_glyph)
-     * }
-     */
-    public static FunctionDescriptor hb_font_get_glyph_v_kerning$descriptor() {
-        return hb_font_get_glyph_v_kerning.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_position_t hb_font_get_glyph_v_kerning(hb_font_t *font, hb_codepoint_t top_glyph, hb_codepoint_t bottom_glyph)
-     * }
-     */
-    public static MethodHandle hb_font_get_glyph_v_kerning$handle() {
-        return hb_font_get_glyph_v_kerning.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_position_t hb_font_get_glyph_v_kerning(hb_font_t *font, hb_codepoint_t top_glyph, hb_codepoint_t bottom_glyph)
-     * }
-     */
-    public static int hb_font_get_glyph_v_kerning(MemorySegment font, int top_glyph, int bottom_glyph) {
-        var mh$ = hb_font_get_glyph_v_kerning.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_font_get_glyph_v_kerning", font, top_glyph, bottom_glyph);
-            }
-            return (int)mh$.invokeExact(font, top_glyph, bottom_glyph);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_font_funcs_set_glyph_shape_func {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_funcs_set_glyph_shape_func"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_font_funcs_set_glyph_shape_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_shape_func_t func, void *user_data, hb_destroy_func_t destroy)
-     * }
-     */
-    public static FunctionDescriptor hb_font_funcs_set_glyph_shape_func$descriptor() {
-        return hb_font_funcs_set_glyph_shape_func.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_font_funcs_set_glyph_shape_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_shape_func_t func, void *user_data, hb_destroy_func_t destroy)
-     * }
-     */
-    public static MethodHandle hb_font_funcs_set_glyph_shape_func$handle() {
-        return hb_font_funcs_set_glyph_shape_func.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_font_funcs_set_glyph_shape_func(hb_font_funcs_t *ffuncs, hb_font_get_glyph_shape_func_t func, void *user_data, hb_destroy_func_t destroy)
-     * }
-     */
-    public static void hb_font_funcs_set_glyph_shape_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
-        var mh$ = hb_font_funcs_set_glyph_shape_func.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_font_funcs_set_glyph_shape_func", ffuncs, func, user_data, destroy);
-            }
-            mh$.invokeExact(ffuncs, func, user_data, destroy);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_font_get_glyph_shape {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_font_get_glyph_shape"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_font_get_glyph_shape(hb_font_t *font, hb_codepoint_t glyph, hb_draw_funcs_t *dfuncs, void *draw_data)
-     * }
-     */
-    public static FunctionDescriptor hb_font_get_glyph_shape$descriptor() {
-        return hb_font_get_glyph_shape.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_font_get_glyph_shape(hb_font_t *font, hb_codepoint_t glyph, hb_draw_funcs_t *dfuncs, void *draw_data)
-     * }
-     */
-    public static MethodHandle hb_font_get_glyph_shape$handle() {
-        return hb_font_get_glyph_shape.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_font_get_glyph_shape(hb_font_t *font, hb_codepoint_t glyph, hb_draw_funcs_t *dfuncs, void *draw_data)
-     * }
-     */
-    public static void hb_font_get_glyph_shape(MemorySegment font, int glyph, MemorySegment dfuncs, MemorySegment draw_data) {
-        var mh$ = hb_font_get_glyph_shape.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_font_get_glyph_shape", font, glyph, dfuncs, draw_data);
-            }
-            mh$.invokeExact(font, glyph, dfuncs, draw_data);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_shape {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_shape"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_shape(hb_font_t *font, hb_buffer_t *buffer, const hb_feature_t *features, unsigned int num_features)
-     * }
-     */
-    public static FunctionDescriptor hb_shape$descriptor() {
-        return hb_shape.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_shape(hb_font_t *font, hb_buffer_t *buffer, const hb_feature_t *features, unsigned int num_features)
-     * }
-     */
-    public static MethodHandle hb_shape$handle() {
-        return hb_shape.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_shape(hb_font_t *font, hb_buffer_t *buffer, const hb_feature_t *features, unsigned int num_features)
-     * }
-     */
-    public static void hb_shape(MemorySegment font, MemorySegment buffer, MemorySegment features, int num_features) {
-        var mh$ = hb_shape.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_shape", font, buffer, features, num_features);
-            }
-            mh$.invokeExact(font, buffer, features, num_features);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_shape_full {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_shape_full"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_shape_full(hb_font_t *font, hb_buffer_t *buffer, const hb_feature_t *features, unsigned int num_features, const char *const *shaper_list)
-     * }
-     */
-    public static FunctionDescriptor hb_shape_full$descriptor() {
-        return hb_shape_full.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_shape_full(hb_font_t *font, hb_buffer_t *buffer, const hb_feature_t *features, unsigned int num_features, const char *const *shaper_list)
-     * }
-     */
-    public static MethodHandle hb_shape_full$handle() {
-        return hb_shape_full.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_shape_full(hb_font_t *font, hb_buffer_t *buffer, const hb_feature_t *features, unsigned int num_features, const char *const *shaper_list)
-     * }
-     */
-    public static int hb_shape_full(MemorySegment font, MemorySegment buffer, MemorySegment features, int num_features, MemorySegment shaper_list) {
-        var mh$ = hb_shape_full.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_shape_full", font, buffer, features, num_features, shaper_list);
-            }
-            return (int)mh$.invokeExact(font, buffer, features, num_features, shaper_list);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_shape_justify {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_FLOAT,
-            app_indicator_h.C_FLOAT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_shape_justify"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_shape_justify(hb_font_t *font, hb_buffer_t *buffer, const hb_feature_t *features, unsigned int num_features, const char *const *shaper_list, float min_target_advance, float max_target_advance, float *advance, hb_tag_t *var_tag, float *var_value)
-     * }
-     */
-    public static FunctionDescriptor hb_shape_justify$descriptor() {
-        return hb_shape_justify.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_shape_justify(hb_font_t *font, hb_buffer_t *buffer, const hb_feature_t *features, unsigned int num_features, const char *const *shaper_list, float min_target_advance, float max_target_advance, float *advance, hb_tag_t *var_tag, float *var_value)
-     * }
-     */
-    public static MethodHandle hb_shape_justify$handle() {
-        return hb_shape_justify.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_shape_justify(hb_font_t *font, hb_buffer_t *buffer, const hb_feature_t *features, unsigned int num_features, const char *const *shaper_list, float min_target_advance, float max_target_advance, float *advance, hb_tag_t *var_tag, float *var_value)
-     * }
-     */
-    public static int hb_shape_justify(MemorySegment font, MemorySegment buffer, MemorySegment features, int num_features, MemorySegment shaper_list, float min_target_advance, float max_target_advance, MemorySegment advance, MemorySegment var_tag, MemorySegment var_value) {
-        var mh$ = hb_shape_justify.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_shape_justify", font, buffer, features, num_features, shaper_list, min_target_advance, max_target_advance, advance, var_tag, var_value);
-            }
-            return (int)mh$.invokeExact(font, buffer, features, num_features, shaper_list, min_target_advance, max_target_advance, advance, var_tag, var_value);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_shape_list_shapers {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER    );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_shape_list_shapers"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern const char **hb_shape_list_shapers()
-     * }
-     */
-    public static FunctionDescriptor hb_shape_list_shapers$descriptor() {
-        return hb_shape_list_shapers.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern const char **hb_shape_list_shapers()
-     * }
-     */
-    public static MethodHandle hb_shape_list_shapers$handle() {
-        return hb_shape_list_shapers.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern const char **hb_shape_list_shapers()
-     * }
-     */
-    public static MemorySegment hb_shape_list_shapers() {
-        var mh$ = hb_shape_list_shapers.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_shape_list_shapers");
-            }
-            return (MemorySegment)mh$.invokeExact();
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_shape_plan_create {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_shape_plan_create"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_shape_plan_t *hb_shape_plan_create(hb_face_t *face, const hb_segment_properties_t *props, const hb_feature_t *user_features, unsigned int num_user_features, const char *const *shaper_list)
-     * }
-     */
-    public static FunctionDescriptor hb_shape_plan_create$descriptor() {
-        return hb_shape_plan_create.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_shape_plan_t *hb_shape_plan_create(hb_face_t *face, const hb_segment_properties_t *props, const hb_feature_t *user_features, unsigned int num_user_features, const char *const *shaper_list)
-     * }
-     */
-    public static MethodHandle hb_shape_plan_create$handle() {
-        return hb_shape_plan_create.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_shape_plan_t *hb_shape_plan_create(hb_face_t *face, const hb_segment_properties_t *props, const hb_feature_t *user_features, unsigned int num_user_features, const char *const *shaper_list)
-     * }
-     */
-    public static MemorySegment hb_shape_plan_create(MemorySegment face, MemorySegment props, MemorySegment user_features, int num_user_features, MemorySegment shaper_list) {
-        var mh$ = hb_shape_plan_create.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_shape_plan_create", face, props, user_features, num_user_features, shaper_list);
-            }
-            return (MemorySegment)mh$.invokeExact(face, props, user_features, num_user_features, shaper_list);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_shape_plan_create_cached {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_shape_plan_create_cached"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_shape_plan_t *hb_shape_plan_create_cached(hb_face_t *face, const hb_segment_properties_t *props, const hb_feature_t *user_features, unsigned int num_user_features, const char *const *shaper_list)
-     * }
-     */
-    public static FunctionDescriptor hb_shape_plan_create_cached$descriptor() {
-        return hb_shape_plan_create_cached.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_shape_plan_t *hb_shape_plan_create_cached(hb_face_t *face, const hb_segment_properties_t *props, const hb_feature_t *user_features, unsigned int num_user_features, const char *const *shaper_list)
-     * }
-     */
-    public static MethodHandle hb_shape_plan_create_cached$handle() {
-        return hb_shape_plan_create_cached.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_shape_plan_t *hb_shape_plan_create_cached(hb_face_t *face, const hb_segment_properties_t *props, const hb_feature_t *user_features, unsigned int num_user_features, const char *const *shaper_list)
-     * }
-     */
-    public static MemorySegment hb_shape_plan_create_cached(MemorySegment face, MemorySegment props, MemorySegment user_features, int num_user_features, MemorySegment shaper_list) {
-        var mh$ = hb_shape_plan_create_cached.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_shape_plan_create_cached", face, props, user_features, num_user_features, shaper_list);
-            }
-            return (MemorySegment)mh$.invokeExact(face, props, user_features, num_user_features, shaper_list);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_shape_plan_create2 {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_shape_plan_create2"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_shape_plan_t *hb_shape_plan_create2(hb_face_t *face, const hb_segment_properties_t *props, const hb_feature_t *user_features, unsigned int num_user_features, const int *coords, unsigned int num_coords, const char *const *shaper_list)
-     * }
-     */
-    public static FunctionDescriptor hb_shape_plan_create2$descriptor() {
-        return hb_shape_plan_create2.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_shape_plan_t *hb_shape_plan_create2(hb_face_t *face, const hb_segment_properties_t *props, const hb_feature_t *user_features, unsigned int num_user_features, const int *coords, unsigned int num_coords, const char *const *shaper_list)
-     * }
-     */
-    public static MethodHandle hb_shape_plan_create2$handle() {
-        return hb_shape_plan_create2.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_shape_plan_t *hb_shape_plan_create2(hb_face_t *face, const hb_segment_properties_t *props, const hb_feature_t *user_features, unsigned int num_user_features, const int *coords, unsigned int num_coords, const char *const *shaper_list)
-     * }
-     */
-    public static MemorySegment hb_shape_plan_create2(MemorySegment face, MemorySegment props, MemorySegment user_features, int num_user_features, MemorySegment coords, int num_coords, MemorySegment shaper_list) {
-        var mh$ = hb_shape_plan_create2.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_shape_plan_create2", face, props, user_features, num_user_features, coords, num_coords, shaper_list);
-            }
-            return (MemorySegment)mh$.invokeExact(face, props, user_features, num_user_features, coords, num_coords, shaper_list);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_shape_plan_create_cached2 {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_shape_plan_create_cached2"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_shape_plan_t *hb_shape_plan_create_cached2(hb_face_t *face, const hb_segment_properties_t *props, const hb_feature_t *user_features, unsigned int num_user_features, const int *coords, unsigned int num_coords, const char *const *shaper_list)
-     * }
-     */
-    public static FunctionDescriptor hb_shape_plan_create_cached2$descriptor() {
-        return hb_shape_plan_create_cached2.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_shape_plan_t *hb_shape_plan_create_cached2(hb_face_t *face, const hb_segment_properties_t *props, const hb_feature_t *user_features, unsigned int num_user_features, const int *coords, unsigned int num_coords, const char *const *shaper_list)
-     * }
-     */
-    public static MethodHandle hb_shape_plan_create_cached2$handle() {
-        return hb_shape_plan_create_cached2.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_shape_plan_t *hb_shape_plan_create_cached2(hb_face_t *face, const hb_segment_properties_t *props, const hb_feature_t *user_features, unsigned int num_user_features, const int *coords, unsigned int num_coords, const char *const *shaper_list)
-     * }
-     */
-    public static MemorySegment hb_shape_plan_create_cached2(MemorySegment face, MemorySegment props, MemorySegment user_features, int num_user_features, MemorySegment coords, int num_coords, MemorySegment shaper_list) {
-        var mh$ = hb_shape_plan_create_cached2.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_shape_plan_create_cached2", face, props, user_features, num_user_features, coords, num_coords, shaper_list);
-            }
-            return (MemorySegment)mh$.invokeExact(face, props, user_features, num_user_features, coords, num_coords, shaper_list);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_shape_plan_get_empty {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER    );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_shape_plan_get_empty"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_shape_plan_t *hb_shape_plan_get_empty()
-     * }
-     */
-    public static FunctionDescriptor hb_shape_plan_get_empty$descriptor() {
-        return hb_shape_plan_get_empty.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_shape_plan_t *hb_shape_plan_get_empty()
-     * }
-     */
-    public static MethodHandle hb_shape_plan_get_empty$handle() {
-        return hb_shape_plan_get_empty.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_shape_plan_t *hb_shape_plan_get_empty()
-     * }
-     */
-    public static MemorySegment hb_shape_plan_get_empty() {
-        var mh$ = hb_shape_plan_get_empty.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_shape_plan_get_empty");
-            }
-            return (MemorySegment)mh$.invokeExact();
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_shape_plan_reference {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_shape_plan_reference"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_shape_plan_t *hb_shape_plan_reference(hb_shape_plan_t *shape_plan)
-     * }
-     */
-    public static FunctionDescriptor hb_shape_plan_reference$descriptor() {
-        return hb_shape_plan_reference.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_shape_plan_t *hb_shape_plan_reference(hb_shape_plan_t *shape_plan)
-     * }
-     */
-    public static MethodHandle hb_shape_plan_reference$handle() {
-        return hb_shape_plan_reference.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_shape_plan_t *hb_shape_plan_reference(hb_shape_plan_t *shape_plan)
-     * }
-     */
-    public static MemorySegment hb_shape_plan_reference(MemorySegment shape_plan) {
-        var mh$ = hb_shape_plan_reference.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_shape_plan_reference", shape_plan);
-            }
-            return (MemorySegment)mh$.invokeExact(shape_plan);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_shape_plan_destroy {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_shape_plan_destroy"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_shape_plan_destroy(hb_shape_plan_t *shape_plan)
-     * }
-     */
-    public static FunctionDescriptor hb_shape_plan_destroy$descriptor() {
-        return hb_shape_plan_destroy.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_shape_plan_destroy(hb_shape_plan_t *shape_plan)
-     * }
-     */
-    public static MethodHandle hb_shape_plan_destroy$handle() {
-        return hb_shape_plan_destroy.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_shape_plan_destroy(hb_shape_plan_t *shape_plan)
-     * }
-     */
-    public static void hb_shape_plan_destroy(MemorySegment shape_plan) {
-        var mh$ = hb_shape_plan_destroy.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_shape_plan_destroy", shape_plan);
-            }
-            mh$.invokeExact(shape_plan);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_shape_plan_set_user_data {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_shape_plan_set_user_data"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_shape_plan_set_user_data(hb_shape_plan_t *shape_plan, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
-     * }
-     */
-    public static FunctionDescriptor hb_shape_plan_set_user_data$descriptor() {
-        return hb_shape_plan_set_user_data.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_shape_plan_set_user_data(hb_shape_plan_t *shape_plan, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
-     * }
-     */
-    public static MethodHandle hb_shape_plan_set_user_data$handle() {
-        return hb_shape_plan_set_user_data.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_shape_plan_set_user_data(hb_shape_plan_t *shape_plan, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
-     * }
-     */
-    public static int hb_shape_plan_set_user_data(MemorySegment shape_plan, MemorySegment key, MemorySegment data, MemorySegment destroy, int replace) {
-        var mh$ = hb_shape_plan_set_user_data.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_shape_plan_set_user_data", shape_plan, key, data, destroy, replace);
-            }
-            return (int)mh$.invokeExact(shape_plan, key, data, destroy, replace);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_shape_plan_get_user_data {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_shape_plan_get_user_data"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void *hb_shape_plan_get_user_data(const hb_shape_plan_t *shape_plan, hb_user_data_key_t *key)
-     * }
-     */
-    public static FunctionDescriptor hb_shape_plan_get_user_data$descriptor() {
-        return hb_shape_plan_get_user_data.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void *hb_shape_plan_get_user_data(const hb_shape_plan_t *shape_plan, hb_user_data_key_t *key)
-     * }
-     */
-    public static MethodHandle hb_shape_plan_get_user_data$handle() {
-        return hb_shape_plan_get_user_data.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void *hb_shape_plan_get_user_data(const hb_shape_plan_t *shape_plan, hb_user_data_key_t *key)
-     * }
-     */
-    public static MemorySegment hb_shape_plan_get_user_data(MemorySegment shape_plan, MemorySegment key) {
-        var mh$ = hb_shape_plan_get_user_data.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_shape_plan_get_user_data", shape_plan, key);
-            }
-            return (MemorySegment)mh$.invokeExact(shape_plan, key);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_shape_plan_execute {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_shape_plan_execute"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_shape_plan_execute(hb_shape_plan_t *shape_plan, hb_font_t *font, hb_buffer_t *buffer, const hb_feature_t *features, unsigned int num_features)
-     * }
-     */
-    public static FunctionDescriptor hb_shape_plan_execute$descriptor() {
-        return hb_shape_plan_execute.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_shape_plan_execute(hb_shape_plan_t *shape_plan, hb_font_t *font, hb_buffer_t *buffer, const hb_feature_t *features, unsigned int num_features)
-     * }
-     */
-    public static MethodHandle hb_shape_plan_execute$handle() {
-        return hb_shape_plan_execute.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_shape_plan_execute(hb_shape_plan_t *shape_plan, hb_font_t *font, hb_buffer_t *buffer, const hb_feature_t *features, unsigned int num_features)
-     * }
-     */
-    public static int hb_shape_plan_execute(MemorySegment shape_plan, MemorySegment font, MemorySegment buffer, MemorySegment features, int num_features) {
-        var mh$ = hb_shape_plan_execute.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_shape_plan_execute", shape_plan, font, buffer, features, num_features);
-            }
-            return (int)mh$.invokeExact(shape_plan, font, buffer, features, num_features);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_shape_plan_get_shaper {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_shape_plan_get_shaper"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern const char *hb_shape_plan_get_shaper(hb_shape_plan_t *shape_plan)
-     * }
-     */
-    public static FunctionDescriptor hb_shape_plan_get_shaper$descriptor() {
-        return hb_shape_plan_get_shaper.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern const char *hb_shape_plan_get_shaper(hb_shape_plan_t *shape_plan)
-     * }
-     */
-    public static MethodHandle hb_shape_plan_get_shaper$handle() {
-        return hb_shape_plan_get_shaper.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern const char *hb_shape_plan_get_shaper(hb_shape_plan_t *shape_plan)
-     * }
-     */
-    public static MemorySegment hb_shape_plan_get_shaper(MemorySegment shape_plan) {
-        var mh$ = hb_shape_plan_get_shaper.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_shape_plan_get_shaper", shape_plan);
-            }
-            return (MemorySegment)mh$.invokeExact(shape_plan);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    private static final int HB_STYLE_TAG_ITALIC = (int)1769234796L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_STYLE_TAG_ITALIC = 1769234796
-     * }
-     */
-    public static int HB_STYLE_TAG_ITALIC() {
-        return HB_STYLE_TAG_ITALIC;
-    }
-    private static final int HB_STYLE_TAG_OPTICAL_SIZE = (int)1869640570L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_STYLE_TAG_OPTICAL_SIZE = 1869640570
-     * }
-     */
-    public static int HB_STYLE_TAG_OPTICAL_SIZE() {
-        return HB_STYLE_TAG_OPTICAL_SIZE;
-    }
-    private static final int HB_STYLE_TAG_SLANT_ANGLE = (int)1936486004L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_STYLE_TAG_SLANT_ANGLE = 1936486004
-     * }
-     */
-    public static int HB_STYLE_TAG_SLANT_ANGLE() {
-        return HB_STYLE_TAG_SLANT_ANGLE;
-    }
-    private static final int HB_STYLE_TAG_SLANT_RATIO = (int)1399615092L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_STYLE_TAG_SLANT_RATIO = 1399615092
-     * }
-     */
-    public static int HB_STYLE_TAG_SLANT_RATIO() {
-        return HB_STYLE_TAG_SLANT_RATIO;
-    }
-    private static final int HB_STYLE_TAG_WIDTH = (int)2003072104L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_STYLE_TAG_WIDTH = 2003072104
-     * }
-     */
-    public static int HB_STYLE_TAG_WIDTH() {
-        return HB_STYLE_TAG_WIDTH;
-    }
-    private static final int HB_STYLE_TAG_WEIGHT = (int)2003265652L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_STYLE_TAG_WEIGHT = 2003265652
-     * }
-     */
-    public static int HB_STYLE_TAG_WEIGHT() {
-        return HB_STYLE_TAG_WEIGHT;
-    }
-    private static final int _HB_STYLE_TAG_MAX_VALUE = (int)2147483647L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>._HB_STYLE_TAG_MAX_VALUE = 2147483647
-     * }
-     */
-    public static int _HB_STYLE_TAG_MAX_VALUE() {
-        return _HB_STYLE_TAG_MAX_VALUE;
-    }
-
-    private static class hb_style_get_value {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_FLOAT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_style_get_value"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern float hb_style_get_value(hb_font_t *font, hb_style_tag_t style_tag)
-     * }
-     */
-    public static FunctionDescriptor hb_style_get_value$descriptor() {
-        return hb_style_get_value.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern float hb_style_get_value(hb_font_t *font, hb_style_tag_t style_tag)
-     * }
-     */
-    public static MethodHandle hb_style_get_value$handle() {
-        return hb_style_get_value.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern float hb_style_get_value(hb_font_t *font, hb_style_tag_t style_tag)
-     * }
-     */
-    public static float hb_style_get_value(MemorySegment font, int style_tag) {
-        var mh$ = hb_style_get_value.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_style_get_value", font, style_tag);
-            }
-            return (float)mh$.invokeExact(font, style_tag);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_version {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_version"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_version(unsigned int *major, unsigned int *minor, unsigned int *micro)
-     * }
-     */
-    public static FunctionDescriptor hb_version$descriptor() {
-        return hb_version.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_version(unsigned int *major, unsigned int *minor, unsigned int *micro)
-     * }
-     */
-    public static MethodHandle hb_version$handle() {
-        return hb_version.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void hb_version(unsigned int *major, unsigned int *minor, unsigned int *micro)
-     * }
-     */
-    public static void hb_version(MemorySegment major, MemorySegment minor, MemorySegment micro) {
-        var mh$ = hb_version.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_version", major, minor, micro);
-            }
-            mh$.invokeExact(major, minor, micro);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_version_string {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER    );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_version_string"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern const char *hb_version_string()
-     * }
-     */
-    public static FunctionDescriptor hb_version_string$descriptor() {
-        return hb_version_string.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern const char *hb_version_string()
-     * }
-     */
-    public static MethodHandle hb_version_string$handle() {
-        return hb_version_string.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern const char *hb_version_string()
-     * }
-     */
-    public static MemorySegment hb_version_string() {
-        var mh$ = hb_version_string.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_version_string");
-            }
-            return (MemorySegment)mh$.invokeExact();
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_version_atleast {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("hb_version_atleast"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_version_atleast(unsigned int major, unsigned int minor, unsigned int micro)
-     * }
-     */
-    public static FunctionDescriptor hb_version_atleast$descriptor() {
-        return hb_version_atleast.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_version_atleast(unsigned int major, unsigned int minor, unsigned int micro)
-     * }
-     */
-    public static MethodHandle hb_version_atleast$handle() {
-        return hb_version_atleast.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_version_atleast(unsigned int major, unsigned int minor, unsigned int micro)
-     * }
-     */
-    public static int hb_version_atleast(int major, int minor, int micro) {
-        var mh$ = hb_version_atleast.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_version_atleast", major, minor, micro);
-            }
-            return (int)mh$.invokeExact(major, minor, micro);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    private static final int PANGO_COVERAGE_NONE = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.PANGO_COVERAGE_NONE = 0
-     * }
-     */
-    public static int PANGO_COVERAGE_NONE() {
-        return PANGO_COVERAGE_NONE;
-    }
-    private static final int PANGO_COVERAGE_FALLBACK = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.PANGO_COVERAGE_FALLBACK = 1
-     * }
-     */
-    public static int PANGO_COVERAGE_FALLBACK() {
-        return PANGO_COVERAGE_FALLBACK;
-    }
-    private static final int PANGO_COVERAGE_APPROXIMATE = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.PANGO_COVERAGE_APPROXIMATE = 2
-     * }
-     */
-    public static int PANGO_COVERAGE_APPROXIMATE() {
-        return PANGO_COVERAGE_APPROXIMATE;
-    }
-    private static final int PANGO_COVERAGE_EXACT = (int)3L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.PANGO_COVERAGE_EXACT = 3
-     * }
-     */
-    public static int PANGO_COVERAGE_EXACT() {
-        return PANGO_COVERAGE_EXACT;
-    }
-
-    private static class pango_coverage_get_type {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_LONG    );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_coverage_get_type"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GType pango_coverage_get_type()
-     * }
-     */
-    public static FunctionDescriptor pango_coverage_get_type$descriptor() {
-        return pango_coverage_get_type.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GType pango_coverage_get_type()
-     * }
-     */
-    public static MethodHandle pango_coverage_get_type$handle() {
-        return pango_coverage_get_type.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern GType pango_coverage_get_type()
-     * }
-     */
-    public static long pango_coverage_get_type() {
-        var mh$ = pango_coverage_get_type.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_coverage_get_type");
-            }
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_coverage_new {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER    );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_coverage_new"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern PangoCoverage *pango_coverage_new()
-     * }
-     */
-    public static FunctionDescriptor pango_coverage_new$descriptor() {
-        return pango_coverage_new.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern PangoCoverage *pango_coverage_new()
-     * }
-     */
-    public static MethodHandle pango_coverage_new$handle() {
-        return pango_coverage_new.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern PangoCoverage *pango_coverage_new()
-     * }
-     */
-    public static MemorySegment pango_coverage_new() {
-        var mh$ = pango_coverage_new.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_coverage_new");
-            }
-            return (MemorySegment)mh$.invokeExact();
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_coverage_ref {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_coverage_ref"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern PangoCoverage *pango_coverage_ref(PangoCoverage *coverage)
-     * }
-     */
-    public static FunctionDescriptor pango_coverage_ref$descriptor() {
-        return pango_coverage_ref.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern PangoCoverage *pango_coverage_ref(PangoCoverage *coverage)
-     * }
-     */
-    public static MethodHandle pango_coverage_ref$handle() {
-        return pango_coverage_ref.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern PangoCoverage *pango_coverage_ref(PangoCoverage *coverage)
-     * }
-     */
-    public static MemorySegment pango_coverage_ref(MemorySegment coverage) {
-        var mh$ = pango_coverage_ref.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_coverage_ref", coverage);
-            }
-            return (MemorySegment)mh$.invokeExact(coverage);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_coverage_unref {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_coverage_unref"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void pango_coverage_unref(PangoCoverage *coverage)
-     * }
-     */
-    public static FunctionDescriptor pango_coverage_unref$descriptor() {
-        return pango_coverage_unref.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void pango_coverage_unref(PangoCoverage *coverage)
-     * }
-     */
-    public static MethodHandle pango_coverage_unref$handle() {
-        return pango_coverage_unref.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void pango_coverage_unref(PangoCoverage *coverage)
-     * }
-     */
-    public static void pango_coverage_unref(MemorySegment coverage) {
-        var mh$ = pango_coverage_unref.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_coverage_unref", coverage);
-            }
-            mh$.invokeExact(coverage);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_coverage_copy {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_coverage_copy"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern PangoCoverage *pango_coverage_copy(PangoCoverage *coverage)
-     * }
-     */
-    public static FunctionDescriptor pango_coverage_copy$descriptor() {
-        return pango_coverage_copy.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern PangoCoverage *pango_coverage_copy(PangoCoverage *coverage)
-     * }
-     */
-    public static MethodHandle pango_coverage_copy$handle() {
-        return pango_coverage_copy.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern PangoCoverage *pango_coverage_copy(PangoCoverage *coverage)
-     * }
-     */
-    public static MemorySegment pango_coverage_copy(MemorySegment coverage) {
-        var mh$ = pango_coverage_copy.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_coverage_copy", coverage);
-            }
-            return (MemorySegment)mh$.invokeExact(coverage);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_coverage_get {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_coverage_get"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern PangoCoverageLevel pango_coverage_get(PangoCoverage *coverage, int index_)
-     * }
-     */
-    public static FunctionDescriptor pango_coverage_get$descriptor() {
-        return pango_coverage_get.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern PangoCoverageLevel pango_coverage_get(PangoCoverage *coverage, int index_)
-     * }
-     */
-    public static MethodHandle pango_coverage_get$handle() {
-        return pango_coverage_get.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern PangoCoverageLevel pango_coverage_get(PangoCoverage *coverage, int index_)
-     * }
-     */
-    public static int pango_coverage_get(MemorySegment coverage, int index_) {
-        var mh$ = pango_coverage_get.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_coverage_get", coverage, index_);
-            }
-            return (int)mh$.invokeExact(coverage, index_);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_coverage_set {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_coverage_set"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void pango_coverage_set(PangoCoverage *coverage, int index_, PangoCoverageLevel level)
-     * }
-     */
-    public static FunctionDescriptor pango_coverage_set$descriptor() {
-        return pango_coverage_set.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void pango_coverage_set(PangoCoverage *coverage, int index_, PangoCoverageLevel level)
-     * }
-     */
-    public static MethodHandle pango_coverage_set$handle() {
-        return pango_coverage_set.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void pango_coverage_set(PangoCoverage *coverage, int index_, PangoCoverageLevel level)
-     * }
-     */
-    public static void pango_coverage_set(MemorySegment coverage, int index_, int level) {
-        var mh$ = pango_coverage_set.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_coverage_set", coverage, index_, level);
-            }
-            mh$.invokeExact(coverage, index_, level);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_coverage_max {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_coverage_max"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void pango_coverage_max(PangoCoverage *coverage, PangoCoverage *other)
-     * }
-     */
-    public static FunctionDescriptor pango_coverage_max$descriptor() {
-        return pango_coverage_max.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void pango_coverage_max(PangoCoverage *coverage, PangoCoverage *other)
-     * }
-     */
-    public static MethodHandle pango_coverage_max$handle() {
-        return pango_coverage_max.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void pango_coverage_max(PangoCoverage *coverage, PangoCoverage *other)
-     * }
-     */
-    public static void pango_coverage_max(MemorySegment coverage, MemorySegment other) {
-        var mh$ = pango_coverage_max.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_coverage_max", coverage, other);
-            }
-            mh$.invokeExact(coverage, other);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_coverage_to_bytes {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_coverage_to_bytes"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void pango_coverage_to_bytes(PangoCoverage *coverage, guchar **bytes, int *n_bytes)
-     * }
-     */
-    public static FunctionDescriptor pango_coverage_to_bytes$descriptor() {
-        return pango_coverage_to_bytes.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void pango_coverage_to_bytes(PangoCoverage *coverage, guchar **bytes, int *n_bytes)
-     * }
-     */
-    public static MethodHandle pango_coverage_to_bytes$handle() {
-        return pango_coverage_to_bytes.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void pango_coverage_to_bytes(PangoCoverage *coverage, guchar **bytes, int *n_bytes)
-     * }
-     */
-    public static void pango_coverage_to_bytes(MemorySegment coverage, MemorySegment bytes, MemorySegment n_bytes) {
-        var mh$ = pango_coverage_to_bytes.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_coverage_to_bytes", coverage, bytes, n_bytes);
-            }
-            mh$.invokeExact(coverage, bytes, n_bytes);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_coverage_from_bytes {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_coverage_from_bytes"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern PangoCoverage *pango_coverage_from_bytes(guchar *bytes, int n_bytes)
-     * }
-     */
-    public static FunctionDescriptor pango_coverage_from_bytes$descriptor() {
-        return pango_coverage_from_bytes.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern PangoCoverage *pango_coverage_from_bytes(guchar *bytes, int n_bytes)
-     * }
-     */
-    public static MethodHandle pango_coverage_from_bytes$handle() {
-        return pango_coverage_from_bytes.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern PangoCoverage *pango_coverage_from_bytes(guchar *bytes, int n_bytes)
-     * }
-     */
-    public static MemorySegment pango_coverage_from_bytes(MemorySegment bytes, int n_bytes) {
-        var mh$ = pango_coverage_from_bytes.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_coverage_from_bytes", bytes, n_bytes);
-            }
-            return (MemorySegment)mh$.invokeExact(bytes, n_bytes);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    /**
-     * {@snippet lang=c :
-     * typedef PangoCoverage *PangoCoverage_autoptr
-     * }
-     */
-    public static final AddressLayout PangoCoverage_autoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GList *PangoCoverage_listautoptr
-     * }
-     */
-    public static final AddressLayout PangoCoverage_listautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GSList *PangoCoverage_slistautoptr
-     * }
-     */
-    public static final AddressLayout PangoCoverage_slistautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GQueue *PangoCoverage_queueautoptr
-     * }
-     */
-    public static final AddressLayout PangoCoverage_queueautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef guint32 PangoGlyph
-     * }
-     */
-    public static final OfInt PangoGlyph = app_indicator_h.C_INT;
-
-    private static class pango_units_from_double {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_DOUBLE
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_units_from_double"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern int pango_units_from_double(double d)
-     * }
-     */
-    public static FunctionDescriptor pango_units_from_double$descriptor() {
-        return pango_units_from_double.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern int pango_units_from_double(double d)
-     * }
-     */
-    public static MethodHandle pango_units_from_double$handle() {
-        return pango_units_from_double.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern int pango_units_from_double(double d)
-     * }
-     */
-    public static int pango_units_from_double(double d) {
-        var mh$ = pango_units_from_double.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_units_from_double", d);
-            }
-            return (int)mh$.invokeExact(d);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_units_to_double {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_DOUBLE,
-            app_indicator_h.C_INT
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_units_to_double"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern double pango_units_to_double(int i)
-     * }
-     */
-    public static FunctionDescriptor pango_units_to_double$descriptor() {
-        return pango_units_to_double.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern double pango_units_to_double(int i)
-     * }
-     */
-    public static MethodHandle pango_units_to_double$handle() {
-        return pango_units_to_double.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern double pango_units_to_double(int i)
-     * }
-     */
-    public static double pango_units_to_double(int i) {
-        var mh$ = pango_units_to_double.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_units_to_double", i);
-            }
-            return (double)mh$.invokeExact(i);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_extents_to_pixels {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_extents_to_pixels"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void pango_extents_to_pixels(PangoRectangle *inclusive, PangoRectangle *nearest)
-     * }
-     */
-    public static FunctionDescriptor pango_extents_to_pixels$descriptor() {
-        return pango_extents_to_pixels.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void pango_extents_to_pixels(PangoRectangle *inclusive, PangoRectangle *nearest)
-     * }
-     */
-    public static MethodHandle pango_extents_to_pixels$handle() {
-        return pango_extents_to_pixels.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void pango_extents_to_pixels(PangoRectangle *inclusive, PangoRectangle *nearest)
-     * }
-     */
-    public static void pango_extents_to_pixels(MemorySegment inclusive, MemorySegment nearest) {
-        var mh$ = pango_extents_to_pixels.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_extents_to_pixels", inclusive, nearest);
-            }
-            mh$.invokeExact(inclusive, nearest);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    private static final int PANGO_GRAVITY_SOUTH = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.PANGO_GRAVITY_SOUTH = 0
-     * }
-     */
-    public static int PANGO_GRAVITY_SOUTH() {
-        return PANGO_GRAVITY_SOUTH;
-    }
-    private static final int PANGO_GRAVITY_EAST = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.PANGO_GRAVITY_EAST = 1
-     * }
-     */
-    public static int PANGO_GRAVITY_EAST() {
-        return PANGO_GRAVITY_EAST;
-    }
-    private static final int PANGO_GRAVITY_NORTH = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.PANGO_GRAVITY_NORTH = 2
-     * }
-     */
-    public static int PANGO_GRAVITY_NORTH() {
-        return PANGO_GRAVITY_NORTH;
-    }
-    private static final int PANGO_GRAVITY_WEST = (int)3L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.PANGO_GRAVITY_WEST = 3
-     * }
-     */
-    public static int PANGO_GRAVITY_WEST() {
-        return PANGO_GRAVITY_WEST;
-    }
-    private static final int PANGO_GRAVITY_AUTO = (int)4L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.PANGO_GRAVITY_AUTO = 4
-     * }
-     */
-    public static int PANGO_GRAVITY_AUTO() {
-        return PANGO_GRAVITY_AUTO;
-    }
-    private static final int PANGO_GRAVITY_HINT_NATURAL = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.PANGO_GRAVITY_HINT_NATURAL = 0
-     * }
-     */
-    public static int PANGO_GRAVITY_HINT_NATURAL() {
-        return PANGO_GRAVITY_HINT_NATURAL;
-    }
-    private static final int PANGO_GRAVITY_HINT_STRONG = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.PANGO_GRAVITY_HINT_STRONG = 1
-     * }
-     */
-    public static int PANGO_GRAVITY_HINT_STRONG() {
-        return PANGO_GRAVITY_HINT_STRONG;
-    }
-    private static final int PANGO_GRAVITY_HINT_LINE = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.PANGO_GRAVITY_HINT_LINE = 2
-     * }
-     */
-    public static int PANGO_GRAVITY_HINT_LINE() {
-        return PANGO_GRAVITY_HINT_LINE;
-    }
-
-    private static class pango_matrix_get_type {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_LONG    );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_matrix_get_type"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GType pango_matrix_get_type()
-     * }
-     */
-    public static FunctionDescriptor pango_matrix_get_type$descriptor() {
-        return pango_matrix_get_type.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GType pango_matrix_get_type()
-     * }
-     */
-    public static MethodHandle pango_matrix_get_type$handle() {
-        return pango_matrix_get_type.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern GType pango_matrix_get_type()
-     * }
-     */
-    public static long pango_matrix_get_type() {
-        var mh$ = pango_matrix_get_type.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_matrix_get_type");
-            }
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_matrix_copy {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_matrix_copy"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern PangoMatrix *pango_matrix_copy(const PangoMatrix *matrix)
-     * }
-     */
-    public static FunctionDescriptor pango_matrix_copy$descriptor() {
-        return pango_matrix_copy.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern PangoMatrix *pango_matrix_copy(const PangoMatrix *matrix)
-     * }
-     */
-    public static MethodHandle pango_matrix_copy$handle() {
-        return pango_matrix_copy.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern PangoMatrix *pango_matrix_copy(const PangoMatrix *matrix)
-     * }
-     */
-    public static MemorySegment pango_matrix_copy(MemorySegment matrix) {
-        var mh$ = pango_matrix_copy.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_matrix_copy", matrix);
-            }
-            return (MemorySegment)mh$.invokeExact(matrix);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_matrix_free {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_matrix_free"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void pango_matrix_free(PangoMatrix *matrix)
-     * }
-     */
-    public static FunctionDescriptor pango_matrix_free$descriptor() {
-        return pango_matrix_free.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void pango_matrix_free(PangoMatrix *matrix)
-     * }
-     */
-    public static MethodHandle pango_matrix_free$handle() {
-        return pango_matrix_free.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void pango_matrix_free(PangoMatrix *matrix)
-     * }
-     */
-    public static void pango_matrix_free(MemorySegment matrix) {
-        var mh$ = pango_matrix_free.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_matrix_free", matrix);
-            }
-            mh$.invokeExact(matrix);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_matrix_translate {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_DOUBLE,
-            app_indicator_h.C_DOUBLE
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_matrix_translate"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void pango_matrix_translate(PangoMatrix *matrix, double tx, double ty)
-     * }
-     */
-    public static FunctionDescriptor pango_matrix_translate$descriptor() {
-        return pango_matrix_translate.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void pango_matrix_translate(PangoMatrix *matrix, double tx, double ty)
-     * }
-     */
-    public static MethodHandle pango_matrix_translate$handle() {
-        return pango_matrix_translate.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void pango_matrix_translate(PangoMatrix *matrix, double tx, double ty)
-     * }
-     */
-    public static void pango_matrix_translate(MemorySegment matrix, double tx, double ty) {
-        var mh$ = pango_matrix_translate.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_matrix_translate", matrix, tx, ty);
-            }
-            mh$.invokeExact(matrix, tx, ty);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_matrix_scale {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_DOUBLE,
-            app_indicator_h.C_DOUBLE
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_matrix_scale"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void pango_matrix_scale(PangoMatrix *matrix, double scale_x, double scale_y)
-     * }
-     */
-    public static FunctionDescriptor pango_matrix_scale$descriptor() {
-        return pango_matrix_scale.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void pango_matrix_scale(PangoMatrix *matrix, double scale_x, double scale_y)
-     * }
-     */
-    public static MethodHandle pango_matrix_scale$handle() {
-        return pango_matrix_scale.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void pango_matrix_scale(PangoMatrix *matrix, double scale_x, double scale_y)
-     * }
-     */
-    public static void pango_matrix_scale(MemorySegment matrix, double scale_x, double scale_y) {
-        var mh$ = pango_matrix_scale.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_matrix_scale", matrix, scale_x, scale_y);
-            }
-            mh$.invokeExact(matrix, scale_x, scale_y);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_matrix_rotate {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_DOUBLE
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_matrix_rotate"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void pango_matrix_rotate(PangoMatrix *matrix, double degrees)
-     * }
-     */
-    public static FunctionDescriptor pango_matrix_rotate$descriptor() {
-        return pango_matrix_rotate.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void pango_matrix_rotate(PangoMatrix *matrix, double degrees)
-     * }
-     */
-    public static MethodHandle pango_matrix_rotate$handle() {
-        return pango_matrix_rotate.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void pango_matrix_rotate(PangoMatrix *matrix, double degrees)
-     * }
-     */
-    public static void pango_matrix_rotate(MemorySegment matrix, double degrees) {
-        var mh$ = pango_matrix_rotate.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_matrix_rotate", matrix, degrees);
-            }
-            mh$.invokeExact(matrix, degrees);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_matrix_concat {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_matrix_concat"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void pango_matrix_concat(PangoMatrix *matrix, const PangoMatrix *new_matrix)
-     * }
-     */
-    public static FunctionDescriptor pango_matrix_concat$descriptor() {
-        return pango_matrix_concat.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void pango_matrix_concat(PangoMatrix *matrix, const PangoMatrix *new_matrix)
-     * }
-     */
-    public static MethodHandle pango_matrix_concat$handle() {
-        return pango_matrix_concat.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void pango_matrix_concat(PangoMatrix *matrix, const PangoMatrix *new_matrix)
-     * }
-     */
-    public static void pango_matrix_concat(MemorySegment matrix, MemorySegment new_matrix) {
-        var mh$ = pango_matrix_concat.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_matrix_concat", matrix, new_matrix);
-            }
-            mh$.invokeExact(matrix, new_matrix);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_matrix_transform_point {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_matrix_transform_point"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void pango_matrix_transform_point(const PangoMatrix *matrix, double *x, double *y)
-     * }
-     */
-    public static FunctionDescriptor pango_matrix_transform_point$descriptor() {
-        return pango_matrix_transform_point.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void pango_matrix_transform_point(const PangoMatrix *matrix, double *x, double *y)
-     * }
-     */
-    public static MethodHandle pango_matrix_transform_point$handle() {
-        return pango_matrix_transform_point.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void pango_matrix_transform_point(const PangoMatrix *matrix, double *x, double *y)
-     * }
-     */
-    public static void pango_matrix_transform_point(MemorySegment matrix, MemorySegment x, MemorySegment y) {
-        var mh$ = pango_matrix_transform_point.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_matrix_transform_point", matrix, x, y);
-            }
-            mh$.invokeExact(matrix, x, y);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_matrix_transform_distance {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_matrix_transform_distance"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void pango_matrix_transform_distance(const PangoMatrix *matrix, double *dx, double *dy)
-     * }
-     */
-    public static FunctionDescriptor pango_matrix_transform_distance$descriptor() {
-        return pango_matrix_transform_distance.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void pango_matrix_transform_distance(const PangoMatrix *matrix, double *dx, double *dy)
-     * }
-     */
-    public static MethodHandle pango_matrix_transform_distance$handle() {
-        return pango_matrix_transform_distance.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void pango_matrix_transform_distance(const PangoMatrix *matrix, double *dx, double *dy)
-     * }
-     */
-    public static void pango_matrix_transform_distance(MemorySegment matrix, MemorySegment dx, MemorySegment dy) {
-        var mh$ = pango_matrix_transform_distance.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_matrix_transform_distance", matrix, dx, dy);
-            }
-            mh$.invokeExact(matrix, dx, dy);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_matrix_transform_rectangle {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_matrix_transform_rectangle"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void pango_matrix_transform_rectangle(const PangoMatrix *matrix, PangoRectangle *rect)
-     * }
-     */
-    public static FunctionDescriptor pango_matrix_transform_rectangle$descriptor() {
-        return pango_matrix_transform_rectangle.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void pango_matrix_transform_rectangle(const PangoMatrix *matrix, PangoRectangle *rect)
-     * }
-     */
-    public static MethodHandle pango_matrix_transform_rectangle$handle() {
-        return pango_matrix_transform_rectangle.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void pango_matrix_transform_rectangle(const PangoMatrix *matrix, PangoRectangle *rect)
-     * }
-     */
-    public static void pango_matrix_transform_rectangle(MemorySegment matrix, MemorySegment rect) {
-        var mh$ = pango_matrix_transform_rectangle.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_matrix_transform_rectangle", matrix, rect);
-            }
-            mh$.invokeExact(matrix, rect);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_matrix_transform_pixel_rectangle {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_matrix_transform_pixel_rectangle"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void pango_matrix_transform_pixel_rectangle(const PangoMatrix *matrix, PangoRectangle *rect)
-     * }
-     */
-    public static FunctionDescriptor pango_matrix_transform_pixel_rectangle$descriptor() {
-        return pango_matrix_transform_pixel_rectangle.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void pango_matrix_transform_pixel_rectangle(const PangoMatrix *matrix, PangoRectangle *rect)
-     * }
-     */
-    public static MethodHandle pango_matrix_transform_pixel_rectangle$handle() {
-        return pango_matrix_transform_pixel_rectangle.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void pango_matrix_transform_pixel_rectangle(const PangoMatrix *matrix, PangoRectangle *rect)
-     * }
-     */
-    public static void pango_matrix_transform_pixel_rectangle(MemorySegment matrix, MemorySegment rect) {
-        var mh$ = pango_matrix_transform_pixel_rectangle.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_matrix_transform_pixel_rectangle", matrix, rect);
-            }
-            mh$.invokeExact(matrix, rect);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_matrix_get_font_scale_factor {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_DOUBLE,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_matrix_get_font_scale_factor"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern double pango_matrix_get_font_scale_factor(const PangoMatrix *matrix)
-     * }
-     */
-    public static FunctionDescriptor pango_matrix_get_font_scale_factor$descriptor() {
-        return pango_matrix_get_font_scale_factor.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern double pango_matrix_get_font_scale_factor(const PangoMatrix *matrix)
-     * }
-     */
-    public static MethodHandle pango_matrix_get_font_scale_factor$handle() {
-        return pango_matrix_get_font_scale_factor.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern double pango_matrix_get_font_scale_factor(const PangoMatrix *matrix)
-     * }
-     */
-    public static double pango_matrix_get_font_scale_factor(MemorySegment matrix) {
-        var mh$ = pango_matrix_get_font_scale_factor.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_matrix_get_font_scale_factor", matrix);
-            }
-            return (double)mh$.invokeExact(matrix);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_matrix_get_font_scale_factors {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_matrix_get_font_scale_factors"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void pango_matrix_get_font_scale_factors(const PangoMatrix *matrix, double *xscale, double *yscale)
-     * }
-     */
-    public static FunctionDescriptor pango_matrix_get_font_scale_factors$descriptor() {
-        return pango_matrix_get_font_scale_factors.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void pango_matrix_get_font_scale_factors(const PangoMatrix *matrix, double *xscale, double *yscale)
-     * }
-     */
-    public static MethodHandle pango_matrix_get_font_scale_factors$handle() {
-        return pango_matrix_get_font_scale_factors.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern void pango_matrix_get_font_scale_factors(const PangoMatrix *matrix, double *xscale, double *yscale)
-     * }
-     */
-    public static void pango_matrix_get_font_scale_factors(MemorySegment matrix, MemorySegment xscale, MemorySegment yscale) {
-        var mh$ = pango_matrix_get_font_scale_factors.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_matrix_get_font_scale_factors", matrix, xscale, yscale);
-            }
-            mh$.invokeExact(matrix, xscale, yscale);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pango_matrix_get_slant_ratio {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_DOUBLE,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pango_matrix_get_slant_ratio"),
-                    DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern double pango_matrix_get_slant_ratio(const PangoMatrix *matrix)
-     * }
-     */
-    public static FunctionDescriptor pango_matrix_get_slant_ratio$descriptor() {
-        return pango_matrix_get_slant_ratio.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern double pango_matrix_get_slant_ratio(const PangoMatrix *matrix)
-     * }
-     */
-    public static MethodHandle pango_matrix_get_slant_ratio$handle() {
-        return pango_matrix_get_slant_ratio.HANDLE;
-    }
-    /**
-     * {@snippet lang=c :
-     * extern double pango_matrix_get_slant_ratio(const PangoMatrix *matrix)
-     * }
-     */
-    public static double pango_matrix_get_slant_ratio(MemorySegment matrix) {
-        var mh$ = pango_matrix_get_slant_ratio.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pango_matrix_get_slant_ratio", matrix);
-            }
-            return (double)mh$.invokeExact(matrix);
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
     }
 }
 

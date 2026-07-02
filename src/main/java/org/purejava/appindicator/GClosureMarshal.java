@@ -2,22 +2,22 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
-import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
-
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.Linker;
+import java.lang.foreign.MemorySegment;
+import java.lang.invoke.MethodHandle;
 
 /**
  * {@snippet lang=c :
  * typedef void (*GClosureMarshal)(GClosure *, GValue *, guint, const GValue *, gpointer, gpointer)
  * }
  */
-public class GClosureMarshal {
+public final class GClosureMarshal {
+
+    private GClosureMarshal() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -57,9 +57,11 @@ public class GClosureMarshal {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment closure, MemorySegment return_value, int n_param_values, MemorySegment param_values, MemorySegment invocation_hint, MemorySegment marshal_data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment closure, MemorySegment return_value, int n_param_values, MemorySegment param_values, MemorySegment invocation_hint, MemorySegment marshal_data) {
         try {
              DOWN$MH.invokeExact(funcPtr, closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

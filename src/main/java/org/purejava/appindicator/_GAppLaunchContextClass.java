@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -64,7 +60,7 @@ public class _GAppLaunchContextClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -101,7 +97,11 @@ public class _GAppLaunchContextClass {
      * char *(*get_display)(GAppLaunchContext *, GAppInfo *, GList *)
      * }
      */
-    public class get_display {
+    public final static class get_display {
+
+        private get_display() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -139,9 +139,11 @@ public class _GAppLaunchContextClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -160,7 +162,7 @@ public class _GAppLaunchContextClass {
         return get_display$LAYOUT;
     }
 
-    private static final long get_display$OFFSET = 136;
+    private static final long get_display$OFFSET = $LAYOUT.byteOffset(groupElement("get_display"));
 
     /**
      * Offset for field:
@@ -197,7 +199,11 @@ public class _GAppLaunchContextClass {
      * char *(*get_startup_notify_id)(GAppLaunchContext *, GAppInfo *, GList *)
      * }
      */
-    public class get_startup_notify_id {
+    public final static class get_startup_notify_id {
+
+        private get_startup_notify_id() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -235,9 +241,11 @@ public class _GAppLaunchContextClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -256,7 +264,7 @@ public class _GAppLaunchContextClass {
         return get_startup_notify_id$LAYOUT;
     }
 
-    private static final long get_startup_notify_id$OFFSET = 144;
+    private static final long get_startup_notify_id$OFFSET = $LAYOUT.byteOffset(groupElement("get_startup_notify_id"));
 
     /**
      * Offset for field:
@@ -293,7 +301,11 @@ public class _GAppLaunchContextClass {
      * void (*launch_failed)(GAppLaunchContext *, const char *)
      * }
      */
-    public class launch_failed {
+    public final static class launch_failed {
+
+        private launch_failed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -329,9 +341,11 @@ public class _GAppLaunchContextClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -350,7 +364,7 @@ public class _GAppLaunchContextClass {
         return launch_failed$LAYOUT;
     }
 
-    private static final long launch_failed$OFFSET = 152;
+    private static final long launch_failed$OFFSET = $LAYOUT.byteOffset(groupElement("launch_failed"));
 
     /**
      * Offset for field:
@@ -387,7 +401,11 @@ public class _GAppLaunchContextClass {
      * void (*launched)(GAppLaunchContext *, GAppInfo *, GVariant *)
      * }
      */
-    public class launched {
+    public final static class launched {
+
+        private launched() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -424,9 +442,11 @@ public class _GAppLaunchContextClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -445,7 +465,7 @@ public class _GAppLaunchContextClass {
         return launched$LAYOUT;
     }
 
-    private static final long launched$OFFSET = 160;
+    private static final long launched$OFFSET = $LAYOUT.byteOffset(groupElement("launched"));
 
     /**
      * Offset for field:
@@ -482,7 +502,11 @@ public class _GAppLaunchContextClass {
      * void (*launch_started)(GAppLaunchContext *, GAppInfo *, GVariant *)
      * }
      */
-    public class launch_started {
+    public final static class launch_started {
+
+        private launch_started() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -519,9 +543,11 @@ public class _GAppLaunchContextClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -540,7 +566,7 @@ public class _GAppLaunchContextClass {
         return launch_started$LAYOUT;
     }
 
-    private static final long launch_started$OFFSET = 168;
+    private static final long launch_started$OFFSET = $LAYOUT.byteOffset(groupElement("launch_started"));
 
     /**
      * Offset for field:
@@ -577,7 +603,11 @@ public class _GAppLaunchContextClass {
      * void (*_g_reserved1)(void)
      * }
      */
-    public class _g_reserved1 {
+    public final static class _g_reserved1 {
+
+        private _g_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -613,6 +643,8 @@ public class _GAppLaunchContextClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -631,7 +663,7 @@ public class _GAppLaunchContextClass {
         return _g_reserved1$LAYOUT;
     }
 
-    private static final long _g_reserved1$OFFSET = 176;
+    private static final long _g_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved1"));
 
     /**
      * Offset for field:
@@ -668,7 +700,11 @@ public class _GAppLaunchContextClass {
      * void (*_g_reserved2)(void)
      * }
      */
-    public class _g_reserved2 {
+    public final static class _g_reserved2 {
+
+        private _g_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -704,6 +740,8 @@ public class _GAppLaunchContextClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -722,7 +760,7 @@ public class _GAppLaunchContextClass {
         return _g_reserved2$LAYOUT;
     }
 
-    private static final long _g_reserved2$OFFSET = 184;
+    private static final long _g_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved2"));
 
     /**
      * Offset for field:
@@ -759,7 +797,11 @@ public class _GAppLaunchContextClass {
      * void (*_g_reserved3)(void)
      * }
      */
-    public class _g_reserved3 {
+    public final static class _g_reserved3 {
+
+        private _g_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -795,6 +837,8 @@ public class _GAppLaunchContextClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -813,7 +857,7 @@ public class _GAppLaunchContextClass {
         return _g_reserved3$LAYOUT;
     }
 
-    private static final long _g_reserved3$OFFSET = 192;
+    private static final long _g_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved3"));
 
     /**
      * Offset for field:
@@ -874,7 +918,7 @@ public class _GAppLaunchContextClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -882,7 +926,7 @@ public class _GAppLaunchContextClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

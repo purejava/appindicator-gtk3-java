@@ -56,7 +56,7 @@ public class _GtkColorChooserInterface {
         return base_interface$LAYOUT;
     }
 
-    private static final long base_interface$OFFSET = 0;
+    private static final long base_interface$OFFSET = $LAYOUT.byteOffset(groupElement("base_interface"));
 
     /**
      * Offset for field:
@@ -93,7 +93,11 @@ public class _GtkColorChooserInterface {
      * void (*get_rgba)(GtkColorChooser *, GdkRGBA *)
      * }
      */
-    public class get_rgba {
+    public final static class get_rgba {
+
+        private get_rgba() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -129,9 +133,11 @@ public class _GtkColorChooserInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -150,7 +156,7 @@ public class _GtkColorChooserInterface {
         return get_rgba$LAYOUT;
     }
 
-    private static final long get_rgba$OFFSET = 16;
+    private static final long get_rgba$OFFSET = $LAYOUT.byteOffset(groupElement("get_rgba"));
 
     /**
      * Offset for field:
@@ -187,7 +193,11 @@ public class _GtkColorChooserInterface {
      * void (*set_rgba)(GtkColorChooser *, const GdkRGBA *)
      * }
      */
-    public class set_rgba {
+    public final static class set_rgba {
+
+        private set_rgba() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -223,9 +233,11 @@ public class _GtkColorChooserInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -244,7 +256,7 @@ public class _GtkColorChooserInterface {
         return set_rgba$LAYOUT;
     }
 
-    private static final long set_rgba$OFFSET = 24;
+    private static final long set_rgba$OFFSET = $LAYOUT.byteOffset(groupElement("set_rgba"));
 
     /**
      * Offset for field:
@@ -281,7 +293,11 @@ public class _GtkColorChooserInterface {
      * void (*add_palette)(GtkColorChooser *, GtkOrientation, gint, gint, GdkRGBA *)
      * }
      */
-    public class add_palette {
+    public final static class add_palette {
+
+        private add_palette() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -320,9 +336,11 @@ public class _GtkColorChooserInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2, int _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2, int _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -341,7 +359,7 @@ public class _GtkColorChooserInterface {
         return add_palette$LAYOUT;
     }
 
-    private static final long add_palette$OFFSET = 32;
+    private static final long add_palette$OFFSET = $LAYOUT.byteOffset(groupElement("add_palette"));
 
     /**
      * Offset for field:
@@ -378,7 +396,11 @@ public class _GtkColorChooserInterface {
      * void (*color_activated)(GtkColorChooser *, const GdkRGBA *)
      * }
      */
-    public class color_activated {
+    public final static class color_activated {
+
+        private color_activated() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -414,9 +436,11 @@ public class _GtkColorChooserInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -435,7 +459,7 @@ public class _GtkColorChooserInterface {
         return color_activated$LAYOUT;
     }
 
-    private static final long color_activated$OFFSET = 40;
+    private static final long color_activated$OFFSET = $LAYOUT.byteOffset(groupElement("color_activated"));
 
     /**
      * Offset for field:
@@ -479,7 +503,7 @@ public class _GtkColorChooserInterface {
         return padding$LAYOUT;
     }
 
-    private static final long padding$OFFSET = 48;
+    private static final long padding$OFFSET = $LAYOUT.byteOffset(groupElement("padding"));
 
     /**
      * Offset for field:
@@ -531,7 +555,7 @@ public class _GtkColorChooserInterface {
      * }
      */
     public static MemorySegment padding(MemorySegment struct, long index0) {
-        return (MemorySegment)padding$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)padding$ELEM_HANDLE.get(struct, padding$OFFSET, index0);
     }
 
     /**
@@ -541,7 +565,7 @@ public class _GtkColorChooserInterface {
      * }
      */
     public static void padding(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        padding$ELEM_HANDLE.set(struct, padding$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -573,7 +597,7 @@ public class _GtkColorChooserInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -581,7 +605,7 @@ public class _GtkColorChooserInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

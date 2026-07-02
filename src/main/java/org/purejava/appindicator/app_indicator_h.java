@@ -2,20 +2,5004 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
-import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
-
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import java.lang.foreign.MemorySegment;
 
 public class app_indicator_h extends app_indicator_h_1 {
 
     app_indicator_h() {
         // Should not be called directly
+    }
+    private static final long _POSIX_MESSAGE_PASSING = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_MESSAGE_PASSING 200809
+     * }
+     */
+    public static long _POSIX_MESSAGE_PASSING() {
+        return _POSIX_MESSAGE_PASSING;
+    }
+    private static final long _POSIX_THREAD_PROCESS_SHARED = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_THREAD_PROCESS_SHARED 200809
+     * }
+     */
+    public static long _POSIX_THREAD_PROCESS_SHARED() {
+        return _POSIX_THREAD_PROCESS_SHARED;
+    }
+    private static final long _POSIX_CLOCK_SELECTION = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_CLOCK_SELECTION 200809
+     * }
+     */
+    public static long _POSIX_CLOCK_SELECTION() {
+        return _POSIX_CLOCK_SELECTION;
+    }
+    private static final long _POSIX_ADVISORY_INFO = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_ADVISORY_INFO 200809
+     * }
+     */
+    public static long _POSIX_ADVISORY_INFO() {
+        return _POSIX_ADVISORY_INFO;
+    }
+    private static final long _POSIX_IPV6 = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_IPV6 200809
+     * }
+     */
+    public static long _POSIX_IPV6() {
+        return _POSIX_IPV6;
+    }
+    private static final long _POSIX_RAW_SOCKETS = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_RAW_SOCKETS 200809
+     * }
+     */
+    public static long _POSIX_RAW_SOCKETS() {
+        return _POSIX_RAW_SOCKETS;
+    }
+    private static final long _POSIX2_CHAR_TERM = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX2_CHAR_TERM 200809
+     * }
+     */
+    public static long _POSIX2_CHAR_TERM() {
+        return _POSIX2_CHAR_TERM;
+    }
+    private static final int _POSIX_SPORADIC_SERVER = (int)-1L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_SPORADIC_SERVER -1
+     * }
+     */
+    public static int _POSIX_SPORADIC_SERVER() {
+        return _POSIX_SPORADIC_SERVER;
+    }
+    private static final int _POSIX_THREAD_SPORADIC_SERVER = (int)-1L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_THREAD_SPORADIC_SERVER -1
+     * }
+     */
+    public static int _POSIX_THREAD_SPORADIC_SERVER() {
+        return _POSIX_THREAD_SPORADIC_SERVER;
+    }
+    private static final int _POSIX_TRACE = (int)-1L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_TRACE -1
+     * }
+     */
+    public static int _POSIX_TRACE() {
+        return _POSIX_TRACE;
+    }
+    private static final int _POSIX_TRACE_EVENT_FILTER = (int)-1L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_TRACE_EVENT_FILTER -1
+     * }
+     */
+    public static int _POSIX_TRACE_EVENT_FILTER() {
+        return _POSIX_TRACE_EVENT_FILTER;
+    }
+    private static final int _POSIX_TRACE_INHERIT = (int)-1L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_TRACE_INHERIT -1
+     * }
+     */
+    public static int _POSIX_TRACE_INHERIT() {
+        return _POSIX_TRACE_INHERIT;
+    }
+    private static final int _POSIX_TRACE_LOG = (int)-1L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_TRACE_LOG -1
+     * }
+     */
+    public static int _POSIX_TRACE_LOG() {
+        return _POSIX_TRACE_LOG;
+    }
+    private static final int _POSIX_TYPED_MEMORY_OBJECTS = (int)-1L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_TYPED_MEMORY_OBJECTS -1
+     * }
+     */
+    public static int _POSIX_TYPED_MEMORY_OBJECTS() {
+        return _POSIX_TYPED_MEMORY_OBJECTS;
+    }
+    private static final int _POSIX_V7_LPBIG_OFFBIG = (int)-1L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_V7_LPBIG_OFFBIG -1
+     * }
+     */
+    public static int _POSIX_V7_LPBIG_OFFBIG() {
+        return _POSIX_V7_LPBIG_OFFBIG;
+    }
+    private static final int _POSIX_V6_LPBIG_OFFBIG = (int)-1L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_V6_LPBIG_OFFBIG -1
+     * }
+     */
+    public static int _POSIX_V6_LPBIG_OFFBIG() {
+        return _POSIX_V6_LPBIG_OFFBIG;
+    }
+    private static final int _XBS5_LPBIG_OFFBIG = (int)-1L;
+    /**
+     * {@snippet lang=c :
+     * #define _XBS5_LPBIG_OFFBIG -1
+     * }
+     */
+    public static int _XBS5_LPBIG_OFFBIG() {
+        return _XBS5_LPBIG_OFFBIG;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define __ILP32_OFF32_CFLAGS "-m32"
+     * }
+     */
+    public static MemorySegment __ILP32_OFF32_CFLAGS() {
+        class Holder {
+            static final MemorySegment __ILP32_OFF32_CFLAGS
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("-m32");
+        }
+        return Holder.__ILP32_OFF32_CFLAGS;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define __ILP32_OFF32_LDFLAGS "-m32"
+     * }
+     */
+    public static MemorySegment __ILP32_OFF32_LDFLAGS() {
+        class Holder {
+            static final MemorySegment __ILP32_OFF32_LDFLAGS
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("-m32");
+        }
+        return Holder.__ILP32_OFF32_LDFLAGS;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define __ILP32_OFFBIG_CFLAGS "-m32 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64"
+     * }
+     */
+    public static MemorySegment __ILP32_OFFBIG_CFLAGS() {
+        class Holder {
+            static final MemorySegment __ILP32_OFFBIG_CFLAGS
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("-m32 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64");
+        }
+        return Holder.__ILP32_OFFBIG_CFLAGS;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define __ILP32_OFFBIG_LDFLAGS "-m32"
+     * }
+     */
+    public static MemorySegment __ILP32_OFFBIG_LDFLAGS() {
+        class Holder {
+            static final MemorySegment __ILP32_OFFBIG_LDFLAGS
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("-m32");
+        }
+        return Holder.__ILP32_OFFBIG_LDFLAGS;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define __LP64_OFF64_CFLAGS "-m64"
+     * }
+     */
+    public static MemorySegment __LP64_OFF64_CFLAGS() {
+        class Holder {
+            static final MemorySegment __LP64_OFF64_CFLAGS
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("-m64");
+        }
+        return Holder.__LP64_OFF64_CFLAGS;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define __LP64_OFF64_LDFLAGS "-m64"
+     * }
+     */
+    public static MemorySegment __LP64_OFF64_LDFLAGS() {
+        class Holder {
+            static final MemorySegment __LP64_OFF64_LDFLAGS
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("-m64");
+        }
+        return Holder.__LP64_OFF64_LDFLAGS;
+    }
+    private static final int L_SET = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define L_SET 0
+     * }
+     */
+    public static int L_SET() {
+        return L_SET;
+    }
+    private static final int L_INCR = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define L_INCR 1
+     * }
+     */
+    public static int L_INCR() {
+        return L_INCR;
+    }
+    private static final int L_XTND = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define L_XTND 2
+     * }
+     */
+    public static int L_XTND() {
+        return L_XTND;
+    }
+    private static final int _SC_PAGE_SIZE = (int)30L;
+    /**
+     * {@snippet lang=c :
+     * #define _SC_PAGE_SIZE 30
+     * }
+     */
+    public static int _SC_PAGE_SIZE() {
+        return _SC_PAGE_SIZE;
+    }
+    private static final int _CS_POSIX_V6_WIDTH_RESTRICTED_ENVS = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _CS_POSIX_V6_WIDTH_RESTRICTED_ENVS 1
+     * }
+     */
+    public static int _CS_POSIX_V6_WIDTH_RESTRICTED_ENVS() {
+        return _CS_POSIX_V6_WIDTH_RESTRICTED_ENVS;
+    }
+    private static final int _CS_POSIX_V5_WIDTH_RESTRICTED_ENVS = (int)4L;
+    /**
+     * {@snippet lang=c :
+     * #define _CS_POSIX_V5_WIDTH_RESTRICTED_ENVS 4
+     * }
+     */
+    public static int _CS_POSIX_V5_WIDTH_RESTRICTED_ENVS() {
+        return _CS_POSIX_V5_WIDTH_RESTRICTED_ENVS;
+    }
+    private static final int _CS_POSIX_V7_WIDTH_RESTRICTED_ENVS = (int)5L;
+    /**
+     * {@snippet lang=c :
+     * #define _CS_POSIX_V7_WIDTH_RESTRICTED_ENVS 5
+     * }
+     */
+    public static int _CS_POSIX_V7_WIDTH_RESTRICTED_ENVS() {
+        return _CS_POSIX_V7_WIDTH_RESTRICTED_ENVS;
+    }
+    private static final int G_DBUS_METHOD_INVOCATION_HANDLED = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define G_DBUS_METHOD_INVOCATION_HANDLED 1
+     * }
+     */
+    public static int G_DBUS_METHOD_INVOCATION_HANDLED() {
+        return G_DBUS_METHOD_INVOCATION_HANDLED;
+    }
+    private static final int G_DBUS_METHOD_INVOCATION_UNHANDLED = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define G_DBUS_METHOD_INVOCATION_UNHANDLED 0
+     * }
+     */
+    public static int G_DBUS_METHOD_INVOCATION_UNHANDLED() {
+        return G_DBUS_METHOD_INVOCATION_UNHANDLED;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_DEBUG_CONTROLLER_EXTENSION_POINT_NAME "gio-debug-controller"
+     * }
+     */
+    public static MemorySegment G_DEBUG_CONTROLLER_EXTENSION_POINT_NAME() {
+        class Holder {
+            static final MemorySegment G_DEBUG_CONTROLLER_EXTENSION_POINT_NAME
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("gio-debug-controller");
+        }
+        return Holder.G_DEBUG_CONTROLLER_EXTENSION_POINT_NAME;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_DRIVE_IDENTIFIER_KIND_UNIX_DEVICE "unix-device"
+     * }
+     */
+    public static MemorySegment G_DRIVE_IDENTIFIER_KIND_UNIX_DEVICE() {
+        class Holder {
+            static final MemorySegment G_DRIVE_IDENTIFIER_KIND_UNIX_DEVICE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix-device");
+        }
+        return Holder.G_DRIVE_IDENTIFIER_KIND_UNIX_DEVICE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_STANDARD_TYPE "standard::type"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_TYPE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_TYPE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::type");
+        }
+        return Holder.G_FILE_ATTRIBUTE_STANDARD_TYPE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN "standard::is-hidden"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::is-hidden");
+        }
+        return Holder.G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_STANDARD_IS_BACKUP "standard::is-backup"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_BACKUP() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_BACKUP
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::is-backup");
+        }
+        return Holder.G_FILE_ATTRIBUTE_STANDARD_IS_BACKUP;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_STANDARD_IS_SYMLINK "standard::is-symlink"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_SYMLINK() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_SYMLINK
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::is-symlink");
+        }
+        return Holder.G_FILE_ATTRIBUTE_STANDARD_IS_SYMLINK;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_STANDARD_IS_VIRTUAL "standard::is-virtual"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_VIRTUAL() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_VIRTUAL
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::is-virtual");
+        }
+        return Holder.G_FILE_ATTRIBUTE_STANDARD_IS_VIRTUAL;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_STANDARD_IS_VOLATILE "standard::is-volatile"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_VOLATILE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_VOLATILE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::is-volatile");
+        }
+        return Holder.G_FILE_ATTRIBUTE_STANDARD_IS_VOLATILE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_STANDARD_NAME "standard::name"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_NAME() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_NAME
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::name");
+        }
+        return Holder.G_FILE_ATTRIBUTE_STANDARD_NAME;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME "standard::display-name"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::display-name");
+        }
+        return Holder.G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME "standard::edit-name"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::edit-name");
+        }
+        return Holder.G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_STANDARD_COPY_NAME "standard::copy-name"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_COPY_NAME() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_COPY_NAME
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::copy-name");
+        }
+        return Holder.G_FILE_ATTRIBUTE_STANDARD_COPY_NAME;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_STANDARD_DESCRIPTION "standard::description"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_DESCRIPTION() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_DESCRIPTION
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::description");
+        }
+        return Holder.G_FILE_ATTRIBUTE_STANDARD_DESCRIPTION;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_STANDARD_ICON "standard::icon"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_ICON() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_ICON
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::icon");
+        }
+        return Holder.G_FILE_ATTRIBUTE_STANDARD_ICON;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON "standard::symbolic-icon"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::symbolic-icon");
+        }
+        return Holder.G_FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE "standard::content-type"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::content-type");
+        }
+        return Holder.G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_STANDARD_FAST_CONTENT_TYPE "standard::fast-content-type"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_FAST_CONTENT_TYPE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_FAST_CONTENT_TYPE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::fast-content-type");
+        }
+        return Holder.G_FILE_ATTRIBUTE_STANDARD_FAST_CONTENT_TYPE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_STANDARD_SIZE "standard::size"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_SIZE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_SIZE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::size");
+        }
+        return Holder.G_FILE_ATTRIBUTE_STANDARD_SIZE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE "standard::allocated-size"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::allocated-size");
+        }
+        return Holder.G_FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET "standard::symlink-target"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::symlink-target");
+        }
+        return Holder.G_FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_STANDARD_TARGET_URI "standard::target-uri"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_TARGET_URI() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_TARGET_URI
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::target-uri");
+        }
+        return Holder.G_FILE_ATTRIBUTE_STANDARD_TARGET_URI;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER "standard::sort-order"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("standard::sort-order");
+        }
+        return Holder.G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_ETAG_VALUE "etag::value"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_ETAG_VALUE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_ETAG_VALUE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("etag::value");
+        }
+        return Holder.G_FILE_ATTRIBUTE_ETAG_VALUE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_ID_FILE "id::file"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_ID_FILE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_ID_FILE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("id::file");
+        }
+        return Holder.G_FILE_ATTRIBUTE_ID_FILE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_ID_FILESYSTEM "id::filesystem"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_ID_FILESYSTEM() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_ID_FILESYSTEM
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("id::filesystem");
+        }
+        return Holder.G_FILE_ATTRIBUTE_ID_FILESYSTEM;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_ACCESS_CAN_READ "access::can-read"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_READ() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_READ
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("access::can-read");
+        }
+        return Holder.G_FILE_ATTRIBUTE_ACCESS_CAN_READ;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE "access::can-write"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("access::can-write");
+        }
+        return Holder.G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE "access::can-execute"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("access::can-execute");
+        }
+        return Holder.G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_ACCESS_CAN_DELETE "access::can-delete"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_DELETE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_DELETE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("access::can-delete");
+        }
+        return Holder.G_FILE_ATTRIBUTE_ACCESS_CAN_DELETE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_ACCESS_CAN_TRASH "access::can-trash"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_TRASH() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_TRASH
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("access::can-trash");
+        }
+        return Holder.G_FILE_ATTRIBUTE_ACCESS_CAN_TRASH;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_ACCESS_CAN_RENAME "access::can-rename"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_RENAME() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_RENAME
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("access::can-rename");
+        }
+        return Holder.G_FILE_ATTRIBUTE_ACCESS_CAN_RENAME;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_MOUNTABLE_CAN_MOUNT "mountable::can-mount"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_MOUNT() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_MOUNT
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::can-mount");
+        }
+        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_CAN_MOUNT;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_MOUNTABLE_CAN_UNMOUNT "mountable::can-unmount"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_UNMOUNT() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_UNMOUNT
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::can-unmount");
+        }
+        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_CAN_UNMOUNT;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_MOUNTABLE_CAN_EJECT "mountable::can-eject"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_EJECT() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_EJECT
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::can-eject");
+        }
+        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_CAN_EJECT;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE "mountable::unix-device"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::unix-device");
+        }
+        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE_FILE "mountable::unix-device-file"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE_FILE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE_FILE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::unix-device-file");
+        }
+        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE_FILE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_MOUNTABLE_HAL_UDI "mountable::hal-udi"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_HAL_UDI() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_HAL_UDI
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::hal-udi");
+        }
+        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_HAL_UDI;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START "mountable::can-start"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::can-start");
+        }
+        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START_DEGRADED "mountable::can-start-degraded"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START_DEGRADED() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START_DEGRADED
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::can-start-degraded");
+        }
+        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START_DEGRADED;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_MOUNTABLE_CAN_STOP "mountable::can-stop"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_STOP() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_STOP
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::can-stop");
+        }
+        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_CAN_STOP;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_MOUNTABLE_START_STOP_TYPE "mountable::start-stop-type"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_START_STOP_TYPE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_START_STOP_TYPE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::start-stop-type");
+        }
+        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_START_STOP_TYPE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_MOUNTABLE_CAN_POLL "mountable::can-poll"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_POLL() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_POLL
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::can-poll");
+        }
+        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_CAN_POLL;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_MOUNTABLE_IS_MEDIA_CHECK_AUTOMATIC "mountable::is-media-check-automatic"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_IS_MEDIA_CHECK_AUTOMATIC() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_IS_MEDIA_CHECK_AUTOMATIC
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mountable::is-media-check-automatic");
+        }
+        return Holder.G_FILE_ATTRIBUTE_MOUNTABLE_IS_MEDIA_CHECK_AUTOMATIC;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_TIME_MODIFIED "time::modified"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::modified");
+        }
+        return Holder.G_FILE_ATTRIBUTE_TIME_MODIFIED;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC "time::modified-usec"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::modified-usec");
+        }
+        return Holder.G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_TIME_MODIFIED_NSEC "time::modified-nsec"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED_NSEC() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED_NSEC
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::modified-nsec");
+        }
+        return Holder.G_FILE_ATTRIBUTE_TIME_MODIFIED_NSEC;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_TIME_ACCESS "time::access"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::access");
+        }
+        return Holder.G_FILE_ATTRIBUTE_TIME_ACCESS;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_TIME_ACCESS_USEC "time::access-usec"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS_USEC() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS_USEC
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::access-usec");
+        }
+        return Holder.G_FILE_ATTRIBUTE_TIME_ACCESS_USEC;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_TIME_ACCESS_NSEC "time::access-nsec"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS_NSEC() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS_NSEC
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::access-nsec");
+        }
+        return Holder.G_FILE_ATTRIBUTE_TIME_ACCESS_NSEC;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_TIME_CHANGED "time::changed"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::changed");
+        }
+        return Holder.G_FILE_ATTRIBUTE_TIME_CHANGED;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_TIME_CHANGED_USEC "time::changed-usec"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED_USEC() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED_USEC
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::changed-usec");
+        }
+        return Holder.G_FILE_ATTRIBUTE_TIME_CHANGED_USEC;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_TIME_CHANGED_NSEC "time::changed-nsec"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED_NSEC() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED_NSEC
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::changed-nsec");
+        }
+        return Holder.G_FILE_ATTRIBUTE_TIME_CHANGED_NSEC;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_TIME_CREATED "time::created"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::created");
+        }
+        return Holder.G_FILE_ATTRIBUTE_TIME_CREATED;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_TIME_CREATED_USEC "time::created-usec"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED_USEC() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED_USEC
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::created-usec");
+        }
+        return Holder.G_FILE_ATTRIBUTE_TIME_CREATED_USEC;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_TIME_CREATED_NSEC "time::created-nsec"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED_NSEC() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED_NSEC
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("time::created-nsec");
+        }
+        return Holder.G_FILE_ATTRIBUTE_TIME_CREATED_NSEC;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_UNIX_DEVICE "unix::device"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_DEVICE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_UNIX_DEVICE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix::device");
+        }
+        return Holder.G_FILE_ATTRIBUTE_UNIX_DEVICE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_UNIX_INODE "unix::inode"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_INODE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_UNIX_INODE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix::inode");
+        }
+        return Holder.G_FILE_ATTRIBUTE_UNIX_INODE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_UNIX_MODE "unix::mode"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_MODE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_UNIX_MODE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix::mode");
+        }
+        return Holder.G_FILE_ATTRIBUTE_UNIX_MODE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_UNIX_NLINK "unix::nlink"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_NLINK() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_UNIX_NLINK
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix::nlink");
+        }
+        return Holder.G_FILE_ATTRIBUTE_UNIX_NLINK;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_UNIX_UID "unix::uid"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_UID() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_UNIX_UID
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix::uid");
+        }
+        return Holder.G_FILE_ATTRIBUTE_UNIX_UID;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_UNIX_GID "unix::gid"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_GID() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_UNIX_GID
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix::gid");
+        }
+        return Holder.G_FILE_ATTRIBUTE_UNIX_GID;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_UNIX_RDEV "unix::rdev"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_RDEV() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_UNIX_RDEV
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix::rdev");
+        }
+        return Holder.G_FILE_ATTRIBUTE_UNIX_RDEV;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_UNIX_BLOCK_SIZE "unix::block-size"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_BLOCK_SIZE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_UNIX_BLOCK_SIZE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix::block-size");
+        }
+        return Holder.G_FILE_ATTRIBUTE_UNIX_BLOCK_SIZE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_UNIX_BLOCKS "unix::blocks"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_BLOCKS() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_UNIX_BLOCKS
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix::blocks");
+        }
+        return Holder.G_FILE_ATTRIBUTE_UNIX_BLOCKS;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_UNIX_IS_MOUNTPOINT "unix::is-mountpoint"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_IS_MOUNTPOINT() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_UNIX_IS_MOUNTPOINT
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix::is-mountpoint");
+        }
+        return Holder.G_FILE_ATTRIBUTE_UNIX_IS_MOUNTPOINT;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_DOS_IS_ARCHIVE "dos::is-archive"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_DOS_IS_ARCHIVE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_DOS_IS_ARCHIVE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("dos::is-archive");
+        }
+        return Holder.G_FILE_ATTRIBUTE_DOS_IS_ARCHIVE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_DOS_IS_SYSTEM "dos::is-system"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_DOS_IS_SYSTEM() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_DOS_IS_SYSTEM
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("dos::is-system");
+        }
+        return Holder.G_FILE_ATTRIBUTE_DOS_IS_SYSTEM;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_DOS_IS_MOUNTPOINT "dos::is-mountpoint"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_DOS_IS_MOUNTPOINT() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_DOS_IS_MOUNTPOINT
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("dos::is-mountpoint");
+        }
+        return Holder.G_FILE_ATTRIBUTE_DOS_IS_MOUNTPOINT;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_DOS_REPARSE_POINT_TAG "dos::reparse-point-tag"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_DOS_REPARSE_POINT_TAG() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_DOS_REPARSE_POINT_TAG
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("dos::reparse-point-tag");
+        }
+        return Holder.G_FILE_ATTRIBUTE_DOS_REPARSE_POINT_TAG;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_OWNER_USER "owner::user"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_OWNER_USER() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_OWNER_USER
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("owner::user");
+        }
+        return Holder.G_FILE_ATTRIBUTE_OWNER_USER;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_OWNER_USER_REAL "owner::user-real"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_OWNER_USER_REAL() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_OWNER_USER_REAL
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("owner::user-real");
+        }
+        return Holder.G_FILE_ATTRIBUTE_OWNER_USER_REAL;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_OWNER_GROUP "owner::group"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_OWNER_GROUP() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_OWNER_GROUP
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("owner::group");
+        }
+        return Holder.G_FILE_ATTRIBUTE_OWNER_GROUP;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_THUMBNAIL_PATH "thumbnail::path"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::path");
+        }
+        return Holder.G_FILE_ATTRIBUTE_THUMBNAIL_PATH;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_THUMBNAILING_FAILED "thumbnail::failed"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::failed");
+        }
+        return Holder.G_FILE_ATTRIBUTE_THUMBNAILING_FAILED;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID "thumbnail::is-valid"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::is-valid");
+        }
+        return Holder.G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_THUMBNAIL_PATH_NORMAL "thumbnail::path-normal"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_NORMAL() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_NORMAL
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::path-normal");
+        }
+        return Holder.G_FILE_ATTRIBUTE_THUMBNAIL_PATH_NORMAL;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_NORMAL "thumbnail::failed-normal"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_NORMAL() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_NORMAL
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::failed-normal");
+        }
+        return Holder.G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_NORMAL;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_NORMAL "thumbnail::is-valid-normal"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_NORMAL() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_NORMAL
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::is-valid-normal");
+        }
+        return Holder.G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_NORMAL;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_THUMBNAIL_PATH_LARGE "thumbnail::path-large"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_LARGE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_LARGE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::path-large");
+        }
+        return Holder.G_FILE_ATTRIBUTE_THUMBNAIL_PATH_LARGE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_LARGE "thumbnail::failed-large"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_LARGE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_LARGE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::failed-large");
+        }
+        return Holder.G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_LARGE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_LARGE "thumbnail::is-valid-large"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_LARGE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_LARGE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::is-valid-large");
+        }
+        return Holder.G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_LARGE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XLARGE "thumbnail::path-xlarge"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XLARGE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XLARGE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::path-xlarge");
+        }
+        return Holder.G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XLARGE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XLARGE "thumbnail::failed-xlarge"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XLARGE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XLARGE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::failed-xlarge");
+        }
+        return Holder.G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XLARGE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XLARGE "thumbnail::is-valid-xlarge"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XLARGE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XLARGE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::is-valid-xlarge");
+        }
+        return Holder.G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XLARGE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XXLARGE "thumbnail::path-xxlarge"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XXLARGE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XXLARGE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::path-xxlarge");
+        }
+        return Holder.G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XXLARGE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XXLARGE "thumbnail::failed-xxlarge"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XXLARGE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XXLARGE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::failed-xxlarge");
+        }
+        return Holder.G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XXLARGE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XXLARGE "thumbnail::is-valid-xxlarge"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XXLARGE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XXLARGE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("thumbnail::is-valid-xxlarge");
+        }
+        return Holder.G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XXLARGE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_PREVIEW_ICON "preview::icon"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_PREVIEW_ICON() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_PREVIEW_ICON
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("preview::icon");
+        }
+        return Holder.G_FILE_ATTRIBUTE_PREVIEW_ICON;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_FILESYSTEM_SIZE "filesystem::size"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_SIZE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_SIZE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("filesystem::size");
+        }
+        return Holder.G_FILE_ATTRIBUTE_FILESYSTEM_SIZE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_FILESYSTEM_FREE "filesystem::free"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_FREE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_FREE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("filesystem::free");
+        }
+        return Holder.G_FILE_ATTRIBUTE_FILESYSTEM_FREE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_FILESYSTEM_USED "filesystem::used"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_USED() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_USED
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("filesystem::used");
+        }
+        return Holder.G_FILE_ATTRIBUTE_FILESYSTEM_USED;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_FILESYSTEM_TYPE "filesystem::type"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_TYPE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_TYPE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("filesystem::type");
+        }
+        return Holder.G_FILE_ATTRIBUTE_FILESYSTEM_TYPE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_FILESYSTEM_READONLY "filesystem::readonly"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_READONLY() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_READONLY
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("filesystem::readonly");
+        }
+        return Holder.G_FILE_ATTRIBUTE_FILESYSTEM_READONLY;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_FILESYSTEM_USE_PREVIEW "filesystem::use-preview"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_USE_PREVIEW() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_USE_PREVIEW
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("filesystem::use-preview");
+        }
+        return Holder.G_FILE_ATTRIBUTE_FILESYSTEM_USE_PREVIEW;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_FILESYSTEM_REMOTE "filesystem::remote"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_REMOTE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_REMOTE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("filesystem::remote");
+        }
+        return Holder.G_FILE_ATTRIBUTE_FILESYSTEM_REMOTE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_GVFS_BACKEND "gvfs::backend"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_GVFS_BACKEND() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_GVFS_BACKEND
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("gvfs::backend");
+        }
+        return Holder.G_FILE_ATTRIBUTE_GVFS_BACKEND;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_SELINUX_CONTEXT "selinux::context"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_SELINUX_CONTEXT() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_SELINUX_CONTEXT
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("selinux::context");
+        }
+        return Holder.G_FILE_ATTRIBUTE_SELINUX_CONTEXT;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_TRASH_ITEM_COUNT "trash::item-count"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_TRASH_ITEM_COUNT() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_TRASH_ITEM_COUNT
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("trash::item-count");
+        }
+        return Holder.G_FILE_ATTRIBUTE_TRASH_ITEM_COUNT;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_TRASH_ORIG_PATH "trash::orig-path"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_TRASH_ORIG_PATH() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_TRASH_ORIG_PATH
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("trash::orig-path");
+        }
+        return Holder.G_FILE_ATTRIBUTE_TRASH_ORIG_PATH;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_TRASH_DELETION_DATE "trash::deletion-date"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_TRASH_DELETION_DATE() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_TRASH_DELETION_DATE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("trash::deletion-date");
+        }
+        return Holder.G_FILE_ATTRIBUTE_TRASH_DELETION_DATE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_FILE_ATTRIBUTE_RECENT_MODIFIED "recent::modified"
+     * }
+     */
+    public static MemorySegment G_FILE_ATTRIBUTE_RECENT_MODIFIED() {
+        class Holder {
+            static final MemorySegment G_FILE_ATTRIBUTE_RECENT_MODIFIED
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("recent::modified");
+        }
+        return Holder.G_FILE_ATTRIBUTE_RECENT_MODIFIED;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_MEMORY_MONITOR_EXTENSION_POINT_NAME "gio-memory-monitor"
+     * }
+     */
+    public static MemorySegment G_MEMORY_MONITOR_EXTENSION_POINT_NAME() {
+        class Holder {
+            static final MemorySegment G_MEMORY_MONITOR_EXTENSION_POINT_NAME
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("gio-memory-monitor");
+        }
+        return Holder.G_MEMORY_MONITOR_EXTENSION_POINT_NAME;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_MENU_ATTRIBUTE_ACTION "action"
+     * }
+     */
+    public static MemorySegment G_MENU_ATTRIBUTE_ACTION() {
+        class Holder {
+            static final MemorySegment G_MENU_ATTRIBUTE_ACTION
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("action");
+        }
+        return Holder.G_MENU_ATTRIBUTE_ACTION;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_MENU_ATTRIBUTE_ACTION_NAMESPACE "action-namespace"
+     * }
+     */
+    public static MemorySegment G_MENU_ATTRIBUTE_ACTION_NAMESPACE() {
+        class Holder {
+            static final MemorySegment G_MENU_ATTRIBUTE_ACTION_NAMESPACE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("action-namespace");
+        }
+        return Holder.G_MENU_ATTRIBUTE_ACTION_NAMESPACE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_MENU_ATTRIBUTE_TARGET "target"
+     * }
+     */
+    public static MemorySegment G_MENU_ATTRIBUTE_TARGET() {
+        class Holder {
+            static final MemorySegment G_MENU_ATTRIBUTE_TARGET
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("target");
+        }
+        return Holder.G_MENU_ATTRIBUTE_TARGET;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_MENU_ATTRIBUTE_LABEL "label"
+     * }
+     */
+    public static MemorySegment G_MENU_ATTRIBUTE_LABEL() {
+        class Holder {
+            static final MemorySegment G_MENU_ATTRIBUTE_LABEL
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("label");
+        }
+        return Holder.G_MENU_ATTRIBUTE_LABEL;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_MENU_ATTRIBUTE_ICON "icon"
+     * }
+     */
+    public static MemorySegment G_MENU_ATTRIBUTE_ICON() {
+        class Holder {
+            static final MemorySegment G_MENU_ATTRIBUTE_ICON
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("icon");
+        }
+        return Holder.G_MENU_ATTRIBUTE_ICON;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_MENU_LINK_SUBMENU "submenu"
+     * }
+     */
+    public static MemorySegment G_MENU_LINK_SUBMENU() {
+        class Holder {
+            static final MemorySegment G_MENU_LINK_SUBMENU
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("submenu");
+        }
+        return Holder.G_MENU_LINK_SUBMENU;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_MENU_LINK_SECTION "section"
+     * }
+     */
+    public static MemorySegment G_MENU_LINK_SECTION() {
+        class Holder {
+            static final MemorySegment G_MENU_LINK_SECTION
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("section");
+        }
+        return Holder.G_MENU_LINK_SECTION;
+    }
+    private static final int G_MENU_EXPORTER_MAX_SECTION_SIZE = (int)1000L;
+    /**
+     * {@snippet lang=c :
+     * #define G_MENU_EXPORTER_MAX_SECTION_SIZE 1000
+     * }
+     */
+    public static int G_MENU_EXPORTER_MAX_SECTION_SIZE() {
+        return G_MENU_EXPORTER_MAX_SECTION_SIZE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_VOLUME_MONITOR_EXTENSION_POINT_NAME "gio-volume-monitor"
+     * }
+     */
+    public static MemorySegment G_VOLUME_MONITOR_EXTENSION_POINT_NAME() {
+        class Holder {
+            static final MemorySegment G_VOLUME_MONITOR_EXTENSION_POINT_NAME
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("gio-volume-monitor");
+        }
+        return Holder.G_VOLUME_MONITOR_EXTENSION_POINT_NAME;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_NATIVE_VOLUME_MONITOR_EXTENSION_POINT_NAME "gio-native-volume-monitor"
+     * }
+     */
+    public static MemorySegment G_NATIVE_VOLUME_MONITOR_EXTENSION_POINT_NAME() {
+        class Holder {
+            static final MemorySegment G_NATIVE_VOLUME_MONITOR_EXTENSION_POINT_NAME
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("gio-native-volume-monitor");
+        }
+        return Holder.G_NATIVE_VOLUME_MONITOR_EXTENSION_POINT_NAME;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_NETWORK_MONITOR_EXTENSION_POINT_NAME "gio-network-monitor"
+     * }
+     */
+    public static MemorySegment G_NETWORK_MONITOR_EXTENSION_POINT_NAME() {
+        class Holder {
+            static final MemorySegment G_NETWORK_MONITOR_EXTENSION_POINT_NAME
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("gio-network-monitor");
+        }
+        return Holder.G_NETWORK_MONITOR_EXTENSION_POINT_NAME;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_POWER_PROFILE_MONITOR_EXTENSION_POINT_NAME "gio-power-profile-monitor"
+     * }
+     */
+    public static MemorySegment G_POWER_PROFILE_MONITOR_EXTENSION_POINT_NAME() {
+        class Holder {
+            static final MemorySegment G_POWER_PROFILE_MONITOR_EXTENSION_POINT_NAME
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("gio-power-profile-monitor");
+        }
+        return Holder.G_POWER_PROFILE_MONITOR_EXTENSION_POINT_NAME;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_PROXY_EXTENSION_POINT_NAME "gio-proxy"
+     * }
+     */
+    public static MemorySegment G_PROXY_EXTENSION_POINT_NAME() {
+        class Holder {
+            static final MemorySegment G_PROXY_EXTENSION_POINT_NAME
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("gio-proxy");
+        }
+        return Holder.G_PROXY_EXTENSION_POINT_NAME;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_PROXY_RESOLVER_EXTENSION_POINT_NAME "gio-proxy-resolver"
+     * }
+     */
+    public static MemorySegment G_PROXY_RESOLVER_EXTENSION_POINT_NAME() {
+        class Holder {
+            static final MemorySegment G_PROXY_RESOLVER_EXTENSION_POINT_NAME
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("gio-proxy-resolver");
+        }
+        return Holder.G_PROXY_RESOLVER_EXTENSION_POINT_NAME;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_TLS_BACKEND_EXTENSION_POINT_NAME "gio-tls-backend"
+     * }
+     */
+    public static MemorySegment G_TLS_BACKEND_EXTENSION_POINT_NAME() {
+        class Holder {
+            static final MemorySegment G_TLS_BACKEND_EXTENSION_POINT_NAME
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("gio-tls-backend");
+        }
+        return Holder.G_TLS_BACKEND_EXTENSION_POINT_NAME;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_TLS_DATABASE_PURPOSE_AUTHENTICATE_SERVER "1.3.6.1.5.5.7.3.1"
+     * }
+     */
+    public static MemorySegment G_TLS_DATABASE_PURPOSE_AUTHENTICATE_SERVER() {
+        class Holder {
+            static final MemorySegment G_TLS_DATABASE_PURPOSE_AUTHENTICATE_SERVER
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("1.3.6.1.5.5.7.3.1");
+        }
+        return Holder.G_TLS_DATABASE_PURPOSE_AUTHENTICATE_SERVER;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_TLS_DATABASE_PURPOSE_AUTHENTICATE_CLIENT "1.3.6.1.5.5.7.3.2"
+     * }
+     */
+    public static MemorySegment G_TLS_DATABASE_PURPOSE_AUTHENTICATE_CLIENT() {
+        class Holder {
+            static final MemorySegment G_TLS_DATABASE_PURPOSE_AUTHENTICATE_CLIENT
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("1.3.6.1.5.5.7.3.2");
+        }
+        return Holder.G_TLS_DATABASE_PURPOSE_AUTHENTICATE_CLIENT;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_VFS_EXTENSION_POINT_NAME "gio-vfs"
+     * }
+     */
+    public static MemorySegment G_VFS_EXTENSION_POINT_NAME() {
+        class Holder {
+            static final MemorySegment G_VFS_EXTENSION_POINT_NAME
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("gio-vfs");
+        }
+        return Holder.G_VFS_EXTENSION_POINT_NAME;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_VOLUME_IDENTIFIER_KIND_HAL_UDI "hal-udi"
+     * }
+     */
+    public static MemorySegment G_VOLUME_IDENTIFIER_KIND_HAL_UDI() {
+        class Holder {
+            static final MemorySegment G_VOLUME_IDENTIFIER_KIND_HAL_UDI
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hal-udi");
+        }
+        return Holder.G_VOLUME_IDENTIFIER_KIND_HAL_UDI;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_VOLUME_IDENTIFIER_KIND_UNIX_DEVICE "unix-device"
+     * }
+     */
+    public static MemorySegment G_VOLUME_IDENTIFIER_KIND_UNIX_DEVICE() {
+        class Holder {
+            static final MemorySegment G_VOLUME_IDENTIFIER_KIND_UNIX_DEVICE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("unix-device");
+        }
+        return Holder.G_VOLUME_IDENTIFIER_KIND_UNIX_DEVICE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_VOLUME_IDENTIFIER_KIND_LABEL "label"
+     * }
+     */
+    public static MemorySegment G_VOLUME_IDENTIFIER_KIND_LABEL() {
+        class Holder {
+            static final MemorySegment G_VOLUME_IDENTIFIER_KIND_LABEL
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("label");
+        }
+        return Holder.G_VOLUME_IDENTIFIER_KIND_LABEL;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_VOLUME_IDENTIFIER_KIND_UUID "uuid"
+     * }
+     */
+    public static MemorySegment G_VOLUME_IDENTIFIER_KIND_UUID() {
+        class Holder {
+            static final MemorySegment G_VOLUME_IDENTIFIER_KIND_UUID
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("uuid");
+        }
+        return Holder.G_VOLUME_IDENTIFIER_KIND_UUID;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_VOLUME_IDENTIFIER_KIND_NFS_MOUNT "nfs-mount"
+     * }
+     */
+    public static MemorySegment G_VOLUME_IDENTIFIER_KIND_NFS_MOUNT() {
+        class Holder {
+            static final MemorySegment G_VOLUME_IDENTIFIER_KIND_NFS_MOUNT
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("nfs-mount");
+        }
+        return Holder.G_VOLUME_IDENTIFIER_KIND_NFS_MOUNT;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define G_VOLUME_IDENTIFIER_KIND_CLASS "class"
+     * }
+     */
+    public static MemorySegment G_VOLUME_IDENTIFIER_KIND_CLASS() {
+        class Holder {
+            static final MemorySegment G_VOLUME_IDENTIFIER_KIND_CLASS
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("class");
+        }
+        return Holder.G_VOLUME_IDENTIFIER_KIND_CLASS;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_STRING "1.58.0"
+     * }
+     */
+    public static MemorySegment PANGO_VERSION_STRING() {
+        class Holder {
+            static final MemorySegment PANGO_VERSION_STRING
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("1.58.0");
+        }
+        return Holder.PANGO_VERSION_STRING;
+    }
+    private static final int PANGO_VERSION_1_2 = (int)66048L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_2 66048
+     * }
+     */
+    public static int PANGO_VERSION_1_2() {
+        return PANGO_VERSION_1_2;
+    }
+    private static final int PANGO_VERSION_1_4 = (int)66560L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_4 66560
+     * }
+     */
+    public static int PANGO_VERSION_1_4() {
+        return PANGO_VERSION_1_4;
+    }
+    private static final int PANGO_VERSION_1_6 = (int)67072L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_6 67072
+     * }
+     */
+    public static int PANGO_VERSION_1_6() {
+        return PANGO_VERSION_1_6;
+    }
+    private static final int PANGO_VERSION_1_8 = (int)67584L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_8 67584
+     * }
+     */
+    public static int PANGO_VERSION_1_8() {
+        return PANGO_VERSION_1_8;
+    }
+    private static final int PANGO_VERSION_1_10 = (int)68096L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_10 68096
+     * }
+     */
+    public static int PANGO_VERSION_1_10() {
+        return PANGO_VERSION_1_10;
+    }
+    private static final int PANGO_VERSION_1_12 = (int)68608L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_12 68608
+     * }
+     */
+    public static int PANGO_VERSION_1_12() {
+        return PANGO_VERSION_1_12;
+    }
+    private static final int PANGO_VERSION_1_14 = (int)69120L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_14 69120
+     * }
+     */
+    public static int PANGO_VERSION_1_14() {
+        return PANGO_VERSION_1_14;
+    }
+    private static final int PANGO_VERSION_1_16 = (int)69632L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_16 69632
+     * }
+     */
+    public static int PANGO_VERSION_1_16() {
+        return PANGO_VERSION_1_16;
+    }
+    private static final int PANGO_VERSION_1_18 = (int)70144L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_18 70144
+     * }
+     */
+    public static int PANGO_VERSION_1_18() {
+        return PANGO_VERSION_1_18;
+    }
+    private static final int PANGO_VERSION_1_20 = (int)70656L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_20 70656
+     * }
+     */
+    public static int PANGO_VERSION_1_20() {
+        return PANGO_VERSION_1_20;
+    }
+    private static final int PANGO_VERSION_1_22 = (int)71168L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_22 71168
+     * }
+     */
+    public static int PANGO_VERSION_1_22() {
+        return PANGO_VERSION_1_22;
+    }
+    private static final int PANGO_VERSION_1_24 = (int)71680L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_24 71680
+     * }
+     */
+    public static int PANGO_VERSION_1_24() {
+        return PANGO_VERSION_1_24;
+    }
+    private static final int PANGO_VERSION_1_26 = (int)72192L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_26 72192
+     * }
+     */
+    public static int PANGO_VERSION_1_26() {
+        return PANGO_VERSION_1_26;
+    }
+    private static final int PANGO_VERSION_1_28 = (int)72704L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_28 72704
+     * }
+     */
+    public static int PANGO_VERSION_1_28() {
+        return PANGO_VERSION_1_28;
+    }
+    private static final int PANGO_VERSION_1_30 = (int)73216L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_30 73216
+     * }
+     */
+    public static int PANGO_VERSION_1_30() {
+        return PANGO_VERSION_1_30;
+    }
+    private static final int PANGO_VERSION_1_32 = (int)73728L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_32 73728
+     * }
+     */
+    public static int PANGO_VERSION_1_32() {
+        return PANGO_VERSION_1_32;
+    }
+    private static final int PANGO_VERSION_1_34 = (int)74240L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_34 74240
+     * }
+     */
+    public static int PANGO_VERSION_1_34() {
+        return PANGO_VERSION_1_34;
+    }
+    private static final int PANGO_VERSION_1_36 = (int)74752L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_36 74752
+     * }
+     */
+    public static int PANGO_VERSION_1_36() {
+        return PANGO_VERSION_1_36;
+    }
+    private static final int PANGO_VERSION_1_38 = (int)75264L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_38 75264
+     * }
+     */
+    public static int PANGO_VERSION_1_38() {
+        return PANGO_VERSION_1_38;
+    }
+    private static final int PANGO_VERSION_1_40 = (int)75776L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_40 75776
+     * }
+     */
+    public static int PANGO_VERSION_1_40() {
+        return PANGO_VERSION_1_40;
+    }
+    private static final int PANGO_VERSION_1_42 = (int)76288L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_42 76288
+     * }
+     */
+    public static int PANGO_VERSION_1_42() {
+        return PANGO_VERSION_1_42;
+    }
+    private static final int PANGO_VERSION_1_44 = (int)76800L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_44 76800
+     * }
+     */
+    public static int PANGO_VERSION_1_44() {
+        return PANGO_VERSION_1_44;
+    }
+    private static final int PANGO_VERSION_1_46 = (int)77312L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_46 77312
+     * }
+     */
+    public static int PANGO_VERSION_1_46() {
+        return PANGO_VERSION_1_46;
+    }
+    private static final int PANGO_VERSION_1_48 = (int)77824L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_48 77824
+     * }
+     */
+    public static int PANGO_VERSION_1_48() {
+        return PANGO_VERSION_1_48;
+    }
+    private static final int PANGO_VERSION_1_50 = (int)78336L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_50 78336
+     * }
+     */
+    public static int PANGO_VERSION_1_50() {
+        return PANGO_VERSION_1_50;
+    }
+    private static final int PANGO_VERSION_1_52 = (int)78848L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_52 78848
+     * }
+     */
+    public static int PANGO_VERSION_1_52() {
+        return PANGO_VERSION_1_52;
+    }
+    private static final int PANGO_VERSION_1_54 = (int)79360L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_54 79360
+     * }
+     */
+    public static int PANGO_VERSION_1_54() {
+        return PANGO_VERSION_1_54;
+    }
+    private static final int PANGO_VERSION_1_55 = (int)79616L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_55 79616
+     * }
+     */
+    public static int PANGO_VERSION_1_55() {
+        return PANGO_VERSION_1_55;
+    }
+    private static final int PANGO_VERSION_1_56 = (int)79872L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_56 79872
+     * }
+     */
+    public static int PANGO_VERSION_1_56() {
+        return PANGO_VERSION_1_56;
+    }
+    private static final int PANGO_VERSION_1_57 = (int)80128L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_57 80128
+     * }
+     */
+    public static int PANGO_VERSION_1_57() {
+        return PANGO_VERSION_1_57;
+    }
+    private static final int PANGO_VERSION_1_58 = (int)80384L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_1_58 80384
+     * }
+     */
+    public static int PANGO_VERSION_1_58() {
+        return PANGO_VERSION_1_58;
+    }
+    private static final int PANGO_VERSION_CUR_STABLE = (int)80384L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_CUR_STABLE 80384
+     * }
+     */
+    public static int PANGO_VERSION_CUR_STABLE() {
+        return PANGO_VERSION_CUR_STABLE;
+    }
+    private static final int PANGO_VERSION_PREV_STABLE = (int)79872L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_PREV_STABLE 79872
+     * }
+     */
+    public static int PANGO_VERSION_PREV_STABLE() {
+        return PANGO_VERSION_PREV_STABLE;
+    }
+    private static final int PANGO_VERSION_MIN_REQUIRED = (int)80384L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_MIN_REQUIRED 80384
+     * }
+     */
+    public static int PANGO_VERSION_MIN_REQUIRED() {
+        return PANGO_VERSION_MIN_REQUIRED;
+    }
+    private static final int PANGO_VERSION_MAX_ALLOWED = (int)80384L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_MAX_ALLOWED 80384
+     * }
+     */
+    public static int PANGO_VERSION_MAX_ALLOWED() {
+        return PANGO_VERSION_MAX_ALLOWED;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define __PRI64_PREFIX "l"
+     * }
+     */
+    public static MemorySegment __PRI64_PREFIX() {
+        class Holder {
+            static final MemorySegment __PRI64_PREFIX
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("l");
+        }
+        return Holder.__PRI64_PREFIX;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define __PRIPTR_PREFIX "l"
+     * }
+     */
+    public static MemorySegment __PRIPTR_PREFIX() {
+        class Holder {
+            static final MemorySegment __PRIPTR_PREFIX
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("l");
+        }
+        return Holder.__PRIPTR_PREFIX;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRId8 "hhd"
+     * }
+     */
+    public static MemorySegment PRId8() {
+        class Holder {
+            static final MemorySegment PRId8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhd");
+        }
+        return Holder.PRId8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRId16 "hd"
+     * }
+     */
+    public static MemorySegment PRId16() {
+        class Holder {
+            static final MemorySegment PRId16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hd");
+        }
+        return Holder.PRId16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRId32 "d"
+     * }
+     */
+    public static MemorySegment PRId32() {
+        class Holder {
+            static final MemorySegment PRId32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("d");
+        }
+        return Holder.PRId32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRId64 "ld"
+     * }
+     */
+    public static MemorySegment PRId64() {
+        class Holder {
+            static final MemorySegment PRId64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("ld");
+        }
+        return Holder.PRId64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIdLEAST8 "hhd"
+     * }
+     */
+    public static MemorySegment PRIdLEAST8() {
+        class Holder {
+            static final MemorySegment PRIdLEAST8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhd");
+        }
+        return Holder.PRIdLEAST8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIdLEAST16 "hd"
+     * }
+     */
+    public static MemorySegment PRIdLEAST16() {
+        class Holder {
+            static final MemorySegment PRIdLEAST16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hd");
+        }
+        return Holder.PRIdLEAST16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIdLEAST32 "d"
+     * }
+     */
+    public static MemorySegment PRIdLEAST32() {
+        class Holder {
+            static final MemorySegment PRIdLEAST32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("d");
+        }
+        return Holder.PRIdLEAST32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIdLEAST64 "ld"
+     * }
+     */
+    public static MemorySegment PRIdLEAST64() {
+        class Holder {
+            static final MemorySegment PRIdLEAST64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("ld");
+        }
+        return Holder.PRIdLEAST64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIdFAST8 "hhd"
+     * }
+     */
+    public static MemorySegment PRIdFAST8() {
+        class Holder {
+            static final MemorySegment PRIdFAST8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhd");
+        }
+        return Holder.PRIdFAST8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIdFAST16 "ld"
+     * }
+     */
+    public static MemorySegment PRIdFAST16() {
+        class Holder {
+            static final MemorySegment PRIdFAST16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("ld");
+        }
+        return Holder.PRIdFAST16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIdFAST32 "ld"
+     * }
+     */
+    public static MemorySegment PRIdFAST32() {
+        class Holder {
+            static final MemorySegment PRIdFAST32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("ld");
+        }
+        return Holder.PRIdFAST32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIdFAST64 "ld"
+     * }
+     */
+    public static MemorySegment PRIdFAST64() {
+        class Holder {
+            static final MemorySegment PRIdFAST64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("ld");
+        }
+        return Holder.PRIdFAST64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIi8 "hhi"
+     * }
+     */
+    public static MemorySegment PRIi8() {
+        class Holder {
+            static final MemorySegment PRIi8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhi");
+        }
+        return Holder.PRIi8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIi16 "hi"
+     * }
+     */
+    public static MemorySegment PRIi16() {
+        class Holder {
+            static final MemorySegment PRIi16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hi");
+        }
+        return Holder.PRIi16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIi32 "i"
+     * }
+     */
+    public static MemorySegment PRIi32() {
+        class Holder {
+            static final MemorySegment PRIi32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("i");
+        }
+        return Holder.PRIi32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIi64 "li"
+     * }
+     */
+    public static MemorySegment PRIi64() {
+        class Holder {
+            static final MemorySegment PRIi64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("li");
+        }
+        return Holder.PRIi64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIiLEAST8 "hhi"
+     * }
+     */
+    public static MemorySegment PRIiLEAST8() {
+        class Holder {
+            static final MemorySegment PRIiLEAST8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhi");
+        }
+        return Holder.PRIiLEAST8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIiLEAST16 "hi"
+     * }
+     */
+    public static MemorySegment PRIiLEAST16() {
+        class Holder {
+            static final MemorySegment PRIiLEAST16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hi");
+        }
+        return Holder.PRIiLEAST16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIiLEAST32 "i"
+     * }
+     */
+    public static MemorySegment PRIiLEAST32() {
+        class Holder {
+            static final MemorySegment PRIiLEAST32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("i");
+        }
+        return Holder.PRIiLEAST32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIiLEAST64 "li"
+     * }
+     */
+    public static MemorySegment PRIiLEAST64() {
+        class Holder {
+            static final MemorySegment PRIiLEAST64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("li");
+        }
+        return Holder.PRIiLEAST64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIiFAST8 "hhi"
+     * }
+     */
+    public static MemorySegment PRIiFAST8() {
+        class Holder {
+            static final MemorySegment PRIiFAST8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhi");
+        }
+        return Holder.PRIiFAST8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIiFAST16 "li"
+     * }
+     */
+    public static MemorySegment PRIiFAST16() {
+        class Holder {
+            static final MemorySegment PRIiFAST16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("li");
+        }
+        return Holder.PRIiFAST16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIiFAST32 "li"
+     * }
+     */
+    public static MemorySegment PRIiFAST32() {
+        class Holder {
+            static final MemorySegment PRIiFAST32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("li");
+        }
+        return Holder.PRIiFAST32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIiFAST64 "li"
+     * }
+     */
+    public static MemorySegment PRIiFAST64() {
+        class Holder {
+            static final MemorySegment PRIiFAST64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("li");
+        }
+        return Holder.PRIiFAST64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIo8 "hho"
+     * }
+     */
+    public static MemorySegment PRIo8() {
+        class Holder {
+            static final MemorySegment PRIo8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hho");
+        }
+        return Holder.PRIo8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIo16 "ho"
+     * }
+     */
+    public static MemorySegment PRIo16() {
+        class Holder {
+            static final MemorySegment PRIo16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("ho");
+        }
+        return Holder.PRIo16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIo32 "o"
+     * }
+     */
+    public static MemorySegment PRIo32() {
+        class Holder {
+            static final MemorySegment PRIo32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("o");
+        }
+        return Holder.PRIo32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIo64 "lo"
+     * }
+     */
+    public static MemorySegment PRIo64() {
+        class Holder {
+            static final MemorySegment PRIo64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lo");
+        }
+        return Holder.PRIo64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIoLEAST8 "hho"
+     * }
+     */
+    public static MemorySegment PRIoLEAST8() {
+        class Holder {
+            static final MemorySegment PRIoLEAST8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hho");
+        }
+        return Holder.PRIoLEAST8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIoLEAST16 "ho"
+     * }
+     */
+    public static MemorySegment PRIoLEAST16() {
+        class Holder {
+            static final MemorySegment PRIoLEAST16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("ho");
+        }
+        return Holder.PRIoLEAST16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIoLEAST32 "o"
+     * }
+     */
+    public static MemorySegment PRIoLEAST32() {
+        class Holder {
+            static final MemorySegment PRIoLEAST32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("o");
+        }
+        return Holder.PRIoLEAST32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIoLEAST64 "lo"
+     * }
+     */
+    public static MemorySegment PRIoLEAST64() {
+        class Holder {
+            static final MemorySegment PRIoLEAST64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lo");
+        }
+        return Holder.PRIoLEAST64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIoFAST8 "hho"
+     * }
+     */
+    public static MemorySegment PRIoFAST8() {
+        class Holder {
+            static final MemorySegment PRIoFAST8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hho");
+        }
+        return Holder.PRIoFAST8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIoFAST16 "lo"
+     * }
+     */
+    public static MemorySegment PRIoFAST16() {
+        class Holder {
+            static final MemorySegment PRIoFAST16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lo");
+        }
+        return Holder.PRIoFAST16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIoFAST32 "lo"
+     * }
+     */
+    public static MemorySegment PRIoFAST32() {
+        class Holder {
+            static final MemorySegment PRIoFAST32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lo");
+        }
+        return Holder.PRIoFAST32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIoFAST64 "lo"
+     * }
+     */
+    public static MemorySegment PRIoFAST64() {
+        class Holder {
+            static final MemorySegment PRIoFAST64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lo");
+        }
+        return Holder.PRIoFAST64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIu8 "hhu"
+     * }
+     */
+    public static MemorySegment PRIu8() {
+        class Holder {
+            static final MemorySegment PRIu8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhu");
+        }
+        return Holder.PRIu8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIu16 "hu"
+     * }
+     */
+    public static MemorySegment PRIu16() {
+        class Holder {
+            static final MemorySegment PRIu16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hu");
+        }
+        return Holder.PRIu16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIu32 "u"
+     * }
+     */
+    public static MemorySegment PRIu32() {
+        class Holder {
+            static final MemorySegment PRIu32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("u");
+        }
+        return Holder.PRIu32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIu64 "lu"
+     * }
+     */
+    public static MemorySegment PRIu64() {
+        class Holder {
+            static final MemorySegment PRIu64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lu");
+        }
+        return Holder.PRIu64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIuLEAST8 "hhu"
+     * }
+     */
+    public static MemorySegment PRIuLEAST8() {
+        class Holder {
+            static final MemorySegment PRIuLEAST8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhu");
+        }
+        return Holder.PRIuLEAST8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIuLEAST16 "hu"
+     * }
+     */
+    public static MemorySegment PRIuLEAST16() {
+        class Holder {
+            static final MemorySegment PRIuLEAST16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hu");
+        }
+        return Holder.PRIuLEAST16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIuLEAST32 "u"
+     * }
+     */
+    public static MemorySegment PRIuLEAST32() {
+        class Holder {
+            static final MemorySegment PRIuLEAST32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("u");
+        }
+        return Holder.PRIuLEAST32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIuLEAST64 "lu"
+     * }
+     */
+    public static MemorySegment PRIuLEAST64() {
+        class Holder {
+            static final MemorySegment PRIuLEAST64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lu");
+        }
+        return Holder.PRIuLEAST64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIuFAST8 "hhu"
+     * }
+     */
+    public static MemorySegment PRIuFAST8() {
+        class Holder {
+            static final MemorySegment PRIuFAST8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhu");
+        }
+        return Holder.PRIuFAST8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIuFAST16 "lu"
+     * }
+     */
+    public static MemorySegment PRIuFAST16() {
+        class Holder {
+            static final MemorySegment PRIuFAST16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lu");
+        }
+        return Holder.PRIuFAST16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIuFAST32 "lu"
+     * }
+     */
+    public static MemorySegment PRIuFAST32() {
+        class Holder {
+            static final MemorySegment PRIuFAST32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lu");
+        }
+        return Holder.PRIuFAST32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIuFAST64 "lu"
+     * }
+     */
+    public static MemorySegment PRIuFAST64() {
+        class Holder {
+            static final MemorySegment PRIuFAST64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lu");
+        }
+        return Holder.PRIuFAST64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIx8 "hhx"
+     * }
+     */
+    public static MemorySegment PRIx8() {
+        class Holder {
+            static final MemorySegment PRIx8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhx");
+        }
+        return Holder.PRIx8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIx16 "hx"
+     * }
+     */
+    public static MemorySegment PRIx16() {
+        class Holder {
+            static final MemorySegment PRIx16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hx");
+        }
+        return Holder.PRIx16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIx32 "x"
+     * }
+     */
+    public static MemorySegment PRIx32() {
+        class Holder {
+            static final MemorySegment PRIx32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("x");
+        }
+        return Holder.PRIx32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIx64 "lx"
+     * }
+     */
+    public static MemorySegment PRIx64() {
+        class Holder {
+            static final MemorySegment PRIx64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lx");
+        }
+        return Holder.PRIx64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIxLEAST8 "hhx"
+     * }
+     */
+    public static MemorySegment PRIxLEAST8() {
+        class Holder {
+            static final MemorySegment PRIxLEAST8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhx");
+        }
+        return Holder.PRIxLEAST8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIxLEAST16 "hx"
+     * }
+     */
+    public static MemorySegment PRIxLEAST16() {
+        class Holder {
+            static final MemorySegment PRIxLEAST16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hx");
+        }
+        return Holder.PRIxLEAST16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIxLEAST32 "x"
+     * }
+     */
+    public static MemorySegment PRIxLEAST32() {
+        class Holder {
+            static final MemorySegment PRIxLEAST32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("x");
+        }
+        return Holder.PRIxLEAST32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIxLEAST64 "lx"
+     * }
+     */
+    public static MemorySegment PRIxLEAST64() {
+        class Holder {
+            static final MemorySegment PRIxLEAST64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lx");
+        }
+        return Holder.PRIxLEAST64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIxFAST8 "hhx"
+     * }
+     */
+    public static MemorySegment PRIxFAST8() {
+        class Holder {
+            static final MemorySegment PRIxFAST8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhx");
+        }
+        return Holder.PRIxFAST8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIxFAST16 "lx"
+     * }
+     */
+    public static MemorySegment PRIxFAST16() {
+        class Holder {
+            static final MemorySegment PRIxFAST16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lx");
+        }
+        return Holder.PRIxFAST16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIxFAST32 "lx"
+     * }
+     */
+    public static MemorySegment PRIxFAST32() {
+        class Holder {
+            static final MemorySegment PRIxFAST32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lx");
+        }
+        return Holder.PRIxFAST32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIxFAST64 "lx"
+     * }
+     */
+    public static MemorySegment PRIxFAST64() {
+        class Holder {
+            static final MemorySegment PRIxFAST64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lx");
+        }
+        return Holder.PRIxFAST64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIX8 "hhX"
+     * }
+     */
+    public static MemorySegment PRIX8() {
+        class Holder {
+            static final MemorySegment PRIX8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhX");
+        }
+        return Holder.PRIX8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIX16 "hX"
+     * }
+     */
+    public static MemorySegment PRIX16() {
+        class Holder {
+            static final MemorySegment PRIX16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hX");
+        }
+        return Holder.PRIX16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIX32 "X"
+     * }
+     */
+    public static MemorySegment PRIX32() {
+        class Holder {
+            static final MemorySegment PRIX32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("X");
+        }
+        return Holder.PRIX32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIX64 "lX"
+     * }
+     */
+    public static MemorySegment PRIX64() {
+        class Holder {
+            static final MemorySegment PRIX64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lX");
+        }
+        return Holder.PRIX64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIXLEAST8 "hhX"
+     * }
+     */
+    public static MemorySegment PRIXLEAST8() {
+        class Holder {
+            static final MemorySegment PRIXLEAST8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhX");
+        }
+        return Holder.PRIXLEAST8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIXLEAST16 "hX"
+     * }
+     */
+    public static MemorySegment PRIXLEAST16() {
+        class Holder {
+            static final MemorySegment PRIXLEAST16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hX");
+        }
+        return Holder.PRIXLEAST16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIXLEAST32 "X"
+     * }
+     */
+    public static MemorySegment PRIXLEAST32() {
+        class Holder {
+            static final MemorySegment PRIXLEAST32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("X");
+        }
+        return Holder.PRIXLEAST32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIXLEAST64 "lX"
+     * }
+     */
+    public static MemorySegment PRIXLEAST64() {
+        class Holder {
+            static final MemorySegment PRIXLEAST64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lX");
+        }
+        return Holder.PRIXLEAST64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIXFAST8 "hhX"
+     * }
+     */
+    public static MemorySegment PRIXFAST8() {
+        class Holder {
+            static final MemorySegment PRIXFAST8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhX");
+        }
+        return Holder.PRIXFAST8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIXFAST16 "lX"
+     * }
+     */
+    public static MemorySegment PRIXFAST16() {
+        class Holder {
+            static final MemorySegment PRIXFAST16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lX");
+        }
+        return Holder.PRIXFAST16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIXFAST32 "lX"
+     * }
+     */
+    public static MemorySegment PRIXFAST32() {
+        class Holder {
+            static final MemorySegment PRIXFAST32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lX");
+        }
+        return Holder.PRIXFAST32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIXFAST64 "lX"
+     * }
+     */
+    public static MemorySegment PRIXFAST64() {
+        class Holder {
+            static final MemorySegment PRIXFAST64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lX");
+        }
+        return Holder.PRIXFAST64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIdMAX "ld"
+     * }
+     */
+    public static MemorySegment PRIdMAX() {
+        class Holder {
+            static final MemorySegment PRIdMAX
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("ld");
+        }
+        return Holder.PRIdMAX;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIiMAX "li"
+     * }
+     */
+    public static MemorySegment PRIiMAX() {
+        class Holder {
+            static final MemorySegment PRIiMAX
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("li");
+        }
+        return Holder.PRIiMAX;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIoMAX "lo"
+     * }
+     */
+    public static MemorySegment PRIoMAX() {
+        class Holder {
+            static final MemorySegment PRIoMAX
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lo");
+        }
+        return Holder.PRIoMAX;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIuMAX "lu"
+     * }
+     */
+    public static MemorySegment PRIuMAX() {
+        class Holder {
+            static final MemorySegment PRIuMAX
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lu");
+        }
+        return Holder.PRIuMAX;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIxMAX "lx"
+     * }
+     */
+    public static MemorySegment PRIxMAX() {
+        class Holder {
+            static final MemorySegment PRIxMAX
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lx");
+        }
+        return Holder.PRIxMAX;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIXMAX "lX"
+     * }
+     */
+    public static MemorySegment PRIXMAX() {
+        class Holder {
+            static final MemorySegment PRIXMAX
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lX");
+        }
+        return Holder.PRIXMAX;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIdPTR "ld"
+     * }
+     */
+    public static MemorySegment PRIdPTR() {
+        class Holder {
+            static final MemorySegment PRIdPTR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("ld");
+        }
+        return Holder.PRIdPTR;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIiPTR "li"
+     * }
+     */
+    public static MemorySegment PRIiPTR() {
+        class Holder {
+            static final MemorySegment PRIiPTR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("li");
+        }
+        return Holder.PRIiPTR;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIoPTR "lo"
+     * }
+     */
+    public static MemorySegment PRIoPTR() {
+        class Holder {
+            static final MemorySegment PRIoPTR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lo");
+        }
+        return Holder.PRIoPTR;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIuPTR "lu"
+     * }
+     */
+    public static MemorySegment PRIuPTR() {
+        class Holder {
+            static final MemorySegment PRIuPTR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lu");
+        }
+        return Holder.PRIuPTR;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIxPTR "lx"
+     * }
+     */
+    public static MemorySegment PRIxPTR() {
+        class Holder {
+            static final MemorySegment PRIxPTR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lx");
+        }
+        return Holder.PRIxPTR;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PRIXPTR "lX"
+     * }
+     */
+    public static MemorySegment PRIXPTR() {
+        class Holder {
+            static final MemorySegment PRIXPTR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lX");
+        }
+        return Holder.PRIXPTR;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNd8 "hhd"
+     * }
+     */
+    public static MemorySegment SCNd8() {
+        class Holder {
+            static final MemorySegment SCNd8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhd");
+        }
+        return Holder.SCNd8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNd16 "hd"
+     * }
+     */
+    public static MemorySegment SCNd16() {
+        class Holder {
+            static final MemorySegment SCNd16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hd");
+        }
+        return Holder.SCNd16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNd32 "d"
+     * }
+     */
+    public static MemorySegment SCNd32() {
+        class Holder {
+            static final MemorySegment SCNd32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("d");
+        }
+        return Holder.SCNd32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNd64 "ld"
+     * }
+     */
+    public static MemorySegment SCNd64() {
+        class Holder {
+            static final MemorySegment SCNd64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("ld");
+        }
+        return Holder.SCNd64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNdLEAST8 "hhd"
+     * }
+     */
+    public static MemorySegment SCNdLEAST8() {
+        class Holder {
+            static final MemorySegment SCNdLEAST8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhd");
+        }
+        return Holder.SCNdLEAST8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNdLEAST16 "hd"
+     * }
+     */
+    public static MemorySegment SCNdLEAST16() {
+        class Holder {
+            static final MemorySegment SCNdLEAST16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hd");
+        }
+        return Holder.SCNdLEAST16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNdLEAST32 "d"
+     * }
+     */
+    public static MemorySegment SCNdLEAST32() {
+        class Holder {
+            static final MemorySegment SCNdLEAST32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("d");
+        }
+        return Holder.SCNdLEAST32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNdLEAST64 "ld"
+     * }
+     */
+    public static MemorySegment SCNdLEAST64() {
+        class Holder {
+            static final MemorySegment SCNdLEAST64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("ld");
+        }
+        return Holder.SCNdLEAST64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNdFAST8 "hhd"
+     * }
+     */
+    public static MemorySegment SCNdFAST8() {
+        class Holder {
+            static final MemorySegment SCNdFAST8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhd");
+        }
+        return Holder.SCNdFAST8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNdFAST16 "ld"
+     * }
+     */
+    public static MemorySegment SCNdFAST16() {
+        class Holder {
+            static final MemorySegment SCNdFAST16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("ld");
+        }
+        return Holder.SCNdFAST16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNdFAST32 "ld"
+     * }
+     */
+    public static MemorySegment SCNdFAST32() {
+        class Holder {
+            static final MemorySegment SCNdFAST32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("ld");
+        }
+        return Holder.SCNdFAST32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNdFAST64 "ld"
+     * }
+     */
+    public static MemorySegment SCNdFAST64() {
+        class Holder {
+            static final MemorySegment SCNdFAST64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("ld");
+        }
+        return Holder.SCNdFAST64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNi8 "hhi"
+     * }
+     */
+    public static MemorySegment SCNi8() {
+        class Holder {
+            static final MemorySegment SCNi8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhi");
+        }
+        return Holder.SCNi8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNi16 "hi"
+     * }
+     */
+    public static MemorySegment SCNi16() {
+        class Holder {
+            static final MemorySegment SCNi16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hi");
+        }
+        return Holder.SCNi16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNi32 "i"
+     * }
+     */
+    public static MemorySegment SCNi32() {
+        class Holder {
+            static final MemorySegment SCNi32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("i");
+        }
+        return Holder.SCNi32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNi64 "li"
+     * }
+     */
+    public static MemorySegment SCNi64() {
+        class Holder {
+            static final MemorySegment SCNi64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("li");
+        }
+        return Holder.SCNi64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNiLEAST8 "hhi"
+     * }
+     */
+    public static MemorySegment SCNiLEAST8() {
+        class Holder {
+            static final MemorySegment SCNiLEAST8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhi");
+        }
+        return Holder.SCNiLEAST8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNiLEAST16 "hi"
+     * }
+     */
+    public static MemorySegment SCNiLEAST16() {
+        class Holder {
+            static final MemorySegment SCNiLEAST16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hi");
+        }
+        return Holder.SCNiLEAST16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNiLEAST32 "i"
+     * }
+     */
+    public static MemorySegment SCNiLEAST32() {
+        class Holder {
+            static final MemorySegment SCNiLEAST32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("i");
+        }
+        return Holder.SCNiLEAST32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNiLEAST64 "li"
+     * }
+     */
+    public static MemorySegment SCNiLEAST64() {
+        class Holder {
+            static final MemorySegment SCNiLEAST64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("li");
+        }
+        return Holder.SCNiLEAST64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNiFAST8 "hhi"
+     * }
+     */
+    public static MemorySegment SCNiFAST8() {
+        class Holder {
+            static final MemorySegment SCNiFAST8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhi");
+        }
+        return Holder.SCNiFAST8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNiFAST16 "li"
+     * }
+     */
+    public static MemorySegment SCNiFAST16() {
+        class Holder {
+            static final MemorySegment SCNiFAST16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("li");
+        }
+        return Holder.SCNiFAST16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNiFAST32 "li"
+     * }
+     */
+    public static MemorySegment SCNiFAST32() {
+        class Holder {
+            static final MemorySegment SCNiFAST32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("li");
+        }
+        return Holder.SCNiFAST32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNiFAST64 "li"
+     * }
+     */
+    public static MemorySegment SCNiFAST64() {
+        class Holder {
+            static final MemorySegment SCNiFAST64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("li");
+        }
+        return Holder.SCNiFAST64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNu8 "hhu"
+     * }
+     */
+    public static MemorySegment SCNu8() {
+        class Holder {
+            static final MemorySegment SCNu8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhu");
+        }
+        return Holder.SCNu8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNu16 "hu"
+     * }
+     */
+    public static MemorySegment SCNu16() {
+        class Holder {
+            static final MemorySegment SCNu16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hu");
+        }
+        return Holder.SCNu16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNu32 "u"
+     * }
+     */
+    public static MemorySegment SCNu32() {
+        class Holder {
+            static final MemorySegment SCNu32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("u");
+        }
+        return Holder.SCNu32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNu64 "lu"
+     * }
+     */
+    public static MemorySegment SCNu64() {
+        class Holder {
+            static final MemorySegment SCNu64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lu");
+        }
+        return Holder.SCNu64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNuLEAST8 "hhu"
+     * }
+     */
+    public static MemorySegment SCNuLEAST8() {
+        class Holder {
+            static final MemorySegment SCNuLEAST8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhu");
+        }
+        return Holder.SCNuLEAST8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNuLEAST16 "hu"
+     * }
+     */
+    public static MemorySegment SCNuLEAST16() {
+        class Holder {
+            static final MemorySegment SCNuLEAST16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hu");
+        }
+        return Holder.SCNuLEAST16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNuLEAST32 "u"
+     * }
+     */
+    public static MemorySegment SCNuLEAST32() {
+        class Holder {
+            static final MemorySegment SCNuLEAST32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("u");
+        }
+        return Holder.SCNuLEAST32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNuLEAST64 "lu"
+     * }
+     */
+    public static MemorySegment SCNuLEAST64() {
+        class Holder {
+            static final MemorySegment SCNuLEAST64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lu");
+        }
+        return Holder.SCNuLEAST64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNuFAST8 "hhu"
+     * }
+     */
+    public static MemorySegment SCNuFAST8() {
+        class Holder {
+            static final MemorySegment SCNuFAST8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhu");
+        }
+        return Holder.SCNuFAST8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNuFAST16 "lu"
+     * }
+     */
+    public static MemorySegment SCNuFAST16() {
+        class Holder {
+            static final MemorySegment SCNuFAST16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lu");
+        }
+        return Holder.SCNuFAST16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNuFAST32 "lu"
+     * }
+     */
+    public static MemorySegment SCNuFAST32() {
+        class Holder {
+            static final MemorySegment SCNuFAST32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lu");
+        }
+        return Holder.SCNuFAST32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNuFAST64 "lu"
+     * }
+     */
+    public static MemorySegment SCNuFAST64() {
+        class Holder {
+            static final MemorySegment SCNuFAST64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lu");
+        }
+        return Holder.SCNuFAST64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNo8 "hho"
+     * }
+     */
+    public static MemorySegment SCNo8() {
+        class Holder {
+            static final MemorySegment SCNo8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hho");
+        }
+        return Holder.SCNo8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNo16 "ho"
+     * }
+     */
+    public static MemorySegment SCNo16() {
+        class Holder {
+            static final MemorySegment SCNo16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("ho");
+        }
+        return Holder.SCNo16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNo32 "o"
+     * }
+     */
+    public static MemorySegment SCNo32() {
+        class Holder {
+            static final MemorySegment SCNo32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("o");
+        }
+        return Holder.SCNo32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNo64 "lo"
+     * }
+     */
+    public static MemorySegment SCNo64() {
+        class Holder {
+            static final MemorySegment SCNo64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lo");
+        }
+        return Holder.SCNo64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNoLEAST8 "hho"
+     * }
+     */
+    public static MemorySegment SCNoLEAST8() {
+        class Holder {
+            static final MemorySegment SCNoLEAST8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hho");
+        }
+        return Holder.SCNoLEAST8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNoLEAST16 "ho"
+     * }
+     */
+    public static MemorySegment SCNoLEAST16() {
+        class Holder {
+            static final MemorySegment SCNoLEAST16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("ho");
+        }
+        return Holder.SCNoLEAST16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNoLEAST32 "o"
+     * }
+     */
+    public static MemorySegment SCNoLEAST32() {
+        class Holder {
+            static final MemorySegment SCNoLEAST32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("o");
+        }
+        return Holder.SCNoLEAST32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNoLEAST64 "lo"
+     * }
+     */
+    public static MemorySegment SCNoLEAST64() {
+        class Holder {
+            static final MemorySegment SCNoLEAST64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lo");
+        }
+        return Holder.SCNoLEAST64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNoFAST8 "hho"
+     * }
+     */
+    public static MemorySegment SCNoFAST8() {
+        class Holder {
+            static final MemorySegment SCNoFAST8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hho");
+        }
+        return Holder.SCNoFAST8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNoFAST16 "lo"
+     * }
+     */
+    public static MemorySegment SCNoFAST16() {
+        class Holder {
+            static final MemorySegment SCNoFAST16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lo");
+        }
+        return Holder.SCNoFAST16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNoFAST32 "lo"
+     * }
+     */
+    public static MemorySegment SCNoFAST32() {
+        class Holder {
+            static final MemorySegment SCNoFAST32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lo");
+        }
+        return Holder.SCNoFAST32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNoFAST64 "lo"
+     * }
+     */
+    public static MemorySegment SCNoFAST64() {
+        class Holder {
+            static final MemorySegment SCNoFAST64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lo");
+        }
+        return Holder.SCNoFAST64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNx8 "hhx"
+     * }
+     */
+    public static MemorySegment SCNx8() {
+        class Holder {
+            static final MemorySegment SCNx8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhx");
+        }
+        return Holder.SCNx8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNx16 "hx"
+     * }
+     */
+    public static MemorySegment SCNx16() {
+        class Holder {
+            static final MemorySegment SCNx16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hx");
+        }
+        return Holder.SCNx16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNx32 "x"
+     * }
+     */
+    public static MemorySegment SCNx32() {
+        class Holder {
+            static final MemorySegment SCNx32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("x");
+        }
+        return Holder.SCNx32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNx64 "lx"
+     * }
+     */
+    public static MemorySegment SCNx64() {
+        class Holder {
+            static final MemorySegment SCNx64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lx");
+        }
+        return Holder.SCNx64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNxLEAST8 "hhx"
+     * }
+     */
+    public static MemorySegment SCNxLEAST8() {
+        class Holder {
+            static final MemorySegment SCNxLEAST8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhx");
+        }
+        return Holder.SCNxLEAST8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNxLEAST16 "hx"
+     * }
+     */
+    public static MemorySegment SCNxLEAST16() {
+        class Holder {
+            static final MemorySegment SCNxLEAST16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hx");
+        }
+        return Holder.SCNxLEAST16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNxLEAST32 "x"
+     * }
+     */
+    public static MemorySegment SCNxLEAST32() {
+        class Holder {
+            static final MemorySegment SCNxLEAST32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("x");
+        }
+        return Holder.SCNxLEAST32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNxLEAST64 "lx"
+     * }
+     */
+    public static MemorySegment SCNxLEAST64() {
+        class Holder {
+            static final MemorySegment SCNxLEAST64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lx");
+        }
+        return Holder.SCNxLEAST64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNxFAST8 "hhx"
+     * }
+     */
+    public static MemorySegment SCNxFAST8() {
+        class Holder {
+            static final MemorySegment SCNxFAST8
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("hhx");
+        }
+        return Holder.SCNxFAST8;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNxFAST16 "lx"
+     * }
+     */
+    public static MemorySegment SCNxFAST16() {
+        class Holder {
+            static final MemorySegment SCNxFAST16
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lx");
+        }
+        return Holder.SCNxFAST16;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNxFAST32 "lx"
+     * }
+     */
+    public static MemorySegment SCNxFAST32() {
+        class Holder {
+            static final MemorySegment SCNxFAST32
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lx");
+        }
+        return Holder.SCNxFAST32;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNxFAST64 "lx"
+     * }
+     */
+    public static MemorySegment SCNxFAST64() {
+        class Holder {
+            static final MemorySegment SCNxFAST64
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lx");
+        }
+        return Holder.SCNxFAST64;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNdMAX "ld"
+     * }
+     */
+    public static MemorySegment SCNdMAX() {
+        class Holder {
+            static final MemorySegment SCNdMAX
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("ld");
+        }
+        return Holder.SCNdMAX;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNiMAX "li"
+     * }
+     */
+    public static MemorySegment SCNiMAX() {
+        class Holder {
+            static final MemorySegment SCNiMAX
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("li");
+        }
+        return Holder.SCNiMAX;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNoMAX "lo"
+     * }
+     */
+    public static MemorySegment SCNoMAX() {
+        class Holder {
+            static final MemorySegment SCNoMAX
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lo");
+        }
+        return Holder.SCNoMAX;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNuMAX "lu"
+     * }
+     */
+    public static MemorySegment SCNuMAX() {
+        class Holder {
+            static final MemorySegment SCNuMAX
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lu");
+        }
+        return Holder.SCNuMAX;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNxMAX "lx"
+     * }
+     */
+    public static MemorySegment SCNxMAX() {
+        class Holder {
+            static final MemorySegment SCNxMAX
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lx");
+        }
+        return Holder.SCNxMAX;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNdPTR "ld"
+     * }
+     */
+    public static MemorySegment SCNdPTR() {
+        class Holder {
+            static final MemorySegment SCNdPTR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("ld");
+        }
+        return Holder.SCNdPTR;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNiPTR "li"
+     * }
+     */
+    public static MemorySegment SCNiPTR() {
+        class Holder {
+            static final MemorySegment SCNiPTR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("li");
+        }
+        return Holder.SCNiPTR;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNoPTR "lo"
+     * }
+     */
+    public static MemorySegment SCNoPTR() {
+        class Holder {
+            static final MemorySegment SCNoPTR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lo");
+        }
+        return Holder.SCNoPTR;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNuPTR "lu"
+     * }
+     */
+    public static MemorySegment SCNuPTR() {
+        class Holder {
+            static final MemorySegment SCNuPTR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lu");
+        }
+        return Holder.SCNuPTR;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define SCNxPTR "lx"
+     * }
+     */
+    public static MemorySegment SCNxPTR() {
+        class Holder {
+            static final MemorySegment SCNxPTR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("lx");
+        }
+        return Holder.SCNxPTR;
+    }
+    private static final int HB_CODEPOINT_INVALID = (int)4294967295L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_CODEPOINT_INVALID 4294967295
+     * }
+     */
+    public static int HB_CODEPOINT_INVALID() {
+        return HB_CODEPOINT_INVALID;
+    }
+    private static final int HB_TAG_NONE = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_TAG_NONE 0
+     * }
+     */
+    public static int HB_TAG_NONE() {
+        return HB_TAG_NONE;
+    }
+    private static final int HB_TAG_MAX = (int)4294967295L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_TAG_MAX 4294967295
+     * }
+     */
+    public static int HB_TAG_MAX() {
+        return HB_TAG_MAX;
+    }
+    private static final int HB_TAG_MAX_SIGNED = (int)2147483647L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_TAG_MAX_SIGNED 2147483647
+     * }
+     */
+    public static int HB_TAG_MAX_SIGNED() {
+        return HB_TAG_MAX_SIGNED;
+    }
+    private static final MemorySegment HB_LANGUAGE_INVALID = MemorySegment.ofAddress(0L);
+    /**
+     * {@snippet lang=c :
+     * #define HB_LANGUAGE_INVALID (void*) 0
+     * }
+     */
+    public static MemorySegment HB_LANGUAGE_INVALID() {
+        return HB_LANGUAGE_INVALID;
+    }
+    private static final int HB_FEATURE_GLOBAL_END = (int)4294967295L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_FEATURE_GLOBAL_END 4294967295
+     * }
+     */
+    public static int HB_FEATURE_GLOBAL_END() {
+        return HB_FEATURE_GLOBAL_END;
+    }
+    private static final int HB_UNICODE_MAX = (int)1114111L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_UNICODE_MAX 1114111
+     * }
+     */
+    public static int HB_UNICODE_MAX() {
+        return HB_UNICODE_MAX;
+    }
+    private static final int HB_SET_VALUE_INVALID = (int)4294967295L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_SET_VALUE_INVALID 4294967295
+     * }
+     */
+    public static int HB_SET_VALUE_INVALID() {
+        return HB_SET_VALUE_INVALID;
+    }
+    private static final int HB_MAP_VALUE_INVALID = (int)4294967295L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_MAP_VALUE_INVALID 4294967295
+     * }
+     */
+    public static int HB_MAP_VALUE_INVALID() {
+        return HB_MAP_VALUE_INVALID;
+    }
+    private static final int HB_PAINT_IMAGE_FORMAT_PNG = (int)1886283552L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_PAINT_IMAGE_FORMAT_PNG 1886283552
+     * }
+     */
+    public static int HB_PAINT_IMAGE_FORMAT_PNG() {
+        return HB_PAINT_IMAGE_FORMAT_PNG;
+    }
+    private static final int HB_PAINT_IMAGE_FORMAT_SVG = (int)1937139488L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_PAINT_IMAGE_FORMAT_SVG 1937139488
+     * }
+     */
+    public static int HB_PAINT_IMAGE_FORMAT_SVG() {
+        return HB_PAINT_IMAGE_FORMAT_SVG;
+    }
+    private static final int HB_PAINT_IMAGE_FORMAT_BGRA = (int)1111970369L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_PAINT_IMAGE_FORMAT_BGRA 1111970369
+     * }
+     */
+    public static int HB_PAINT_IMAGE_FORMAT_BGRA() {
+        return HB_PAINT_IMAGE_FORMAT_BGRA;
+    }
+    private static final int HB_FONT_NO_VAR_NAMED_INSTANCE = (int)4294967295L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_FONT_NO_VAR_NAMED_INSTANCE 4294967295
+     * }
+     */
+    public static int HB_FONT_NO_VAR_NAMED_INSTANCE() {
+        return HB_FONT_NO_VAR_NAMED_INSTANCE;
+    }
+    private static final int HB_BUFFER_REPLACEMENT_CODEPOINT_DEFAULT = (int)65533L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_BUFFER_REPLACEMENT_CODEPOINT_DEFAULT 65533
+     * }
+     */
+    public static int HB_BUFFER_REPLACEMENT_CODEPOINT_DEFAULT() {
+        return HB_BUFFER_REPLACEMENT_CODEPOINT_DEFAULT;
+    }
+    private static final int HB_SCRIPT_CANADIAN_ABORIGINAL = (int)1130458739L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_SCRIPT_CANADIAN_ABORIGINAL 1130458739
+     * }
+     */
+    public static int HB_SCRIPT_CANADIAN_ABORIGINAL() {
+        return HB_SCRIPT_CANADIAN_ABORIGINAL;
+    }
+    private static final int HB_BUFFER_FLAGS_DEFAULT = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_BUFFER_FLAGS_DEFAULT 0
+     * }
+     */
+    public static int HB_BUFFER_FLAGS_DEFAULT() {
+        return HB_BUFFER_FLAGS_DEFAULT;
+    }
+    private static final int HB_BUFFER_SERIALIZE_FLAGS_DEFAULT = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_BUFFER_SERIALIZE_FLAGS_DEFAULT 0
+     * }
+     */
+    public static int HB_BUFFER_SERIALIZE_FLAGS_DEFAULT() {
+        return HB_BUFFER_SERIALIZE_FLAGS_DEFAULT;
+    }
+    private static final int HB_UNICODE_MAX_DECOMPOSITION_LEN = (int)19L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_UNICODE_MAX_DECOMPOSITION_LEN 19
+     * }
+     */
+    public static int HB_UNICODE_MAX_DECOMPOSITION_LEN() {
+        return HB_UNICODE_MAX_DECOMPOSITION_LEN;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define HB_VERSION_STRING "14.2.1"
+     * }
+     */
+    public static MemorySegment HB_VERSION_STRING() {
+        class Holder {
+            static final MemorySegment HB_VERSION_STRING
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("14.2.1");
+        }
+        return Holder.HB_VERSION_STRING;
+    }
+    private static final double PANGO_SCALE_XX_SMALL = 0.5787037037037d;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_SCALE_XX_SMALL 0.5787037037037
+     * }
+     */
+    public static double PANGO_SCALE_XX_SMALL() {
+        return PANGO_SCALE_XX_SMALL;
+    }
+    private static final double PANGO_SCALE_X_SMALL = 0.6944444444444d;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_SCALE_X_SMALL 0.6944444444444
+     * }
+     */
+    public static double PANGO_SCALE_X_SMALL() {
+        return PANGO_SCALE_X_SMALL;
+    }
+    private static final double PANGO_SCALE_SMALL = 0.8333333333333d;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_SCALE_SMALL 0.8333333333333
+     * }
+     */
+    public static double PANGO_SCALE_SMALL() {
+        return PANGO_SCALE_SMALL;
+    }
+    private static final double PANGO_SCALE_MEDIUM = 1.0d;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_SCALE_MEDIUM 1.0
+     * }
+     */
+    public static double PANGO_SCALE_MEDIUM() {
+        return PANGO_SCALE_MEDIUM;
+    }
+    private static final double PANGO_SCALE_LARGE = 1.2d;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_SCALE_LARGE 1.2
+     * }
+     */
+    public static double PANGO_SCALE_LARGE() {
+        return PANGO_SCALE_LARGE;
+    }
+    private static final double PANGO_SCALE_X_LARGE = 1.44d;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_SCALE_X_LARGE 1.44
+     * }
+     */
+    public static double PANGO_SCALE_X_LARGE() {
+        return PANGO_SCALE_X_LARGE;
+    }
+    private static final double PANGO_SCALE_XX_LARGE = 1.728d;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_SCALE_XX_LARGE 1.728
+     * }
+     */
+    public static double PANGO_SCALE_XX_LARGE() {
+        return PANGO_SCALE_XX_LARGE;
+    }
+    private static final int PANGO_GLYPH_EMPTY = (int)268435455L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_GLYPH_EMPTY 268435455
+     * }
+     */
+    public static int PANGO_GLYPH_EMPTY() {
+        return PANGO_GLYPH_EMPTY;
+    }
+    private static final int PANGO_GLYPH_INVALID_INPUT = (int)4294967295L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_GLYPH_INVALID_INPUT 4294967295
+     * }
+     */
+    public static int PANGO_GLYPH_INVALID_INPUT() {
+        return PANGO_GLYPH_INVALID_INPUT;
+    }
+    private static final int PANGO_GLYPH_UNKNOWN_FLAG = (int)268435456L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_GLYPH_UNKNOWN_FLAG 268435456
+     * }
+     */
+    public static int PANGO_GLYPH_UNKNOWN_FLAG() {
+        return PANGO_GLYPH_UNKNOWN_FLAG;
+    }
+    private static final int PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING 0
+     * }
+     */
+    public static int PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING() {
+        return PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING;
+    }
+    private static final int PANGO_ATTR_INDEX_TO_TEXT_END = (int)4294967295L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_ATTR_INDEX_TO_TEXT_END 4294967295
+     * }
+     */
+    public static int PANGO_ATTR_INDEX_TO_TEXT_END() {
+        return PANGO_ATTR_INDEX_TO_TEXT_END;
+    }
+    private static final int PANGO_ANALYSIS_FLAG_CENTERED_BASELINE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_ANALYSIS_FLAG_CENTERED_BASELINE 1
+     * }
+     */
+    public static int PANGO_ANALYSIS_FLAG_CENTERED_BASELINE() {
+        return PANGO_ANALYSIS_FLAG_CENTERED_BASELINE;
+    }
+    private static final int PANGO_ANALYSIS_FLAG_IS_ELLIPSIS = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_ANALYSIS_FLAG_IS_ELLIPSIS 2
+     * }
+     */
+    public static int PANGO_ANALYSIS_FLAG_IS_ELLIPSIS() {
+        return PANGO_ANALYSIS_FLAG_IS_ELLIPSIS;
+    }
+    private static final int PANGO_ANALYSIS_FLAG_NEED_HYPHEN = (int)4L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_ANALYSIS_FLAG_NEED_HYPHEN 4
+     * }
+     */
+    public static int PANGO_ANALYSIS_FLAG_NEED_HYPHEN() {
+        return PANGO_ANALYSIS_FLAG_NEED_HYPHEN;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_RENDER_TYPE_NONE "PangoRenderNone"
+     * }
+     */
+    public static MemorySegment PANGO_RENDER_TYPE_NONE() {
+        class Holder {
+            static final MemorySegment PANGO_RENDER_TYPE_NONE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("PangoRenderNone");
+        }
+        return Holder.PANGO_RENDER_TYPE_NONE;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_ENGINE_TYPE_LANG "PangoEngineLang"
+     * }
+     */
+    public static MemorySegment PANGO_ENGINE_TYPE_LANG() {
+        class Holder {
+            static final MemorySegment PANGO_ENGINE_TYPE_LANG
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("PangoEngineLang");
+        }
+        return Holder.PANGO_ENGINE_TYPE_LANG;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_ENGINE_TYPE_SHAPE "PangoEngineShape"
+     * }
+     */
+    public static MemorySegment PANGO_ENGINE_TYPE_SHAPE() {
+        class Holder {
+            static final MemorySegment PANGO_ENGINE_TYPE_SHAPE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("PangoEngineShape");
+        }
+        return Holder.PANGO_ENGINE_TYPE_SHAPE;
+    }
+    private static final int PANGO_RENDER_COMPONENT_ALL = (int)62L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_RENDER_COMPONENT_ALL 62
+     * }
+     */
+    public static int PANGO_RENDER_COMPONENT_ALL() {
+        return PANGO_RENDER_COMPONENT_ALL;
+    }
+    private static final int EOF = (int)-1L;
+    /**
+     * {@snippet lang=c :
+     * #define EOF -1
+     * }
+     */
+    public static int EOF() {
+        return EOF;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define P_tmpdir "/tmp"
+     * }
+     */
+    public static MemorySegment P_tmpdir() {
+        class Holder {
+            static final MemorySegment P_tmpdir
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("/tmp");
+        }
+        return Holder.P_tmpdir;
+    }
+    private static final int PANGO_VERSION = (int)15800L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION 15800
+     * }
+     */
+    public static int PANGO_VERSION() {
+        return PANGO_VERSION;
+    }
+    private static final int CAIRO_FONT_TYPE_ATSUI = (int)3L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_FONT_TYPE_ATSUI 3
+     * }
+     */
+    public static int CAIRO_FONT_TYPE_ATSUI() {
+        return CAIRO_FONT_TYPE_ATSUI;
+    }
+    private static final int CAIRO_VERSION = (int)11804L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_VERSION 11804
+     * }
+     */
+    public static int CAIRO_VERSION() {
+        return CAIRO_VERSION;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_VERSION_STRING "1.18.4"
+     * }
+     */
+    public static MemorySegment CAIRO_VERSION_STRING() {
+        class Holder {
+            static final MemorySegment CAIRO_VERSION_STRING
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("1.18.4");
+        }
+        return Holder.CAIRO_VERSION_STRING;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_TAG_DEST "cairo.dest"
+     * }
+     */
+    public static MemorySegment CAIRO_TAG_DEST() {
+        class Holder {
+            static final MemorySegment CAIRO_TAG_DEST
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("cairo.dest");
+        }
+        return Holder.CAIRO_TAG_DEST;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_TAG_LINK "Link"
+     * }
+     */
+    public static MemorySegment CAIRO_TAG_LINK() {
+        class Holder {
+            static final MemorySegment CAIRO_TAG_LINK
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("Link");
+        }
+        return Holder.CAIRO_TAG_LINK;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_TAG_CONTENT "cairo.content"
+     * }
+     */
+    public static MemorySegment CAIRO_TAG_CONTENT() {
+        class Holder {
+            static final MemorySegment CAIRO_TAG_CONTENT
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("cairo.content");
+        }
+        return Holder.CAIRO_TAG_CONTENT;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_TAG_CONTENT_REF "cairo.content_ref"
+     * }
+     */
+    public static MemorySegment CAIRO_TAG_CONTENT_REF() {
+        class Holder {
+            static final MemorySegment CAIRO_TAG_CONTENT_REF
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("cairo.content_ref");
+        }
+        return Holder.CAIRO_TAG_CONTENT_REF;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_MIME_TYPE_JPEG "image/jpeg"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_JPEG() {
+        class Holder {
+            static final MemorySegment CAIRO_MIME_TYPE_JPEG
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("image/jpeg");
+        }
+        return Holder.CAIRO_MIME_TYPE_JPEG;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_MIME_TYPE_PNG "image/png"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_PNG() {
+        class Holder {
+            static final MemorySegment CAIRO_MIME_TYPE_PNG
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("image/png");
+        }
+        return Holder.CAIRO_MIME_TYPE_PNG;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_MIME_TYPE_JP2 "image/jp2"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_JP2() {
+        class Holder {
+            static final MemorySegment CAIRO_MIME_TYPE_JP2
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("image/jp2");
+        }
+        return Holder.CAIRO_MIME_TYPE_JP2;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_MIME_TYPE_URI "text/x-uri"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_URI() {
+        class Holder {
+            static final MemorySegment CAIRO_MIME_TYPE_URI
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("text/x-uri");
+        }
+        return Holder.CAIRO_MIME_TYPE_URI;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_MIME_TYPE_UNIQUE_ID "application/x-cairo.uuid"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_UNIQUE_ID() {
+        class Holder {
+            static final MemorySegment CAIRO_MIME_TYPE_UNIQUE_ID
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("application/x-cairo.uuid");
+        }
+        return Holder.CAIRO_MIME_TYPE_UNIQUE_ID;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_MIME_TYPE_JBIG2 "application/x-cairo.jbig2"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_JBIG2() {
+        class Holder {
+            static final MemorySegment CAIRO_MIME_TYPE_JBIG2
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("application/x-cairo.jbig2");
+        }
+        return Holder.CAIRO_MIME_TYPE_JBIG2;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_MIME_TYPE_JBIG2_GLOBAL "application/x-cairo.jbig2-global"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_JBIG2_GLOBAL() {
+        class Holder {
+            static final MemorySegment CAIRO_MIME_TYPE_JBIG2_GLOBAL
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("application/x-cairo.jbig2-global");
+        }
+        return Holder.CAIRO_MIME_TYPE_JBIG2_GLOBAL;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_MIME_TYPE_JBIG2_GLOBAL_ID "application/x-cairo.jbig2-global-id"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_JBIG2_GLOBAL_ID() {
+        class Holder {
+            static final MemorySegment CAIRO_MIME_TYPE_JBIG2_GLOBAL_ID
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("application/x-cairo.jbig2-global-id");
+        }
+        return Holder.CAIRO_MIME_TYPE_JBIG2_GLOBAL_ID;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_MIME_TYPE_CCITT_FAX "image/g3fax"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_CCITT_FAX() {
+        class Holder {
+            static final MemorySegment CAIRO_MIME_TYPE_CCITT_FAX
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("image/g3fax");
+        }
+        return Holder.CAIRO_MIME_TYPE_CCITT_FAX;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_MIME_TYPE_CCITT_FAX_PARAMS "application/x-cairo.ccitt.params"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_CCITT_FAX_PARAMS() {
+        class Holder {
+            static final MemorySegment CAIRO_MIME_TYPE_CCITT_FAX_PARAMS
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("application/x-cairo.ccitt.params");
+        }
+        return Holder.CAIRO_MIME_TYPE_CCITT_FAX_PARAMS;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_MIME_TYPE_EPS "application/postscript"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_EPS() {
+        class Holder {
+            static final MemorySegment CAIRO_MIME_TYPE_EPS
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("application/postscript");
+        }
+        return Holder.CAIRO_MIME_TYPE_EPS;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_MIME_TYPE_EPS_PARAMS "application/x-cairo.eps.params"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_EPS_PARAMS() {
+        class Holder {
+            static final MemorySegment CAIRO_MIME_TYPE_EPS_PARAMS
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("application/x-cairo.eps.params");
+        }
+        return Holder.CAIRO_MIME_TYPE_EPS_PARAMS;
+    }
+    private static final long GDK_CURRENT_TIME = 0L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_CURRENT_TIME 0
+     * }
+     */
+    public static long GDK_CURRENT_TIME() {
+        return GDK_CURRENT_TIME;
+    }
+    private static final long GDK_PARENT_RELATIVE = 1L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PARENT_RELATIVE 1
+     * }
+     */
+    public static long GDK_PARENT_RELATIVE() {
+        return GDK_PARENT_RELATIVE;
+    }
+    private static final MemorySegment GDK_NONE = MemorySegment.ofAddress(0L);
+    /**
+     * {@snippet lang=c :
+     * #define GDK_NONE (void*) 0
+     * }
+     */
+    public static MemorySegment GDK_NONE() {
+        return GDK_NONE;
+    }
+    private static final int GDK_PRIORITY_EVENTS = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PRIORITY_EVENTS 0
+     * }
+     */
+    public static int GDK_PRIORITY_EVENTS() {
+        return GDK_PRIORITY_EVENTS;
+    }
+    private static final int GDK_PRIORITY_REDRAW = (int)120L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PRIORITY_REDRAW 120
+     * }
+     */
+    public static int GDK_PRIORITY_REDRAW() {
+        return GDK_PRIORITY_REDRAW;
+    }
+    private static final int GDK_EVENT_PROPAGATE = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_EVENT_PROPAGATE 0
+     * }
+     */
+    public static int GDK_EVENT_PROPAGATE() {
+        return GDK_EVENT_PROPAGATE;
+    }
+    private static final int GDK_EVENT_STOP = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_EVENT_STOP 1
+     * }
+     */
+    public static int GDK_EVENT_STOP() {
+        return GDK_EVENT_STOP;
+    }
+    private static final int GDK_BUTTON_PRIMARY = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_BUTTON_PRIMARY 1
+     * }
+     */
+    public static int GDK_BUTTON_PRIMARY() {
+        return GDK_BUTTON_PRIMARY;
+    }
+    private static final int GDK_BUTTON_MIDDLE = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_BUTTON_MIDDLE 2
+     * }
+     */
+    public static int GDK_BUTTON_MIDDLE() {
+        return GDK_BUTTON_MIDDLE;
+    }
+    private static final int GDK_BUTTON_SECONDARY = (int)3L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_BUTTON_SECONDARY 3
+     * }
+     */
+    public static int GDK_BUTTON_SECONDARY() {
+        return GDK_BUTTON_SECONDARY;
+    }
+    private static final int GDK_PIXBUF_MAJOR = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_MAJOR 2
+     * }
+     */
+    public static int GDK_PIXBUF_MAJOR() {
+        return GDK_PIXBUF_MAJOR;
+    }
+    private static final int GDK_PIXBUF_MINOR = (int)44L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_MINOR 44
+     * }
+     */
+    public static int GDK_PIXBUF_MINOR() {
+        return GDK_PIXBUF_MINOR;
+    }
+    private static final int GDK_PIXBUF_MICRO = (int)7L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_MICRO 7
+     * }
+     */
+    public static int GDK_PIXBUF_MICRO() {
+        return GDK_PIXBUF_MICRO;
+    }
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION "2.44.7"
+     * }
+     */
+    public static MemorySegment GDK_PIXBUF_VERSION() {
+        class Holder {
+            static final MemorySegment GDK_PIXBUF_VERSION
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("2.44.7");
+        }
+        return Holder.GDK_PIXBUF_VERSION;
+    }
+    private static final int GDK_PIXBUF_VERSION_2_0 = (int)131072L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_2_0 131072
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_0() {
+        return GDK_PIXBUF_VERSION_2_0;
+    }
+    private static final int GDK_PIXBUF_VERSION_2_2 = (int)131584L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_2_2 131584
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_2() {
+        return GDK_PIXBUF_VERSION_2_2;
+    }
+    private static final int GDK_PIXBUF_VERSION_2_4 = (int)132096L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_2_4 132096
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_4() {
+        return GDK_PIXBUF_VERSION_2_4;
+    }
+    private static final int GDK_PIXBUF_VERSION_2_6 = (int)132608L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_2_6 132608
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_6() {
+        return GDK_PIXBUF_VERSION_2_6;
+    }
+    private static final int GDK_PIXBUF_VERSION_2_8 = (int)133120L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_2_8 133120
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_8() {
+        return GDK_PIXBUF_VERSION_2_8;
+    }
+    private static final int GDK_PIXBUF_VERSION_2_10 = (int)133632L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_2_10 133632
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_10() {
+        return GDK_PIXBUF_VERSION_2_10;
+    }
+    private static final int GDK_PIXBUF_VERSION_2_12 = (int)134144L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_2_12 134144
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_12() {
+        return GDK_PIXBUF_VERSION_2_12;
+    }
+    private static final int GDK_PIXBUF_VERSION_2_14 = (int)134656L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_2_14 134656
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_14() {
+        return GDK_PIXBUF_VERSION_2_14;
+    }
+    private static final int GDK_PIXBUF_VERSION_2_16 = (int)135168L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_2_16 135168
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_16() {
+        return GDK_PIXBUF_VERSION_2_16;
+    }
+    private static final int GDK_PIXBUF_VERSION_2_18 = (int)135680L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_2_18 135680
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_18() {
+        return GDK_PIXBUF_VERSION_2_18;
+    }
+    private static final int GDK_PIXBUF_VERSION_2_20 = (int)136192L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_2_20 136192
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_20() {
+        return GDK_PIXBUF_VERSION_2_20;
+    }
+    private static final int GDK_PIXBUF_VERSION_2_22 = (int)136704L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_2_22 136704
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_22() {
+        return GDK_PIXBUF_VERSION_2_22;
+    }
+    private static final int GDK_PIXBUF_VERSION_2_24 = (int)137216L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_2_24 137216
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_24() {
+        return GDK_PIXBUF_VERSION_2_24;
+    }
+    private static final int GDK_PIXBUF_VERSION_2_26 = (int)137728L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_2_26 137728
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_26() {
+        return GDK_PIXBUF_VERSION_2_26;
+    }
+    private static final int GDK_PIXBUF_VERSION_2_28 = (int)138240L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_2_28 138240
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_28() {
+        return GDK_PIXBUF_VERSION_2_28;
+    }
+    private static final int GDK_PIXBUF_VERSION_2_30 = (int)138752L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_2_30 138752
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_30() {
+        return GDK_PIXBUF_VERSION_2_30;
+    }
+    private static final int GDK_PIXBUF_VERSION_2_32 = (int)139264L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_2_32 139264
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_32() {
+        return GDK_PIXBUF_VERSION_2_32;
+    }
+    private static final int GDK_PIXBUF_VERSION_2_34 = (int)139776L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_2_34 139776
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_34() {
+        return GDK_PIXBUF_VERSION_2_34;
+    }
+    private static final int GDK_PIXBUF_VERSION_2_36 = (int)140288L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_2_36 140288
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_36() {
+        return GDK_PIXBUF_VERSION_2_36;
+    }
+    private static final int GDK_PIXBUF_VERSION_2_38 = (int)140800L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_2_38 140800
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_38() {
+        return GDK_PIXBUF_VERSION_2_38;
+    }
+    private static final int GDK_PIXBUF_VERSION_2_40 = (int)141312L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_2_40 141312
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_40() {
+        return GDK_PIXBUF_VERSION_2_40;
+    }
+    private static final int GDK_PIXBUF_VERSION_2_44 = (int)142336L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_2_44 142336
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_44() {
+        return GDK_PIXBUF_VERSION_2_44;
+    }
+    private static final int GDK_PIXBUF_VERSION_CUR_STABLE = (int)142336L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_CUR_STABLE 142336
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_CUR_STABLE() {
+        return GDK_PIXBUF_VERSION_CUR_STABLE;
+    }
+    private static final int GDK_PIXBUF_VERSION_PREV_STABLE = (int)141824L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_PREV_STABLE 141824
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_PREV_STABLE() {
+        return GDK_PIXBUF_VERSION_PREV_STABLE;
+    }
+    private static final int GDK_PIXBUF_VERSION_MIN_REQUIRED = (int)142336L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_MIN_REQUIRED 142336
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_MIN_REQUIRED() {
+        return GDK_PIXBUF_VERSION_MIN_REQUIRED;
+    }
+    private static final int GDK_PIXBUF_VERSION_MAX_ALLOWED = (int)142336L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_PIXBUF_VERSION_MAX_ALLOWED 142336
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_MAX_ALLOWED() {
+        return GDK_PIXBUF_VERSION_MAX_ALLOWED;
+    }
+    private static final MemorySegment GDK_SELECTION_PRIMARY = MemorySegment.ofAddress(1L);
+    /**
+     * {@snippet lang=c :
+     * #define GDK_SELECTION_PRIMARY (void*) 1
+     * }
+     */
+    public static MemorySegment GDK_SELECTION_PRIMARY() {
+        return GDK_SELECTION_PRIMARY;
     }
     private static final MemorySegment GDK_SELECTION_SECONDARY = MemorySegment.ofAddress(2L);
     /**
@@ -170,28 +5154,28 @@ public class app_indicator_h extends app_indicator_h_1 {
     public static int ATK_MAJOR_VERSION() {
         return ATK_MAJOR_VERSION;
     }
-    private static final int ATK_MINOR_VERSION = (int)50L;
+    private static final int ATK_MINOR_VERSION = (int)60L;
     /**
      * {@snippet lang=c :
-     * #define ATK_MINOR_VERSION 50
+     * #define ATK_MINOR_VERSION 60
      * }
      */
     public static int ATK_MINOR_VERSION() {
         return ATK_MINOR_VERSION;
     }
-    private static final int ATK_MICRO_VERSION = (int)1L;
+    private static final int ATK_MICRO_VERSION = (int)5L;
     /**
      * {@snippet lang=c :
-     * #define ATK_MICRO_VERSION 1
+     * #define ATK_MICRO_VERSION 5
      * }
      */
     public static int ATK_MICRO_VERSION() {
         return ATK_MICRO_VERSION;
     }
-    private static final int ATK_BINARY_AGE = (int)25011L;
+    private static final int ATK_BINARY_AGE = (int)26015L;
     /**
      * {@snippet lang=c :
-     * #define ATK_BINARY_AGE 25011
+     * #define ATK_BINARY_AGE 26015
      * }
      */
     public static int ATK_BINARY_AGE() {
@@ -278,6 +5262,15 @@ public class app_indicator_h extends app_indicator_h_1 {
     public static int ATK_VERSION_2_30() {
         return ATK_VERSION_2_30;
     }
+    private static final int ATK_VERSION_2_32 = (int)139264L;
+    /**
+     * {@snippet lang=c :
+     * #define ATK_VERSION_2_32 139264
+     * }
+     */
+    public static int ATK_VERSION_2_32() {
+        return ATK_VERSION_2_32;
+    }
     private static final int ATK_VERSION_2_36 = (int)140288L;
     /**
      * {@snippet lang=c :
@@ -287,37 +5280,46 @@ public class app_indicator_h extends app_indicator_h_1 {
     public static int ATK_VERSION_2_36() {
         return ATK_VERSION_2_36;
     }
-    private static final int ATK_VERSION_CUR_STABLE = (int)143872L;
+    private static final int ATK_VERSION_2_52 = (int)144384L;
     /**
      * {@snippet lang=c :
-     * #define ATK_VERSION_CUR_STABLE 143872
+     * #define ATK_VERSION_2_52 144384
+     * }
+     */
+    public static int ATK_VERSION_2_52() {
+        return ATK_VERSION_2_52;
+    }
+    private static final int ATK_VERSION_CUR_STABLE = (int)146432L;
+    /**
+     * {@snippet lang=c :
+     * #define ATK_VERSION_CUR_STABLE 146432
      * }
      */
     public static int ATK_VERSION_CUR_STABLE() {
         return ATK_VERSION_CUR_STABLE;
     }
-    private static final int ATK_VERSION_PREV_STABLE = (int)143360L;
+    private static final int ATK_VERSION_PREV_STABLE = (int)145920L;
     /**
      * {@snippet lang=c :
-     * #define ATK_VERSION_PREV_STABLE 143360
+     * #define ATK_VERSION_PREV_STABLE 145920
      * }
      */
     public static int ATK_VERSION_PREV_STABLE() {
         return ATK_VERSION_PREV_STABLE;
     }
-    private static final int ATK_VERSION_MIN_REQUIRED = (int)143872L;
+    private static final int ATK_VERSION_MIN_REQUIRED = (int)146432L;
     /**
      * {@snippet lang=c :
-     * #define ATK_VERSION_MIN_REQUIRED 143872
+     * #define ATK_VERSION_MIN_REQUIRED 146432
      * }
      */
     public static int ATK_VERSION_MIN_REQUIRED() {
         return ATK_VERSION_MIN_REQUIRED;
     }
-    private static final int ATK_VERSION_MAX_ALLOWED = (int)143872L;
+    private static final int ATK_VERSION_MAX_ALLOWED = (int)146432L;
     /**
      * {@snippet lang=c :
-     * #define ATK_VERSION_MAX_ALLOWED 143872
+     * #define ATK_VERSION_MAX_ALLOWED 146432
      * }
      */
     public static int ATK_VERSION_MAX_ALLOWED() {
@@ -2075,19 +7077,19 @@ public class app_indicator_h extends app_indicator_h_1 {
     public static int GTK_MINOR_VERSION() {
         return GTK_MINOR_VERSION;
     }
-    private static final int GTK_MICRO_VERSION = (int)41L;
+    private static final int GTK_MICRO_VERSION = (int)52L;
     /**
      * {@snippet lang=c :
-     * #define GTK_MICRO_VERSION 41
+     * #define GTK_MICRO_VERSION 52
      * }
      */
     public static int GTK_MICRO_VERSION() {
         return GTK_MICRO_VERSION;
     }
-    private static final int GTK_BINARY_AGE = (int)2441L;
+    private static final int GTK_BINARY_AGE = (int)2452L;
     /**
      * {@snippet lang=c :
-     * #define GTK_BINARY_AGE 2441
+     * #define GTK_BINARY_AGE 2452
      * }
      */
     public static int GTK_BINARY_AGE() {

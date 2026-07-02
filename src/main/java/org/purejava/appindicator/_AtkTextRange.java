@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -54,7 +50,7 @@ public class _AtkTextRange {
         return bounds$LAYOUT;
     }
 
-    private static final long bounds$OFFSET = 0;
+    private static final long bounds$OFFSET = $LAYOUT.byteOffset(groupElement("bounds"));
 
     /**
      * Offset for field:
@@ -98,7 +94,7 @@ public class _AtkTextRange {
         return start_offset$LAYOUT;
     }
 
-    private static final long start_offset$OFFSET = 16;
+    private static final long start_offset$OFFSET = $LAYOUT.byteOffset(groupElement("start_offset"));
 
     /**
      * Offset for field:
@@ -142,7 +138,7 @@ public class _AtkTextRange {
         return end_offset$LAYOUT;
     }
 
-    private static final long end_offset$OFFSET = 20;
+    private static final long end_offset$OFFSET = $LAYOUT.byteOffset(groupElement("end_offset"));
 
     /**
      * Offset for field:
@@ -186,7 +182,7 @@ public class _AtkTextRange {
         return content$LAYOUT;
     }
 
-    private static final long content$OFFSET = 24;
+    private static final long content$OFFSET = $LAYOUT.byteOffset(groupElement("content"));
 
     /**
      * Offset for field:
@@ -247,7 +243,7 @@ public class _AtkTextRange {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -255,7 +251,7 @@ public class _AtkTextRange {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

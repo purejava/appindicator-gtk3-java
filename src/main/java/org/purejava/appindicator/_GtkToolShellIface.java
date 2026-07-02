@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -66,7 +62,7 @@ public class _GtkToolShellIface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -103,7 +99,11 @@ public class _GtkToolShellIface {
      * GtkIconSize (*get_icon_size)(GtkToolShell *)
      * }
      */
-    public class get_icon_size {
+    public final static class get_icon_size {
+
+        private get_icon_size() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -139,9 +139,11 @@ public class _GtkToolShellIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -160,7 +162,7 @@ public class _GtkToolShellIface {
         return get_icon_size$LAYOUT;
     }
 
-    private static final long get_icon_size$OFFSET = 16;
+    private static final long get_icon_size$OFFSET = $LAYOUT.byteOffset(groupElement("get_icon_size"));
 
     /**
      * Offset for field:
@@ -197,7 +199,11 @@ public class _GtkToolShellIface {
      * GtkOrientation (*get_orientation)(GtkToolShell *)
      * }
      */
-    public class get_orientation {
+    public final static class get_orientation {
+
+        private get_orientation() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -233,9 +239,11 @@ public class _GtkToolShellIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -254,7 +262,7 @@ public class _GtkToolShellIface {
         return get_orientation$LAYOUT;
     }
 
-    private static final long get_orientation$OFFSET = 24;
+    private static final long get_orientation$OFFSET = $LAYOUT.byteOffset(groupElement("get_orientation"));
 
     /**
      * Offset for field:
@@ -291,7 +299,11 @@ public class _GtkToolShellIface {
      * GtkToolbarStyle (*get_style)(GtkToolShell *)
      * }
      */
-    public class get_style {
+    public final static class get_style {
+
+        private get_style() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -327,9 +339,11 @@ public class _GtkToolShellIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -348,7 +362,7 @@ public class _GtkToolShellIface {
         return get_style$LAYOUT;
     }
 
-    private static final long get_style$OFFSET = 32;
+    private static final long get_style$OFFSET = $LAYOUT.byteOffset(groupElement("get_style"));
 
     /**
      * Offset for field:
@@ -385,7 +399,11 @@ public class _GtkToolShellIface {
      * GtkReliefStyle (*get_relief_style)(GtkToolShell *)
      * }
      */
-    public class get_relief_style {
+    public final static class get_relief_style {
+
+        private get_relief_style() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -421,9 +439,11 @@ public class _GtkToolShellIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -442,7 +462,7 @@ public class _GtkToolShellIface {
         return get_relief_style$LAYOUT;
     }
 
-    private static final long get_relief_style$OFFSET = 40;
+    private static final long get_relief_style$OFFSET = $LAYOUT.byteOffset(groupElement("get_relief_style"));
 
     /**
      * Offset for field:
@@ -479,7 +499,11 @@ public class _GtkToolShellIface {
      * void (*rebuild_menu)(GtkToolShell *)
      * }
      */
-    public class rebuild_menu {
+    public final static class rebuild_menu {
+
+        private rebuild_menu() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -514,9 +538,11 @@ public class _GtkToolShellIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -535,7 +561,7 @@ public class _GtkToolShellIface {
         return rebuild_menu$LAYOUT;
     }
 
-    private static final long rebuild_menu$OFFSET = 48;
+    private static final long rebuild_menu$OFFSET = $LAYOUT.byteOffset(groupElement("rebuild_menu"));
 
     /**
      * Offset for field:
@@ -572,7 +598,11 @@ public class _GtkToolShellIface {
      * GtkOrientation (*get_text_orientation)(GtkToolShell *)
      * }
      */
-    public class get_text_orientation {
+    public final static class get_text_orientation {
+
+        private get_text_orientation() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -608,9 +638,11 @@ public class _GtkToolShellIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -629,7 +661,7 @@ public class _GtkToolShellIface {
         return get_text_orientation$LAYOUT;
     }
 
-    private static final long get_text_orientation$OFFSET = 56;
+    private static final long get_text_orientation$OFFSET = $LAYOUT.byteOffset(groupElement("get_text_orientation"));
 
     /**
      * Offset for field:
@@ -666,7 +698,11 @@ public class _GtkToolShellIface {
      * gfloat (*get_text_alignment)(GtkToolShell *)
      * }
      */
-    public class get_text_alignment {
+    public final static class get_text_alignment {
+
+        private get_text_alignment() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -702,9 +738,11 @@ public class _GtkToolShellIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static float invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static float invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (float) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -723,7 +761,7 @@ public class _GtkToolShellIface {
         return get_text_alignment$LAYOUT;
     }
 
-    private static final long get_text_alignment$OFFSET = 64;
+    private static final long get_text_alignment$OFFSET = $LAYOUT.byteOffset(groupElement("get_text_alignment"));
 
     /**
      * Offset for field:
@@ -760,7 +798,11 @@ public class _GtkToolShellIface {
      * PangoEllipsizeMode (*get_ellipsize_mode)(GtkToolShell *)
      * }
      */
-    public class get_ellipsize_mode {
+    public final static class get_ellipsize_mode {
+
+        private get_ellipsize_mode() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -796,9 +838,11 @@ public class _GtkToolShellIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -817,7 +861,7 @@ public class _GtkToolShellIface {
         return get_ellipsize_mode$LAYOUT;
     }
 
-    private static final long get_ellipsize_mode$OFFSET = 72;
+    private static final long get_ellipsize_mode$OFFSET = $LAYOUT.byteOffset(groupElement("get_ellipsize_mode"));
 
     /**
      * Offset for field:
@@ -854,7 +898,11 @@ public class _GtkToolShellIface {
      * GtkSizeGroup *(*get_text_size_group)(GtkToolShell *)
      * }
      */
-    public class get_text_size_group {
+    public final static class get_text_size_group {
+
+        private get_text_size_group() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -890,9 +938,11 @@ public class _GtkToolShellIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -911,7 +961,7 @@ public class _GtkToolShellIface {
         return get_text_size_group$LAYOUT;
     }
 
-    private static final long get_text_size_group$OFFSET = 80;
+    private static final long get_text_size_group$OFFSET = $LAYOUT.byteOffset(groupElement("get_text_size_group"));
 
     /**
      * Offset for field:
@@ -972,7 +1022,7 @@ public class _GtkToolShellIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -980,7 +1030,7 @@ public class _GtkToolShellIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -13,7 +13,11 @@ import java.lang.invoke.MethodHandle;
  * typedef void (*GtkListBoxUpdateHeaderFunc)(GtkListBoxRow *, GtkListBoxRow *, gpointer)
  * }
  */
-public class GtkListBoxUpdateHeaderFunc {
+public final class GtkListBoxUpdateHeaderFunc {
+
+    private GtkListBoxUpdateHeaderFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -50,9 +54,11 @@ public class GtkListBoxUpdateHeaderFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment row, MemorySegment before, MemorySegment user_data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment row, MemorySegment before, MemorySegment user_data) {
         try {
              DOWN$MH.invokeExact(funcPtr, row, before, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

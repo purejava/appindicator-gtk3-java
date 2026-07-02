@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
@@ -56,7 +52,7 @@ public class _GStaticRecMutex {
         return mutex$LAYOUT;
     }
 
-    private static final long mutex$OFFSET = 0;
+    private static final long mutex$OFFSET = $LAYOUT.byteOffset(groupElement("mutex"));
 
     /**
      * Offset for field:
@@ -100,7 +96,7 @@ public class _GStaticRecMutex {
         return depth$LAYOUT;
     }
 
-    private static final long depth$OFFSET = 56;
+    private static final long depth$OFFSET = $LAYOUT.byteOffset(groupElement("depth"));
 
     /**
      * Offset for field:
@@ -149,7 +145,7 @@ public class _GStaticRecMutex {
         private static final GroupLayout $LAYOUT = MemoryLayout.unionLayout(
             app_indicator_h.C_LONG.withName("owner"),
             app_indicator_h.C_DOUBLE.withName("dummy")
-        ).withName("$anon$166:3");
+        ).withName("$anon$169:3");
 
         /**
          * The layout of this union
@@ -170,7 +166,7 @@ public class _GStaticRecMutex {
             return owner$LAYOUT;
         }
 
-        private static final long owner$OFFSET = 0;
+        private static final long owner$OFFSET = $LAYOUT.byteOffset(groupElement("owner"));
 
         /**
          * Offset for field:
@@ -214,7 +210,7 @@ public class _GStaticRecMutex {
             return dummy$LAYOUT;
         }
 
-        private static final long dummy$OFFSET = 0;
+        private static final long dummy$OFFSET = $LAYOUT.byteOffset(groupElement("dummy"));
 
         /**
          * Offset for field:
@@ -275,7 +271,7 @@ public class _GStaticRecMutex {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -283,7 +279,7 @@ public class _GStaticRecMutex {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code elementCount * layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -306,7 +302,7 @@ public class _GStaticRecMutex {
         return unused$LAYOUT;
     }
 
-    private static final long unused$OFFSET = 64;
+    private static final long unused$OFFSET = $LAYOUT.byteOffset(groupElement("unused"));
 
     /**
      * Offset for field:
@@ -376,7 +372,7 @@ public class _GStaticRecMutex {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -384,7 +380,7 @@ public class _GStaticRecMutex {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

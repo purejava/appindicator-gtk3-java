@@ -2,15 +2,12 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
 
 /**
  * {@snippet lang=c :
@@ -54,7 +51,7 @@ public class _GDBusSubtreeVTable {
         return enumerate$LAYOUT;
     }
 
-    private static final long enumerate$OFFSET = 0;
+    private static final long enumerate$OFFSET = $LAYOUT.byteOffset(groupElement("enumerate"));
 
     /**
      * Offset for field:
@@ -98,7 +95,7 @@ public class _GDBusSubtreeVTable {
         return introspect$LAYOUT;
     }
 
-    private static final long introspect$OFFSET = 8;
+    private static final long introspect$OFFSET = $LAYOUT.byteOffset(groupElement("introspect"));
 
     /**
      * Offset for field:
@@ -142,7 +139,7 @@ public class _GDBusSubtreeVTable {
         return dispatch$LAYOUT;
     }
 
-    private static final long dispatch$OFFSET = 16;
+    private static final long dispatch$OFFSET = $LAYOUT.byteOffset(groupElement("dispatch"));
 
     /**
      * Offset for field:
@@ -186,7 +183,7 @@ public class _GDBusSubtreeVTable {
         return padding$LAYOUT;
     }
 
-    private static final long padding$OFFSET = 24;
+    private static final long padding$OFFSET = $LAYOUT.byteOffset(groupElement("padding"));
 
     /**
      * Offset for field:
@@ -238,7 +235,7 @@ public class _GDBusSubtreeVTable {
      * }
      */
     public static MemorySegment padding(MemorySegment struct, long index0) {
-        return (MemorySegment)padding$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)padding$ELEM_HANDLE.get(struct, padding$OFFSET, index0);
     }
 
     /**
@@ -248,7 +245,7 @@ public class _GDBusSubtreeVTable {
      * }
      */
     public static void padding(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        padding$ELEM_HANDLE.set(struct, padding$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -280,7 +277,7 @@ public class _GDBusSubtreeVTable {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -288,7 +285,7 @@ public class _GDBusSubtreeVTable {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

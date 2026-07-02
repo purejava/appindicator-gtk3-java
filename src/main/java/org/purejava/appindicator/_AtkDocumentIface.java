@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -24,6 +20,8 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  *     gboolean (*set_document_attribute)(AtkDocument *, const gchar *, const gchar *);
  *     gint (*get_current_page_number)(AtkDocument *);
  *     gint (*get_page_count)(AtkDocument *);
+ *     GArray *(*get_text_selections)(AtkDocument *);
+ *     gboolean (*set_text_selections)(AtkDocument *, GArray *);
  * }
  * }
  */
@@ -42,7 +40,9 @@ public class _AtkDocumentIface {
         app_indicator_h.C_POINTER.withName("get_document_attribute_value"),
         app_indicator_h.C_POINTER.withName("set_document_attribute"),
         app_indicator_h.C_POINTER.withName("get_current_page_number"),
-        app_indicator_h.C_POINTER.withName("get_page_count")
+        app_indicator_h.C_POINTER.withName("get_page_count"),
+        app_indicator_h.C_POINTER.withName("get_text_selections"),
+        app_indicator_h.C_POINTER.withName("set_text_selections")
     ).withName("_AtkDocumentIface");
 
     /**
@@ -64,7 +64,7 @@ public class _AtkDocumentIface {
         return parent$LAYOUT;
     }
 
-    private static final long parent$OFFSET = 0;
+    private static final long parent$OFFSET = $LAYOUT.byteOffset(groupElement("parent"));
 
     /**
      * Offset for field:
@@ -101,7 +101,11 @@ public class _AtkDocumentIface {
      * const gchar *(*get_document_type)(AtkDocument *)
      * }
      */
-    public class get_document_type {
+    public final static class get_document_type {
+
+        private get_document_type() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -137,9 +141,11 @@ public class _AtkDocumentIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -158,7 +164,7 @@ public class _AtkDocumentIface {
         return get_document_type$LAYOUT;
     }
 
-    private static final long get_document_type$OFFSET = 16;
+    private static final long get_document_type$OFFSET = $LAYOUT.byteOffset(groupElement("get_document_type"));
 
     /**
      * Offset for field:
@@ -195,7 +201,11 @@ public class _AtkDocumentIface {
      * gpointer (*get_document)(AtkDocument *)
      * }
      */
-    public class get_document {
+    public final static class get_document {
+
+        private get_document() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -231,9 +241,11 @@ public class _AtkDocumentIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -252,7 +264,7 @@ public class _AtkDocumentIface {
         return get_document$LAYOUT;
     }
 
-    private static final long get_document$OFFSET = 24;
+    private static final long get_document$OFFSET = $LAYOUT.byteOffset(groupElement("get_document"));
 
     /**
      * Offset for field:
@@ -289,7 +301,11 @@ public class _AtkDocumentIface {
      * const gchar *(*get_document_locale)(AtkDocument *)
      * }
      */
-    public class get_document_locale {
+    public final static class get_document_locale {
+
+        private get_document_locale() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -325,9 +341,11 @@ public class _AtkDocumentIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -346,7 +364,7 @@ public class _AtkDocumentIface {
         return get_document_locale$LAYOUT;
     }
 
-    private static final long get_document_locale$OFFSET = 32;
+    private static final long get_document_locale$OFFSET = $LAYOUT.byteOffset(groupElement("get_document_locale"));
 
     /**
      * Offset for field:
@@ -383,7 +401,11 @@ public class _AtkDocumentIface {
      * AtkAttributeSet *(*get_document_attributes)(AtkDocument *)
      * }
      */
-    public class get_document_attributes {
+    public final static class get_document_attributes {
+
+        private get_document_attributes() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -419,9 +441,11 @@ public class _AtkDocumentIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -440,7 +464,7 @@ public class _AtkDocumentIface {
         return get_document_attributes$LAYOUT;
     }
 
-    private static final long get_document_attributes$OFFSET = 40;
+    private static final long get_document_attributes$OFFSET = $LAYOUT.byteOffset(groupElement("get_document_attributes"));
 
     /**
      * Offset for field:
@@ -477,7 +501,11 @@ public class _AtkDocumentIface {
      * const gchar *(*get_document_attribute_value)(AtkDocument *, const gchar *)
      * }
      */
-    public class get_document_attribute_value {
+    public final static class get_document_attribute_value {
+
+        private get_document_attribute_value() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -514,9 +542,11 @@ public class _AtkDocumentIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -535,7 +565,7 @@ public class _AtkDocumentIface {
         return get_document_attribute_value$LAYOUT;
     }
 
-    private static final long get_document_attribute_value$OFFSET = 48;
+    private static final long get_document_attribute_value$OFFSET = $LAYOUT.byteOffset(groupElement("get_document_attribute_value"));
 
     /**
      * Offset for field:
@@ -572,7 +602,11 @@ public class _AtkDocumentIface {
      * gboolean (*set_document_attribute)(AtkDocument *, const gchar *, const gchar *)
      * }
      */
-    public class set_document_attribute {
+    public final static class set_document_attribute {
+
+        private set_document_attribute() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -610,9 +644,11 @@ public class _AtkDocumentIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -631,7 +667,7 @@ public class _AtkDocumentIface {
         return set_document_attribute$LAYOUT;
     }
 
-    private static final long set_document_attribute$OFFSET = 56;
+    private static final long set_document_attribute$OFFSET = $LAYOUT.byteOffset(groupElement("set_document_attribute"));
 
     /**
      * Offset for field:
@@ -668,7 +704,11 @@ public class _AtkDocumentIface {
      * gint (*get_current_page_number)(AtkDocument *)
      * }
      */
-    public class get_current_page_number {
+    public final static class get_current_page_number {
+
+        private get_current_page_number() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -704,9 +744,11 @@ public class _AtkDocumentIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -725,7 +767,7 @@ public class _AtkDocumentIface {
         return get_current_page_number$LAYOUT;
     }
 
-    private static final long get_current_page_number$OFFSET = 64;
+    private static final long get_current_page_number$OFFSET = $LAYOUT.byteOffset(groupElement("get_current_page_number"));
 
     /**
      * Offset for field:
@@ -762,7 +804,11 @@ public class _AtkDocumentIface {
      * gint (*get_page_count)(AtkDocument *)
      * }
      */
-    public class get_page_count {
+    public final static class get_page_count {
+
+        private get_page_count() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -798,9 +844,11 @@ public class _AtkDocumentIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -819,7 +867,7 @@ public class _AtkDocumentIface {
         return get_page_count$LAYOUT;
     }
 
-    private static final long get_page_count$OFFSET = 72;
+    private static final long get_page_count$OFFSET = $LAYOUT.byteOffset(groupElement("get_page_count"));
 
     /**
      * Offset for field:
@@ -852,6 +900,207 @@ public class _AtkDocumentIface {
     }
 
     /**
+     * {@snippet lang=c :
+     * GArray *(*get_text_selections)(AtkDocument *)
+     * }
+     */
+    public final static class get_text_selections {
+
+        private get_text_selections() {
+            // Should not be called directly
+        }
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_text_selections.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_text_selections.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
+    }
+
+    private static final AddressLayout get_text_selections$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_text_selections"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GArray *(*get_text_selections)(AtkDocument *)
+     * }
+     */
+    public static final AddressLayout get_text_selections$layout() {
+        return get_text_selections$LAYOUT;
+    }
+
+    private static final long get_text_selections$OFFSET = $LAYOUT.byteOffset(groupElement("get_text_selections"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GArray *(*get_text_selections)(AtkDocument *)
+     * }
+     */
+    public static final long get_text_selections$offset() {
+        return get_text_selections$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GArray *(*get_text_selections)(AtkDocument *)
+     * }
+     */
+    public static MemorySegment get_text_selections(MemorySegment struct) {
+        return struct.get(get_text_selections$LAYOUT, get_text_selections$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GArray *(*get_text_selections)(AtkDocument *)
+     * }
+     */
+    public static void get_text_selections(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_text_selections$LAYOUT, get_text_selections$OFFSET, fieldValue);
+    }
+
+    /**
+     * {@snippet lang=c :
+     * gboolean (*set_text_selections)(AtkDocument *, GArray *)
+     * }
+     */
+    public final static class set_text_selections {
+
+        private set_text_selections() {
+            // Should not be called directly
+        }
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(set_text_selections.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(set_text_selections.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
+    }
+
+    private static final AddressLayout set_text_selections$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("set_text_selections"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*set_text_selections)(AtkDocument *, GArray *)
+     * }
+     */
+    public static final AddressLayout set_text_selections$layout() {
+        return set_text_selections$LAYOUT;
+    }
+
+    private static final long set_text_selections$OFFSET = $LAYOUT.byteOffset(groupElement("set_text_selections"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*set_text_selections)(AtkDocument *, GArray *)
+     * }
+     */
+    public static final long set_text_selections$offset() {
+        return set_text_selections$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gboolean (*set_text_selections)(AtkDocument *, GArray *)
+     * }
+     */
+    public static MemorySegment set_text_selections(MemorySegment struct) {
+        return struct.get(set_text_selections$LAYOUT, set_text_selections$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gboolean (*set_text_selections)(AtkDocument *, GArray *)
+     * }
+     */
+    public static void set_text_selections(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(set_text_selections$LAYOUT, set_text_selections$OFFSET, fieldValue);
+    }
+
+    /**
      * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
      * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
      */
@@ -880,7 +1129,7 @@ public class _AtkDocumentIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -888,7 +1137,7 @@ public class _AtkDocumentIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

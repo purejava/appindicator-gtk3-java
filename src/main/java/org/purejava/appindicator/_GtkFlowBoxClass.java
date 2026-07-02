@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -74,7 +70,7 @@ public class _GtkFlowBoxClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -111,7 +107,11 @@ public class _GtkFlowBoxClass {
      * void (*child_activated)(GtkFlowBox *, GtkFlowBoxChild *)
      * }
      */
-    public class child_activated {
+    public final static class child_activated {
+
+        private child_activated() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -147,9 +147,11 @@ public class _GtkFlowBoxClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -168,7 +170,7 @@ public class _GtkFlowBoxClass {
         return child_activated$LAYOUT;
     }
 
-    private static final long child_activated$OFFSET = 976;
+    private static final long child_activated$OFFSET = $LAYOUT.byteOffset(groupElement("child_activated"));
 
     /**
      * Offset for field:
@@ -205,7 +207,11 @@ public class _GtkFlowBoxClass {
      * void (*selected_children_changed)(GtkFlowBox *)
      * }
      */
-    public class selected_children_changed {
+    public final static class selected_children_changed {
+
+        private selected_children_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -240,9 +246,11 @@ public class _GtkFlowBoxClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -261,7 +269,7 @@ public class _GtkFlowBoxClass {
         return selected_children_changed$LAYOUT;
     }
 
-    private static final long selected_children_changed$OFFSET = 984;
+    private static final long selected_children_changed$OFFSET = $LAYOUT.byteOffset(groupElement("selected_children_changed"));
 
     /**
      * Offset for field:
@@ -298,7 +306,11 @@ public class _GtkFlowBoxClass {
      * void (*activate_cursor_child)(GtkFlowBox *)
      * }
      */
-    public class activate_cursor_child {
+    public final static class activate_cursor_child {
+
+        private activate_cursor_child() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -333,9 +345,11 @@ public class _GtkFlowBoxClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -354,7 +368,7 @@ public class _GtkFlowBoxClass {
         return activate_cursor_child$LAYOUT;
     }
 
-    private static final long activate_cursor_child$OFFSET = 992;
+    private static final long activate_cursor_child$OFFSET = $LAYOUT.byteOffset(groupElement("activate_cursor_child"));
 
     /**
      * Offset for field:
@@ -391,7 +405,11 @@ public class _GtkFlowBoxClass {
      * void (*toggle_cursor_child)(GtkFlowBox *)
      * }
      */
-    public class toggle_cursor_child {
+    public final static class toggle_cursor_child {
+
+        private toggle_cursor_child() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -426,9 +444,11 @@ public class _GtkFlowBoxClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -447,7 +467,7 @@ public class _GtkFlowBoxClass {
         return toggle_cursor_child$LAYOUT;
     }
 
-    private static final long toggle_cursor_child$OFFSET = 1000;
+    private static final long toggle_cursor_child$OFFSET = $LAYOUT.byteOffset(groupElement("toggle_cursor_child"));
 
     /**
      * Offset for field:
@@ -484,7 +504,11 @@ public class _GtkFlowBoxClass {
      * gboolean (*move_cursor)(GtkFlowBox *, GtkMovementStep, gint)
      * }
      */
-    public class move_cursor {
+    public final static class move_cursor {
+
+        private move_cursor() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -522,9 +546,11 @@ public class _GtkFlowBoxClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -543,7 +569,7 @@ public class _GtkFlowBoxClass {
         return move_cursor$LAYOUT;
     }
 
-    private static final long move_cursor$OFFSET = 1008;
+    private static final long move_cursor$OFFSET = $LAYOUT.byteOffset(groupElement("move_cursor"));
 
     /**
      * Offset for field:
@@ -580,7 +606,11 @@ public class _GtkFlowBoxClass {
      * void (*select_all)(GtkFlowBox *)
      * }
      */
-    public class select_all {
+    public final static class select_all {
+
+        private select_all() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -615,9 +645,11 @@ public class _GtkFlowBoxClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -636,7 +668,7 @@ public class _GtkFlowBoxClass {
         return select_all$LAYOUT;
     }
 
-    private static final long select_all$OFFSET = 1016;
+    private static final long select_all$OFFSET = $LAYOUT.byteOffset(groupElement("select_all"));
 
     /**
      * Offset for field:
@@ -673,7 +705,11 @@ public class _GtkFlowBoxClass {
      * void (*unselect_all)(GtkFlowBox *)
      * }
      */
-    public class unselect_all {
+    public final static class unselect_all {
+
+        private unselect_all() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -708,9 +744,11 @@ public class _GtkFlowBoxClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -729,7 +767,7 @@ public class _GtkFlowBoxClass {
         return unselect_all$LAYOUT;
     }
 
-    private static final long unselect_all$OFFSET = 1024;
+    private static final long unselect_all$OFFSET = $LAYOUT.byteOffset(groupElement("unselect_all"));
 
     /**
      * Offset for field:
@@ -766,7 +804,11 @@ public class _GtkFlowBoxClass {
      * void (*_gtk_reserved1)(void)
      * }
      */
-    public class _gtk_reserved1 {
+    public final static class _gtk_reserved1 {
+
+        private _gtk_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -802,6 +844,8 @@ public class _GtkFlowBoxClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -820,7 +864,7 @@ public class _GtkFlowBoxClass {
         return _gtk_reserved1$LAYOUT;
     }
 
-    private static final long _gtk_reserved1$OFFSET = 1032;
+    private static final long _gtk_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved1"));
 
     /**
      * Offset for field:
@@ -857,7 +901,11 @@ public class _GtkFlowBoxClass {
      * void (*_gtk_reserved2)(void)
      * }
      */
-    public class _gtk_reserved2 {
+    public final static class _gtk_reserved2 {
+
+        private _gtk_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -893,6 +941,8 @@ public class _GtkFlowBoxClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -911,7 +961,7 @@ public class _GtkFlowBoxClass {
         return _gtk_reserved2$LAYOUT;
     }
 
-    private static final long _gtk_reserved2$OFFSET = 1040;
+    private static final long _gtk_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved2"));
 
     /**
      * Offset for field:
@@ -948,7 +998,11 @@ public class _GtkFlowBoxClass {
      * void (*_gtk_reserved3)(void)
      * }
      */
-    public class _gtk_reserved3 {
+    public final static class _gtk_reserved3 {
+
+        private _gtk_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -984,6 +1038,8 @@ public class _GtkFlowBoxClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1002,7 +1058,7 @@ public class _GtkFlowBoxClass {
         return _gtk_reserved3$LAYOUT;
     }
 
-    private static final long _gtk_reserved3$OFFSET = 1048;
+    private static final long _gtk_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved3"));
 
     /**
      * Offset for field:
@@ -1039,7 +1095,11 @@ public class _GtkFlowBoxClass {
      * void (*_gtk_reserved4)(void)
      * }
      */
-    public class _gtk_reserved4 {
+    public final static class _gtk_reserved4 {
+
+        private _gtk_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1075,6 +1135,8 @@ public class _GtkFlowBoxClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1093,7 +1155,7 @@ public class _GtkFlowBoxClass {
         return _gtk_reserved4$LAYOUT;
     }
 
-    private static final long _gtk_reserved4$OFFSET = 1056;
+    private static final long _gtk_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved4"));
 
     /**
      * Offset for field:
@@ -1130,7 +1192,11 @@ public class _GtkFlowBoxClass {
      * void (*_gtk_reserved5)(void)
      * }
      */
-    public class _gtk_reserved5 {
+    public final static class _gtk_reserved5 {
+
+        private _gtk_reserved5() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1166,6 +1232,8 @@ public class _GtkFlowBoxClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1184,7 +1252,7 @@ public class _GtkFlowBoxClass {
         return _gtk_reserved5$LAYOUT;
     }
 
-    private static final long _gtk_reserved5$OFFSET = 1064;
+    private static final long _gtk_reserved5$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved5"));
 
     /**
      * Offset for field:
@@ -1221,7 +1289,11 @@ public class _GtkFlowBoxClass {
      * void (*_gtk_reserved6)(void)
      * }
      */
-    public class _gtk_reserved6 {
+    public final static class _gtk_reserved6 {
+
+        private _gtk_reserved6() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1257,6 +1329,8 @@ public class _GtkFlowBoxClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1275,7 +1349,7 @@ public class _GtkFlowBoxClass {
         return _gtk_reserved6$LAYOUT;
     }
 
-    private static final long _gtk_reserved6$OFFSET = 1072;
+    private static final long _gtk_reserved6$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved6"));
 
     /**
      * Offset for field:
@@ -1336,7 +1410,7 @@ public class _GtkFlowBoxClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1344,7 +1418,7 @@ public class _GtkFlowBoxClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

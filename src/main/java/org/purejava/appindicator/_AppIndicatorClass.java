@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -80,7 +76,7 @@ public class _AppIndicatorClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -117,7 +113,11 @@ public class _AppIndicatorClass {
      * void (*new_icon)(AppIndicator *, gpointer)
      * }
      */
-    public class new_icon {
+    public final static class new_icon {
+
+        private new_icon() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -153,9 +153,11 @@ public class _AppIndicatorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -174,7 +176,7 @@ public class _AppIndicatorClass {
         return new_icon$LAYOUT;
     }
 
-    private static final long new_icon$OFFSET = 136;
+    private static final long new_icon$OFFSET = $LAYOUT.byteOffset(groupElement("new_icon"));
 
     /**
      * Offset for field:
@@ -211,7 +213,11 @@ public class _AppIndicatorClass {
      * void (*new_attention_icon)(AppIndicator *, gpointer)
      * }
      */
-    public class new_attention_icon {
+    public final static class new_attention_icon {
+
+        private new_attention_icon() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -247,9 +253,11 @@ public class _AppIndicatorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -268,7 +276,7 @@ public class _AppIndicatorClass {
         return new_attention_icon$LAYOUT;
     }
 
-    private static final long new_attention_icon$OFFSET = 144;
+    private static final long new_attention_icon$OFFSET = $LAYOUT.byteOffset(groupElement("new_attention_icon"));
 
     /**
      * Offset for field:
@@ -305,7 +313,11 @@ public class _AppIndicatorClass {
      * void (*new_status)(AppIndicator *, const gchar *, gpointer)
      * }
      */
-    public class new_status {
+    public final static class new_status {
+
+        private new_status() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -342,9 +354,11 @@ public class _AppIndicatorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -363,7 +377,7 @@ public class _AppIndicatorClass {
         return new_status$LAYOUT;
     }
 
-    private static final long new_status$OFFSET = 152;
+    private static final long new_status$OFFSET = $LAYOUT.byteOffset(groupElement("new_status"));
 
     /**
      * Offset for field:
@@ -400,7 +414,11 @@ public class _AppIndicatorClass {
      * void (*new_icon_theme_path)(AppIndicator *, const gchar *, gpointer)
      * }
      */
-    public class new_icon_theme_path {
+    public final static class new_icon_theme_path {
+
+        private new_icon_theme_path() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -437,9 +455,11 @@ public class _AppIndicatorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -458,7 +478,7 @@ public class _AppIndicatorClass {
         return new_icon_theme_path$LAYOUT;
     }
 
-    private static final long new_icon_theme_path$OFFSET = 160;
+    private static final long new_icon_theme_path$OFFSET = $LAYOUT.byteOffset(groupElement("new_icon_theme_path"));
 
     /**
      * Offset for field:
@@ -495,7 +515,11 @@ public class _AppIndicatorClass {
      * void (*new_label)(AppIndicator *, const gchar *, const gchar *, gpointer)
      * }
      */
-    public class new_label {
+    public final static class new_label {
+
+        private new_label() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -533,9 +557,11 @@ public class _AppIndicatorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -554,7 +580,7 @@ public class _AppIndicatorClass {
         return new_label$LAYOUT;
     }
 
-    private static final long new_label$OFFSET = 168;
+    private static final long new_label$OFFSET = $LAYOUT.byteOffset(groupElement("new_label"));
 
     /**
      * Offset for field:
@@ -591,7 +617,11 @@ public class _AppIndicatorClass {
      * void (*connection_changed)(AppIndicator *, gboolean, gpointer)
      * }
      */
-    public class connection_changed {
+    public final static class connection_changed {
+
+        private connection_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -628,9 +658,11 @@ public class _AppIndicatorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -649,7 +681,7 @@ public class _AppIndicatorClass {
         return connection_changed$LAYOUT;
     }
 
-    private static final long connection_changed$OFFSET = 176;
+    private static final long connection_changed$OFFSET = $LAYOUT.byteOffset(groupElement("connection_changed"));
 
     /**
      * Offset for field:
@@ -686,7 +718,11 @@ public class _AppIndicatorClass {
      * void (*scroll_event)(AppIndicator *, gint, GdkScrollDirection, gpointer)
      * }
      */
-    public class scroll_event {
+    public final static class scroll_event {
+
+        private scroll_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -724,9 +760,11 @@ public class _AppIndicatorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -745,7 +783,7 @@ public class _AppIndicatorClass {
         return scroll_event$LAYOUT;
     }
 
-    private static final long scroll_event$OFFSET = 184;
+    private static final long scroll_event$OFFSET = $LAYOUT.byteOffset(groupElement("scroll_event"));
 
     /**
      * Offset for field:
@@ -782,7 +820,11 @@ public class _AppIndicatorClass {
      * void (*app_indicator_reserved_ats)(void)
      * }
      */
-    public class app_indicator_reserved_ats {
+    public final static class app_indicator_reserved_ats {
+
+        private app_indicator_reserved_ats() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -818,6 +860,8 @@ public class _AppIndicatorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -836,7 +880,7 @@ public class _AppIndicatorClass {
         return app_indicator_reserved_ats$LAYOUT;
     }
 
-    private static final long app_indicator_reserved_ats$OFFSET = 192;
+    private static final long app_indicator_reserved_ats$OFFSET = $LAYOUT.byteOffset(groupElement("app_indicator_reserved_ats"));
 
     /**
      * Offset for field:
@@ -873,7 +917,11 @@ public class _AppIndicatorClass {
      * GtkStatusIcon *(*fallback)(AppIndicator *)
      * }
      */
-    public class fallback {
+    public final static class fallback {
+
+        private fallback() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -909,9 +957,11 @@ public class _AppIndicatorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -930,7 +980,7 @@ public class _AppIndicatorClass {
         return fallback$LAYOUT;
     }
 
-    private static final long fallback$OFFSET = 200;
+    private static final long fallback$OFFSET = $LAYOUT.byteOffset(groupElement("fallback"));
 
     /**
      * Offset for field:
@@ -967,7 +1017,11 @@ public class _AppIndicatorClass {
      * void (*unfallback)(AppIndicator *, GtkStatusIcon *)
      * }
      */
-    public class unfallback {
+    public final static class unfallback {
+
+        private unfallback() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1003,9 +1057,11 @@ public class _AppIndicatorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1024,7 +1080,7 @@ public class _AppIndicatorClass {
         return unfallback$LAYOUT;
     }
 
-    private static final long unfallback$OFFSET = 208;
+    private static final long unfallback$OFFSET = $LAYOUT.byteOffset(groupElement("unfallback"));
 
     /**
      * Offset for field:
@@ -1061,7 +1117,11 @@ public class _AppIndicatorClass {
      * void (*app_indicator_reserved_1)(void)
      * }
      */
-    public class app_indicator_reserved_1 {
+    public final static class app_indicator_reserved_1 {
+
+        private app_indicator_reserved_1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1097,6 +1157,8 @@ public class _AppIndicatorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1115,7 +1177,7 @@ public class _AppIndicatorClass {
         return app_indicator_reserved_1$LAYOUT;
     }
 
-    private static final long app_indicator_reserved_1$OFFSET = 216;
+    private static final long app_indicator_reserved_1$OFFSET = $LAYOUT.byteOffset(groupElement("app_indicator_reserved_1"));
 
     /**
      * Offset for field:
@@ -1152,7 +1214,11 @@ public class _AppIndicatorClass {
      * void (*app_indicator_reserved_2)(void)
      * }
      */
-    public class app_indicator_reserved_2 {
+    public final static class app_indicator_reserved_2 {
+
+        private app_indicator_reserved_2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1188,6 +1254,8 @@ public class _AppIndicatorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1206,7 +1274,7 @@ public class _AppIndicatorClass {
         return app_indicator_reserved_2$LAYOUT;
     }
 
-    private static final long app_indicator_reserved_2$OFFSET = 224;
+    private static final long app_indicator_reserved_2$OFFSET = $LAYOUT.byteOffset(groupElement("app_indicator_reserved_2"));
 
     /**
      * Offset for field:
@@ -1243,7 +1311,11 @@ public class _AppIndicatorClass {
      * void (*app_indicator_reserved_3)(void)
      * }
      */
-    public class app_indicator_reserved_3 {
+    public final static class app_indicator_reserved_3 {
+
+        private app_indicator_reserved_3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1279,6 +1351,8 @@ public class _AppIndicatorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1297,7 +1371,7 @@ public class _AppIndicatorClass {
         return app_indicator_reserved_3$LAYOUT;
     }
 
-    private static final long app_indicator_reserved_3$OFFSET = 232;
+    private static final long app_indicator_reserved_3$OFFSET = $LAYOUT.byteOffset(groupElement("app_indicator_reserved_3"));
 
     /**
      * Offset for field:
@@ -1334,7 +1408,11 @@ public class _AppIndicatorClass {
      * void (*app_indicator_reserved_4)(void)
      * }
      */
-    public class app_indicator_reserved_4 {
+    public final static class app_indicator_reserved_4 {
+
+        private app_indicator_reserved_4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1370,6 +1448,8 @@ public class _AppIndicatorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1388,7 +1468,7 @@ public class _AppIndicatorClass {
         return app_indicator_reserved_4$LAYOUT;
     }
 
-    private static final long app_indicator_reserved_4$OFFSET = 240;
+    private static final long app_indicator_reserved_4$OFFSET = $LAYOUT.byteOffset(groupElement("app_indicator_reserved_4"));
 
     /**
      * Offset for field:
@@ -1425,7 +1505,11 @@ public class _AppIndicatorClass {
      * void (*app_indicator_reserved_5)(void)
      * }
      */
-    public class app_indicator_reserved_5 {
+    public final static class app_indicator_reserved_5 {
+
+        private app_indicator_reserved_5() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1461,6 +1545,8 @@ public class _AppIndicatorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1479,7 +1565,7 @@ public class _AppIndicatorClass {
         return app_indicator_reserved_5$LAYOUT;
     }
 
-    private static final long app_indicator_reserved_5$OFFSET = 248;
+    private static final long app_indicator_reserved_5$OFFSET = $LAYOUT.byteOffset(groupElement("app_indicator_reserved_5"));
 
     /**
      * Offset for field:
@@ -1516,7 +1602,11 @@ public class _AppIndicatorClass {
      * void (*app_indicator_reserved_6)(void)
      * }
      */
-    public class app_indicator_reserved_6 {
+    public final static class app_indicator_reserved_6 {
+
+        private app_indicator_reserved_6() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1552,6 +1642,8 @@ public class _AppIndicatorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1570,7 +1662,7 @@ public class _AppIndicatorClass {
         return app_indicator_reserved_6$LAYOUT;
     }
 
-    private static final long app_indicator_reserved_6$OFFSET = 256;
+    private static final long app_indicator_reserved_6$OFFSET = $LAYOUT.byteOffset(groupElement("app_indicator_reserved_6"));
 
     /**
      * Offset for field:
@@ -1631,7 +1723,7 @@ public class _AppIndicatorClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1639,7 +1731,7 @@ public class _AppIndicatorClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -13,7 +13,11 @@ import java.lang.invoke.MethodHandle;
  * void (*__prepare)(void)
  * }
  */
-public class pthread_atfork$__prepare {
+public final class pthread_atfork$__prepare {
+
+    private pthread_atfork$__prepare() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -49,6 +53,8 @@ public class pthread_atfork$__prepare {
     public static void invoke(MemorySegment funcPtr) {
         try {
              DOWN$MH.invokeExact(funcPtr);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

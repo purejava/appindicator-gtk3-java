@@ -2,15 +2,14 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -77,7 +76,7 @@ public class _GtkRcStyle {
         return parent_instance$LAYOUT;
     }
 
-    private static final long parent_instance$OFFSET = 0;
+    private static final long parent_instance$OFFSET = $LAYOUT.byteOffset(groupElement("parent_instance"));
 
     /**
      * Offset for field:
@@ -121,7 +120,7 @@ public class _GtkRcStyle {
         return name$LAYOUT;
     }
 
-    private static final long name$OFFSET = 24;
+    private static final long name$OFFSET = $LAYOUT.byteOffset(groupElement("name"));
 
     /**
      * Offset for field:
@@ -165,7 +164,7 @@ public class _GtkRcStyle {
         return bg_pixmap_name$LAYOUT;
     }
 
-    private static final long bg_pixmap_name$OFFSET = 32;
+    private static final long bg_pixmap_name$OFFSET = $LAYOUT.byteOffset(groupElement("bg_pixmap_name"));
 
     /**
      * Offset for field:
@@ -217,7 +216,7 @@ public class _GtkRcStyle {
      * }
      */
     public static MemorySegment bg_pixmap_name(MemorySegment struct, long index0) {
-        return (MemorySegment)bg_pixmap_name$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)bg_pixmap_name$ELEM_HANDLE.get(struct, bg_pixmap_name$OFFSET, index0);
     }
 
     /**
@@ -227,7 +226,7 @@ public class _GtkRcStyle {
      * }
      */
     public static void bg_pixmap_name(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        bg_pixmap_name$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        bg_pixmap_name$ELEM_HANDLE.set(struct, bg_pixmap_name$OFFSET, index0, fieldValue);
     }
 
     private static final AddressLayout font_desc$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("font_desc"));
@@ -242,7 +241,7 @@ public class _GtkRcStyle {
         return font_desc$LAYOUT;
     }
 
-    private static final long font_desc$OFFSET = 72;
+    private static final long font_desc$OFFSET = $LAYOUT.byteOffset(groupElement("font_desc"));
 
     /**
      * Offset for field:
@@ -286,7 +285,7 @@ public class _GtkRcStyle {
         return color_flags$LAYOUT;
     }
 
-    private static final long color_flags$OFFSET = 80;
+    private static final long color_flags$OFFSET = $LAYOUT.byteOffset(groupElement("color_flags"));
 
     /**
      * Offset for field:
@@ -338,7 +337,7 @@ public class _GtkRcStyle {
      * }
      */
     public static int color_flags(MemorySegment struct, long index0) {
-        return (int)color_flags$ELEM_HANDLE.get(struct, 0L, index0);
+        return (int)color_flags$ELEM_HANDLE.get(struct, color_flags$OFFSET, index0);
     }
 
     /**
@@ -348,7 +347,7 @@ public class _GtkRcStyle {
      * }
      */
     public static void color_flags(MemorySegment struct, long index0, int fieldValue) {
-        color_flags$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        color_flags$ELEM_HANDLE.set(struct, color_flags$OFFSET, index0, fieldValue);
     }
 
     private static final SequenceLayout fg$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("fg"));
@@ -363,7 +362,7 @@ public class _GtkRcStyle {
         return fg$LAYOUT;
     }
 
-    private static final long fg$OFFSET = 100;
+    private static final long fg$OFFSET = $LAYOUT.byteOffset(groupElement("fg"));
 
     /**
      * Offset for field:
@@ -416,7 +415,9 @@ public class _GtkRcStyle {
      */
     public static MemorySegment fg(MemorySegment struct, long index0) {
         try {
-            return (MemorySegment)fg$ELEM_HANDLE.invokeExact(struct, 0L, index0);
+            return (MemorySegment)fg$ELEM_HANDLE.invokeExact(struct, fg$OFFSET, index0);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -444,7 +445,7 @@ public class _GtkRcStyle {
         return bg$LAYOUT;
     }
 
-    private static final long bg$OFFSET = 160;
+    private static final long bg$OFFSET = $LAYOUT.byteOffset(groupElement("bg"));
 
     /**
      * Offset for field:
@@ -497,7 +498,9 @@ public class _GtkRcStyle {
      */
     public static MemorySegment bg(MemorySegment struct, long index0) {
         try {
-            return (MemorySegment)bg$ELEM_HANDLE.invokeExact(struct, 0L, index0);
+            return (MemorySegment)bg$ELEM_HANDLE.invokeExact(struct, bg$OFFSET, index0);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -525,7 +528,7 @@ public class _GtkRcStyle {
         return text$LAYOUT;
     }
 
-    private static final long text$OFFSET = 220;
+    private static final long text$OFFSET = $LAYOUT.byteOffset(groupElement("text"));
 
     /**
      * Offset for field:
@@ -578,7 +581,9 @@ public class _GtkRcStyle {
      */
     public static MemorySegment text(MemorySegment struct, long index0) {
         try {
-            return (MemorySegment)text$ELEM_HANDLE.invokeExact(struct, 0L, index0);
+            return (MemorySegment)text$ELEM_HANDLE.invokeExact(struct, text$OFFSET, index0);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -606,7 +611,7 @@ public class _GtkRcStyle {
         return base$LAYOUT;
     }
 
-    private static final long base$OFFSET = 280;
+    private static final long base$OFFSET = $LAYOUT.byteOffset(groupElement("base"));
 
     /**
      * Offset for field:
@@ -659,7 +664,9 @@ public class _GtkRcStyle {
      */
     public static MemorySegment base(MemorySegment struct, long index0) {
         try {
-            return (MemorySegment)base$ELEM_HANDLE.invokeExact(struct, 0L, index0);
+            return (MemorySegment)base$ELEM_HANDLE.invokeExact(struct, base$OFFSET, index0);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -687,7 +694,7 @@ public class _GtkRcStyle {
         return xthickness$LAYOUT;
     }
 
-    private static final long xthickness$OFFSET = 340;
+    private static final long xthickness$OFFSET = $LAYOUT.byteOffset(groupElement("xthickness"));
 
     /**
      * Offset for field:
@@ -731,7 +738,7 @@ public class _GtkRcStyle {
         return ythickness$LAYOUT;
     }
 
-    private static final long ythickness$OFFSET = 344;
+    private static final long ythickness$OFFSET = $LAYOUT.byteOffset(groupElement("ythickness"));
 
     /**
      * Offset for field:
@@ -775,7 +782,7 @@ public class _GtkRcStyle {
         return rc_properties$LAYOUT;
     }
 
-    private static final long rc_properties$OFFSET = 352;
+    private static final long rc_properties$OFFSET = $LAYOUT.byteOffset(groupElement("rc_properties"));
 
     /**
      * Offset for field:
@@ -819,7 +826,7 @@ public class _GtkRcStyle {
         return rc_style_lists$LAYOUT;
     }
 
-    private static final long rc_style_lists$OFFSET = 360;
+    private static final long rc_style_lists$OFFSET = $LAYOUT.byteOffset(groupElement("rc_style_lists"));
 
     /**
      * Offset for field:
@@ -863,7 +870,7 @@ public class _GtkRcStyle {
         return icon_factories$LAYOUT;
     }
 
-    private static final long icon_factories$OFFSET = 368;
+    private static final long icon_factories$OFFSET = $LAYOUT.byteOffset(groupElement("icon_factories"));
 
     /**
      * Offset for field:
@@ -924,7 +931,7 @@ public class _GtkRcStyle {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -932,7 +939,7 @@ public class _GtkRcStyle {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

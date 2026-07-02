@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -75,7 +71,7 @@ public class _GtkTextIter {
         return dummy1$LAYOUT;
     }
 
-    private static final long dummy1$OFFSET = 0;
+    private static final long dummy1$OFFSET = $LAYOUT.byteOffset(groupElement("dummy1"));
 
     /**
      * Offset for field:
@@ -119,7 +115,7 @@ public class _GtkTextIter {
         return dummy2$LAYOUT;
     }
 
-    private static final long dummy2$OFFSET = 8;
+    private static final long dummy2$OFFSET = $LAYOUT.byteOffset(groupElement("dummy2"));
 
     /**
      * Offset for field:
@@ -163,7 +159,7 @@ public class _GtkTextIter {
         return dummy3$LAYOUT;
     }
 
-    private static final long dummy3$OFFSET = 16;
+    private static final long dummy3$OFFSET = $LAYOUT.byteOffset(groupElement("dummy3"));
 
     /**
      * Offset for field:
@@ -207,7 +203,7 @@ public class _GtkTextIter {
         return dummy4$LAYOUT;
     }
 
-    private static final long dummy4$OFFSET = 20;
+    private static final long dummy4$OFFSET = $LAYOUT.byteOffset(groupElement("dummy4"));
 
     /**
      * Offset for field:
@@ -251,7 +247,7 @@ public class _GtkTextIter {
         return dummy5$LAYOUT;
     }
 
-    private static final long dummy5$OFFSET = 24;
+    private static final long dummy5$OFFSET = $LAYOUT.byteOffset(groupElement("dummy5"));
 
     /**
      * Offset for field:
@@ -295,7 +291,7 @@ public class _GtkTextIter {
         return dummy6$LAYOUT;
     }
 
-    private static final long dummy6$OFFSET = 28;
+    private static final long dummy6$OFFSET = $LAYOUT.byteOffset(groupElement("dummy6"));
 
     /**
      * Offset for field:
@@ -339,7 +335,7 @@ public class _GtkTextIter {
         return dummy7$LAYOUT;
     }
 
-    private static final long dummy7$OFFSET = 32;
+    private static final long dummy7$OFFSET = $LAYOUT.byteOffset(groupElement("dummy7"));
 
     /**
      * Offset for field:
@@ -383,7 +379,7 @@ public class _GtkTextIter {
         return dummy8$LAYOUT;
     }
 
-    private static final long dummy8$OFFSET = 36;
+    private static final long dummy8$OFFSET = $LAYOUT.byteOffset(groupElement("dummy8"));
 
     /**
      * Offset for field:
@@ -427,7 +423,7 @@ public class _GtkTextIter {
         return dummy9$LAYOUT;
     }
 
-    private static final long dummy9$OFFSET = 40;
+    private static final long dummy9$OFFSET = $LAYOUT.byteOffset(groupElement("dummy9"));
 
     /**
      * Offset for field:
@@ -471,7 +467,7 @@ public class _GtkTextIter {
         return dummy10$LAYOUT;
     }
 
-    private static final long dummy10$OFFSET = 48;
+    private static final long dummy10$OFFSET = $LAYOUT.byteOffset(groupElement("dummy10"));
 
     /**
      * Offset for field:
@@ -515,7 +511,7 @@ public class _GtkTextIter {
         return dummy11$LAYOUT;
     }
 
-    private static final long dummy11$OFFSET = 56;
+    private static final long dummy11$OFFSET = $LAYOUT.byteOffset(groupElement("dummy11"));
 
     /**
      * Offset for field:
@@ -559,7 +555,7 @@ public class _GtkTextIter {
         return dummy12$LAYOUT;
     }
 
-    private static final long dummy12$OFFSET = 60;
+    private static final long dummy12$OFFSET = $LAYOUT.byteOffset(groupElement("dummy12"));
 
     /**
      * Offset for field:
@@ -603,7 +599,7 @@ public class _GtkTextIter {
         return dummy13$LAYOUT;
     }
 
-    private static final long dummy13$OFFSET = 64;
+    private static final long dummy13$OFFSET = $LAYOUT.byteOffset(groupElement("dummy13"));
 
     /**
      * Offset for field:
@@ -647,7 +643,7 @@ public class _GtkTextIter {
         return dummy14$LAYOUT;
     }
 
-    private static final long dummy14$OFFSET = 72;
+    private static final long dummy14$OFFSET = $LAYOUT.byteOffset(groupElement("dummy14"));
 
     /**
      * Offset for field:
@@ -708,7 +704,7 @@ public class _GtkTextIter {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -716,7 +712,7 @@ public class _GtkTextIter {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -2,15 +2,13 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
+import static java.lang.foreign.ValueLayout.OfInt;
 
 /**
  * {@snippet lang=c :
@@ -55,7 +53,7 @@ public class _GUriParamsIter {
         return dummy0$LAYOUT;
     }
 
-    private static final long dummy0$OFFSET = 0;
+    private static final long dummy0$OFFSET = $LAYOUT.byteOffset(groupElement("dummy0"));
 
     /**
      * Offset for field:
@@ -99,7 +97,7 @@ public class _GUriParamsIter {
         return dummy1$LAYOUT;
     }
 
-    private static final long dummy1$OFFSET = 8;
+    private static final long dummy1$OFFSET = $LAYOUT.byteOffset(groupElement("dummy1"));
 
     /**
      * Offset for field:
@@ -143,7 +141,7 @@ public class _GUriParamsIter {
         return dummy2$LAYOUT;
     }
 
-    private static final long dummy2$OFFSET = 16;
+    private static final long dummy2$OFFSET = $LAYOUT.byteOffset(groupElement("dummy2"));
 
     /**
      * Offset for field:
@@ -187,7 +185,7 @@ public class _GUriParamsIter {
         return dummy3$LAYOUT;
     }
 
-    private static final long dummy3$OFFSET = 24;
+    private static final long dummy3$OFFSET = $LAYOUT.byteOffset(groupElement("dummy3"));
 
     /**
      * Offset for field:
@@ -239,7 +237,7 @@ public class _GUriParamsIter {
      * }
      */
     public static byte dummy3(MemorySegment struct, long index0) {
-        return (byte)dummy3$ELEM_HANDLE.get(struct, 0L, index0);
+        return (byte)dummy3$ELEM_HANDLE.get(struct, dummy3$OFFSET, index0);
     }
 
     /**
@@ -249,7 +247,7 @@ public class _GUriParamsIter {
      * }
      */
     public static void dummy3(MemorySegment struct, long index0, byte fieldValue) {
-        dummy3$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        dummy3$ELEM_HANDLE.set(struct, dummy3$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -281,7 +279,7 @@ public class _GUriParamsIter {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -289,7 +287,7 @@ public class _GUriParamsIter {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

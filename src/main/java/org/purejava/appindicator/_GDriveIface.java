@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -112,7 +108,7 @@ public class _GDriveIface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -149,7 +145,11 @@ public class _GDriveIface {
      * void (*changed)(GDrive *)
      * }
      */
-    public class changed {
+    public final static class changed {
+
+        private changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -184,9 +184,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -205,7 +207,7 @@ public class _GDriveIface {
         return changed$LAYOUT;
     }
 
-    private static final long changed$OFFSET = 16;
+    private static final long changed$OFFSET = $LAYOUT.byteOffset(groupElement("changed"));
 
     /**
      * Offset for field:
@@ -242,7 +244,11 @@ public class _GDriveIface {
      * void (*disconnected)(GDrive *)
      * }
      */
-    public class disconnected {
+    public final static class disconnected {
+
+        private disconnected() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -277,9 +283,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -298,7 +306,7 @@ public class _GDriveIface {
         return disconnected$LAYOUT;
     }
 
-    private static final long disconnected$OFFSET = 24;
+    private static final long disconnected$OFFSET = $LAYOUT.byteOffset(groupElement("disconnected"));
 
     /**
      * Offset for field:
@@ -335,7 +343,11 @@ public class _GDriveIface {
      * void (*eject_button)(GDrive *)
      * }
      */
-    public class eject_button {
+    public final static class eject_button {
+
+        private eject_button() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -370,9 +382,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -391,7 +405,7 @@ public class _GDriveIface {
         return eject_button$LAYOUT;
     }
 
-    private static final long eject_button$OFFSET = 32;
+    private static final long eject_button$OFFSET = $LAYOUT.byteOffset(groupElement("eject_button"));
 
     /**
      * Offset for field:
@@ -428,7 +442,11 @@ public class _GDriveIface {
      * char *(*get_name)(GDrive *)
      * }
      */
-    public class get_name {
+    public final static class get_name {
+
+        private get_name() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -464,9 +482,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -485,7 +505,7 @@ public class _GDriveIface {
         return get_name$LAYOUT;
     }
 
-    private static final long get_name$OFFSET = 40;
+    private static final long get_name$OFFSET = $LAYOUT.byteOffset(groupElement("get_name"));
 
     /**
      * Offset for field:
@@ -522,7 +542,11 @@ public class _GDriveIface {
      * GIcon *(*get_icon)(GDrive *)
      * }
      */
-    public class get_icon {
+    public final static class get_icon {
+
+        private get_icon() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -558,9 +582,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -579,7 +605,7 @@ public class _GDriveIface {
         return get_icon$LAYOUT;
     }
 
-    private static final long get_icon$OFFSET = 48;
+    private static final long get_icon$OFFSET = $LAYOUT.byteOffset(groupElement("get_icon"));
 
     /**
      * Offset for field:
@@ -616,7 +642,11 @@ public class _GDriveIface {
      * gboolean (*has_volumes)(GDrive *)
      * }
      */
-    public class has_volumes {
+    public final static class has_volumes {
+
+        private has_volumes() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -652,9 +682,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -673,7 +705,7 @@ public class _GDriveIface {
         return has_volumes$LAYOUT;
     }
 
-    private static final long has_volumes$OFFSET = 56;
+    private static final long has_volumes$OFFSET = $LAYOUT.byteOffset(groupElement("has_volumes"));
 
     /**
      * Offset for field:
@@ -710,7 +742,11 @@ public class _GDriveIface {
      * GList *(*get_volumes)(GDrive *)
      * }
      */
-    public class get_volumes {
+    public final static class get_volumes {
+
+        private get_volumes() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -746,9 +782,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -767,7 +805,7 @@ public class _GDriveIface {
         return get_volumes$LAYOUT;
     }
 
-    private static final long get_volumes$OFFSET = 64;
+    private static final long get_volumes$OFFSET = $LAYOUT.byteOffset(groupElement("get_volumes"));
 
     /**
      * Offset for field:
@@ -804,7 +842,11 @@ public class _GDriveIface {
      * gboolean (*is_media_removable)(GDrive *)
      * }
      */
-    public class is_media_removable {
+    public final static class is_media_removable {
+
+        private is_media_removable() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -840,9 +882,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -861,7 +905,7 @@ public class _GDriveIface {
         return is_media_removable$LAYOUT;
     }
 
-    private static final long is_media_removable$OFFSET = 72;
+    private static final long is_media_removable$OFFSET = $LAYOUT.byteOffset(groupElement("is_media_removable"));
 
     /**
      * Offset for field:
@@ -898,7 +942,11 @@ public class _GDriveIface {
      * gboolean (*has_media)(GDrive *)
      * }
      */
-    public class has_media {
+    public final static class has_media {
+
+        private has_media() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -934,9 +982,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -955,7 +1005,7 @@ public class _GDriveIface {
         return has_media$LAYOUT;
     }
 
-    private static final long has_media$OFFSET = 80;
+    private static final long has_media$OFFSET = $LAYOUT.byteOffset(groupElement("has_media"));
 
     /**
      * Offset for field:
@@ -992,7 +1042,11 @@ public class _GDriveIface {
      * gboolean (*is_media_check_automatic)(GDrive *)
      * }
      */
-    public class is_media_check_automatic {
+    public final static class is_media_check_automatic {
+
+        private is_media_check_automatic() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1028,9 +1082,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1049,7 +1105,7 @@ public class _GDriveIface {
         return is_media_check_automatic$LAYOUT;
     }
 
-    private static final long is_media_check_automatic$OFFSET = 88;
+    private static final long is_media_check_automatic$OFFSET = $LAYOUT.byteOffset(groupElement("is_media_check_automatic"));
 
     /**
      * Offset for field:
@@ -1086,7 +1142,11 @@ public class _GDriveIface {
      * gboolean (*can_eject)(GDrive *)
      * }
      */
-    public class can_eject {
+    public final static class can_eject {
+
+        private can_eject() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1122,9 +1182,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1143,7 +1205,7 @@ public class _GDriveIface {
         return can_eject$LAYOUT;
     }
 
-    private static final long can_eject$OFFSET = 96;
+    private static final long can_eject$OFFSET = $LAYOUT.byteOffset(groupElement("can_eject"));
 
     /**
      * Offset for field:
@@ -1180,7 +1242,11 @@ public class _GDriveIface {
      * gboolean (*can_poll_for_media)(GDrive *)
      * }
      */
-    public class can_poll_for_media {
+    public final static class can_poll_for_media {
+
+        private can_poll_for_media() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1216,9 +1282,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1237,7 +1305,7 @@ public class _GDriveIface {
         return can_poll_for_media$LAYOUT;
     }
 
-    private static final long can_poll_for_media$OFFSET = 104;
+    private static final long can_poll_for_media$OFFSET = $LAYOUT.byteOffset(groupElement("can_poll_for_media"));
 
     /**
      * Offset for field:
@@ -1274,7 +1342,11 @@ public class _GDriveIface {
      * void (*eject)(GDrive *, GMountUnmountFlags, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class eject {
+    public final static class eject {
+
+        private eject() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1313,9 +1385,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1334,7 +1408,7 @@ public class _GDriveIface {
         return eject$LAYOUT;
     }
 
-    private static final long eject$OFFSET = 112;
+    private static final long eject$OFFSET = $LAYOUT.byteOffset(groupElement("eject"));
 
     /**
      * Offset for field:
@@ -1371,7 +1445,11 @@ public class _GDriveIface {
      * gboolean (*eject_finish)(GDrive *, GAsyncResult *, GError **)
      * }
      */
-    public class eject_finish {
+    public final static class eject_finish {
+
+        private eject_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1409,9 +1487,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1430,7 +1510,7 @@ public class _GDriveIface {
         return eject_finish$LAYOUT;
     }
 
-    private static final long eject_finish$OFFSET = 120;
+    private static final long eject_finish$OFFSET = $LAYOUT.byteOffset(groupElement("eject_finish"));
 
     /**
      * Offset for field:
@@ -1467,7 +1547,11 @@ public class _GDriveIface {
      * void (*poll_for_media)(GDrive *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class poll_for_media {
+    public final static class poll_for_media {
+
+        private poll_for_media() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1505,9 +1589,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1526,7 +1612,7 @@ public class _GDriveIface {
         return poll_for_media$LAYOUT;
     }
 
-    private static final long poll_for_media$OFFSET = 128;
+    private static final long poll_for_media$OFFSET = $LAYOUT.byteOffset(groupElement("poll_for_media"));
 
     /**
      * Offset for field:
@@ -1563,7 +1649,11 @@ public class _GDriveIface {
      * gboolean (*poll_for_media_finish)(GDrive *, GAsyncResult *, GError **)
      * }
      */
-    public class poll_for_media_finish {
+    public final static class poll_for_media_finish {
+
+        private poll_for_media_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1601,9 +1691,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1622,7 +1714,7 @@ public class _GDriveIface {
         return poll_for_media_finish$LAYOUT;
     }
 
-    private static final long poll_for_media_finish$OFFSET = 136;
+    private static final long poll_for_media_finish$OFFSET = $LAYOUT.byteOffset(groupElement("poll_for_media_finish"));
 
     /**
      * Offset for field:
@@ -1659,7 +1751,11 @@ public class _GDriveIface {
      * char *(*get_identifier)(GDrive *, const char *)
      * }
      */
-    public class get_identifier {
+    public final static class get_identifier {
+
+        private get_identifier() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1696,9 +1792,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1717,7 +1815,7 @@ public class _GDriveIface {
         return get_identifier$LAYOUT;
     }
 
-    private static final long get_identifier$OFFSET = 144;
+    private static final long get_identifier$OFFSET = $LAYOUT.byteOffset(groupElement("get_identifier"));
 
     /**
      * Offset for field:
@@ -1754,7 +1852,11 @@ public class _GDriveIface {
      * char **(*enumerate_identifiers)(GDrive *)
      * }
      */
-    public class enumerate_identifiers {
+    public final static class enumerate_identifiers {
+
+        private enumerate_identifiers() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1790,9 +1892,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1811,7 +1915,7 @@ public class _GDriveIface {
         return enumerate_identifiers$LAYOUT;
     }
 
-    private static final long enumerate_identifiers$OFFSET = 152;
+    private static final long enumerate_identifiers$OFFSET = $LAYOUT.byteOffset(groupElement("enumerate_identifiers"));
 
     /**
      * Offset for field:
@@ -1848,7 +1952,11 @@ public class _GDriveIface {
      * GDriveStartStopType (*get_start_stop_type)(GDrive *)
      * }
      */
-    public class get_start_stop_type {
+    public final static class get_start_stop_type {
+
+        private get_start_stop_type() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1884,9 +1992,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1905,7 +2015,7 @@ public class _GDriveIface {
         return get_start_stop_type$LAYOUT;
     }
 
-    private static final long get_start_stop_type$OFFSET = 160;
+    private static final long get_start_stop_type$OFFSET = $LAYOUT.byteOffset(groupElement("get_start_stop_type"));
 
     /**
      * Offset for field:
@@ -1942,7 +2052,11 @@ public class _GDriveIface {
      * gboolean (*can_start)(GDrive *)
      * }
      */
-    public class can_start {
+    public final static class can_start {
+
+        private can_start() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1978,9 +2092,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1999,7 +2115,7 @@ public class _GDriveIface {
         return can_start$LAYOUT;
     }
 
-    private static final long can_start$OFFSET = 168;
+    private static final long can_start$OFFSET = $LAYOUT.byteOffset(groupElement("can_start"));
 
     /**
      * Offset for field:
@@ -2036,7 +2152,11 @@ public class _GDriveIface {
      * gboolean (*can_start_degraded)(GDrive *)
      * }
      */
-    public class can_start_degraded {
+    public final static class can_start_degraded {
+
+        private can_start_degraded() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2072,9 +2192,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2093,7 +2215,7 @@ public class _GDriveIface {
         return can_start_degraded$LAYOUT;
     }
 
-    private static final long can_start_degraded$OFFSET = 176;
+    private static final long can_start_degraded$OFFSET = $LAYOUT.byteOffset(groupElement("can_start_degraded"));
 
     /**
      * Offset for field:
@@ -2130,7 +2252,11 @@ public class _GDriveIface {
      * void (*start)(GDrive *, GDriveStartFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class start {
+    public final static class start {
+
+        private start() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2170,9 +2296,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2191,7 +2319,7 @@ public class _GDriveIface {
         return start$LAYOUT;
     }
 
-    private static final long start$OFFSET = 184;
+    private static final long start$OFFSET = $LAYOUT.byteOffset(groupElement("start"));
 
     /**
      * Offset for field:
@@ -2228,7 +2356,11 @@ public class _GDriveIface {
      * gboolean (*start_finish)(GDrive *, GAsyncResult *, GError **)
      * }
      */
-    public class start_finish {
+    public final static class start_finish {
+
+        private start_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2266,9 +2398,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2287,7 +2421,7 @@ public class _GDriveIface {
         return start_finish$LAYOUT;
     }
 
-    private static final long start_finish$OFFSET = 192;
+    private static final long start_finish$OFFSET = $LAYOUT.byteOffset(groupElement("start_finish"));
 
     /**
      * Offset for field:
@@ -2324,7 +2458,11 @@ public class _GDriveIface {
      * gboolean (*can_stop)(GDrive *)
      * }
      */
-    public class can_stop {
+    public final static class can_stop {
+
+        private can_stop() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2360,9 +2498,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2381,7 +2521,7 @@ public class _GDriveIface {
         return can_stop$LAYOUT;
     }
 
-    private static final long can_stop$OFFSET = 200;
+    private static final long can_stop$OFFSET = $LAYOUT.byteOffset(groupElement("can_stop"));
 
     /**
      * Offset for field:
@@ -2418,7 +2558,11 @@ public class _GDriveIface {
      * void (*stop)(GDrive *, GMountUnmountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class stop {
+    public final static class stop {
+
+        private stop() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2458,9 +2602,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2479,7 +2625,7 @@ public class _GDriveIface {
         return stop$LAYOUT;
     }
 
-    private static final long stop$OFFSET = 208;
+    private static final long stop$OFFSET = $LAYOUT.byteOffset(groupElement("stop"));
 
     /**
      * Offset for field:
@@ -2516,7 +2662,11 @@ public class _GDriveIface {
      * gboolean (*stop_finish)(GDrive *, GAsyncResult *, GError **)
      * }
      */
-    public class stop_finish {
+    public final static class stop_finish {
+
+        private stop_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2554,9 +2704,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2575,7 +2727,7 @@ public class _GDriveIface {
         return stop_finish$LAYOUT;
     }
 
-    private static final long stop_finish$OFFSET = 216;
+    private static final long stop_finish$OFFSET = $LAYOUT.byteOffset(groupElement("stop_finish"));
 
     /**
      * Offset for field:
@@ -2612,7 +2764,11 @@ public class _GDriveIface {
      * void (*stop_button)(GDrive *)
      * }
      */
-    public class stop_button {
+    public final static class stop_button {
+
+        private stop_button() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2647,9 +2803,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2668,7 +2826,7 @@ public class _GDriveIface {
         return stop_button$LAYOUT;
     }
 
-    private static final long stop_button$OFFSET = 224;
+    private static final long stop_button$OFFSET = $LAYOUT.byteOffset(groupElement("stop_button"));
 
     /**
      * Offset for field:
@@ -2705,7 +2863,11 @@ public class _GDriveIface {
      * void (*eject_with_operation)(GDrive *, GMountUnmountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class eject_with_operation {
+    public final static class eject_with_operation {
+
+        private eject_with_operation() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2745,9 +2907,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2766,7 +2930,7 @@ public class _GDriveIface {
         return eject_with_operation$LAYOUT;
     }
 
-    private static final long eject_with_operation$OFFSET = 232;
+    private static final long eject_with_operation$OFFSET = $LAYOUT.byteOffset(groupElement("eject_with_operation"));
 
     /**
      * Offset for field:
@@ -2803,7 +2967,11 @@ public class _GDriveIface {
      * gboolean (*eject_with_operation_finish)(GDrive *, GAsyncResult *, GError **)
      * }
      */
-    public class eject_with_operation_finish {
+    public final static class eject_with_operation_finish {
+
+        private eject_with_operation_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2841,9 +3009,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2862,7 +3032,7 @@ public class _GDriveIface {
         return eject_with_operation_finish$LAYOUT;
     }
 
-    private static final long eject_with_operation_finish$OFFSET = 240;
+    private static final long eject_with_operation_finish$OFFSET = $LAYOUT.byteOffset(groupElement("eject_with_operation_finish"));
 
     /**
      * Offset for field:
@@ -2899,7 +3069,11 @@ public class _GDriveIface {
      * const gchar *(*get_sort_key)(GDrive *)
      * }
      */
-    public class get_sort_key {
+    public final static class get_sort_key {
+
+        private get_sort_key() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2935,9 +3109,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2956,7 +3132,7 @@ public class _GDriveIface {
         return get_sort_key$LAYOUT;
     }
 
-    private static final long get_sort_key$OFFSET = 248;
+    private static final long get_sort_key$OFFSET = $LAYOUT.byteOffset(groupElement("get_sort_key"));
 
     /**
      * Offset for field:
@@ -2993,7 +3169,11 @@ public class _GDriveIface {
      * GIcon *(*get_symbolic_icon)(GDrive *)
      * }
      */
-    public class get_symbolic_icon {
+    public final static class get_symbolic_icon {
+
+        private get_symbolic_icon() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3029,9 +3209,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3050,7 +3232,7 @@ public class _GDriveIface {
         return get_symbolic_icon$LAYOUT;
     }
 
-    private static final long get_symbolic_icon$OFFSET = 256;
+    private static final long get_symbolic_icon$OFFSET = $LAYOUT.byteOffset(groupElement("get_symbolic_icon"));
 
     /**
      * Offset for field:
@@ -3087,7 +3269,11 @@ public class _GDriveIface {
      * gboolean (*is_removable)(GDrive *)
      * }
      */
-    public class is_removable {
+    public final static class is_removable {
+
+        private is_removable() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3123,9 +3309,11 @@ public class _GDriveIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3144,7 +3332,7 @@ public class _GDriveIface {
         return is_removable$LAYOUT;
     }
 
-    private static final long is_removable$OFFSET = 264;
+    private static final long is_removable$OFFSET = $LAYOUT.byteOffset(groupElement("is_removable"));
 
     /**
      * Offset for field:
@@ -3205,7 +3393,7 @@ public class _GDriveIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -3213,7 +3401,7 @@ public class _GDriveIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

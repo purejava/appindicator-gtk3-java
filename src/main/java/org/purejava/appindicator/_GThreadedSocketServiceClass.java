@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -60,7 +56,7 @@ public class _GThreadedSocketServiceClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -97,7 +93,11 @@ public class _GThreadedSocketServiceClass {
      * gboolean (*run)(GThreadedSocketService *, GSocketConnection *, GObject *)
      * }
      */
-    public class run {
+    public final static class run {
+
+        private run() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -135,9 +135,11 @@ public class _GThreadedSocketServiceClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -156,7 +158,7 @@ public class _GThreadedSocketServiceClass {
         return run$LAYOUT;
     }
 
-    private static final long run$OFFSET = 248;
+    private static final long run$OFFSET = $LAYOUT.byteOffset(groupElement("run"));
 
     /**
      * Offset for field:
@@ -193,7 +195,11 @@ public class _GThreadedSocketServiceClass {
      * void (*_g_reserved1)(void)
      * }
      */
-    public class _g_reserved1 {
+    public final static class _g_reserved1 {
+
+        private _g_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -229,6 +235,8 @@ public class _GThreadedSocketServiceClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -247,7 +255,7 @@ public class _GThreadedSocketServiceClass {
         return _g_reserved1$LAYOUT;
     }
 
-    private static final long _g_reserved1$OFFSET = 256;
+    private static final long _g_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved1"));
 
     /**
      * Offset for field:
@@ -284,7 +292,11 @@ public class _GThreadedSocketServiceClass {
      * void (*_g_reserved2)(void)
      * }
      */
-    public class _g_reserved2 {
+    public final static class _g_reserved2 {
+
+        private _g_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -320,6 +332,8 @@ public class _GThreadedSocketServiceClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -338,7 +352,7 @@ public class _GThreadedSocketServiceClass {
         return _g_reserved2$LAYOUT;
     }
 
-    private static final long _g_reserved2$OFFSET = 264;
+    private static final long _g_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved2"));
 
     /**
      * Offset for field:
@@ -375,7 +389,11 @@ public class _GThreadedSocketServiceClass {
      * void (*_g_reserved3)(void)
      * }
      */
-    public class _g_reserved3 {
+    public final static class _g_reserved3 {
+
+        private _g_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -411,6 +429,8 @@ public class _GThreadedSocketServiceClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -429,7 +449,7 @@ public class _GThreadedSocketServiceClass {
         return _g_reserved3$LAYOUT;
     }
 
-    private static final long _g_reserved3$OFFSET = 272;
+    private static final long _g_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved3"));
 
     /**
      * Offset for field:
@@ -466,7 +486,11 @@ public class _GThreadedSocketServiceClass {
      * void (*_g_reserved4)(void)
      * }
      */
-    public class _g_reserved4 {
+    public final static class _g_reserved4 {
+
+        private _g_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -502,6 +526,8 @@ public class _GThreadedSocketServiceClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -520,7 +546,7 @@ public class _GThreadedSocketServiceClass {
         return _g_reserved4$LAYOUT;
     }
 
-    private static final long _g_reserved4$OFFSET = 280;
+    private static final long _g_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved4"));
 
     /**
      * Offset for field:
@@ -557,7 +583,11 @@ public class _GThreadedSocketServiceClass {
      * void (*_g_reserved5)(void)
      * }
      */
-    public class _g_reserved5 {
+    public final static class _g_reserved5 {
+
+        private _g_reserved5() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -593,6 +623,8 @@ public class _GThreadedSocketServiceClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -611,7 +643,7 @@ public class _GThreadedSocketServiceClass {
         return _g_reserved5$LAYOUT;
     }
 
-    private static final long _g_reserved5$OFFSET = 288;
+    private static final long _g_reserved5$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved5"));
 
     /**
      * Offset for field:
@@ -672,7 +704,7 @@ public class _GThreadedSocketServiceClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -680,7 +712,7 @@ public class _GThreadedSocketServiceClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

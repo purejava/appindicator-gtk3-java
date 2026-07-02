@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfShort;
 
 /**
  * {@snippet lang=c :
@@ -54,7 +50,7 @@ public class _GtkBorder {
         return left$LAYOUT;
     }
 
-    private static final long left$OFFSET = 0;
+    private static final long left$OFFSET = $LAYOUT.byteOffset(groupElement("left"));
 
     /**
      * Offset for field:
@@ -98,7 +94,7 @@ public class _GtkBorder {
         return right$LAYOUT;
     }
 
-    private static final long right$OFFSET = 2;
+    private static final long right$OFFSET = $LAYOUT.byteOffset(groupElement("right"));
 
     /**
      * Offset for field:
@@ -142,7 +138,7 @@ public class _GtkBorder {
         return top$LAYOUT;
     }
 
-    private static final long top$OFFSET = 4;
+    private static final long top$OFFSET = $LAYOUT.byteOffset(groupElement("top"));
 
     /**
      * Offset for field:
@@ -186,7 +182,7 @@ public class _GtkBorder {
         return bottom$LAYOUT;
     }
 
-    private static final long bottom$OFFSET = 6;
+    private static final long bottom$OFFSET = $LAYOUT.byteOffset(groupElement("bottom"));
 
     /**
      * Offset for field:
@@ -247,7 +243,7 @@ public class _GtkBorder {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -255,7 +251,7 @@ public class _GtkBorder {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -2,15 +2,11 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
 
 /**
  * {@snippet lang=c :
@@ -58,7 +54,7 @@ public class _GDatagramBasedInterface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -95,7 +91,11 @@ public class _GDatagramBasedInterface {
      * gint (*receive_messages)(GDatagramBased *, GInputMessage *, guint, gint, gint64, GCancellable *, GError **)
      * }
      */
-    public class receive_messages {
+    public final static class receive_messages {
+
+        private receive_messages() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -137,9 +137,11 @@ public class _GDatagramBasedInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, long _x4, MemorySegment _x5, MemorySegment _x6) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, long _x4, MemorySegment _x5, MemorySegment _x6) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -158,7 +160,7 @@ public class _GDatagramBasedInterface {
         return receive_messages$LAYOUT;
     }
 
-    private static final long receive_messages$OFFSET = 16;
+    private static final long receive_messages$OFFSET = $LAYOUT.byteOffset(groupElement("receive_messages"));
 
     /**
      * Offset for field:
@@ -195,7 +197,11 @@ public class _GDatagramBasedInterface {
      * gint (*send_messages)(GDatagramBased *, GOutputMessage *, guint, gint, gint64, GCancellable *, GError **)
      * }
      */
-    public class send_messages {
+    public final static class send_messages {
+
+        private send_messages() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -237,9 +243,11 @@ public class _GDatagramBasedInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, long _x4, MemorySegment _x5, MemorySegment _x6) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, long _x4, MemorySegment _x5, MemorySegment _x6) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -258,7 +266,7 @@ public class _GDatagramBasedInterface {
         return send_messages$LAYOUT;
     }
 
-    private static final long send_messages$OFFSET = 24;
+    private static final long send_messages$OFFSET = $LAYOUT.byteOffset(groupElement("send_messages"));
 
     /**
      * Offset for field:
@@ -295,7 +303,11 @@ public class _GDatagramBasedInterface {
      * GSource *(*create_source)(GDatagramBased *, GIOCondition, GCancellable *)
      * }
      */
-    public class create_source {
+    public final static class create_source {
+
+        private create_source() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -333,9 +345,11 @@ public class _GDatagramBasedInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -354,7 +368,7 @@ public class _GDatagramBasedInterface {
         return create_source$LAYOUT;
     }
 
-    private static final long create_source$OFFSET = 32;
+    private static final long create_source$OFFSET = $LAYOUT.byteOffset(groupElement("create_source"));
 
     /**
      * Offset for field:
@@ -391,7 +405,11 @@ public class _GDatagramBasedInterface {
      * GIOCondition (*condition_check)(GDatagramBased *, GIOCondition)
      * }
      */
-    public class condition_check {
+    public final static class condition_check {
+
+        private condition_check() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -428,9 +446,11 @@ public class _GDatagramBasedInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -449,7 +469,7 @@ public class _GDatagramBasedInterface {
         return condition_check$LAYOUT;
     }
 
-    private static final long condition_check$OFFSET = 40;
+    private static final long condition_check$OFFSET = $LAYOUT.byteOffset(groupElement("condition_check"));
 
     /**
      * Offset for field:
@@ -486,7 +506,11 @@ public class _GDatagramBasedInterface {
      * gboolean (*condition_wait)(GDatagramBased *, GIOCondition, gint64, GCancellable *, GError **)
      * }
      */
-    public class condition_wait {
+    public final static class condition_wait {
+
+        private condition_wait() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -526,9 +550,11 @@ public class _GDatagramBasedInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, long _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, long _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -547,7 +573,7 @@ public class _GDatagramBasedInterface {
         return condition_wait$LAYOUT;
     }
 
-    private static final long condition_wait$OFFSET = 48;
+    private static final long condition_wait$OFFSET = $LAYOUT.byteOffset(groupElement("condition_wait"));
 
     /**
      * Offset for field:
@@ -608,7 +634,7 @@ public class _GDatagramBasedInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -616,7 +642,7 @@ public class _GDatagramBasedInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

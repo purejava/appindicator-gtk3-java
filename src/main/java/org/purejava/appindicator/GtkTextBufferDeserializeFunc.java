@@ -2,22 +2,22 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
-import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
-
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.Linker;
+import java.lang.foreign.MemorySegment;
+import java.lang.invoke.MethodHandle;
 
 /**
  * {@snippet lang=c :
  * typedef gboolean (*GtkTextBufferDeserializeFunc)(GtkTextBuffer *, GtkTextBuffer *, GtkTextIter *, const guint8 *, gsize, gboolean, gpointer, GError **)
  * }
  */
-public class GtkTextBufferDeserializeFunc {
+public final class GtkTextBufferDeserializeFunc {
+
+    private GtkTextBufferDeserializeFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -60,9 +60,11 @@ public class GtkTextBufferDeserializeFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment register_buffer, MemorySegment content_buffer, MemorySegment iter, MemorySegment data, long length, int create_tags, MemorySegment user_data, MemorySegment error) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment register_buffer, MemorySegment content_buffer, MemorySegment iter, MemorySegment data, long length, int create_tags, MemorySegment user_data, MemorySegment error) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, register_buffer, content_buffer, iter, data, length, create_tags, user_data, error);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

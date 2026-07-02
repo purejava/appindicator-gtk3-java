@@ -47,7 +47,7 @@ public class _AtkGObjectAccessibleClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -91,7 +91,7 @@ public class _AtkGObjectAccessibleClass {
         return pad1$LAYOUT;
     }
 
-    private static final long pad1$OFFSET = 352;
+    private static final long pad1$OFFSET = $LAYOUT.byteOffset(groupElement("pad1"));
 
     /**
      * Offset for field:
@@ -135,7 +135,7 @@ public class _AtkGObjectAccessibleClass {
         return pad2$LAYOUT;
     }
 
-    private static final long pad2$OFFSET = 360;
+    private static final long pad2$OFFSET = $LAYOUT.byteOffset(groupElement("pad2"));
 
     /**
      * Offset for field:
@@ -196,7 +196,7 @@ public class _AtkGObjectAccessibleClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -204,7 +204,7 @@ public class _AtkGObjectAccessibleClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
