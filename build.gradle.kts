@@ -25,7 +25,7 @@ version = "1.4.3-SNAPSHOT"
 description = "Java bindings for libayatana-appindicator in 100% pure Java"
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_22
+    sourceCompatibility = JavaVersion.VERSION_25
     withSourcesJar()
     withJavadocJar()
 }
