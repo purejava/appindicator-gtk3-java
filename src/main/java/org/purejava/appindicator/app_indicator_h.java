@@ -2,77 +2,34 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.lang.invoke.MethodHandle;
-import java.lang.invoke.MethodHandles;
-import java.util.Arrays;
-import java.util.stream.Collectors;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
-import static java.lang.foreign.ValueLayout.JAVA_BYTE;
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
-public class app_indicator_h {
+public class app_indicator_h extends app_indicator_h$shared {
 
     app_indicator_h() {
         // Should not be called directly
     }
 
     static final Arena LIBRARY_ARENA = Arena.ofAuto();
-    static final boolean TRACE_DOWNCALLS = Boolean.getBoolean("jextract.trace.downcalls");
-
-    static void traceDowncall(String name, Object... args) {
-         String traceArgs = Arrays.stream(args)
-                       .map(Object::toString)
-                       .collect(Collectors.joining(", "));
-         System.out.printf("%s(%s)\n", name, traceArgs);
-    }
-
-    static MemorySegment findOrThrow(String symbol) {
-        return SYMBOL_LOOKUP.find(symbol)
-            .orElseThrow(() -> new UnsatisfiedLinkError("unresolved symbol: " + symbol));
-    }
-
-    static MethodHandle upcallHandle(Class<?> fi, String name, FunctionDescriptor fdesc) {
-        try {
-            return MethodHandles.lookup().findVirtual(fi, name, fdesc.toMethodType());
-        } catch (ReflectiveOperationException ex) {
-            throw new AssertionError(ex);
-        }
-    }
-
-    static MemoryLayout align(MemoryLayout layout, long align) {
-        return switch (layout) {
-            case PaddingLayout p -> p;
-            case ValueLayout v -> v.withByteAlignment(align);
-            case GroupLayout g -> {
-                MemoryLayout[] alignedMembers = g.memberLayouts().stream()
-                        .map(m -> align(m, align)).toArray(MemoryLayout[]::new);
-                yield g instanceof StructLayout ?
-                        MemoryLayout.structLayout(alignedMembers) : MemoryLayout.unionLayout(alignedMembers);
-            }
-            case SequenceLayout s -> MemoryLayout.sequenceLayout(s.elementCount(), align(s.elementLayout(), align));
-        };
-    }
 
     static final SymbolLookup SYMBOL_LOOKUP = SymbolLookup.loaderLookup()
             .or(Linker.nativeLinker().defaultLookup());
 
-    public static final ValueLayout.OfBoolean C_BOOL = ValueLayout.JAVA_BOOLEAN;
-    public static final ValueLayout.OfByte C_CHAR = ValueLayout.JAVA_BYTE;
-    public static final ValueLayout.OfShort C_SHORT = ValueLayout.JAVA_SHORT;
-    public static final ValueLayout.OfInt C_INT = ValueLayout.JAVA_INT;
-    public static final ValueLayout.OfLong C_LONG_LONG = ValueLayout.JAVA_LONG;
-    public static final ValueLayout.OfFloat C_FLOAT = ValueLayout.JAVA_FLOAT;
-    public static final ValueLayout.OfDouble C_DOUBLE = ValueLayout.JAVA_DOUBLE;
-    public static final AddressLayout C_POINTER = ValueLayout.ADDRESS
-            .withTargetLayout(MemoryLayout.sequenceLayout(java.lang.Long.MAX_VALUE, JAVA_BYTE));
-    public static final ValueLayout.OfLong C_LONG = ValueLayout.JAVA_LONG;
 
     private static class g_error_free {
         public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("g_error_free");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_error_free");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -119,6 +76,8 @@ public class app_indicator_h {
                 traceDowncall("g_error_free", error);
             }
             mh$.invokeExact(error);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -132,7 +91,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("g_object_set_data_full");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_set_data_full");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -179,6 +138,8 @@ public class app_indicator_h {
                 traceDowncall("g_object_set_data_full", object, key, data, destroy);
             }
             mh$.invokeExact(object, key, data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -194,7 +155,7 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("g_signal_connect_object");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_connect_object");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -241,6 +202,8 @@ public class app_indicator_h {
                 traceDowncall("g_signal_connect_object", instance, detailed_signal, c_handler, gobject, connect_flags);
             }
             return (long)mh$.invokeExact(instance, detailed_signal, c_handler, gobject, connect_flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -251,7 +214,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_widget_destroy");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_widget_destroy");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -298,6 +261,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_widget_destroy", widget);
             }
             mh$.invokeExact(widget);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -309,7 +274,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_widget_destroyed");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_widget_destroyed");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -356,6 +321,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_widget_destroyed", widget, widget_pointer);
             }
             mh$.invokeExact(widget, widget_pointer);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -366,7 +333,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_widget_show");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_widget_show");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -413,6 +380,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_widget_show", widget);
             }
             mh$.invokeExact(widget);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -423,7 +392,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_widget_show_all");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_widget_show_all");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -470,6 +439,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_widget_show_all", widget);
             }
             mh$.invokeExact(widget);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -480,7 +451,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_widget_grab_focus");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_widget_grab_focus");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -527,6 +498,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_widget_grab_focus", widget);
             }
             mh$.invokeExact(widget);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -538,7 +511,7 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_widget_set_sensitive");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_widget_set_sensitive");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -585,6 +558,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_widget_set_sensitive", widget, sensitive);
             }
             mh$.invokeExact(widget, sensitive);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -596,7 +571,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_container_add");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_container_add");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -643,6 +618,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_container_add", container, widget);
             }
             mh$.invokeExact(container, widget);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -654,7 +631,7 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_window_new");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_window_new");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -701,6 +678,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_window_new", type);
             }
             return (MemorySegment)mh$.invokeExact(type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -712,7 +691,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_window_set_title");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_window_set_title");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -759,6 +738,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_window_set_title", window, title);
             }
             mh$.invokeExact(window, title);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -770,7 +751,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_window_add_accel_group");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_window_add_accel_group");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -817,6 +798,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_window_add_accel_group", window, accel_group);
             }
             mh$.invokeExact(window, accel_group);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -828,7 +811,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_window_set_icon");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_window_set_icon");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -875,6 +858,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_window_set_icon", window, icon);
             }
             mh$.invokeExact(window, icon);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -886,7 +871,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_window_set_icon_name");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_window_set_icon_name");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -933,6 +918,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_window_set_icon_name", window, name);
             }
             mh$.invokeExact(window, name);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -945,7 +932,7 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_window_set_default_size");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_window_set_default_size");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -992,6 +979,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_window_set_default_size", window, width, height);
             }
             mh$.invokeExact(window, width, height);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1003,7 +992,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_menu_shell_append");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_menu_shell_append");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -1050,6 +1039,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_menu_shell_append", menu_shell, child);
             }
             mh$.invokeExact(menu_shell, child);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1059,7 +1050,7 @@ public class app_indicator_h {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_menu_new");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_menu_new");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -1106,6 +1097,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_menu_new");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1115,7 +1108,7 @@ public class app_indicator_h {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_menu_item_new");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_menu_item_new");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -1162,6 +1155,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_menu_item_new");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1173,7 +1168,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_menu_item_set_submenu");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_menu_item_set_submenu");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -1220,6 +1215,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_menu_item_set_submenu", menu_item, submenu);
             }
             mh$.invokeExact(menu_item, submenu);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1231,7 +1228,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_menu_item_set_label");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_menu_item_set_label");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -1278,6 +1275,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_menu_item_set_label", menu_item, label);
             }
             mh$.invokeExact(menu_item, label);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1289,7 +1288,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_init");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_init");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -1336,6 +1335,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_init", argc, argv);
             }
             mh$.invokeExact(argc, argv);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1344,7 +1345,7 @@ public class app_indicator_h {
     private static class gtk_main {
         public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(    );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_main");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_main");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -1391,6 +1392,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_main");
             }
             mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1411,7 +1414,7 @@ public class app_indicator_h {
                 app_indicator_h.C_INT,
                 app_indicator_h.C_POINTER
             );
-        private static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_message_dialog_new");
+        private static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_message_dialog_new");
 
         private final MethodHandle handle;
         private final FunctionDescriptor descriptor;
@@ -1463,7 +1466,7 @@ public class app_indicator_h {
                 if (TRACE_DOWNCALLS) {
                     traceDowncall("gtk_message_dialog_new", parent, flags, type, buttons, message_format, x5);
                 }
-                return (MemorySegment)spreader.invokeExact(parent, flags, type, buttons, message_format, x5);
+                return (MemorySegment) spreader.invokeExact(parent, flags, type, buttons, message_format, x5);
             } catch(IllegalArgumentException | ClassCastException ex$)  {
                 throw ex$; // rethrow IAE from passing wrong number/type of args
             } catch (Throwable ex$) {
@@ -1479,7 +1482,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_scrolled_window_new");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_scrolled_window_new");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -1526,6 +1529,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_scrolled_window_new", hadjustment, vadjustment);
             }
             return (MemorySegment)mh$.invokeExact(hadjustment, vadjustment);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1538,7 +1543,7 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_scrolled_window_set_policy");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_scrolled_window_set_policy");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -1585,6 +1590,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_scrolled_window_set_policy", scrolled_window, hscrollbar_policy, vscrollbar_policy);
             }
             mh$.invokeExact(scrolled_window, hscrollbar_policy, vscrollbar_policy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1596,7 +1603,7 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_scrolled_window_set_shadow_type");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_scrolled_window_set_shadow_type");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -1643,6 +1650,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_scrolled_window_set_shadow_type", scrolled_window, type);
             }
             mh$.invokeExact(scrolled_window, type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1652,7 +1661,7 @@ public class app_indicator_h {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_statusbar_new");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_statusbar_new");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -1699,6 +1708,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_statusbar_new");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1708,7 +1719,7 @@ public class app_indicator_h {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_text_view_new");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_text_view_new");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -1755,6 +1766,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_text_view_new");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1766,7 +1779,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_action_get_name");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_action_get_name");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -1813,6 +1826,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_action_get_name", action);
             }
             return (MemorySegment)mh$.invokeExact(action);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1824,7 +1839,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_action_group_new");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_action_group_new");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -1871,6 +1886,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_action_group_new", name);
             }
             return (MemorySegment)mh$.invokeExact(name);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1882,7 +1899,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_action_group_add_action");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_action_group_add_action");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -1929,6 +1946,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_action_group_add_action", action_group, action);
             }
             mh$.invokeExact(action_group, action);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1942,7 +1961,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_action_group_add_actions");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_action_group_add_actions");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -1989,6 +2008,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_action_group_add_actions", action_group, entries, n_entries, user_data);
             }
             mh$.invokeExact(action_group, entries, n_entries, user_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2002,7 +2023,7 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_table_new");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_table_new");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -2049,6 +2070,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_table_new", rows, columns, homogeneous);
             }
             return (MemorySegment)mh$.invokeExact(rows, columns, homogeneous);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2068,7 +2091,7 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_table_attach");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_table_attach");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -2115,6 +2138,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_table_attach", table, child, left_attach, right_attach, top_attach, bottom_attach, xoptions, yoptions, xpadding, ypadding);
             }
             mh$.invokeExact(table, child, left_attach, right_attach, top_attach, bottom_attach, xoptions, yoptions, xpadding, ypadding);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2124,7 +2149,7 @@ public class app_indicator_h {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_ui_manager_new");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_ui_manager_new");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -2171,6 +2196,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_ui_manager_new");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2183,7 +2210,7 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_ui_manager_insert_action_group");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_ui_manager_insert_action_group");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -2230,6 +2257,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_ui_manager_insert_action_group", manager, action_group, pos);
             }
             mh$.invokeExact(manager, action_group, pos);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2241,7 +2270,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_ui_manager_get_accel_group");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_ui_manager_get_accel_group");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -2288,6 +2317,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_ui_manager_get_accel_group", manager);
             }
             return (MemorySegment)mh$.invokeExact(manager);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2300,7 +2331,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_ui_manager_get_widget");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_ui_manager_get_widget");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -2347,6 +2378,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_ui_manager_get_widget", manager, path);
             }
             return (MemorySegment)mh$.invokeExact(manager, path);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2361,7 +2394,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_ui_manager_add_ui_from_string");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_ui_manager_add_ui_from_string");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -2408,6 +2441,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_ui_manager_add_ui_from_string", manager, buffer, length, error);
             }
             return (int)mh$.invokeExact(manager, buffer, length, error);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2424,7 +2459,7 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_ui_manager_add_ui");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_ui_manager_add_ui");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -2471,6 +2506,8 @@ public class app_indicator_h {
                 traceDowncall("gtk_ui_manager_add_ui", manager, merge_id, path, name, action, type, top);
             }
             mh$.invokeExact(manager, merge_id, path, name, action, type, top);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2556,7 +2593,7 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_new");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_new");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -2603,6 +2640,8 @@ public class app_indicator_h {
                 traceDowncall("app_indicator_new", id, icon_name, category);
             }
             return (MemorySegment)mh$.invokeExact(id, icon_name, category);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2617,7 +2656,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_new_with_path");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_new_with_path");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -2664,6 +2703,8 @@ public class app_indicator_h {
                 traceDowncall("app_indicator_new_with_path", id, icon_name, category, icon_theme_path);
             }
             return (MemorySegment)mh$.invokeExact(id, icon_name, category, icon_theme_path);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2675,7 +2716,7 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_set_status");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_set_status");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -2722,6 +2763,8 @@ public class app_indicator_h {
                 traceDowncall("app_indicator_set_status", self, status);
             }
             mh$.invokeExact(self, status);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2733,7 +2776,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_set_attention_icon");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_set_attention_icon");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -2780,6 +2823,8 @@ public class app_indicator_h {
                 traceDowncall("app_indicator_set_attention_icon", self, icon_name);
             }
             mh$.invokeExact(self, icon_name);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2791,7 +2836,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_set_menu");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_set_menu");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -2838,6 +2883,8 @@ public class app_indicator_h {
                 traceDowncall("app_indicator_set_menu", self, menu);
             }
             mh$.invokeExact(self, menu);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2849,7 +2896,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_set_icon");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_set_icon");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -2896,6 +2943,8 @@ public class app_indicator_h {
                 traceDowncall("app_indicator_set_icon", self, icon_name);
             }
             mh$.invokeExact(self, icon_name);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2908,7 +2957,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_set_label");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_set_label");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -2955,6 +3004,8 @@ public class app_indicator_h {
                 traceDowncall("app_indicator_set_label", self, label, guide);
             }
             mh$.invokeExact(self, label, guide);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2966,7 +3017,7 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_set_ordering_index");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_set_ordering_index");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -3013,6 +3064,8 @@ public class app_indicator_h {
                 traceDowncall("app_indicator_set_ordering_index", self, ordering_index);
             }
             mh$.invokeExact(self, ordering_index);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3024,7 +3077,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_set_title");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_set_title");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -3071,6 +3124,8 @@ public class app_indicator_h {
                 traceDowncall("app_indicator_set_title", self, title);
             }
             mh$.invokeExact(self, title);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3082,7 +3137,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_get_id");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_id");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -3129,6 +3184,8 @@ public class app_indicator_h {
                 traceDowncall("app_indicator_get_id", self);
             }
             return (MemorySegment)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3140,7 +3197,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_get_category");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_category");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -3187,6 +3244,8 @@ public class app_indicator_h {
                 traceDowncall("app_indicator_get_category", self);
             }
             return (int)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3198,7 +3257,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_get_status");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_status");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -3245,6 +3304,8 @@ public class app_indicator_h {
                 traceDowncall("app_indicator_get_status", self);
             }
             return (int)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3256,7 +3317,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_get_icon");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_icon");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -3303,6 +3364,8 @@ public class app_indicator_h {
                 traceDowncall("app_indicator_get_icon", self);
             }
             return (MemorySegment)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3314,7 +3377,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_get_attention_icon");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_attention_icon");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -3361,6 +3424,8 @@ public class app_indicator_h {
                 traceDowncall("app_indicator_get_attention_icon", self);
             }
             return (MemorySegment)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3372,7 +3437,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_get_title");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_title");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -3419,6 +3484,8 @@ public class app_indicator_h {
                 traceDowncall("app_indicator_get_title", self);
             }
             return (MemorySegment)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3430,7 +3497,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_get_menu");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_menu");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -3477,6 +3544,8 @@ public class app_indicator_h {
                 traceDowncall("app_indicator_get_menu", self);
             }
             return (MemorySegment)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3488,7 +3557,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_get_label");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_label");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -3535,6 +3604,8 @@ public class app_indicator_h {
                 traceDowncall("app_indicator_get_label", self);
             }
             return (MemorySegment)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3546,7 +3617,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_get_ordering_index");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_get_ordering_index");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -3593,6 +3664,8 @@ public class app_indicator_h {
                 traceDowncall("app_indicator_get_ordering_index", self);
             }
             return (int)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3605,7 +3678,7 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_build_menu_from_desktop");
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("app_indicator_build_menu_from_desktop");
 
         public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
@@ -3652,6 +3725,8 @@ public class app_indicator_h {
                 traceDowncall("app_indicator_build_menu_from_desktop", self, desktop_file, desktop_profile);
             }
             mh$.invokeExact(self, desktop_file, desktop_profile);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
