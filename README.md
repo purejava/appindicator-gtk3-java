@@ -5,12 +5,12 @@
 
 Java bindings for libayatana-appindicator and libappindicator-gtk3 in 100% pure Java
 
-Based on libayatana-appindicator3-1 (0.5.92-1)
+Based on libayatana-appindicator 0.6.0-1
 
-Based on libappindicator3-1 (12.10.1+20.10.20200706.1-0ubuntu1)
+Based on libappindicator 12.10.1-1
 
 # Requires
-Java 22
+Java 25
 - due to the use of the [Foreign Function & Memory API](https://openjdk.org/jeps/454). Please refer to an older version of this lib, if you are interested in using it with an older JDK (with `--enable-preview`).
 
 # Usage
@@ -28,14 +28,14 @@ The bindings come in three flavors:
 [![Maven Central](https://img.shields.io/maven-central/v/org.purejava/libappindicator-gtk3-java-full.svg?label=Maven%20Central)](https://central.sonatype.com/search?q=libappindicator-gtk3-java-full&smo=true&namespace=org.purejava)
 ### Gradle
 ```groovy
-implementation group: 'org.purejava', name: 'libappindicator-gtk3-java-full', version: '1.4.2'
+implementation group: 'org.purejava', name: 'libappindicator-gtk3-java-full', version: '1.4.3'
 ```
 ### Maven
 ```java
 <dependency>
     <groupId>org.purejava</groupId>
     <artifactId>libappindicator-gtk3-java-full</artifactId>
-    <version>1.4.2</version>
+    <version>1.4.3</version>
 </dependency>
 ```
 
@@ -114,14 +114,14 @@ As the according jar has a size of ~9,6M, I decided to provide a **reduced varia
 [![Maven Central](https://img.shields.io/maven-central/v/org.purejava/libappindicator-gtk3-java-minimal.svg?label=Maven%20Central)](https://central.sonatype.com/search?q=libappindicator-gtk3-java-minimal&smo=true&namespace=org.purejava)
 ### Gradle
 ```groovy
-implementation group: 'org.purejava', name: 'libappindicator-gtk3-java-minimal', version: '1.4.2'
+implementation group: 'org.purejava', name: 'libappindicator-gtk3-java-minimal', version: '1.4.3'
 ```
 ### Maven
 ```java
 <dependency>
     <groupId>org.purejava</groupId>
     <artifactId>libappindicator-gtk3-java-minimal</artifactId>
-    <version>1.4.2</version>
+    <version>1.4.3</version>
 </dependency>
 ```
 ### libappindicator-gtk3-java-minimal 1.1.0 - minimal is compatible to both libraries
@@ -138,14 +138,14 @@ Starting with version 1.1.0, the `minimal` artifact is compatible to libayatana-
 [![Maven Central](https://img.shields.io/maven-central/v/org.purejava/libayatana-appindicator-java-full.svg?label=Maven%20Central)](https://central.sonatype.com/search?q=libayatana-appindicator-java-full&smo=true&namespace=org.purejava)
 ### Gradle
 ```groovy
-implementation group: 'org.purejava', name: 'libayatana-appindicator-java-full', version: '1.4.2'
+implementation group: 'org.purejava', name: 'libayatana-appindicator-java-full', version: '1.4.3'
 ```
 ### Maven
 ```java
 <dependency>
     <groupId>org.purejava</groupId>
     <artifactId>libayatana-appindicator-java-full</artifactId>
-    <version>1.4.2</version>
+    <version>1.4.3</version>
 </dependency>
 ```
 
