@@ -56,7 +56,7 @@ public class _GtkRecentChooserMenuClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -93,7 +93,11 @@ public class _GtkRecentChooserMenuClass {
      * void (*gtk_recent1)(void)
      * }
      */
-    public class gtk_recent1 {
+    public final static class gtk_recent1 {
+
+        private gtk_recent1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -129,6 +133,8 @@ public class _GtkRecentChooserMenuClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -147,7 +153,7 @@ public class _GtkRecentChooserMenuClass {
         return gtk_recent1$LAYOUT;
     }
 
-    private static final long gtk_recent1$OFFSET = 1120;
+    private static final long gtk_recent1$OFFSET = $LAYOUT.byteOffset(groupElement("gtk_recent1"));
 
     /**
      * Offset for field:
@@ -184,7 +190,11 @@ public class _GtkRecentChooserMenuClass {
      * void (*gtk_recent2)(void)
      * }
      */
-    public class gtk_recent2 {
+    public final static class gtk_recent2 {
+
+        private gtk_recent2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -220,6 +230,8 @@ public class _GtkRecentChooserMenuClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -238,7 +250,7 @@ public class _GtkRecentChooserMenuClass {
         return gtk_recent2$LAYOUT;
     }
 
-    private static final long gtk_recent2$OFFSET = 1128;
+    private static final long gtk_recent2$OFFSET = $LAYOUT.byteOffset(groupElement("gtk_recent2"));
 
     /**
      * Offset for field:
@@ -275,7 +287,11 @@ public class _GtkRecentChooserMenuClass {
      * void (*gtk_recent3)(void)
      * }
      */
-    public class gtk_recent3 {
+    public final static class gtk_recent3 {
+
+        private gtk_recent3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -311,6 +327,8 @@ public class _GtkRecentChooserMenuClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -329,7 +347,7 @@ public class _GtkRecentChooserMenuClass {
         return gtk_recent3$LAYOUT;
     }
 
-    private static final long gtk_recent3$OFFSET = 1136;
+    private static final long gtk_recent3$OFFSET = $LAYOUT.byteOffset(groupElement("gtk_recent3"));
 
     /**
      * Offset for field:
@@ -366,7 +384,11 @@ public class _GtkRecentChooserMenuClass {
      * void (*gtk_recent4)(void)
      * }
      */
-    public class gtk_recent4 {
+    public final static class gtk_recent4 {
+
+        private gtk_recent4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -402,6 +424,8 @@ public class _GtkRecentChooserMenuClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -420,7 +444,7 @@ public class _GtkRecentChooserMenuClass {
         return gtk_recent4$LAYOUT;
     }
 
-    private static final long gtk_recent4$OFFSET = 1144;
+    private static final long gtk_recent4$OFFSET = $LAYOUT.byteOffset(groupElement("gtk_recent4"));
 
     /**
      * Offset for field:
@@ -481,7 +505,7 @@ public class _GtkRecentChooserMenuClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -489,7 +513,7 @@ public class _GtkRecentChooserMenuClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

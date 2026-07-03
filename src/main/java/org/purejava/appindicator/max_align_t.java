@@ -50,7 +50,7 @@ public class max_align_t {
         return __clang_max_align_nonce1$LAYOUT;
     }
 
-    private static final long __clang_max_align_nonce1$OFFSET = 0;
+    private static final long __clang_max_align_nonce1$OFFSET = $LAYOUT.byteOffset(groupElement("__clang_max_align_nonce1"));
 
     /**
      * Offset for field:
@@ -111,7 +111,7 @@ public class max_align_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -119,7 +119,7 @@ public class max_align_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

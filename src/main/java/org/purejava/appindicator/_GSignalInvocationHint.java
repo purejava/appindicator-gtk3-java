@@ -52,7 +52,7 @@ public class _GSignalInvocationHint {
         return signal_id$LAYOUT;
     }
 
-    private static final long signal_id$OFFSET = 0;
+    private static final long signal_id$OFFSET = $LAYOUT.byteOffset(groupElement("signal_id"));
 
     /**
      * Offset for field:
@@ -96,7 +96,7 @@ public class _GSignalInvocationHint {
         return detail$LAYOUT;
     }
 
-    private static final long detail$OFFSET = 4;
+    private static final long detail$OFFSET = $LAYOUT.byteOffset(groupElement("detail"));
 
     /**
      * Offset for field:
@@ -140,7 +140,7 @@ public class _GSignalInvocationHint {
         return run_type$LAYOUT;
     }
 
-    private static final long run_type$OFFSET = 8;
+    private static final long run_type$OFFSET = $LAYOUT.byteOffset(groupElement("run_type"));
 
     /**
      * Offset for field:
@@ -201,7 +201,7 @@ public class _GSignalInvocationHint {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -209,7 +209,7 @@ public class _GSignalInvocationHint {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

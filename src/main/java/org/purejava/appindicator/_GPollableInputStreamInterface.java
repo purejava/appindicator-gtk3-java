@@ -56,7 +56,7 @@ public class _GPollableInputStreamInterface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -93,7 +93,11 @@ public class _GPollableInputStreamInterface {
      * gboolean (*can_poll)(GPollableInputStream *)
      * }
      */
-    public class can_poll {
+    public final static class can_poll {
+
+        private can_poll() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -129,9 +133,11 @@ public class _GPollableInputStreamInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -150,7 +156,7 @@ public class _GPollableInputStreamInterface {
         return can_poll$LAYOUT;
     }
 
-    private static final long can_poll$OFFSET = 16;
+    private static final long can_poll$OFFSET = $LAYOUT.byteOffset(groupElement("can_poll"));
 
     /**
      * Offset for field:
@@ -187,7 +193,11 @@ public class _GPollableInputStreamInterface {
      * gboolean (*is_readable)(GPollableInputStream *)
      * }
      */
-    public class is_readable {
+    public final static class is_readable {
+
+        private is_readable() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -223,9 +233,11 @@ public class _GPollableInputStreamInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -244,7 +256,7 @@ public class _GPollableInputStreamInterface {
         return is_readable$LAYOUT;
     }
 
-    private static final long is_readable$OFFSET = 24;
+    private static final long is_readable$OFFSET = $LAYOUT.byteOffset(groupElement("is_readable"));
 
     /**
      * Offset for field:
@@ -281,7 +293,11 @@ public class _GPollableInputStreamInterface {
      * GSource *(*create_source)(GPollableInputStream *, GCancellable *)
      * }
      */
-    public class create_source {
+    public final static class create_source {
+
+        private create_source() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -318,9 +334,11 @@ public class _GPollableInputStreamInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -339,7 +357,7 @@ public class _GPollableInputStreamInterface {
         return create_source$LAYOUT;
     }
 
-    private static final long create_source$OFFSET = 32;
+    private static final long create_source$OFFSET = $LAYOUT.byteOffset(groupElement("create_source"));
 
     /**
      * Offset for field:
@@ -376,7 +394,11 @@ public class _GPollableInputStreamInterface {
      * gssize (*read_nonblocking)(GPollableInputStream *, void *, gsize, GError **)
      * }
      */
-    public class read_nonblocking {
+    public final static class read_nonblocking {
+
+        private read_nonblocking() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -415,9 +437,11 @@ public class _GPollableInputStreamInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static long invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3) {
+        public static long invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3) {
             try {
                 return (long) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -436,7 +460,7 @@ public class _GPollableInputStreamInterface {
         return read_nonblocking$LAYOUT;
     }
 
-    private static final long read_nonblocking$OFFSET = 40;
+    private static final long read_nonblocking$OFFSET = $LAYOUT.byteOffset(groupElement("read_nonblocking"));
 
     /**
      * Offset for field:
@@ -497,7 +521,7 @@ public class _GPollableInputStreamInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -505,7 +529,7 @@ public class _GPollableInputStreamInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

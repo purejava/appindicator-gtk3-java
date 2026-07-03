@@ -80,7 +80,7 @@ public class _GResolverClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -117,7 +117,11 @@ public class _GResolverClass {
      * void (*reload)(GResolver *)
      * }
      */
-    public class reload {
+    public final static class reload {
+
+        private reload() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -152,9 +156,11 @@ public class _GResolverClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -173,7 +179,7 @@ public class _GResolverClass {
         return reload$LAYOUT;
     }
 
-    private static final long reload$OFFSET = 136;
+    private static final long reload$OFFSET = $LAYOUT.byteOffset(groupElement("reload"));
 
     /**
      * Offset for field:
@@ -210,7 +216,11 @@ public class _GResolverClass {
      * GList *(*lookup_by_name)(GResolver *, const gchar *, GCancellable *, GError **)
      * }
      */
-    public class lookup_by_name {
+    public final static class lookup_by_name {
+
+        private lookup_by_name() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -249,9 +259,11 @@ public class _GResolverClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -270,7 +282,7 @@ public class _GResolverClass {
         return lookup_by_name$LAYOUT;
     }
 
-    private static final long lookup_by_name$OFFSET = 144;
+    private static final long lookup_by_name$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_by_name"));
 
     /**
      * Offset for field:
@@ -307,7 +319,11 @@ public class _GResolverClass {
      * void (*lookup_by_name_async)(GResolver *, const gchar *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class lookup_by_name_async {
+    public final static class lookup_by_name_async {
+
+        private lookup_by_name_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -346,9 +362,11 @@ public class _GResolverClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -367,7 +385,7 @@ public class _GResolverClass {
         return lookup_by_name_async$LAYOUT;
     }
 
-    private static final long lookup_by_name_async$OFFSET = 152;
+    private static final long lookup_by_name_async$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_by_name_async"));
 
     /**
      * Offset for field:
@@ -404,7 +422,11 @@ public class _GResolverClass {
      * GList *(*lookup_by_name_finish)(GResolver *, GAsyncResult *, GError **)
      * }
      */
-    public class lookup_by_name_finish {
+    public final static class lookup_by_name_finish {
+
+        private lookup_by_name_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -442,9 +464,11 @@ public class _GResolverClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -463,7 +487,7 @@ public class _GResolverClass {
         return lookup_by_name_finish$LAYOUT;
     }
 
-    private static final long lookup_by_name_finish$OFFSET = 160;
+    private static final long lookup_by_name_finish$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_by_name_finish"));
 
     /**
      * Offset for field:
@@ -500,7 +524,11 @@ public class _GResolverClass {
      * gchar *(*lookup_by_address)(GResolver *, GInetAddress *, GCancellable *, GError **)
      * }
      */
-    public class lookup_by_address {
+    public final static class lookup_by_address {
+
+        private lookup_by_address() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -539,9 +567,11 @@ public class _GResolverClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -560,7 +590,7 @@ public class _GResolverClass {
         return lookup_by_address$LAYOUT;
     }
 
-    private static final long lookup_by_address$OFFSET = 168;
+    private static final long lookup_by_address$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_by_address"));
 
     /**
      * Offset for field:
@@ -597,7 +627,11 @@ public class _GResolverClass {
      * void (*lookup_by_address_async)(GResolver *, GInetAddress *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class lookup_by_address_async {
+    public final static class lookup_by_address_async {
+
+        private lookup_by_address_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -636,9 +670,11 @@ public class _GResolverClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -657,7 +693,7 @@ public class _GResolverClass {
         return lookup_by_address_async$LAYOUT;
     }
 
-    private static final long lookup_by_address_async$OFFSET = 176;
+    private static final long lookup_by_address_async$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_by_address_async"));
 
     /**
      * Offset for field:
@@ -694,7 +730,11 @@ public class _GResolverClass {
      * gchar *(*lookup_by_address_finish)(GResolver *, GAsyncResult *, GError **)
      * }
      */
-    public class lookup_by_address_finish {
+    public final static class lookup_by_address_finish {
+
+        private lookup_by_address_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -732,9 +772,11 @@ public class _GResolverClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -753,7 +795,7 @@ public class _GResolverClass {
         return lookup_by_address_finish$LAYOUT;
     }
 
-    private static final long lookup_by_address_finish$OFFSET = 184;
+    private static final long lookup_by_address_finish$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_by_address_finish"));
 
     /**
      * Offset for field:
@@ -790,7 +832,11 @@ public class _GResolverClass {
      * GList *(*lookup_service)(GResolver *, const gchar *, GCancellable *, GError **)
      * }
      */
-    public class lookup_service {
+    public final static class lookup_service {
+
+        private lookup_service() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -829,9 +875,11 @@ public class _GResolverClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -850,7 +898,7 @@ public class _GResolverClass {
         return lookup_service$LAYOUT;
     }
 
-    private static final long lookup_service$OFFSET = 192;
+    private static final long lookup_service$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_service"));
 
     /**
      * Offset for field:
@@ -887,7 +935,11 @@ public class _GResolverClass {
      * void (*lookup_service_async)(GResolver *, const gchar *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class lookup_service_async {
+    public final static class lookup_service_async {
+
+        private lookup_service_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -926,9 +978,11 @@ public class _GResolverClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -947,7 +1001,7 @@ public class _GResolverClass {
         return lookup_service_async$LAYOUT;
     }
 
-    private static final long lookup_service_async$OFFSET = 200;
+    private static final long lookup_service_async$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_service_async"));
 
     /**
      * Offset for field:
@@ -984,7 +1038,11 @@ public class _GResolverClass {
      * GList *(*lookup_service_finish)(GResolver *, GAsyncResult *, GError **)
      * }
      */
-    public class lookup_service_finish {
+    public final static class lookup_service_finish {
+
+        private lookup_service_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1022,9 +1080,11 @@ public class _GResolverClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1043,7 +1103,7 @@ public class _GResolverClass {
         return lookup_service_finish$LAYOUT;
     }
 
-    private static final long lookup_service_finish$OFFSET = 208;
+    private static final long lookup_service_finish$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_service_finish"));
 
     /**
      * Offset for field:
@@ -1080,7 +1140,11 @@ public class _GResolverClass {
      * GList *(*lookup_records)(GResolver *, const gchar *, GResolverRecordType, GCancellable *, GError **)
      * }
      */
-    public class lookup_records {
+    public final static class lookup_records {
+
+        private lookup_records() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1120,9 +1184,11 @@ public class _GResolverClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1141,7 +1207,7 @@ public class _GResolverClass {
         return lookup_records$LAYOUT;
     }
 
-    private static final long lookup_records$OFFSET = 216;
+    private static final long lookup_records$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_records"));
 
     /**
      * Offset for field:
@@ -1178,7 +1244,11 @@ public class _GResolverClass {
      * void (*lookup_records_async)(GResolver *, const gchar *, GResolverRecordType, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class lookup_records_async {
+    public final static class lookup_records_async {
+
+        private lookup_records_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1218,9 +1288,11 @@ public class _GResolverClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1239,7 +1311,7 @@ public class _GResolverClass {
         return lookup_records_async$LAYOUT;
     }
 
-    private static final long lookup_records_async$OFFSET = 224;
+    private static final long lookup_records_async$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_records_async"));
 
     /**
      * Offset for field:
@@ -1276,7 +1348,11 @@ public class _GResolverClass {
      * GList *(*lookup_records_finish)(GResolver *, GAsyncResult *, GError **)
      * }
      */
-    public class lookup_records_finish {
+    public final static class lookup_records_finish {
+
+        private lookup_records_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1314,9 +1390,11 @@ public class _GResolverClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1335,7 +1413,7 @@ public class _GResolverClass {
         return lookup_records_finish$LAYOUT;
     }
 
-    private static final long lookup_records_finish$OFFSET = 232;
+    private static final long lookup_records_finish$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_records_finish"));
 
     /**
      * Offset for field:
@@ -1372,7 +1450,11 @@ public class _GResolverClass {
      * void (*lookup_by_name_with_flags_async)(GResolver *, const gchar *, GResolverNameLookupFlags, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class lookup_by_name_with_flags_async {
+    public final static class lookup_by_name_with_flags_async {
+
+        private lookup_by_name_with_flags_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1412,9 +1494,11 @@ public class _GResolverClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1433,7 +1517,7 @@ public class _GResolverClass {
         return lookup_by_name_with_flags_async$LAYOUT;
     }
 
-    private static final long lookup_by_name_with_flags_async$OFFSET = 240;
+    private static final long lookup_by_name_with_flags_async$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_by_name_with_flags_async"));
 
     /**
      * Offset for field:
@@ -1470,7 +1554,11 @@ public class _GResolverClass {
      * GList *(*lookup_by_name_with_flags_finish)(GResolver *, GAsyncResult *, GError **)
      * }
      */
-    public class lookup_by_name_with_flags_finish {
+    public final static class lookup_by_name_with_flags_finish {
+
+        private lookup_by_name_with_flags_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1508,9 +1596,11 @@ public class _GResolverClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1529,7 +1619,7 @@ public class _GResolverClass {
         return lookup_by_name_with_flags_finish$LAYOUT;
     }
 
-    private static final long lookup_by_name_with_flags_finish$OFFSET = 248;
+    private static final long lookup_by_name_with_flags_finish$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_by_name_with_flags_finish"));
 
     /**
      * Offset for field:
@@ -1566,7 +1656,11 @@ public class _GResolverClass {
      * GList *(*lookup_by_name_with_flags)(GResolver *, const gchar *, GResolverNameLookupFlags, GCancellable *, GError **)
      * }
      */
-    public class lookup_by_name_with_flags {
+    public final static class lookup_by_name_with_flags {
+
+        private lookup_by_name_with_flags() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1606,9 +1700,11 @@ public class _GResolverClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1627,7 +1723,7 @@ public class _GResolverClass {
         return lookup_by_name_with_flags$LAYOUT;
     }
 
-    private static final long lookup_by_name_with_flags$OFFSET = 256;
+    private static final long lookup_by_name_with_flags$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_by_name_with_flags"));
 
     /**
      * Offset for field:
@@ -1688,7 +1784,7 @@ public class _GResolverClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1696,7 +1792,7 @@ public class _GResolverClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

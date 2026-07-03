@@ -58,7 +58,7 @@ public class _GHashTableIter {
         return dummy1$LAYOUT;
     }
 
-    private static final long dummy1$OFFSET = 0;
+    private static final long dummy1$OFFSET = $LAYOUT.byteOffset(groupElement("dummy1"));
 
     /**
      * Offset for field:
@@ -102,7 +102,7 @@ public class _GHashTableIter {
         return dummy2$LAYOUT;
     }
 
-    private static final long dummy2$OFFSET = 8;
+    private static final long dummy2$OFFSET = $LAYOUT.byteOffset(groupElement("dummy2"));
 
     /**
      * Offset for field:
@@ -146,7 +146,7 @@ public class _GHashTableIter {
         return dummy3$LAYOUT;
     }
 
-    private static final long dummy3$OFFSET = 16;
+    private static final long dummy3$OFFSET = $LAYOUT.byteOffset(groupElement("dummy3"));
 
     /**
      * Offset for field:
@@ -190,7 +190,7 @@ public class _GHashTableIter {
         return dummy4$LAYOUT;
     }
 
-    private static final long dummy4$OFFSET = 24;
+    private static final long dummy4$OFFSET = $LAYOUT.byteOffset(groupElement("dummy4"));
 
     /**
      * Offset for field:
@@ -234,7 +234,7 @@ public class _GHashTableIter {
         return dummy5$LAYOUT;
     }
 
-    private static final long dummy5$OFFSET = 28;
+    private static final long dummy5$OFFSET = $LAYOUT.byteOffset(groupElement("dummy5"));
 
     /**
      * Offset for field:
@@ -278,7 +278,7 @@ public class _GHashTableIter {
         return dummy6$LAYOUT;
     }
 
-    private static final long dummy6$OFFSET = 32;
+    private static final long dummy6$OFFSET = $LAYOUT.byteOffset(groupElement("dummy6"));
 
     /**
      * Offset for field:
@@ -339,7 +339,7 @@ public class _GHashTableIter {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -347,7 +347,7 @@ public class _GHashTableIter {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gint (*GtkTreeIterCompareFunc)(GtkTreeModel *, GtkTreeIter *, GtkTreeIter *, gpointer)
  * }
  */
-public class GtkTreeIterCompareFunc {
+public final class GtkTreeIterCompareFunc {
+
+    private GtkTreeIterCompareFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -56,9 +60,11 @@ public class GtkTreeIterCompareFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment model, MemorySegment a, MemorySegment b, MemorySegment user_data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment model, MemorySegment a, MemorySegment b, MemorySegment user_data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, model, a, b, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

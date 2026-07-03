@@ -55,7 +55,7 @@ public class _PangoAttrClass {
         return type$LAYOUT;
     }
 
-    private static final long type$OFFSET = 0;
+    private static final long type$OFFSET = $LAYOUT.byteOffset(groupElement("type"));
 
     /**
      * Offset for field:
@@ -92,7 +92,11 @@ public class _PangoAttrClass {
      * PangoAttribute *(*copy)(const PangoAttribute *)
      * }
      */
-    public class copy {
+    public final static class copy {
+
+        private copy() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -128,9 +132,11 @@ public class _PangoAttrClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -149,7 +155,7 @@ public class _PangoAttrClass {
         return copy$LAYOUT;
     }
 
-    private static final long copy$OFFSET = 8;
+    private static final long copy$OFFSET = $LAYOUT.byteOffset(groupElement("copy"));
 
     /**
      * Offset for field:
@@ -186,7 +192,11 @@ public class _PangoAttrClass {
      * void (*destroy)(PangoAttribute *)
      * }
      */
-    public class destroy {
+    public final static class destroy {
+
+        private destroy() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -221,9 +231,11 @@ public class _PangoAttrClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -242,7 +254,7 @@ public class _PangoAttrClass {
         return destroy$LAYOUT;
     }
 
-    private static final long destroy$OFFSET = 16;
+    private static final long destroy$OFFSET = $LAYOUT.byteOffset(groupElement("destroy"));
 
     /**
      * Offset for field:
@@ -279,7 +291,11 @@ public class _PangoAttrClass {
      * gboolean (*equal)(const PangoAttribute *, const PangoAttribute *)
      * }
      */
-    public class equal {
+    public final static class equal {
+
+        private equal() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -316,9 +332,11 @@ public class _PangoAttrClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -337,7 +355,7 @@ public class _PangoAttrClass {
         return equal$LAYOUT;
     }
 
-    private static final long equal$OFFSET = 24;
+    private static final long equal$OFFSET = $LAYOUT.byteOffset(groupElement("equal"));
 
     /**
      * Offset for field:
@@ -398,7 +416,7 @@ public class _PangoAttrClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -406,7 +424,7 @@ public class _PangoAttrClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

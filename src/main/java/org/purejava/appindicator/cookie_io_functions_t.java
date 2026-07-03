@@ -14,12 +14,17 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
- * typedef elf_fpregset_t __prfpregset_t
+ * typedef struct _IO_cookie_io_functions_t {
+ *     cookie_read_function_t *read;
+ *     cookie_write_function_t *write;
+ *     cookie_seek_function_t *seek;
+ *     cookie_close_function_t *close;
+ * } cookie_io_functions_t
  * }
  */
-public class __prfpregset_t extends user_fpsimd_struct {
+public class cookie_io_functions_t extends _IO_cookie_io_functions_t {
 
-    __prfpregset_t() {
+    cookie_io_functions_t() {
         // Should not be called directly
     }
 }

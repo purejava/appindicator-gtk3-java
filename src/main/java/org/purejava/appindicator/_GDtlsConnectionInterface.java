@@ -68,7 +68,7 @@ public class _GDtlsConnectionInterface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -105,7 +105,11 @@ public class _GDtlsConnectionInterface {
      * gboolean (*accept_certificate)(GDtlsConnection *, GTlsCertificate *, GTlsCertificateFlags)
      * }
      */
-    public class accept_certificate {
+    public final static class accept_certificate {
+
+        private accept_certificate() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -143,9 +147,11 @@ public class _GDtlsConnectionInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -164,7 +170,7 @@ public class _GDtlsConnectionInterface {
         return accept_certificate$LAYOUT;
     }
 
-    private static final long accept_certificate$OFFSET = 16;
+    private static final long accept_certificate$OFFSET = $LAYOUT.byteOffset(groupElement("accept_certificate"));
 
     /**
      * Offset for field:
@@ -201,7 +207,11 @@ public class _GDtlsConnectionInterface {
      * gboolean (*handshake)(GDtlsConnection *, GCancellable *, GError **)
      * }
      */
-    public class handshake {
+    public final static class handshake {
+
+        private handshake() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -239,9 +249,11 @@ public class _GDtlsConnectionInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -260,7 +272,7 @@ public class _GDtlsConnectionInterface {
         return handshake$LAYOUT;
     }
 
-    private static final long handshake$OFFSET = 24;
+    private static final long handshake$OFFSET = $LAYOUT.byteOffset(groupElement("handshake"));
 
     /**
      * Offset for field:
@@ -297,7 +309,11 @@ public class _GDtlsConnectionInterface {
      * void (*handshake_async)(GDtlsConnection *, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class handshake_async {
+    public final static class handshake_async {
+
+        private handshake_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -336,9 +352,11 @@ public class _GDtlsConnectionInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -357,7 +375,7 @@ public class _GDtlsConnectionInterface {
         return handshake_async$LAYOUT;
     }
 
-    private static final long handshake_async$OFFSET = 32;
+    private static final long handshake_async$OFFSET = $LAYOUT.byteOffset(groupElement("handshake_async"));
 
     /**
      * Offset for field:
@@ -394,7 +412,11 @@ public class _GDtlsConnectionInterface {
      * gboolean (*handshake_finish)(GDtlsConnection *, GAsyncResult *, GError **)
      * }
      */
-    public class handshake_finish {
+    public final static class handshake_finish {
+
+        private handshake_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -432,9 +454,11 @@ public class _GDtlsConnectionInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -453,7 +477,7 @@ public class _GDtlsConnectionInterface {
         return handshake_finish$LAYOUT;
     }
 
-    private static final long handshake_finish$OFFSET = 40;
+    private static final long handshake_finish$OFFSET = $LAYOUT.byteOffset(groupElement("handshake_finish"));
 
     /**
      * Offset for field:
@@ -490,7 +514,11 @@ public class _GDtlsConnectionInterface {
      * gboolean (*shutdown)(GDtlsConnection *, gboolean, gboolean, GCancellable *, GError **)
      * }
      */
-    public class shutdown {
+    public final static class shutdown {
+
+        private shutdown() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -530,9 +558,11 @@ public class _GDtlsConnectionInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -551,7 +581,7 @@ public class _GDtlsConnectionInterface {
         return shutdown$LAYOUT;
     }
 
-    private static final long shutdown$OFFSET = 48;
+    private static final long shutdown$OFFSET = $LAYOUT.byteOffset(groupElement("shutdown"));
 
     /**
      * Offset for field:
@@ -588,7 +618,11 @@ public class _GDtlsConnectionInterface {
      * void (*shutdown_async)(GDtlsConnection *, gboolean, gboolean, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class shutdown_async {
+    public final static class shutdown_async {
+
+        private shutdown_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -629,9 +663,11 @@ public class _GDtlsConnectionInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -650,7 +686,7 @@ public class _GDtlsConnectionInterface {
         return shutdown_async$LAYOUT;
     }
 
-    private static final long shutdown_async$OFFSET = 56;
+    private static final long shutdown_async$OFFSET = $LAYOUT.byteOffset(groupElement("shutdown_async"));
 
     /**
      * Offset for field:
@@ -687,7 +723,11 @@ public class _GDtlsConnectionInterface {
      * gboolean (*shutdown_finish)(GDtlsConnection *, GAsyncResult *, GError **)
      * }
      */
-    public class shutdown_finish {
+    public final static class shutdown_finish {
+
+        private shutdown_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -725,9 +765,11 @@ public class _GDtlsConnectionInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -746,7 +788,7 @@ public class _GDtlsConnectionInterface {
         return shutdown_finish$LAYOUT;
     }
 
-    private static final long shutdown_finish$OFFSET = 64;
+    private static final long shutdown_finish$OFFSET = $LAYOUT.byteOffset(groupElement("shutdown_finish"));
 
     /**
      * Offset for field:
@@ -783,7 +825,11 @@ public class _GDtlsConnectionInterface {
      * void (*set_advertised_protocols)(GDtlsConnection *, const gchar *const *)
      * }
      */
-    public class set_advertised_protocols {
+    public final static class set_advertised_protocols {
+
+        private set_advertised_protocols() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -819,9 +865,11 @@ public class _GDtlsConnectionInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -840,7 +888,7 @@ public class _GDtlsConnectionInterface {
         return set_advertised_protocols$LAYOUT;
     }
 
-    private static final long set_advertised_protocols$OFFSET = 72;
+    private static final long set_advertised_protocols$OFFSET = $LAYOUT.byteOffset(groupElement("set_advertised_protocols"));
 
     /**
      * Offset for field:
@@ -877,7 +925,11 @@ public class _GDtlsConnectionInterface {
      * const gchar *(*get_negotiated_protocol)(GDtlsConnection *)
      * }
      */
-    public class get_negotiated_protocol {
+    public final static class get_negotiated_protocol {
+
+        private get_negotiated_protocol() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -913,9 +965,11 @@ public class _GDtlsConnectionInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -934,7 +988,7 @@ public class _GDtlsConnectionInterface {
         return get_negotiated_protocol$LAYOUT;
     }
 
-    private static final long get_negotiated_protocol$OFFSET = 80;
+    private static final long get_negotiated_protocol$OFFSET = $LAYOUT.byteOffset(groupElement("get_negotiated_protocol"));
 
     /**
      * Offset for field:
@@ -971,7 +1025,11 @@ public class _GDtlsConnectionInterface {
      * gboolean (*get_binding_data)(GDtlsConnection *, GTlsChannelBindingType, GByteArray *, GError **)
      * }
      */
-    public class get_binding_data {
+    public final static class get_binding_data {
+
+        private get_binding_data() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1010,9 +1068,11 @@ public class _GDtlsConnectionInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1031,7 +1091,7 @@ public class _GDtlsConnectionInterface {
         return get_binding_data$LAYOUT;
     }
 
-    private static final long get_binding_data$OFFSET = 88;
+    private static final long get_binding_data$OFFSET = $LAYOUT.byteOffset(groupElement("get_binding_data"));
 
     /**
      * Offset for field:
@@ -1092,7 +1152,7 @@ public class _GDtlsConnectionInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1100,7 +1160,7 @@ public class _GDtlsConnectionInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

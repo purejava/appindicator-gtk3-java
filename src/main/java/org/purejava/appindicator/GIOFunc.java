@@ -13,7 +13,11 @@ import java.lang.invoke.MethodHandle;
  * typedef gboolean (*GIOFunc)(GIOChannel *, GIOCondition, gpointer)
  * }
  */
-public class GIOFunc {
+public final class GIOFunc {
+
+    private GIOFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -51,9 +55,11 @@ public class GIOFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment source, int condition, MemorySegment data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment source, int condition, MemorySegment data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, source, condition, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

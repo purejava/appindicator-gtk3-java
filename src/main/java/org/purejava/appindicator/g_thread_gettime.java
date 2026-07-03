@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * extern guint64 (*g_thread_gettime)(void)
  * }
  */
-public class g_thread_gettime {
+public final class g_thread_gettime {
+
+    private g_thread_gettime() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,6 +58,8 @@ public class g_thread_gettime {
     public static long invoke(MemorySegment funcPtr) {
         try {
             return (long) DOWN$MH.invokeExact(funcPtr);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

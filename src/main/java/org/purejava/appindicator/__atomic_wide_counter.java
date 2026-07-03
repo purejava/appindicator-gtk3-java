@@ -53,7 +53,7 @@ public class __atomic_wide_counter {
         return __value64$LAYOUT;
     }
 
-    private static final long __value64$OFFSET = 0;
+    private static final long __value64$OFFSET = $LAYOUT.byteOffset(groupElement("__value64"));
 
     /**
      * Offset for field:
@@ -123,7 +123,7 @@ public class __atomic_wide_counter {
             return __low$LAYOUT;
         }
 
-        private static final long __low$OFFSET = 0;
+        private static final long __low$OFFSET = $LAYOUT.byteOffset(groupElement("__low"));
 
         /**
          * Offset for field:
@@ -167,7 +167,7 @@ public class __atomic_wide_counter {
             return __high$LAYOUT;
         }
 
-        private static final long __high$OFFSET = 4;
+        private static final long __high$OFFSET = $LAYOUT.byteOffset(groupElement("__high"));
 
         /**
          * Offset for field:
@@ -228,7 +228,7 @@ public class __atomic_wide_counter {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -236,7 +236,7 @@ public class __atomic_wide_counter {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code elementCount * layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -259,7 +259,7 @@ public class __atomic_wide_counter {
         return __value32$LAYOUT;
     }
 
-    private static final long __value32$OFFSET = 0;
+    private static final long __value32$OFFSET = $LAYOUT.byteOffset(groupElement("__value32"));
 
     /**
      * Offset for field:
@@ -329,7 +329,7 @@ public class __atomic_wide_counter {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -337,7 +337,7 @@ public class __atomic_wide_counter {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

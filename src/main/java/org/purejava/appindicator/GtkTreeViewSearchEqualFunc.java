@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gboolean (*GtkTreeViewSearchEqualFunc)(GtkTreeModel *, gint, const gchar *, GtkTreeIter *, gpointer)
  * }
  */
-public class GtkTreeViewSearchEqualFunc {
+public final class GtkTreeViewSearchEqualFunc {
+
+    private GtkTreeViewSearchEqualFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -57,9 +61,11 @@ public class GtkTreeViewSearchEqualFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment model, int column, MemorySegment key, MemorySegment iter, MemorySegment search_data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment model, int column, MemorySegment key, MemorySegment iter, MemorySegment search_data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, model, column, key, iter, search_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

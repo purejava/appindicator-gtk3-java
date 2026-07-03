@@ -14,26 +14,12 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
- * typedef struct elf_prpsinfo {
- *     char pr_state;
- *     char pr_sname;
- *     char pr_zomb;
- *     char pr_nice;
- *     unsigned long pr_flag;
- *     __pr_uid_t pr_uid;
- *     __pr_gid_t pr_gid;
- *     int pr_pid;
- *     int pr_ppid;
- *     int pr_pgrp;
- *     int pr_sid;
- *     char pr_fname[16];
- *     char pr_psargs[80];
- * } prpsinfo_t
+ * typedef struct _AtkTextSelection AtkTextSelection
  * }
  */
-public class prpsinfo_t extends elf_prpsinfo {
+public class AtkTextSelection extends _AtkTextSelection {
 
-    prpsinfo_t() {
+    AtkTextSelection() {
         // Should not be called directly
     }
 }

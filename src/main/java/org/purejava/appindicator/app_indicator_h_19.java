@@ -12,64 +12,10 @@ import java.util.stream.*;
 import static java.lang.foreign.ValueLayout.*;
 import static java.lang.foreign.MemoryLayout.PathElement.*;
 
-public class app_indicator_h_19 extends app_indicator_h_20 {
+class app_indicator_h_19 extends app_indicator_h_20 {
 
     app_indicator_h_19() {
         // Should not be called directly
-    }
-    private static final int GDK_KEY_Hangul_WI = (int)3791L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_KEY_Hangul_WI 3791
-     * }
-     */
-    public static int GDK_KEY_Hangul_WI() {
-        return GDK_KEY_Hangul_WI;
-    }
-    private static final int GDK_KEY_Hangul_YU = (int)3792L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_KEY_Hangul_YU 3792
-     * }
-     */
-    public static int GDK_KEY_Hangul_YU() {
-        return GDK_KEY_Hangul_YU;
-    }
-    private static final int GDK_KEY_Hangul_EU = (int)3793L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_KEY_Hangul_EU 3793
-     * }
-     */
-    public static int GDK_KEY_Hangul_EU() {
-        return GDK_KEY_Hangul_EU;
-    }
-    private static final int GDK_KEY_Hangul_YI = (int)3794L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_KEY_Hangul_YI 3794
-     * }
-     */
-    public static int GDK_KEY_Hangul_YI() {
-        return GDK_KEY_Hangul_YI;
-    }
-    private static final int GDK_KEY_Hangul_I = (int)3795L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_KEY_Hangul_I 3795
-     * }
-     */
-    public static int GDK_KEY_Hangul_I() {
-        return GDK_KEY_Hangul_I;
-    }
-    private static final int GDK_KEY_Hangul_J_Kiyeog = (int)3796L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_KEY_Hangul_J_Kiyeog 3796
-     * }
-     */
-    public static int GDK_KEY_Hangul_J_Kiyeog() {
-        return GDK_KEY_Hangul_J_Kiyeog;
     }
     private static final int GDK_KEY_Hangul_J_SsangKiyeog = (int)3797L;
     /**
@@ -7780,7 +7726,7 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static final OfLong size_t = app_indicator_h.C_LONG;
     /**
      * {@snippet lang=c :
-     * typedef unsigned int wchar_t
+     * typedef int wchar_t
      * }
      */
     public static final OfInt wchar_t = app_indicator_h.C_INT;
@@ -8050,10 +7996,10 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static final OfInt __mode_t = app_indicator_h.C_INT;
     /**
      * {@snippet lang=c :
-     * typedef unsigned int __nlink_t
+     * typedef unsigned long __nlink_t
      * }
      */
-    public static final OfInt __nlink_t = app_indicator_h.C_INT;
+    public static final OfLong __nlink_t = app_indicator_h.C_LONG;
     /**
      * {@snippet lang=c :
      * typedef long __off_t
@@ -8146,10 +8092,10 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static final AddressLayout __timer_t = app_indicator_h.C_POINTER;
     /**
      * {@snippet lang=c :
-     * typedef int __blksize_t
+     * typedef long __blksize_t
      * }
      */
-    public static final OfInt __blksize_t = app_indicator_h.C_INT;
+    public static final OfLong __blksize_t = app_indicator_h.C_LONG;
     /**
      * {@snippet lang=c :
      * typedef long __blkcnt_t
@@ -8293,9 +8239,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("clock"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("clock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8317,6 +8263,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle clock$handle() {
         return clock.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern clock_t clock()
+     * }
+     */
+    public static MemorySegment clock$address() {
+        return clock.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern clock_t clock()
@@ -8329,6 +8286,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("clock");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8340,9 +8299,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("time"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("time");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8364,6 +8323,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle time$handle() {
         return time.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern time_t time(time_t *__timer)
+     * }
+     */
+    public static MemorySegment time$address() {
+        return time.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern time_t time(time_t *__timer)
@@ -8376,6 +8346,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("time", __timer);
             }
             return (long)mh$.invokeExact(__timer);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8388,9 +8360,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("difftime"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("difftime");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8412,6 +8384,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle difftime$handle() {
         return difftime.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern double difftime(time_t __time1, time_t __time0)
+     * }
+     */
+    public static MemorySegment difftime$address() {
+        return difftime.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern double difftime(time_t __time1, time_t __time0)
@@ -8424,6 +8407,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("difftime", __time1, __time0);
             }
             return (double)mh$.invokeExact(__time1, __time0);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8435,9 +8420,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("mktime"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("mktime");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8459,6 +8444,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle mktime$handle() {
         return mktime.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern time_t mktime(struct tm *__tp)
+     * }
+     */
+    public static MemorySegment mktime$address() {
+        return mktime.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern time_t mktime(struct tm *__tp)
@@ -8471,6 +8467,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("mktime", __tp);
             }
             return (long)mh$.invokeExact(__tp);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8485,9 +8483,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("strftime"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("strftime");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8509,6 +8507,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle strftime$handle() {
         return strftime.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern size_t strftime(char *restrict __s, size_t __maxsize, const char *restrict __format, const struct tm *restrict __tp)
+     * }
+     */
+    public static MemorySegment strftime$address() {
+        return strftime.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern size_t strftime(char *restrict __s, size_t __maxsize, const char *restrict __format, const struct tm *restrict __tp)
@@ -8521,6 +8530,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("strftime", __s, __maxsize, __format, __tp);
             }
             return (long)mh$.invokeExact(__s, __maxsize, __format, __tp);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8536,9 +8547,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("strftime_l"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("strftime_l");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8560,6 +8571,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle strftime_l$handle() {
         return strftime_l.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern size_t strftime_l(char *restrict __s, size_t __maxsize, const char *restrict __format, const struct tm *restrict __tp, locale_t __loc)
+     * }
+     */
+    public static MemorySegment strftime_l$address() {
+        return strftime_l.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern size_t strftime_l(char *restrict __s, size_t __maxsize, const char *restrict __format, const struct tm *restrict __tp, locale_t __loc)
@@ -8572,6 +8594,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("strftime_l", __s, __maxsize, __format, __tp, __loc);
             }
             return (long)mh$.invokeExact(__s, __maxsize, __format, __tp, __loc);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8583,9 +8607,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gmtime"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gmtime");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8607,6 +8631,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle gmtime$handle() {
         return gmtime.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern struct tm *gmtime(const time_t *__timer)
+     * }
+     */
+    public static MemorySegment gmtime$address() {
+        return gmtime.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern struct tm *gmtime(const time_t *__timer)
@@ -8619,6 +8654,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("gmtime", __timer);
             }
             return (MemorySegment)mh$.invokeExact(__timer);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8630,9 +8667,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("localtime"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("localtime");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8654,6 +8691,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle localtime$handle() {
         return localtime.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern struct tm *localtime(const time_t *__timer)
+     * }
+     */
+    public static MemorySegment localtime$address() {
+        return localtime.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern struct tm *localtime(const time_t *__timer)
@@ -8666,6 +8714,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("localtime", __timer);
             }
             return (MemorySegment)mh$.invokeExact(__timer);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8678,9 +8728,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gmtime_r"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gmtime_r");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8702,6 +8752,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle gmtime_r$handle() {
         return gmtime_r.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern struct tm *gmtime_r(const time_t *restrict __timer, struct tm *restrict __tp)
+     * }
+     */
+    public static MemorySegment gmtime_r$address() {
+        return gmtime_r.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern struct tm *gmtime_r(const time_t *restrict __timer, struct tm *restrict __tp)
@@ -8714,6 +8775,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("gmtime_r", __timer, __tp);
             }
             return (MemorySegment)mh$.invokeExact(__timer, __tp);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8726,9 +8789,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("localtime_r"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("localtime_r");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8750,6 +8813,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle localtime_r$handle() {
         return localtime_r.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern struct tm *localtime_r(const time_t *restrict __timer, struct tm *restrict __tp)
+     * }
+     */
+    public static MemorySegment localtime_r$address() {
+        return localtime_r.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern struct tm *localtime_r(const time_t *restrict __timer, struct tm *restrict __tp)
@@ -8762,6 +8836,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("localtime_r", __timer, __tp);
             }
             return (MemorySegment)mh$.invokeExact(__timer, __tp);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8773,9 +8849,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("asctime"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("asctime");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8797,6 +8873,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle asctime$handle() {
         return asctime.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern char *asctime(const struct tm *__tp)
+     * }
+     */
+    public static MemorySegment asctime$address() {
+        return asctime.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern char *asctime(const struct tm *__tp)
@@ -8809,6 +8896,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("asctime", __tp);
             }
             return (MemorySegment)mh$.invokeExact(__tp);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8820,9 +8909,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("ctime"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("ctime");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8844,6 +8933,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle ctime$handle() {
         return ctime.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern char *ctime(const time_t *__timer)
+     * }
+     */
+    public static MemorySegment ctime$address() {
+        return ctime.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern char *ctime(const time_t *__timer)
@@ -8856,6 +8956,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("ctime", __timer);
             }
             return (MemorySegment)mh$.invokeExact(__timer);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8868,9 +8970,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("asctime_r"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("asctime_r");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8892,6 +8994,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle asctime_r$handle() {
         return asctime_r.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern char *asctime_r(const struct tm *restrict __tp, char *restrict __buf)
+     * }
+     */
+    public static MemorySegment asctime_r$address() {
+        return asctime_r.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern char *asctime_r(const struct tm *restrict __tp, char *restrict __buf)
@@ -8904,6 +9017,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("asctime_r", __tp, __buf);
             }
             return (MemorySegment)mh$.invokeExact(__tp, __buf);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8916,9 +9031,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("ctime_r"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("ctime_r");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8940,6 +9055,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle ctime_r$handle() {
         return ctime_r.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern char *ctime_r(const time_t *restrict __timer, char *restrict __buf)
+     * }
+     */
+    public static MemorySegment ctime_r$address() {
+        return ctime_r.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern char *ctime_r(const time_t *restrict __timer, char *restrict __buf)
@@ -8952,6 +9078,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("ctime_r", __timer, __buf);
             }
             return (MemorySegment)mh$.invokeExact(__timer, __buf);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8959,8 +9087,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
 
     private static class __tzname$constants {
         public static final SequenceLayout LAYOUT = MemoryLayout.sequenceLayout(2, app_indicator_h.C_POINTER);
-        public static final MemorySegment SEGMENT = app_indicator_h.findOrThrow("__tzname").reinterpret(LAYOUT.byteSize());
-        public static final VarHandle HANDLE = LAYOUT.varHandle(sequenceElement());
+        public static final MemorySegment SEGMENT = SYMBOL_LOOKUP.findOrThrow("__tzname").reinterpret(LAYOUT.byteSize());
+    public static final VarHandle HANDLE = LAYOUT.varHandle(sequenceElement());
 
         public static final long[] DIMS = { 2 };
     }
@@ -9027,7 +9155,7 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
 
     private static class __daylight$constants {
         public static final OfInt LAYOUT = app_indicator_h.C_INT;
-        public static final MemorySegment SEGMENT = app_indicator_h.findOrThrow("__daylight").reinterpret(LAYOUT.byteSize());
+        public static final MemorySegment SEGMENT = SYMBOL_LOOKUP.findOrThrow("__daylight").reinterpret(LAYOUT.byteSize());
     }
 
     /**
@@ -9072,7 +9200,7 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
 
     private static class __timezone$constants {
         public static final OfLong LAYOUT = app_indicator_h.C_LONG;
-        public static final MemorySegment SEGMENT = app_indicator_h.findOrThrow("__timezone").reinterpret(LAYOUT.byteSize());
+        public static final MemorySegment SEGMENT = SYMBOL_LOOKUP.findOrThrow("__timezone").reinterpret(LAYOUT.byteSize());
     }
 
     /**
@@ -9117,8 +9245,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
 
     private static class tzname$constants {
         public static final SequenceLayout LAYOUT = MemoryLayout.sequenceLayout(2, app_indicator_h.C_POINTER);
-        public static final MemorySegment SEGMENT = app_indicator_h.findOrThrow("tzname").reinterpret(LAYOUT.byteSize());
-        public static final VarHandle HANDLE = LAYOUT.varHandle(sequenceElement());
+        public static final MemorySegment SEGMENT = SYMBOL_LOOKUP.findOrThrow("tzname").reinterpret(LAYOUT.byteSize());
+    public static final VarHandle HANDLE = LAYOUT.varHandle(sequenceElement());
 
         public static final long[] DIMS = { 2 };
     }
@@ -9186,9 +9314,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     private static class tzset {
         public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("tzset"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("tzset");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9210,6 +9338,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle tzset$handle() {
         return tzset.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void tzset()
+     * }
+     */
+    public static MemorySegment tzset$address() {
+        return tzset.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void tzset()
@@ -9222,6 +9361,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("tzset");
             }
             mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9229,7 +9370,7 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
 
     private static class daylight$constants {
         public static final OfInt LAYOUT = app_indicator_h.C_INT;
-        public static final MemorySegment SEGMENT = app_indicator_h.findOrThrow("daylight").reinterpret(LAYOUT.byteSize());
+        public static final MemorySegment SEGMENT = SYMBOL_LOOKUP.findOrThrow("daylight").reinterpret(LAYOUT.byteSize());
     }
 
     /**
@@ -9274,7 +9415,7 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
 
     private static class timezone$constants {
         public static final OfLong LAYOUT = app_indicator_h.C_LONG;
-        public static final MemorySegment SEGMENT = app_indicator_h.findOrThrow("timezone").reinterpret(LAYOUT.byteSize());
+        public static final MemorySegment SEGMENT = SYMBOL_LOOKUP.findOrThrow("timezone").reinterpret(LAYOUT.byteSize());
     }
 
     /**
@@ -9323,9 +9464,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("timegm"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("timegm");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9347,6 +9488,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle timegm$handle() {
         return timegm.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern time_t timegm(struct tm *__tp)
+     * }
+     */
+    public static MemorySegment timegm$address() {
+        return timegm.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern time_t timegm(struct tm *__tp)
@@ -9359,6 +9511,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("timegm", __tp);
             }
             return (long)mh$.invokeExact(__tp);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9370,9 +9524,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("timelocal"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("timelocal");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9394,6 +9548,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle timelocal$handle() {
         return timelocal.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern time_t timelocal(struct tm *__tp)
+     * }
+     */
+    public static MemorySegment timelocal$address() {
+        return timelocal.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern time_t timelocal(struct tm *__tp)
@@ -9406,6 +9571,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("timelocal", __tp);
             }
             return (long)mh$.invokeExact(__tp);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9417,9 +9584,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("dysize"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("dysize");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9441,6 +9608,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle dysize$handle() {
         return dysize.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int dysize(int __year)
+     * }
+     */
+    public static MemorySegment dysize$address() {
+        return dysize.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int dysize(int __year)
@@ -9453,6 +9631,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("dysize", __year);
             }
             return (int)mh$.invokeExact(__year);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9465,9 +9645,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("nanosleep"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("nanosleep");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9489,6 +9669,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle nanosleep$handle() {
         return nanosleep.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int nanosleep(const struct timespec *__requested_time, struct timespec *__remaining)
+     * }
+     */
+    public static MemorySegment nanosleep$address() {
+        return nanosleep.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int nanosleep(const struct timespec *__requested_time, struct timespec *__remaining)
@@ -9501,6 +9692,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("nanosleep", __requested_time, __remaining);
             }
             return (int)mh$.invokeExact(__requested_time, __remaining);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9513,9 +9706,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("clock_getres"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("clock_getres");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9537,6 +9730,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle clock_getres$handle() {
         return clock_getres.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int clock_getres(clockid_t __clock_id, struct timespec *__res)
+     * }
+     */
+    public static MemorySegment clock_getres$address() {
+        return clock_getres.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int clock_getres(clockid_t __clock_id, struct timespec *__res)
@@ -9549,6 +9753,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("clock_getres", __clock_id, __res);
             }
             return (int)mh$.invokeExact(__clock_id, __res);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9561,9 +9767,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("clock_gettime"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("clock_gettime");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9585,6 +9791,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle clock_gettime$handle() {
         return clock_gettime.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int clock_gettime(clockid_t __clock_id, struct timespec *__tp)
+     * }
+     */
+    public static MemorySegment clock_gettime$address() {
+        return clock_gettime.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int clock_gettime(clockid_t __clock_id, struct timespec *__tp)
@@ -9597,6 +9814,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("clock_gettime", __clock_id, __tp);
             }
             return (int)mh$.invokeExact(__clock_id, __tp);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9609,9 +9828,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("clock_settime"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("clock_settime");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9633,6 +9852,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle clock_settime$handle() {
         return clock_settime.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int clock_settime(clockid_t __clock_id, const struct timespec *__tp)
+     * }
+     */
+    public static MemorySegment clock_settime$address() {
+        return clock_settime.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int clock_settime(clockid_t __clock_id, const struct timespec *__tp)
@@ -9645,6 +9875,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("clock_settime", __clock_id, __tp);
             }
             return (int)mh$.invokeExact(__clock_id, __tp);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9659,9 +9891,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("clock_nanosleep"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("clock_nanosleep");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9683,6 +9915,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle clock_nanosleep$handle() {
         return clock_nanosleep.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int clock_nanosleep(clockid_t __clock_id, int __flags, const struct timespec *__req, struct timespec *__rem)
+     * }
+     */
+    public static MemorySegment clock_nanosleep$address() {
+        return clock_nanosleep.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int clock_nanosleep(clockid_t __clock_id, int __flags, const struct timespec *__req, struct timespec *__rem)
@@ -9695,6 +9938,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("clock_nanosleep", __clock_id, __flags, __req, __rem);
             }
             return (int)mh$.invokeExact(__clock_id, __flags, __req, __rem);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9707,9 +9952,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("clock_getcpuclockid"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("clock_getcpuclockid");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9731,6 +9976,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle clock_getcpuclockid$handle() {
         return clock_getcpuclockid.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int clock_getcpuclockid(pid_t __pid, clockid_t *__clock_id)
+     * }
+     */
+    public static MemorySegment clock_getcpuclockid$address() {
+        return clock_getcpuclockid.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int clock_getcpuclockid(pid_t __pid, clockid_t *__clock_id)
@@ -9743,6 +9999,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("clock_getcpuclockid", __pid, __clock_id);
             }
             return (int)mh$.invokeExact(__pid, __clock_id);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9756,9 +10014,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("timer_create"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("timer_create");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9780,6 +10038,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle timer_create$handle() {
         return timer_create.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int timer_create(clockid_t __clock_id, struct sigevent *restrict __evp, timer_t *restrict __timerid)
+     * }
+     */
+    public static MemorySegment timer_create$address() {
+        return timer_create.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int timer_create(clockid_t __clock_id, struct sigevent *restrict __evp, timer_t *restrict __timerid)
@@ -9792,6 +10061,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("timer_create", __clock_id, __evp, __timerid);
             }
             return (int)mh$.invokeExact(__clock_id, __evp, __timerid);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9803,9 +10074,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("timer_delete"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("timer_delete");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9827,6 +10098,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle timer_delete$handle() {
         return timer_delete.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int timer_delete(timer_t __timerid)
+     * }
+     */
+    public static MemorySegment timer_delete$address() {
+        return timer_delete.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int timer_delete(timer_t __timerid)
@@ -9839,6 +10121,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("timer_delete", __timerid);
             }
             return (int)mh$.invokeExact(__timerid);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9853,9 +10137,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("timer_settime"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("timer_settime");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9877,6 +10161,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle timer_settime$handle() {
         return timer_settime.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int timer_settime(timer_t __timerid, int __flags, const struct itimerspec *restrict __value, struct itimerspec *restrict __ovalue)
+     * }
+     */
+    public static MemorySegment timer_settime$address() {
+        return timer_settime.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int timer_settime(timer_t __timerid, int __flags, const struct itimerspec *restrict __value, struct itimerspec *restrict __ovalue)
@@ -9889,6 +10184,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("timer_settime", __timerid, __flags, __value, __ovalue);
             }
             return (int)mh$.invokeExact(__timerid, __flags, __value, __ovalue);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9901,9 +10198,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("timer_gettime"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("timer_gettime");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9925,6 +10222,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle timer_gettime$handle() {
         return timer_gettime.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int timer_gettime(timer_t __timerid, struct itimerspec *__value)
+     * }
+     */
+    public static MemorySegment timer_gettime$address() {
+        return timer_gettime.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int timer_gettime(timer_t __timerid, struct itimerspec *__value)
@@ -9937,6 +10245,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("timer_gettime", __timerid, __value);
             }
             return (int)mh$.invokeExact(__timerid, __value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9948,9 +10258,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("timer_getoverrun"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("timer_getoverrun");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9972,6 +10282,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle timer_getoverrun$handle() {
         return timer_getoverrun.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int timer_getoverrun(timer_t __timerid)
+     * }
+     */
+    public static MemorySegment timer_getoverrun$address() {
+        return timer_getoverrun.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int timer_getoverrun(timer_t __timerid)
@@ -9984,6 +10305,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("timer_getoverrun", __timerid);
             }
             return (int)mh$.invokeExact(__timerid);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9996,9 +10319,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("timespec_get"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("timespec_get");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10020,6 +10343,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle timespec_get$handle() {
         return timespec_get.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int timespec_get(struct timespec *__ts, int __base)
+     * }
+     */
+    public static MemorySegment timespec_get$address() {
+        return timespec_get.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int timespec_get(struct timespec *__ts, int __base)
@@ -10032,6 +10366,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("timespec_get", __ts, __base);
             }
             return (int)mh$.invokeExact(__ts, __base);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10135,9 +10471,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("memcpy"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("memcpy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10159,6 +10495,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle memcpy$handle() {
         return memcpy.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void *memcpy(void *restrict __dest, const void *restrict __src, size_t __n)
+     * }
+     */
+    public static MemorySegment memcpy$address() {
+        return memcpy.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void *memcpy(void *restrict __dest, const void *restrict __src, size_t __n)
@@ -10171,6 +10518,8 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("memcpy", __dest, __src, __n);
             }
             return (MemorySegment)mh$.invokeExact(__dest, __src, __n);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10184,9 +10533,9 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("memmove"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("memmove");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10208,6 +10557,17 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
     public static MethodHandle memmove$handle() {
         return memmove.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void *memmove(void *__dest, const void *__src, size_t __n)
+     * }
+     */
+    public static MemorySegment memmove$address() {
+        return memmove.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void *memmove(void *__dest, const void *__src, size_t __n)
@@ -10220,6 +10580,381 @@ public class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("memmove", __dest, __src, __n);
             }
             return (MemorySegment)mh$.invokeExact(__dest, __src, __n);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class memccpy {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_LONG
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("memccpy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void *memccpy(void *restrict __dest, const void *restrict __src, int __c, size_t __n)
+     * }
+     */
+    public static FunctionDescriptor memccpy$descriptor() {
+        return memccpy.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void *memccpy(void *restrict __dest, const void *restrict __src, int __c, size_t __n)
+     * }
+     */
+    public static MethodHandle memccpy$handle() {
+        return memccpy.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void *memccpy(void *restrict __dest, const void *restrict __src, int __c, size_t __n)
+     * }
+     */
+    public static MemorySegment memccpy$address() {
+        return memccpy.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void *memccpy(void *restrict __dest, const void *restrict __src, int __c, size_t __n)
+     * }
+     */
+    public static MemorySegment memccpy(MemorySegment __dest, MemorySegment __src, int __c, long __n) {
+        var mh$ = memccpy.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("memccpy", __dest, __src, __c, __n);
+            }
+            return (MemorySegment)mh$.invokeExact(__dest, __src, __c, __n);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class memset {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_LONG
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("memset");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void *memset(void *__s, int __c, size_t __n)
+     * }
+     */
+    public static FunctionDescriptor memset$descriptor() {
+        return memset.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void *memset(void *__s, int __c, size_t __n)
+     * }
+     */
+    public static MethodHandle memset$handle() {
+        return memset.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void *memset(void *__s, int __c, size_t __n)
+     * }
+     */
+    public static MemorySegment memset$address() {
+        return memset.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void *memset(void *__s, int __c, size_t __n)
+     * }
+     */
+    public static MemorySegment memset(MemorySegment __s, int __c, long __n) {
+        var mh$ = memset.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("memset", __s, __c, __n);
+            }
+            return (MemorySegment)mh$.invokeExact(__s, __c, __n);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class memset_explicit {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_LONG
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("memset_explicit");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void *memset_explicit(void *__s, int __c, size_t __n)
+     * }
+     */
+    public static FunctionDescriptor memset_explicit$descriptor() {
+        return memset_explicit.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void *memset_explicit(void *__s, int __c, size_t __n)
+     * }
+     */
+    public static MethodHandle memset_explicit$handle() {
+        return memset_explicit.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void *memset_explicit(void *__s, int __c, size_t __n)
+     * }
+     */
+    public static MemorySegment memset_explicit$address() {
+        return memset_explicit.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void *memset_explicit(void *__s, int __c, size_t __n)
+     * }
+     */
+    public static MemorySegment memset_explicit(MemorySegment __s, int __c, long __n) {
+        var mh$ = memset_explicit.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("memset_explicit", __s, __c, __n);
+            }
+            return (MemorySegment)mh$.invokeExact(__s, __c, __n);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class memcmp {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("memcmp");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int memcmp(const void *__s1, const void *__s2, size_t __n)
+     * }
+     */
+    public static FunctionDescriptor memcmp$descriptor() {
+        return memcmp.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int memcmp(const void *__s1, const void *__s2, size_t __n)
+     * }
+     */
+    public static MethodHandle memcmp$handle() {
+        return memcmp.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int memcmp(const void *__s1, const void *__s2, size_t __n)
+     * }
+     */
+    public static MemorySegment memcmp$address() {
+        return memcmp.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int memcmp(const void *__s1, const void *__s2, size_t __n)
+     * }
+     */
+    public static int memcmp(MemorySegment __s1, MemorySegment __s2, long __n) {
+        var mh$ = memcmp.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("memcmp", __s1, __s2, __n);
+            }
+            return (int)mh$.invokeExact(__s1, __s2, __n);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class __memcmpeq {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("__memcmpeq");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int __memcmpeq(const void *__s1, const void *__s2, size_t __n)
+     * }
+     */
+    public static FunctionDescriptor __memcmpeq$descriptor() {
+        return __memcmpeq.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int __memcmpeq(const void *__s1, const void *__s2, size_t __n)
+     * }
+     */
+    public static MethodHandle __memcmpeq$handle() {
+        return __memcmpeq.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int __memcmpeq(const void *__s1, const void *__s2, size_t __n)
+     * }
+     */
+    public static MemorySegment __memcmpeq$address() {
+        return __memcmpeq.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int __memcmpeq(const void *__s1, const void *__s2, size_t __n)
+     * }
+     */
+    public static int __memcmpeq(MemorySegment __s1, MemorySegment __s2, long __n) {
+        var mh$ = __memcmpeq.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("__memcmpeq", __s1, __s2, __n);
+            }
+            return (int)mh$.invokeExact(__s1, __s2, __n);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class memchr {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_LONG
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("memchr");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void *memchr(const void *__s, int __c, size_t __n)
+     * }
+     */
+    public static FunctionDescriptor memchr$descriptor() {
+        return memchr.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void *memchr(const void *__s, int __c, size_t __n)
+     * }
+     */
+    public static MethodHandle memchr$handle() {
+        return memchr.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void *memchr(const void *__s, int __c, size_t __n)
+     * }
+     */
+    public static MemorySegment memchr$address() {
+        return memchr.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void *memchr(const void *__s, int __c, size_t __n)
+     * }
+     */
+    public static MemorySegment memchr(MemorySegment __s, int __c, long __n) {
+        var mh$ = memchr.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("memchr", __s, __c, __n);
+            }
+            return (MemorySegment)mh$.invokeExact(__s, __c, __n);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }

@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef const gchar *(*GModuleCheckInit)(GModule *)
  * }
  */
-public class GModuleCheckInit {
+public final class GModuleCheckInit {
+
+    private GModuleCheckInit() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -53,9 +57,11 @@ public class GModuleCheckInit {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment module) {
+    public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment module) {
         try {
             return (MemorySegment) DOWN$MH.invokeExact(funcPtr, module);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

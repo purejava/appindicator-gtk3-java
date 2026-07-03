@@ -60,7 +60,7 @@ public class _GtkTextAppearance {
         return bg_color$LAYOUT;
     }
 
-    private static final long bg_color$OFFSET = 0;
+    private static final long bg_color$OFFSET = $LAYOUT.byteOffset(groupElement("bg_color"));
 
     /**
      * Offset for field:
@@ -104,7 +104,7 @@ public class _GtkTextAppearance {
         return fg_color$LAYOUT;
     }
 
-    private static final long fg_color$OFFSET = 12;
+    private static final long fg_color$OFFSET = $LAYOUT.byteOffset(groupElement("fg_color"));
 
     /**
      * Offset for field:
@@ -148,7 +148,7 @@ public class _GtkTextAppearance {
         return rise$LAYOUT;
     }
 
-    private static final long rise$OFFSET = 24;
+    private static final long rise$OFFSET = $LAYOUT.byteOffset(groupElement("rise"));
 
     /**
      * Offset for field:
@@ -192,7 +192,7 @@ public class _GtkTextAppearance {
         return rgba$LAYOUT;
     }
 
-    private static final long rgba$OFFSET = 32;
+    private static final long rgba$OFFSET = $LAYOUT.byteOffset(groupElement("rgba"));
 
     /**
      * Offset for field:
@@ -244,7 +244,7 @@ public class _GtkTextAppearance {
      * }
      */
     public static MemorySegment rgba(MemorySegment struct, long index0) {
-        return (MemorySegment)rgba$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)rgba$ELEM_HANDLE.get(struct, rgba$OFFSET, index0);
     }
 
     /**
@@ -254,7 +254,7 @@ public class _GtkTextAppearance {
      * }
      */
     public static void rgba(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        rgba$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        rgba$ELEM_HANDLE.set(struct, rgba$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -286,7 +286,7 @@ public class _GtkTextAppearance {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -294,7 +294,7 @@ public class _GtkTextAppearance {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

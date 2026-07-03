@@ -61,7 +61,7 @@ public class _AtkKeyEventStruct {
         return type$LAYOUT;
     }
 
-    private static final long type$OFFSET = 0;
+    private static final long type$OFFSET = $LAYOUT.byteOffset(groupElement("type"));
 
     /**
      * Offset for field:
@@ -105,7 +105,7 @@ public class _AtkKeyEventStruct {
         return state$LAYOUT;
     }
 
-    private static final long state$OFFSET = 4;
+    private static final long state$OFFSET = $LAYOUT.byteOffset(groupElement("state"));
 
     /**
      * Offset for field:
@@ -149,7 +149,7 @@ public class _AtkKeyEventStruct {
         return keyval$LAYOUT;
     }
 
-    private static final long keyval$OFFSET = 8;
+    private static final long keyval$OFFSET = $LAYOUT.byteOffset(groupElement("keyval"));
 
     /**
      * Offset for field:
@@ -193,7 +193,7 @@ public class _AtkKeyEventStruct {
         return length$LAYOUT;
     }
 
-    private static final long length$OFFSET = 12;
+    private static final long length$OFFSET = $LAYOUT.byteOffset(groupElement("length"));
 
     /**
      * Offset for field:
@@ -237,7 +237,7 @@ public class _AtkKeyEventStruct {
         return string$LAYOUT;
     }
 
-    private static final long string$OFFSET = 16;
+    private static final long string$OFFSET = $LAYOUT.byteOffset(groupElement("string"));
 
     /**
      * Offset for field:
@@ -281,7 +281,7 @@ public class _AtkKeyEventStruct {
         return keycode$LAYOUT;
     }
 
-    private static final long keycode$OFFSET = 24;
+    private static final long keycode$OFFSET = $LAYOUT.byteOffset(groupElement("keycode"));
 
     /**
      * Offset for field:
@@ -325,7 +325,7 @@ public class _AtkKeyEventStruct {
         return timestamp$LAYOUT;
     }
 
-    private static final long timestamp$OFFSET = 28;
+    private static final long timestamp$OFFSET = $LAYOUT.byteOffset(groupElement("timestamp"));
 
     /**
      * Offset for field:
@@ -386,7 +386,7 @@ public class _AtkKeyEventStruct {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -394,7 +394,7 @@ public class _AtkKeyEventStruct {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

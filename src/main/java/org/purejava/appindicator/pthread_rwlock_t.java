@@ -52,7 +52,7 @@ public class pthread_rwlock_t {
         return __data$LAYOUT;
     }
 
-    private static final long __data$OFFSET = 0;
+    private static final long __data$OFFSET = $LAYOUT.byteOffset(groupElement("__data"));
 
     /**
      * Offset for field:
@@ -96,7 +96,7 @@ public class pthread_rwlock_t {
         return __size$LAYOUT;
     }
 
-    private static final long __size$OFFSET = 0;
+    private static final long __size$OFFSET = $LAYOUT.byteOffset(groupElement("__size"));
 
     /**
      * Offset for field:
@@ -148,7 +148,7 @@ public class pthread_rwlock_t {
      * }
      */
     public static byte __size(MemorySegment union, long index0) {
-        return (byte)__size$ELEM_HANDLE.get(union, 0L, index0);
+        return (byte)__size$ELEM_HANDLE.get(union, __size$OFFSET, index0);
     }
 
     /**
@@ -158,7 +158,7 @@ public class pthread_rwlock_t {
      * }
      */
     public static void __size(MemorySegment union, long index0, byte fieldValue) {
-        __size$ELEM_HANDLE.set(union, 0L, index0, fieldValue);
+        __size$ELEM_HANDLE.set(union, __size$OFFSET, index0, fieldValue);
     }
 
     private static final OfLong __align$LAYOUT = (OfLong)$LAYOUT.select(groupElement("__align"));
@@ -173,7 +173,7 @@ public class pthread_rwlock_t {
         return __align$LAYOUT;
     }
 
-    private static final long __align$OFFSET = 0;
+    private static final long __align$OFFSET = $LAYOUT.byteOffset(groupElement("__align"));
 
     /**
      * Offset for field:
@@ -234,7 +234,7 @@ public class pthread_rwlock_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -242,7 +242,7 @@ public class pthread_rwlock_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

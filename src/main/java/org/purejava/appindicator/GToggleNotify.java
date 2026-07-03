@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GToggleNotify)(gpointer, GObject *, gboolean)
  * }
  */
-public class GToggleNotify {
+public final class GToggleNotify {
+
+    private GToggleNotify() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +58,11 @@ public class GToggleNotify {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment data, MemorySegment object, int is_last_ref) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment data, MemorySegment object, int is_last_ref) {
         try {
              DOWN$MH.invokeExact(funcPtr, data, object, is_last_ref);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

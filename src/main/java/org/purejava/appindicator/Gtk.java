@@ -4,9 +4,6 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 
 import static org.purejava.appindicator.app_indicator_h_5.*;
-import static org.purejava.appindicator.app_indicator_h_6.gtk_menu_new;
-import static org.purejava.appindicator.app_indicator_h_6.gtk_menu_shell_append;
-import static org.purejava.appindicator.app_indicator_h_7.gtk_widget_show_all;
 
 public class Gtk {
 

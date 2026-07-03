@@ -56,7 +56,7 @@ public class _GdkPixbufLoaderClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -93,7 +93,11 @@ public class _GdkPixbufLoaderClass {
      * void (*size_prepared)(GdkPixbufLoader *, int, int)
      * }
      */
-    public class size_prepared {
+    public final static class size_prepared {
+
+        private size_prepared() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -130,9 +134,11 @@ public class _GdkPixbufLoaderClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -151,7 +157,7 @@ public class _GdkPixbufLoaderClass {
         return size_prepared$LAYOUT;
     }
 
-    private static final long size_prepared$OFFSET = 136;
+    private static final long size_prepared$OFFSET = $LAYOUT.byteOffset(groupElement("size_prepared"));
 
     /**
      * Offset for field:
@@ -188,7 +194,11 @@ public class _GdkPixbufLoaderClass {
      * void (*area_prepared)(GdkPixbufLoader *)
      * }
      */
-    public class area_prepared {
+    public final static class area_prepared {
+
+        private area_prepared() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -223,9 +233,11 @@ public class _GdkPixbufLoaderClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -244,7 +256,7 @@ public class _GdkPixbufLoaderClass {
         return area_prepared$LAYOUT;
     }
 
-    private static final long area_prepared$OFFSET = 144;
+    private static final long area_prepared$OFFSET = $LAYOUT.byteOffset(groupElement("area_prepared"));
 
     /**
      * Offset for field:
@@ -281,7 +293,11 @@ public class _GdkPixbufLoaderClass {
      * void (*area_updated)(GdkPixbufLoader *, int, int, int, int)
      * }
      */
-    public class area_updated {
+    public final static class area_updated {
+
+        private area_updated() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -320,9 +336,11 @@ public class _GdkPixbufLoaderClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2, int _x3, int _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2, int _x3, int _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -341,7 +359,7 @@ public class _GdkPixbufLoaderClass {
         return area_updated$LAYOUT;
     }
 
-    private static final long area_updated$OFFSET = 152;
+    private static final long area_updated$OFFSET = $LAYOUT.byteOffset(groupElement("area_updated"));
 
     /**
      * Offset for field:
@@ -378,7 +396,11 @@ public class _GdkPixbufLoaderClass {
      * void (*closed)(GdkPixbufLoader *)
      * }
      */
-    public class closed {
+    public final static class closed {
+
+        private closed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -413,9 +435,11 @@ public class _GdkPixbufLoaderClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -434,7 +458,7 @@ public class _GdkPixbufLoaderClass {
         return closed$LAYOUT;
     }
 
-    private static final long closed$OFFSET = 160;
+    private static final long closed$OFFSET = $LAYOUT.byteOffset(groupElement("closed"));
 
     /**
      * Offset for field:
@@ -495,7 +519,7 @@ public class _GdkPixbufLoaderClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -503,7 +527,7 @@ public class _GdkPixbufLoaderClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

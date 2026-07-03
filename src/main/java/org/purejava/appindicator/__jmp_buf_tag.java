@@ -28,7 +28,7 @@ public class __jmp_buf_tag {
     }
 
     private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.sequenceLayout(22, app_indicator_h.C_LONG_LONG).withName("__jmpbuf"),
+        MemoryLayout.sequenceLayout(8, app_indicator_h.C_LONG).withName("__jmpbuf"),
         app_indicator_h.C_INT.withName("__mask_was_saved"),
         MemoryLayout.paddingLayout(4),
         __sigset_t.layout().withName("__saved_mask")
@@ -53,7 +53,7 @@ public class __jmp_buf_tag {
         return __jmpbuf$LAYOUT;
     }
 
-    private static final long __jmpbuf$OFFSET = 0;
+    private static final long __jmpbuf$OFFSET = $LAYOUT.byteOffset(groupElement("__jmpbuf"));
 
     /**
      * Offset for field:
@@ -97,7 +97,7 @@ public class __jmp_buf_tag {
         return __mask_was_saved$LAYOUT;
     }
 
-    private static final long __mask_was_saved$OFFSET = 176;
+    private static final long __mask_was_saved$OFFSET = $LAYOUT.byteOffset(groupElement("__mask_was_saved"));
 
     /**
      * Offset for field:
@@ -141,7 +141,7 @@ public class __jmp_buf_tag {
         return __saved_mask$LAYOUT;
     }
 
-    private static final long __saved_mask$OFFSET = 184;
+    private static final long __saved_mask$OFFSET = $LAYOUT.byteOffset(groupElement("__saved_mask"));
 
     /**
      * Offset for field:
@@ -202,7 +202,7 @@ public class __jmp_buf_tag {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -210,7 +210,7 @@ public class __jmp_buf_tag {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

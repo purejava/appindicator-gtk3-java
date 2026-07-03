@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * void *(*__start_routine)(void *)
  * }
  */
-public class pthread_create$__start_routine {
+public final class pthread_create$__start_routine {
+
+    private pthread_create$__start_routine() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -53,9 +57,11 @@ public class pthread_create$__start_routine {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+    public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
         try {
             return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

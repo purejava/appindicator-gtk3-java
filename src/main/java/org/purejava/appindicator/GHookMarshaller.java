@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GHookMarshaller)(GHook *, gpointer)
  * }
  */
-public class GHookMarshaller {
+public final class GHookMarshaller {
+
+    private GHookMarshaller() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -53,9 +57,11 @@ public class GHookMarshaller {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment hook, MemorySegment marshal_data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment hook, MemorySegment marshal_data) {
         try {
              DOWN$MH.invokeExact(funcPtr, hook, marshal_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

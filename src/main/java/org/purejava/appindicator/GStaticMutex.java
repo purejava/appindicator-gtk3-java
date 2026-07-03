@@ -50,7 +50,7 @@ public class GStaticMutex {
         return mutex$LAYOUT;
     }
 
-    private static final long mutex$OFFSET = 0;
+    private static final long mutex$OFFSET = $LAYOUT.byteOffset(groupElement("mutex"));
 
     /**
      * Offset for field:
@@ -94,7 +94,7 @@ public class GStaticMutex {
         return unused$LAYOUT;
     }
 
-    private static final long unused$OFFSET = 8;
+    private static final long unused$OFFSET = $LAYOUT.byteOffset(groupElement("unused"));
 
     /**
      * Offset for field:
@@ -155,7 +155,7 @@ public class GStaticMutex {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -163,7 +163,7 @@ public class GStaticMutex {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

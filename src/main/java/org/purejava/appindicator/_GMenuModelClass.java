@@ -64,7 +64,7 @@ public class _GMenuModelClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -101,7 +101,11 @@ public class _GMenuModelClass {
      * gboolean (*is_mutable)(GMenuModel *)
      * }
      */
-    public class is_mutable {
+    public final static class is_mutable {
+
+        private is_mutable() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -137,9 +141,11 @@ public class _GMenuModelClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -158,7 +164,7 @@ public class _GMenuModelClass {
         return is_mutable$LAYOUT;
     }
 
-    private static final long is_mutable$OFFSET = 136;
+    private static final long is_mutable$OFFSET = $LAYOUT.byteOffset(groupElement("is_mutable"));
 
     /**
      * Offset for field:
@@ -195,7 +201,11 @@ public class _GMenuModelClass {
      * gint (*get_n_items)(GMenuModel *)
      * }
      */
-    public class get_n_items {
+    public final static class get_n_items {
+
+        private get_n_items() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -231,9 +241,11 @@ public class _GMenuModelClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -252,7 +264,7 @@ public class _GMenuModelClass {
         return get_n_items$LAYOUT;
     }
 
-    private static final long get_n_items$OFFSET = 144;
+    private static final long get_n_items$OFFSET = $LAYOUT.byteOffset(groupElement("get_n_items"));
 
     /**
      * Offset for field:
@@ -289,7 +301,11 @@ public class _GMenuModelClass {
      * void (*get_item_attributes)(GMenuModel *, gint, GHashTable **)
      * }
      */
-    public class get_item_attributes {
+    public final static class get_item_attributes {
+
+        private get_item_attributes() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -326,9 +342,11 @@ public class _GMenuModelClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -347,7 +365,7 @@ public class _GMenuModelClass {
         return get_item_attributes$LAYOUT;
     }
 
-    private static final long get_item_attributes$OFFSET = 152;
+    private static final long get_item_attributes$OFFSET = $LAYOUT.byteOffset(groupElement("get_item_attributes"));
 
     /**
      * Offset for field:
@@ -384,7 +402,11 @@ public class _GMenuModelClass {
      * GMenuAttributeIter *(*iterate_item_attributes)(GMenuModel *, gint)
      * }
      */
-    public class iterate_item_attributes {
+    public final static class iterate_item_attributes {
+
+        private iterate_item_attributes() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -421,9 +443,11 @@ public class _GMenuModelClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -442,7 +466,7 @@ public class _GMenuModelClass {
         return iterate_item_attributes$LAYOUT;
     }
 
-    private static final long iterate_item_attributes$OFFSET = 160;
+    private static final long iterate_item_attributes$OFFSET = $LAYOUT.byteOffset(groupElement("iterate_item_attributes"));
 
     /**
      * Offset for field:
@@ -479,7 +503,11 @@ public class _GMenuModelClass {
      * GVariant *(*get_item_attribute_value)(GMenuModel *, gint, const gchar *, const GVariantType *)
      * }
      */
-    public class get_item_attribute_value {
+    public final static class get_item_attribute_value {
+
+        private get_item_attribute_value() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -518,9 +546,11 @@ public class _GMenuModelClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -539,7 +569,7 @@ public class _GMenuModelClass {
         return get_item_attribute_value$LAYOUT;
     }
 
-    private static final long get_item_attribute_value$OFFSET = 168;
+    private static final long get_item_attribute_value$OFFSET = $LAYOUT.byteOffset(groupElement("get_item_attribute_value"));
 
     /**
      * Offset for field:
@@ -576,7 +606,11 @@ public class _GMenuModelClass {
      * void (*get_item_links)(GMenuModel *, gint, GHashTable **)
      * }
      */
-    public class get_item_links {
+    public final static class get_item_links {
+
+        private get_item_links() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -613,9 +647,11 @@ public class _GMenuModelClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -634,7 +670,7 @@ public class _GMenuModelClass {
         return get_item_links$LAYOUT;
     }
 
-    private static final long get_item_links$OFFSET = 176;
+    private static final long get_item_links$OFFSET = $LAYOUT.byteOffset(groupElement("get_item_links"));
 
     /**
      * Offset for field:
@@ -671,7 +707,11 @@ public class _GMenuModelClass {
      * GMenuLinkIter *(*iterate_item_links)(GMenuModel *, gint)
      * }
      */
-    public class iterate_item_links {
+    public final static class iterate_item_links {
+
+        private iterate_item_links() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -708,9 +748,11 @@ public class _GMenuModelClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -729,7 +771,7 @@ public class _GMenuModelClass {
         return iterate_item_links$LAYOUT;
     }
 
-    private static final long iterate_item_links$OFFSET = 184;
+    private static final long iterate_item_links$OFFSET = $LAYOUT.byteOffset(groupElement("iterate_item_links"));
 
     /**
      * Offset for field:
@@ -766,7 +808,11 @@ public class _GMenuModelClass {
      * GMenuModel *(*get_item_link)(GMenuModel *, gint, const gchar *)
      * }
      */
-    public class get_item_link {
+    public final static class get_item_link {
+
+        private get_item_link() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -804,9 +850,11 @@ public class _GMenuModelClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -825,7 +873,7 @@ public class _GMenuModelClass {
         return get_item_link$LAYOUT;
     }
 
-    private static final long get_item_link$OFFSET = 192;
+    private static final long get_item_link$OFFSET = $LAYOUT.byteOffset(groupElement("get_item_link"));
 
     /**
      * Offset for field:
@@ -886,7 +934,7 @@ public class _GMenuModelClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -894,7 +942,7 @@ public class _GMenuModelClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

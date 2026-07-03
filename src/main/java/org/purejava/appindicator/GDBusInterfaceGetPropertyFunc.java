@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef GVariant *(*GDBusInterfaceGetPropertyFunc)(GDBusConnection *, const gchar *, const gchar *, const gchar *, const gchar *, GError **, gpointer)
  * }
  */
-public class GDBusInterfaceGetPropertyFunc {
+public final class GDBusInterfaceGetPropertyFunc {
+
+    private GDBusInterfaceGetPropertyFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -59,9 +63,11 @@ public class GDBusInterfaceGetPropertyFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment connection, MemorySegment sender, MemorySegment object_path, MemorySegment interface_name, MemorySegment property_name, MemorySegment error, MemorySegment user_data) {
+    public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment connection, MemorySegment sender, MemorySegment object_path, MemorySegment interface_name, MemorySegment property_name, MemorySegment error, MemorySegment user_data) {
         try {
             return (MemorySegment) DOWN$MH.invokeExact(funcPtr, connection, sender, object_path, interface_name, property_name, error, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

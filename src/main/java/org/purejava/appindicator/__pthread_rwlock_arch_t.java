@@ -69,7 +69,7 @@ public class __pthread_rwlock_arch_t {
         return __readers$LAYOUT;
     }
 
-    private static final long __readers$OFFSET = 0;
+    private static final long __readers$OFFSET = $LAYOUT.byteOffset(groupElement("__readers"));
 
     /**
      * Offset for field:
@@ -113,7 +113,7 @@ public class __pthread_rwlock_arch_t {
         return __writers$LAYOUT;
     }
 
-    private static final long __writers$OFFSET = 4;
+    private static final long __writers$OFFSET = $LAYOUT.byteOffset(groupElement("__writers"));
 
     /**
      * Offset for field:
@@ -157,7 +157,7 @@ public class __pthread_rwlock_arch_t {
         return __wrphase_futex$LAYOUT;
     }
 
-    private static final long __wrphase_futex$OFFSET = 8;
+    private static final long __wrphase_futex$OFFSET = $LAYOUT.byteOffset(groupElement("__wrphase_futex"));
 
     /**
      * Offset for field:
@@ -201,7 +201,7 @@ public class __pthread_rwlock_arch_t {
         return __writers_futex$LAYOUT;
     }
 
-    private static final long __writers_futex$OFFSET = 12;
+    private static final long __writers_futex$OFFSET = $LAYOUT.byteOffset(groupElement("__writers_futex"));
 
     /**
      * Offset for field:
@@ -245,7 +245,7 @@ public class __pthread_rwlock_arch_t {
         return __pad3$LAYOUT;
     }
 
-    private static final long __pad3$OFFSET = 16;
+    private static final long __pad3$OFFSET = $LAYOUT.byteOffset(groupElement("__pad3"));
 
     /**
      * Offset for field:
@@ -289,7 +289,7 @@ public class __pthread_rwlock_arch_t {
         return __pad4$LAYOUT;
     }
 
-    private static final long __pad4$OFFSET = 20;
+    private static final long __pad4$OFFSET = $LAYOUT.byteOffset(groupElement("__pad4"));
 
     /**
      * Offset for field:
@@ -333,7 +333,7 @@ public class __pthread_rwlock_arch_t {
         return __cur_writer$LAYOUT;
     }
 
-    private static final long __cur_writer$OFFSET = 24;
+    private static final long __cur_writer$OFFSET = $LAYOUT.byteOffset(groupElement("__cur_writer"));
 
     /**
      * Offset for field:
@@ -377,7 +377,7 @@ public class __pthread_rwlock_arch_t {
         return __shared$LAYOUT;
     }
 
-    private static final long __shared$OFFSET = 28;
+    private static final long __shared$OFFSET = $LAYOUT.byteOffset(groupElement("__shared"));
 
     /**
      * Offset for field:
@@ -421,7 +421,7 @@ public class __pthread_rwlock_arch_t {
         return __pad1$LAYOUT;
     }
 
-    private static final long __pad1$OFFSET = 32;
+    private static final long __pad1$OFFSET = $LAYOUT.byteOffset(groupElement("__pad1"));
 
     /**
      * Offset for field:
@@ -465,7 +465,7 @@ public class __pthread_rwlock_arch_t {
         return __pad2$LAYOUT;
     }
 
-    private static final long __pad2$OFFSET = 40;
+    private static final long __pad2$OFFSET = $LAYOUT.byteOffset(groupElement("__pad2"));
 
     /**
      * Offset for field:
@@ -509,7 +509,7 @@ public class __pthread_rwlock_arch_t {
         return __flags$LAYOUT;
     }
 
-    private static final long __flags$OFFSET = 48;
+    private static final long __flags$OFFSET = $LAYOUT.byteOffset(groupElement("__flags"));
 
     /**
      * Offset for field:
@@ -570,7 +570,7 @@ public class __pthread_rwlock_arch_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -578,7 +578,7 @@ public class __pthread_rwlock_arch_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

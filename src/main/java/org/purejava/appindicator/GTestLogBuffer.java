@@ -29,7 +29,7 @@ public class GTestLogBuffer {
     private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
         app_indicator_h.C_POINTER.withName("data"),
         app_indicator_h.C_POINTER.withName("msgs")
-    ).withName("$anon$689:9");
+    ).withName("$anon$729:9");
 
     /**
      * The layout of this struct
@@ -50,7 +50,7 @@ public class GTestLogBuffer {
         return data$LAYOUT;
     }
 
-    private static final long data$OFFSET = 0;
+    private static final long data$OFFSET = $LAYOUT.byteOffset(groupElement("data"));
 
     /**
      * Offset for field:
@@ -94,7 +94,7 @@ public class GTestLogBuffer {
         return msgs$LAYOUT;
     }
 
-    private static final long msgs$OFFSET = 8;
+    private static final long msgs$OFFSET = $LAYOUT.byteOffset(groupElement("msgs"));
 
     /**
      * Offset for field:
@@ -155,7 +155,7 @@ public class GTestLogBuffer {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -163,7 +163,7 @@ public class GTestLogBuffer {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

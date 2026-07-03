@@ -52,7 +52,7 @@ public class _AtkPropertyValues {
         return property_name$LAYOUT;
     }
 
-    private static final long property_name$OFFSET = 0;
+    private static final long property_name$OFFSET = $LAYOUT.byteOffset(groupElement("property_name"));
 
     /**
      * Offset for field:
@@ -96,7 +96,7 @@ public class _AtkPropertyValues {
         return old_value$LAYOUT;
     }
 
-    private static final long old_value$OFFSET = 8;
+    private static final long old_value$OFFSET = $LAYOUT.byteOffset(groupElement("old_value"));
 
     /**
      * Offset for field:
@@ -140,7 +140,7 @@ public class _AtkPropertyValues {
         return new_value$LAYOUT;
     }
 
-    private static final long new_value$OFFSET = 32;
+    private static final long new_value$OFFSET = $LAYOUT.byteOffset(groupElement("new_value"));
 
     /**
      * Offset for field:
@@ -201,7 +201,7 @@ public class _AtkPropertyValues {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -209,7 +209,7 @@ public class _AtkPropertyValues {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

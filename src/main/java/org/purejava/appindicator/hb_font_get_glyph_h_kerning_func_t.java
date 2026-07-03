@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef hb_font_get_glyph_kerning_func_t hb_font_get_glyph_h_kerning_func_t
  * }
  */
-public class hb_font_get_glyph_h_kerning_func_t {
+public final class hb_font_get_glyph_h_kerning_func_t {
+
+    private hb_font_get_glyph_h_kerning_func_t() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -57,9 +61,11 @@ public class hb_font_get_glyph_h_kerning_func_t {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

@@ -54,7 +54,7 @@ public class _GFloatIEEE754 {
         return v_float$LAYOUT;
     }
 
-    private static final long v_float$OFFSET = 0;
+    private static final long v_float$OFFSET = $LAYOUT.byteOffset(groupElement("v_float"));
 
     /**
      * Offset for field:
@@ -103,7 +103,7 @@ public class _GFloatIEEE754 {
 
         private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
             MemoryLayout.paddingLayout(4)
-        ).withName("$anon$538:3");
+        ).withName("$anon$580:3");
 
         /**
          * The layout of this struct
@@ -141,7 +141,7 @@ public class _GFloatIEEE754 {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -149,7 +149,7 @@ public class _GFloatIEEE754 {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code elementCount * layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -173,7 +173,7 @@ public class _GFloatIEEE754 {
         return mpn$LAYOUT;
     }
 
-    private static final long mpn$OFFSET = 0;
+    private static final long mpn$OFFSET = $LAYOUT.byteOffset(groupElement("mpn"));
 
     /**
      * Offset for field:
@@ -246,7 +246,7 @@ public class _GFloatIEEE754 {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -254,7 +254,7 @@ public class _GFloatIEEE754 {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

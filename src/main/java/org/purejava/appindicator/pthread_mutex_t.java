@@ -16,7 +16,7 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * {@snippet lang=c :
  * union {
  *     struct __pthread_mutex_s __data;
- *     char __size[48];
+ *     char __size[40];
  *     long __align;
  * }
  * }
@@ -29,7 +29,7 @@ public class pthread_mutex_t {
 
     private static final GroupLayout $LAYOUT = MemoryLayout.unionLayout(
         __pthread_mutex_s.layout().withName("__data"),
-        MemoryLayout.sequenceLayout(48, app_indicator_h.C_CHAR).withName("__size"),
+        MemoryLayout.sequenceLayout(40, app_indicator_h.C_CHAR).withName("__size"),
         app_indicator_h.C_LONG.withName("__align")
     ).withName("$anon$67:9");
 
@@ -52,7 +52,7 @@ public class pthread_mutex_t {
         return __data$LAYOUT;
     }
 
-    private static final long __data$OFFSET = 0;
+    private static final long __data$OFFSET = $LAYOUT.byteOffset(groupElement("__data"));
 
     /**
      * Offset for field:
@@ -89,19 +89,19 @@ public class pthread_mutex_t {
     /**
      * Layout for field:
      * {@snippet lang=c :
-     * char __size[48]
+     * char __size[40]
      * }
      */
     public static final SequenceLayout __size$layout() {
         return __size$LAYOUT;
     }
 
-    private static final long __size$OFFSET = 0;
+    private static final long __size$OFFSET = $LAYOUT.byteOffset(groupElement("__size"));
 
     /**
      * Offset for field:
      * {@snippet lang=c :
-     * char __size[48]
+     * char __size[40]
      * }
      */
     public static final long __size$offset() {
@@ -111,7 +111,7 @@ public class pthread_mutex_t {
     /**
      * Getter for field:
      * {@snippet lang=c :
-     * char __size[48]
+     * char __size[40]
      * }
      */
     public static MemorySegment __size(MemorySegment union) {
@@ -121,19 +121,19 @@ public class pthread_mutex_t {
     /**
      * Setter for field:
      * {@snippet lang=c :
-     * char __size[48]
+     * char __size[40]
      * }
      */
     public static void __size(MemorySegment union, MemorySegment fieldValue) {
         MemorySegment.copy(fieldValue, 0L, union, __size$OFFSET, __size$LAYOUT.byteSize());
     }
 
-    private static long[] __size$DIMS = { 48 };
+    private static long[] __size$DIMS = { 40 };
 
     /**
      * Dimensions for array field:
      * {@snippet lang=c :
-     * char __size[48]
+     * char __size[40]
      * }
      */
     public static long[] __size$dimensions() {
@@ -144,21 +144,21 @@ public class pthread_mutex_t {
     /**
      * Indexed getter for field:
      * {@snippet lang=c :
-     * char __size[48]
+     * char __size[40]
      * }
      */
     public static byte __size(MemorySegment union, long index0) {
-        return (byte)__size$ELEM_HANDLE.get(union, 0L, index0);
+        return (byte)__size$ELEM_HANDLE.get(union, __size$OFFSET, index0);
     }
 
     /**
      * Indexed setter for field:
      * {@snippet lang=c :
-     * char __size[48]
+     * char __size[40]
      * }
      */
     public static void __size(MemorySegment union, long index0, byte fieldValue) {
-        __size$ELEM_HANDLE.set(union, 0L, index0, fieldValue);
+        __size$ELEM_HANDLE.set(union, __size$OFFSET, index0, fieldValue);
     }
 
     private static final OfLong __align$LAYOUT = (OfLong)$LAYOUT.select(groupElement("__align"));
@@ -173,7 +173,7 @@ public class pthread_mutex_t {
         return __align$LAYOUT;
     }
 
-    private static final long __align$OFFSET = 0;
+    private static final long __align$OFFSET = $LAYOUT.byteOffset(groupElement("__align"));
 
     /**
      * Offset for field:
@@ -234,7 +234,7 @@ public class pthread_mutex_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -242,7 +242,7 @@ public class pthread_mutex_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

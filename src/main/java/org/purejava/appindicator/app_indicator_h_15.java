@@ -12,10 +12,1584 @@ import java.util.stream.*;
 import static java.lang.foreign.ValueLayout.*;
 import static java.lang.foreign.MemoryLayout.PathElement.*;
 
-public class app_indicator_h_15 extends app_indicator_h_16 {
+class app_indicator_h_15 extends app_indicator_h_16 {
 
     app_indicator_h_15() {
         // Should not be called directly
+    }
+
+    private static class pthread_mutexattr_setrobust {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_mutexattr_setrobust");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_setrobust(pthread_mutexattr_t *__attr, int __robustness)
+     * }
+     */
+    public static FunctionDescriptor pthread_mutexattr_setrobust$descriptor() {
+        return pthread_mutexattr_setrobust.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_setrobust(pthread_mutexattr_t *__attr, int __robustness)
+     * }
+     */
+    public static MethodHandle pthread_mutexattr_setrobust$handle() {
+        return pthread_mutexattr_setrobust.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_setrobust(pthread_mutexattr_t *__attr, int __robustness)
+     * }
+     */
+    public static MemorySegment pthread_mutexattr_setrobust$address() {
+        return pthread_mutexattr_setrobust.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_setrobust(pthread_mutexattr_t *__attr, int __robustness)
+     * }
+     */
+    public static int pthread_mutexattr_setrobust(MemorySegment __attr, int __robustness) {
+        var mh$ = pthread_mutexattr_setrobust.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_mutexattr_setrobust", __attr, __robustness);
+            }
+            return (int)mh$.invokeExact(__attr, __robustness);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_rwlock_init {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_rwlock_init");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_init(pthread_rwlock_t *restrict __rwlock, const pthread_rwlockattr_t *restrict __attr)
+     * }
+     */
+    public static FunctionDescriptor pthread_rwlock_init$descriptor() {
+        return pthread_rwlock_init.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_init(pthread_rwlock_t *restrict __rwlock, const pthread_rwlockattr_t *restrict __attr)
+     * }
+     */
+    public static MethodHandle pthread_rwlock_init$handle() {
+        return pthread_rwlock_init.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_init(pthread_rwlock_t *restrict __rwlock, const pthread_rwlockattr_t *restrict __attr)
+     * }
+     */
+    public static MemorySegment pthread_rwlock_init$address() {
+        return pthread_rwlock_init.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_init(pthread_rwlock_t *restrict __rwlock, const pthread_rwlockattr_t *restrict __attr)
+     * }
+     */
+    public static int pthread_rwlock_init(MemorySegment __rwlock, MemorySegment __attr) {
+        var mh$ = pthread_rwlock_init.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_rwlock_init", __rwlock, __attr);
+            }
+            return (int)mh$.invokeExact(__rwlock, __attr);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_rwlock_destroy {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_rwlock_destroy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_destroy(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static FunctionDescriptor pthread_rwlock_destroy$descriptor() {
+        return pthread_rwlock_destroy.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_destroy(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static MethodHandle pthread_rwlock_destroy$handle() {
+        return pthread_rwlock_destroy.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_destroy(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static MemorySegment pthread_rwlock_destroy$address() {
+        return pthread_rwlock_destroy.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_destroy(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static int pthread_rwlock_destroy(MemorySegment __rwlock) {
+        var mh$ = pthread_rwlock_destroy.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_rwlock_destroy", __rwlock);
+            }
+            return (int)mh$.invokeExact(__rwlock);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_rwlock_rdlock {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_rwlock_rdlock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_rdlock(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static FunctionDescriptor pthread_rwlock_rdlock$descriptor() {
+        return pthread_rwlock_rdlock.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_rdlock(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static MethodHandle pthread_rwlock_rdlock$handle() {
+        return pthread_rwlock_rdlock.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_rdlock(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static MemorySegment pthread_rwlock_rdlock$address() {
+        return pthread_rwlock_rdlock.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_rdlock(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static int pthread_rwlock_rdlock(MemorySegment __rwlock) {
+        var mh$ = pthread_rwlock_rdlock.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_rwlock_rdlock", __rwlock);
+            }
+            return (int)mh$.invokeExact(__rwlock);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_rwlock_tryrdlock {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_rwlock_tryrdlock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_tryrdlock(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static FunctionDescriptor pthread_rwlock_tryrdlock$descriptor() {
+        return pthread_rwlock_tryrdlock.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_tryrdlock(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static MethodHandle pthread_rwlock_tryrdlock$handle() {
+        return pthread_rwlock_tryrdlock.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_tryrdlock(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static MemorySegment pthread_rwlock_tryrdlock$address() {
+        return pthread_rwlock_tryrdlock.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_tryrdlock(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static int pthread_rwlock_tryrdlock(MemorySegment __rwlock) {
+        var mh$ = pthread_rwlock_tryrdlock.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_rwlock_tryrdlock", __rwlock);
+            }
+            return (int)mh$.invokeExact(__rwlock);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_rwlock_timedrdlock {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_rwlock_timedrdlock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_timedrdlock(pthread_rwlock_t *restrict __rwlock, const struct timespec *restrict __abstime)
+     * }
+     */
+    public static FunctionDescriptor pthread_rwlock_timedrdlock$descriptor() {
+        return pthread_rwlock_timedrdlock.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_timedrdlock(pthread_rwlock_t *restrict __rwlock, const struct timespec *restrict __abstime)
+     * }
+     */
+    public static MethodHandle pthread_rwlock_timedrdlock$handle() {
+        return pthread_rwlock_timedrdlock.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_timedrdlock(pthread_rwlock_t *restrict __rwlock, const struct timespec *restrict __abstime)
+     * }
+     */
+    public static MemorySegment pthread_rwlock_timedrdlock$address() {
+        return pthread_rwlock_timedrdlock.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_timedrdlock(pthread_rwlock_t *restrict __rwlock, const struct timespec *restrict __abstime)
+     * }
+     */
+    public static int pthread_rwlock_timedrdlock(MemorySegment __rwlock, MemorySegment __abstime) {
+        var mh$ = pthread_rwlock_timedrdlock.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_rwlock_timedrdlock", __rwlock, __abstime);
+            }
+            return (int)mh$.invokeExact(__rwlock, __abstime);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_rwlock_wrlock {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_rwlock_wrlock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_wrlock(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static FunctionDescriptor pthread_rwlock_wrlock$descriptor() {
+        return pthread_rwlock_wrlock.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_wrlock(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static MethodHandle pthread_rwlock_wrlock$handle() {
+        return pthread_rwlock_wrlock.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_wrlock(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static MemorySegment pthread_rwlock_wrlock$address() {
+        return pthread_rwlock_wrlock.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_wrlock(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static int pthread_rwlock_wrlock(MemorySegment __rwlock) {
+        var mh$ = pthread_rwlock_wrlock.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_rwlock_wrlock", __rwlock);
+            }
+            return (int)mh$.invokeExact(__rwlock);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_rwlock_trywrlock {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_rwlock_trywrlock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_trywrlock(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static FunctionDescriptor pthread_rwlock_trywrlock$descriptor() {
+        return pthread_rwlock_trywrlock.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_trywrlock(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static MethodHandle pthread_rwlock_trywrlock$handle() {
+        return pthread_rwlock_trywrlock.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_trywrlock(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static MemorySegment pthread_rwlock_trywrlock$address() {
+        return pthread_rwlock_trywrlock.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_trywrlock(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static int pthread_rwlock_trywrlock(MemorySegment __rwlock) {
+        var mh$ = pthread_rwlock_trywrlock.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_rwlock_trywrlock", __rwlock);
+            }
+            return (int)mh$.invokeExact(__rwlock);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_rwlock_timedwrlock {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_rwlock_timedwrlock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_timedwrlock(pthread_rwlock_t *restrict __rwlock, const struct timespec *restrict __abstime)
+     * }
+     */
+    public static FunctionDescriptor pthread_rwlock_timedwrlock$descriptor() {
+        return pthread_rwlock_timedwrlock.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_timedwrlock(pthread_rwlock_t *restrict __rwlock, const struct timespec *restrict __abstime)
+     * }
+     */
+    public static MethodHandle pthread_rwlock_timedwrlock$handle() {
+        return pthread_rwlock_timedwrlock.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_timedwrlock(pthread_rwlock_t *restrict __rwlock, const struct timespec *restrict __abstime)
+     * }
+     */
+    public static MemorySegment pthread_rwlock_timedwrlock$address() {
+        return pthread_rwlock_timedwrlock.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_timedwrlock(pthread_rwlock_t *restrict __rwlock, const struct timespec *restrict __abstime)
+     * }
+     */
+    public static int pthread_rwlock_timedwrlock(MemorySegment __rwlock, MemorySegment __abstime) {
+        var mh$ = pthread_rwlock_timedwrlock.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_rwlock_timedwrlock", __rwlock, __abstime);
+            }
+            return (int)mh$.invokeExact(__rwlock, __abstime);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_rwlock_unlock {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_rwlock_unlock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_unlock(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static FunctionDescriptor pthread_rwlock_unlock$descriptor() {
+        return pthread_rwlock_unlock.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_unlock(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static MethodHandle pthread_rwlock_unlock$handle() {
+        return pthread_rwlock_unlock.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_unlock(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static MemorySegment pthread_rwlock_unlock$address() {
+        return pthread_rwlock_unlock.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_rwlock_unlock(pthread_rwlock_t *__rwlock)
+     * }
+     */
+    public static int pthread_rwlock_unlock(MemorySegment __rwlock) {
+        var mh$ = pthread_rwlock_unlock.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_rwlock_unlock", __rwlock);
+            }
+            return (int)mh$.invokeExact(__rwlock);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_rwlockattr_init {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_rwlockattr_init");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_init(pthread_rwlockattr_t *__attr)
+     * }
+     */
+    public static FunctionDescriptor pthread_rwlockattr_init$descriptor() {
+        return pthread_rwlockattr_init.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_init(pthread_rwlockattr_t *__attr)
+     * }
+     */
+    public static MethodHandle pthread_rwlockattr_init$handle() {
+        return pthread_rwlockattr_init.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_init(pthread_rwlockattr_t *__attr)
+     * }
+     */
+    public static MemorySegment pthread_rwlockattr_init$address() {
+        return pthread_rwlockattr_init.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_init(pthread_rwlockattr_t *__attr)
+     * }
+     */
+    public static int pthread_rwlockattr_init(MemorySegment __attr) {
+        var mh$ = pthread_rwlockattr_init.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_rwlockattr_init", __attr);
+            }
+            return (int)mh$.invokeExact(__attr);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_rwlockattr_destroy {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_rwlockattr_destroy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_destroy(pthread_rwlockattr_t *__attr)
+     * }
+     */
+    public static FunctionDescriptor pthread_rwlockattr_destroy$descriptor() {
+        return pthread_rwlockattr_destroy.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_destroy(pthread_rwlockattr_t *__attr)
+     * }
+     */
+    public static MethodHandle pthread_rwlockattr_destroy$handle() {
+        return pthread_rwlockattr_destroy.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_destroy(pthread_rwlockattr_t *__attr)
+     * }
+     */
+    public static MemorySegment pthread_rwlockattr_destroy$address() {
+        return pthread_rwlockattr_destroy.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_destroy(pthread_rwlockattr_t *__attr)
+     * }
+     */
+    public static int pthread_rwlockattr_destroy(MemorySegment __attr) {
+        var mh$ = pthread_rwlockattr_destroy.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_rwlockattr_destroy", __attr);
+            }
+            return (int)mh$.invokeExact(__attr);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_rwlockattr_getpshared {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_rwlockattr_getpshared");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_getpshared(const pthread_rwlockattr_t *restrict __attr, int *restrict __pshared)
+     * }
+     */
+    public static FunctionDescriptor pthread_rwlockattr_getpshared$descriptor() {
+        return pthread_rwlockattr_getpshared.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_getpshared(const pthread_rwlockattr_t *restrict __attr, int *restrict __pshared)
+     * }
+     */
+    public static MethodHandle pthread_rwlockattr_getpshared$handle() {
+        return pthread_rwlockattr_getpshared.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_getpshared(const pthread_rwlockattr_t *restrict __attr, int *restrict __pshared)
+     * }
+     */
+    public static MemorySegment pthread_rwlockattr_getpshared$address() {
+        return pthread_rwlockattr_getpshared.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_getpshared(const pthread_rwlockattr_t *restrict __attr, int *restrict __pshared)
+     * }
+     */
+    public static int pthread_rwlockattr_getpshared(MemorySegment __attr, MemorySegment __pshared) {
+        var mh$ = pthread_rwlockattr_getpshared.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_rwlockattr_getpshared", __attr, __pshared);
+            }
+            return (int)mh$.invokeExact(__attr, __pshared);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_rwlockattr_setpshared {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_rwlockattr_setpshared");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_setpshared(pthread_rwlockattr_t *__attr, int __pshared)
+     * }
+     */
+    public static FunctionDescriptor pthread_rwlockattr_setpshared$descriptor() {
+        return pthread_rwlockattr_setpshared.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_setpshared(pthread_rwlockattr_t *__attr, int __pshared)
+     * }
+     */
+    public static MethodHandle pthread_rwlockattr_setpshared$handle() {
+        return pthread_rwlockattr_setpshared.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_setpshared(pthread_rwlockattr_t *__attr, int __pshared)
+     * }
+     */
+    public static MemorySegment pthread_rwlockattr_setpshared$address() {
+        return pthread_rwlockattr_setpshared.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_setpshared(pthread_rwlockattr_t *__attr, int __pshared)
+     * }
+     */
+    public static int pthread_rwlockattr_setpshared(MemorySegment __attr, int __pshared) {
+        var mh$ = pthread_rwlockattr_setpshared.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_rwlockattr_setpshared", __attr, __pshared);
+            }
+            return (int)mh$.invokeExact(__attr, __pshared);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_rwlockattr_getkind_np {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_rwlockattr_getkind_np");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_getkind_np(const pthread_rwlockattr_t *restrict __attr, int *restrict __pref)
+     * }
+     */
+    public static FunctionDescriptor pthread_rwlockattr_getkind_np$descriptor() {
+        return pthread_rwlockattr_getkind_np.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_getkind_np(const pthread_rwlockattr_t *restrict __attr, int *restrict __pref)
+     * }
+     */
+    public static MethodHandle pthread_rwlockattr_getkind_np$handle() {
+        return pthread_rwlockattr_getkind_np.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_getkind_np(const pthread_rwlockattr_t *restrict __attr, int *restrict __pref)
+     * }
+     */
+    public static MemorySegment pthread_rwlockattr_getkind_np$address() {
+        return pthread_rwlockattr_getkind_np.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_getkind_np(const pthread_rwlockattr_t *restrict __attr, int *restrict __pref)
+     * }
+     */
+    public static int pthread_rwlockattr_getkind_np(MemorySegment __attr, MemorySegment __pref) {
+        var mh$ = pthread_rwlockattr_getkind_np.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_rwlockattr_getkind_np", __attr, __pref);
+            }
+            return (int)mh$.invokeExact(__attr, __pref);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_rwlockattr_setkind_np {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_rwlockattr_setkind_np");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_setkind_np(pthread_rwlockattr_t *__attr, int __pref)
+     * }
+     */
+    public static FunctionDescriptor pthread_rwlockattr_setkind_np$descriptor() {
+        return pthread_rwlockattr_setkind_np.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_setkind_np(pthread_rwlockattr_t *__attr, int __pref)
+     * }
+     */
+    public static MethodHandle pthread_rwlockattr_setkind_np$handle() {
+        return pthread_rwlockattr_setkind_np.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_setkind_np(pthread_rwlockattr_t *__attr, int __pref)
+     * }
+     */
+    public static MemorySegment pthread_rwlockattr_setkind_np$address() {
+        return pthread_rwlockattr_setkind_np.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_rwlockattr_setkind_np(pthread_rwlockattr_t *__attr, int __pref)
+     * }
+     */
+    public static int pthread_rwlockattr_setkind_np(MemorySegment __attr, int __pref) {
+        var mh$ = pthread_rwlockattr_setkind_np.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_rwlockattr_setkind_np", __attr, __pref);
+            }
+            return (int)mh$.invokeExact(__attr, __pref);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_cond_init {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_cond_init");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_cond_init(pthread_cond_t *restrict __cond, const pthread_condattr_t *restrict __cond_attr)
+     * }
+     */
+    public static FunctionDescriptor pthread_cond_init$descriptor() {
+        return pthread_cond_init.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_cond_init(pthread_cond_t *restrict __cond, const pthread_condattr_t *restrict __cond_attr)
+     * }
+     */
+    public static MethodHandle pthread_cond_init$handle() {
+        return pthread_cond_init.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_cond_init(pthread_cond_t *restrict __cond, const pthread_condattr_t *restrict __cond_attr)
+     * }
+     */
+    public static MemorySegment pthread_cond_init$address() {
+        return pthread_cond_init.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_cond_init(pthread_cond_t *restrict __cond, const pthread_condattr_t *restrict __cond_attr)
+     * }
+     */
+    public static int pthread_cond_init(MemorySegment __cond, MemorySegment __cond_attr) {
+        var mh$ = pthread_cond_init.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_cond_init", __cond, __cond_attr);
+            }
+            return (int)mh$.invokeExact(__cond, __cond_attr);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_cond_destroy {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_cond_destroy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_cond_destroy(pthread_cond_t *__cond)
+     * }
+     */
+    public static FunctionDescriptor pthread_cond_destroy$descriptor() {
+        return pthread_cond_destroy.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_cond_destroy(pthread_cond_t *__cond)
+     * }
+     */
+    public static MethodHandle pthread_cond_destroy$handle() {
+        return pthread_cond_destroy.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_cond_destroy(pthread_cond_t *__cond)
+     * }
+     */
+    public static MemorySegment pthread_cond_destroy$address() {
+        return pthread_cond_destroy.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_cond_destroy(pthread_cond_t *__cond)
+     * }
+     */
+    public static int pthread_cond_destroy(MemorySegment __cond) {
+        var mh$ = pthread_cond_destroy.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_cond_destroy", __cond);
+            }
+            return (int)mh$.invokeExact(__cond);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_cond_signal {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_cond_signal");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_cond_signal(pthread_cond_t *__cond)
+     * }
+     */
+    public static FunctionDescriptor pthread_cond_signal$descriptor() {
+        return pthread_cond_signal.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_cond_signal(pthread_cond_t *__cond)
+     * }
+     */
+    public static MethodHandle pthread_cond_signal$handle() {
+        return pthread_cond_signal.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_cond_signal(pthread_cond_t *__cond)
+     * }
+     */
+    public static MemorySegment pthread_cond_signal$address() {
+        return pthread_cond_signal.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_cond_signal(pthread_cond_t *__cond)
+     * }
+     */
+    public static int pthread_cond_signal(MemorySegment __cond) {
+        var mh$ = pthread_cond_signal.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_cond_signal", __cond);
+            }
+            return (int)mh$.invokeExact(__cond);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_cond_broadcast {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_cond_broadcast");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_cond_broadcast(pthread_cond_t *__cond)
+     * }
+     */
+    public static FunctionDescriptor pthread_cond_broadcast$descriptor() {
+        return pthread_cond_broadcast.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_cond_broadcast(pthread_cond_t *__cond)
+     * }
+     */
+    public static MethodHandle pthread_cond_broadcast$handle() {
+        return pthread_cond_broadcast.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_cond_broadcast(pthread_cond_t *__cond)
+     * }
+     */
+    public static MemorySegment pthread_cond_broadcast$address() {
+        return pthread_cond_broadcast.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_cond_broadcast(pthread_cond_t *__cond)
+     * }
+     */
+    public static int pthread_cond_broadcast(MemorySegment __cond) {
+        var mh$ = pthread_cond_broadcast.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_cond_broadcast", __cond);
+            }
+            return (int)mh$.invokeExact(__cond);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_cond_wait {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_cond_wait");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_cond_wait(pthread_cond_t *restrict __cond, pthread_mutex_t *restrict __mutex)
+     * }
+     */
+    public static FunctionDescriptor pthread_cond_wait$descriptor() {
+        return pthread_cond_wait.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_cond_wait(pthread_cond_t *restrict __cond, pthread_mutex_t *restrict __mutex)
+     * }
+     */
+    public static MethodHandle pthread_cond_wait$handle() {
+        return pthread_cond_wait.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_cond_wait(pthread_cond_t *restrict __cond, pthread_mutex_t *restrict __mutex)
+     * }
+     */
+    public static MemorySegment pthread_cond_wait$address() {
+        return pthread_cond_wait.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_cond_wait(pthread_cond_t *restrict __cond, pthread_mutex_t *restrict __mutex)
+     * }
+     */
+    public static int pthread_cond_wait(MemorySegment __cond, MemorySegment __mutex) {
+        var mh$ = pthread_cond_wait.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_cond_wait", __cond, __mutex);
+            }
+            return (int)mh$.invokeExact(__cond, __mutex);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_cond_timedwait {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_cond_timedwait");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_cond_timedwait(pthread_cond_t *restrict __cond, pthread_mutex_t *restrict __mutex, const struct timespec *restrict __abstime)
+     * }
+     */
+    public static FunctionDescriptor pthread_cond_timedwait$descriptor() {
+        return pthread_cond_timedwait.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_cond_timedwait(pthread_cond_t *restrict __cond, pthread_mutex_t *restrict __mutex, const struct timespec *restrict __abstime)
+     * }
+     */
+    public static MethodHandle pthread_cond_timedwait$handle() {
+        return pthread_cond_timedwait.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_cond_timedwait(pthread_cond_t *restrict __cond, pthread_mutex_t *restrict __mutex, const struct timespec *restrict __abstime)
+     * }
+     */
+    public static MemorySegment pthread_cond_timedwait$address() {
+        return pthread_cond_timedwait.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_cond_timedwait(pthread_cond_t *restrict __cond, pthread_mutex_t *restrict __mutex, const struct timespec *restrict __abstime)
+     * }
+     */
+    public static int pthread_cond_timedwait(MemorySegment __cond, MemorySegment __mutex, MemorySegment __abstime) {
+        var mh$ = pthread_cond_timedwait.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_cond_timedwait", __cond, __mutex, __abstime);
+            }
+            return (int)mh$.invokeExact(__cond, __mutex, __abstime);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_condattr_init {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_condattr_init");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_condattr_init(pthread_condattr_t *__attr)
+     * }
+     */
+    public static FunctionDescriptor pthread_condattr_init$descriptor() {
+        return pthread_condattr_init.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_condattr_init(pthread_condattr_t *__attr)
+     * }
+     */
+    public static MethodHandle pthread_condattr_init$handle() {
+        return pthread_condattr_init.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_condattr_init(pthread_condattr_t *__attr)
+     * }
+     */
+    public static MemorySegment pthread_condattr_init$address() {
+        return pthread_condattr_init.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_condattr_init(pthread_condattr_t *__attr)
+     * }
+     */
+    public static int pthread_condattr_init(MemorySegment __attr) {
+        var mh$ = pthread_condattr_init.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_condattr_init", __attr);
+            }
+            return (int)mh$.invokeExact(__attr);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_condattr_destroy {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_condattr_destroy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_condattr_destroy(pthread_condattr_t *__attr)
+     * }
+     */
+    public static FunctionDescriptor pthread_condattr_destroy$descriptor() {
+        return pthread_condattr_destroy.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_condattr_destroy(pthread_condattr_t *__attr)
+     * }
+     */
+    public static MethodHandle pthread_condattr_destroy$handle() {
+        return pthread_condattr_destroy.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_condattr_destroy(pthread_condattr_t *__attr)
+     * }
+     */
+    public static MemorySegment pthread_condattr_destroy$address() {
+        return pthread_condattr_destroy.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_condattr_destroy(pthread_condattr_t *__attr)
+     * }
+     */
+    public static int pthread_condattr_destroy(MemorySegment __attr) {
+        var mh$ = pthread_condattr_destroy.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_condattr_destroy", __attr);
+            }
+            return (int)mh$.invokeExact(__attr);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_condattr_getpshared {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_condattr_getpshared");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_condattr_getpshared(const pthread_condattr_t *restrict __attr, int *restrict __pshared)
+     * }
+     */
+    public static FunctionDescriptor pthread_condattr_getpshared$descriptor() {
+        return pthread_condattr_getpshared.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_condattr_getpshared(const pthread_condattr_t *restrict __attr, int *restrict __pshared)
+     * }
+     */
+    public static MethodHandle pthread_condattr_getpshared$handle() {
+        return pthread_condattr_getpshared.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_condattr_getpshared(const pthread_condattr_t *restrict __attr, int *restrict __pshared)
+     * }
+     */
+    public static MemorySegment pthread_condattr_getpshared$address() {
+        return pthread_condattr_getpshared.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_condattr_getpshared(const pthread_condattr_t *restrict __attr, int *restrict __pshared)
+     * }
+     */
+    public static int pthread_condattr_getpshared(MemorySegment __attr, MemorySegment __pshared) {
+        var mh$ = pthread_condattr_getpshared.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_condattr_getpshared", __attr, __pshared);
+            }
+            return (int)mh$.invokeExact(__attr, __pshared);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_condattr_setpshared {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_condattr_setpshared");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_condattr_setpshared(pthread_condattr_t *__attr, int __pshared)
+     * }
+     */
+    public static FunctionDescriptor pthread_condattr_setpshared$descriptor() {
+        return pthread_condattr_setpshared.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_condattr_setpshared(pthread_condattr_t *__attr, int __pshared)
+     * }
+     */
+    public static MethodHandle pthread_condattr_setpshared$handle() {
+        return pthread_condattr_setpshared.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_condattr_setpshared(pthread_condattr_t *__attr, int __pshared)
+     * }
+     */
+    public static MemorySegment pthread_condattr_setpshared$address() {
+        return pthread_condattr_setpshared.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_condattr_setpshared(pthread_condattr_t *__attr, int __pshared)
+     * }
+     */
+    public static int pthread_condattr_setpshared(MemorySegment __attr, int __pshared) {
+        var mh$ = pthread_condattr_setpshared.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_condattr_setpshared", __attr, __pshared);
+            }
+            return (int)mh$.invokeExact(__attr, __pshared);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
     }
 
     private static class pthread_condattr_getclock {
@@ -25,9 +1599,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pthread_condattr_getclock"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_condattr_getclock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -49,6 +1623,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle pthread_condattr_getclock$handle() {
         return pthread_condattr_getclock.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_condattr_getclock(const pthread_condattr_t *restrict __attr, __clockid_t *restrict __clock_id)
+     * }
+     */
+    public static MemorySegment pthread_condattr_getclock$address() {
+        return pthread_condattr_getclock.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int pthread_condattr_getclock(const pthread_condattr_t *restrict __attr, __clockid_t *restrict __clock_id)
@@ -61,6 +1646,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("pthread_condattr_getclock", __attr, __clock_id);
             }
             return (int)mh$.invokeExact(__attr, __clock_id);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -73,9 +1660,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pthread_condattr_setclock"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_condattr_setclock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -97,6 +1684,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle pthread_condattr_setclock$handle() {
         return pthread_condattr_setclock.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_condattr_setclock(pthread_condattr_t *__attr, __clockid_t __clock_id)
+     * }
+     */
+    public static MemorySegment pthread_condattr_setclock$address() {
+        return pthread_condattr_setclock.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int pthread_condattr_setclock(pthread_condattr_t *__attr, __clockid_t __clock_id)
@@ -109,6 +1707,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("pthread_condattr_setclock", __attr, __clock_id);
             }
             return (int)mh$.invokeExact(__attr, __clock_id);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -121,9 +1721,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pthread_spin_init"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_spin_init");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -145,6 +1745,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle pthread_spin_init$handle() {
         return pthread_spin_init.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_spin_init(pthread_spinlock_t *__lock, int __pshared)
+     * }
+     */
+    public static MemorySegment pthread_spin_init$address() {
+        return pthread_spin_init.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int pthread_spin_init(pthread_spinlock_t *__lock, int __pshared)
@@ -157,6 +1768,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("pthread_spin_init", __lock, __pshared);
             }
             return (int)mh$.invokeExact(__lock, __pshared);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -168,9 +1781,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pthread_spin_destroy"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_spin_destroy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -192,6 +1805,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle pthread_spin_destroy$handle() {
         return pthread_spin_destroy.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_spin_destroy(pthread_spinlock_t *__lock)
+     * }
+     */
+    public static MemorySegment pthread_spin_destroy$address() {
+        return pthread_spin_destroy.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int pthread_spin_destroy(pthread_spinlock_t *__lock)
@@ -204,6 +1828,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("pthread_spin_destroy", __lock);
             }
             return (int)mh$.invokeExact(__lock);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -215,9 +1841,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pthread_spin_lock"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_spin_lock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -239,6 +1865,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle pthread_spin_lock$handle() {
         return pthread_spin_lock.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_spin_lock(pthread_spinlock_t *__lock)
+     * }
+     */
+    public static MemorySegment pthread_spin_lock$address() {
+        return pthread_spin_lock.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int pthread_spin_lock(pthread_spinlock_t *__lock)
@@ -251,6 +1888,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("pthread_spin_lock", __lock);
             }
             return (int)mh$.invokeExact(__lock);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -262,9 +1901,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pthread_spin_trylock"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_spin_trylock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -286,6 +1925,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle pthread_spin_trylock$handle() {
         return pthread_spin_trylock.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_spin_trylock(pthread_spinlock_t *__lock)
+     * }
+     */
+    public static MemorySegment pthread_spin_trylock$address() {
+        return pthread_spin_trylock.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int pthread_spin_trylock(pthread_spinlock_t *__lock)
@@ -298,6 +1948,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("pthread_spin_trylock", __lock);
             }
             return (int)mh$.invokeExact(__lock);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -309,9 +1961,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pthread_spin_unlock"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_spin_unlock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -333,6 +1985,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle pthread_spin_unlock$handle() {
         return pthread_spin_unlock.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_spin_unlock(pthread_spinlock_t *__lock)
+     * }
+     */
+    public static MemorySegment pthread_spin_unlock$address() {
+        return pthread_spin_unlock.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int pthread_spin_unlock(pthread_spinlock_t *__lock)
@@ -345,6 +2008,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("pthread_spin_unlock", __lock);
             }
             return (int)mh$.invokeExact(__lock);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -358,9 +2023,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pthread_barrier_init"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_barrier_init");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -382,6 +2047,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle pthread_barrier_init$handle() {
         return pthread_barrier_init.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_barrier_init(pthread_barrier_t *restrict __barrier, const pthread_barrierattr_t *restrict __attr, unsigned int __count)
+     * }
+     */
+    public static MemorySegment pthread_barrier_init$address() {
+        return pthread_barrier_init.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int pthread_barrier_init(pthread_barrier_t *restrict __barrier, const pthread_barrierattr_t *restrict __attr, unsigned int __count)
@@ -394,6 +2070,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("pthread_barrier_init", __barrier, __attr, __count);
             }
             return (int)mh$.invokeExact(__barrier, __attr, __count);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -405,9 +2083,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pthread_barrier_destroy"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_barrier_destroy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -429,6 +2107,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle pthread_barrier_destroy$handle() {
         return pthread_barrier_destroy.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_barrier_destroy(pthread_barrier_t *__barrier)
+     * }
+     */
+    public static MemorySegment pthread_barrier_destroy$address() {
+        return pthread_barrier_destroy.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int pthread_barrier_destroy(pthread_barrier_t *__barrier)
@@ -441,6 +2130,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("pthread_barrier_destroy", __barrier);
             }
             return (int)mh$.invokeExact(__barrier);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -452,9 +2143,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pthread_barrier_wait"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_barrier_wait");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -476,6 +2167,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle pthread_barrier_wait$handle() {
         return pthread_barrier_wait.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_barrier_wait(pthread_barrier_t *__barrier)
+     * }
+     */
+    public static MemorySegment pthread_barrier_wait$address() {
+        return pthread_barrier_wait.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int pthread_barrier_wait(pthread_barrier_t *__barrier)
@@ -488,6 +2190,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("pthread_barrier_wait", __barrier);
             }
             return (int)mh$.invokeExact(__barrier);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -499,9 +2203,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pthread_barrierattr_init"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_barrierattr_init");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -523,6 +2227,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle pthread_barrierattr_init$handle() {
         return pthread_barrierattr_init.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_barrierattr_init(pthread_barrierattr_t *__attr)
+     * }
+     */
+    public static MemorySegment pthread_barrierattr_init$address() {
+        return pthread_barrierattr_init.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int pthread_barrierattr_init(pthread_barrierattr_t *__attr)
@@ -535,6 +2250,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("pthread_barrierattr_init", __attr);
             }
             return (int)mh$.invokeExact(__attr);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -546,9 +2263,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pthread_barrierattr_destroy"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_barrierattr_destroy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -570,6 +2287,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle pthread_barrierattr_destroy$handle() {
         return pthread_barrierattr_destroy.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_barrierattr_destroy(pthread_barrierattr_t *__attr)
+     * }
+     */
+    public static MemorySegment pthread_barrierattr_destroy$address() {
+        return pthread_barrierattr_destroy.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int pthread_barrierattr_destroy(pthread_barrierattr_t *__attr)
@@ -582,6 +2310,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("pthread_barrierattr_destroy", __attr);
             }
             return (int)mh$.invokeExact(__attr);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -594,9 +2324,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pthread_barrierattr_getpshared"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_barrierattr_getpshared");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -618,6 +2348,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle pthread_barrierattr_getpshared$handle() {
         return pthread_barrierattr_getpshared.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_barrierattr_getpshared(const pthread_barrierattr_t *restrict __attr, int *restrict __pshared)
+     * }
+     */
+    public static MemorySegment pthread_barrierattr_getpshared$address() {
+        return pthread_barrierattr_getpshared.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int pthread_barrierattr_getpshared(const pthread_barrierattr_t *restrict __attr, int *restrict __pshared)
@@ -630,6 +2371,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("pthread_barrierattr_getpshared", __attr, __pshared);
             }
             return (int)mh$.invokeExact(__attr, __pshared);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -642,9 +2385,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pthread_barrierattr_setpshared"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_barrierattr_setpshared");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -666,6 +2409,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle pthread_barrierattr_setpshared$handle() {
         return pthread_barrierattr_setpshared.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_barrierattr_setpshared(pthread_barrierattr_t *__attr, int __pshared)
+     * }
+     */
+    public static MemorySegment pthread_barrierattr_setpshared$address() {
+        return pthread_barrierattr_setpshared.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int pthread_barrierattr_setpshared(pthread_barrierattr_t *__attr, int __pshared)
@@ -678,6 +2432,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("pthread_barrierattr_setpshared", __attr, __pshared);
             }
             return (int)mh$.invokeExact(__attr, __pshared);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -690,9 +2446,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pthread_key_create"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_key_create");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -714,6 +2470,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle pthread_key_create$handle() {
         return pthread_key_create.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_key_create(pthread_key_t *__key, void (*__destr_function)(void *))
+     * }
+     */
+    public static MemorySegment pthread_key_create$address() {
+        return pthread_key_create.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int pthread_key_create(pthread_key_t *__key, void (*__destr_function)(void *))
@@ -726,6 +2493,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("pthread_key_create", __key, __destr_function);
             }
             return (int)mh$.invokeExact(__key, __destr_function);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -737,9 +2506,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pthread_key_delete"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_key_delete");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -761,6 +2530,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle pthread_key_delete$handle() {
         return pthread_key_delete.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_key_delete(pthread_key_t __key)
+     * }
+     */
+    public static MemorySegment pthread_key_delete$address() {
+        return pthread_key_delete.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int pthread_key_delete(pthread_key_t __key)
@@ -773,6 +2553,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("pthread_key_delete", __key);
             }
             return (int)mh$.invokeExact(__key);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -784,9 +2566,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pthread_getspecific"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_getspecific");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -808,6 +2590,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle pthread_getspecific$handle() {
         return pthread_getspecific.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void *pthread_getspecific(pthread_key_t __key)
+     * }
+     */
+    public static MemorySegment pthread_getspecific$address() {
+        return pthread_getspecific.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void *pthread_getspecific(pthread_key_t __key)
@@ -820,6 +2613,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("pthread_getspecific", __key);
             }
             return (MemorySegment)mh$.invokeExact(__key);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -832,9 +2627,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pthread_setspecific"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_setspecific");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -856,6 +2651,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle pthread_setspecific$handle() {
         return pthread_setspecific.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_setspecific(pthread_key_t __key, const void *__pointer)
+     * }
+     */
+    public static MemorySegment pthread_setspecific$address() {
+        return pthread_setspecific.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int pthread_setspecific(pthread_key_t __key, const void *__pointer)
@@ -868,6 +2674,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("pthread_setspecific", __key, __pointer);
             }
             return (int)mh$.invokeExact(__key, __pointer);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -880,9 +2688,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pthread_getcpuclockid"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_getcpuclockid");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -904,6 +2712,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle pthread_getcpuclockid$handle() {
         return pthread_getcpuclockid.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_getcpuclockid(pthread_t __thread_id, __clockid_t *__clock_id)
+     * }
+     */
+    public static MemorySegment pthread_getcpuclockid$address() {
+        return pthread_getcpuclockid.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int pthread_getcpuclockid(pthread_t __thread_id, __clockid_t *__clock_id)
@@ -916,6 +2735,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("pthread_getcpuclockid", __thread_id, __clock_id);
             }
             return (int)mh$.invokeExact(__thread_id, __clock_id);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -929,9 +2750,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("pthread_atfork"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_atfork");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -953,6 +2774,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle pthread_atfork$handle() {
         return pthread_atfork.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_atfork(void (*__prepare)(void), void (*__parent)(void), void (*__child)(void))
+     * }
+     */
+    public static MemorySegment pthread_atfork$address() {
+        return pthread_atfork.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int pthread_atfork(void (*__prepare)(void), void (*__parent)(void), void (*__child)(void))
@@ -965,6 +2797,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("pthread_atfork", __prepare, __parent, __child);
             }
             return (int)mh$.invokeExact(__prepare, __parent, __child);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -975,9 +2809,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_static_mutex_init"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_static_mutex_init");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -999,6 +2833,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_static_mutex_init$handle() {
         return g_static_mutex_init.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_static_mutex_init(GStaticMutex *mutex)
+     * }
+     */
+    public static MemorySegment g_static_mutex_init$address() {
+        return g_static_mutex_init.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_static_mutex_init(GStaticMutex *mutex)
@@ -1011,6 +2856,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_static_mutex_init", mutex);
             }
             mh$.invokeExact(mutex);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1021,9 +2868,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_static_mutex_free"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_static_mutex_free");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1045,6 +2892,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_static_mutex_free$handle() {
         return g_static_mutex_free.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_static_mutex_free(GStaticMutex *mutex)
+     * }
+     */
+    public static MemorySegment g_static_mutex_free$address() {
+        return g_static_mutex_free.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_static_mutex_free(GStaticMutex *mutex)
@@ -1057,6 +2915,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_static_mutex_free", mutex);
             }
             mh$.invokeExact(mutex);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1068,9 +2928,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_static_mutex_get_mutex_impl"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_static_mutex_get_mutex_impl");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1092,6 +2952,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_static_mutex_get_mutex_impl$handle() {
         return g_static_mutex_get_mutex_impl.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GMutex *g_static_mutex_get_mutex_impl(GStaticMutex *mutex)
+     * }
+     */
+    public static MemorySegment g_static_mutex_get_mutex_impl$address() {
+        return g_static_mutex_get_mutex_impl.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GMutex *g_static_mutex_get_mutex_impl(GStaticMutex *mutex)
@@ -1104,6 +2975,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_static_mutex_get_mutex_impl", mutex);
             }
             return (MemorySegment)mh$.invokeExact(mutex);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1114,9 +2987,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_static_rec_mutex_init"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_static_rec_mutex_init");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1138,6 +3011,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_static_rec_mutex_init$handle() {
         return g_static_rec_mutex_init.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_static_rec_mutex_init(GStaticRecMutex *mutex)
+     * }
+     */
+    public static MemorySegment g_static_rec_mutex_init$address() {
+        return g_static_rec_mutex_init.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_static_rec_mutex_init(GStaticRecMutex *mutex)
@@ -1150,6 +3034,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_static_rec_mutex_init", mutex);
             }
             mh$.invokeExact(mutex);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1160,9 +3046,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_static_rec_mutex_lock"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_static_rec_mutex_lock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1184,6 +3070,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_static_rec_mutex_lock$handle() {
         return g_static_rec_mutex_lock.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_static_rec_mutex_lock(GStaticRecMutex *mutex)
+     * }
+     */
+    public static MemorySegment g_static_rec_mutex_lock$address() {
+        return g_static_rec_mutex_lock.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_static_rec_mutex_lock(GStaticRecMutex *mutex)
@@ -1196,6 +3093,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_static_rec_mutex_lock", mutex);
             }
             mh$.invokeExact(mutex);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1207,9 +3106,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_static_rec_mutex_trylock"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_static_rec_mutex_trylock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1231,6 +3130,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_static_rec_mutex_trylock$handle() {
         return g_static_rec_mutex_trylock.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_static_rec_mutex_trylock(GStaticRecMutex *mutex)
+     * }
+     */
+    public static MemorySegment g_static_rec_mutex_trylock$address() {
+        return g_static_rec_mutex_trylock.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_static_rec_mutex_trylock(GStaticRecMutex *mutex)
@@ -1243,6 +3153,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_static_rec_mutex_trylock", mutex);
             }
             return (int)mh$.invokeExact(mutex);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1253,9 +3165,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_static_rec_mutex_unlock"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_static_rec_mutex_unlock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1277,6 +3189,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_static_rec_mutex_unlock$handle() {
         return g_static_rec_mutex_unlock.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_static_rec_mutex_unlock(GStaticRecMutex *mutex)
+     * }
+     */
+    public static MemorySegment g_static_rec_mutex_unlock$address() {
+        return g_static_rec_mutex_unlock.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_static_rec_mutex_unlock(GStaticRecMutex *mutex)
@@ -1289,6 +3212,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_static_rec_mutex_unlock", mutex);
             }
             mh$.invokeExact(mutex);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1300,9 +3225,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_static_rec_mutex_lock_full"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_static_rec_mutex_lock_full");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1324,6 +3249,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_static_rec_mutex_lock_full$handle() {
         return g_static_rec_mutex_lock_full.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_static_rec_mutex_lock_full(GStaticRecMutex *mutex, guint depth)
+     * }
+     */
+    public static MemorySegment g_static_rec_mutex_lock_full$address() {
+        return g_static_rec_mutex_lock_full.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_static_rec_mutex_lock_full(GStaticRecMutex *mutex, guint depth)
@@ -1336,6 +3272,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_static_rec_mutex_lock_full", mutex, depth);
             }
             mh$.invokeExact(mutex, depth);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1347,9 +3285,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_static_rec_mutex_unlock_full"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_static_rec_mutex_unlock_full");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1371,6 +3309,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_static_rec_mutex_unlock_full$handle() {
         return g_static_rec_mutex_unlock_full.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern guint g_static_rec_mutex_unlock_full(GStaticRecMutex *mutex)
+     * }
+     */
+    public static MemorySegment g_static_rec_mutex_unlock_full$address() {
+        return g_static_rec_mutex_unlock_full.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern guint g_static_rec_mutex_unlock_full(GStaticRecMutex *mutex)
@@ -1383,6 +3332,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_static_rec_mutex_unlock_full", mutex);
             }
             return (int)mh$.invokeExact(mutex);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1393,9 +3344,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_static_rec_mutex_free"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_static_rec_mutex_free");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1417,6 +3368,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_static_rec_mutex_free$handle() {
         return g_static_rec_mutex_free.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_static_rec_mutex_free(GStaticRecMutex *mutex)
+     * }
+     */
+    public static MemorySegment g_static_rec_mutex_free$address() {
+        return g_static_rec_mutex_free.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_static_rec_mutex_free(GStaticRecMutex *mutex)
@@ -1429,6 +3391,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_static_rec_mutex_free", mutex);
             }
             mh$.invokeExact(mutex);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1439,9 +3403,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_static_rw_lock_init"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_static_rw_lock_init");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1463,6 +3427,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_static_rw_lock_init$handle() {
         return g_static_rw_lock_init.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_static_rw_lock_init(GStaticRWLock *lock)
+     * }
+     */
+    public static MemorySegment g_static_rw_lock_init$address() {
+        return g_static_rw_lock_init.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_static_rw_lock_init(GStaticRWLock *lock)
@@ -1475,6 +3450,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_static_rw_lock_init", lock);
             }
             mh$.invokeExact(lock);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1485,9 +3462,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_static_rw_lock_reader_lock"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_static_rw_lock_reader_lock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1509,6 +3486,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_static_rw_lock_reader_lock$handle() {
         return g_static_rw_lock_reader_lock.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_static_rw_lock_reader_lock(GStaticRWLock *lock)
+     * }
+     */
+    public static MemorySegment g_static_rw_lock_reader_lock$address() {
+        return g_static_rw_lock_reader_lock.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_static_rw_lock_reader_lock(GStaticRWLock *lock)
@@ -1521,6 +3509,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_static_rw_lock_reader_lock", lock);
             }
             mh$.invokeExact(lock);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1532,9 +3522,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_static_rw_lock_reader_trylock"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_static_rw_lock_reader_trylock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1556,6 +3546,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_static_rw_lock_reader_trylock$handle() {
         return g_static_rw_lock_reader_trylock.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_static_rw_lock_reader_trylock(GStaticRWLock *lock)
+     * }
+     */
+    public static MemorySegment g_static_rw_lock_reader_trylock$address() {
+        return g_static_rw_lock_reader_trylock.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_static_rw_lock_reader_trylock(GStaticRWLock *lock)
@@ -1568,6 +3569,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_static_rw_lock_reader_trylock", lock);
             }
             return (int)mh$.invokeExact(lock);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1578,9 +3581,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_static_rw_lock_reader_unlock"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_static_rw_lock_reader_unlock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1602,6 +3605,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_static_rw_lock_reader_unlock$handle() {
         return g_static_rw_lock_reader_unlock.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_static_rw_lock_reader_unlock(GStaticRWLock *lock)
+     * }
+     */
+    public static MemorySegment g_static_rw_lock_reader_unlock$address() {
+        return g_static_rw_lock_reader_unlock.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_static_rw_lock_reader_unlock(GStaticRWLock *lock)
@@ -1614,6 +3628,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_static_rw_lock_reader_unlock", lock);
             }
             mh$.invokeExact(lock);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1624,9 +3640,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_static_rw_lock_writer_lock"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_static_rw_lock_writer_lock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1648,6 +3664,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_static_rw_lock_writer_lock$handle() {
         return g_static_rw_lock_writer_lock.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_static_rw_lock_writer_lock(GStaticRWLock *lock)
+     * }
+     */
+    public static MemorySegment g_static_rw_lock_writer_lock$address() {
+        return g_static_rw_lock_writer_lock.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_static_rw_lock_writer_lock(GStaticRWLock *lock)
@@ -1660,6 +3687,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_static_rw_lock_writer_lock", lock);
             }
             mh$.invokeExact(lock);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1671,9 +3700,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_static_rw_lock_writer_trylock"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_static_rw_lock_writer_trylock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1695,6 +3724,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_static_rw_lock_writer_trylock$handle() {
         return g_static_rw_lock_writer_trylock.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_static_rw_lock_writer_trylock(GStaticRWLock *lock)
+     * }
+     */
+    public static MemorySegment g_static_rw_lock_writer_trylock$address() {
+        return g_static_rw_lock_writer_trylock.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_static_rw_lock_writer_trylock(GStaticRWLock *lock)
@@ -1707,6 +3747,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_static_rw_lock_writer_trylock", lock);
             }
             return (int)mh$.invokeExact(lock);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1717,9 +3759,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_static_rw_lock_writer_unlock"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_static_rw_lock_writer_unlock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1741,6 +3783,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_static_rw_lock_writer_unlock$handle() {
         return g_static_rw_lock_writer_unlock.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_static_rw_lock_writer_unlock(GStaticRWLock *lock)
+     * }
+     */
+    public static MemorySegment g_static_rw_lock_writer_unlock$address() {
+        return g_static_rw_lock_writer_unlock.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_static_rw_lock_writer_unlock(GStaticRWLock *lock)
@@ -1753,6 +3806,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_static_rw_lock_writer_unlock", lock);
             }
             mh$.invokeExact(lock);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1763,9 +3818,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_static_rw_lock_free"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_static_rw_lock_free");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1787,6 +3842,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_static_rw_lock_free$handle() {
         return g_static_rw_lock_free.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_static_rw_lock_free(GStaticRWLock *lock)
+     * }
+     */
+    public static MemorySegment g_static_rw_lock_free$address() {
+        return g_static_rw_lock_free.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_static_rw_lock_free(GStaticRWLock *lock)
@@ -1799,6 +3865,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_static_rw_lock_free", lock);
             }
             mh$.invokeExact(lock);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1810,9 +3878,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_private_new"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_private_new");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1834,6 +3902,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_private_new$handle() {
         return g_private_new.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GPrivate *g_private_new(GDestroyNotify notify)
+     * }
+     */
+    public static MemorySegment g_private_new$address() {
+        return g_private_new.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GPrivate *g_private_new(GDestroyNotify notify)
@@ -1846,6 +3925,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_private_new", notify);
             }
             return (MemorySegment)mh$.invokeExact(notify);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1856,9 +3937,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_static_private_init"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_static_private_init");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1880,6 +3961,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_static_private_init$handle() {
         return g_static_private_init.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_static_private_init(GStaticPrivate *private_key)
+     * }
+     */
+    public static MemorySegment g_static_private_init$address() {
+        return g_static_private_init.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_static_private_init(GStaticPrivate *private_key)
@@ -1892,6 +3984,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_static_private_init", private_key);
             }
             mh$.invokeExact(private_key);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1903,9 +3997,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_static_private_get"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_static_private_get");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1927,6 +4021,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_static_private_get$handle() {
         return g_static_private_get.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_static_private_get(GStaticPrivate *private_key)
+     * }
+     */
+    public static MemorySegment g_static_private_get$address() {
+        return g_static_private_get.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_static_private_get(GStaticPrivate *private_key)
@@ -1939,6 +4044,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_static_private_get", private_key);
             }
             return (MemorySegment)mh$.invokeExact(private_key);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1951,9 +4058,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_static_private_set"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_static_private_set");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1975,6 +4082,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_static_private_set$handle() {
         return g_static_private_set.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_static_private_set(GStaticPrivate *private_key, gpointer data, GDestroyNotify notify)
+     * }
+     */
+    public static MemorySegment g_static_private_set$address() {
+        return g_static_private_set.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_static_private_set(GStaticPrivate *private_key, gpointer data, GDestroyNotify notify)
@@ -1987,6 +4105,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_static_private_set", private_key, data, notify);
             }
             mh$.invokeExact(private_key, data, notify);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -1997,9 +4117,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_static_private_free"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_static_private_free");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2021,6 +4141,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_static_private_free$handle() {
         return g_static_private_free.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_static_private_free(GStaticPrivate *private_key)
+     * }
+     */
+    public static MemorySegment g_static_private_free$address() {
+        return g_static_private_free.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_static_private_free(GStaticPrivate *private_key)
@@ -2033,6 +4164,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_static_private_free", private_key);
             }
             mh$.invokeExact(private_key);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2044,9 +4177,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_once_init_enter_impl"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_once_init_enter_impl");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2068,6 +4201,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_once_init_enter_impl$handle() {
         return g_once_init_enter_impl.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_once_init_enter_impl(volatile gsize *location)
+     * }
+     */
+    public static MemorySegment g_once_init_enter_impl$address() {
+        return g_once_init_enter_impl.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_once_init_enter_impl(volatile gsize *location)
@@ -2080,6 +4224,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_once_init_enter_impl", location);
             }
             return (int)mh$.invokeExact(location);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2090,9 +4236,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_thread_init"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_thread_init");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2114,6 +4260,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_thread_init$handle() {
         return g_thread_init.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_thread_init(gpointer vtable)
+     * }
+     */
+    public static MemorySegment g_thread_init$address() {
+        return g_thread_init.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_thread_init(gpointer vtable)
@@ -2126,6 +4283,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_thread_init", vtable);
             }
             mh$.invokeExact(vtable);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2136,9 +4295,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_thread_init_with_errorcheck_mutexes"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_thread_init_with_errorcheck_mutexes");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2160,6 +4319,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_thread_init_with_errorcheck_mutexes$handle() {
         return g_thread_init_with_errorcheck_mutexes.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_thread_init_with_errorcheck_mutexes(gpointer vtable)
+     * }
+     */
+    public static MemorySegment g_thread_init_with_errorcheck_mutexes$address() {
+        return g_thread_init_with_errorcheck_mutexes.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_thread_init_with_errorcheck_mutexes(gpointer vtable)
@@ -2172,6 +4342,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_thread_init_with_errorcheck_mutexes", vtable);
             }
             mh$.invokeExact(vtable);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2181,9 +4353,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_INT    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_thread_get_initialized"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_thread_get_initialized");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2205,6 +4377,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_thread_get_initialized$handle() {
         return g_thread_get_initialized.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_thread_get_initialized()
+     * }
+     */
+    public static MemorySegment g_thread_get_initialized$address() {
+        return g_thread_get_initialized.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_thread_get_initialized()
@@ -2217,6 +4400,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_thread_get_initialized");
             }
             return (int)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2224,7 +4409,7 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
 
     private static class g_threads_got_initialized$constants {
         public static final OfInt LAYOUT = app_indicator_h.C_INT;
-        public static final MemorySegment SEGMENT = app_indicator_h.findOrThrow("g_threads_got_initialized").reinterpret(LAYOUT.byteSize());
+        public static final MemorySegment SEGMENT = SYMBOL_LOOKUP.findOrThrow("g_threads_got_initialized").reinterpret(LAYOUT.byteSize());
     }
 
     /**
@@ -2271,9 +4456,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_mutex_new"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_mutex_new");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2295,6 +4480,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_mutex_new$handle() {
         return g_mutex_new.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GMutex *g_mutex_new()
+     * }
+     */
+    public static MemorySegment g_mutex_new$address() {
+        return g_mutex_new.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GMutex *g_mutex_new()
@@ -2307,6 +4503,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_mutex_new");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2317,9 +4515,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_mutex_free"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_mutex_free");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2341,6 +4539,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_mutex_free$handle() {
         return g_mutex_free.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_mutex_free(GMutex *mutex)
+     * }
+     */
+    public static MemorySegment g_mutex_free$address() {
+        return g_mutex_free.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_mutex_free(GMutex *mutex)
@@ -2353,6 +4562,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_mutex_free", mutex);
             }
             mh$.invokeExact(mutex);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2362,9 +4573,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cond_new"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cond_new");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2386,6 +4597,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cond_new$handle() {
         return g_cond_new.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GCond *g_cond_new()
+     * }
+     */
+    public static MemorySegment g_cond_new$address() {
+        return g_cond_new.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GCond *g_cond_new()
@@ -2398,6 +4620,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cond_new");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2408,9 +4632,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cond_free"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cond_free");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2432,6 +4656,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cond_free$handle() {
         return g_cond_free.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cond_free(GCond *cond)
+     * }
+     */
+    public static MemorySegment g_cond_free$address() {
+        return g_cond_free.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cond_free(GCond *cond)
@@ -2444,6 +4679,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cond_free", cond);
             }
             mh$.invokeExact(cond);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -2457,15 +4694,15 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cond_timed_wait"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cond_timed_wait");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
      * Function descriptor for:
      * {@snippet lang=c :
-     * extern gboolean g_cond_timed_wait(GCond *cond, GMutex *mutex, GTimeVal *timeval)
+     * extern gboolean g_cond_timed_wait(GCond *cond, GMutex *mutex, GTimeVal *abs_time)
      * }
      */
     public static FunctionDescriptor g_cond_timed_wait$descriptor() {
@@ -2475,24 +4712,37 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     /**
      * Downcall method handle for:
      * {@snippet lang=c :
-     * extern gboolean g_cond_timed_wait(GCond *cond, GMutex *mutex, GTimeVal *timeval)
+     * extern gboolean g_cond_timed_wait(GCond *cond, GMutex *mutex, GTimeVal *abs_time)
      * }
      */
     public static MethodHandle g_cond_timed_wait$handle() {
         return g_cond_timed_wait.HANDLE;
     }
+
     /**
+     * Address for:
      * {@snippet lang=c :
-     * extern gboolean g_cond_timed_wait(GCond *cond, GMutex *mutex, GTimeVal *timeval)
+     * extern gboolean g_cond_timed_wait(GCond *cond, GMutex *mutex, GTimeVal *abs_time)
      * }
      */
-    public static int g_cond_timed_wait(MemorySegment cond, MemorySegment mutex, MemorySegment timeval) {
+    public static MemorySegment g_cond_timed_wait$address() {
+        return g_cond_timed_wait.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern gboolean g_cond_timed_wait(GCond *cond, GMutex *mutex, GTimeVal *abs_time)
+     * }
+     */
+    public static int g_cond_timed_wait(MemorySegment cond, MemorySegment mutex, MemorySegment abs_time) {
         var mh$ = g_cond_timed_wait.HANDLE;
         try {
             if (TRACE_DOWNCALLS) {
-                traceDowncall("g_cond_timed_wait", cond, mutex, timeval);
+                traceDowncall("g_cond_timed_wait", cond, mutex, abs_time);
             }
-            return (int)mh$.invokeExact(cond, mutex, timeval);
+            return (int)mh$.invokeExact(cond, mutex, abs_time);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3800,9 +6050,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     private static class g_type_init {
         public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_init"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_init");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -3824,6 +6074,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_init$handle() {
         return g_type_init.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_init()
+     * }
+     */
+    public static MemorySegment g_type_init$address() {
+        return g_type_init.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_init()
@@ -3836,6 +6097,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_init");
             }
             mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3846,9 +6109,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_init_with_debug_flags"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_init_with_debug_flags");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -3870,6 +6133,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_init_with_debug_flags$handle() {
         return g_type_init_with_debug_flags.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_init_with_debug_flags(GTypeDebugFlags debug_flags)
+     * }
+     */
+    public static MemorySegment g_type_init_with_debug_flags$address() {
+        return g_type_init_with_debug_flags.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_init_with_debug_flags(GTypeDebugFlags debug_flags)
@@ -3882,6 +6156,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_init_with_debug_flags", debug_flags);
             }
             mh$.invokeExact(debug_flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3893,9 +6169,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_name"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_name");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -3917,6 +6193,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_name$handle() {
         return g_type_name.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern const gchar *g_type_name(GType type)
+     * }
+     */
+    public static MemorySegment g_type_name$address() {
+        return g_type_name.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern const gchar *g_type_name(GType type)
@@ -3929,6 +6216,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_name", type);
             }
             return (MemorySegment)mh$.invokeExact(type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3940,9 +6229,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_qname"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_qname");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -3964,6 +6253,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_qname$handle() {
         return g_type_qname.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GQuark g_type_qname(GType type)
+     * }
+     */
+    public static MemorySegment g_type_qname$address() {
+        return g_type_qname.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GQuark g_type_qname(GType type)
@@ -3976,6 +6276,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_qname", type);
             }
             return (int)mh$.invokeExact(type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -3987,9 +6289,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_from_name"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_from_name");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4011,6 +6313,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_from_name$handle() {
         return g_type_from_name.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_type_from_name(const gchar *name)
+     * }
+     */
+    public static MemorySegment g_type_from_name$address() {
+        return g_type_from_name.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_type_from_name(const gchar *name)
@@ -4023,6 +6336,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_from_name", name);
             }
             return (long)mh$.invokeExact(name);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4034,9 +6349,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_parent"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_parent");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4058,6 +6373,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_parent$handle() {
         return g_type_parent.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_type_parent(GType type)
+     * }
+     */
+    public static MemorySegment g_type_parent$address() {
+        return g_type_parent.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_type_parent(GType type)
@@ -4070,6 +6396,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_parent", type);
             }
             return (long)mh$.invokeExact(type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4081,9 +6409,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_depth"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_depth");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4105,6 +6433,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_depth$handle() {
         return g_type_depth.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern guint g_type_depth(GType type)
+     * }
+     */
+    public static MemorySegment g_type_depth$address() {
+        return g_type_depth.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern guint g_type_depth(GType type)
@@ -4117,6 +6456,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_depth", type);
             }
             return (int)mh$.invokeExact(type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4129,9 +6470,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_next_base"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_next_base");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4153,6 +6494,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_next_base$handle() {
         return g_type_next_base.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_type_next_base(GType leaf_type, GType root_type)
+     * }
+     */
+    public static MemorySegment g_type_next_base$address() {
+        return g_type_next_base.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_type_next_base(GType leaf_type, GType root_type)
@@ -4165,6 +6517,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_next_base", leaf_type, root_type);
             }
             return (long)mh$.invokeExact(leaf_type, root_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4177,9 +6531,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_is_a"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_is_a");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4201,6 +6555,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_is_a$handle() {
         return g_type_is_a.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_type_is_a(GType type, GType is_a_type)
+     * }
+     */
+    public static MemorySegment g_type_is_a$address() {
+        return g_type_is_a.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_type_is_a(GType type, GType is_a_type)
@@ -4213,6 +6578,68 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_is_a", type, is_a_type);
             }
             return (int)mh$.invokeExact(type, is_a_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_type_class_get {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_class_get");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern gpointer g_type_class_get(GType type)
+     * }
+     */
+    public static FunctionDescriptor g_type_class_get$descriptor() {
+        return g_type_class_get.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern gpointer g_type_class_get(GType type)
+     * }
+     */
+    public static MethodHandle g_type_class_get$handle() {
+        return g_type_class_get.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_type_class_get(GType type)
+     * }
+     */
+    public static MemorySegment g_type_class_get$address() {
+        return g_type_class_get.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern gpointer g_type_class_get(GType type)
+     * }
+     */
+    public static MemorySegment g_type_class_get(long type) {
+        var mh$ = g_type_class_get.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_type_class_get", type);
+            }
+            return (MemorySegment)mh$.invokeExact(type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4224,9 +6651,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_class_ref"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_class_ref");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4248,6 +6675,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_class_ref$handle() {
         return g_type_class_ref.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_type_class_ref(GType type)
+     * }
+     */
+    public static MemorySegment g_type_class_ref$address() {
+        return g_type_class_ref.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_type_class_ref(GType type)
@@ -4260,6 +6698,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_class_ref", type);
             }
             return (MemorySegment)mh$.invokeExact(type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4271,9 +6711,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_class_peek"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_class_peek");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4295,6 +6735,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_class_peek$handle() {
         return g_type_class_peek.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_type_class_peek(GType type)
+     * }
+     */
+    public static MemorySegment g_type_class_peek$address() {
+        return g_type_class_peek.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_type_class_peek(GType type)
@@ -4307,6 +6758,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_class_peek", type);
             }
             return (MemorySegment)mh$.invokeExact(type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4318,9 +6771,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_class_peek_static"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_class_peek_static");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4342,6 +6795,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_class_peek_static$handle() {
         return g_type_class_peek_static.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_type_class_peek_static(GType type)
+     * }
+     */
+    public static MemorySegment g_type_class_peek_static$address() {
+        return g_type_class_peek_static.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_type_class_peek_static(GType type)
@@ -4354,6 +6818,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_class_peek_static", type);
             }
             return (MemorySegment)mh$.invokeExact(type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4364,9 +6830,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_class_unref"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_class_unref");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4388,6 +6854,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_class_unref$handle() {
         return g_type_class_unref.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_class_unref(gpointer g_class)
+     * }
+     */
+    public static MemorySegment g_type_class_unref$address() {
+        return g_type_class_unref.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_class_unref(gpointer g_class)
@@ -4400,6 +6877,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_class_unref", g_class);
             }
             mh$.invokeExact(g_class);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4411,9 +6890,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_class_peek_parent"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_class_peek_parent");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4435,6 +6914,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_class_peek_parent$handle() {
         return g_type_class_peek_parent.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_type_class_peek_parent(gpointer g_class)
+     * }
+     */
+    public static MemorySegment g_type_class_peek_parent$address() {
+        return g_type_class_peek_parent.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_type_class_peek_parent(gpointer g_class)
@@ -4447,6 +6937,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_class_peek_parent", g_class);
             }
             return (MemorySegment)mh$.invokeExact(g_class);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4459,9 +6951,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_interface_peek"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_interface_peek");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4483,6 +6975,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_interface_peek$handle() {
         return g_type_interface_peek.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_type_interface_peek(gpointer instance_class, GType iface_type)
+     * }
+     */
+    public static MemorySegment g_type_interface_peek$address() {
+        return g_type_interface_peek.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_type_interface_peek(gpointer instance_class, GType iface_type)
@@ -4495,6 +6998,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_interface_peek", instance_class, iface_type);
             }
             return (MemorySegment)mh$.invokeExact(instance_class, iface_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4506,9 +7011,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_interface_peek_parent"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_interface_peek_parent");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4530,6 +7035,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_interface_peek_parent$handle() {
         return g_type_interface_peek_parent.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_type_interface_peek_parent(gpointer g_iface)
+     * }
+     */
+    public static MemorySegment g_type_interface_peek_parent$address() {
+        return g_type_interface_peek_parent.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_type_interface_peek_parent(gpointer g_iface)
@@ -4542,6 +7058,68 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_interface_peek_parent", g_iface);
             }
             return (MemorySegment)mh$.invokeExact(g_iface);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_type_default_interface_get {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_default_interface_get");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern gpointer g_type_default_interface_get(GType g_type)
+     * }
+     */
+    public static FunctionDescriptor g_type_default_interface_get$descriptor() {
+        return g_type_default_interface_get.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern gpointer g_type_default_interface_get(GType g_type)
+     * }
+     */
+    public static MethodHandle g_type_default_interface_get$handle() {
+        return g_type_default_interface_get.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_type_default_interface_get(GType g_type)
+     * }
+     */
+    public static MemorySegment g_type_default_interface_get$address() {
+        return g_type_default_interface_get.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern gpointer g_type_default_interface_get(GType g_type)
+     * }
+     */
+    public static MemorySegment g_type_default_interface_get(long g_type) {
+        var mh$ = g_type_default_interface_get.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_type_default_interface_get", g_type);
+            }
+            return (MemorySegment)mh$.invokeExact(g_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4553,9 +7131,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_default_interface_ref"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_default_interface_ref");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4577,6 +7155,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_default_interface_ref$handle() {
         return g_type_default_interface_ref.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_type_default_interface_ref(GType g_type)
+     * }
+     */
+    public static MemorySegment g_type_default_interface_ref$address() {
+        return g_type_default_interface_ref.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_type_default_interface_ref(GType g_type)
@@ -4589,6 +7178,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_default_interface_ref", g_type);
             }
             return (MemorySegment)mh$.invokeExact(g_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4600,9 +7191,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_default_interface_peek"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_default_interface_peek");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4624,6 +7215,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_default_interface_peek$handle() {
         return g_type_default_interface_peek.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_type_default_interface_peek(GType g_type)
+     * }
+     */
+    public static MemorySegment g_type_default_interface_peek$address() {
+        return g_type_default_interface_peek.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_type_default_interface_peek(GType g_type)
@@ -4636,6 +7238,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_default_interface_peek", g_type);
             }
             return (MemorySegment)mh$.invokeExact(g_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4646,9 +7250,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_default_interface_unref"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_default_interface_unref");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4670,6 +7274,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_default_interface_unref$handle() {
         return g_type_default_interface_unref.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_default_interface_unref(gpointer g_iface)
+     * }
+     */
+    public static MemorySegment g_type_default_interface_unref$address() {
+        return g_type_default_interface_unref.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_default_interface_unref(gpointer g_iface)
@@ -4682,6 +7297,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_default_interface_unref", g_iface);
             }
             mh$.invokeExact(g_iface);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4694,9 +7311,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_children"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_children");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4718,6 +7335,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_children$handle() {
         return g_type_children.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType *g_type_children(GType type, guint *n_children)
+     * }
+     */
+    public static MemorySegment g_type_children$address() {
+        return g_type_children.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType *g_type_children(GType type, guint *n_children)
@@ -4730,6 +7358,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_children", type, n_children);
             }
             return (MemorySegment)mh$.invokeExact(type, n_children);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4742,9 +7372,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_interfaces"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_interfaces");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4766,6 +7396,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_interfaces$handle() {
         return g_type_interfaces.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType *g_type_interfaces(GType type, guint *n_interfaces)
+     * }
+     */
+    public static MemorySegment g_type_interfaces$address() {
+        return g_type_interfaces.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType *g_type_interfaces(GType type, guint *n_interfaces)
@@ -4778,6 +7419,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_interfaces", type, n_interfaces);
             }
             return (MemorySegment)mh$.invokeExact(type, n_interfaces);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4790,9 +7433,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_set_qdata"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_set_qdata");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4814,6 +7457,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_set_qdata$handle() {
         return g_type_set_qdata.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_set_qdata(GType type, GQuark quark, gpointer data)
+     * }
+     */
+    public static MemorySegment g_type_set_qdata$address() {
+        return g_type_set_qdata.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_set_qdata(GType type, GQuark quark, gpointer data)
@@ -4826,6 +7480,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_set_qdata", type, quark, data);
             }
             mh$.invokeExact(type, quark, data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4838,9 +7494,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_get_qdata"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_get_qdata");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4862,6 +7518,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_get_qdata$handle() {
         return g_type_get_qdata.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_type_get_qdata(GType type, GQuark quark)
+     * }
+     */
+    public static MemorySegment g_type_get_qdata$address() {
+        return g_type_get_qdata.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_type_get_qdata(GType type, GQuark quark)
@@ -4874,6 +7541,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_get_qdata", type, quark);
             }
             return (MemorySegment)mh$.invokeExact(type, quark);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4885,9 +7554,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_query"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_query");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4909,6 +7578,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_query$handle() {
         return g_type_query.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_query(GType type, GTypeQuery *query)
+     * }
+     */
+    public static MemorySegment g_type_query$address() {
+        return g_type_query.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_query(GType type, GTypeQuery *query)
@@ -4921,6 +7601,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_query", type, query);
             }
             mh$.invokeExact(type, query);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -4932,9 +7614,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_get_instance_count"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_get_instance_count");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -4956,6 +7638,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_get_instance_count$handle() {
         return g_type_get_instance_count.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int g_type_get_instance_count(GType type)
+     * }
+     */
+    public static MemorySegment g_type_get_instance_count$address() {
+        return g_type_get_instance_count.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern int g_type_get_instance_count(GType type)
@@ -4968,6 +7661,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_get_instance_count", type);
             }
             return (int)mh$.invokeExact(type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5063,9 +7758,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_register_static"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_register_static");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5087,6 +7782,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_register_static$handle() {
         return g_type_register_static.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_type_register_static(GType parent_type, const gchar *type_name, const GTypeInfo *info, GTypeFlags flags)
+     * }
+     */
+    public static MemorySegment g_type_register_static$address() {
+        return g_type_register_static.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_type_register_static(GType parent_type, const gchar *type_name, const GTypeInfo *info, GTypeFlags flags)
@@ -5099,6 +7805,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_register_static", parent_type, type_name, info, flags);
             }
             return (long)mh$.invokeExact(parent_type, type_name, info, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5116,9 +7824,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_register_static_simple"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_register_static_simple");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5140,6 +7848,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_register_static_simple$handle() {
         return g_type_register_static_simple.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_type_register_static_simple(GType parent_type, const gchar *type_name, guint class_size, GClassInitFunc class_init, guint instance_size, GInstanceInitFunc instance_init, GTypeFlags flags)
+     * }
+     */
+    public static MemorySegment g_type_register_static_simple$address() {
+        return g_type_register_static_simple.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_type_register_static_simple(GType parent_type, const gchar *type_name, guint class_size, GClassInitFunc class_init, guint instance_size, GInstanceInitFunc instance_init, GTypeFlags flags)
@@ -5152,6 +7871,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_register_static_simple", parent_type, type_name, class_size, class_init, instance_size, instance_init, flags);
             }
             return (long)mh$.invokeExact(parent_type, type_name, class_size, class_init, instance_size, instance_init, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5166,9 +7887,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_register_dynamic"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_register_dynamic");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5190,6 +7911,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_register_dynamic$handle() {
         return g_type_register_dynamic.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_type_register_dynamic(GType parent_type, const gchar *type_name, GTypePlugin *plugin, GTypeFlags flags)
+     * }
+     */
+    public static MemorySegment g_type_register_dynamic$address() {
+        return g_type_register_dynamic.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_type_register_dynamic(GType parent_type, const gchar *type_name, GTypePlugin *plugin, GTypeFlags flags)
@@ -5202,6 +7934,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_register_dynamic", parent_type, type_name, plugin, flags);
             }
             return (long)mh$.invokeExact(parent_type, type_name, plugin, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5217,9 +7951,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_register_fundamental"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_register_fundamental");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5241,6 +7975,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_register_fundamental$handle() {
         return g_type_register_fundamental.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_type_register_fundamental(GType type_id, const gchar *type_name, const GTypeInfo *info, const GTypeFundamentalInfo *finfo, GTypeFlags flags)
+     * }
+     */
+    public static MemorySegment g_type_register_fundamental$address() {
+        return g_type_register_fundamental.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_type_register_fundamental(GType type_id, const gchar *type_name, const GTypeInfo *info, const GTypeFundamentalInfo *finfo, GTypeFlags flags)
@@ -5253,6 +7998,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_register_fundamental", type_id, type_name, info, finfo, flags);
             }
             return (long)mh$.invokeExact(type_id, type_name, info, finfo, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5265,9 +8012,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_add_interface_static"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_add_interface_static");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5289,6 +8036,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_add_interface_static$handle() {
         return g_type_add_interface_static.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_add_interface_static(GType instance_type, GType interface_type, const GInterfaceInfo *info)
+     * }
+     */
+    public static MemorySegment g_type_add_interface_static$address() {
+        return g_type_add_interface_static.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_add_interface_static(GType instance_type, GType interface_type, const GInterfaceInfo *info)
@@ -5301,6 +8059,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_add_interface_static", instance_type, interface_type, info);
             }
             mh$.invokeExact(instance_type, interface_type, info);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5313,9 +8073,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_add_interface_dynamic"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_add_interface_dynamic");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5337,6 +8097,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_add_interface_dynamic$handle() {
         return g_type_add_interface_dynamic.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_add_interface_dynamic(GType instance_type, GType interface_type, GTypePlugin *plugin)
+     * }
+     */
+    public static MemorySegment g_type_add_interface_dynamic$address() {
+        return g_type_add_interface_dynamic.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_add_interface_dynamic(GType instance_type, GType interface_type, GTypePlugin *plugin)
@@ -5349,6 +8120,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_add_interface_dynamic", instance_type, interface_type, plugin);
             }
             mh$.invokeExact(instance_type, interface_type, plugin);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5360,9 +8133,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_interface_add_prerequisite"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_interface_add_prerequisite");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5384,6 +8157,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_interface_add_prerequisite$handle() {
         return g_type_interface_add_prerequisite.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_interface_add_prerequisite(GType interface_type, GType prerequisite_type)
+     * }
+     */
+    public static MemorySegment g_type_interface_add_prerequisite$address() {
+        return g_type_interface_add_prerequisite.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_interface_add_prerequisite(GType interface_type, GType prerequisite_type)
@@ -5396,6 +8180,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_interface_add_prerequisite", interface_type, prerequisite_type);
             }
             mh$.invokeExact(interface_type, prerequisite_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5408,9 +8194,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_interface_prerequisites"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_interface_prerequisites");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5432,6 +8218,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_interface_prerequisites$handle() {
         return g_type_interface_prerequisites.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType *g_type_interface_prerequisites(GType interface_type, guint *n_prerequisites)
+     * }
+     */
+    public static MemorySegment g_type_interface_prerequisites$address() {
+        return g_type_interface_prerequisites.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType *g_type_interface_prerequisites(GType interface_type, guint *n_prerequisites)
@@ -5444,6 +8241,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_interface_prerequisites", interface_type, n_prerequisites);
             }
             return (MemorySegment)mh$.invokeExact(interface_type, n_prerequisites);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5455,9 +8254,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_interface_instantiatable_prerequisite"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_interface_instantiatable_prerequisite");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5479,6 +8278,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_interface_instantiatable_prerequisite$handle() {
         return g_type_interface_instantiatable_prerequisite.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_type_interface_instantiatable_prerequisite(GType interface_type)
+     * }
+     */
+    public static MemorySegment g_type_interface_instantiatable_prerequisite$address() {
+        return g_type_interface_instantiatable_prerequisite.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_type_interface_instantiatable_prerequisite(GType interface_type)
@@ -5491,6 +8301,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_interface_instantiatable_prerequisite", interface_type);
             }
             return (long)mh$.invokeExact(interface_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5502,9 +8314,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_class_add_private"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_class_add_private");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5526,6 +8338,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_class_add_private$handle() {
         return g_type_class_add_private.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_class_add_private(gpointer g_class, gsize private_size)
+     * }
+     */
+    public static MemorySegment g_type_class_add_private$address() {
+        return g_type_class_add_private.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_class_add_private(gpointer g_class, gsize private_size)
@@ -5538,6 +8361,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_class_add_private", g_class, private_size);
             }
             mh$.invokeExact(g_class, private_size);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5550,9 +8375,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_add_instance_private"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_add_instance_private");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5574,6 +8399,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_add_instance_private$handle() {
         return g_type_add_instance_private.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gint g_type_add_instance_private(GType class_type, gsize private_size)
+     * }
+     */
+    public static MemorySegment g_type_add_instance_private$address() {
+        return g_type_add_instance_private.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gint g_type_add_instance_private(GType class_type, gsize private_size)
@@ -5586,6 +8422,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_add_instance_private", class_type, private_size);
             }
             return (int)mh$.invokeExact(class_type, private_size);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5598,9 +8436,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_instance_get_private"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_instance_get_private");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5622,6 +8460,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_instance_get_private$handle() {
         return g_type_instance_get_private.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_type_instance_get_private(GTypeInstance *instance, GType private_type)
+     * }
+     */
+    public static MemorySegment g_type_instance_get_private$address() {
+        return g_type_instance_get_private.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_type_instance_get_private(GTypeInstance *instance, GType private_type)
@@ -5634,6 +8483,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_instance_get_private", instance, private_type);
             }
             return (MemorySegment)mh$.invokeExact(instance, private_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5645,9 +8496,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_class_adjust_private_offset"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_class_adjust_private_offset");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5669,6 +8520,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_class_adjust_private_offset$handle() {
         return g_type_class_adjust_private_offset.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_class_adjust_private_offset(gpointer g_class, gint *private_size_or_offset)
+     * }
+     */
+    public static MemorySegment g_type_class_adjust_private_offset$address() {
+        return g_type_class_adjust_private_offset.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_class_adjust_private_offset(gpointer g_class, gint *private_size_or_offset)
@@ -5681,6 +8543,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_class_adjust_private_offset", g_class, private_size_or_offset);
             }
             mh$.invokeExact(g_class, private_size_or_offset);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5692,9 +8556,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_add_class_private"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_add_class_private");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5716,6 +8580,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_add_class_private$handle() {
         return g_type_add_class_private.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_add_class_private(GType class_type, gsize private_size)
+     * }
+     */
+    public static MemorySegment g_type_add_class_private$address() {
+        return g_type_add_class_private.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_add_class_private(GType class_type, gsize private_size)
@@ -5728,6 +8603,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_add_class_private", class_type, private_size);
             }
             mh$.invokeExact(class_type, private_size);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5740,9 +8617,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_class_get_private"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_class_get_private");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5764,6 +8641,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_class_get_private$handle() {
         return g_type_class_get_private.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_type_class_get_private(GTypeClass *klass, GType private_type)
+     * }
+     */
+    public static MemorySegment g_type_class_get_private$address() {
+        return g_type_class_get_private.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_type_class_get_private(GTypeClass *klass, GType private_type)
@@ -5776,6 +8664,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_class_get_private", klass, private_type);
             }
             return (MemorySegment)mh$.invokeExact(klass, private_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5787,9 +8677,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_class_get_instance_private_offset"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_class_get_instance_private_offset");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5811,6 +8701,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_class_get_instance_private_offset$handle() {
         return g_type_class_get_instance_private_offset.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gint g_type_class_get_instance_private_offset(gpointer g_class)
+     * }
+     */
+    public static MemorySegment g_type_class_get_instance_private_offset$address() {
+        return g_type_class_get_instance_private_offset.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gint g_type_class_get_instance_private_offset(gpointer g_class)
@@ -5823,6 +8724,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_class_get_instance_private_offset", g_class);
             }
             return (int)mh$.invokeExact(g_class);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5833,9 +8736,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_ensure"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_ensure");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5857,6 +8760,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_ensure$handle() {
         return g_type_ensure.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_ensure(GType type)
+     * }
+     */
+    public static MemorySegment g_type_ensure$address() {
+        return g_type_ensure.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_ensure(GType type)
@@ -5869,6 +8783,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_ensure", type);
             }
             mh$.invokeExact(type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5878,9 +8794,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_INT    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_get_type_registration_serial"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_get_type_registration_serial");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5902,6 +8818,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_get_type_registration_serial$handle() {
         return g_type_get_type_registration_serial.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern guint g_type_get_type_registration_serial()
+     * }
+     */
+    public static MemorySegment g_type_get_type_registration_serial$address() {
+        return g_type_get_type_registration_serial.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern guint g_type_get_type_registration_serial()
@@ -5914,6 +8841,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_get_type_registration_serial");
             }
             return (int)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5925,9 +8854,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_get_plugin"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_get_plugin");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5949,6 +8878,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_get_plugin$handle() {
         return g_type_get_plugin.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GTypePlugin *g_type_get_plugin(GType type)
+     * }
+     */
+    public static MemorySegment g_type_get_plugin$address() {
+        return g_type_get_plugin.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GTypePlugin *g_type_get_plugin(GType type)
@@ -5961,6 +8901,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_get_plugin", type);
             }
             return (MemorySegment)mh$.invokeExact(type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -5973,9 +8915,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_interface_get_plugin"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_interface_get_plugin");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -5997,6 +8939,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_interface_get_plugin$handle() {
         return g_type_interface_get_plugin.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GTypePlugin *g_type_interface_get_plugin(GType instance_type, GType interface_type)
+     * }
+     */
+    public static MemorySegment g_type_interface_get_plugin$address() {
+        return g_type_interface_get_plugin.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GTypePlugin *g_type_interface_get_plugin(GType instance_type, GType interface_type)
@@ -6009,6 +8962,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_interface_get_plugin", instance_type, interface_type);
             }
             return (MemorySegment)mh$.invokeExact(instance_type, interface_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6018,9 +8973,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_fundamental_next"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_fundamental_next");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6042,6 +8997,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_fundamental_next$handle() {
         return g_type_fundamental_next.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_type_fundamental_next()
+     * }
+     */
+    public static MemorySegment g_type_fundamental_next$address() {
+        return g_type_fundamental_next.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_type_fundamental_next()
@@ -6054,6 +9020,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_fundamental_next");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6065,9 +9033,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_fundamental"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_fundamental");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6089,6 +9057,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_fundamental$handle() {
         return g_type_fundamental.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_type_fundamental(GType type_id)
+     * }
+     */
+    public static MemorySegment g_type_fundamental$address() {
+        return g_type_fundamental.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_type_fundamental(GType type_id)
@@ -6101,6 +9080,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_fundamental", type_id);
             }
             return (long)mh$.invokeExact(type_id);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6112,9 +9093,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_create_instance"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_create_instance");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6136,6 +9117,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_create_instance$handle() {
         return g_type_create_instance.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GTypeInstance *g_type_create_instance(GType type)
+     * }
+     */
+    public static MemorySegment g_type_create_instance$address() {
+        return g_type_create_instance.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GTypeInstance *g_type_create_instance(GType type)
@@ -6148,6 +9140,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_create_instance", type);
             }
             return (MemorySegment)mh$.invokeExact(type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6158,9 +9152,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_free_instance"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_free_instance");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6182,6 +9176,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_free_instance$handle() {
         return g_type_free_instance.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_free_instance(GTypeInstance *instance)
+     * }
+     */
+    public static MemorySegment g_type_free_instance$address() {
+        return g_type_free_instance.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_free_instance(GTypeInstance *instance)
@@ -6194,6 +9199,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_free_instance", instance);
             }
             mh$.invokeExact(instance);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6205,9 +9212,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_add_class_cache_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_add_class_cache_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6229,6 +9236,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_add_class_cache_func$handle() {
         return g_type_add_class_cache_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_add_class_cache_func(gpointer cache_data, GTypeClassCacheFunc cache_func)
+     * }
+     */
+    public static MemorySegment g_type_add_class_cache_func$address() {
+        return g_type_add_class_cache_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_add_class_cache_func(gpointer cache_data, GTypeClassCacheFunc cache_func)
@@ -6241,6 +9259,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_add_class_cache_func", cache_data, cache_func);
             }
             mh$.invokeExact(cache_data, cache_func);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6252,9 +9272,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_remove_class_cache_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_remove_class_cache_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6276,6 +9296,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_remove_class_cache_func$handle() {
         return g_type_remove_class_cache_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_remove_class_cache_func(gpointer cache_data, GTypeClassCacheFunc cache_func)
+     * }
+     */
+    public static MemorySegment g_type_remove_class_cache_func$address() {
+        return g_type_remove_class_cache_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_remove_class_cache_func(gpointer cache_data, GTypeClassCacheFunc cache_func)
@@ -6288,6 +9319,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_remove_class_cache_func", cache_data, cache_func);
             }
             mh$.invokeExact(cache_data, cache_func);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6298,9 +9331,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_class_unref_uncached"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_class_unref_uncached");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6322,6 +9355,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_class_unref_uncached$handle() {
         return g_type_class_unref_uncached.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_class_unref_uncached(gpointer g_class)
+     * }
+     */
+    public static MemorySegment g_type_class_unref_uncached$address() {
+        return g_type_class_unref_uncached.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_class_unref_uncached(gpointer g_class)
@@ -6334,6 +9378,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_class_unref_uncached", g_class);
             }
             mh$.invokeExact(g_class);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6345,9 +9391,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_add_interface_check"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_add_interface_check");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6369,6 +9415,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_add_interface_check$handle() {
         return g_type_add_interface_check.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_add_interface_check(gpointer check_data, GTypeInterfaceCheckFunc check_func)
+     * }
+     */
+    public static MemorySegment g_type_add_interface_check$address() {
+        return g_type_add_interface_check.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_add_interface_check(gpointer check_data, GTypeInterfaceCheckFunc check_func)
@@ -6381,6 +9438,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_add_interface_check", check_data, check_func);
             }
             mh$.invokeExact(check_data, check_func);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6392,9 +9451,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_remove_interface_check"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_remove_interface_check");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6416,6 +9475,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_remove_interface_check$handle() {
         return g_type_remove_interface_check.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_remove_interface_check(gpointer check_data, GTypeInterfaceCheckFunc check_func)
+     * }
+     */
+    public static MemorySegment g_type_remove_interface_check$address() {
+        return g_type_remove_interface_check.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_remove_interface_check(gpointer check_data, GTypeInterfaceCheckFunc check_func)
@@ -6428,6 +9498,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_remove_interface_check", check_data, check_func);
             }
             mh$.invokeExact(check_data, check_func);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6439,9 +9511,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_value_table_peek"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_value_table_peek");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6463,6 +9535,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_value_table_peek$handle() {
         return g_type_value_table_peek.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GTypeValueTable *g_type_value_table_peek(GType type)
+     * }
+     */
+    public static MemorySegment g_type_value_table_peek$address() {
+        return g_type_value_table_peek.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GTypeValueTable *g_type_value_table_peek(GType type)
@@ -6475,6 +9558,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_value_table_peek", type);
             }
             return (MemorySegment)mh$.invokeExact(type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6486,9 +9571,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_check_instance"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_check_instance");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6510,6 +9595,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_check_instance$handle() {
         return g_type_check_instance.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_type_check_instance(GTypeInstance *instance)
+     * }
+     */
+    public static MemorySegment g_type_check_instance$address() {
+        return g_type_check_instance.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_type_check_instance(GTypeInstance *instance)
@@ -6522,6 +9618,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_check_instance", instance);
             }
             return (int)mh$.invokeExact(instance);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6534,9 +9632,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_check_instance_cast"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_check_instance_cast");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6558,6 +9656,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_check_instance_cast$handle() {
         return g_type_check_instance_cast.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GTypeInstance *g_type_check_instance_cast(GTypeInstance *instance, GType iface_type)
+     * }
+     */
+    public static MemorySegment g_type_check_instance_cast$address() {
+        return g_type_check_instance_cast.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GTypeInstance *g_type_check_instance_cast(GTypeInstance *instance, GType iface_type)
@@ -6570,6 +9679,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_check_instance_cast", instance, iface_type);
             }
             return (MemorySegment)mh$.invokeExact(instance, iface_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6582,9 +9693,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_check_instance_is_a"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_check_instance_is_a");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6606,6 +9717,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_check_instance_is_a$handle() {
         return g_type_check_instance_is_a.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_type_check_instance_is_a(GTypeInstance *instance, GType iface_type)
+     * }
+     */
+    public static MemorySegment g_type_check_instance_is_a$address() {
+        return g_type_check_instance_is_a.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_type_check_instance_is_a(GTypeInstance *instance, GType iface_type)
@@ -6618,6 +9740,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_check_instance_is_a", instance, iface_type);
             }
             return (int)mh$.invokeExact(instance, iface_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6630,9 +9754,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_check_instance_is_fundamentally_a"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_check_instance_is_fundamentally_a");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6654,6 +9778,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_check_instance_is_fundamentally_a$handle() {
         return g_type_check_instance_is_fundamentally_a.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_type_check_instance_is_fundamentally_a(GTypeInstance *instance, GType fundamental_type)
+     * }
+     */
+    public static MemorySegment g_type_check_instance_is_fundamentally_a$address() {
+        return g_type_check_instance_is_fundamentally_a.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_type_check_instance_is_fundamentally_a(GTypeInstance *instance, GType fundamental_type)
@@ -6666,6 +9801,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_check_instance_is_fundamentally_a", instance, fundamental_type);
             }
             return (int)mh$.invokeExact(instance, fundamental_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6678,9 +9815,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_check_class_cast"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_check_class_cast");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6702,6 +9839,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_check_class_cast$handle() {
         return g_type_check_class_cast.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GTypeClass *g_type_check_class_cast(GTypeClass *g_class, GType is_a_type)
+     * }
+     */
+    public static MemorySegment g_type_check_class_cast$address() {
+        return g_type_check_class_cast.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GTypeClass *g_type_check_class_cast(GTypeClass *g_class, GType is_a_type)
@@ -6714,6 +9862,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_check_class_cast", g_class, is_a_type);
             }
             return (MemorySegment)mh$.invokeExact(g_class, is_a_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6726,9 +9876,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_check_class_is_a"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_check_class_is_a");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6750,6 +9900,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_check_class_is_a$handle() {
         return g_type_check_class_is_a.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_type_check_class_is_a(GTypeClass *g_class, GType is_a_type)
+     * }
+     */
+    public static MemorySegment g_type_check_class_is_a$address() {
+        return g_type_check_class_is_a.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_type_check_class_is_a(GTypeClass *g_class, GType is_a_type)
@@ -6762,6 +9923,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_check_class_is_a", g_class, is_a_type);
             }
             return (int)mh$.invokeExact(g_class, is_a_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6773,9 +9936,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_check_is_value_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_check_is_value_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6797,6 +9960,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_check_is_value_type$handle() {
         return g_type_check_is_value_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_type_check_is_value_type(GType type)
+     * }
+     */
+    public static MemorySegment g_type_check_is_value_type$address() {
+        return g_type_check_is_value_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_type_check_is_value_type(GType type)
@@ -6809,6 +9983,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_check_is_value_type", type);
             }
             return (int)mh$.invokeExact(type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6820,9 +9996,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_check_value"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_check_value");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6844,6 +10020,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_check_value$handle() {
         return g_type_check_value.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_type_check_value(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_type_check_value$address() {
+        return g_type_check_value.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_type_check_value(const GValue *value)
@@ -6856,6 +10043,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_check_value", value);
             }
             return (int)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6868,9 +10057,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_check_value_holds"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_check_value_holds");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6892,6 +10081,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_check_value_holds$handle() {
         return g_type_check_value_holds.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_type_check_value_holds(const GValue *value, GType type)
+     * }
+     */
+    public static MemorySegment g_type_check_value_holds$address() {
+        return g_type_check_value_holds.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_type_check_value_holds(const GValue *value, GType type)
@@ -6904,6 +10104,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_check_value_holds", value, type);
             }
             return (int)mh$.invokeExact(value, type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6916,9 +10118,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_test_flags"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_test_flags");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6940,6 +10142,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_test_flags$handle() {
         return g_type_test_flags.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_type_test_flags(GType type, guint flags)
+     * }
+     */
+    public static MemorySegment g_type_test_flags$address() {
+        return g_type_test_flags.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_type_test_flags(GType type, guint flags)
@@ -6952,6 +10165,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_test_flags", type, flags);
             }
             return (int)mh$.invokeExact(type, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -6963,9 +10178,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_name_from_instance"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_name_from_instance");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -6987,6 +10202,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_name_from_instance$handle() {
         return g_type_name_from_instance.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern const gchar *g_type_name_from_instance(GTypeInstance *instance)
+     * }
+     */
+    public static MemorySegment g_type_name_from_instance$address() {
+        return g_type_name_from_instance.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern const gchar *g_type_name_from_instance(GTypeInstance *instance)
@@ -6999,6 +10225,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_name_from_instance", instance);
             }
             return (MemorySegment)mh$.invokeExact(instance);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7010,9 +10238,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_name_from_class"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_name_from_class");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7034,6 +10262,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_name_from_class$handle() {
         return g_type_name_from_class.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern const gchar *g_type_name_from_class(GTypeClass *g_class)
+     * }
+     */
+    public static MemorySegment g_type_name_from_class$address() {
+        return g_type_name_from_class.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern const gchar *g_type_name_from_class(GTypeClass *g_class)
@@ -7046,6 +10285,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_name_from_class", g_class);
             }
             return (MemorySegment)mh$.invokeExact(g_class);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7058,9 +10299,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_init"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_init");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7082,6 +10323,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_init$handle() {
         return g_value_init.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GValue *g_value_init(GValue *value, GType g_type)
+     * }
+     */
+    public static MemorySegment g_value_init$address() {
+        return g_value_init.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GValue *g_value_init(GValue *value, GType g_type)
@@ -7094,6 +10346,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_init", value, g_type);
             }
             return (MemorySegment)mh$.invokeExact(value, g_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7105,9 +10359,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_copy"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_copy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7129,6 +10383,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_copy$handle() {
         return g_value_copy.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_copy(const GValue *src_value, GValue *dest_value)
+     * }
+     */
+    public static MemorySegment g_value_copy$address() {
+        return g_value_copy.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_copy(const GValue *src_value, GValue *dest_value)
@@ -7141,6 +10406,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_copy", src_value, dest_value);
             }
             mh$.invokeExact(src_value, dest_value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7152,9 +10419,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_reset"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_reset");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7176,6 +10443,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_reset$handle() {
         return g_value_reset.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GValue *g_value_reset(GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_reset$address() {
+        return g_value_reset.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GValue *g_value_reset(GValue *value)
@@ -7188,6 +10466,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_reset", value);
             }
             return (MemorySegment)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7198,9 +10478,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_unset"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_unset");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7222,6 +10502,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_unset$handle() {
         return g_value_unset.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_unset(GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_unset$address() {
+        return g_value_unset.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_unset(GValue *value)
@@ -7234,6 +10525,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_unset", value);
             }
             mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7245,9 +10538,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_instance"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_instance");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7269,6 +10562,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_instance$handle() {
         return g_value_set_instance.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_instance(GValue *value, gpointer instance)
+     * }
+     */
+    public static MemorySegment g_value_set_instance$address() {
+        return g_value_set_instance.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_instance(GValue *value, gpointer instance)
@@ -7281,6 +10585,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_instance", value, instance);
             }
             mh$.invokeExact(value, instance);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7292,9 +10598,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_init_from_instance"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_init_from_instance");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7316,6 +10622,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_init_from_instance$handle() {
         return g_value_init_from_instance.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_init_from_instance(GValue *value, gpointer instance)
+     * }
+     */
+    public static MemorySegment g_value_init_from_instance$address() {
+        return g_value_init_from_instance.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_init_from_instance(GValue *value, gpointer instance)
@@ -7328,6 +10645,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_init_from_instance", value, instance);
             }
             mh$.invokeExact(value, instance);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7339,9 +10658,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_fits_pointer"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_fits_pointer");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7363,6 +10682,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_fits_pointer$handle() {
         return g_value_fits_pointer.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_value_fits_pointer(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_fits_pointer$address() {
+        return g_value_fits_pointer.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_value_fits_pointer(const GValue *value)
@@ -7375,6 +10705,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_fits_pointer", value);
             }
             return (int)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7386,9 +10718,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_peek_pointer"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_peek_pointer");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7410,6 +10742,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_peek_pointer$handle() {
         return g_value_peek_pointer.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_value_peek_pointer(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_peek_pointer$address() {
+        return g_value_peek_pointer.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_value_peek_pointer(const GValue *value)
@@ -7422,6 +10765,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_peek_pointer", value);
             }
             return (MemorySegment)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7434,9 +10779,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_type_compatible"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_type_compatible");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7458,6 +10803,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_type_compatible$handle() {
         return g_value_type_compatible.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_value_type_compatible(GType src_type, GType dest_type)
+     * }
+     */
+    public static MemorySegment g_value_type_compatible$address() {
+        return g_value_type_compatible.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_value_type_compatible(GType src_type, GType dest_type)
@@ -7470,6 +10826,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_type_compatible", src_type, dest_type);
             }
             return (int)mh$.invokeExact(src_type, dest_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7482,9 +10840,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_type_transformable"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_type_transformable");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7506,6 +10864,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_type_transformable$handle() {
         return g_value_type_transformable.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_value_type_transformable(GType src_type, GType dest_type)
+     * }
+     */
+    public static MemorySegment g_value_type_transformable$address() {
+        return g_value_type_transformable.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_value_type_transformable(GType src_type, GType dest_type)
@@ -7518,6 +10887,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_type_transformable", src_type, dest_type);
             }
             return (int)mh$.invokeExact(src_type, dest_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7530,9 +10901,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_transform"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_transform");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7554,6 +10925,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_transform$handle() {
         return g_value_transform.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_value_transform(const GValue *src_value, GValue *dest_value)
+     * }
+     */
+    public static MemorySegment g_value_transform$address() {
+        return g_value_transform.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_value_transform(const GValue *src_value, GValue *dest_value)
@@ -7566,6 +10948,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_transform", src_value, dest_value);
             }
             return (int)mh$.invokeExact(src_value, dest_value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7578,9 +10962,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_register_transform_func"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_register_transform_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7602,6 +10986,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_register_transform_func$handle() {
         return g_value_register_transform_func.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_register_transform_func(GType src_type, GType dest_type, GValueTransform transform_func)
+     * }
+     */
+    public static MemorySegment g_value_register_transform_func$address() {
+        return g_value_register_transform_func.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_register_transform_func(GType src_type, GType dest_type, GValueTransform transform_func)
@@ -7614,6 +11009,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_register_transform_func", src_type, dest_type, transform_func);
             }
             mh$.invokeExact(src_type, dest_type, transform_func);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7733,9 +11130,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_ref"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_ref");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7757,6 +11154,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_ref$handle() {
         return g_param_spec_ref.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_ref(GParamSpec *pspec)
+     * }
+     */
+    public static MemorySegment g_param_spec_ref$address() {
+        return g_param_spec_ref.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_ref(GParamSpec *pspec)
@@ -7769,6 +11177,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_ref", pspec);
             }
             return (MemorySegment)mh$.invokeExact(pspec);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7779,9 +11189,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_unref"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_unref");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7803,6 +11213,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_unref$handle() {
         return g_param_spec_unref.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_param_spec_unref(GParamSpec *pspec)
+     * }
+     */
+    public static MemorySegment g_param_spec_unref$address() {
+        return g_param_spec_unref.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_param_spec_unref(GParamSpec *pspec)
@@ -7815,6 +11236,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_unref", pspec);
             }
             mh$.invokeExact(pspec);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7825,9 +11248,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_sink"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_sink");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7849,6 +11272,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_sink$handle() {
         return g_param_spec_sink.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_param_spec_sink(GParamSpec *pspec)
+     * }
+     */
+    public static MemorySegment g_param_spec_sink$address() {
+        return g_param_spec_sink.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_param_spec_sink(GParamSpec *pspec)
@@ -7861,6 +11295,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_sink", pspec);
             }
             mh$.invokeExact(pspec);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7872,9 +11308,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_ref_sink"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_ref_sink");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7896,6 +11332,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_ref_sink$handle() {
         return g_param_spec_ref_sink.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_ref_sink(GParamSpec *pspec)
+     * }
+     */
+    public static MemorySegment g_param_spec_ref_sink$address() {
+        return g_param_spec_ref_sink.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_ref_sink(GParamSpec *pspec)
@@ -7908,6 +11355,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_ref_sink", pspec);
             }
             return (MemorySegment)mh$.invokeExact(pspec);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7920,9 +11369,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_get_qdata"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_get_qdata");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7944,6 +11393,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_get_qdata$handle() {
         return g_param_spec_get_qdata.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_param_spec_get_qdata(GParamSpec *pspec, GQuark quark)
+     * }
+     */
+    public static MemorySegment g_param_spec_get_qdata$address() {
+        return g_param_spec_get_qdata.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_param_spec_get_qdata(GParamSpec *pspec, GQuark quark)
@@ -7956,6 +11416,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_get_qdata", pspec, quark);
             }
             return (MemorySegment)mh$.invokeExact(pspec, quark);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -7968,9 +11430,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_set_qdata"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_set_qdata");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -7992,6 +11454,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_set_qdata$handle() {
         return g_param_spec_set_qdata.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_param_spec_set_qdata(GParamSpec *pspec, GQuark quark, gpointer data)
+     * }
+     */
+    public static MemorySegment g_param_spec_set_qdata$address() {
+        return g_param_spec_set_qdata.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_param_spec_set_qdata(GParamSpec *pspec, GQuark quark, gpointer data)
@@ -8004,6 +11477,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_set_qdata", pspec, quark, data);
             }
             mh$.invokeExact(pspec, quark, data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8017,9 +11492,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_set_qdata_full"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_set_qdata_full");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8041,6 +11516,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_set_qdata_full$handle() {
         return g_param_spec_set_qdata_full.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_param_spec_set_qdata_full(GParamSpec *pspec, GQuark quark, gpointer data, GDestroyNotify destroy)
+     * }
+     */
+    public static MemorySegment g_param_spec_set_qdata_full$address() {
+        return g_param_spec_set_qdata_full.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_param_spec_set_qdata_full(GParamSpec *pspec, GQuark quark, gpointer data, GDestroyNotify destroy)
@@ -8053,6 +11539,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_set_qdata_full", pspec, quark, data, destroy);
             }
             mh$.invokeExact(pspec, quark, data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8065,9 +11553,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_steal_qdata"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_steal_qdata");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8089,6 +11577,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_steal_qdata$handle() {
         return g_param_spec_steal_qdata.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_param_spec_steal_qdata(GParamSpec *pspec, GQuark quark)
+     * }
+     */
+    public static MemorySegment g_param_spec_steal_qdata$address() {
+        return g_param_spec_steal_qdata.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_param_spec_steal_qdata(GParamSpec *pspec, GQuark quark)
@@ -8101,6 +11600,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_steal_qdata", pspec, quark);
             }
             return (MemorySegment)mh$.invokeExact(pspec, quark);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8112,9 +11613,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_get_redirect_target"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_get_redirect_target");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8136,6 +11637,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_get_redirect_target$handle() {
         return g_param_spec_get_redirect_target.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_get_redirect_target(GParamSpec *pspec)
+     * }
+     */
+    public static MemorySegment g_param_spec_get_redirect_target$address() {
+        return g_param_spec_get_redirect_target.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_get_redirect_target(GParamSpec *pspec)
@@ -8148,6 +11660,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_get_redirect_target", pspec);
             }
             return (MemorySegment)mh$.invokeExact(pspec);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8159,9 +11673,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_value_set_default"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_value_set_default");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8183,6 +11697,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_value_set_default$handle() {
         return g_param_value_set_default.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_param_value_set_default(GParamSpec *pspec, GValue *value)
+     * }
+     */
+    public static MemorySegment g_param_value_set_default$address() {
+        return g_param_value_set_default.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_param_value_set_default(GParamSpec *pspec, GValue *value)
@@ -8195,6 +11720,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_value_set_default", pspec, value);
             }
             mh$.invokeExact(pspec, value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8207,9 +11734,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_value_defaults"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_value_defaults");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8231,6 +11758,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_value_defaults$handle() {
         return g_param_value_defaults.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_param_value_defaults(GParamSpec *pspec, const GValue *value)
+     * }
+     */
+    public static MemorySegment g_param_value_defaults$address() {
+        return g_param_value_defaults.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_param_value_defaults(GParamSpec *pspec, const GValue *value)
@@ -8243,6 +11781,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_value_defaults", pspec, value);
             }
             return (int)mh$.invokeExact(pspec, value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8255,9 +11795,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_value_validate"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_value_validate");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8279,6 +11819,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_value_validate$handle() {
         return g_param_value_validate.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_param_value_validate(GParamSpec *pspec, GValue *value)
+     * }
+     */
+    public static MemorySegment g_param_value_validate$address() {
+        return g_param_value_validate.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_param_value_validate(GParamSpec *pspec, GValue *value)
@@ -8291,6 +11842,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_value_validate", pspec, value);
             }
             return (int)mh$.invokeExact(pspec, value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8303,9 +11856,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_value_is_valid"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_value_is_valid");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8327,6 +11880,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_value_is_valid$handle() {
         return g_param_value_is_valid.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_param_value_is_valid(GParamSpec *pspec, const GValue *value)
+     * }
+     */
+    public static MemorySegment g_param_value_is_valid$address() {
+        return g_param_value_is_valid.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_param_value_is_valid(GParamSpec *pspec, const GValue *value)
@@ -8339,6 +11903,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_value_is_valid", pspec, value);
             }
             return (int)mh$.invokeExact(pspec, value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8353,9 +11919,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_value_convert"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_value_convert");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8377,6 +11943,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_value_convert$handle() {
         return g_param_value_convert.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_param_value_convert(GParamSpec *pspec, const GValue *src_value, GValue *dest_value, gboolean strict_validation)
+     * }
+     */
+    public static MemorySegment g_param_value_convert$address() {
+        return g_param_value_convert.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_param_value_convert(GParamSpec *pspec, const GValue *src_value, GValue *dest_value, gboolean strict_validation)
@@ -8389,6 +11966,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_value_convert", pspec, src_value, dest_value, strict_validation);
             }
             return (int)mh$.invokeExact(pspec, src_value, dest_value, strict_validation);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8402,9 +11981,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_values_cmp"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_values_cmp");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8426,6 +12005,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_values_cmp$handle() {
         return g_param_values_cmp.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gint g_param_values_cmp(GParamSpec *pspec, const GValue *value1, const GValue *value2)
+     * }
+     */
+    public static MemorySegment g_param_values_cmp$address() {
+        return g_param_values_cmp.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gint g_param_values_cmp(GParamSpec *pspec, const GValue *value1, const GValue *value2)
@@ -8438,6 +12028,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_values_cmp", pspec, value1, value2);
             }
             return (int)mh$.invokeExact(pspec, value1, value2);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8449,9 +12041,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_get_name"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_get_name");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8473,6 +12065,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_get_name$handle() {
         return g_param_spec_get_name.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern const gchar *g_param_spec_get_name(GParamSpec *pspec)
+     * }
+     */
+    public static MemorySegment g_param_spec_get_name$address() {
+        return g_param_spec_get_name.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern const gchar *g_param_spec_get_name(GParamSpec *pspec)
@@ -8485,6 +12088,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_get_name", pspec);
             }
             return (MemorySegment)mh$.invokeExact(pspec);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8496,9 +12101,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_get_nick"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_get_nick");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8520,6 +12125,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_get_nick$handle() {
         return g_param_spec_get_nick.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern const gchar *g_param_spec_get_nick(GParamSpec *pspec)
+     * }
+     */
+    public static MemorySegment g_param_spec_get_nick$address() {
+        return g_param_spec_get_nick.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern const gchar *g_param_spec_get_nick(GParamSpec *pspec)
@@ -8532,6 +12148,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_get_nick", pspec);
             }
             return (MemorySegment)mh$.invokeExact(pspec);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8543,9 +12161,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_get_blurb"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_get_blurb");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8567,6 +12185,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_get_blurb$handle() {
         return g_param_spec_get_blurb.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern const gchar *g_param_spec_get_blurb(GParamSpec *pspec)
+     * }
+     */
+    public static MemorySegment g_param_spec_get_blurb$address() {
+        return g_param_spec_get_blurb.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern const gchar *g_param_spec_get_blurb(GParamSpec *pspec)
@@ -8579,6 +12208,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_get_blurb", pspec);
             }
             return (MemorySegment)mh$.invokeExact(pspec);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8590,9 +12221,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_param"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_param");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8614,6 +12245,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_param$handle() {
         return g_value_set_param.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_param(GValue *value, GParamSpec *param)
+     * }
+     */
+    public static MemorySegment g_value_set_param$address() {
+        return g_value_set_param.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_param(GValue *value, GParamSpec *param)
@@ -8626,6 +12268,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_param", value, param);
             }
             mh$.invokeExact(value, param);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8637,9 +12281,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_get_param"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_get_param");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8661,6 +12305,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_get_param$handle() {
         return g_value_get_param.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_value_get_param(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_get_param$address() {
+        return g_value_get_param.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_value_get_param(const GValue *value)
@@ -8673,6 +12328,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_get_param", value);
             }
             return (MemorySegment)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8684,9 +12341,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_dup_param"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_dup_param");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8708,6 +12365,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_dup_param$handle() {
         return g_value_dup_param.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_value_dup_param(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_dup_param$address() {
+        return g_value_dup_param.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_value_dup_param(const GValue *value)
@@ -8720,6 +12388,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_dup_param", value);
             }
             return (MemorySegment)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8731,9 +12401,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_take_param"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_take_param");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8755,6 +12425,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_take_param$handle() {
         return g_value_take_param.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_take_param(GValue *value, GParamSpec *param)
+     * }
+     */
+    public static MemorySegment g_value_take_param$address() {
+        return g_value_take_param.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_take_param(GValue *value, GParamSpec *param)
@@ -8767,6 +12448,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_take_param", value, param);
             }
             mh$.invokeExact(value, param);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8778,9 +12461,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_param_take_ownership"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_param_take_ownership");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8802,6 +12485,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_param_take_ownership$handle() {
         return g_value_set_param_take_ownership.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_param_take_ownership(GValue *value, GParamSpec *param)
+     * }
+     */
+    public static MemorySegment g_value_set_param_take_ownership$address() {
+        return g_value_set_param_take_ownership.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_param_take_ownership(GValue *value, GParamSpec *param)
@@ -8814,6 +12508,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_param_take_ownership", value, param);
             }
             mh$.invokeExact(value, param);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8825,9 +12521,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_get_default_value"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_get_default_value");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8849,6 +12545,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_get_default_value$handle() {
         return g_param_spec_get_default_value.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern const GValue *g_param_spec_get_default_value(GParamSpec *pspec)
+     * }
+     */
+    public static MemorySegment g_param_spec_get_default_value$address() {
+        return g_param_spec_get_default_value.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern const GValue *g_param_spec_get_default_value(GParamSpec *pspec)
@@ -8861,6 +12568,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_get_default_value", pspec);
             }
             return (MemorySegment)mh$.invokeExact(pspec);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8872,9 +12581,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_get_name_quark"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_get_name_quark");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8896,6 +12605,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_get_name_quark$handle() {
         return g_param_spec_get_name_quark.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GQuark g_param_spec_get_name_quark(GParamSpec *pspec)
+     * }
+     */
+    public static MemorySegment g_param_spec_get_name_quark$address() {
+        return g_param_spec_get_name_quark.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GQuark g_param_spec_get_name_quark(GParamSpec *pspec)
@@ -8908,6 +12628,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_get_name_quark", pspec);
             }
             return (int)mh$.invokeExact(pspec);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8920,9 +12642,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_type_register_static"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_type_register_static");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8944,6 +12666,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_type_register_static$handle() {
         return g_param_type_register_static.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_param_type_register_static(const gchar *name, const GParamSpecTypeInfo *pspec_info)
+     * }
+     */
+    public static MemorySegment g_param_type_register_static$address() {
+        return g_param_type_register_static.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_param_type_register_static(const gchar *name, const GParamSpecTypeInfo *pspec_info)
@@ -8956,6 +12689,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_type_register_static", name, pspec_info);
             }
             return (long)mh$.invokeExact(name, pspec_info);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -8967,9 +12702,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_is_valid_name"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_is_valid_name");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -8991,6 +12726,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_is_valid_name$handle() {
         return g_param_spec_is_valid_name.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_param_spec_is_valid_name(const gchar *name)
+     * }
+     */
+    public static MemorySegment g_param_spec_is_valid_name$address() {
+        return g_param_spec_is_valid_name.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_param_spec_is_valid_name(const gchar *name)
@@ -9003,6 +12749,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_is_valid_name", name);
             }
             return (int)mh$.invokeExact(name);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9016,9 +12764,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("_g_param_type_register_static_constant"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("_g_param_type_register_static_constant");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9040,6 +12788,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle _g_param_type_register_static_constant$handle() {
         return _g_param_type_register_static_constant.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * GType _g_param_type_register_static_constant(const gchar *name, const GParamSpecTypeInfo *pspec_info, GType opt_type)
+     * }
+     */
+    public static MemorySegment _g_param_type_register_static_constant$address() {
+        return _g_param_type_register_static_constant.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * GType _g_param_type_register_static_constant(const gchar *name, const GParamSpecTypeInfo *pspec_info, GType opt_type)
@@ -9052,6 +12811,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("_g_param_type_register_static_constant", name, pspec_info, opt_type);
             }
             return (long)mh$.invokeExact(name, pspec_info, opt_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9067,9 +12828,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_internal"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_internal");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9091,6 +12852,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_internal$handle() {
         return g_param_spec_internal.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_param_spec_internal(GType param_type, const gchar *name, const gchar *nick, const gchar *blurb, GParamFlags flags)
+     * }
+     */
+    public static MemorySegment g_param_spec_internal$address() {
+        return g_param_spec_internal.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_param_spec_internal(GType param_type, const gchar *name, const gchar *nick, const gchar *blurb, GParamFlags flags)
@@ -9103,6 +12875,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_internal", param_type, name, nick, blurb, flags);
             }
             return (MemorySegment)mh$.invokeExact(param_type, name, nick, blurb, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9114,9 +12888,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_pool_new"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_pool_new");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9138,6 +12912,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_pool_new$handle() {
         return g_param_spec_pool_new.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpecPool *g_param_spec_pool_new(gboolean type_prefixing)
+     * }
+     */
+    public static MemorySegment g_param_spec_pool_new$address() {
+        return g_param_spec_pool_new.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpecPool *g_param_spec_pool_new(gboolean type_prefixing)
@@ -9150,6 +12935,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_pool_new", type_prefixing);
             }
             return (MemorySegment)mh$.invokeExact(type_prefixing);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9162,9 +12949,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_pool_insert"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_pool_insert");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9186,6 +12973,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_pool_insert$handle() {
         return g_param_spec_pool_insert.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_param_spec_pool_insert(GParamSpecPool *pool, GParamSpec *pspec, GType owner_type)
+     * }
+     */
+    public static MemorySegment g_param_spec_pool_insert$address() {
+        return g_param_spec_pool_insert.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_param_spec_pool_insert(GParamSpecPool *pool, GParamSpec *pspec, GType owner_type)
@@ -9198,6 +12996,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_pool_insert", pool, pspec, owner_type);
             }
             mh$.invokeExact(pool, pspec, owner_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9209,9 +13009,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_pool_remove"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_pool_remove");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9233,6 +13033,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_pool_remove$handle() {
         return g_param_spec_pool_remove.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_param_spec_pool_remove(GParamSpecPool *pool, GParamSpec *pspec)
+     * }
+     */
+    public static MemorySegment g_param_spec_pool_remove$address() {
+        return g_param_spec_pool_remove.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_param_spec_pool_remove(GParamSpecPool *pool, GParamSpec *pspec)
@@ -9245,6 +13056,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_pool_remove", pool, pspec);
             }
             mh$.invokeExact(pool, pspec);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9259,9 +13072,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_pool_lookup"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_pool_lookup");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9283,6 +13096,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_pool_lookup$handle() {
         return g_param_spec_pool_lookup.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_pool_lookup(GParamSpecPool *pool, const gchar *param_name, GType owner_type, gboolean walk_ancestors)
+     * }
+     */
+    public static MemorySegment g_param_spec_pool_lookup$address() {
+        return g_param_spec_pool_lookup.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_pool_lookup(GParamSpecPool *pool, const gchar *param_name, GType owner_type, gboolean walk_ancestors)
@@ -9295,6 +13119,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_pool_lookup", pool, param_name, owner_type, walk_ancestors);
             }
             return (MemorySegment)mh$.invokeExact(pool, param_name, owner_type, walk_ancestors);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9307,9 +13133,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_pool_list_owned"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_pool_list_owned");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9331,6 +13157,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_pool_list_owned$handle() {
         return g_param_spec_pool_list_owned.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GList *g_param_spec_pool_list_owned(GParamSpecPool *pool, GType owner_type)
+     * }
+     */
+    public static MemorySegment g_param_spec_pool_list_owned$address() {
+        return g_param_spec_pool_list_owned.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GList *g_param_spec_pool_list_owned(GParamSpecPool *pool, GType owner_type)
@@ -9343,6 +13180,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_pool_list_owned", pool, owner_type);
             }
             return (MemorySegment)mh$.invokeExact(pool, owner_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9356,9 +13195,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_pool_list"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_pool_list");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9380,6 +13219,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_pool_list$handle() {
         return g_param_spec_pool_list.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec **g_param_spec_pool_list(GParamSpecPool *pool, GType owner_type, guint *n_pspecs_p)
+     * }
+     */
+    public static MemorySegment g_param_spec_pool_list$address() {
+        return g_param_spec_pool_list.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec **g_param_spec_pool_list(GParamSpecPool *pool, GType owner_type, guint *n_pspecs_p)
@@ -9392,6 +13242,67 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_pool_list", pool, owner_type, n_pspecs_p);
             }
             return (MemorySegment)mh$.invokeExact(pool, owner_type, n_pspecs_p);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_param_spec_pool_free {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_pool_free");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_param_spec_pool_free(GParamSpecPool *pool)
+     * }
+     */
+    public static FunctionDescriptor g_param_spec_pool_free$descriptor() {
+        return g_param_spec_pool_free.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_param_spec_pool_free(GParamSpecPool *pool)
+     * }
+     */
+    public static MethodHandle g_param_spec_pool_free$handle() {
+        return g_param_spec_pool_free.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_param_spec_pool_free(GParamSpecPool *pool)
+     * }
+     */
+    public static MemorySegment g_param_spec_pool_free$address() {
+        return g_param_spec_pool_free.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_param_spec_pool_free(GParamSpecPool *pool)
+     * }
+     */
+    public static void g_param_spec_pool_free(MemorySegment pool) {
+        var mh$ = g_param_spec_pool_free.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_param_spec_pool_free", pool);
+            }
+            mh$.invokeExact(pool);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9405,9 +13316,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_new"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_new");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9429,6 +13340,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_new$handle() {
         return g_cclosure_new.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GClosure *g_cclosure_new(GCallback callback_func, gpointer user_data, GClosureNotify destroy_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_new$address() {
+        return g_cclosure_new.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GClosure *g_cclosure_new(GCallback callback_func, gpointer user_data, GClosureNotify destroy_data)
@@ -9441,6 +13363,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_new", callback_func, user_data, destroy_data);
             }
             return (MemorySegment)mh$.invokeExact(callback_func, user_data, destroy_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9454,9 +13378,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_new_swap"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_new_swap");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9478,6 +13402,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_new_swap$handle() {
         return g_cclosure_new_swap.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GClosure *g_cclosure_new_swap(GCallback callback_func, gpointer user_data, GClosureNotify destroy_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_new_swap$address() {
+        return g_cclosure_new_swap.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GClosure *g_cclosure_new_swap(GCallback callback_func, gpointer user_data, GClosureNotify destroy_data)
@@ -9490,6 +13425,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_new_swap", callback_func, user_data, destroy_data);
             }
             return (MemorySegment)mh$.invokeExact(callback_func, user_data, destroy_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9502,9 +13439,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_type_cclosure_new"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_type_cclosure_new");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9526,6 +13463,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_type_cclosure_new$handle() {
         return g_signal_type_cclosure_new.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GClosure *g_signal_type_cclosure_new(GType itype, guint struct_offset)
+     * }
+     */
+    public static MemorySegment g_signal_type_cclosure_new$address() {
+        return g_signal_type_cclosure_new.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GClosure *g_signal_type_cclosure_new(GType itype, guint struct_offset)
@@ -9538,6 +13486,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_type_cclosure_new", itype, struct_offset);
             }
             return (MemorySegment)mh$.invokeExact(itype, struct_offset);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9549,9 +13499,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_closure_ref"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_closure_ref");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9573,6 +13523,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_closure_ref$handle() {
         return g_closure_ref.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GClosure *g_closure_ref(GClosure *closure)
+     * }
+     */
+    public static MemorySegment g_closure_ref$address() {
+        return g_closure_ref.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GClosure *g_closure_ref(GClosure *closure)
@@ -9585,6 +13546,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_closure_ref", closure);
             }
             return (MemorySegment)mh$.invokeExact(closure);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9595,9 +13558,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_closure_sink"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_closure_sink");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9619,6 +13582,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_closure_sink$handle() {
         return g_closure_sink.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_closure_sink(GClosure *closure)
+     * }
+     */
+    public static MemorySegment g_closure_sink$address() {
+        return g_closure_sink.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_closure_sink(GClosure *closure)
@@ -9631,6 +13605,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_closure_sink", closure);
             }
             mh$.invokeExact(closure);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9641,9 +13617,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_closure_unref"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_closure_unref");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9665,6 +13641,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_closure_unref$handle() {
         return g_closure_unref.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_closure_unref(GClosure *closure)
+     * }
+     */
+    public static MemorySegment g_closure_unref$address() {
+        return g_closure_unref.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_closure_unref(GClosure *closure)
@@ -9677,6 +13664,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_closure_unref", closure);
             }
             mh$.invokeExact(closure);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9689,9 +13678,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_closure_new_simple"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_closure_new_simple");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9713,6 +13702,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_closure_new_simple$handle() {
         return g_closure_new_simple.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GClosure *g_closure_new_simple(guint sizeof_closure, gpointer data)
+     * }
+     */
+    public static MemorySegment g_closure_new_simple$address() {
+        return g_closure_new_simple.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GClosure *g_closure_new_simple(guint sizeof_closure, gpointer data)
@@ -9725,6 +13725,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_closure_new_simple", sizeof_closure, data);
             }
             return (MemorySegment)mh$.invokeExact(sizeof_closure, data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9737,9 +13739,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_closure_add_finalize_notifier"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_closure_add_finalize_notifier");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9761,6 +13763,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_closure_add_finalize_notifier$handle() {
         return g_closure_add_finalize_notifier.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_closure_add_finalize_notifier(GClosure *closure, gpointer notify_data, GClosureNotify notify_func)
+     * }
+     */
+    public static MemorySegment g_closure_add_finalize_notifier$address() {
+        return g_closure_add_finalize_notifier.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_closure_add_finalize_notifier(GClosure *closure, gpointer notify_data, GClosureNotify notify_func)
@@ -9773,6 +13786,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_closure_add_finalize_notifier", closure, notify_data, notify_func);
             }
             mh$.invokeExact(closure, notify_data, notify_func);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9785,9 +13800,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_closure_remove_finalize_notifier"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_closure_remove_finalize_notifier");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9809,6 +13824,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_closure_remove_finalize_notifier$handle() {
         return g_closure_remove_finalize_notifier.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_closure_remove_finalize_notifier(GClosure *closure, gpointer notify_data, GClosureNotify notify_func)
+     * }
+     */
+    public static MemorySegment g_closure_remove_finalize_notifier$address() {
+        return g_closure_remove_finalize_notifier.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_closure_remove_finalize_notifier(GClosure *closure, gpointer notify_data, GClosureNotify notify_func)
@@ -9821,6 +13847,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_closure_remove_finalize_notifier", closure, notify_data, notify_func);
             }
             mh$.invokeExact(closure, notify_data, notify_func);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9833,9 +13861,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_closure_add_invalidate_notifier"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_closure_add_invalidate_notifier");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9857,6 +13885,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_closure_add_invalidate_notifier$handle() {
         return g_closure_add_invalidate_notifier.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_closure_add_invalidate_notifier(GClosure *closure, gpointer notify_data, GClosureNotify notify_func)
+     * }
+     */
+    public static MemorySegment g_closure_add_invalidate_notifier$address() {
+        return g_closure_add_invalidate_notifier.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_closure_add_invalidate_notifier(GClosure *closure, gpointer notify_data, GClosureNotify notify_func)
@@ -9869,6 +13908,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_closure_add_invalidate_notifier", closure, notify_data, notify_func);
             }
             mh$.invokeExact(closure, notify_data, notify_func);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9881,9 +13922,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_closure_remove_invalidate_notifier"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_closure_remove_invalidate_notifier");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9905,6 +13946,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_closure_remove_invalidate_notifier$handle() {
         return g_closure_remove_invalidate_notifier.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_closure_remove_invalidate_notifier(GClosure *closure, gpointer notify_data, GClosureNotify notify_func)
+     * }
+     */
+    public static MemorySegment g_closure_remove_invalidate_notifier$address() {
+        return g_closure_remove_invalidate_notifier.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_closure_remove_invalidate_notifier(GClosure *closure, gpointer notify_data, GClosureNotify notify_func)
@@ -9917,6 +13969,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_closure_remove_invalidate_notifier", closure, notify_data, notify_func);
             }
             mh$.invokeExact(closure, notify_data, notify_func);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9931,9 +13985,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_closure_add_marshal_guards"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_closure_add_marshal_guards");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -9955,6 +14009,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_closure_add_marshal_guards$handle() {
         return g_closure_add_marshal_guards.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_closure_add_marshal_guards(GClosure *closure, gpointer pre_marshal_data, GClosureNotify pre_marshal_notify, gpointer post_marshal_data, GClosureNotify post_marshal_notify)
+     * }
+     */
+    public static MemorySegment g_closure_add_marshal_guards$address() {
+        return g_closure_add_marshal_guards.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_closure_add_marshal_guards(GClosure *closure, gpointer pre_marshal_data, GClosureNotify pre_marshal_notify, gpointer post_marshal_data, GClosureNotify post_marshal_notify)
@@ -9967,6 +14032,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_closure_add_marshal_guards", closure, pre_marshal_data, pre_marshal_notify, post_marshal_data, post_marshal_notify);
             }
             mh$.invokeExact(closure, pre_marshal_data, pre_marshal_notify, post_marshal_data, post_marshal_notify);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -9978,9 +14045,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_closure_set_marshal"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_closure_set_marshal");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10002,6 +14069,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_closure_set_marshal$handle() {
         return g_closure_set_marshal.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_closure_set_marshal(GClosure *closure, GClosureMarshal marshal)
+     * }
+     */
+    public static MemorySegment g_closure_set_marshal$address() {
+        return g_closure_set_marshal.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_closure_set_marshal(GClosure *closure, GClosureMarshal marshal)
@@ -10014,6 +14092,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_closure_set_marshal", closure, marshal);
             }
             mh$.invokeExact(closure, marshal);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10026,9 +14106,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_closure_set_meta_marshal"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_closure_set_meta_marshal");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10050,6 +14130,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_closure_set_meta_marshal$handle() {
         return g_closure_set_meta_marshal.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_closure_set_meta_marshal(GClosure *closure, gpointer marshal_data, GClosureMarshal meta_marshal)
+     * }
+     */
+    public static MemorySegment g_closure_set_meta_marshal$address() {
+        return g_closure_set_meta_marshal.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_closure_set_meta_marshal(GClosure *closure, gpointer marshal_data, GClosureMarshal meta_marshal)
@@ -10062,6 +14153,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_closure_set_meta_marshal", closure, marshal_data, meta_marshal);
             }
             mh$.invokeExact(closure, marshal_data, meta_marshal);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10072,9 +14165,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_closure_invalidate"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_closure_invalidate");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10096,6 +14189,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_closure_invalidate$handle() {
         return g_closure_invalidate.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_closure_invalidate(GClosure *closure)
+     * }
+     */
+    public static MemorySegment g_closure_invalidate$address() {
+        return g_closure_invalidate.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_closure_invalidate(GClosure *closure)
@@ -10108,6 +14212,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_closure_invalidate", closure);
             }
             mh$.invokeExact(closure);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10122,9 +14228,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_closure_invoke"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_closure_invoke");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10146,6 +14252,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_closure_invoke$handle() {
         return g_closure_invoke.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_closure_invoke(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint)
+     * }
+     */
+    public static MemorySegment g_closure_invoke$address() {
+        return g_closure_invoke.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_closure_invoke(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint)
@@ -10158,6 +14275,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_closure_invoke", closure, return_value, n_param_values, param_values, invocation_hint);
             }
             mh$.invokeExact(closure, return_value, n_param_values, param_values, invocation_hint);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10173,9 +14292,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_marshal_generic"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_generic");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10197,6 +14316,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_marshal_generic$handle() {
         return g_cclosure_marshal_generic.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_generic(GClosure *closure, GValue *return_gvalue, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_generic$address() {
+        return g_cclosure_marshal_generic.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cclosure_marshal_generic(GClosure *closure, GValue *return_gvalue, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
@@ -10209,6 +14339,73 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_marshal_generic", closure, return_gvalue, n_param_values, param_values, invocation_hint, marshal_data);
             }
             mh$.invokeExact(closure, return_gvalue, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_cclosure_marshal_generic_va {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_generic_va");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_generic_va(GClosure *closure, GValue *return_value, gpointer instance, va_list args_list, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static FunctionDescriptor g_cclosure_marshal_generic_va$descriptor() {
+        return g_cclosure_marshal_generic_va.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_generic_va(GClosure *closure, GValue *return_value, gpointer instance, va_list args_list, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MethodHandle g_cclosure_marshal_generic_va$handle() {
+        return g_cclosure_marshal_generic_va.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_generic_va(GClosure *closure, GValue *return_value, gpointer instance, va_list args_list, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_generic_va$address() {
+        return g_cclosure_marshal_generic_va.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_generic_va(GClosure *closure, GValue *return_value, gpointer instance, va_list args_list, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static void g_cclosure_marshal_generic_va(MemorySegment closure, MemorySegment return_value, MemorySegment instance, MemorySegment args_list, MemorySegment marshal_data, int n_params, MemorySegment param_types) {
+        var mh$ = g_cclosure_marshal_generic_va.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_cclosure_marshal_generic_va", closure, return_value, instance, args_list, marshal_data, n_params, param_types);
+            }
+            mh$.invokeExact(closure, return_value, instance, args_list, marshal_data, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10224,9 +14421,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_marshal_VOID__VOID"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__VOID");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10248,6 +14445,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_marshal_VOID__VOID$handle() {
         return g_cclosure_marshal_VOID__VOID.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__VOID(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__VOID$address() {
+        return g_cclosure_marshal_VOID__VOID.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cclosure_marshal_VOID__VOID(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
@@ -10260,6 +14468,73 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_marshal_VOID__VOID", closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
             }
             mh$.invokeExact(closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_cclosure_marshal_VOID__VOIDv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__VOIDv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__VOIDv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static FunctionDescriptor g_cclosure_marshal_VOID__VOIDv$descriptor() {
+        return g_cclosure_marshal_VOID__VOIDv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__VOIDv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MethodHandle g_cclosure_marshal_VOID__VOIDv$handle() {
+        return g_cclosure_marshal_VOID__VOIDv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__VOIDv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__VOIDv$address() {
+        return g_cclosure_marshal_VOID__VOIDv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__VOIDv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static void g_cclosure_marshal_VOID__VOIDv(MemorySegment closure, MemorySegment return_value, MemorySegment instance, MemorySegment args, MemorySegment marshal_data, int n_params, MemorySegment param_types) {
+        var mh$ = g_cclosure_marshal_VOID__VOIDv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_cclosure_marshal_VOID__VOIDv", closure, return_value, instance, args, marshal_data, n_params, param_types);
+            }
+            mh$.invokeExact(closure, return_value, instance, args, marshal_data, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10275,9 +14550,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_marshal_VOID__BOOLEAN"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__BOOLEAN");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10299,6 +14574,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_marshal_VOID__BOOLEAN$handle() {
         return g_cclosure_marshal_VOID__BOOLEAN.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__BOOLEAN(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__BOOLEAN$address() {
+        return g_cclosure_marshal_VOID__BOOLEAN.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cclosure_marshal_VOID__BOOLEAN(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
@@ -10311,6 +14597,73 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_marshal_VOID__BOOLEAN", closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
             }
             mh$.invokeExact(closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_cclosure_marshal_VOID__BOOLEANv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__BOOLEANv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__BOOLEANv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static FunctionDescriptor g_cclosure_marshal_VOID__BOOLEANv$descriptor() {
+        return g_cclosure_marshal_VOID__BOOLEANv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__BOOLEANv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MethodHandle g_cclosure_marshal_VOID__BOOLEANv$handle() {
+        return g_cclosure_marshal_VOID__BOOLEANv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__BOOLEANv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__BOOLEANv$address() {
+        return g_cclosure_marshal_VOID__BOOLEANv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__BOOLEANv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static void g_cclosure_marshal_VOID__BOOLEANv(MemorySegment closure, MemorySegment return_value, MemorySegment instance, MemorySegment args, MemorySegment marshal_data, int n_params, MemorySegment param_types) {
+        var mh$ = g_cclosure_marshal_VOID__BOOLEANv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_cclosure_marshal_VOID__BOOLEANv", closure, return_value, instance, args, marshal_data, n_params, param_types);
+            }
+            mh$.invokeExact(closure, return_value, instance, args, marshal_data, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10326,9 +14679,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_marshal_VOID__CHAR"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__CHAR");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10350,6 +14703,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_marshal_VOID__CHAR$handle() {
         return g_cclosure_marshal_VOID__CHAR.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__CHAR(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__CHAR$address() {
+        return g_cclosure_marshal_VOID__CHAR.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cclosure_marshal_VOID__CHAR(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
@@ -10362,6 +14726,73 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_marshal_VOID__CHAR", closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
             }
             mh$.invokeExact(closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_cclosure_marshal_VOID__CHARv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__CHARv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__CHARv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static FunctionDescriptor g_cclosure_marshal_VOID__CHARv$descriptor() {
+        return g_cclosure_marshal_VOID__CHARv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__CHARv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MethodHandle g_cclosure_marshal_VOID__CHARv$handle() {
+        return g_cclosure_marshal_VOID__CHARv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__CHARv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__CHARv$address() {
+        return g_cclosure_marshal_VOID__CHARv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__CHARv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static void g_cclosure_marshal_VOID__CHARv(MemorySegment closure, MemorySegment return_value, MemorySegment instance, MemorySegment args, MemorySegment marshal_data, int n_params, MemorySegment param_types) {
+        var mh$ = g_cclosure_marshal_VOID__CHARv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_cclosure_marshal_VOID__CHARv", closure, return_value, instance, args, marshal_data, n_params, param_types);
+            }
+            mh$.invokeExact(closure, return_value, instance, args, marshal_data, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10377,9 +14808,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_marshal_VOID__UCHAR"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__UCHAR");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10401,6 +14832,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_marshal_VOID__UCHAR$handle() {
         return g_cclosure_marshal_VOID__UCHAR.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__UCHAR(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__UCHAR$address() {
+        return g_cclosure_marshal_VOID__UCHAR.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cclosure_marshal_VOID__UCHAR(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
@@ -10413,6 +14855,73 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_marshal_VOID__UCHAR", closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
             }
             mh$.invokeExact(closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_cclosure_marshal_VOID__UCHARv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__UCHARv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__UCHARv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static FunctionDescriptor g_cclosure_marshal_VOID__UCHARv$descriptor() {
+        return g_cclosure_marshal_VOID__UCHARv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__UCHARv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MethodHandle g_cclosure_marshal_VOID__UCHARv$handle() {
+        return g_cclosure_marshal_VOID__UCHARv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__UCHARv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__UCHARv$address() {
+        return g_cclosure_marshal_VOID__UCHARv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__UCHARv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static void g_cclosure_marshal_VOID__UCHARv(MemorySegment closure, MemorySegment return_value, MemorySegment instance, MemorySegment args, MemorySegment marshal_data, int n_params, MemorySegment param_types) {
+        var mh$ = g_cclosure_marshal_VOID__UCHARv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_cclosure_marshal_VOID__UCHARv", closure, return_value, instance, args, marshal_data, n_params, param_types);
+            }
+            mh$.invokeExact(closure, return_value, instance, args, marshal_data, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10428,9 +14937,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_marshal_VOID__INT"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__INT");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10452,6 +14961,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_marshal_VOID__INT$handle() {
         return g_cclosure_marshal_VOID__INT.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__INT(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__INT$address() {
+        return g_cclosure_marshal_VOID__INT.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cclosure_marshal_VOID__INT(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
@@ -10464,6 +14984,73 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_marshal_VOID__INT", closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
             }
             mh$.invokeExact(closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_cclosure_marshal_VOID__INTv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__INTv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__INTv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static FunctionDescriptor g_cclosure_marshal_VOID__INTv$descriptor() {
+        return g_cclosure_marshal_VOID__INTv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__INTv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MethodHandle g_cclosure_marshal_VOID__INTv$handle() {
+        return g_cclosure_marshal_VOID__INTv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__INTv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__INTv$address() {
+        return g_cclosure_marshal_VOID__INTv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__INTv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static void g_cclosure_marshal_VOID__INTv(MemorySegment closure, MemorySegment return_value, MemorySegment instance, MemorySegment args, MemorySegment marshal_data, int n_params, MemorySegment param_types) {
+        var mh$ = g_cclosure_marshal_VOID__INTv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_cclosure_marshal_VOID__INTv", closure, return_value, instance, args, marshal_data, n_params, param_types);
+            }
+            mh$.invokeExact(closure, return_value, instance, args, marshal_data, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10479,9 +15066,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_marshal_VOID__UINT"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__UINT");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10503,6 +15090,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_marshal_VOID__UINT$handle() {
         return g_cclosure_marshal_VOID__UINT.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__UINT(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__UINT$address() {
+        return g_cclosure_marshal_VOID__UINT.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cclosure_marshal_VOID__UINT(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
@@ -10515,6 +15113,73 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_marshal_VOID__UINT", closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
             }
             mh$.invokeExact(closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_cclosure_marshal_VOID__UINTv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__UINTv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__UINTv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static FunctionDescriptor g_cclosure_marshal_VOID__UINTv$descriptor() {
+        return g_cclosure_marshal_VOID__UINTv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__UINTv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MethodHandle g_cclosure_marshal_VOID__UINTv$handle() {
+        return g_cclosure_marshal_VOID__UINTv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__UINTv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__UINTv$address() {
+        return g_cclosure_marshal_VOID__UINTv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__UINTv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static void g_cclosure_marshal_VOID__UINTv(MemorySegment closure, MemorySegment return_value, MemorySegment instance, MemorySegment args, MemorySegment marshal_data, int n_params, MemorySegment param_types) {
+        var mh$ = g_cclosure_marshal_VOID__UINTv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_cclosure_marshal_VOID__UINTv", closure, return_value, instance, args, marshal_data, n_params, param_types);
+            }
+            mh$.invokeExact(closure, return_value, instance, args, marshal_data, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10530,9 +15195,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_marshal_VOID__LONG"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__LONG");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10554,6 +15219,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_marshal_VOID__LONG$handle() {
         return g_cclosure_marshal_VOID__LONG.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__LONG(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__LONG$address() {
+        return g_cclosure_marshal_VOID__LONG.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cclosure_marshal_VOID__LONG(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
@@ -10566,6 +15242,73 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_marshal_VOID__LONG", closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
             }
             mh$.invokeExact(closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_cclosure_marshal_VOID__LONGv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__LONGv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__LONGv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static FunctionDescriptor g_cclosure_marshal_VOID__LONGv$descriptor() {
+        return g_cclosure_marshal_VOID__LONGv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__LONGv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MethodHandle g_cclosure_marshal_VOID__LONGv$handle() {
+        return g_cclosure_marshal_VOID__LONGv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__LONGv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__LONGv$address() {
+        return g_cclosure_marshal_VOID__LONGv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__LONGv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static void g_cclosure_marshal_VOID__LONGv(MemorySegment closure, MemorySegment return_value, MemorySegment instance, MemorySegment args, MemorySegment marshal_data, int n_params, MemorySegment param_types) {
+        var mh$ = g_cclosure_marshal_VOID__LONGv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_cclosure_marshal_VOID__LONGv", closure, return_value, instance, args, marshal_data, n_params, param_types);
+            }
+            mh$.invokeExact(closure, return_value, instance, args, marshal_data, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10581,9 +15324,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_marshal_VOID__ULONG"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__ULONG");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10605,6 +15348,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_marshal_VOID__ULONG$handle() {
         return g_cclosure_marshal_VOID__ULONG.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__ULONG(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__ULONG$address() {
+        return g_cclosure_marshal_VOID__ULONG.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cclosure_marshal_VOID__ULONG(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
@@ -10617,6 +15371,73 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_marshal_VOID__ULONG", closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
             }
             mh$.invokeExact(closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_cclosure_marshal_VOID__ULONGv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__ULONGv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__ULONGv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static FunctionDescriptor g_cclosure_marshal_VOID__ULONGv$descriptor() {
+        return g_cclosure_marshal_VOID__ULONGv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__ULONGv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MethodHandle g_cclosure_marshal_VOID__ULONGv$handle() {
+        return g_cclosure_marshal_VOID__ULONGv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__ULONGv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__ULONGv$address() {
+        return g_cclosure_marshal_VOID__ULONGv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__ULONGv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static void g_cclosure_marshal_VOID__ULONGv(MemorySegment closure, MemorySegment return_value, MemorySegment instance, MemorySegment args, MemorySegment marshal_data, int n_params, MemorySegment param_types) {
+        var mh$ = g_cclosure_marshal_VOID__ULONGv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_cclosure_marshal_VOID__ULONGv", closure, return_value, instance, args, marshal_data, n_params, param_types);
+            }
+            mh$.invokeExact(closure, return_value, instance, args, marshal_data, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10632,9 +15453,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_marshal_VOID__ENUM"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__ENUM");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10656,6 +15477,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_marshal_VOID__ENUM$handle() {
         return g_cclosure_marshal_VOID__ENUM.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__ENUM(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__ENUM$address() {
+        return g_cclosure_marshal_VOID__ENUM.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cclosure_marshal_VOID__ENUM(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
@@ -10668,6 +15500,73 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_marshal_VOID__ENUM", closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
             }
             mh$.invokeExact(closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_cclosure_marshal_VOID__ENUMv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__ENUMv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__ENUMv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static FunctionDescriptor g_cclosure_marshal_VOID__ENUMv$descriptor() {
+        return g_cclosure_marshal_VOID__ENUMv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__ENUMv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MethodHandle g_cclosure_marshal_VOID__ENUMv$handle() {
+        return g_cclosure_marshal_VOID__ENUMv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__ENUMv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__ENUMv$address() {
+        return g_cclosure_marshal_VOID__ENUMv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__ENUMv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static void g_cclosure_marshal_VOID__ENUMv(MemorySegment closure, MemorySegment return_value, MemorySegment instance, MemorySegment args, MemorySegment marshal_data, int n_params, MemorySegment param_types) {
+        var mh$ = g_cclosure_marshal_VOID__ENUMv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_cclosure_marshal_VOID__ENUMv", closure, return_value, instance, args, marshal_data, n_params, param_types);
+            }
+            mh$.invokeExact(closure, return_value, instance, args, marshal_data, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10683,9 +15582,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_marshal_VOID__FLAGS"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__FLAGS");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10707,6 +15606,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_marshal_VOID__FLAGS$handle() {
         return g_cclosure_marshal_VOID__FLAGS.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__FLAGS(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__FLAGS$address() {
+        return g_cclosure_marshal_VOID__FLAGS.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cclosure_marshal_VOID__FLAGS(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
@@ -10719,6 +15629,73 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_marshal_VOID__FLAGS", closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
             }
             mh$.invokeExact(closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_cclosure_marshal_VOID__FLAGSv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__FLAGSv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__FLAGSv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static FunctionDescriptor g_cclosure_marshal_VOID__FLAGSv$descriptor() {
+        return g_cclosure_marshal_VOID__FLAGSv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__FLAGSv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MethodHandle g_cclosure_marshal_VOID__FLAGSv$handle() {
+        return g_cclosure_marshal_VOID__FLAGSv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__FLAGSv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__FLAGSv$address() {
+        return g_cclosure_marshal_VOID__FLAGSv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__FLAGSv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static void g_cclosure_marshal_VOID__FLAGSv(MemorySegment closure, MemorySegment return_value, MemorySegment instance, MemorySegment args, MemorySegment marshal_data, int n_params, MemorySegment param_types) {
+        var mh$ = g_cclosure_marshal_VOID__FLAGSv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_cclosure_marshal_VOID__FLAGSv", closure, return_value, instance, args, marshal_data, n_params, param_types);
+            }
+            mh$.invokeExact(closure, return_value, instance, args, marshal_data, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10734,9 +15711,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_marshal_VOID__FLOAT"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__FLOAT");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10758,6 +15735,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_marshal_VOID__FLOAT$handle() {
         return g_cclosure_marshal_VOID__FLOAT.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__FLOAT(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__FLOAT$address() {
+        return g_cclosure_marshal_VOID__FLOAT.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cclosure_marshal_VOID__FLOAT(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
@@ -10770,6 +15758,73 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_marshal_VOID__FLOAT", closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
             }
             mh$.invokeExact(closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_cclosure_marshal_VOID__FLOATv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__FLOATv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__FLOATv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static FunctionDescriptor g_cclosure_marshal_VOID__FLOATv$descriptor() {
+        return g_cclosure_marshal_VOID__FLOATv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__FLOATv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MethodHandle g_cclosure_marshal_VOID__FLOATv$handle() {
+        return g_cclosure_marshal_VOID__FLOATv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__FLOATv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__FLOATv$address() {
+        return g_cclosure_marshal_VOID__FLOATv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__FLOATv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static void g_cclosure_marshal_VOID__FLOATv(MemorySegment closure, MemorySegment return_value, MemorySegment instance, MemorySegment args, MemorySegment marshal_data, int n_params, MemorySegment param_types) {
+        var mh$ = g_cclosure_marshal_VOID__FLOATv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_cclosure_marshal_VOID__FLOATv", closure, return_value, instance, args, marshal_data, n_params, param_types);
+            }
+            mh$.invokeExact(closure, return_value, instance, args, marshal_data, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10785,9 +15840,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_marshal_VOID__DOUBLE"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__DOUBLE");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10809,6 +15864,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_marshal_VOID__DOUBLE$handle() {
         return g_cclosure_marshal_VOID__DOUBLE.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__DOUBLE(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__DOUBLE$address() {
+        return g_cclosure_marshal_VOID__DOUBLE.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cclosure_marshal_VOID__DOUBLE(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
@@ -10821,6 +15887,73 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_marshal_VOID__DOUBLE", closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
             }
             mh$.invokeExact(closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_cclosure_marshal_VOID__DOUBLEv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__DOUBLEv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__DOUBLEv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static FunctionDescriptor g_cclosure_marshal_VOID__DOUBLEv$descriptor() {
+        return g_cclosure_marshal_VOID__DOUBLEv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__DOUBLEv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MethodHandle g_cclosure_marshal_VOID__DOUBLEv$handle() {
+        return g_cclosure_marshal_VOID__DOUBLEv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__DOUBLEv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__DOUBLEv$address() {
+        return g_cclosure_marshal_VOID__DOUBLEv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__DOUBLEv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static void g_cclosure_marshal_VOID__DOUBLEv(MemorySegment closure, MemorySegment return_value, MemorySegment instance, MemorySegment args, MemorySegment marshal_data, int n_params, MemorySegment param_types) {
+        var mh$ = g_cclosure_marshal_VOID__DOUBLEv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_cclosure_marshal_VOID__DOUBLEv", closure, return_value, instance, args, marshal_data, n_params, param_types);
+            }
+            mh$.invokeExact(closure, return_value, instance, args, marshal_data, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10836,9 +15969,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_marshal_VOID__STRING"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__STRING");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10860,6 +15993,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_marshal_VOID__STRING$handle() {
         return g_cclosure_marshal_VOID__STRING.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__STRING(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__STRING$address() {
+        return g_cclosure_marshal_VOID__STRING.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cclosure_marshal_VOID__STRING(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
@@ -10872,6 +16016,73 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_marshal_VOID__STRING", closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
             }
             mh$.invokeExact(closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_cclosure_marshal_VOID__STRINGv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__STRINGv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__STRINGv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static FunctionDescriptor g_cclosure_marshal_VOID__STRINGv$descriptor() {
+        return g_cclosure_marshal_VOID__STRINGv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__STRINGv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MethodHandle g_cclosure_marshal_VOID__STRINGv$handle() {
+        return g_cclosure_marshal_VOID__STRINGv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__STRINGv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__STRINGv$address() {
+        return g_cclosure_marshal_VOID__STRINGv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__STRINGv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static void g_cclosure_marshal_VOID__STRINGv(MemorySegment closure, MemorySegment return_value, MemorySegment instance, MemorySegment args, MemorySegment marshal_data, int n_params, MemorySegment param_types) {
+        var mh$ = g_cclosure_marshal_VOID__STRINGv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_cclosure_marshal_VOID__STRINGv", closure, return_value, instance, args, marshal_data, n_params, param_types);
+            }
+            mh$.invokeExact(closure, return_value, instance, args, marshal_data, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10887,9 +16098,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_marshal_VOID__PARAM"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__PARAM");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10911,6 +16122,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_marshal_VOID__PARAM$handle() {
         return g_cclosure_marshal_VOID__PARAM.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__PARAM(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__PARAM$address() {
+        return g_cclosure_marshal_VOID__PARAM.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cclosure_marshal_VOID__PARAM(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
@@ -10923,6 +16145,73 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_marshal_VOID__PARAM", closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
             }
             mh$.invokeExact(closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_cclosure_marshal_VOID__PARAMv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__PARAMv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__PARAMv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static FunctionDescriptor g_cclosure_marshal_VOID__PARAMv$descriptor() {
+        return g_cclosure_marshal_VOID__PARAMv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__PARAMv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MethodHandle g_cclosure_marshal_VOID__PARAMv$handle() {
+        return g_cclosure_marshal_VOID__PARAMv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__PARAMv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__PARAMv$address() {
+        return g_cclosure_marshal_VOID__PARAMv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__PARAMv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static void g_cclosure_marshal_VOID__PARAMv(MemorySegment closure, MemorySegment return_value, MemorySegment instance, MemorySegment args, MemorySegment marshal_data, int n_params, MemorySegment param_types) {
+        var mh$ = g_cclosure_marshal_VOID__PARAMv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_cclosure_marshal_VOID__PARAMv", closure, return_value, instance, args, marshal_data, n_params, param_types);
+            }
+            mh$.invokeExact(closure, return_value, instance, args, marshal_data, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10938,9 +16227,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_marshal_VOID__BOXED"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__BOXED");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -10962,6 +16251,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_marshal_VOID__BOXED$handle() {
         return g_cclosure_marshal_VOID__BOXED.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__BOXED(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__BOXED$address() {
+        return g_cclosure_marshal_VOID__BOXED.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cclosure_marshal_VOID__BOXED(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
@@ -10974,6 +16274,73 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_marshal_VOID__BOXED", closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
             }
             mh$.invokeExact(closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_cclosure_marshal_VOID__BOXEDv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__BOXEDv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__BOXEDv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static FunctionDescriptor g_cclosure_marshal_VOID__BOXEDv$descriptor() {
+        return g_cclosure_marshal_VOID__BOXEDv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__BOXEDv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MethodHandle g_cclosure_marshal_VOID__BOXEDv$handle() {
+        return g_cclosure_marshal_VOID__BOXEDv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__BOXEDv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__BOXEDv$address() {
+        return g_cclosure_marshal_VOID__BOXEDv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__BOXEDv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static void g_cclosure_marshal_VOID__BOXEDv(MemorySegment closure, MemorySegment return_value, MemorySegment instance, MemorySegment args, MemorySegment marshal_data, int n_params, MemorySegment param_types) {
+        var mh$ = g_cclosure_marshal_VOID__BOXEDv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_cclosure_marshal_VOID__BOXEDv", closure, return_value, instance, args, marshal_data, n_params, param_types);
+            }
+            mh$.invokeExact(closure, return_value, instance, args, marshal_data, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -10989,9 +16356,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_marshal_VOID__POINTER"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__POINTER");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11013,6 +16380,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_marshal_VOID__POINTER$handle() {
         return g_cclosure_marshal_VOID__POINTER.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__POINTER(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__POINTER$address() {
+        return g_cclosure_marshal_VOID__POINTER.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cclosure_marshal_VOID__POINTER(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
@@ -11025,6 +16403,73 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_marshal_VOID__POINTER", closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
             }
             mh$.invokeExact(closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_cclosure_marshal_VOID__POINTERv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__POINTERv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__POINTERv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static FunctionDescriptor g_cclosure_marshal_VOID__POINTERv$descriptor() {
+        return g_cclosure_marshal_VOID__POINTERv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__POINTERv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MethodHandle g_cclosure_marshal_VOID__POINTERv$handle() {
+        return g_cclosure_marshal_VOID__POINTERv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__POINTERv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__POINTERv$address() {
+        return g_cclosure_marshal_VOID__POINTERv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__POINTERv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static void g_cclosure_marshal_VOID__POINTERv(MemorySegment closure, MemorySegment return_value, MemorySegment instance, MemorySegment args, MemorySegment marshal_data, int n_params, MemorySegment param_types) {
+        var mh$ = g_cclosure_marshal_VOID__POINTERv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_cclosure_marshal_VOID__POINTERv", closure, return_value, instance, args, marshal_data, n_params, param_types);
+            }
+            mh$.invokeExact(closure, return_value, instance, args, marshal_data, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11040,9 +16485,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_marshal_VOID__OBJECT"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__OBJECT");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11064,6 +16509,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_marshal_VOID__OBJECT$handle() {
         return g_cclosure_marshal_VOID__OBJECT.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__OBJECT(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__OBJECT$address() {
+        return g_cclosure_marshal_VOID__OBJECT.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cclosure_marshal_VOID__OBJECT(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
@@ -11076,6 +16532,73 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_marshal_VOID__OBJECT", closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
             }
             mh$.invokeExact(closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_cclosure_marshal_VOID__OBJECTv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__OBJECTv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__OBJECTv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static FunctionDescriptor g_cclosure_marshal_VOID__OBJECTv$descriptor() {
+        return g_cclosure_marshal_VOID__OBJECTv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__OBJECTv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MethodHandle g_cclosure_marshal_VOID__OBJECTv$handle() {
+        return g_cclosure_marshal_VOID__OBJECTv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__OBJECTv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__OBJECTv$address() {
+        return g_cclosure_marshal_VOID__OBJECTv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__OBJECTv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static void g_cclosure_marshal_VOID__OBJECTv(MemorySegment closure, MemorySegment return_value, MemorySegment instance, MemorySegment args, MemorySegment marshal_data, int n_params, MemorySegment param_types) {
+        var mh$ = g_cclosure_marshal_VOID__OBJECTv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_cclosure_marshal_VOID__OBJECTv", closure, return_value, instance, args, marshal_data, n_params, param_types);
+            }
+            mh$.invokeExact(closure, return_value, instance, args, marshal_data, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11091,9 +16614,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_marshal_VOID__VARIANT"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__VARIANT");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11115,6 +16638,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_marshal_VOID__VARIANT$handle() {
         return g_cclosure_marshal_VOID__VARIANT.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__VARIANT(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__VARIANT$address() {
+        return g_cclosure_marshal_VOID__VARIANT.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cclosure_marshal_VOID__VARIANT(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
@@ -11127,6 +16661,73 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_marshal_VOID__VARIANT", closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
             }
             mh$.invokeExact(closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_cclosure_marshal_VOID__VARIANTv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__VARIANTv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__VARIANTv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static FunctionDescriptor g_cclosure_marshal_VOID__VARIANTv$descriptor() {
+        return g_cclosure_marshal_VOID__VARIANTv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__VARIANTv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MethodHandle g_cclosure_marshal_VOID__VARIANTv$handle() {
+        return g_cclosure_marshal_VOID__VARIANTv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__VARIANTv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__VARIANTv$address() {
+        return g_cclosure_marshal_VOID__VARIANTv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__VARIANTv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static void g_cclosure_marshal_VOID__VARIANTv(MemorySegment closure, MemorySegment return_value, MemorySegment instance, MemorySegment args, MemorySegment marshal_data, int n_params, MemorySegment param_types) {
+        var mh$ = g_cclosure_marshal_VOID__VARIANTv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_cclosure_marshal_VOID__VARIANTv", closure, return_value, instance, args, marshal_data, n_params, param_types);
+            }
+            mh$.invokeExact(closure, return_value, instance, args, marshal_data, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11142,9 +16743,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_marshal_VOID__UINT_POINTER"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__UINT_POINTER");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11166,6 +16767,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_marshal_VOID__UINT_POINTER$handle() {
         return g_cclosure_marshal_VOID__UINT_POINTER.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__UINT_POINTER(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__UINT_POINTER$address() {
+        return g_cclosure_marshal_VOID__UINT_POINTER.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cclosure_marshal_VOID__UINT_POINTER(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
@@ -11178,6 +16790,73 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_marshal_VOID__UINT_POINTER", closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
             }
             mh$.invokeExact(closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_cclosure_marshal_VOID__UINT_POINTERv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_VOID__UINT_POINTERv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__UINT_POINTERv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static FunctionDescriptor g_cclosure_marshal_VOID__UINT_POINTERv$descriptor() {
+        return g_cclosure_marshal_VOID__UINT_POINTERv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__UINT_POINTERv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MethodHandle g_cclosure_marshal_VOID__UINT_POINTERv$handle() {
+        return g_cclosure_marshal_VOID__UINT_POINTERv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__UINT_POINTERv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_VOID__UINT_POINTERv$address() {
+        return g_cclosure_marshal_VOID__UINT_POINTERv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_VOID__UINT_POINTERv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static void g_cclosure_marshal_VOID__UINT_POINTERv(MemorySegment closure, MemorySegment return_value, MemorySegment instance, MemorySegment args, MemorySegment marshal_data, int n_params, MemorySegment param_types) {
+        var mh$ = g_cclosure_marshal_VOID__UINT_POINTERv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_cclosure_marshal_VOID__UINT_POINTERv", closure, return_value, instance, args, marshal_data, n_params, param_types);
+            }
+            mh$.invokeExact(closure, return_value, instance, args, marshal_data, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11193,9 +16872,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_marshal_BOOLEAN__FLAGS"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_BOOLEAN__FLAGS");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11217,6 +16896,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_marshal_BOOLEAN__FLAGS$handle() {
         return g_cclosure_marshal_BOOLEAN__FLAGS.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_BOOLEAN__FLAGS(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_BOOLEAN__FLAGS$address() {
+        return g_cclosure_marshal_BOOLEAN__FLAGS.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cclosure_marshal_BOOLEAN__FLAGS(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
@@ -11229,6 +16919,73 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_marshal_BOOLEAN__FLAGS", closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
             }
             mh$.invokeExact(closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_cclosure_marshal_BOOLEAN__FLAGSv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_BOOLEAN__FLAGSv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_BOOLEAN__FLAGSv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static FunctionDescriptor g_cclosure_marshal_BOOLEAN__FLAGSv$descriptor() {
+        return g_cclosure_marshal_BOOLEAN__FLAGSv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_BOOLEAN__FLAGSv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MethodHandle g_cclosure_marshal_BOOLEAN__FLAGSv$handle() {
+        return g_cclosure_marshal_BOOLEAN__FLAGSv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_BOOLEAN__FLAGSv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_BOOLEAN__FLAGSv$address() {
+        return g_cclosure_marshal_BOOLEAN__FLAGSv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_BOOLEAN__FLAGSv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static void g_cclosure_marshal_BOOLEAN__FLAGSv(MemorySegment closure, MemorySegment return_value, MemorySegment instance, MemorySegment args, MemorySegment marshal_data, int n_params, MemorySegment param_types) {
+        var mh$ = g_cclosure_marshal_BOOLEAN__FLAGSv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_cclosure_marshal_BOOLEAN__FLAGSv", closure, return_value, instance, args, marshal_data, n_params, param_types);
+            }
+            mh$.invokeExact(closure, return_value, instance, args, marshal_data, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11244,9 +17001,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_marshal_STRING__OBJECT_POINTER"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_STRING__OBJECT_POINTER");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11268,6 +17025,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_marshal_STRING__OBJECT_POINTER$handle() {
         return g_cclosure_marshal_STRING__OBJECT_POINTER.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_STRING__OBJECT_POINTER(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_STRING__OBJECT_POINTER$address() {
+        return g_cclosure_marshal_STRING__OBJECT_POINTER.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cclosure_marshal_STRING__OBJECT_POINTER(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
@@ -11280,6 +17048,73 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_marshal_STRING__OBJECT_POINTER", closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
             }
             mh$.invokeExact(closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_cclosure_marshal_STRING__OBJECT_POINTERv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_STRING__OBJECT_POINTERv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_STRING__OBJECT_POINTERv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static FunctionDescriptor g_cclosure_marshal_STRING__OBJECT_POINTERv$descriptor() {
+        return g_cclosure_marshal_STRING__OBJECT_POINTERv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_STRING__OBJECT_POINTERv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MethodHandle g_cclosure_marshal_STRING__OBJECT_POINTERv$handle() {
+        return g_cclosure_marshal_STRING__OBJECT_POINTERv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_STRING__OBJECT_POINTERv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_STRING__OBJECT_POINTERv$address() {
+        return g_cclosure_marshal_STRING__OBJECT_POINTERv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_STRING__OBJECT_POINTERv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static void g_cclosure_marshal_STRING__OBJECT_POINTERv(MemorySegment closure, MemorySegment return_value, MemorySegment instance, MemorySegment args, MemorySegment marshal_data, int n_params, MemorySegment param_types) {
+        var mh$ = g_cclosure_marshal_STRING__OBJECT_POINTERv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_cclosure_marshal_STRING__OBJECT_POINTERv", closure, return_value, instance, args, marshal_data, n_params, param_types);
+            }
+            mh$.invokeExact(closure, return_value, instance, args, marshal_data, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11295,9 +17130,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_marshal_BOOLEAN__BOXED_BOXED"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_BOOLEAN__BOXED_BOXED");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11319,6 +17154,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_marshal_BOOLEAN__BOXED_BOXED$handle() {
         return g_cclosure_marshal_BOOLEAN__BOXED_BOXED.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_BOOLEAN__BOXED_BOXED(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_BOOLEAN__BOXED_BOXED$address() {
+        return g_cclosure_marshal_BOOLEAN__BOXED_BOXED.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_cclosure_marshal_BOOLEAN__BOXED_BOXED(GClosure *closure, GValue *return_value, guint n_param_values, const GValue *param_values, gpointer invocation_hint, gpointer marshal_data)
@@ -11331,6 +17177,73 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_marshal_BOOLEAN__BOXED_BOXED", closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
             }
             mh$.invokeExact(closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static FunctionDescriptor g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv$descriptor() {
+        return g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MethodHandle g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv$handle() {
+        return g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv$address() {
+        return g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv(GClosure *closure, GValue *return_value, gpointer instance, va_list args, gpointer marshal_data, int n_params, GType *param_types)
+     * }
+     */
+    public static void g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv(MemorySegment closure, MemorySegment return_value, MemorySegment instance, MemorySegment args, MemorySegment marshal_data, int n_params, MemorySegment param_types) {
+        var mh$ = g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv", closure, return_value, instance, args, marshal_data, n_params, param_types);
+            }
+            mh$.invokeExact(closure, return_value, instance, args, marshal_data, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11522,9 +17435,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_newv"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_newv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11546,6 +17459,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_newv$handle() {
         return g_signal_newv.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern guint g_signal_newv(const gchar *signal_name, GType itype, GSignalFlags signal_flags, GClosure *class_closure, GSignalAccumulator accumulator, gpointer accu_data, GSignalCMarshaller c_marshaller, GType return_type, guint n_params, GType *param_types)
+     * }
+     */
+    public static MemorySegment g_signal_newv$address() {
+        return g_signal_newv.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern guint g_signal_newv(const gchar *signal_name, GType itype, GSignalFlags signal_flags, GClosure *class_closure, GSignalAccumulator accumulator, gpointer accu_data, GSignalCMarshaller c_marshaller, GType return_type, guint n_params, GType *param_types)
@@ -11558,6 +17482,77 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_newv", signal_name, itype, signal_flags, class_closure, accumulator, accu_data, c_marshaller, return_type, n_params, param_types);
             }
             return (int)mh$.invokeExact(signal_name, itype, signal_flags, class_closure, accumulator, accu_data, c_marshaller, return_type, n_params, param_types);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_signal_new_valist {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_new_valist");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern guint g_signal_new_valist(const gchar *signal_name, GType itype, GSignalFlags signal_flags, GClosure *class_closure, GSignalAccumulator accumulator, gpointer accu_data, GSignalCMarshaller c_marshaller, GType return_type, guint n_params, va_list args)
+     * }
+     */
+    public static FunctionDescriptor g_signal_new_valist$descriptor() {
+        return g_signal_new_valist.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern guint g_signal_new_valist(const gchar *signal_name, GType itype, GSignalFlags signal_flags, GClosure *class_closure, GSignalAccumulator accumulator, gpointer accu_data, GSignalCMarshaller c_marshaller, GType return_type, guint n_params, va_list args)
+     * }
+     */
+    public static MethodHandle g_signal_new_valist$handle() {
+        return g_signal_new_valist.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern guint g_signal_new_valist(const gchar *signal_name, GType itype, GSignalFlags signal_flags, GClosure *class_closure, GSignalAccumulator accumulator, gpointer accu_data, GSignalCMarshaller c_marshaller, GType return_type, guint n_params, va_list args)
+     * }
+     */
+    public static MemorySegment g_signal_new_valist$address() {
+        return g_signal_new_valist.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern guint g_signal_new_valist(const gchar *signal_name, GType itype, GSignalFlags signal_flags, GClosure *class_closure, GSignalAccumulator accumulator, gpointer accu_data, GSignalCMarshaller c_marshaller, GType return_type, guint n_params, va_list args)
+     * }
+     */
+    public static int g_signal_new_valist(MemorySegment signal_name, long itype, int signal_flags, MemorySegment class_closure, MemorySegment accumulator, MemorySegment accu_data, MemorySegment c_marshaller, long return_type, int n_params, MemorySegment args) {
+        var mh$ = g_signal_new_valist.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_signal_new_valist", signal_name, itype, signal_flags, class_closure, accumulator, accu_data, c_marshaller, return_type, n_params, args);
+            }
+            return (int)mh$.invokeExact(signal_name, itype, signal_flags, class_closure, accumulator, accu_data, c_marshaller, return_type, n_params, args);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11582,7 +17577,7 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 app_indicator_h.C_LONG,
                 app_indicator_h.C_INT
             );
-        private static final MemorySegment ADDR = app_indicator_h.findOrThrow("g_signal_new");
+        private static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_new");
 
         private final MethodHandle handle;
         private final FunctionDescriptor descriptor;
@@ -11609,6 +17604,13 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         }
 
         /**
+         * {@return the address}
+         */
+        public static MemorySegment address() {
+            return ADDR;
+        }
+
+        /**
          * {@return the specialized method handle}
          */
         public MethodHandle handle() {
@@ -11627,7 +17629,7 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 if (TRACE_DOWNCALLS) {
                     traceDowncall("g_signal_new", signal_name, itype, signal_flags, class_offset, accumulator, accu_data, c_marshaller, return_type, n_params, x9);
                 }
-                return (int)spreader.invokeExact(signal_name, itype, signal_flags, class_offset, accumulator, accu_data, c_marshaller, return_type, n_params, x9);
+                return (int) spreader.invokeExact(signal_name, itype, signal_flags, class_offset, accumulator, accu_data, c_marshaller, return_type, n_params, x9);
             } catch(IllegalArgumentException | ClassCastException ex$)  {
                 throw ex$; // rethrow IAE from passing wrong number/type of args
             } catch (Throwable ex$) {
@@ -11655,7 +17657,7 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 app_indicator_h.C_LONG,
                 app_indicator_h.C_INT
             );
-        private static final MemorySegment ADDR = app_indicator_h.findOrThrow("g_signal_new_class_handler");
+        private static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_new_class_handler");
 
         private final MethodHandle handle;
         private final FunctionDescriptor descriptor;
@@ -11682,6 +17684,13 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         }
 
         /**
+         * {@return the address}
+         */
+        public static MemorySegment address() {
+            return ADDR;
+        }
+
+        /**
          * {@return the specialized method handle}
          */
         public MethodHandle handle() {
@@ -11700,7 +17709,7 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 if (TRACE_DOWNCALLS) {
                     traceDowncall("g_signal_new_class_handler", signal_name, itype, signal_flags, class_handler, accumulator, accu_data, c_marshaller, return_type, n_params, x9);
                 }
-                return (int)spreader.invokeExact(signal_name, itype, signal_flags, class_handler, accumulator, accu_data, c_marshaller, return_type, n_params, x9);
+                return (int) spreader.invokeExact(signal_name, itype, signal_flags, class_handler, accumulator, accu_data, c_marshaller, return_type, n_params, x9);
             } catch(IllegalArgumentException | ClassCastException ex$)  {
                 throw ex$; // rethrow IAE from passing wrong number/type of args
             } catch (Throwable ex$) {
@@ -11716,9 +17725,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_set_va_marshaller"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_set_va_marshaller");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11740,6 +17749,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_set_va_marshaller$handle() {
         return g_signal_set_va_marshaller.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_signal_set_va_marshaller(guint signal_id, GType instance_type, GSignalCVaMarshaller va_marshaller)
+     * }
+     */
+    public static MemorySegment g_signal_set_va_marshaller$address() {
+        return g_signal_set_va_marshaller.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_signal_set_va_marshaller(guint signal_id, GType instance_type, GSignalCVaMarshaller va_marshaller)
@@ -11752,6 +17772,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_set_va_marshaller", signal_id, instance_type, va_marshaller);
             }
             mh$.invokeExact(signal_id, instance_type, va_marshaller);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11765,9 +17787,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_emitv"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_emitv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11789,6 +17811,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_emitv$handle() {
         return g_signal_emitv.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_signal_emitv(const GValue *instance_and_params, guint signal_id, GQuark detail, GValue *return_value)
+     * }
+     */
+    public static MemorySegment g_signal_emitv$address() {
+        return g_signal_emitv.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_signal_emitv(const GValue *instance_and_params, guint signal_id, GQuark detail, GValue *return_value)
@@ -11801,6 +17834,70 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_emitv", instance_and_params, signal_id, detail, return_value);
             }
             mh$.invokeExact(instance_and_params, signal_id, detail, return_value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_signal_emit_valist {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_emit_valist");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_signal_emit_valist(gpointer instance, guint signal_id, GQuark detail, va_list var_args)
+     * }
+     */
+    public static FunctionDescriptor g_signal_emit_valist$descriptor() {
+        return g_signal_emit_valist.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_signal_emit_valist(gpointer instance, guint signal_id, GQuark detail, va_list var_args)
+     * }
+     */
+    public static MethodHandle g_signal_emit_valist$handle() {
+        return g_signal_emit_valist.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_signal_emit_valist(gpointer instance, guint signal_id, GQuark detail, va_list var_args)
+     * }
+     */
+    public static MemorySegment g_signal_emit_valist$address() {
+        return g_signal_emit_valist.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_signal_emit_valist(gpointer instance, guint signal_id, GQuark detail, va_list var_args)
+     * }
+     */
+    public static void g_signal_emit_valist(MemorySegment instance, int signal_id, int detail, MemorySegment var_args) {
+        var mh$ = g_signal_emit_valist.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_signal_emit_valist", instance, signal_id, detail, var_args);
+            }
+            mh$.invokeExact(instance, signal_id, detail, var_args);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11818,7 +17915,7 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 app_indicator_h.C_INT,
                 app_indicator_h.C_INT
             );
-        private static final MemorySegment ADDR = app_indicator_h.findOrThrow("g_signal_emit");
+        private static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_emit");
 
         private final MethodHandle handle;
         private final FunctionDescriptor descriptor;
@@ -11845,6 +17942,13 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         }
 
         /**
+         * {@return the address}
+         */
+        public static MemorySegment address() {
+            return ADDR;
+        }
+
+        /**
          * {@return the specialized method handle}
          */
         public MethodHandle handle() {
@@ -11863,7 +17967,7 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 if (TRACE_DOWNCALLS) {
                     traceDowncall("g_signal_emit", instance, signal_id, detail, x3);
                 }
-                spreader.invokeExact(instance, signal_id, detail, x3);
+                 spreader.invokeExact(instance, signal_id, detail, x3);
             } catch(IllegalArgumentException | ClassCastException ex$)  {
                 throw ex$; // rethrow IAE from passing wrong number/type of args
             } catch (Throwable ex$) {
@@ -11883,7 +17987,7 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 app_indicator_h.C_POINTER,
                 app_indicator_h.C_POINTER
             );
-        private static final MemorySegment ADDR = app_indicator_h.findOrThrow("g_signal_emit_by_name");
+        private static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_emit_by_name");
 
         private final MethodHandle handle;
         private final FunctionDescriptor descriptor;
@@ -11910,6 +18014,13 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         }
 
         /**
+         * {@return the address}
+         */
+        public static MemorySegment address() {
+            return ADDR;
+        }
+
+        /**
          * {@return the specialized method handle}
          */
         public MethodHandle handle() {
@@ -11928,7 +18039,7 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 if (TRACE_DOWNCALLS) {
                     traceDowncall("g_signal_emit_by_name", instance, detailed_signal, x2);
                 }
-                spreader.invokeExact(instance, detailed_signal, x2);
+                 spreader.invokeExact(instance, detailed_signal, x2);
             } catch(IllegalArgumentException | ClassCastException ex$)  {
                 throw ex$; // rethrow IAE from passing wrong number/type of args
             } catch (Throwable ex$) {
@@ -11944,9 +18055,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_lookup"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_lookup");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -11968,6 +18079,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_lookup$handle() {
         return g_signal_lookup.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern guint g_signal_lookup(const gchar *name, GType itype)
+     * }
+     */
+    public static MemorySegment g_signal_lookup$address() {
+        return g_signal_lookup.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern guint g_signal_lookup(const gchar *name, GType itype)
@@ -11980,6 +18102,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_lookup", name, itype);
             }
             return (int)mh$.invokeExact(name, itype);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -11991,9 +18115,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_name"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_name");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12015,6 +18139,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_name$handle() {
         return g_signal_name.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern const gchar *g_signal_name(guint signal_id)
+     * }
+     */
+    public static MemorySegment g_signal_name$address() {
+        return g_signal_name.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern const gchar *g_signal_name(guint signal_id)
@@ -12027,6 +18162,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_name", signal_id);
             }
             return (MemorySegment)mh$.invokeExact(signal_id);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12038,9 +18175,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_query"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_query");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12062,6 +18199,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_query$handle() {
         return g_signal_query.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_signal_query(guint signal_id, GSignalQuery *query)
+     * }
+     */
+    public static MemorySegment g_signal_query$address() {
+        return g_signal_query.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_signal_query(guint signal_id, GSignalQuery *query)
@@ -12074,6 +18222,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_query", signal_id, query);
             }
             mh$.invokeExact(signal_id, query);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12086,9 +18236,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_list_ids"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_list_ids");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12110,6 +18260,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_list_ids$handle() {
         return g_signal_list_ids.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern guint *g_signal_list_ids(GType itype, guint *n_ids)
+     * }
+     */
+    public static MemorySegment g_signal_list_ids$address() {
+        return g_signal_list_ids.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern guint *g_signal_list_ids(GType itype, guint *n_ids)
@@ -12122,6 +18283,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_list_ids", itype, n_ids);
             }
             return (MemorySegment)mh$.invokeExact(itype, n_ids);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12133,9 +18296,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_is_valid_name"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_is_valid_name");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12157,6 +18320,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_is_valid_name$handle() {
         return g_signal_is_valid_name.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_signal_is_valid_name(const gchar *name)
+     * }
+     */
+    public static MemorySegment g_signal_is_valid_name$address() {
+        return g_signal_is_valid_name.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_signal_is_valid_name(const gchar *name)
@@ -12169,6 +18343,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_is_valid_name", name);
             }
             return (int)mh$.invokeExact(name);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12184,9 +18360,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_parse_name"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_parse_name");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12208,6 +18384,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_parse_name$handle() {
         return g_signal_parse_name.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_signal_parse_name(const gchar *detailed_signal, GType itype, guint *signal_id_p, GQuark *detail_p, gboolean force_detail_quark)
+     * }
+     */
+    public static MemorySegment g_signal_parse_name$address() {
+        return g_signal_parse_name.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_signal_parse_name(const gchar *detailed_signal, GType itype, guint *signal_id_p, GQuark *detail_p, gboolean force_detail_quark)
@@ -12220,6 +18407,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_parse_name", detailed_signal, itype, signal_id_p, detail_p, force_detail_quark);
             }
             return (int)mh$.invokeExact(detailed_signal, itype, signal_id_p, detail_p, force_detail_quark);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12231,9 +18420,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_get_invocation_hint"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_get_invocation_hint");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12255,6 +18444,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_get_invocation_hint$handle() {
         return g_signal_get_invocation_hint.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GSignalInvocationHint *g_signal_get_invocation_hint(gpointer instance)
+     * }
+     */
+    public static MemorySegment g_signal_get_invocation_hint$address() {
+        return g_signal_get_invocation_hint.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GSignalInvocationHint *g_signal_get_invocation_hint(gpointer instance)
@@ -12267,6 +18467,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_get_invocation_hint", instance);
             }
             return (MemorySegment)mh$.invokeExact(instance);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12279,9 +18481,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_stop_emission"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_stop_emission");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12303,6 +18505,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_stop_emission$handle() {
         return g_signal_stop_emission.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_signal_stop_emission(gpointer instance, guint signal_id, GQuark detail)
+     * }
+     */
+    public static MemorySegment g_signal_stop_emission$address() {
+        return g_signal_stop_emission.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_signal_stop_emission(gpointer instance, guint signal_id, GQuark detail)
@@ -12315,6 +18528,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_stop_emission", instance, signal_id, detail);
             }
             mh$.invokeExact(instance, signal_id, detail);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12326,9 +18541,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_stop_emission_by_name"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_stop_emission_by_name");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12350,6 +18565,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_stop_emission_by_name$handle() {
         return g_signal_stop_emission_by_name.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_signal_stop_emission_by_name(gpointer instance, const gchar *detailed_signal)
+     * }
+     */
+    public static MemorySegment g_signal_stop_emission_by_name$address() {
+        return g_signal_stop_emission_by_name.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_signal_stop_emission_by_name(gpointer instance, const gchar *detailed_signal)
@@ -12362,6 +18588,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_stop_emission_by_name", instance, detailed_signal);
             }
             mh$.invokeExact(instance, detailed_signal);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12377,9 +18605,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_add_emission_hook"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_add_emission_hook");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12401,6 +18629,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_add_emission_hook$handle() {
         return g_signal_add_emission_hook.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gulong g_signal_add_emission_hook(guint signal_id, GQuark detail, GSignalEmissionHook hook_func, gpointer hook_data, GDestroyNotify data_destroy)
+     * }
+     */
+    public static MemorySegment g_signal_add_emission_hook$address() {
+        return g_signal_add_emission_hook.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gulong g_signal_add_emission_hook(guint signal_id, GQuark detail, GSignalEmissionHook hook_func, gpointer hook_data, GDestroyNotify data_destroy)
@@ -12413,6 +18652,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_add_emission_hook", signal_id, detail, hook_func, hook_data, data_destroy);
             }
             return (long)mh$.invokeExact(signal_id, detail, hook_func, hook_data, data_destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12424,9 +18665,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_remove_emission_hook"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_remove_emission_hook");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12448,6 +18689,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_remove_emission_hook$handle() {
         return g_signal_remove_emission_hook.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_signal_remove_emission_hook(guint signal_id, gulong hook_id)
+     * }
+     */
+    public static MemorySegment g_signal_remove_emission_hook$address() {
+        return g_signal_remove_emission_hook.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_signal_remove_emission_hook(guint signal_id, gulong hook_id)
@@ -12460,6 +18712,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_remove_emission_hook", signal_id, hook_id);
             }
             mh$.invokeExact(signal_id, hook_id);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12474,9 +18728,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_has_handler_pending"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_has_handler_pending");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12498,6 +18752,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_has_handler_pending$handle() {
         return g_signal_has_handler_pending.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_signal_has_handler_pending(gpointer instance, guint signal_id, GQuark detail, gboolean may_be_blocked)
+     * }
+     */
+    public static MemorySegment g_signal_has_handler_pending$address() {
+        return g_signal_has_handler_pending.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_signal_has_handler_pending(gpointer instance, guint signal_id, GQuark detail, gboolean may_be_blocked)
@@ -12510,6 +18775,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_has_handler_pending", instance, signal_id, detail, may_be_blocked);
             }
             return (int)mh$.invokeExact(instance, signal_id, detail, may_be_blocked);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12525,9 +18792,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_connect_closure_by_id"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_connect_closure_by_id");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12549,6 +18816,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_connect_closure_by_id$handle() {
         return g_signal_connect_closure_by_id.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gulong g_signal_connect_closure_by_id(gpointer instance, guint signal_id, GQuark detail, GClosure *closure, gboolean after)
+     * }
+     */
+    public static MemorySegment g_signal_connect_closure_by_id$address() {
+        return g_signal_connect_closure_by_id.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gulong g_signal_connect_closure_by_id(gpointer instance, guint signal_id, GQuark detail, GClosure *closure, gboolean after)
@@ -12561,6 +18839,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_connect_closure_by_id", instance, signal_id, detail, closure, after);
             }
             return (long)mh$.invokeExact(instance, signal_id, detail, closure, after);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12575,9 +18855,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_connect_closure"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_connect_closure");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12599,6 +18879,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_connect_closure$handle() {
         return g_signal_connect_closure.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gulong g_signal_connect_closure(gpointer instance, const gchar *detailed_signal, GClosure *closure, gboolean after)
+     * }
+     */
+    public static MemorySegment g_signal_connect_closure$address() {
+        return g_signal_connect_closure.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gulong g_signal_connect_closure(gpointer instance, const gchar *detailed_signal, GClosure *closure, gboolean after)
@@ -12611,6 +18902,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_connect_closure", instance, detailed_signal, closure, after);
             }
             return (long)mh$.invokeExact(instance, detailed_signal, closure, after);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12627,9 +18920,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_connect_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_connect_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12651,6 +18944,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_connect_data$handle() {
         return g_signal_connect_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gulong g_signal_connect_data(gpointer instance, const gchar *detailed_signal, GCallback c_handler, gpointer data, GClosureNotify destroy_data, GConnectFlags connect_flags)
+     * }
+     */
+    public static MemorySegment g_signal_connect_data$address() {
+        return g_signal_connect_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gulong g_signal_connect_data(gpointer instance, const gchar *detailed_signal, GCallback c_handler, gpointer data, GClosureNotify destroy_data, GConnectFlags connect_flags)
@@ -12663,6 +18967,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_connect_data", instance, detailed_signal, c_handler, data, destroy_data, connect_flags);
             }
             return (long)mh$.invokeExact(instance, detailed_signal, c_handler, data, destroy_data, connect_flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12674,9 +18980,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_handler_block"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_handler_block");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12698,6 +19004,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_handler_block$handle() {
         return g_signal_handler_block.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_signal_handler_block(gpointer instance, gulong handler_id)
+     * }
+     */
+    public static MemorySegment g_signal_handler_block$address() {
+        return g_signal_handler_block.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_signal_handler_block(gpointer instance, gulong handler_id)
@@ -12710,6 +19027,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_handler_block", instance, handler_id);
             }
             mh$.invokeExact(instance, handler_id);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12721,9 +19040,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_handler_unblock"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_handler_unblock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12745,6 +19064,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_handler_unblock$handle() {
         return g_signal_handler_unblock.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_signal_handler_unblock(gpointer instance, gulong handler_id)
+     * }
+     */
+    public static MemorySegment g_signal_handler_unblock$address() {
+        return g_signal_handler_unblock.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_signal_handler_unblock(gpointer instance, gulong handler_id)
@@ -12757,6 +19087,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_handler_unblock", instance, handler_id);
             }
             mh$.invokeExact(instance, handler_id);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12768,9 +19100,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_handler_disconnect"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_handler_disconnect");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12792,6 +19124,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_handler_disconnect$handle() {
         return g_signal_handler_disconnect.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_signal_handler_disconnect(gpointer instance, gulong handler_id)
+     * }
+     */
+    public static MemorySegment g_signal_handler_disconnect$address() {
+        return g_signal_handler_disconnect.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_signal_handler_disconnect(gpointer instance, gulong handler_id)
@@ -12804,6 +19147,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_handler_disconnect", instance, handler_id);
             }
             mh$.invokeExact(instance, handler_id);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12816,9 +19161,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_handler_is_connected"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_handler_is_connected");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12840,6 +19185,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_handler_is_connected$handle() {
         return g_signal_handler_is_connected.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_signal_handler_is_connected(gpointer instance, gulong handler_id)
+     * }
+     */
+    public static MemorySegment g_signal_handler_is_connected$address() {
+        return g_signal_handler_is_connected.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_signal_handler_is_connected(gpointer instance, gulong handler_id)
@@ -12852,6 +19208,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_handler_is_connected", instance, handler_id);
             }
             return (int)mh$.invokeExact(instance, handler_id);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12869,9 +19227,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_handler_find"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_handler_find");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12893,6 +19251,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_handler_find$handle() {
         return g_signal_handler_find.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gulong g_signal_handler_find(gpointer instance, GSignalMatchType mask, guint signal_id, GQuark detail, GClosure *closure, gpointer func, gpointer data)
+     * }
+     */
+    public static MemorySegment g_signal_handler_find$address() {
+        return g_signal_handler_find.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gulong g_signal_handler_find(gpointer instance, GSignalMatchType mask, guint signal_id, GQuark detail, GClosure *closure, gpointer func, gpointer data)
@@ -12905,6 +19274,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_handler_find", instance, mask, signal_id, detail, closure, func, data);
             }
             return (long)mh$.invokeExact(instance, mask, signal_id, detail, closure, func, data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12922,9 +19293,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_handlers_block_matched"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_handlers_block_matched");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12946,6 +19317,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_handlers_block_matched$handle() {
         return g_signal_handlers_block_matched.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern guint g_signal_handlers_block_matched(gpointer instance, GSignalMatchType mask, guint signal_id, GQuark detail, GClosure *closure, gpointer func, gpointer data)
+     * }
+     */
+    public static MemorySegment g_signal_handlers_block_matched$address() {
+        return g_signal_handlers_block_matched.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern guint g_signal_handlers_block_matched(gpointer instance, GSignalMatchType mask, guint signal_id, GQuark detail, GClosure *closure, gpointer func, gpointer data)
@@ -12958,6 +19340,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_handlers_block_matched", instance, mask, signal_id, detail, closure, func, data);
             }
             return (int)mh$.invokeExact(instance, mask, signal_id, detail, closure, func, data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -12975,9 +19359,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_handlers_unblock_matched"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_handlers_unblock_matched");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -12999,6 +19383,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_handlers_unblock_matched$handle() {
         return g_signal_handlers_unblock_matched.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern guint g_signal_handlers_unblock_matched(gpointer instance, GSignalMatchType mask, guint signal_id, GQuark detail, GClosure *closure, gpointer func, gpointer data)
+     * }
+     */
+    public static MemorySegment g_signal_handlers_unblock_matched$address() {
+        return g_signal_handlers_unblock_matched.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern guint g_signal_handlers_unblock_matched(gpointer instance, GSignalMatchType mask, guint signal_id, GQuark detail, GClosure *closure, gpointer func, gpointer data)
@@ -13011,6 +19406,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_handlers_unblock_matched", instance, mask, signal_id, detail, closure, func, data);
             }
             return (int)mh$.invokeExact(instance, mask, signal_id, detail, closure, func, data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13028,9 +19425,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_handlers_disconnect_matched"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_handlers_disconnect_matched");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13052,6 +19449,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_handlers_disconnect_matched$handle() {
         return g_signal_handlers_disconnect_matched.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern guint g_signal_handlers_disconnect_matched(gpointer instance, GSignalMatchType mask, guint signal_id, GQuark detail, GClosure *closure, gpointer func, gpointer data)
+     * }
+     */
+    public static MemorySegment g_signal_handlers_disconnect_matched$address() {
+        return g_signal_handlers_disconnect_matched.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern guint g_signal_handlers_disconnect_matched(gpointer instance, GSignalMatchType mask, guint signal_id, GQuark detail, GClosure *closure, gpointer func, gpointer data)
@@ -13064,6 +19472,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_handlers_disconnect_matched", instance, mask, signal_id, detail, closure, func, data);
             }
             return (int)mh$.invokeExact(instance, mask, signal_id, detail, closure, func, data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13075,9 +19485,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_clear_signal_handler"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_clear_signal_handler");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13099,6 +19509,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_clear_signal_handler$handle() {
         return g_clear_signal_handler.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_clear_signal_handler(gulong *handler_id_ptr, gpointer instance)
+     * }
+     */
+    public static MemorySegment g_clear_signal_handler$address() {
+        return g_clear_signal_handler.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_clear_signal_handler(gulong *handler_id_ptr, gpointer instance)
@@ -13111,6 +19532,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_clear_signal_handler", handler_id_ptr, instance);
             }
             mh$.invokeExact(handler_id_ptr, instance);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13123,9 +19546,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_override_class_closure"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_override_class_closure");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13147,6 +19570,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_override_class_closure$handle() {
         return g_signal_override_class_closure.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_signal_override_class_closure(guint signal_id, GType instance_type, GClosure *class_closure)
+     * }
+     */
+    public static MemorySegment g_signal_override_class_closure$address() {
+        return g_signal_override_class_closure.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_signal_override_class_closure(guint signal_id, GType instance_type, GClosure *class_closure)
@@ -13159,6 +19593,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_override_class_closure", signal_id, instance_type, class_closure);
             }
             mh$.invokeExact(signal_id, instance_type, class_closure);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13171,9 +19607,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_override_class_handler"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_override_class_handler");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13195,6 +19631,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_override_class_handler$handle() {
         return g_signal_override_class_handler.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_signal_override_class_handler(const gchar *signal_name, GType instance_type, GCallback class_handler)
+     * }
+     */
+    public static MemorySegment g_signal_override_class_handler$address() {
+        return g_signal_override_class_handler.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_signal_override_class_handler(const gchar *signal_name, GType instance_type, GCallback class_handler)
@@ -13207,6 +19654,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_override_class_handler", signal_name, instance_type, class_handler);
             }
             mh$.invokeExact(signal_name, instance_type, class_handler);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13218,9 +19667,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_chain_from_overridden"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_chain_from_overridden");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13242,6 +19691,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_chain_from_overridden$handle() {
         return g_signal_chain_from_overridden.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_signal_chain_from_overridden(const GValue *instance_and_params, GValue *return_value)
+     * }
+     */
+    public static MemorySegment g_signal_chain_from_overridden$address() {
+        return g_signal_chain_from_overridden.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_signal_chain_from_overridden(const GValue *instance_and_params, GValue *return_value)
@@ -13254,6 +19714,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_chain_from_overridden", instance_and_params, return_value);
             }
             mh$.invokeExact(instance_and_params, return_value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13269,7 +19731,7 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         private static final FunctionDescriptor BASE_DESC = FunctionDescriptor.ofVoid(
                 app_indicator_h.C_POINTER
             );
-        private static final MemorySegment ADDR = app_indicator_h.findOrThrow("g_signal_chain_from_overridden_handler");
+        private static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_chain_from_overridden_handler");
 
         private final MethodHandle handle;
         private final FunctionDescriptor descriptor;
@@ -13296,6 +19758,13 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         }
 
         /**
+         * {@return the address}
+         */
+        public static MemorySegment address() {
+            return ADDR;
+        }
+
+        /**
          * {@return the specialized method handle}
          */
         public MethodHandle handle() {
@@ -13314,7 +19783,7 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 if (TRACE_DOWNCALLS) {
                     traceDowncall("g_signal_chain_from_overridden_handler", instance, x1);
                 }
-                spreader.invokeExact(instance, x1);
+                 spreader.invokeExact(instance, x1);
             } catch(IllegalArgumentException | ClassCastException ex$)  {
                 throw ex$; // rethrow IAE from passing wrong number/type of args
             } catch (Throwable ex$) {
@@ -13332,9 +19801,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_accumulator_true_handled"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_accumulator_true_handled");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13356,6 +19825,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_accumulator_true_handled$handle() {
         return g_signal_accumulator_true_handled.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_signal_accumulator_true_handled(GSignalInvocationHint *ihint, GValue *return_accu, const GValue *handler_return, gpointer dummy)
+     * }
+     */
+    public static MemorySegment g_signal_accumulator_true_handled$address() {
+        return g_signal_accumulator_true_handled.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_signal_accumulator_true_handled(GSignalInvocationHint *ihint, GValue *return_accu, const GValue *handler_return, gpointer dummy)
@@ -13368,6 +19848,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_accumulator_true_handled", ihint, return_accu, handler_return, dummy);
             }
             return (int)mh$.invokeExact(ihint, return_accu, handler_return, dummy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13382,9 +19864,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_accumulator_first_wins"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_accumulator_first_wins");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13406,6 +19888,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_accumulator_first_wins$handle() {
         return g_signal_accumulator_first_wins.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_signal_accumulator_first_wins(GSignalInvocationHint *ihint, GValue *return_accu, const GValue *handler_return, gpointer dummy)
+     * }
+     */
+    public static MemorySegment g_signal_accumulator_first_wins$address() {
+        return g_signal_accumulator_first_wins.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_signal_accumulator_first_wins(GSignalInvocationHint *ihint, GValue *return_accu, const GValue *handler_return, gpointer dummy)
@@ -13418,6 +19911,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_accumulator_first_wins", ihint, return_accu, handler_return, dummy);
             }
             return (int)mh$.invokeExact(ihint, return_accu, handler_return, dummy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13428,9 +19923,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_handlers_destroy"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_handlers_destroy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13452,6 +19947,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_handlers_destroy$handle() {
         return g_signal_handlers_destroy.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_signal_handlers_destroy(gpointer instance)
+     * }
+     */
+    public static MemorySegment g_signal_handlers_destroy$address() {
+        return g_signal_handlers_destroy.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_signal_handlers_destroy(gpointer instance)
@@ -13464,6 +19970,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_handlers_destroy", instance);
             }
             mh$.invokeExact(instance);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13474,9 +19982,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("_g_signals_destroy"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("_g_signals_destroy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13498,6 +20006,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle _g_signals_destroy$handle() {
         return _g_signals_destroy.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * void _g_signals_destroy(GType itype)
+     * }
+     */
+    public static MemorySegment _g_signals_destroy$address() {
+        return _g_signals_destroy.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * void _g_signals_destroy(GType itype)
@@ -13510,6 +20029,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("_g_signals_destroy", itype);
             }
             mh$.invokeExact(itype);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13519,9 +20040,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_date_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_date_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13543,6 +20064,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_date_get_type$handle() {
         return g_date_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_date_get_type()
+     * }
+     */
+    public static MemorySegment g_date_get_type$address() {
+        return g_date_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_date_get_type()
@@ -13555,6 +20087,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_date_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13564,9 +20098,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_strv_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_strv_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13588,6 +20122,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_strv_get_type$handle() {
         return g_strv_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_strv_get_type()
+     * }
+     */
+    public static MemorySegment g_strv_get_type$address() {
+        return g_strv_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_strv_get_type()
@@ -13600,6 +20145,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_strv_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13609,9 +20156,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_gstring_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_gstring_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13633,6 +20180,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_gstring_get_type$handle() {
         return g_gstring_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_gstring_get_type()
+     * }
+     */
+    public static MemorySegment g_gstring_get_type$address() {
+        return g_gstring_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_gstring_get_type()
@@ -13645,6 +20203,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_gstring_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13654,9 +20214,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_hash_table_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_hash_table_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13678,6 +20238,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_hash_table_get_type$handle() {
         return g_hash_table_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_hash_table_get_type()
+     * }
+     */
+    public static MemorySegment g_hash_table_get_type$address() {
+        return g_hash_table_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_hash_table_get_type()
@@ -13690,6 +20261,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_hash_table_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13699,9 +20272,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_array_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_array_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13723,6 +20296,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_array_get_type$handle() {
         return g_array_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_array_get_type()
+     * }
+     */
+    public static MemorySegment g_array_get_type$address() {
+        return g_array_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_array_get_type()
@@ -13735,6 +20319,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_array_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13744,9 +20330,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_byte_array_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_byte_array_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13768,6 +20354,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_byte_array_get_type$handle() {
         return g_byte_array_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_byte_array_get_type()
+     * }
+     */
+    public static MemorySegment g_byte_array_get_type$address() {
+        return g_byte_array_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_byte_array_get_type()
@@ -13780,6 +20377,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_byte_array_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13789,9 +20388,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_ptr_array_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_ptr_array_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13813,6 +20412,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_ptr_array_get_type$handle() {
         return g_ptr_array_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_ptr_array_get_type()
+     * }
+     */
+    public static MemorySegment g_ptr_array_get_type$address() {
+        return g_ptr_array_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_ptr_array_get_type()
@@ -13825,6 +20435,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_ptr_array_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13834,9 +20446,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_bytes_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_bytes_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13858,6 +20470,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_bytes_get_type$handle() {
         return g_bytes_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_bytes_get_type()
+     * }
+     */
+    public static MemorySegment g_bytes_get_type$address() {
+        return g_bytes_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_bytes_get_type()
@@ -13870,6 +20493,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_bytes_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13879,9 +20504,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_variant_type_get_gtype"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_type_get_gtype");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13903,6 +20528,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_variant_type_get_gtype$handle() {
         return g_variant_type_get_gtype.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_variant_type_get_gtype()
+     * }
+     */
+    public static MemorySegment g_variant_type_get_gtype$address() {
+        return g_variant_type_get_gtype.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_variant_type_get_gtype()
@@ -13915,6 +20551,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_variant_type_get_gtype");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13924,9 +20562,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_regex_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_regex_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13948,6 +20586,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_regex_get_type$handle() {
         return g_regex_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_regex_get_type()
+     * }
+     */
+    public static MemorySegment g_regex_get_type$address() {
+        return g_regex_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_regex_get_type()
@@ -13960,6 +20609,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_regex_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -13969,9 +20620,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_match_info_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_match_info_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -13993,6 +20644,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_match_info_get_type$handle() {
         return g_match_info_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_match_info_get_type()
+     * }
+     */
+    public static MemorySegment g_match_info_get_type$address() {
+        return g_match_info_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_match_info_get_type()
@@ -14005,6 +20667,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_match_info_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14014,9 +20678,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_error_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_error_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14038,6 +20702,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_error_get_type$handle() {
         return g_error_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_error_get_type()
+     * }
+     */
+    public static MemorySegment g_error_get_type$address() {
+        return g_error_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_error_get_type()
@@ -14050,6 +20725,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_error_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14059,9 +20736,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_date_time_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_date_time_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14083,6 +20760,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_date_time_get_type$handle() {
         return g_date_time_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_date_time_get_type()
+     * }
+     */
+    public static MemorySegment g_date_time_get_type$address() {
+        return g_date_time_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_date_time_get_type()
@@ -14095,6 +20783,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_date_time_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14104,9 +20794,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_time_zone_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_time_zone_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14128,6 +20818,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_time_zone_get_type$handle() {
         return g_time_zone_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_time_zone_get_type()
+     * }
+     */
+    public static MemorySegment g_time_zone_get_type$address() {
+        return g_time_zone_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_time_zone_get_type()
@@ -14140,6 +20841,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_time_zone_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14149,9 +20852,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_io_channel_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_io_channel_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14173,6 +20876,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_io_channel_get_type$handle() {
         return g_io_channel_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_io_channel_get_type()
+     * }
+     */
+    public static MemorySegment g_io_channel_get_type$address() {
+        return g_io_channel_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_io_channel_get_type()
@@ -14185,6 +20899,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_io_channel_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14194,9 +20910,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_io_condition_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_io_condition_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14218,6 +20934,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_io_condition_get_type$handle() {
         return g_io_condition_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_io_condition_get_type()
+     * }
+     */
+    public static MemorySegment g_io_condition_get_type$address() {
+        return g_io_condition_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_io_condition_get_type()
@@ -14230,6 +20957,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_io_condition_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14239,9 +20968,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_variant_builder_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_builder_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14263,6 +20992,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_variant_builder_get_type$handle() {
         return g_variant_builder_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_variant_builder_get_type()
+     * }
+     */
+    public static MemorySegment g_variant_builder_get_type$address() {
+        return g_variant_builder_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_variant_builder_get_type()
@@ -14275,6 +21015,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_variant_builder_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14284,9 +21026,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_variant_dict_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_dict_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14308,6 +21050,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_variant_dict_get_type$handle() {
         return g_variant_dict_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_variant_dict_get_type()
+     * }
+     */
+    public static MemorySegment g_variant_dict_get_type$address() {
+        return g_variant_dict_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_variant_dict_get_type()
@@ -14320,6 +21073,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_variant_dict_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14329,9 +21084,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_key_file_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_key_file_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14353,6 +21108,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_key_file_get_type$handle() {
         return g_key_file_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_key_file_get_type()
+     * }
+     */
+    public static MemorySegment g_key_file_get_type$address() {
+        return g_key_file_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_key_file_get_type()
@@ -14365,6 +21131,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_key_file_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14374,9 +21142,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_main_loop_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_main_loop_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14398,6 +21166,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_main_loop_get_type$handle() {
         return g_main_loop_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_main_loop_get_type()
+     * }
+     */
+    public static MemorySegment g_main_loop_get_type$address() {
+        return g_main_loop_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_main_loop_get_type()
@@ -14410,6 +21189,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_main_loop_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14419,9 +21200,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_main_context_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_main_context_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14443,6 +21224,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_main_context_get_type$handle() {
         return g_main_context_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_main_context_get_type()
+     * }
+     */
+    public static MemorySegment g_main_context_get_type$address() {
+        return g_main_context_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_main_context_get_type()
@@ -14455,6 +21247,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_main_context_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14464,9 +21258,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_source_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_source_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14488,6 +21282,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_source_get_type$handle() {
         return g_source_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_source_get_type()
+     * }
+     */
+    public static MemorySegment g_source_get_type$address() {
+        return g_source_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_source_get_type()
@@ -14500,6 +21305,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_source_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14509,9 +21316,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_pollfd_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_pollfd_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14533,6 +21340,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_pollfd_get_type$handle() {
         return g_pollfd_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_pollfd_get_type()
+     * }
+     */
+    public static MemorySegment g_pollfd_get_type$address() {
+        return g_pollfd_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_pollfd_get_type()
@@ -14545,6 +21363,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_pollfd_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14554,9 +21374,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_thread_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_thread_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14578,6 +21398,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_thread_get_type$handle() {
         return g_thread_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_thread_get_type()
+     * }
+     */
+    public static MemorySegment g_thread_get_type$address() {
+        return g_thread_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_thread_get_type()
@@ -14590,6 +21421,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_thread_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14599,9 +21432,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_checksum_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_checksum_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14623,6 +21456,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_checksum_get_type$handle() {
         return g_checksum_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_checksum_get_type()
+     * }
+     */
+    public static MemorySegment g_checksum_get_type$address() {
+        return g_checksum_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_checksum_get_type()
@@ -14635,6 +21479,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_checksum_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14644,9 +21490,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_markup_parse_context_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_markup_parse_context_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14668,6 +21514,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_markup_parse_context_get_type$handle() {
         return g_markup_parse_context_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_markup_parse_context_get_type()
+     * }
+     */
+    public static MemorySegment g_markup_parse_context_get_type$address() {
+        return g_markup_parse_context_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_markup_parse_context_get_type()
@@ -14680,6 +21537,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_markup_parse_context_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14689,9 +21548,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_mapped_file_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_mapped_file_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14713,6 +21572,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_mapped_file_get_type$handle() {
         return g_mapped_file_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_mapped_file_get_type()
+     * }
+     */
+    public static MemorySegment g_mapped_file_get_type$address() {
+        return g_mapped_file_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_mapped_file_get_type()
@@ -14725,6 +21595,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_mapped_file_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14734,9 +21606,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_option_group_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_option_group_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14758,6 +21630,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_option_group_get_type$handle() {
         return g_option_group_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_option_group_get_type()
+     * }
+     */
+    public static MemorySegment g_option_group_get_type$address() {
+        return g_option_group_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_option_group_get_type()
@@ -14770,6 +21653,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_option_group_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14779,9 +21664,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_uri_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_uri_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14803,6 +21688,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_uri_get_type$handle() {
         return g_uri_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_uri_get_type()
+     * }
+     */
+    public static MemorySegment g_uri_get_type$address() {
+        return g_uri_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_uri_get_type()
@@ -14815,6 +21711,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_uri_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14824,9 +21722,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_tree_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_tree_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14848,6 +21746,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_tree_get_type$handle() {
         return g_tree_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_tree_get_type()
+     * }
+     */
+    public static MemorySegment g_tree_get_type$address() {
+        return g_tree_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_tree_get_type()
@@ -14860,6 +21769,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_tree_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14869,9 +21780,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_pattern_spec_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_pattern_spec_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14893,6 +21804,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_pattern_spec_get_type$handle() {
         return g_pattern_spec_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_pattern_spec_get_type()
+     * }
+     */
+    public static MemorySegment g_pattern_spec_get_type$address() {
+        return g_pattern_spec_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_pattern_spec_get_type()
@@ -14905,6 +21827,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_pattern_spec_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14914,9 +21838,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_bookmark_file_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_bookmark_file_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14938,6 +21862,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_bookmark_file_get_type$handle() {
         return g_bookmark_file_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_bookmark_file_get_type()
+     * }
+     */
+    public static MemorySegment g_bookmark_file_get_type$address() {
+        return g_bookmark_file_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_bookmark_file_get_type()
@@ -14950,6 +21885,240 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_bookmark_file_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_hmac_get_type {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG    );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_hmac_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GType g_hmac_get_type()
+     * }
+     */
+    public static FunctionDescriptor g_hmac_get_type$descriptor() {
+        return g_hmac_get_type.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GType g_hmac_get_type()
+     * }
+     */
+    public static MethodHandle g_hmac_get_type$handle() {
+        return g_hmac_get_type.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_hmac_get_type()
+     * }
+     */
+    public static MemorySegment g_hmac_get_type$address() {
+        return g_hmac_get_type.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern GType g_hmac_get_type()
+     * }
+     */
+    public static long g_hmac_get_type() {
+        var mh$ = g_hmac_get_type.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_hmac_get_type");
+            }
+            return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_dir_get_type {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG    );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_dir_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GType g_dir_get_type()
+     * }
+     */
+    public static FunctionDescriptor g_dir_get_type$descriptor() {
+        return g_dir_get_type.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GType g_dir_get_type()
+     * }
+     */
+    public static MethodHandle g_dir_get_type$handle() {
+        return g_dir_get_type.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_dir_get_type()
+     * }
+     */
+    public static MemorySegment g_dir_get_type$address() {
+        return g_dir_get_type.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern GType g_dir_get_type()
+     * }
+     */
+    public static long g_dir_get_type() {
+        var mh$ = g_dir_get_type.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_dir_get_type");
+            }
+            return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_rand_get_type {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG    );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_rand_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GType g_rand_get_type()
+     * }
+     */
+    public static FunctionDescriptor g_rand_get_type$descriptor() {
+        return g_rand_get_type.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GType g_rand_get_type()
+     * }
+     */
+    public static MethodHandle g_rand_get_type$handle() {
+        return g_rand_get_type.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_rand_get_type()
+     * }
+     */
+    public static MemorySegment g_rand_get_type$address() {
+        return g_rand_get_type.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern GType g_rand_get_type()
+     * }
+     */
+    public static long g_rand_get_type() {
+        var mh$ = g_rand_get_type.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_rand_get_type");
+            }
+            return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_strv_builder_get_type {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG    );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_strv_builder_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GType g_strv_builder_get_type()
+     * }
+     */
+    public static FunctionDescriptor g_strv_builder_get_type$descriptor() {
+        return g_strv_builder_get_type.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GType g_strv_builder_get_type()
+     * }
+     */
+    public static MethodHandle g_strv_builder_get_type$handle() {
+        return g_strv_builder_get_type.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_strv_builder_get_type()
+     * }
+     */
+    public static MemorySegment g_strv_builder_get_type$address() {
+        return g_strv_builder_get_type.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern GType g_strv_builder_get_type()
+     * }
+     */
+    public static long g_strv_builder_get_type() {
+        var mh$ = g_strv_builder_get_type.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_strv_builder_get_type");
+            }
+            return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -14959,9 +22128,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_variant_get_gtype"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_get_gtype");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -14983,6 +22152,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_variant_get_gtype$handle() {
         return g_variant_get_gtype.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_variant_get_gtype()
+     * }
+     */
+    public static MemorySegment g_variant_get_gtype$address() {
+        return g_variant_get_gtype.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_variant_get_gtype()
@@ -14995,6 +22175,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_variant_get_gtype");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15007,9 +22189,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_boxed_copy"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_boxed_copy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15031,6 +22213,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_boxed_copy$handle() {
         return g_boxed_copy.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_boxed_copy(GType boxed_type, gconstpointer src_boxed)
+     * }
+     */
+    public static MemorySegment g_boxed_copy$address() {
+        return g_boxed_copy.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_boxed_copy(GType boxed_type, gconstpointer src_boxed)
@@ -15043,6 +22236,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_boxed_copy", boxed_type, src_boxed);
             }
             return (MemorySegment)mh$.invokeExact(boxed_type, src_boxed);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15054,9 +22249,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_boxed_free"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_boxed_free");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15078,6 +22273,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_boxed_free$handle() {
         return g_boxed_free.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_boxed_free(GType boxed_type, gpointer boxed)
+     * }
+     */
+    public static MemorySegment g_boxed_free$address() {
+        return g_boxed_free.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_boxed_free(GType boxed_type, gpointer boxed)
@@ -15090,6 +22296,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_boxed_free", boxed_type, boxed);
             }
             mh$.invokeExact(boxed_type, boxed);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15101,9 +22309,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_boxed"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_boxed");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15125,6 +22333,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_boxed$handle() {
         return g_value_set_boxed.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_boxed(GValue *value, gconstpointer v_boxed)
+     * }
+     */
+    public static MemorySegment g_value_set_boxed$address() {
+        return g_value_set_boxed.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_boxed(GValue *value, gconstpointer v_boxed)
@@ -15137,6 +22356,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_boxed", value, v_boxed);
             }
             mh$.invokeExact(value, v_boxed);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15148,9 +22369,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_static_boxed"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_static_boxed");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15172,6 +22393,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_static_boxed$handle() {
         return g_value_set_static_boxed.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_static_boxed(GValue *value, gconstpointer v_boxed)
+     * }
+     */
+    public static MemorySegment g_value_set_static_boxed$address() {
+        return g_value_set_static_boxed.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_static_boxed(GValue *value, gconstpointer v_boxed)
@@ -15184,6 +22416,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_static_boxed", value, v_boxed);
             }
             mh$.invokeExact(value, v_boxed);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15195,9 +22429,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_take_boxed"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_take_boxed");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15219,6 +22453,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_take_boxed$handle() {
         return g_value_take_boxed.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_take_boxed(GValue *value, gconstpointer v_boxed)
+     * }
+     */
+    public static MemorySegment g_value_take_boxed$address() {
+        return g_value_take_boxed.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_take_boxed(GValue *value, gconstpointer v_boxed)
@@ -15231,6 +22476,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_take_boxed", value, v_boxed);
             }
             mh$.invokeExact(value, v_boxed);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15242,9 +22489,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_boxed_take_ownership"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_boxed_take_ownership");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15266,6 +22513,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_boxed_take_ownership$handle() {
         return g_value_set_boxed_take_ownership.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_boxed_take_ownership(GValue *value, gconstpointer v_boxed)
+     * }
+     */
+    public static MemorySegment g_value_set_boxed_take_ownership$address() {
+        return g_value_set_boxed_take_ownership.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_boxed_take_ownership(GValue *value, gconstpointer v_boxed)
@@ -15278,6 +22536,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_boxed_take_ownership", value, v_boxed);
             }
             mh$.invokeExact(value, v_boxed);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15289,9 +22549,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_get_boxed"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_get_boxed");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15313,6 +22573,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_get_boxed$handle() {
         return g_value_get_boxed.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_value_get_boxed(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_get_boxed$address() {
+        return g_value_get_boxed.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_value_get_boxed(const GValue *value)
@@ -15325,6 +22596,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_get_boxed", value);
             }
             return (MemorySegment)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15336,9 +22609,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_dup_boxed"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_dup_boxed");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15360,6 +22633,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_dup_boxed$handle() {
         return g_value_dup_boxed.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_value_dup_boxed(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_dup_boxed$address() {
+        return g_value_dup_boxed.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_value_dup_boxed(const GValue *value)
@@ -15372,6 +22656,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_dup_boxed", value);
             }
             return (MemorySegment)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15385,9 +22671,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_boxed_type_register_static"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_boxed_type_register_static");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15409,6 +22695,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_boxed_type_register_static$handle() {
         return g_boxed_type_register_static.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_boxed_type_register_static(const gchar *name, GBoxedCopyFunc boxed_copy, GBoxedFreeFunc boxed_free)
+     * }
+     */
+    public static MemorySegment g_boxed_type_register_static$address() {
+        return g_boxed_type_register_static.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_boxed_type_register_static(const gchar *name, GBoxedCopyFunc boxed_copy, GBoxedFreeFunc boxed_free)
@@ -15421,6 +22718,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_boxed_type_register_static", name, boxed_copy, boxed_free);
             }
             return (long)mh$.invokeExact(name, boxed_copy, boxed_free);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15430,9 +22729,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_closure_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_closure_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15454,6 +22753,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_closure_get_type$handle() {
         return g_closure_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_closure_get_type()
+     * }
+     */
+    public static MemorySegment g_closure_get_type$address() {
+        return g_closure_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_closure_get_type()
@@ -15466,6 +22776,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_closure_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15475,9 +22787,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15499,6 +22811,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_get_type$handle() {
         return g_value_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_value_get_type()
+     * }
+     */
+    public static MemorySegment g_value_get_type$address() {
+        return g_value_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_value_get_type()
@@ -15511,6 +22834,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15520,9 +22845,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_initially_unowned_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_initially_unowned_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15544,6 +22869,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_initially_unowned_get_type$handle() {
         return g_initially_unowned_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_initially_unowned_get_type()
+     * }
+     */
+    public static MemorySegment g_initially_unowned_get_type$address() {
+        return g_initially_unowned_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_initially_unowned_get_type()
@@ -15556,6 +22892,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_initially_unowned_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15568,9 +22906,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_class_install_property"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_class_install_property");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15592,6 +22930,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_class_install_property$handle() {
         return g_object_class_install_property.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_class_install_property(GObjectClass *oclass, guint property_id, GParamSpec *pspec)
+     * }
+     */
+    public static MemorySegment g_object_class_install_property$address() {
+        return g_object_class_install_property.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_class_install_property(GObjectClass *oclass, guint property_id, GParamSpec *pspec)
@@ -15604,6 +22953,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_class_install_property", oclass, property_id, pspec);
             }
             mh$.invokeExact(oclass, property_id, pspec);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15616,9 +22967,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_class_find_property"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_class_find_property");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15640,6 +22991,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_class_find_property$handle() {
         return g_object_class_find_property.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_object_class_find_property(GObjectClass *oclass, const gchar *property_name)
+     * }
+     */
+    public static MemorySegment g_object_class_find_property$address() {
+        return g_object_class_find_property.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_object_class_find_property(GObjectClass *oclass, const gchar *property_name)
@@ -15652,6 +23014,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_class_find_property", oclass, property_name);
             }
             return (MemorySegment)mh$.invokeExact(oclass, property_name);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15664,9 +23028,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_class_list_properties"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_class_list_properties");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15688,6 +23052,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_class_list_properties$handle() {
         return g_object_class_list_properties.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec **g_object_class_list_properties(GObjectClass *oclass, guint *n_properties)
+     * }
+     */
+    public static MemorySegment g_object_class_list_properties$address() {
+        return g_object_class_list_properties.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec **g_object_class_list_properties(GObjectClass *oclass, guint *n_properties)
@@ -15700,6 +23075,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_class_list_properties", oclass, n_properties);
             }
             return (MemorySegment)mh$.invokeExact(oclass, n_properties);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15712,9 +23089,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_class_override_property"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_class_override_property");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15736,6 +23113,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_class_override_property$handle() {
         return g_object_class_override_property.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_class_override_property(GObjectClass *oclass, guint property_id, const gchar *name)
+     * }
+     */
+    public static MemorySegment g_object_class_override_property$address() {
+        return g_object_class_override_property.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_class_override_property(GObjectClass *oclass, guint property_id, const gchar *name)
@@ -15748,6 +23136,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_class_override_property", oclass, property_id, name);
             }
             mh$.invokeExact(oclass, property_id, name);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15760,9 +23150,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_class_install_properties"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_class_install_properties");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15784,6 +23174,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_class_install_properties$handle() {
         return g_object_class_install_properties.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_class_install_properties(GObjectClass *oclass, guint n_pspecs, GParamSpec **pspecs)
+     * }
+     */
+    public static MemorySegment g_object_class_install_properties$address() {
+        return g_object_class_install_properties.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_class_install_properties(GObjectClass *oclass, guint n_pspecs, GParamSpec **pspecs)
@@ -15796,6 +23197,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_class_install_properties", oclass, n_pspecs, pspecs);
             }
             mh$.invokeExact(oclass, n_pspecs, pspecs);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15807,9 +23210,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_interface_install_property"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_interface_install_property");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15831,6 +23234,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_interface_install_property$handle() {
         return g_object_interface_install_property.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_interface_install_property(gpointer g_iface, GParamSpec *pspec)
+     * }
+     */
+    public static MemorySegment g_object_interface_install_property$address() {
+        return g_object_interface_install_property.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_interface_install_property(gpointer g_iface, GParamSpec *pspec)
@@ -15843,6 +23257,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_interface_install_property", g_iface, pspec);
             }
             mh$.invokeExact(g_iface, pspec);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15855,9 +23271,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_interface_find_property"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_interface_find_property");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15879,6 +23295,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_interface_find_property$handle() {
         return g_object_interface_find_property.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_object_interface_find_property(gpointer g_iface, const gchar *property_name)
+     * }
+     */
+    public static MemorySegment g_object_interface_find_property$address() {
+        return g_object_interface_find_property.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_object_interface_find_property(gpointer g_iface, const gchar *property_name)
@@ -15891,6 +23318,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_interface_find_property", g_iface, property_name);
             }
             return (MemorySegment)mh$.invokeExact(g_iface, property_name);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15903,9 +23332,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_interface_list_properties"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_interface_list_properties");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15927,6 +23356,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_interface_list_properties$handle() {
         return g_object_interface_list_properties.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec **g_object_interface_list_properties(gpointer g_iface, guint *n_properties_p)
+     * }
+     */
+    public static MemorySegment g_object_interface_list_properties$address() {
+        return g_object_interface_list_properties.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec **g_object_interface_list_properties(gpointer g_iface, guint *n_properties_p)
@@ -15939,6 +23379,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_interface_list_properties", g_iface, n_properties_p);
             }
             return (MemorySegment)mh$.invokeExact(g_iface, n_properties_p);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -15948,9 +23390,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -15972,6 +23414,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_get_type$handle() {
         return g_object_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_object_get_type()
+     * }
+     */
+    public static MemorySegment g_object_get_type$address() {
+        return g_object_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_object_get_type()
@@ -15984,6 +23437,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16001,7 +23456,7 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 app_indicator_h.C_LONG,
                 app_indicator_h.C_POINTER
             );
-        private static final MemorySegment ADDR = app_indicator_h.findOrThrow("g_object_new");
+        private static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_new");
 
         private final MethodHandle handle;
         private final FunctionDescriptor descriptor;
@@ -16028,6 +23483,13 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         }
 
         /**
+         * {@return the address}
+         */
+        public static MemorySegment address() {
+            return ADDR;
+        }
+
+        /**
          * {@return the specialized method handle}
          */
         public MethodHandle handle() {
@@ -16046,7 +23508,7 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 if (TRACE_DOWNCALLS) {
                     traceDowncall("g_object_new", object_type, first_property_name, x2);
                 }
-                return (MemorySegment)spreader.invokeExact(object_type, first_property_name, x2);
+                return (MemorySegment) spreader.invokeExact(object_type, first_property_name, x2);
             } catch(IllegalArgumentException | ClassCastException ex$)  {
                 throw ex$; // rethrow IAE from passing wrong number/type of args
             } catch (Throwable ex$) {
@@ -16064,9 +23526,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_new_with_properties"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_new_with_properties");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16088,6 +23550,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_new_with_properties$handle() {
         return g_object_new_with_properties.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GObject *g_object_new_with_properties(GType object_type, guint n_properties, const char *names[], const GValue values[])
+     * }
+     */
+    public static MemorySegment g_object_new_with_properties$address() {
+        return g_object_new_with_properties.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GObject *g_object_new_with_properties(GType object_type, guint n_properties, const char *names[], const GValue values[])
@@ -16100,6 +23573,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_new_with_properties", object_type, n_properties, names, values);
             }
             return (MemorySegment)mh$.invokeExact(object_type, n_properties, names, values);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16113,9 +23588,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_newv"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_newv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16137,6 +23612,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_newv$handle() {
         return g_object_newv.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_object_newv(GType object_type, guint n_parameters, GParameter *parameters)
+     * }
+     */
+    public static MemorySegment g_object_newv$address() {
+        return g_object_newv.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_object_newv(GType object_type, guint n_parameters, GParameter *parameters)
@@ -16149,6 +23635,70 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_newv", object_type, n_parameters, parameters);
             }
             return (MemorySegment)mh$.invokeExact(object_type, n_parameters, parameters);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_object_new_valist {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_new_valist");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GObject *g_object_new_valist(GType object_type, const gchar *first_property_name, va_list var_args)
+     * }
+     */
+    public static FunctionDescriptor g_object_new_valist$descriptor() {
+        return g_object_new_valist.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GObject *g_object_new_valist(GType object_type, const gchar *first_property_name, va_list var_args)
+     * }
+     */
+    public static MethodHandle g_object_new_valist$handle() {
+        return g_object_new_valist.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GObject *g_object_new_valist(GType object_type, const gchar *first_property_name, va_list var_args)
+     * }
+     */
+    public static MemorySegment g_object_new_valist$address() {
+        return g_object_new_valist.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern GObject *g_object_new_valist(GType object_type, const gchar *first_property_name, va_list var_args)
+     * }
+     */
+    public static MemorySegment g_object_new_valist(long object_type, MemorySegment first_property_name, MemorySegment var_args) {
+        var mh$ = g_object_new_valist.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_object_new_valist", object_type, first_property_name, var_args);
+            }
+            return (MemorySegment)mh$.invokeExact(object_type, first_property_name, var_args);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16165,7 +23715,7 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 app_indicator_h.C_POINTER,
                 app_indicator_h.C_POINTER
             );
-        private static final MemorySegment ADDR = app_indicator_h.findOrThrow("g_object_set");
+        private static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_set");
 
         private final MethodHandle handle;
         private final FunctionDescriptor descriptor;
@@ -16192,6 +23742,13 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         }
 
         /**
+         * {@return the address}
+         */
+        public static MemorySegment address() {
+            return ADDR;
+        }
+
+        /**
          * {@return the specialized method handle}
          */
         public MethodHandle handle() {
@@ -16210,7 +23767,7 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 if (TRACE_DOWNCALLS) {
                     traceDowncall("g_object_set", object, first_property_name, x2);
                 }
-                spreader.invokeExact(object, first_property_name, x2);
+                 spreader.invokeExact(object, first_property_name, x2);
             } catch(IllegalArgumentException | ClassCastException ex$)  {
                 throw ex$; // rethrow IAE from passing wrong number/type of args
             } catch (Throwable ex$) {
@@ -16230,7 +23787,7 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 app_indicator_h.C_POINTER,
                 app_indicator_h.C_POINTER
             );
-        private static final MemorySegment ADDR = app_indicator_h.findOrThrow("g_object_get");
+        private static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_get");
 
         private final MethodHandle handle;
         private final FunctionDescriptor descriptor;
@@ -16257,6 +23814,13 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         }
 
         /**
+         * {@return the address}
+         */
+        public static MemorySegment address() {
+            return ADDR;
+        }
+
+        /**
          * {@return the specialized method handle}
          */
         public MethodHandle handle() {
@@ -16275,7 +23839,7 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 if (TRACE_DOWNCALLS) {
                     traceDowncall("g_object_get", object, first_property_name, x2);
                 }
-                spreader.invokeExact(object, first_property_name, x2);
+                 spreader.invokeExact(object, first_property_name, x2);
             } catch(IllegalArgumentException | ClassCastException ex$)  {
                 throw ex$; // rethrow IAE from passing wrong number/type of args
             } catch (Throwable ex$) {
@@ -16296,7 +23860,7 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 app_indicator_h.C_POINTER,
                 app_indicator_h.C_POINTER
             );
-        private static final MemorySegment ADDR = app_indicator_h.findOrThrow("g_object_connect");
+        private static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_connect");
 
         private final MethodHandle handle;
         private final FunctionDescriptor descriptor;
@@ -16323,6 +23887,13 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         }
 
         /**
+         * {@return the address}
+         */
+        public static MemorySegment address() {
+            return ADDR;
+        }
+
+        /**
          * {@return the specialized method handle}
          */
         public MethodHandle handle() {
@@ -16341,7 +23912,7 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 if (TRACE_DOWNCALLS) {
                     traceDowncall("g_object_connect", object, signal_spec, x2);
                 }
-                return (MemorySegment)spreader.invokeExact(object, signal_spec, x2);
+                return (MemorySegment) spreader.invokeExact(object, signal_spec, x2);
             } catch(IllegalArgumentException | ClassCastException ex$)  {
                 throw ex$; // rethrow IAE from passing wrong number/type of args
             } catch (Throwable ex$) {
@@ -16361,7 +23932,7 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 app_indicator_h.C_POINTER,
                 app_indicator_h.C_POINTER
             );
-        private static final MemorySegment ADDR = app_indicator_h.findOrThrow("g_object_disconnect");
+        private static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_disconnect");
 
         private final MethodHandle handle;
         private final FunctionDescriptor descriptor;
@@ -16388,6 +23959,13 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         }
 
         /**
+         * {@return the address}
+         */
+        public static MemorySegment address() {
+            return ADDR;
+        }
+
+        /**
          * {@return the specialized method handle}
          */
         public MethodHandle handle() {
@@ -16406,7 +23984,7 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 if (TRACE_DOWNCALLS) {
                     traceDowncall("g_object_disconnect", object, signal_spec, x2);
                 }
-                spreader.invokeExact(object, signal_spec, x2);
+                 spreader.invokeExact(object, signal_spec, x2);
             } catch(IllegalArgumentException | ClassCastException ex$)  {
                 throw ex$; // rethrow IAE from passing wrong number/type of args
             } catch (Throwable ex$) {
@@ -16423,9 +24001,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_setv"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_setv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16447,6 +24025,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_setv$handle() {
         return g_object_setv.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_setv(GObject *object, guint n_properties, const gchar *names[], const GValue values[])
+     * }
+     */
+    public static MemorySegment g_object_setv$address() {
+        return g_object_setv.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_setv(GObject *object, guint n_properties, const gchar *names[], const GValue values[])
@@ -16459,6 +24048,69 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_setv", object, n_properties, names, values);
             }
             mh$.invokeExact(object, n_properties, names, values);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_object_set_valist {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_set_valist");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_object_set_valist(GObject *object, const gchar *first_property_name, va_list var_args)
+     * }
+     */
+    public static FunctionDescriptor g_object_set_valist$descriptor() {
+        return g_object_set_valist.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_object_set_valist(GObject *object, const gchar *first_property_name, va_list var_args)
+     * }
+     */
+    public static MethodHandle g_object_set_valist$handle() {
+        return g_object_set_valist.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_set_valist(GObject *object, const gchar *first_property_name, va_list var_args)
+     * }
+     */
+    public static MemorySegment g_object_set_valist$address() {
+        return g_object_set_valist.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_object_set_valist(GObject *object, const gchar *first_property_name, va_list var_args)
+     * }
+     */
+    public static void g_object_set_valist(MemorySegment object, MemorySegment first_property_name, MemorySegment var_args) {
+        var mh$ = g_object_set_valist.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_object_set_valist", object, first_property_name, var_args);
+            }
+            mh$.invokeExact(object, first_property_name, var_args);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16472,9 +24124,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_getv"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_getv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16496,6 +24148,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_getv$handle() {
         return g_object_getv.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_getv(GObject *object, guint n_properties, const gchar *names[], GValue values[])
+     * }
+     */
+    public static MemorySegment g_object_getv$address() {
+        return g_object_getv.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_getv(GObject *object, guint n_properties, const gchar *names[], GValue values[])
@@ -16508,6 +24171,69 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_getv", object, n_properties, names, values);
             }
             mh$.invokeExact(object, n_properties, names, values);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_object_get_valist {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_get_valist");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_object_get_valist(GObject *object, const gchar *first_property_name, va_list var_args)
+     * }
+     */
+    public static FunctionDescriptor g_object_get_valist$descriptor() {
+        return g_object_get_valist.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_object_get_valist(GObject *object, const gchar *first_property_name, va_list var_args)
+     * }
+     */
+    public static MethodHandle g_object_get_valist$handle() {
+        return g_object_get_valist.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_get_valist(GObject *object, const gchar *first_property_name, va_list var_args)
+     * }
+     */
+    public static MemorySegment g_object_get_valist$address() {
+        return g_object_get_valist.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_object_get_valist(GObject *object, const gchar *first_property_name, va_list var_args)
+     * }
+     */
+    public static void g_object_get_valist(MemorySegment object, MemorySegment first_property_name, MemorySegment var_args) {
+        var mh$ = g_object_get_valist.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_object_get_valist", object, first_property_name, var_args);
+            }
+            mh$.invokeExact(object, first_property_name, var_args);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16520,9 +24246,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_set_property"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_set_property");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16544,6 +24270,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_set_property$handle() {
         return g_object_set_property.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_set_property(GObject *object, const gchar *property_name, const GValue *value)
+     * }
+     */
+    public static MemorySegment g_object_set_property$address() {
+        return g_object_set_property.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_set_property(GObject *object, const gchar *property_name, const GValue *value)
@@ -16556,6 +24293,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_set_property", object, property_name, value);
             }
             mh$.invokeExact(object, property_name, value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16568,9 +24307,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_get_property"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_get_property");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16592,6 +24331,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_get_property$handle() {
         return g_object_get_property.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_get_property(GObject *object, const gchar *property_name, GValue *value)
+     * }
+     */
+    public static MemorySegment g_object_get_property$address() {
+        return g_object_get_property.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_get_property(GObject *object, const gchar *property_name, GValue *value)
@@ -16604,6 +24354,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_get_property", object, property_name, value);
             }
             mh$.invokeExact(object, property_name, value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16614,9 +24366,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_freeze_notify"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_freeze_notify");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16638,6 +24390,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_freeze_notify$handle() {
         return g_object_freeze_notify.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_freeze_notify(GObject *object)
+     * }
+     */
+    public static MemorySegment g_object_freeze_notify$address() {
+        return g_object_freeze_notify.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_freeze_notify(GObject *object)
@@ -16650,6 +24413,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_freeze_notify", object);
             }
             mh$.invokeExact(object);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16661,9 +24426,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_notify"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_notify");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16685,6 +24450,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_notify$handle() {
         return g_object_notify.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_notify(GObject *object, const gchar *property_name)
+     * }
+     */
+    public static MemorySegment g_object_notify$address() {
+        return g_object_notify.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_notify(GObject *object, const gchar *property_name)
@@ -16697,6 +24473,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_notify", object, property_name);
             }
             mh$.invokeExact(object, property_name);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16708,9 +24486,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_notify_by_pspec"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_notify_by_pspec");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16732,6 +24510,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_notify_by_pspec$handle() {
         return g_object_notify_by_pspec.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_notify_by_pspec(GObject *object, GParamSpec *pspec)
+     * }
+     */
+    public static MemorySegment g_object_notify_by_pspec$address() {
+        return g_object_notify_by_pspec.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_notify_by_pspec(GObject *object, GParamSpec *pspec)
@@ -16744,6 +24533,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_notify_by_pspec", object, pspec);
             }
             mh$.invokeExact(object, pspec);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16754,9 +24545,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_thaw_notify"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_thaw_notify");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16778,6 +24569,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_thaw_notify$handle() {
         return g_object_thaw_notify.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_thaw_notify(GObject *object)
+     * }
+     */
+    public static MemorySegment g_object_thaw_notify$address() {
+        return g_object_thaw_notify.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_thaw_notify(GObject *object)
@@ -16790,6 +24592,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_thaw_notify", object);
             }
             mh$.invokeExact(object);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16801,9 +24605,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_is_floating"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_is_floating");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16825,6 +24629,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_is_floating$handle() {
         return g_object_is_floating.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_object_is_floating(gpointer object)
+     * }
+     */
+    public static MemorySegment g_object_is_floating$address() {
+        return g_object_is_floating.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_object_is_floating(gpointer object)
@@ -16837,6 +24652,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_is_floating", object);
             }
             return (int)mh$.invokeExact(object);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16848,9 +24665,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_ref_sink"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_ref_sink");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16872,6 +24689,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_ref_sink$handle() {
         return g_object_ref_sink.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_object_ref_sink(gpointer object)
+     * }
+     */
+    public static MemorySegment g_object_ref_sink$address() {
+        return g_object_ref_sink.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_object_ref_sink(gpointer object)
@@ -16884,6 +24712,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_ref_sink", object);
             }
             return (MemorySegment)mh$.invokeExact(object);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16895,9 +24725,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_take_ref"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_take_ref");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16919,6 +24749,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_take_ref$handle() {
         return g_object_take_ref.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_object_take_ref(gpointer object)
+     * }
+     */
+    public static MemorySegment g_object_take_ref$address() {
+        return g_object_take_ref.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_object_take_ref(gpointer object)
@@ -16931,6 +24772,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_take_ref", object);
             }
             return (MemorySegment)mh$.invokeExact(object);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16942,9 +24785,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_ref"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_ref");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -16966,6 +24809,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_ref$handle() {
         return g_object_ref.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_object_ref(gpointer object)
+     * }
+     */
+    public static MemorySegment g_object_ref$address() {
+        return g_object_ref.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_object_ref(gpointer object)
@@ -16978,6 +24832,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_ref", object);
             }
             return (MemorySegment)mh$.invokeExact(object);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -16988,9 +24844,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_unref"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_unref");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17012,6 +24868,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_unref$handle() {
         return g_object_unref.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_unref(gpointer object)
+     * }
+     */
+    public static MemorySegment g_object_unref$address() {
+        return g_object_unref.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_unref(gpointer object)
@@ -17024,6 +24891,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_unref", object);
             }
             mh$.invokeExact(object);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17036,9 +24905,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_weak_ref"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_weak_ref");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17060,6 +24929,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_weak_ref$handle() {
         return g_object_weak_ref.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_weak_ref(GObject *object, GWeakNotify notify, gpointer data)
+     * }
+     */
+    public static MemorySegment g_object_weak_ref$address() {
+        return g_object_weak_ref.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_weak_ref(GObject *object, GWeakNotify notify, gpointer data)
@@ -17072,6 +24952,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_weak_ref", object, notify, data);
             }
             mh$.invokeExact(object, notify, data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17084,9 +24966,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_weak_unref"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_weak_unref");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17108,6 +24990,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_weak_unref$handle() {
         return g_object_weak_unref.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_weak_unref(GObject *object, GWeakNotify notify, gpointer data)
+     * }
+     */
+    public static MemorySegment g_object_weak_unref$address() {
+        return g_object_weak_unref.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_weak_unref(GObject *object, GWeakNotify notify, gpointer data)
@@ -17120,6 +25013,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_weak_unref", object, notify, data);
             }
             mh$.invokeExact(object, notify, data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17131,9 +25026,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_add_weak_pointer"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_add_weak_pointer");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17155,6 +25050,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_add_weak_pointer$handle() {
         return g_object_add_weak_pointer.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_add_weak_pointer(GObject *object, gpointer *weak_pointer_location)
+     * }
+     */
+    public static MemorySegment g_object_add_weak_pointer$address() {
+        return g_object_add_weak_pointer.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_add_weak_pointer(GObject *object, gpointer *weak_pointer_location)
@@ -17167,6 +25073,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_add_weak_pointer", object, weak_pointer_location);
             }
             mh$.invokeExact(object, weak_pointer_location);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17178,9 +25086,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_remove_weak_pointer"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_remove_weak_pointer");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17202,6 +25110,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_remove_weak_pointer$handle() {
         return g_object_remove_weak_pointer.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_remove_weak_pointer(GObject *object, gpointer *weak_pointer_location)
+     * }
+     */
+    public static MemorySegment g_object_remove_weak_pointer$address() {
+        return g_object_remove_weak_pointer.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_remove_weak_pointer(GObject *object, gpointer *weak_pointer_location)
@@ -17214,6 +25133,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_remove_weak_pointer", object, weak_pointer_location);
             }
             mh$.invokeExact(object, weak_pointer_location);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17226,9 +25147,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_add_toggle_ref"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_add_toggle_ref");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17250,6 +25171,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_add_toggle_ref$handle() {
         return g_object_add_toggle_ref.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_add_toggle_ref(GObject *object, GToggleNotify notify, gpointer data)
+     * }
+     */
+    public static MemorySegment g_object_add_toggle_ref$address() {
+        return g_object_add_toggle_ref.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_add_toggle_ref(GObject *object, GToggleNotify notify, gpointer data)
@@ -17262,6 +25194,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_add_toggle_ref", object, notify, data);
             }
             mh$.invokeExact(object, notify, data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17274,9 +25208,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_remove_toggle_ref"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_remove_toggle_ref");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17298,6 +25232,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_remove_toggle_ref$handle() {
         return g_object_remove_toggle_ref.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_remove_toggle_ref(GObject *object, GToggleNotify notify, gpointer data)
+     * }
+     */
+    public static MemorySegment g_object_remove_toggle_ref$address() {
+        return g_object_remove_toggle_ref.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_remove_toggle_ref(GObject *object, GToggleNotify notify, gpointer data)
@@ -17310,6 +25255,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_remove_toggle_ref", object, notify, data);
             }
             mh$.invokeExact(object, notify, data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17322,9 +25269,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_get_qdata"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_get_qdata");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17346,6 +25293,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_get_qdata$handle() {
         return g_object_get_qdata.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_object_get_qdata(GObject *object, GQuark quark)
+     * }
+     */
+    public static MemorySegment g_object_get_qdata$address() {
+        return g_object_get_qdata.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_object_get_qdata(GObject *object, GQuark quark)
@@ -17358,6 +25316,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_get_qdata", object, quark);
             }
             return (MemorySegment)mh$.invokeExact(object, quark);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17370,9 +25330,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_set_qdata"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_set_qdata");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17394,6 +25354,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_set_qdata$handle() {
         return g_object_set_qdata.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_set_qdata(GObject *object, GQuark quark, gpointer data)
+     * }
+     */
+    public static MemorySegment g_object_set_qdata$address() {
+        return g_object_set_qdata.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_set_qdata(GObject *object, GQuark quark, gpointer data)
@@ -17406,6 +25377,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_set_qdata", object, quark, data);
             }
             mh$.invokeExact(object, quark, data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17419,9 +25392,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_set_qdata_full"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_set_qdata_full");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17443,6 +25416,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_set_qdata_full$handle() {
         return g_object_set_qdata_full.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_set_qdata_full(GObject *object, GQuark quark, gpointer data, GDestroyNotify destroy)
+     * }
+     */
+    public static MemorySegment g_object_set_qdata_full$address() {
+        return g_object_set_qdata_full.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_set_qdata_full(GObject *object, GQuark quark, gpointer data, GDestroyNotify destroy)
@@ -17455,6 +25439,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_set_qdata_full", object, quark, data, destroy);
             }
             mh$.invokeExact(object, quark, data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17467,9 +25453,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_steal_qdata"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_steal_qdata");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17491,6 +25477,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_steal_qdata$handle() {
         return g_object_steal_qdata.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_object_steal_qdata(GObject *object, GQuark quark)
+     * }
+     */
+    public static MemorySegment g_object_steal_qdata$address() {
+        return g_object_steal_qdata.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_object_steal_qdata(GObject *object, GQuark quark)
@@ -17503,6 +25500,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_steal_qdata", object, quark);
             }
             return (MemorySegment)mh$.invokeExact(object, quark);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17517,9 +25516,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_dup_qdata"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_dup_qdata");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17541,6 +25540,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_dup_qdata$handle() {
         return g_object_dup_qdata.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_object_dup_qdata(GObject *object, GQuark quark, GDuplicateFunc dup_func, gpointer user_data)
+     * }
+     */
+    public static MemorySegment g_object_dup_qdata$address() {
+        return g_object_dup_qdata.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_object_dup_qdata(GObject *object, GQuark quark, GDuplicateFunc dup_func, gpointer user_data)
@@ -17553,6 +25563,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_dup_qdata", object, quark, dup_func, user_data);
             }
             return (MemorySegment)mh$.invokeExact(object, quark, dup_func, user_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17569,9 +25581,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_replace_qdata"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_replace_qdata");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17593,6 +25605,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_replace_qdata$handle() {
         return g_object_replace_qdata.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_object_replace_qdata(GObject *object, GQuark quark, gpointer oldval, gpointer newval, GDestroyNotify destroy, GDestroyNotify *old_destroy)
+     * }
+     */
+    public static MemorySegment g_object_replace_qdata$address() {
+        return g_object_replace_qdata.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_object_replace_qdata(GObject *object, GQuark quark, gpointer oldval, gpointer newval, GDestroyNotify destroy, GDestroyNotify *old_destroy)
@@ -17605,6 +25628,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_replace_qdata", object, quark, oldval, newval, destroy, old_destroy);
             }
             return (int)mh$.invokeExact(object, quark, oldval, newval, destroy, old_destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17617,9 +25642,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_get_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_get_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17641,6 +25666,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_get_data$handle() {
         return g_object_get_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_object_get_data(GObject *object, const gchar *key)
+     * }
+     */
+    public static MemorySegment g_object_get_data$address() {
+        return g_object_get_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_object_get_data(GObject *object, const gchar *key)
@@ -17653,6 +25689,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_get_data", object, key);
             }
             return (MemorySegment)mh$.invokeExact(object, key);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17665,9 +25703,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_set_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_set_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17689,6 +25727,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_set_data$handle() {
         return g_object_set_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_set_data(GObject *object, const gchar *key, gpointer data)
+     * }
+     */
+    public static MemorySegment g_object_set_data$address() {
+        return g_object_set_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_set_data(GObject *object, const gchar *key, gpointer data)
@@ -17701,6 +25750,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_set_data", object, key, data);
             }
             mh$.invokeExact(object, key, data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17714,9 +25765,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_set_data_full"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_set_data_full");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17738,6 +25789,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_set_data_full$handle() {
         return g_object_set_data_full.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_set_data_full(GObject *object, const gchar *key, gpointer data, GDestroyNotify destroy)
+     * }
+     */
+    public static MemorySegment g_object_set_data_full$address() {
+        return g_object_set_data_full.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_set_data_full(GObject *object, const gchar *key, gpointer data, GDestroyNotify destroy)
@@ -17750,6 +25812,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_set_data_full", object, key, data, destroy);
             }
             mh$.invokeExact(object, key, data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17762,9 +25826,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_steal_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_steal_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17786,6 +25850,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_steal_data$handle() {
         return g_object_steal_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_object_steal_data(GObject *object, const gchar *key)
+     * }
+     */
+    public static MemorySegment g_object_steal_data$address() {
+        return g_object_steal_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_object_steal_data(GObject *object, const gchar *key)
@@ -17798,6 +25873,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_steal_data", object, key);
             }
             return (MemorySegment)mh$.invokeExact(object, key);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17812,9 +25889,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_dup_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_dup_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17836,6 +25913,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_dup_data$handle() {
         return g_object_dup_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_object_dup_data(GObject *object, const gchar *key, GDuplicateFunc dup_func, gpointer user_data)
+     * }
+     */
+    public static MemorySegment g_object_dup_data$address() {
+        return g_object_dup_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_object_dup_data(GObject *object, const gchar *key, GDuplicateFunc dup_func, gpointer user_data)
@@ -17848,6 +25936,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_dup_data", object, key, dup_func, user_data);
             }
             return (MemorySegment)mh$.invokeExact(object, key, dup_func, user_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17864,9 +25954,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_replace_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_replace_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17888,6 +25978,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_replace_data$handle() {
         return g_object_replace_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_object_replace_data(GObject *object, const gchar *key, gpointer oldval, gpointer newval, GDestroyNotify destroy, GDestroyNotify *old_destroy)
+     * }
+     */
+    public static MemorySegment g_object_replace_data$address() {
+        return g_object_replace_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_object_replace_data(GObject *object, const gchar *key, gpointer oldval, gpointer newval, GDestroyNotify destroy, GDestroyNotify *old_destroy)
@@ -17900,6 +26001,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_replace_data", object, key, oldval, newval, destroy, old_destroy);
             }
             return (int)mh$.invokeExact(object, key, oldval, newval, destroy, old_destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17911,9 +26014,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_watch_closure"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_watch_closure");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17935,6 +26038,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_watch_closure$handle() {
         return g_object_watch_closure.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_watch_closure(GObject *object, GClosure *closure)
+     * }
+     */
+    public static MemorySegment g_object_watch_closure$address() {
+        return g_object_watch_closure.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_watch_closure(GObject *object, GClosure *closure)
@@ -17947,6 +26061,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_watch_closure", object, closure);
             }
             mh$.invokeExact(object, closure);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -17959,9 +26075,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_new_object"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_new_object");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -17983,6 +26099,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_new_object$handle() {
         return g_cclosure_new_object.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GClosure *g_cclosure_new_object(GCallback callback_func, GObject *object)
+     * }
+     */
+    public static MemorySegment g_cclosure_new_object$address() {
+        return g_cclosure_new_object.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GClosure *g_cclosure_new_object(GCallback callback_func, GObject *object)
@@ -17995,6 +26122,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_new_object", callback_func, object);
             }
             return (MemorySegment)mh$.invokeExact(callback_func, object);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18007,9 +26136,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_cclosure_new_object_swap"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_cclosure_new_object_swap");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18031,6 +26160,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_cclosure_new_object_swap$handle() {
         return g_cclosure_new_object_swap.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GClosure *g_cclosure_new_object_swap(GCallback callback_func, GObject *object)
+     * }
+     */
+    public static MemorySegment g_cclosure_new_object_swap$address() {
+        return g_cclosure_new_object_swap.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GClosure *g_cclosure_new_object_swap(GCallback callback_func, GObject *object)
@@ -18043,6 +26183,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_cclosure_new_object_swap", callback_func, object);
             }
             return (MemorySegment)mh$.invokeExact(callback_func, object);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18055,9 +26197,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_closure_new_object"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_closure_new_object");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18079,6 +26221,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_closure_new_object$handle() {
         return g_closure_new_object.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GClosure *g_closure_new_object(guint sizeof_closure, GObject *object)
+     * }
+     */
+    public static MemorySegment g_closure_new_object$address() {
+        return g_closure_new_object.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GClosure *g_closure_new_object(guint sizeof_closure, GObject *object)
@@ -18091,6 +26244,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_closure_new_object", sizeof_closure, object);
             }
             return (MemorySegment)mh$.invokeExact(sizeof_closure, object);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18102,9 +26257,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_object"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_object");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18126,6 +26281,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_object$handle() {
         return g_value_set_object.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_object(GValue *value, gpointer v_object)
+     * }
+     */
+    public static MemorySegment g_value_set_object$address() {
+        return g_value_set_object.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_object(GValue *value, gpointer v_object)
@@ -18138,6 +26304,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_object", value, v_object);
             }
             mh$.invokeExact(value, v_object);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18149,9 +26317,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_get_object"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_get_object");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18173,6 +26341,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_get_object$handle() {
         return g_value_get_object.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_value_get_object(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_get_object$address() {
+        return g_value_get_object.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_value_get_object(const GValue *value)
@@ -18185,6 +26364,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_get_object", value);
             }
             return (MemorySegment)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18196,9 +26377,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_dup_object"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_dup_object");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18220,6 +26401,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_dup_object$handle() {
         return g_value_dup_object.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_value_dup_object(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_dup_object$address() {
+        return g_value_dup_object.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_value_dup_object(const GValue *value)
@@ -18232,6 +26424,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_dup_object", value);
             }
             return (MemorySegment)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18247,9 +26441,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_connect_object"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_connect_object");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18271,6 +26465,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_connect_object$handle() {
         return g_signal_connect_object.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gulong g_signal_connect_object(gpointer instance, const gchar *detailed_signal, GCallback c_handler, gpointer gobject, GConnectFlags connect_flags)
+     * }
+     */
+    public static MemorySegment g_signal_connect_object$address() {
+        return g_signal_connect_object.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gulong g_signal_connect_object(gpointer instance, const gchar *detailed_signal, GCallback c_handler, gpointer gobject, GConnectFlags connect_flags)
@@ -18283,6 +26488,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_connect_object", instance, detailed_signal, c_handler, gobject, connect_flags);
             }
             return (long)mh$.invokeExact(instance, detailed_signal, c_handler, gobject, connect_flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18293,9 +26500,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_force_floating"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_force_floating");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18317,6 +26524,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_force_floating$handle() {
         return g_object_force_floating.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_force_floating(GObject *object)
+     * }
+     */
+    public static MemorySegment g_object_force_floating$address() {
+        return g_object_force_floating.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_force_floating(GObject *object)
@@ -18329,6 +26547,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_force_floating", object);
             }
             mh$.invokeExact(object);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18339,9 +26559,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_run_dispose"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_run_dispose");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18363,6 +26583,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_run_dispose$handle() {
         return g_object_run_dispose.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_run_dispose(GObject *object)
+     * }
+     */
+    public static MemorySegment g_object_run_dispose$address() {
+        return g_object_run_dispose.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_run_dispose(GObject *object)
@@ -18375,6 +26606,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_run_dispose", object);
             }
             mh$.invokeExact(object);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18386,9 +26619,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_take_object"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_take_object");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18410,6 +26643,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_take_object$handle() {
         return g_value_take_object.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_take_object(GValue *value, gpointer v_object)
+     * }
+     */
+    public static MemorySegment g_value_take_object$address() {
+        return g_value_take_object.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_take_object(GValue *value, gpointer v_object)
@@ -18422,6 +26666,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_take_object", value, v_object);
             }
             mh$.invokeExact(value, v_object);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18433,9 +26679,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_object_take_ownership"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_object_take_ownership");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18457,6 +26703,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_object_take_ownership$handle() {
         return g_value_set_object_take_ownership.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_object_take_ownership(GValue *value, gpointer v_object)
+     * }
+     */
+    public static MemorySegment g_value_set_object_take_ownership$address() {
+        return g_value_set_object_take_ownership.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_object_take_ownership(GValue *value, gpointer v_object)
@@ -18469,6 +26726,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_object_take_ownership", value, v_object);
             }
             mh$.invokeExact(value, v_object);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18481,9 +26740,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_compat_control"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_compat_control");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18505,6 +26764,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_compat_control$handle() {
         return g_object_compat_control.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gsize g_object_compat_control(gsize what, gpointer data)
+     * }
+     */
+    public static MemorySegment g_object_compat_control$address() {
+        return g_object_compat_control.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gsize g_object_compat_control(gsize what, gpointer data)
@@ -18517,6 +26787,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_compat_control", what, data);
             }
             return (long)mh$.invokeExact(what, data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18527,9 +26799,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_clear_object"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_clear_object");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18551,6 +26823,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_clear_object$handle() {
         return g_clear_object.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_clear_object(GObject **object_ptr)
+     * }
+     */
+    public static MemorySegment g_clear_object$address() {
+        return g_clear_object.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_clear_object(GObject **object_ptr)
@@ -18563,6 +26846,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_clear_object", object_ptr);
             }
             mh$.invokeExact(object_ptr);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18574,9 +26859,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_weak_ref_init"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_weak_ref_init");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18598,6 +26883,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_weak_ref_init$handle() {
         return g_weak_ref_init.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_weak_ref_init(GWeakRef *weak_ref, gpointer object)
+     * }
+     */
+    public static MemorySegment g_weak_ref_init$address() {
+        return g_weak_ref_init.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_weak_ref_init(GWeakRef *weak_ref, gpointer object)
@@ -18610,6 +26906,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_weak_ref_init", weak_ref, object);
             }
             mh$.invokeExact(weak_ref, object);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18620,9 +26918,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_weak_ref_clear"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_weak_ref_clear");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18644,6 +26942,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_weak_ref_clear$handle() {
         return g_weak_ref_clear.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_weak_ref_clear(GWeakRef *weak_ref)
+     * }
+     */
+    public static MemorySegment g_weak_ref_clear$address() {
+        return g_weak_ref_clear.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_weak_ref_clear(GWeakRef *weak_ref)
@@ -18656,6 +26965,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_weak_ref_clear", weak_ref);
             }
             mh$.invokeExact(weak_ref);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18667,9 +26978,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_weak_ref_get"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_weak_ref_get");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18691,6 +27002,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_weak_ref_get$handle() {
         return g_weak_ref_get.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_weak_ref_get(GWeakRef *weak_ref)
+     * }
+     */
+    public static MemorySegment g_weak_ref_get$address() {
+        return g_weak_ref_get.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_weak_ref_get(GWeakRef *weak_ref)
@@ -18703,6 +27025,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_weak_ref_get", weak_ref);
             }
             return (MemorySegment)mh$.invokeExact(weak_ref);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18714,9 +27038,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_weak_ref_set"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_weak_ref_set");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18738,6 +27062,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_weak_ref_set$handle() {
         return g_weak_ref_set.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_weak_ref_set(GWeakRef *weak_ref, gpointer object)
+     * }
+     */
+    public static MemorySegment g_weak_ref_set$address() {
+        return g_weak_ref_set.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_weak_ref_set(GWeakRef *weak_ref, gpointer object)
@@ -18750,6 +27085,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_weak_ref_set", weak_ref, object);
             }
             mh$.invokeExact(weak_ref, object);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18795,9 +27132,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_binding_flags_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_binding_flags_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18819,6 +27156,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_binding_flags_get_type$handle() {
         return g_binding_flags_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_binding_flags_get_type()
+     * }
+     */
+    public static MemorySegment g_binding_flags_get_type$address() {
+        return g_binding_flags_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_binding_flags_get_type()
@@ -18831,6 +27179,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_binding_flags_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18840,9 +27190,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_binding_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_binding_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18864,6 +27214,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_binding_get_type$handle() {
         return g_binding_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_binding_get_type()
+     * }
+     */
+    public static MemorySegment g_binding_get_type$address() {
+        return g_binding_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_binding_get_type()
@@ -18876,6 +27237,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_binding_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18887,9 +27250,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_binding_get_flags"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_binding_get_flags");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18911,6 +27274,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_binding_get_flags$handle() {
         return g_binding_get_flags.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GBindingFlags g_binding_get_flags(GBinding *binding)
+     * }
+     */
+    public static MemorySegment g_binding_get_flags$address() {
+        return g_binding_get_flags.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GBindingFlags g_binding_get_flags(GBinding *binding)
@@ -18923,6 +27297,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_binding_get_flags", binding);
             }
             return (int)mh$.invokeExact(binding);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18934,9 +27310,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_binding_get_source"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_binding_get_source");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -18958,6 +27334,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_binding_get_source$handle() {
         return g_binding_get_source.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GObject *g_binding_get_source(GBinding *binding)
+     * }
+     */
+    public static MemorySegment g_binding_get_source$address() {
+        return g_binding_get_source.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GObject *g_binding_get_source(GBinding *binding)
@@ -18970,6 +27357,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_binding_get_source", binding);
             }
             return (MemorySegment)mh$.invokeExact(binding);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -18981,9 +27370,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_binding_dup_source"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_binding_dup_source");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -19005,6 +27394,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_binding_dup_source$handle() {
         return g_binding_dup_source.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GObject *g_binding_dup_source(GBinding *binding)
+     * }
+     */
+    public static MemorySegment g_binding_dup_source$address() {
+        return g_binding_dup_source.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GObject *g_binding_dup_source(GBinding *binding)
@@ -19017,6 +27417,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_binding_dup_source", binding);
             }
             return (MemorySegment)mh$.invokeExact(binding);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -19028,9 +27430,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_binding_get_target"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_binding_get_target");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -19052,6 +27454,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_binding_get_target$handle() {
         return g_binding_get_target.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GObject *g_binding_get_target(GBinding *binding)
+     * }
+     */
+    public static MemorySegment g_binding_get_target$address() {
+        return g_binding_get_target.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GObject *g_binding_get_target(GBinding *binding)
@@ -19064,6 +27477,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_binding_get_target", binding);
             }
             return (MemorySegment)mh$.invokeExact(binding);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -19075,9 +27490,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_binding_dup_target"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_binding_dup_target");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -19099,6 +27514,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_binding_dup_target$handle() {
         return g_binding_dup_target.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GObject *g_binding_dup_target(GBinding *binding)
+     * }
+     */
+    public static MemorySegment g_binding_dup_target$address() {
+        return g_binding_dup_target.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GObject *g_binding_dup_target(GBinding *binding)
@@ -19111,6 +27537,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_binding_dup_target", binding);
             }
             return (MemorySegment)mh$.invokeExact(binding);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -19122,9 +27550,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_binding_get_source_property"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_binding_get_source_property");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -19146,6 +27574,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_binding_get_source_property$handle() {
         return g_binding_get_source_property.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern const gchar *g_binding_get_source_property(GBinding *binding)
+     * }
+     */
+    public static MemorySegment g_binding_get_source_property$address() {
+        return g_binding_get_source_property.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern const gchar *g_binding_get_source_property(GBinding *binding)
@@ -19158,6 +27597,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_binding_get_source_property", binding);
             }
             return (MemorySegment)mh$.invokeExact(binding);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -19169,9 +27610,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_binding_get_target_property"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_binding_get_target_property");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -19193,6 +27634,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_binding_get_target_property$handle() {
         return g_binding_get_target_property.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern const gchar *g_binding_get_target_property(GBinding *binding)
+     * }
+     */
+    public static MemorySegment g_binding_get_target_property$address() {
+        return g_binding_get_target_property.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern const gchar *g_binding_get_target_property(GBinding *binding)
@@ -19205,6 +27657,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_binding_get_target_property", binding);
             }
             return (MemorySegment)mh$.invokeExact(binding);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -19215,9 +27669,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_binding_unbind"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_binding_unbind");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -19239,6 +27693,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_binding_unbind$handle() {
         return g_binding_unbind.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_binding_unbind(GBinding *binding)
+     * }
+     */
+    public static MemorySegment g_binding_unbind$address() {
+        return g_binding_unbind.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_binding_unbind(GBinding *binding)
@@ -19251,6 +27716,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_binding_unbind", binding);
             }
             mh$.invokeExact(binding);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -19266,9 +27733,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_bind_property"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_bind_property");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -19290,6 +27757,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_bind_property$handle() {
         return g_object_bind_property.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GBinding *g_object_bind_property(gpointer source, const gchar *source_property, gpointer target, const gchar *target_property, GBindingFlags flags)
+     * }
+     */
+    public static MemorySegment g_object_bind_property$address() {
+        return g_object_bind_property.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GBinding *g_object_bind_property(gpointer source, const gchar *source_property, gpointer target, const gchar *target_property, GBindingFlags flags)
@@ -19302,6 +27780,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_bind_property", source, source_property, target, target_property, flags);
             }
             return (MemorySegment)mh$.invokeExact(source, source_property, target, target_property, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -19321,9 +27801,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_bind_property_full"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_bind_property_full");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -19345,6 +27825,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_bind_property_full$handle() {
         return g_object_bind_property_full.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GBinding *g_object_bind_property_full(gpointer source, const gchar *source_property, gpointer target, const gchar *target_property, GBindingFlags flags, GBindingTransformFunc transform_to, GBindingTransformFunc transform_from, gpointer user_data, GDestroyNotify notify)
+     * }
+     */
+    public static MemorySegment g_object_bind_property_full$address() {
+        return g_object_bind_property_full.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GBinding *g_object_bind_property_full(gpointer source, const gchar *source_property, gpointer target, const gchar *target_property, GBindingFlags flags, GBindingTransformFunc transform_to, GBindingTransformFunc transform_from, gpointer user_data, GDestroyNotify notify)
@@ -19357,6 +27848,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_bind_property_full", source, source_property, target, target_property, flags, transform_to, transform_from, user_data, notify);
             }
             return (MemorySegment)mh$.invokeExact(source, source_property, target, target_property, flags, transform_to, transform_from, user_data, notify);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -19374,9 +27867,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_bind_property_with_closures"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_object_bind_property_with_closures");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -19398,6 +27891,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_object_bind_property_with_closures$handle() {
         return g_object_bind_property_with_closures.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GBinding *g_object_bind_property_with_closures(gpointer source, const gchar *source_property, gpointer target, const gchar *target_property, GBindingFlags flags, GClosure *transform_to, GClosure *transform_from)
+     * }
+     */
+    public static MemorySegment g_object_bind_property_with_closures$address() {
+        return g_object_bind_property_with_closures.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GBinding *g_object_bind_property_with_closures(gpointer source, const gchar *source_property, gpointer target, const gchar *target_property, GBindingFlags flags, GClosure *transform_to, GClosure *transform_from)
@@ -19410,6 +27914,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_object_bind_property_with_closures", source, source_property, target, target_property, flags, transform_to, transform_from);
             }
             return (MemorySegment)mh$.invokeExact(source, source_property, target, target_property, flags, transform_to, transform_from);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -19419,9 +27925,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_binding_group_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_binding_group_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -19443,6 +27949,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_binding_group_get_type$handle() {
         return g_binding_group_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_binding_group_get_type()
+     * }
+     */
+    public static MemorySegment g_binding_group_get_type$address() {
+        return g_binding_group_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_binding_group_get_type()
@@ -19455,6 +27972,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_binding_group_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -19464,9 +27983,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_binding_group_new"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_binding_group_new");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -19488,6 +28007,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_binding_group_new$handle() {
         return g_binding_group_new.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GBindingGroup *g_binding_group_new()
+     * }
+     */
+    public static MemorySegment g_binding_group_new$address() {
+        return g_binding_group_new.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GBindingGroup *g_binding_group_new()
@@ -19500,6 +28030,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_binding_group_new");
             }
             return (MemorySegment)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -19511,9 +28043,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_binding_group_dup_source"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_binding_group_dup_source");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -19535,6 +28067,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_binding_group_dup_source$handle() {
         return g_binding_group_dup_source.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_binding_group_dup_source(GBindingGroup *self)
+     * }
+     */
+    public static MemorySegment g_binding_group_dup_source$address() {
+        return g_binding_group_dup_source.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_binding_group_dup_source(GBindingGroup *self)
@@ -19547,6 +28090,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_binding_group_dup_source", self);
             }
             return (MemorySegment)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -19558,9 +28103,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_binding_group_set_source"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_binding_group_set_source");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -19582,6 +28127,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_binding_group_set_source$handle() {
         return g_binding_group_set_source.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_binding_group_set_source(GBindingGroup *self, gpointer source)
+     * }
+     */
+    public static MemorySegment g_binding_group_set_source$address() {
+        return g_binding_group_set_source.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_binding_group_set_source(GBindingGroup *self, gpointer source)
@@ -19594,6 +28150,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_binding_group_set_source", self, source);
             }
             mh$.invokeExact(self, source);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -19608,9 +28166,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_binding_group_bind"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_binding_group_bind");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -19632,6 +28190,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_binding_group_bind$handle() {
         return g_binding_group_bind.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_binding_group_bind(GBindingGroup *self, const gchar *source_property, gpointer target, const gchar *target_property, GBindingFlags flags)
+     * }
+     */
+    public static MemorySegment g_binding_group_bind$address() {
+        return g_binding_group_bind.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_binding_group_bind(GBindingGroup *self, const gchar *source_property, gpointer target, const gchar *target_property, GBindingFlags flags)
@@ -19644,6 +28213,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_binding_group_bind", self, source_property, target, target_property, flags);
             }
             mh$.invokeExact(self, source_property, target, target_property, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -19662,9 +28233,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_binding_group_bind_full"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_binding_group_bind_full");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -19686,6 +28257,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_binding_group_bind_full$handle() {
         return g_binding_group_bind_full.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_binding_group_bind_full(GBindingGroup *self, const gchar *source_property, gpointer target, const gchar *target_property, GBindingFlags flags, GBindingTransformFunc transform_to, GBindingTransformFunc transform_from, gpointer user_data, GDestroyNotify user_data_destroy)
+     * }
+     */
+    public static MemorySegment g_binding_group_bind_full$address() {
+        return g_binding_group_bind_full.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_binding_group_bind_full(GBindingGroup *self, const gchar *source_property, gpointer target, const gchar *target_property, GBindingFlags flags, GBindingTransformFunc transform_to, GBindingTransformFunc transform_from, gpointer user_data, GDestroyNotify user_data_destroy)
@@ -19698,6 +28280,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_binding_group_bind_full", self, source_property, target, target_property, flags, transform_to, transform_from, user_data, user_data_destroy);
             }
             mh$.invokeExact(self, source_property, target, target_property, flags, transform_to, transform_from, user_data, user_data_destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -19714,9 +28298,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_binding_group_bind_with_closures"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_binding_group_bind_with_closures");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -19738,6 +28322,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_binding_group_bind_with_closures$handle() {
         return g_binding_group_bind_with_closures.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_binding_group_bind_with_closures(GBindingGroup *self, const gchar *source_property, gpointer target, const gchar *target_property, GBindingFlags flags, GClosure *transform_to, GClosure *transform_from)
+     * }
+     */
+    public static MemorySegment g_binding_group_bind_with_closures$address() {
+        return g_binding_group_bind_with_closures.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_binding_group_bind_with_closures(GBindingGroup *self, const gchar *source_property, gpointer target, const gchar *target_property, GBindingFlags flags, GClosure *transform_to, GClosure *transform_from)
@@ -19750,6 +28345,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_binding_group_bind_with_closures", self, source_property, target, target_property, flags, transform_to, transform_from);
             }
             mh$.invokeExact(self, source_property, target, target_property, flags, transform_to, transform_from);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -19762,9 +28359,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_enum_get_value"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_enum_get_value");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -19786,6 +28383,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_enum_get_value$handle() {
         return g_enum_get_value.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GEnumValue *g_enum_get_value(GEnumClass *enum_class, gint value)
+     * }
+     */
+    public static MemorySegment g_enum_get_value$address() {
+        return g_enum_get_value.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GEnumValue *g_enum_get_value(GEnumClass *enum_class, gint value)
@@ -19798,6 +28406,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_enum_get_value", enum_class, value);
             }
             return (MemorySegment)mh$.invokeExact(enum_class, value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -19810,9 +28420,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_enum_get_value_by_name"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_enum_get_value_by_name");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -19834,6 +28444,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_enum_get_value_by_name$handle() {
         return g_enum_get_value_by_name.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GEnumValue *g_enum_get_value_by_name(GEnumClass *enum_class, const gchar *name)
+     * }
+     */
+    public static MemorySegment g_enum_get_value_by_name$address() {
+        return g_enum_get_value_by_name.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GEnumValue *g_enum_get_value_by_name(GEnumClass *enum_class, const gchar *name)
@@ -19846,6 +28467,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_enum_get_value_by_name", enum_class, name);
             }
             return (MemorySegment)mh$.invokeExact(enum_class, name);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -19858,9 +28481,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_enum_get_value_by_nick"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_enum_get_value_by_nick");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -19882,6 +28505,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_enum_get_value_by_nick$handle() {
         return g_enum_get_value_by_nick.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GEnumValue *g_enum_get_value_by_nick(GEnumClass *enum_class, const gchar *nick)
+     * }
+     */
+    public static MemorySegment g_enum_get_value_by_nick$address() {
+        return g_enum_get_value_by_nick.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GEnumValue *g_enum_get_value_by_nick(GEnumClass *enum_class, const gchar *nick)
@@ -19894,6 +28528,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_enum_get_value_by_nick", enum_class, nick);
             }
             return (MemorySegment)mh$.invokeExact(enum_class, nick);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -19906,9 +28542,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_flags_get_first_value"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_flags_get_first_value");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -19930,6 +28566,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_flags_get_first_value$handle() {
         return g_flags_get_first_value.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GFlagsValue *g_flags_get_first_value(GFlagsClass *flags_class, guint value)
+     * }
+     */
+    public static MemorySegment g_flags_get_first_value$address() {
+        return g_flags_get_first_value.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GFlagsValue *g_flags_get_first_value(GFlagsClass *flags_class, guint value)
@@ -19942,6 +28589,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_flags_get_first_value", flags_class, value);
             }
             return (MemorySegment)mh$.invokeExact(flags_class, value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -19954,9 +28603,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_flags_get_value_by_name"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_flags_get_value_by_name");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -19978,6 +28627,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_flags_get_value_by_name$handle() {
         return g_flags_get_value_by_name.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GFlagsValue *g_flags_get_value_by_name(GFlagsClass *flags_class, const gchar *name)
+     * }
+     */
+    public static MemorySegment g_flags_get_value_by_name$address() {
+        return g_flags_get_value_by_name.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GFlagsValue *g_flags_get_value_by_name(GFlagsClass *flags_class, const gchar *name)
@@ -19990,6 +28650,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_flags_get_value_by_name", flags_class, name);
             }
             return (MemorySegment)mh$.invokeExact(flags_class, name);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -20002,9 +28664,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_flags_get_value_by_nick"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_flags_get_value_by_nick");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -20026,6 +28688,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_flags_get_value_by_nick$handle() {
         return g_flags_get_value_by_nick.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GFlagsValue *g_flags_get_value_by_nick(GFlagsClass *flags_class, const gchar *nick)
+     * }
+     */
+    public static MemorySegment g_flags_get_value_by_nick$address() {
+        return g_flags_get_value_by_nick.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GFlagsValue *g_flags_get_value_by_nick(GFlagsClass *flags_class, const gchar *nick)
@@ -20038,6 +28711,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_flags_get_value_by_nick", flags_class, nick);
             }
             return (MemorySegment)mh$.invokeExact(flags_class, nick);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -20050,9 +28725,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_enum_to_string"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_enum_to_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -20074,6 +28749,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_enum_to_string$handle() {
         return g_enum_to_string.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gchar *g_enum_to_string(GType g_enum_type, gint value)
+     * }
+     */
+    public static MemorySegment g_enum_to_string$address() {
+        return g_enum_to_string.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gchar *g_enum_to_string(GType g_enum_type, gint value)
@@ -20086,6 +28772,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_enum_to_string", g_enum_type, value);
             }
             return (MemorySegment)mh$.invokeExact(g_enum_type, value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -20098,9 +28786,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_flags_to_string"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_flags_to_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -20122,6 +28810,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_flags_to_string$handle() {
         return g_flags_to_string.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gchar *g_flags_to_string(GType flags_type, guint value)
+     * }
+     */
+    public static MemorySegment g_flags_to_string$address() {
+        return g_flags_to_string.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gchar *g_flags_to_string(GType flags_type, guint value)
@@ -20134,6 +28833,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_flags_to_string", flags_type, value);
             }
             return (MemorySegment)mh$.invokeExact(flags_type, value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -20145,9 +28846,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_enum"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_enum");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -20169,6 +28870,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_enum$handle() {
         return g_value_set_enum.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_enum(GValue *value, gint v_enum)
+     * }
+     */
+    public static MemorySegment g_value_set_enum$address() {
+        return g_value_set_enum.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_enum(GValue *value, gint v_enum)
@@ -20181,6 +28893,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_enum", value, v_enum);
             }
             mh$.invokeExact(value, v_enum);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -20192,9 +28906,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_get_enum"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_get_enum");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -20216,6 +28930,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_get_enum$handle() {
         return g_value_get_enum.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gint g_value_get_enum(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_get_enum$address() {
+        return g_value_get_enum.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gint g_value_get_enum(const GValue *value)
@@ -20228,6 +28953,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_get_enum", value);
             }
             return (int)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -20239,9 +28966,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_flags"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_flags");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -20263,6 +28990,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_flags$handle() {
         return g_value_set_flags.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_flags(GValue *value, guint v_flags)
+     * }
+     */
+    public static MemorySegment g_value_set_flags$address() {
+        return g_value_set_flags.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_flags(GValue *value, guint v_flags)
@@ -20275,6 +29013,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_flags", value, v_flags);
             }
             mh$.invokeExact(value, v_flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -20286,9 +29026,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_get_flags"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_get_flags");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -20310,6 +29050,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_get_flags$handle() {
         return g_value_get_flags.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern guint g_value_get_flags(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_get_flags$address() {
+        return g_value_get_flags.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern guint g_value_get_flags(const GValue *value)
@@ -20322,6 +29073,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_get_flags", value);
             }
             return (int)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -20334,9 +29087,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_enum_register_static"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_enum_register_static");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -20358,6 +29111,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_enum_register_static$handle() {
         return g_enum_register_static.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_enum_register_static(const gchar *name, const GEnumValue *const_static_values)
+     * }
+     */
+    public static MemorySegment g_enum_register_static$address() {
+        return g_enum_register_static.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_enum_register_static(const gchar *name, const GEnumValue *const_static_values)
@@ -20370,6 +29134,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_enum_register_static", name, const_static_values);
             }
             return (long)mh$.invokeExact(name, const_static_values);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -20382,9 +29148,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_flags_register_static"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_flags_register_static");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -20406,6 +29172,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_flags_register_static$handle() {
         return g_flags_register_static.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_flags_register_static(const gchar *name, const GFlagsValue *const_static_values)
+     * }
+     */
+    public static MemorySegment g_flags_register_static$address() {
+        return g_flags_register_static.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_flags_register_static(const gchar *name, const GFlagsValue *const_static_values)
@@ -20418,6 +29195,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_flags_register_static", name, const_static_values);
             }
             return (long)mh$.invokeExact(name, const_static_values);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -20430,9 +29209,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_enum_complete_type_info"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_enum_complete_type_info");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -20454,6 +29233,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_enum_complete_type_info$handle() {
         return g_enum_complete_type_info.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_enum_complete_type_info(GType g_enum_type, GTypeInfo *info, const GEnumValue *const_values)
+     * }
+     */
+    public static MemorySegment g_enum_complete_type_info$address() {
+        return g_enum_complete_type_info.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_enum_complete_type_info(GType g_enum_type, GTypeInfo *info, const GEnumValue *const_values)
@@ -20466,6 +29256,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_enum_complete_type_info", g_enum_type, info, const_values);
             }
             mh$.invokeExact(g_enum_type, info, const_values);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -20478,9 +29270,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_flags_complete_type_info"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_flags_complete_type_info");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -20502,6 +29294,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_flags_complete_type_info$handle() {
         return g_flags_complete_type_info.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_flags_complete_type_info(GType g_flags_type, GTypeInfo *info, const GFlagsValue *const_values)
+     * }
+     */
+    public static MemorySegment g_flags_complete_type_info$address() {
+        return g_flags_complete_type_info.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_flags_complete_type_info(GType g_flags_type, GTypeInfo *info, const GFlagsValue *const_values)
@@ -20514,6 +29317,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_flags_complete_type_info", g_flags_type, info, const_values);
             }
             mh$.invokeExact(g_flags_type, info, const_values);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -20523,9 +29328,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_unicode_type_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_unicode_type_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -20547,6 +29352,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_unicode_type_get_type$handle() {
         return g_unicode_type_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_unicode_type_get_type()
+     * }
+     */
+    public static MemorySegment g_unicode_type_get_type$address() {
+        return g_unicode_type_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_unicode_type_get_type()
@@ -20559,6 +29375,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_unicode_type_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -20568,9 +29386,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_unicode_break_type_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_unicode_break_type_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -20592,6 +29410,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_unicode_break_type_get_type$handle() {
         return g_unicode_break_type_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_unicode_break_type_get_type()
+     * }
+     */
+    public static MemorySegment g_unicode_break_type_get_type$address() {
+        return g_unicode_break_type_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_unicode_break_type_get_type()
@@ -20604,6 +29433,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_unicode_break_type_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -20613,9 +29444,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_unicode_script_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_unicode_script_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -20637,6 +29468,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_unicode_script_get_type$handle() {
         return g_unicode_script_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_unicode_script_get_type()
+     * }
+     */
+    public static MemorySegment g_unicode_script_get_type$address() {
+        return g_unicode_script_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_unicode_script_get_type()
@@ -20649,6 +29491,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_unicode_script_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -20658,9 +29502,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_normalize_mode_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_normalize_mode_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -20682,6 +29526,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_normalize_mode_get_type$handle() {
         return g_normalize_mode_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_normalize_mode_get_type()
+     * }
+     */
+    public static MemorySegment g_normalize_mode_get_type$address() {
+        return g_normalize_mode_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_normalize_mode_get_type()
@@ -20694,6 +29549,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_normalize_mode_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -20711,9 +29568,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_char"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_char");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -20735,6 +29592,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_char$handle() {
         return g_param_spec_char.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_char(const gchar *name, const gchar *nick, const gchar *blurb, gint8 minimum, gint8 maximum, gint8 default_value, GParamFlags flags)
+     * }
+     */
+    public static MemorySegment g_param_spec_char$address() {
+        return g_param_spec_char.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_char(const gchar *name, const gchar *nick, const gchar *blurb, gint8 minimum, gint8 maximum, gint8 default_value, GParamFlags flags)
@@ -20747,6 +29615,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_char", name, nick, blurb, minimum, maximum, default_value, flags);
             }
             return (MemorySegment)mh$.invokeExact(name, nick, blurb, minimum, maximum, default_value, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -20764,9 +29634,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_uchar"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_uchar");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -20788,6 +29658,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_uchar$handle() {
         return g_param_spec_uchar.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_uchar(const gchar *name, const gchar *nick, const gchar *blurb, guint8 minimum, guint8 maximum, guint8 default_value, GParamFlags flags)
+     * }
+     */
+    public static MemorySegment g_param_spec_uchar$address() {
+        return g_param_spec_uchar.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_uchar(const gchar *name, const gchar *nick, const gchar *blurb, guint8 minimum, guint8 maximum, guint8 default_value, GParamFlags flags)
@@ -20800,6 +29681,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_uchar", name, nick, blurb, minimum, maximum, default_value, flags);
             }
             return (MemorySegment)mh$.invokeExact(name, nick, blurb, minimum, maximum, default_value, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -20815,9 +29698,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_boolean"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_boolean");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -20839,6 +29722,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_boolean$handle() {
         return g_param_spec_boolean.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_boolean(const gchar *name, const gchar *nick, const gchar *blurb, gboolean default_value, GParamFlags flags)
+     * }
+     */
+    public static MemorySegment g_param_spec_boolean$address() {
+        return g_param_spec_boolean.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_boolean(const gchar *name, const gchar *nick, const gchar *blurb, gboolean default_value, GParamFlags flags)
@@ -20851,6 +29745,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_boolean", name, nick, blurb, default_value, flags);
             }
             return (MemorySegment)mh$.invokeExact(name, nick, blurb, default_value, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -20868,9 +29764,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_int"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_int");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -20892,6 +29788,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_int$handle() {
         return g_param_spec_int.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_int(const gchar *name, const gchar *nick, const gchar *blurb, gint minimum, gint maximum, gint default_value, GParamFlags flags)
+     * }
+     */
+    public static MemorySegment g_param_spec_int$address() {
+        return g_param_spec_int.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_int(const gchar *name, const gchar *nick, const gchar *blurb, gint minimum, gint maximum, gint default_value, GParamFlags flags)
@@ -20904,6 +29811,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_int", name, nick, blurb, minimum, maximum, default_value, flags);
             }
             return (MemorySegment)mh$.invokeExact(name, nick, blurb, minimum, maximum, default_value, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -20921,9 +29830,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_uint"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_uint");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -20945,6 +29854,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_uint$handle() {
         return g_param_spec_uint.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_uint(const gchar *name, const gchar *nick, const gchar *blurb, guint minimum, guint maximum, guint default_value, GParamFlags flags)
+     * }
+     */
+    public static MemorySegment g_param_spec_uint$address() {
+        return g_param_spec_uint.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_uint(const gchar *name, const gchar *nick, const gchar *blurb, guint minimum, guint maximum, guint default_value, GParamFlags flags)
@@ -20957,6 +29877,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_uint", name, nick, blurb, minimum, maximum, default_value, flags);
             }
             return (MemorySegment)mh$.invokeExact(name, nick, blurb, minimum, maximum, default_value, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -20974,9 +29896,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_long"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_long");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -20998,6 +29920,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_long$handle() {
         return g_param_spec_long.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_long(const gchar *name, const gchar *nick, const gchar *blurb, glong minimum, glong maximum, glong default_value, GParamFlags flags)
+     * }
+     */
+    public static MemorySegment g_param_spec_long$address() {
+        return g_param_spec_long.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_long(const gchar *name, const gchar *nick, const gchar *blurb, glong minimum, glong maximum, glong default_value, GParamFlags flags)
@@ -21010,6 +29943,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_long", name, nick, blurb, minimum, maximum, default_value, flags);
             }
             return (MemorySegment)mh$.invokeExact(name, nick, blurb, minimum, maximum, default_value, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -21027,9 +29962,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_ulong"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_ulong");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -21051,6 +29986,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_ulong$handle() {
         return g_param_spec_ulong.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_ulong(const gchar *name, const gchar *nick, const gchar *blurb, gulong minimum, gulong maximum, gulong default_value, GParamFlags flags)
+     * }
+     */
+    public static MemorySegment g_param_spec_ulong$address() {
+        return g_param_spec_ulong.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_ulong(const gchar *name, const gchar *nick, const gchar *blurb, gulong minimum, gulong maximum, gulong default_value, GParamFlags flags)
@@ -21063,6 +30009,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_ulong", name, nick, blurb, minimum, maximum, default_value, flags);
             }
             return (MemorySegment)mh$.invokeExact(name, nick, blurb, minimum, maximum, default_value, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -21080,9 +30028,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_int64"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_int64");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -21104,6 +30052,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_int64$handle() {
         return g_param_spec_int64.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_int64(const gchar *name, const gchar *nick, const gchar *blurb, gint64 minimum, gint64 maximum, gint64 default_value, GParamFlags flags)
+     * }
+     */
+    public static MemorySegment g_param_spec_int64$address() {
+        return g_param_spec_int64.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_int64(const gchar *name, const gchar *nick, const gchar *blurb, gint64 minimum, gint64 maximum, gint64 default_value, GParamFlags flags)
@@ -21116,6 +30075,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_int64", name, nick, blurb, minimum, maximum, default_value, flags);
             }
             return (MemorySegment)mh$.invokeExact(name, nick, blurb, minimum, maximum, default_value, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -21133,9 +30094,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_uint64"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_uint64");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -21157,6 +30118,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_uint64$handle() {
         return g_param_spec_uint64.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_uint64(const gchar *name, const gchar *nick, const gchar *blurb, guint64 minimum, guint64 maximum, guint64 default_value, GParamFlags flags)
+     * }
+     */
+    public static MemorySegment g_param_spec_uint64$address() {
+        return g_param_spec_uint64.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_uint64(const gchar *name, const gchar *nick, const gchar *blurb, guint64 minimum, guint64 maximum, guint64 default_value, GParamFlags flags)
@@ -21169,6 +30141,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_uint64", name, nick, blurb, minimum, maximum, default_value, flags);
             }
             return (MemorySegment)mh$.invokeExact(name, nick, blurb, minimum, maximum, default_value, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -21184,9 +30158,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_unichar"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_unichar");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -21208,6 +30182,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_unichar$handle() {
         return g_param_spec_unichar.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_unichar(const gchar *name, const gchar *nick, const gchar *blurb, gunichar default_value, GParamFlags flags)
+     * }
+     */
+    public static MemorySegment g_param_spec_unichar$address() {
+        return g_param_spec_unichar.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_unichar(const gchar *name, const gchar *nick, const gchar *blurb, gunichar default_value, GParamFlags flags)
@@ -21220,6 +30205,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_unichar", name, nick, blurb, default_value, flags);
             }
             return (MemorySegment)mh$.invokeExact(name, nick, blurb, default_value, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -21236,9 +30223,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_enum"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_enum");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -21260,6 +30247,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_enum$handle() {
         return g_param_spec_enum.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_enum(const gchar *name, const gchar *nick, const gchar *blurb, GType enum_type, gint default_value, GParamFlags flags)
+     * }
+     */
+    public static MemorySegment g_param_spec_enum$address() {
+        return g_param_spec_enum.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_enum(const gchar *name, const gchar *nick, const gchar *blurb, GType enum_type, gint default_value, GParamFlags flags)
@@ -21272,6 +30270,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_enum", name, nick, blurb, enum_type, default_value, flags);
             }
             return (MemorySegment)mh$.invokeExact(name, nick, blurb, enum_type, default_value, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -21288,9 +30288,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_flags"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_flags");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -21312,6 +30312,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_flags$handle() {
         return g_param_spec_flags.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_flags(const gchar *name, const gchar *nick, const gchar *blurb, GType flags_type, guint default_value, GParamFlags flags)
+     * }
+     */
+    public static MemorySegment g_param_spec_flags$address() {
+        return g_param_spec_flags.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_flags(const gchar *name, const gchar *nick, const gchar *blurb, GType flags_type, guint default_value, GParamFlags flags)
@@ -21324,6 +30335,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_flags", name, nick, blurb, flags_type, default_value, flags);
             }
             return (MemorySegment)mh$.invokeExact(name, nick, blurb, flags_type, default_value, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -21341,9 +30354,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_float"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_float");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -21365,6 +30378,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_float$handle() {
         return g_param_spec_float.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_float(const gchar *name, const gchar *nick, const gchar *blurb, gfloat minimum, gfloat maximum, gfloat default_value, GParamFlags flags)
+     * }
+     */
+    public static MemorySegment g_param_spec_float$address() {
+        return g_param_spec_float.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_float(const gchar *name, const gchar *nick, const gchar *blurb, gfloat minimum, gfloat maximum, gfloat default_value, GParamFlags flags)
@@ -21377,6 +30401,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_float", name, nick, blurb, minimum, maximum, default_value, flags);
             }
             return (MemorySegment)mh$.invokeExact(name, nick, blurb, minimum, maximum, default_value, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -21394,9 +30420,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_double"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_double");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -21418,6 +30444,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_double$handle() {
         return g_param_spec_double.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_double(const gchar *name, const gchar *nick, const gchar *blurb, gdouble minimum, gdouble maximum, gdouble default_value, GParamFlags flags)
+     * }
+     */
+    public static MemorySegment g_param_spec_double$address() {
+        return g_param_spec_double.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_double(const gchar *name, const gchar *nick, const gchar *blurb, gdouble minimum, gdouble maximum, gdouble default_value, GParamFlags flags)
@@ -21430,6 +30467,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_double", name, nick, blurb, minimum, maximum, default_value, flags);
             }
             return (MemorySegment)mh$.invokeExact(name, nick, blurb, minimum, maximum, default_value, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -21445,9 +30484,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_string"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -21469,6 +30508,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_string$handle() {
         return g_param_spec_string.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_string(const gchar *name, const gchar *nick, const gchar *blurb, const gchar *default_value, GParamFlags flags)
+     * }
+     */
+    public static MemorySegment g_param_spec_string$address() {
+        return g_param_spec_string.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_string(const gchar *name, const gchar *nick, const gchar *blurb, const gchar *default_value, GParamFlags flags)
@@ -21481,6 +30531,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_string", name, nick, blurb, default_value, flags);
             }
             return (MemorySegment)mh$.invokeExact(name, nick, blurb, default_value, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -21496,9 +30548,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_param"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_param");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -21520,6 +30572,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_param$handle() {
         return g_param_spec_param.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_param(const gchar *name, const gchar *nick, const gchar *blurb, GType param_type, GParamFlags flags)
+     * }
+     */
+    public static MemorySegment g_param_spec_param$address() {
+        return g_param_spec_param.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_param(const gchar *name, const gchar *nick, const gchar *blurb, GType param_type, GParamFlags flags)
@@ -21532,6 +30595,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_param", name, nick, blurb, param_type, flags);
             }
             return (MemorySegment)mh$.invokeExact(name, nick, blurb, param_type, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -21547,9 +30612,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_boxed"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_boxed");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -21571,6 +30636,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_boxed$handle() {
         return g_param_spec_boxed.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_boxed(const gchar *name, const gchar *nick, const gchar *blurb, GType boxed_type, GParamFlags flags)
+     * }
+     */
+    public static MemorySegment g_param_spec_boxed$address() {
+        return g_param_spec_boxed.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_boxed(const gchar *name, const gchar *nick, const gchar *blurb, GType boxed_type, GParamFlags flags)
@@ -21583,6 +30659,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_boxed", name, nick, blurb, boxed_type, flags);
             }
             return (MemorySegment)mh$.invokeExact(name, nick, blurb, boxed_type, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -21597,9 +30675,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_pointer"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_pointer");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -21621,6 +30699,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_pointer$handle() {
         return g_param_spec_pointer.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_pointer(const gchar *name, const gchar *nick, const gchar *blurb, GParamFlags flags)
+     * }
+     */
+    public static MemorySegment g_param_spec_pointer$address() {
+        return g_param_spec_pointer.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_pointer(const gchar *name, const gchar *nick, const gchar *blurb, GParamFlags flags)
@@ -21633,6 +30722,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_pointer", name, nick, blurb, flags);
             }
             return (MemorySegment)mh$.invokeExact(name, nick, blurb, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -21648,9 +30739,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_value_array"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_value_array");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -21672,6 +30763,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_value_array$handle() {
         return g_param_spec_value_array.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_value_array(const gchar *name, const gchar *nick, const gchar *blurb, GParamSpec *element_spec, GParamFlags flags)
+     * }
+     */
+    public static MemorySegment g_param_spec_value_array$address() {
+        return g_param_spec_value_array.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_value_array(const gchar *name, const gchar *nick, const gchar *blurb, GParamSpec *element_spec, GParamFlags flags)
@@ -21684,6 +30786,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_value_array", name, nick, blurb, element_spec, flags);
             }
             return (MemorySegment)mh$.invokeExact(name, nick, blurb, element_spec, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -21699,9 +30803,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_object"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_object");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -21723,6 +30827,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_object$handle() {
         return g_param_spec_object.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_object(const gchar *name, const gchar *nick, const gchar *blurb, GType object_type, GParamFlags flags)
+     * }
+     */
+    public static MemorySegment g_param_spec_object$address() {
+        return g_param_spec_object.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_object(const gchar *name, const gchar *nick, const gchar *blurb, GType object_type, GParamFlags flags)
@@ -21735,6 +30850,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_object", name, nick, blurb, object_type, flags);
             }
             return (MemorySegment)mh$.invokeExact(name, nick, blurb, object_type, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -21747,9 +30864,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_override"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_override");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -21771,6 +30888,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_override$handle() {
         return g_param_spec_override.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_override(const gchar *name, GParamSpec *overridden)
+     * }
+     */
+    public static MemorySegment g_param_spec_override$address() {
+        return g_param_spec_override.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_override(const gchar *name, GParamSpec *overridden)
@@ -21783,6 +30911,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_override", name, overridden);
             }
             return (MemorySegment)mh$.invokeExact(name, overridden);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -21798,9 +30928,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_gtype"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_gtype");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -21822,6 +30952,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_gtype$handle() {
         return g_param_spec_gtype.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_gtype(const gchar *name, const gchar *nick, const gchar *blurb, GType is_a_type, GParamFlags flags)
+     * }
+     */
+    public static MemorySegment g_param_spec_gtype$address() {
+        return g_param_spec_gtype.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_gtype(const gchar *name, const gchar *nick, const gchar *blurb, GType is_a_type, GParamFlags flags)
@@ -21834,6 +30975,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_gtype", name, nick, blurb, is_a_type, flags);
             }
             return (MemorySegment)mh$.invokeExact(name, nick, blurb, is_a_type, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -21850,9 +30993,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_param_spec_variant"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_param_spec_variant");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -21874,6 +31017,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_param_spec_variant$handle() {
         return g_param_spec_variant.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GParamSpec *g_param_spec_variant(const gchar *name, const gchar *nick, const gchar *blurb, const GVariantType *type, GVariant *default_value, GParamFlags flags)
+     * }
+     */
+    public static MemorySegment g_param_spec_variant$address() {
+        return g_param_spec_variant.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GParamSpec *g_param_spec_variant(const gchar *name, const gchar *nick, const gchar *blurb, const GVariantType *type, GVariant *default_value, GParamFlags flags)
@@ -21886,6 +31040,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_param_spec_variant", name, nick, blurb, type, default_value, flags);
             }
             return (MemorySegment)mh$.invokeExact(name, nick, blurb, type, default_value, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -21893,7 +31049,7 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
 
     private static class g_param_spec_types$constants {
         public static final AddressLayout LAYOUT = app_indicator_h.C_POINTER;
-        public static final MemorySegment SEGMENT = app_indicator_h.findOrThrow("g_param_spec_types").reinterpret(LAYOUT.byteSize());
+        public static final MemorySegment SEGMENT = SYMBOL_LOOKUP.findOrThrow("g_param_spec_types").reinterpret(LAYOUT.byteSize());
     }
 
     /**
@@ -21940,9 +31096,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_group_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_group_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -21964,6 +31120,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_group_get_type$handle() {
         return g_signal_group_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_signal_group_get_type()
+     * }
+     */
+    public static MemorySegment g_signal_group_get_type$address() {
+        return g_signal_group_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_signal_group_get_type()
@@ -21976,6 +31143,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_group_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -21987,9 +31156,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_group_new"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_group_new");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -22011,6 +31180,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_group_new$handle() {
         return g_signal_group_new.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GSignalGroup *g_signal_group_new(GType target_type)
+     * }
+     */
+    public static MemorySegment g_signal_group_new$address() {
+        return g_signal_group_new.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GSignalGroup *g_signal_group_new(GType target_type)
@@ -22023,6 +31203,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_group_new", target_type);
             }
             return (MemorySegment)mh$.invokeExact(target_type);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -22034,9 +31216,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_group_set_target"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_group_set_target");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -22058,6 +31240,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_group_set_target$handle() {
         return g_signal_group_set_target.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_signal_group_set_target(GSignalGroup *self, gpointer target)
+     * }
+     */
+    public static MemorySegment g_signal_group_set_target$address() {
+        return g_signal_group_set_target.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_signal_group_set_target(GSignalGroup *self, gpointer target)
@@ -22070,6 +31263,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_group_set_target", self, target);
             }
             mh$.invokeExact(self, target);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -22081,9 +31276,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_group_dup_target"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_group_dup_target");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -22105,6 +31300,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_group_dup_target$handle() {
         return g_signal_group_dup_target.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_signal_group_dup_target(GSignalGroup *self)
+     * }
+     */
+    public static MemorySegment g_signal_group_dup_target$address() {
+        return g_signal_group_dup_target.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_signal_group_dup_target(GSignalGroup *self)
@@ -22117,6 +31323,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_group_dup_target", self);
             }
             return (MemorySegment)mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -22127,9 +31335,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_group_block"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_group_block");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -22151,6 +31359,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_group_block$handle() {
         return g_signal_group_block.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_signal_group_block(GSignalGroup *self)
+     * }
+     */
+    public static MemorySegment g_signal_group_block$address() {
+        return g_signal_group_block.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_signal_group_block(GSignalGroup *self)
@@ -22163,6 +31382,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_group_block", self);
             }
             mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -22173,9 +31394,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_group_unblock"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_group_unblock");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -22197,6 +31418,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_group_unblock$handle() {
         return g_signal_group_unblock.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_signal_group_unblock(GSignalGroup *self)
+     * }
+     */
+    public static MemorySegment g_signal_group_unblock$address() {
+        return g_signal_group_unblock.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_signal_group_unblock(GSignalGroup *self)
@@ -22209,6 +31441,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_group_unblock", self);
             }
             mh$.invokeExact(self);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -22222,9 +31456,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_group_connect_closure"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_group_connect_closure");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -22246,6 +31480,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_group_connect_closure$handle() {
         return g_signal_group_connect_closure.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_signal_group_connect_closure(GSignalGroup *self, const gchar *detailed_signal, GClosure *closure, gboolean after)
+     * }
+     */
+    public static MemorySegment g_signal_group_connect_closure$address() {
+        return g_signal_group_connect_closure.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_signal_group_connect_closure(GSignalGroup *self, const gchar *detailed_signal, GClosure *closure, gboolean after)
@@ -22258,6 +31503,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_group_connect_closure", self, detailed_signal, closure, after);
             }
             mh$.invokeExact(self, detailed_signal, closure, after);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -22272,9 +31519,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_group_connect_object"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_group_connect_object");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -22296,6 +31543,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_group_connect_object$handle() {
         return g_signal_group_connect_object.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_signal_group_connect_object(GSignalGroup *self, const gchar *detailed_signal, GCallback c_handler, gpointer object, GConnectFlags flags)
+     * }
+     */
+    public static MemorySegment g_signal_group_connect_object$address() {
+        return g_signal_group_connect_object.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_signal_group_connect_object(GSignalGroup *self, const gchar *detailed_signal, GCallback c_handler, gpointer object, GConnectFlags flags)
@@ -22308,6 +31566,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_group_connect_object", self, detailed_signal, c_handler, object, flags);
             }
             mh$.invokeExact(self, detailed_signal, c_handler, object, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -22323,9 +31583,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_group_connect_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_group_connect_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -22347,6 +31607,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_group_connect_data$handle() {
         return g_signal_group_connect_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_signal_group_connect_data(GSignalGroup *self, const gchar *detailed_signal, GCallback c_handler, gpointer data, GClosureNotify notify, GConnectFlags flags)
+     * }
+     */
+    public static MemorySegment g_signal_group_connect_data$address() {
+        return g_signal_group_connect_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_signal_group_connect_data(GSignalGroup *self, const gchar *detailed_signal, GCallback c_handler, gpointer data, GClosureNotify notify, GConnectFlags flags)
@@ -22359,6 +31630,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_group_connect_data", self, detailed_signal, c_handler, data, notify, flags);
             }
             mh$.invokeExact(self, detailed_signal, c_handler, data, notify, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -22372,9 +31645,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_group_connect"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_group_connect");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -22396,6 +31669,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_group_connect$handle() {
         return g_signal_group_connect.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_signal_group_connect(GSignalGroup *self, const gchar *detailed_signal, GCallback c_handler, gpointer data)
+     * }
+     */
+    public static MemorySegment g_signal_group_connect$address() {
+        return g_signal_group_connect.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_signal_group_connect(GSignalGroup *self, const gchar *detailed_signal, GCallback c_handler, gpointer data)
@@ -22408,6 +31692,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_group_connect", self, detailed_signal, c_handler, data);
             }
             mh$.invokeExact(self, detailed_signal, c_handler, data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -22421,9 +31707,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_group_connect_after"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_group_connect_after");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -22445,6 +31731,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_group_connect_after$handle() {
         return g_signal_group_connect_after.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_signal_group_connect_after(GSignalGroup *self, const gchar *detailed_signal, GCallback c_handler, gpointer data)
+     * }
+     */
+    public static MemorySegment g_signal_group_connect_after$address() {
+        return g_signal_group_connect_after.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_signal_group_connect_after(GSignalGroup *self, const gchar *detailed_signal, GCallback c_handler, gpointer data)
@@ -22457,6 +31754,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_group_connect_after", self, detailed_signal, c_handler, data);
             }
             mh$.invokeExact(self, detailed_signal, c_handler, data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -22470,9 +31769,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_group_connect_swapped"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_signal_group_connect_swapped");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -22494,6 +31793,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_signal_group_connect_swapped$handle() {
         return g_signal_group_connect_swapped.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_signal_group_connect_swapped(GSignalGroup *self, const gchar *detailed_signal, GCallback c_handler, gpointer data)
+     * }
+     */
+    public static MemorySegment g_signal_group_connect_swapped$address() {
+        return g_signal_group_connect_swapped.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_signal_group_connect_swapped(GSignalGroup *self, const gchar *detailed_signal, GCallback c_handler, gpointer data)
@@ -22506,6 +31816,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_signal_group_connect_swapped", self, detailed_signal, c_handler, data);
             }
             mh$.invokeExact(self, detailed_signal, c_handler, data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -22517,9 +31829,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_source_set_closure"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_source_set_closure");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -22541,6 +31853,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_source_set_closure$handle() {
         return g_source_set_closure.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_source_set_closure(GSource *source, GClosure *closure)
+     * }
+     */
+    public static MemorySegment g_source_set_closure$address() {
+        return g_source_set_closure.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_source_set_closure(GSource *source, GClosure *closure)
@@ -22553,6 +31876,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_source_set_closure", source, closure);
             }
             mh$.invokeExact(source, closure);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -22563,9 +31888,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_source_set_dummy_callback"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_source_set_dummy_callback");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -22587,6 +31912,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_source_set_dummy_callback$handle() {
         return g_source_set_dummy_callback.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_source_set_dummy_callback(GSource *source)
+     * }
+     */
+    public static MemorySegment g_source_set_dummy_callback$address() {
+        return g_source_set_dummy_callback.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_source_set_dummy_callback(GSource *source)
@@ -22599,6 +31935,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_source_set_dummy_callback", source);
             }
             mh$.invokeExact(source);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -22632,9 +31970,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_module_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_module_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -22656,6 +31994,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_module_get_type$handle() {
         return g_type_module_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_type_module_get_type()
+     * }
+     */
+    public static MemorySegment g_type_module_get_type$address() {
+        return g_type_module_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_type_module_get_type()
@@ -22668,6 +32017,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_module_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -22679,9 +32030,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_module_use"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_module_use");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -22703,6 +32054,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_module_use$handle() {
         return g_type_module_use.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_type_module_use(GTypeModule *module)
+     * }
+     */
+    public static MemorySegment g_type_module_use$address() {
+        return g_type_module_use.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_type_module_use(GTypeModule *module)
@@ -22715,6 +32077,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_module_use", module);
             }
             return (int)mh$.invokeExact(module);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -22725,9 +32089,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_module_unuse"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_module_unuse");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -22749,6 +32113,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_module_unuse$handle() {
         return g_type_module_unuse.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_module_unuse(GTypeModule *module)
+     * }
+     */
+    public static MemorySegment g_type_module_unuse$address() {
+        return g_type_module_unuse.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_module_unuse(GTypeModule *module)
@@ -22761,6 +32136,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_module_unuse", module);
             }
             mh$.invokeExact(module);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -22772,9 +32149,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_module_set_name"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_module_set_name");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -22796,6 +32173,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_module_set_name$handle() {
         return g_type_module_set_name.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_module_set_name(GTypeModule *module, const gchar *name)
+     * }
+     */
+    public static MemorySegment g_type_module_set_name$address() {
+        return g_type_module_set_name.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_module_set_name(GTypeModule *module, const gchar *name)
@@ -22808,6 +32196,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_module_set_name", module, name);
             }
             mh$.invokeExact(module, name);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -22823,9 +32213,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_module_register_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_module_register_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -22847,6 +32237,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_module_register_type$handle() {
         return g_type_module_register_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_type_module_register_type(GTypeModule *module, GType parent_type, const gchar *type_name, const GTypeInfo *type_info, GTypeFlags flags)
+     * }
+     */
+    public static MemorySegment g_type_module_register_type$address() {
+        return g_type_module_register_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_type_module_register_type(GTypeModule *module, GType parent_type, const gchar *type_name, const GTypeInfo *type_info, GTypeFlags flags)
@@ -22859,6 +32260,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_module_register_type", module, parent_type, type_name, type_info, flags);
             }
             return (long)mh$.invokeExact(module, parent_type, type_name, type_info, flags);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -22872,9 +32275,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_module_add_interface"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_module_add_interface");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -22896,6 +32299,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_module_add_interface$handle() {
         return g_type_module_add_interface.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_module_add_interface(GTypeModule *module, GType instance_type, GType interface_type, const GInterfaceInfo *interface_info)
+     * }
+     */
+    public static MemorySegment g_type_module_add_interface$address() {
+        return g_type_module_add_interface.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_module_add_interface(GTypeModule *module, GType instance_type, GType interface_type, const GInterfaceInfo *interface_info)
@@ -22908,6 +32322,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_module_add_interface", module, instance_type, interface_type, interface_info);
             }
             mh$.invokeExact(module, instance_type, interface_type, interface_info);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -22921,9 +32337,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_module_register_enum"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_module_register_enum");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -22945,6 +32361,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_module_register_enum$handle() {
         return g_type_module_register_enum.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_type_module_register_enum(GTypeModule *module, const gchar *name, const GEnumValue *const_static_values)
+     * }
+     */
+    public static MemorySegment g_type_module_register_enum$address() {
+        return g_type_module_register_enum.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_type_module_register_enum(GTypeModule *module, const gchar *name, const GEnumValue *const_static_values)
@@ -22957,6 +32384,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_module_register_enum", module, name, const_static_values);
             }
             return (long)mh$.invokeExact(module, name, const_static_values);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -22970,9 +32399,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_module_register_flags"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_module_register_flags");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -22994,6 +32423,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_module_register_flags$handle() {
         return g_type_module_register_flags.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_type_module_register_flags(GTypeModule *module, const gchar *name, const GFlagsValue *const_static_values)
+     * }
+     */
+    public static MemorySegment g_type_module_register_flags$address() {
+        return g_type_module_register_flags.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_type_module_register_flags(GTypeModule *module, const gchar *name, const GFlagsValue *const_static_values)
@@ -23006,6 +32446,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_module_register_flags", module, name, const_static_values);
             }
             return (long)mh$.invokeExact(module, name, const_static_values);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -23015,9 +32457,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_plugin_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_plugin_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -23039,6 +32481,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_plugin_get_type$handle() {
         return g_type_plugin_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_type_plugin_get_type()
+     * }
+     */
+    public static MemorySegment g_type_plugin_get_type$address() {
+        return g_type_plugin_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_type_plugin_get_type()
@@ -23051,6 +32504,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_plugin_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -23061,9 +32516,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_plugin_use"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_plugin_use");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -23085,6 +32540,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_plugin_use$handle() {
         return g_type_plugin_use.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_plugin_use(GTypePlugin *plugin)
+     * }
+     */
+    public static MemorySegment g_type_plugin_use$address() {
+        return g_type_plugin_use.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_plugin_use(GTypePlugin *plugin)
@@ -23097,6 +32563,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_plugin_use", plugin);
             }
             mh$.invokeExact(plugin);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -23107,9 +32575,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_plugin_unuse"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_plugin_unuse");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -23131,6 +32599,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_plugin_unuse$handle() {
         return g_type_plugin_unuse.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_plugin_unuse(GTypePlugin *plugin)
+     * }
+     */
+    public static MemorySegment g_type_plugin_unuse$address() {
+        return g_type_plugin_unuse.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_plugin_unuse(GTypePlugin *plugin)
@@ -23143,6 +32622,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_plugin_unuse", plugin);
             }
             mh$.invokeExact(plugin);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -23156,9 +32637,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_plugin_complete_type_info"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_plugin_complete_type_info");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -23180,6 +32661,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_plugin_complete_type_info$handle() {
         return g_type_plugin_complete_type_info.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_plugin_complete_type_info(GTypePlugin *plugin, GType g_type, GTypeInfo *info, GTypeValueTable *value_table)
+     * }
+     */
+    public static MemorySegment g_type_plugin_complete_type_info$address() {
+        return g_type_plugin_complete_type_info.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_plugin_complete_type_info(GTypePlugin *plugin, GType g_type, GTypeInfo *info, GTypeValueTable *value_table)
@@ -23192,6 +32684,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_plugin_complete_type_info", plugin, g_type, info, value_table);
             }
             mh$.invokeExact(plugin, g_type, info, value_table);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -23205,9 +32699,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_type_plugin_complete_interface_info"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_type_plugin_complete_interface_info");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -23229,6 +32723,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_type_plugin_complete_interface_info$handle() {
         return g_type_plugin_complete_interface_info.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_type_plugin_complete_interface_info(GTypePlugin *plugin, GType instance_type, GType interface_type, GInterfaceInfo *info)
+     * }
+     */
+    public static MemorySegment g_type_plugin_complete_interface_info$address() {
+        return g_type_plugin_complete_interface_info.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_type_plugin_complete_interface_info(GTypePlugin *plugin, GType instance_type, GType interface_type, GInterfaceInfo *info)
@@ -23241,6 +32746,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_type_plugin_complete_interface_info", plugin, instance_type, interface_type, info);
             }
             mh$.invokeExact(plugin, instance_type, interface_type, info);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -23250,9 +32757,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_array_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_array_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -23274,6 +32781,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_array_get_type$handle() {
         return g_value_array_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_value_array_get_type()
+     * }
+     */
+    public static MemorySegment g_value_array_get_type$address() {
+        return g_value_array_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_value_array_get_type()
@@ -23286,6 +32804,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_array_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -23298,9 +32818,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_array_get_nth"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_array_get_nth");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -23322,6 +32842,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_array_get_nth$handle() {
         return g_value_array_get_nth.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GValue *g_value_array_get_nth(GValueArray *value_array, guint index_)
+     * }
+     */
+    public static MemorySegment g_value_array_get_nth$address() {
+        return g_value_array_get_nth.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GValue *g_value_array_get_nth(GValueArray *value_array, guint index_)
@@ -23334,6 +32865,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_array_get_nth", value_array, index_);
             }
             return (MemorySegment)mh$.invokeExact(value_array, index_);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -23345,9 +32878,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_array_new"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_array_new");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -23369,6 +32902,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_array_new$handle() {
         return g_value_array_new.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GValueArray *g_value_array_new(guint n_prealloced)
+     * }
+     */
+    public static MemorySegment g_value_array_new$address() {
+        return g_value_array_new.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GValueArray *g_value_array_new(guint n_prealloced)
@@ -23381,6 +32925,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_array_new", n_prealloced);
             }
             return (MemorySegment)mh$.invokeExact(n_prealloced);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -23391,9 +32937,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_array_free"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_array_free");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -23415,6 +32961,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_array_free$handle() {
         return g_value_array_free.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_array_free(GValueArray *value_array)
+     * }
+     */
+    public static MemorySegment g_value_array_free$address() {
+        return g_value_array_free.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_array_free(GValueArray *value_array)
@@ -23427,6 +32984,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_array_free", value_array);
             }
             mh$.invokeExact(value_array);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -23438,9 +32997,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_array_copy"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_array_copy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -23462,6 +33021,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_array_copy$handle() {
         return g_value_array_copy.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GValueArray *g_value_array_copy(const GValueArray *value_array)
+     * }
+     */
+    public static MemorySegment g_value_array_copy$address() {
+        return g_value_array_copy.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GValueArray *g_value_array_copy(const GValueArray *value_array)
@@ -23474,6 +33044,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_array_copy", value_array);
             }
             return (MemorySegment)mh$.invokeExact(value_array);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -23486,9 +33058,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_array_prepend"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_array_prepend");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -23510,6 +33082,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_array_prepend$handle() {
         return g_value_array_prepend.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GValueArray *g_value_array_prepend(GValueArray *value_array, const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_array_prepend$address() {
+        return g_value_array_prepend.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GValueArray *g_value_array_prepend(GValueArray *value_array, const GValue *value)
@@ -23522,6 +33105,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_array_prepend", value_array, value);
             }
             return (MemorySegment)mh$.invokeExact(value_array, value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -23534,9 +33119,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_array_append"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_array_append");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -23558,6 +33143,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_array_append$handle() {
         return g_value_array_append.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GValueArray *g_value_array_append(GValueArray *value_array, const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_array_append$address() {
+        return g_value_array_append.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GValueArray *g_value_array_append(GValueArray *value_array, const GValue *value)
@@ -23570,6 +33166,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_array_append", value_array, value);
             }
             return (MemorySegment)mh$.invokeExact(value_array, value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -23583,9 +33181,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_array_insert"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_array_insert");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -23607,6 +33205,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_array_insert$handle() {
         return g_value_array_insert.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GValueArray *g_value_array_insert(GValueArray *value_array, guint index_, const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_array_insert$address() {
+        return g_value_array_insert.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GValueArray *g_value_array_insert(GValueArray *value_array, guint index_, const GValue *value)
@@ -23619,6 +33228,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_array_insert", value_array, index_, value);
             }
             return (MemorySegment)mh$.invokeExact(value_array, index_, value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -23631,9 +33242,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_array_remove"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_array_remove");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -23655,6 +33266,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_array_remove$handle() {
         return g_value_array_remove.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GValueArray *g_value_array_remove(GValueArray *value_array, guint index_)
+     * }
+     */
+    public static MemorySegment g_value_array_remove$address() {
+        return g_value_array_remove.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GValueArray *g_value_array_remove(GValueArray *value_array, guint index_)
@@ -23667,6 +33289,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_array_remove", value_array, index_);
             }
             return (MemorySegment)mh$.invokeExact(value_array, index_);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -23679,9 +33303,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_array_sort"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_array_sort");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -23703,6 +33327,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_array_sort$handle() {
         return g_value_array_sort.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GValueArray *g_value_array_sort(GValueArray *value_array, GCompareFunc compare_func)
+     * }
+     */
+    public static MemorySegment g_value_array_sort$address() {
+        return g_value_array_sort.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GValueArray *g_value_array_sort(GValueArray *value_array, GCompareFunc compare_func)
@@ -23715,6 +33350,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_array_sort", value_array, compare_func);
             }
             return (MemorySegment)mh$.invokeExact(value_array, compare_func);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -23728,9 +33365,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_array_sort_with_data"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_array_sort_with_data");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -23752,6 +33389,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_array_sort_with_data$handle() {
         return g_value_array_sort_with_data.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GValueArray *g_value_array_sort_with_data(GValueArray *value_array, GCompareDataFunc compare_func, gpointer user_data)
+     * }
+     */
+    public static MemorySegment g_value_array_sort_with_data$address() {
+        return g_value_array_sort_with_data.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GValueArray *g_value_array_sort_with_data(GValueArray *value_array, GCompareDataFunc compare_func, gpointer user_data)
@@ -23764,6 +33412,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_array_sort_with_data", value_array, compare_func, user_data);
             }
             return (MemorySegment)mh$.invokeExact(value_array, compare_func, user_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -23775,9 +33425,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_CHAR
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_char"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_char");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -23799,6 +33449,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_char$handle() {
         return g_value_set_char.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_char(GValue *value, gchar v_char)
+     * }
+     */
+    public static MemorySegment g_value_set_char$address() {
+        return g_value_set_char.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_char(GValue *value, gchar v_char)
@@ -23811,6 +33472,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_char", value, v_char);
             }
             mh$.invokeExact(value, v_char);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -23822,9 +33485,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_get_char"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_get_char");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -23846,6 +33509,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_get_char$handle() {
         return g_value_get_char.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gchar g_value_get_char(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_get_char$address() {
+        return g_value_get_char.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gchar g_value_get_char(const GValue *value)
@@ -23858,6 +33532,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_get_char", value);
             }
             return (byte)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -23869,9 +33545,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_CHAR
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_schar"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_schar");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -23893,6 +33569,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_schar$handle() {
         return g_value_set_schar.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_schar(GValue *value, gint8 v_char)
+     * }
+     */
+    public static MemorySegment g_value_set_schar$address() {
+        return g_value_set_schar.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_schar(GValue *value, gint8 v_char)
@@ -23905,6 +33592,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_schar", value, v_char);
             }
             mh$.invokeExact(value, v_char);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -23916,9 +33605,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_get_schar"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_get_schar");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -23940,6 +33629,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_get_schar$handle() {
         return g_value_get_schar.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gint8 g_value_get_schar(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_get_schar$address() {
+        return g_value_get_schar.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gint8 g_value_get_schar(const GValue *value)
@@ -23952,6 +33652,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_get_schar", value);
             }
             return (byte)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -23963,9 +33665,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_CHAR
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_uchar"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_uchar");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -23987,6 +33689,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_uchar$handle() {
         return g_value_set_uchar.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_uchar(GValue *value, guchar v_uchar)
+     * }
+     */
+    public static MemorySegment g_value_set_uchar$address() {
+        return g_value_set_uchar.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_uchar(GValue *value, guchar v_uchar)
@@ -23999,6 +33712,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_uchar", value, v_uchar);
             }
             mh$.invokeExact(value, v_uchar);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -24010,9 +33725,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_get_uchar"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_get_uchar");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -24034,6 +33749,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_get_uchar$handle() {
         return g_value_get_uchar.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern guchar g_value_get_uchar(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_get_uchar$address() {
+        return g_value_get_uchar.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern guchar g_value_get_uchar(const GValue *value)
@@ -24046,6 +33772,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_get_uchar", value);
             }
             return (byte)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -24057,9 +33785,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_boolean"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_boolean");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -24081,6 +33809,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_boolean$handle() {
         return g_value_set_boolean.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_boolean(GValue *value, gboolean v_boolean)
+     * }
+     */
+    public static MemorySegment g_value_set_boolean$address() {
+        return g_value_set_boolean.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_boolean(GValue *value, gboolean v_boolean)
@@ -24093,6 +33832,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_boolean", value, v_boolean);
             }
             mh$.invokeExact(value, v_boolean);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -24104,9 +33845,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_get_boolean"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_get_boolean");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -24128,6 +33869,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_get_boolean$handle() {
         return g_value_get_boolean.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_value_get_boolean(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_get_boolean$address() {
+        return g_value_get_boolean.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gboolean g_value_get_boolean(const GValue *value)
@@ -24140,6 +33892,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_get_boolean", value);
             }
             return (int)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -24151,9 +33905,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_int"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_int");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -24175,6 +33929,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_int$handle() {
         return g_value_set_int.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_int(GValue *value, gint v_int)
+     * }
+     */
+    public static MemorySegment g_value_set_int$address() {
+        return g_value_set_int.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_int(GValue *value, gint v_int)
@@ -24187,6 +33952,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_int", value, v_int);
             }
             mh$.invokeExact(value, v_int);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -24198,9 +33965,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_get_int"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_get_int");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -24222,6 +33989,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_get_int$handle() {
         return g_value_get_int.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gint g_value_get_int(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_get_int$address() {
+        return g_value_get_int.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gint g_value_get_int(const GValue *value)
@@ -24234,6 +34012,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_get_int", value);
             }
             return (int)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -24245,9 +34025,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_uint"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_uint");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -24269,6 +34049,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_uint$handle() {
         return g_value_set_uint.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_uint(GValue *value, guint v_uint)
+     * }
+     */
+    public static MemorySegment g_value_set_uint$address() {
+        return g_value_set_uint.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_uint(GValue *value, guint v_uint)
@@ -24281,6 +34072,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_uint", value, v_uint);
             }
             mh$.invokeExact(value, v_uint);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -24292,9 +34085,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_get_uint"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_get_uint");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -24316,6 +34109,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_get_uint$handle() {
         return g_value_get_uint.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern guint g_value_get_uint(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_get_uint$address() {
+        return g_value_get_uint.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern guint g_value_get_uint(const GValue *value)
@@ -24328,6 +34132,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_get_uint", value);
             }
             return (int)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -24339,9 +34145,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_long"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_long");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -24363,6 +34169,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_long$handle() {
         return g_value_set_long.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_long(GValue *value, glong v_long)
+     * }
+     */
+    public static MemorySegment g_value_set_long$address() {
+        return g_value_set_long.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_long(GValue *value, glong v_long)
@@ -24375,6 +34192,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_long", value, v_long);
             }
             mh$.invokeExact(value, v_long);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -24386,9 +34205,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_get_long"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_get_long");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -24410,6 +34229,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_get_long$handle() {
         return g_value_get_long.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern glong g_value_get_long(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_get_long$address() {
+        return g_value_get_long.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern glong g_value_get_long(const GValue *value)
@@ -24422,6 +34252,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_get_long", value);
             }
             return (long)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -24433,9 +34265,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_ulong"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_ulong");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -24457,6 +34289,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_ulong$handle() {
         return g_value_set_ulong.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_ulong(GValue *value, gulong v_ulong)
+     * }
+     */
+    public static MemorySegment g_value_set_ulong$address() {
+        return g_value_set_ulong.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_ulong(GValue *value, gulong v_ulong)
@@ -24469,6 +34312,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_ulong", value, v_ulong);
             }
             mh$.invokeExact(value, v_ulong);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -24480,9 +34325,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_get_ulong"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_get_ulong");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -24504,6 +34349,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_get_ulong$handle() {
         return g_value_get_ulong.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gulong g_value_get_ulong(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_get_ulong$address() {
+        return g_value_get_ulong.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gulong g_value_get_ulong(const GValue *value)
@@ -24516,6 +34372,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_get_ulong", value);
             }
             return (long)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -24527,9 +34385,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_int64"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_int64");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -24551,6 +34409,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_int64$handle() {
         return g_value_set_int64.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_int64(GValue *value, gint64 v_int64)
+     * }
+     */
+    public static MemorySegment g_value_set_int64$address() {
+        return g_value_set_int64.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_int64(GValue *value, gint64 v_int64)
@@ -24563,6 +34432,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_int64", value, v_int64);
             }
             mh$.invokeExact(value, v_int64);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -24574,9 +34445,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_get_int64"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_get_int64");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -24598,6 +34469,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_get_int64$handle() {
         return g_value_get_int64.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gint64 g_value_get_int64(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_get_int64$address() {
+        return g_value_get_int64.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gint64 g_value_get_int64(const GValue *value)
@@ -24610,6 +34492,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_get_int64", value);
             }
             return (long)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -24621,9 +34505,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_uint64"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_uint64");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -24645,6 +34529,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_uint64$handle() {
         return g_value_set_uint64.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_uint64(GValue *value, guint64 v_uint64)
+     * }
+     */
+    public static MemorySegment g_value_set_uint64$address() {
+        return g_value_set_uint64.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_uint64(GValue *value, guint64 v_uint64)
@@ -24657,6 +34552,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_uint64", value, v_uint64);
             }
             mh$.invokeExact(value, v_uint64);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -24668,9 +34565,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_get_uint64"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_get_uint64");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -24692,6 +34589,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_get_uint64$handle() {
         return g_value_get_uint64.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern guint64 g_value_get_uint64(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_get_uint64$address() {
+        return g_value_get_uint64.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern guint64 g_value_get_uint64(const GValue *value)
@@ -24704,6 +34612,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_get_uint64", value);
             }
             return (long)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -24715,9 +34625,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_FLOAT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_float"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_float");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -24739,6 +34649,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_float$handle() {
         return g_value_set_float.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_float(GValue *value, gfloat v_float)
+     * }
+     */
+    public static MemorySegment g_value_set_float$address() {
+        return g_value_set_float.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_float(GValue *value, gfloat v_float)
@@ -24751,6 +34672,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_float", value, v_float);
             }
             mh$.invokeExact(value, v_float);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -24762,9 +34685,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_get_float"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_get_float");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -24786,6 +34709,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_get_float$handle() {
         return g_value_get_float.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gfloat g_value_get_float(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_get_float$address() {
+        return g_value_get_float.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gfloat g_value_get_float(const GValue *value)
@@ -24798,6 +34732,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_get_float", value);
             }
             return (float)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -24809,9 +34745,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_DOUBLE
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_double"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_double");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -24833,6 +34769,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_double$handle() {
         return g_value_set_double.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_double(GValue *value, gdouble v_double)
+     * }
+     */
+    public static MemorySegment g_value_set_double$address() {
+        return g_value_set_double.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_double(GValue *value, gdouble v_double)
@@ -24845,6 +34792,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_double", value, v_double);
             }
             mh$.invokeExact(value, v_double);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -24856,9 +34805,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_get_double"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_get_double");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -24880,6 +34829,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_get_double$handle() {
         return g_value_get_double.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gdouble g_value_get_double(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_get_double$address() {
+        return g_value_get_double.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gdouble g_value_get_double(const GValue *value)
@@ -24892,6 +34852,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_get_double", value);
             }
             return (double)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -24903,9 +34865,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_string"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -24927,6 +34889,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_string$handle() {
         return g_value_set_string.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_string(GValue *value, const gchar *v_string)
+     * }
+     */
+    public static MemorySegment g_value_set_string$address() {
+        return g_value_set_string.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_string(GValue *value, const gchar *v_string)
@@ -24939,6 +34912,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_string", value, v_string);
             }
             mh$.invokeExact(value, v_string);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -24950,9 +34925,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_static_string"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_static_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -24974,6 +34949,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_static_string$handle() {
         return g_value_set_static_string.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_static_string(GValue *value, const gchar *v_string)
+     * }
+     */
+    public static MemorySegment g_value_set_static_string$address() {
+        return g_value_set_static_string.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_static_string(GValue *value, const gchar *v_string)
@@ -24986,6 +34972,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_static_string", value, v_string);
             }
             mh$.invokeExact(value, v_string);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -24997,9 +34985,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_interned_string"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_interned_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -25021,6 +35009,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_interned_string$handle() {
         return g_value_set_interned_string.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_interned_string(GValue *value, const gchar *v_string)
+     * }
+     */
+    public static MemorySegment g_value_set_interned_string$address() {
+        return g_value_set_interned_string.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_interned_string(GValue *value, const gchar *v_string)
@@ -25033,6 +35032,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_interned_string", value, v_string);
             }
             mh$.invokeExact(value, v_string);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -25044,9 +35045,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_get_string"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_get_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -25068,6 +35069,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_get_string$handle() {
         return g_value_get_string.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern const gchar *g_value_get_string(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_get_string$address() {
+        return g_value_get_string.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern const gchar *g_value_get_string(const GValue *value)
@@ -25080,6 +35092,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_get_string", value);
             }
             return (MemorySegment)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -25091,9 +35105,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_dup_string"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_dup_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -25115,6 +35129,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_dup_string$handle() {
         return g_value_dup_string.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gchar *g_value_dup_string(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_dup_string$address() {
+        return g_value_dup_string.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gchar *g_value_dup_string(const GValue *value)
@@ -25127,6 +35152,68 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_dup_string", value);
             }
             return (MemorySegment)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_value_steal_string {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_steal_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern gchar *g_value_steal_string(GValue *value)
+     * }
+     */
+    public static FunctionDescriptor g_value_steal_string$descriptor() {
+        return g_value_steal_string.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern gchar *g_value_steal_string(GValue *value)
+     * }
+     */
+    public static MethodHandle g_value_steal_string$handle() {
+        return g_value_steal_string.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gchar *g_value_steal_string(GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_steal_string$address() {
+        return g_value_steal_string.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern gchar *g_value_steal_string(GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_steal_string(MemorySegment value) {
+        var mh$ = g_value_steal_string.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_value_steal_string", value);
+            }
+            return (MemorySegment)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -25138,9 +35225,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_pointer"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_pointer");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -25162,6 +35249,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_pointer$handle() {
         return g_value_set_pointer.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_pointer(GValue *value, gpointer v_pointer)
+     * }
+     */
+    public static MemorySegment g_value_set_pointer$address() {
+        return g_value_set_pointer.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_pointer(GValue *value, gpointer v_pointer)
@@ -25174,6 +35272,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_pointer", value, v_pointer);
             }
             mh$.invokeExact(value, v_pointer);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -25185,9 +35285,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_get_pointer"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_get_pointer");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -25209,6 +35309,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_get_pointer$handle() {
         return g_value_get_pointer.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gpointer g_value_get_pointer(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_get_pointer$address() {
+        return g_value_get_pointer.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gpointer g_value_get_pointer(const GValue *value)
@@ -25221,6 +35332,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_get_pointer", value);
             }
             return (MemorySegment)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -25230,9 +35343,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_gtype_get_type"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_gtype_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -25254,6 +35367,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_gtype_get_type$handle() {
         return g_gtype_get_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_gtype_get_type()
+     * }
+     */
+    public static MemorySegment g_gtype_get_type$address() {
+        return g_gtype_get_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_gtype_get_type()
@@ -25266,6 +35390,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_gtype_get_type");
             }
             return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -25277,9 +35403,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_LONG
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_gtype"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_gtype");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -25301,6 +35427,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_gtype$handle() {
         return g_value_set_gtype.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_gtype(GValue *value, GType v_gtype)
+     * }
+     */
+    public static MemorySegment g_value_set_gtype$address() {
+        return g_value_set_gtype.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_gtype(GValue *value, GType v_gtype)
@@ -25313,6 +35450,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_gtype", value, v_gtype);
             }
             mh$.invokeExact(value, v_gtype);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -25324,9 +35463,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_get_gtype"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_get_gtype");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -25348,6 +35487,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_get_gtype$handle() {
         return g_value_get_gtype.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_value_get_gtype(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_get_gtype$address() {
+        return g_value_get_gtype.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_value_get_gtype(const GValue *value)
@@ -25360,6 +35510,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_get_gtype", value);
             }
             return (long)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -25371,9 +35523,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_variant"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_variant");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -25395,6 +35547,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_variant$handle() {
         return g_value_set_variant.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_variant(GValue *value, GVariant *variant)
+     * }
+     */
+    public static MemorySegment g_value_set_variant$address() {
+        return g_value_set_variant.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_variant(GValue *value, GVariant *variant)
@@ -25407,6 +35570,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_variant", value, variant);
             }
             mh$.invokeExact(value, variant);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -25418,9 +35583,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_take_variant"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_take_variant");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -25442,6 +35607,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_take_variant$handle() {
         return g_value_take_variant.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_take_variant(GValue *value, GVariant *variant)
+     * }
+     */
+    public static MemorySegment g_value_take_variant$address() {
+        return g_value_take_variant.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_take_variant(GValue *value, GVariant *variant)
@@ -25454,6 +35630,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_take_variant", value, variant);
             }
             mh$.invokeExact(value, variant);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -25465,9 +35643,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_get_variant"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_get_variant");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -25489,6 +35667,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_get_variant$handle() {
         return g_value_get_variant.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GVariant *g_value_get_variant(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_get_variant$address() {
+        return g_value_get_variant.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GVariant *g_value_get_variant(const GValue *value)
@@ -25501,6 +35690,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_get_variant", value);
             }
             return (MemorySegment)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -25512,9 +35703,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_dup_variant"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_dup_variant");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -25536,6 +35727,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_dup_variant$handle() {
         return g_value_dup_variant.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GVariant *g_value_dup_variant(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_value_dup_variant$address() {
+        return g_value_dup_variant.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GVariant *g_value_dup_variant(const GValue *value)
@@ -25548,6 +35750,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_dup_variant", value);
             }
             return (MemorySegment)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -25559,9 +35763,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_pointer_type_register_static"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_pointer_type_register_static");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -25583,6 +35787,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_pointer_type_register_static$handle() {
         return g_pointer_type_register_static.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_pointer_type_register_static(const gchar *name)
+     * }
+     */
+    public static MemorySegment g_pointer_type_register_static$address() {
+        return g_pointer_type_register_static.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GType g_pointer_type_register_static(const gchar *name)
@@ -25595,6 +35810,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_pointer_type_register_static", name);
             }
             return (long)mh$.invokeExact(name);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -25606,9 +35823,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_strdup_value_contents"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_strdup_value_contents");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -25630,6 +35847,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_strdup_value_contents$handle() {
         return g_strdup_value_contents.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gchar *g_strdup_value_contents(const GValue *value)
+     * }
+     */
+    public static MemorySegment g_strdup_value_contents$address() {
+        return g_strdup_value_contents.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gchar *g_strdup_value_contents(const GValue *value)
@@ -25642,6 +35870,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_strdup_value_contents", value);
             }
             return (MemorySegment)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -25653,9 +35883,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_take_string"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_take_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -25677,6 +35907,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_take_string$handle() {
         return g_value_take_string.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_take_string(GValue *value, gchar *v_string)
+     * }
+     */
+    public static MemorySegment g_value_take_string$address() {
+        return g_value_take_string.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_take_string(GValue *value, gchar *v_string)
@@ -25689,6 +35930,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_take_string", value, v_string);
             }
             mh$.invokeExact(value, v_string);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -25700,9 +35943,9 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_value_set_string_take_ownership"),
-                    DESC);
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_value_set_string_take_ownership");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -25724,6 +35967,17 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static MethodHandle g_value_set_string_take_ownership$handle() {
         return g_value_set_string_take_ownership.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_value_set_string_take_ownership(GValue *value, gchar *v_string)
+     * }
+     */
+    public static MemorySegment g_value_set_string_take_ownership$address() {
+        return g_value_set_string_take_ownership.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_value_set_string_take_ownership(GValue *value, gchar *v_string)
@@ -25736,6 +35990,8 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
                 traceDowncall("g_value_set_string_take_ownership", value, v_string);
             }
             mh$.invokeExact(value, v_string);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
@@ -26445,6 +36701,15 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static int G_FILE_COPY_TARGET_DEFAULT_PERMS() {
         return G_FILE_COPY_TARGET_DEFAULT_PERMS;
     }
+    private static final int G_FILE_COPY_TARGET_DEFAULT_MODIFIED_TIME = (int)64L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.G_FILE_COPY_TARGET_DEFAULT_MODIFIED_TIME = 64
+     * }
+     */
+    public static int G_FILE_COPY_TARGET_DEFAULT_MODIFIED_TIME() {
+        return G_FILE_COPY_TARGET_DEFAULT_MODIFIED_TIME;
+    }
     private static final int G_FILE_MONITOR_NONE = (int)0L;
     /**
      * {@snippet lang=c :
@@ -27120,6 +37385,15 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
     public static int G_IO_ERROR_NO_SUCH_DEVICE() {
         return G_IO_ERROR_NO_SUCH_DEVICE;
     }
+    private static final int G_IO_ERROR_DESTINATION_UNSET = (int)48L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.G_IO_ERROR_DESTINATION_UNSET = 48
+     * }
+     */
+    public static int G_IO_ERROR_DESTINATION_UNSET() {
+        return G_IO_ERROR_DESTINATION_UNSET;
+    }
     private static final int G_ASK_PASSWORD_NEED_PASSWORD = (int)1L;
     /**
      * {@snippet lang=c :
@@ -27227,582 +37501,6 @@ public class app_indicator_h_15 extends app_indicator_h_16 {
      */
     public static int G_MOUNT_OPERATION_UNHANDLED() {
         return G_MOUNT_OPERATION_UNHANDLED;
-    }
-    private static final int G_OUTPUT_STREAM_SPLICE_NONE = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_OUTPUT_STREAM_SPLICE_NONE = 0
-     * }
-     */
-    public static int G_OUTPUT_STREAM_SPLICE_NONE() {
-        return G_OUTPUT_STREAM_SPLICE_NONE;
-    }
-    private static final int G_OUTPUT_STREAM_SPLICE_CLOSE_SOURCE = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_OUTPUT_STREAM_SPLICE_CLOSE_SOURCE = 1
-     * }
-     */
-    public static int G_OUTPUT_STREAM_SPLICE_CLOSE_SOURCE() {
-        return G_OUTPUT_STREAM_SPLICE_CLOSE_SOURCE;
-    }
-    private static final int G_OUTPUT_STREAM_SPLICE_CLOSE_TARGET = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_OUTPUT_STREAM_SPLICE_CLOSE_TARGET = 2
-     * }
-     */
-    public static int G_OUTPUT_STREAM_SPLICE_CLOSE_TARGET() {
-        return G_OUTPUT_STREAM_SPLICE_CLOSE_TARGET;
-    }
-    private static final int G_IO_STREAM_SPLICE_NONE = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_IO_STREAM_SPLICE_NONE = 0
-     * }
-     */
-    public static int G_IO_STREAM_SPLICE_NONE() {
-        return G_IO_STREAM_SPLICE_NONE;
-    }
-    private static final int G_IO_STREAM_SPLICE_CLOSE_STREAM1 = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_IO_STREAM_SPLICE_CLOSE_STREAM1 = 1
-     * }
-     */
-    public static int G_IO_STREAM_SPLICE_CLOSE_STREAM1() {
-        return G_IO_STREAM_SPLICE_CLOSE_STREAM1;
-    }
-    private static final int G_IO_STREAM_SPLICE_CLOSE_STREAM2 = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_IO_STREAM_SPLICE_CLOSE_STREAM2 = 2
-     * }
-     */
-    public static int G_IO_STREAM_SPLICE_CLOSE_STREAM2() {
-        return G_IO_STREAM_SPLICE_CLOSE_STREAM2;
-    }
-    private static final int G_IO_STREAM_SPLICE_WAIT_FOR_BOTH = (int)4L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_IO_STREAM_SPLICE_WAIT_FOR_BOTH = 4
-     * }
-     */
-    public static int G_IO_STREAM_SPLICE_WAIT_FOR_BOTH() {
-        return G_IO_STREAM_SPLICE_WAIT_FOR_BOTH;
-    }
-    private static final int G_EMBLEM_ORIGIN_UNKNOWN = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_EMBLEM_ORIGIN_UNKNOWN = 0
-     * }
-     */
-    public static int G_EMBLEM_ORIGIN_UNKNOWN() {
-        return G_EMBLEM_ORIGIN_UNKNOWN;
-    }
-    private static final int G_EMBLEM_ORIGIN_DEVICE = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_EMBLEM_ORIGIN_DEVICE = 1
-     * }
-     */
-    public static int G_EMBLEM_ORIGIN_DEVICE() {
-        return G_EMBLEM_ORIGIN_DEVICE;
-    }
-    private static final int G_EMBLEM_ORIGIN_LIVEMETADATA = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_EMBLEM_ORIGIN_LIVEMETADATA = 2
-     * }
-     */
-    public static int G_EMBLEM_ORIGIN_LIVEMETADATA() {
-        return G_EMBLEM_ORIGIN_LIVEMETADATA;
-    }
-    private static final int G_EMBLEM_ORIGIN_TAG = (int)3L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_EMBLEM_ORIGIN_TAG = 3
-     * }
-     */
-    public static int G_EMBLEM_ORIGIN_TAG() {
-        return G_EMBLEM_ORIGIN_TAG;
-    }
-    private static final int G_RESOLVER_ERROR_NOT_FOUND = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_RESOLVER_ERROR_NOT_FOUND = 0
-     * }
-     */
-    public static int G_RESOLVER_ERROR_NOT_FOUND() {
-        return G_RESOLVER_ERROR_NOT_FOUND;
-    }
-    private static final int G_RESOLVER_ERROR_TEMPORARY_FAILURE = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_RESOLVER_ERROR_TEMPORARY_FAILURE = 1
-     * }
-     */
-    public static int G_RESOLVER_ERROR_TEMPORARY_FAILURE() {
-        return G_RESOLVER_ERROR_TEMPORARY_FAILURE;
-    }
-    private static final int G_RESOLVER_ERROR_INTERNAL = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_RESOLVER_ERROR_INTERNAL = 2
-     * }
-     */
-    public static int G_RESOLVER_ERROR_INTERNAL() {
-        return G_RESOLVER_ERROR_INTERNAL;
-    }
-    private static final int G_RESOLVER_RECORD_SRV = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_RESOLVER_RECORD_SRV = 1
-     * }
-     */
-    public static int G_RESOLVER_RECORD_SRV() {
-        return G_RESOLVER_RECORD_SRV;
-    }
-    private static final int G_RESOLVER_RECORD_MX = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_RESOLVER_RECORD_MX = 2
-     * }
-     */
-    public static int G_RESOLVER_RECORD_MX() {
-        return G_RESOLVER_RECORD_MX;
-    }
-    private static final int G_RESOLVER_RECORD_TXT = (int)3L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_RESOLVER_RECORD_TXT = 3
-     * }
-     */
-    public static int G_RESOLVER_RECORD_TXT() {
-        return G_RESOLVER_RECORD_TXT;
-    }
-    private static final int G_RESOLVER_RECORD_SOA = (int)4L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_RESOLVER_RECORD_SOA = 4
-     * }
-     */
-    public static int G_RESOLVER_RECORD_SOA() {
-        return G_RESOLVER_RECORD_SOA;
-    }
-    private static final int G_RESOLVER_RECORD_NS = (int)5L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_RESOLVER_RECORD_NS = 5
-     * }
-     */
-    public static int G_RESOLVER_RECORD_NS() {
-        return G_RESOLVER_RECORD_NS;
-    }
-    private static final int G_RESOURCE_ERROR_NOT_FOUND = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_RESOURCE_ERROR_NOT_FOUND = 0
-     * }
-     */
-    public static int G_RESOURCE_ERROR_NOT_FOUND() {
-        return G_RESOURCE_ERROR_NOT_FOUND;
-    }
-    private static final int G_RESOURCE_ERROR_INTERNAL = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_RESOURCE_ERROR_INTERNAL = 1
-     * }
-     */
-    public static int G_RESOURCE_ERROR_INTERNAL() {
-        return G_RESOURCE_ERROR_INTERNAL;
-    }
-    private static final int G_RESOURCE_FLAGS_NONE = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_RESOURCE_FLAGS_NONE = 0
-     * }
-     */
-    public static int G_RESOURCE_FLAGS_NONE() {
-        return G_RESOURCE_FLAGS_NONE;
-    }
-    private static final int G_RESOURCE_FLAGS_COMPRESSED = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_RESOURCE_FLAGS_COMPRESSED = 1
-     * }
-     */
-    public static int G_RESOURCE_FLAGS_COMPRESSED() {
-        return G_RESOURCE_FLAGS_COMPRESSED;
-    }
-    private static final int G_RESOURCE_LOOKUP_FLAGS_NONE = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_RESOURCE_LOOKUP_FLAGS_NONE = 0
-     * }
-     */
-    public static int G_RESOURCE_LOOKUP_FLAGS_NONE() {
-        return G_RESOURCE_LOOKUP_FLAGS_NONE;
-    }
-    private static final int G_SOCKET_FAMILY_INVALID = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_SOCKET_FAMILY_INVALID = 0
-     * }
-     */
-    public static int G_SOCKET_FAMILY_INVALID() {
-        return G_SOCKET_FAMILY_INVALID;
-    }
-    private static final int G_SOCKET_FAMILY_UNIX = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_SOCKET_FAMILY_UNIX = 1
-     * }
-     */
-    public static int G_SOCKET_FAMILY_UNIX() {
-        return G_SOCKET_FAMILY_UNIX;
-    }
-    private static final int G_SOCKET_FAMILY_IPV4 = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_SOCKET_FAMILY_IPV4 = 2
-     * }
-     */
-    public static int G_SOCKET_FAMILY_IPV4() {
-        return G_SOCKET_FAMILY_IPV4;
-    }
-    private static final int G_SOCKET_FAMILY_IPV6 = (int)10L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_SOCKET_FAMILY_IPV6 = 10
-     * }
-     */
-    public static int G_SOCKET_FAMILY_IPV6() {
-        return G_SOCKET_FAMILY_IPV6;
-    }
-    private static final int G_SOCKET_TYPE_INVALID = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_SOCKET_TYPE_INVALID = 0
-     * }
-     */
-    public static int G_SOCKET_TYPE_INVALID() {
-        return G_SOCKET_TYPE_INVALID;
-    }
-    private static final int G_SOCKET_TYPE_STREAM = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_SOCKET_TYPE_STREAM = 1
-     * }
-     */
-    public static int G_SOCKET_TYPE_STREAM() {
-        return G_SOCKET_TYPE_STREAM;
-    }
-    private static final int G_SOCKET_TYPE_DATAGRAM = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_SOCKET_TYPE_DATAGRAM = 2
-     * }
-     */
-    public static int G_SOCKET_TYPE_DATAGRAM() {
-        return G_SOCKET_TYPE_DATAGRAM;
-    }
-    private static final int G_SOCKET_TYPE_SEQPACKET = (int)3L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_SOCKET_TYPE_SEQPACKET = 3
-     * }
-     */
-    public static int G_SOCKET_TYPE_SEQPACKET() {
-        return G_SOCKET_TYPE_SEQPACKET;
-    }
-    private static final int G_SOCKET_MSG_NONE = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_SOCKET_MSG_NONE = 0
-     * }
-     */
-    public static int G_SOCKET_MSG_NONE() {
-        return G_SOCKET_MSG_NONE;
-    }
-    private static final int G_SOCKET_MSG_OOB = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_SOCKET_MSG_OOB = 1
-     * }
-     */
-    public static int G_SOCKET_MSG_OOB() {
-        return G_SOCKET_MSG_OOB;
-    }
-    private static final int G_SOCKET_MSG_PEEK = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_SOCKET_MSG_PEEK = 2
-     * }
-     */
-    public static int G_SOCKET_MSG_PEEK() {
-        return G_SOCKET_MSG_PEEK;
-    }
-    private static final int G_SOCKET_MSG_DONTROUTE = (int)4L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_SOCKET_MSG_DONTROUTE = 4
-     * }
-     */
-    public static int G_SOCKET_MSG_DONTROUTE() {
-        return G_SOCKET_MSG_DONTROUTE;
-    }
-    private static final int G_SOCKET_PROTOCOL_UNKNOWN = (int)-1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_SOCKET_PROTOCOL_UNKNOWN = -1
-     * }
-     */
-    public static int G_SOCKET_PROTOCOL_UNKNOWN() {
-        return G_SOCKET_PROTOCOL_UNKNOWN;
-    }
-    private static final int G_SOCKET_PROTOCOL_DEFAULT = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_SOCKET_PROTOCOL_DEFAULT = 0
-     * }
-     */
-    public static int G_SOCKET_PROTOCOL_DEFAULT() {
-        return G_SOCKET_PROTOCOL_DEFAULT;
-    }
-    private static final int G_SOCKET_PROTOCOL_TCP = (int)6L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_SOCKET_PROTOCOL_TCP = 6
-     * }
-     */
-    public static int G_SOCKET_PROTOCOL_TCP() {
-        return G_SOCKET_PROTOCOL_TCP;
-    }
-    private static final int G_SOCKET_PROTOCOL_UDP = (int)17L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_SOCKET_PROTOCOL_UDP = 17
-     * }
-     */
-    public static int G_SOCKET_PROTOCOL_UDP() {
-        return G_SOCKET_PROTOCOL_UDP;
-    }
-    private static final int G_SOCKET_PROTOCOL_SCTP = (int)132L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_SOCKET_PROTOCOL_SCTP = 132
-     * }
-     */
-    public static int G_SOCKET_PROTOCOL_SCTP() {
-        return G_SOCKET_PROTOCOL_SCTP;
-    }
-    private static final int G_ZLIB_COMPRESSOR_FORMAT_ZLIB = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_ZLIB_COMPRESSOR_FORMAT_ZLIB = 0
-     * }
-     */
-    public static int G_ZLIB_COMPRESSOR_FORMAT_ZLIB() {
-        return G_ZLIB_COMPRESSOR_FORMAT_ZLIB;
-    }
-    private static final int G_ZLIB_COMPRESSOR_FORMAT_GZIP = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_ZLIB_COMPRESSOR_FORMAT_GZIP = 1
-     * }
-     */
-    public static int G_ZLIB_COMPRESSOR_FORMAT_GZIP() {
-        return G_ZLIB_COMPRESSOR_FORMAT_GZIP;
-    }
-    private static final int G_ZLIB_COMPRESSOR_FORMAT_RAW = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_ZLIB_COMPRESSOR_FORMAT_RAW = 2
-     * }
-     */
-    public static int G_ZLIB_COMPRESSOR_FORMAT_RAW() {
-        return G_ZLIB_COMPRESSOR_FORMAT_RAW;
-    }
-    private static final int G_UNIX_SOCKET_ADDRESS_INVALID = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_UNIX_SOCKET_ADDRESS_INVALID = 0
-     * }
-     */
-    public static int G_UNIX_SOCKET_ADDRESS_INVALID() {
-        return G_UNIX_SOCKET_ADDRESS_INVALID;
-    }
-    private static final int G_UNIX_SOCKET_ADDRESS_ANONYMOUS = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_UNIX_SOCKET_ADDRESS_ANONYMOUS = 1
-     * }
-     */
-    public static int G_UNIX_SOCKET_ADDRESS_ANONYMOUS() {
-        return G_UNIX_SOCKET_ADDRESS_ANONYMOUS;
-    }
-    private static final int G_UNIX_SOCKET_ADDRESS_PATH = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_UNIX_SOCKET_ADDRESS_PATH = 2
-     * }
-     */
-    public static int G_UNIX_SOCKET_ADDRESS_PATH() {
-        return G_UNIX_SOCKET_ADDRESS_PATH;
-    }
-    private static final int G_UNIX_SOCKET_ADDRESS_ABSTRACT = (int)3L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_UNIX_SOCKET_ADDRESS_ABSTRACT = 3
-     * }
-     */
-    public static int G_UNIX_SOCKET_ADDRESS_ABSTRACT() {
-        return G_UNIX_SOCKET_ADDRESS_ABSTRACT;
-    }
-    private static final int G_UNIX_SOCKET_ADDRESS_ABSTRACT_PADDED = (int)4L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_UNIX_SOCKET_ADDRESS_ABSTRACT_PADDED = 4
-     * }
-     */
-    public static int G_UNIX_SOCKET_ADDRESS_ABSTRACT_PADDED() {
-        return G_UNIX_SOCKET_ADDRESS_ABSTRACT_PADDED;
-    }
-    private static final int G_BUS_TYPE_STARTER = (int)-1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_BUS_TYPE_STARTER = -1
-     * }
-     */
-    public static int G_BUS_TYPE_STARTER() {
-        return G_BUS_TYPE_STARTER;
-    }
-    private static final int G_BUS_TYPE_NONE = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_BUS_TYPE_NONE = 0
-     * }
-     */
-    public static int G_BUS_TYPE_NONE() {
-        return G_BUS_TYPE_NONE;
-    }
-    private static final int G_BUS_TYPE_SYSTEM = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_BUS_TYPE_SYSTEM = 1
-     * }
-     */
-    public static int G_BUS_TYPE_SYSTEM() {
-        return G_BUS_TYPE_SYSTEM;
-    }
-    private static final int G_BUS_TYPE_SESSION = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_BUS_TYPE_SESSION = 2
-     * }
-     */
-    public static int G_BUS_TYPE_SESSION() {
-        return G_BUS_TYPE_SESSION;
-    }
-    private static final int G_BUS_NAME_OWNER_FLAGS_NONE = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_BUS_NAME_OWNER_FLAGS_NONE = 0
-     * }
-     */
-    public static int G_BUS_NAME_OWNER_FLAGS_NONE() {
-        return G_BUS_NAME_OWNER_FLAGS_NONE;
-    }
-    private static final int G_BUS_NAME_OWNER_FLAGS_ALLOW_REPLACEMENT = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_BUS_NAME_OWNER_FLAGS_ALLOW_REPLACEMENT = 1
-     * }
-     */
-    public static int G_BUS_NAME_OWNER_FLAGS_ALLOW_REPLACEMENT() {
-        return G_BUS_NAME_OWNER_FLAGS_ALLOW_REPLACEMENT;
-    }
-    private static final int G_BUS_NAME_OWNER_FLAGS_REPLACE = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_BUS_NAME_OWNER_FLAGS_REPLACE = 2
-     * }
-     */
-    public static int G_BUS_NAME_OWNER_FLAGS_REPLACE() {
-        return G_BUS_NAME_OWNER_FLAGS_REPLACE;
-    }
-    private static final int G_BUS_NAME_OWNER_FLAGS_DO_NOT_QUEUE = (int)4L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_BUS_NAME_OWNER_FLAGS_DO_NOT_QUEUE = 4
-     * }
-     */
-    public static int G_BUS_NAME_OWNER_FLAGS_DO_NOT_QUEUE() {
-        return G_BUS_NAME_OWNER_FLAGS_DO_NOT_QUEUE;
-    }
-    private static final int G_BUS_NAME_WATCHER_FLAGS_NONE = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_BUS_NAME_WATCHER_FLAGS_NONE = 0
-     * }
-     */
-    public static int G_BUS_NAME_WATCHER_FLAGS_NONE() {
-        return G_BUS_NAME_WATCHER_FLAGS_NONE;
-    }
-    private static final int G_BUS_NAME_WATCHER_FLAGS_AUTO_START = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_BUS_NAME_WATCHER_FLAGS_AUTO_START = 1
-     * }
-     */
-    public static int G_BUS_NAME_WATCHER_FLAGS_AUTO_START() {
-        return G_BUS_NAME_WATCHER_FLAGS_AUTO_START;
-    }
-    private static final int G_DBUS_PROXY_FLAGS_NONE = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_DBUS_PROXY_FLAGS_NONE = 0
-     * }
-     */
-    public static int G_DBUS_PROXY_FLAGS_NONE() {
-        return G_DBUS_PROXY_FLAGS_NONE;
-    }
-    private static final int G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES = 1
-     * }
-     */
-    public static int G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES() {
-        return G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES;
-    }
-    private static final int G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS = 2
-     * }
-     */
-    public static int G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS() {
-        return G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS;
-    }
-    private static final int G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START = (int)4L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START = 4
-     * }
-     */
-    public static int G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START() {
-        return G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START;
-    }
-    private static final int G_DBUS_PROXY_FLAGS_GET_INVALIDATED_PROPERTIES = (int)8L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_DBUS_PROXY_FLAGS_GET_INVALIDATED_PROPERTIES = 8
-     * }
-     */
-    public static int G_DBUS_PROXY_FLAGS_GET_INVALIDATED_PROPERTIES() {
-        return G_DBUS_PROXY_FLAGS_GET_INVALIDATED_PROPERTIES;
     }
 }
 

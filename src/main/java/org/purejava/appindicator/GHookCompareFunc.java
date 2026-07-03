@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gint (*GHookCompareFunc)(GHook *, GHook *)
  * }
  */
-public class GHookCompareFunc {
+public final class GHookCompareFunc {
+
+    private GHookCompareFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +58,11 @@ public class GHookCompareFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment new_hook, MemorySegment sibling) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment new_hook, MemorySegment sibling) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, new_hook, sibling);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

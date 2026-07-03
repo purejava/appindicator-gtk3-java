@@ -68,7 +68,7 @@ public class _GtkBuildableIface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -105,7 +105,11 @@ public class _GtkBuildableIface {
      * void (*set_name)(GtkBuildable *, const gchar *)
      * }
      */
-    public class set_name {
+    public final static class set_name {
+
+        private set_name() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -141,9 +145,11 @@ public class _GtkBuildableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -162,7 +168,7 @@ public class _GtkBuildableIface {
         return set_name$LAYOUT;
     }
 
-    private static final long set_name$OFFSET = 16;
+    private static final long set_name$OFFSET = $LAYOUT.byteOffset(groupElement("set_name"));
 
     /**
      * Offset for field:
@@ -199,7 +205,11 @@ public class _GtkBuildableIface {
      * const gchar *(*get_name)(GtkBuildable *)
      * }
      */
-    public class get_name {
+    public final static class get_name {
+
+        private get_name() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -235,9 +245,11 @@ public class _GtkBuildableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -256,7 +268,7 @@ public class _GtkBuildableIface {
         return get_name$LAYOUT;
     }
 
-    private static final long get_name$OFFSET = 24;
+    private static final long get_name$OFFSET = $LAYOUT.byteOffset(groupElement("get_name"));
 
     /**
      * Offset for field:
@@ -293,7 +305,11 @@ public class _GtkBuildableIface {
      * void (*add_child)(GtkBuildable *, GtkBuilder *, GObject *, const gchar *)
      * }
      */
-    public class add_child {
+    public final static class add_child {
+
+        private add_child() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -331,9 +347,11 @@ public class _GtkBuildableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -352,7 +370,7 @@ public class _GtkBuildableIface {
         return add_child$LAYOUT;
     }
 
-    private static final long add_child$OFFSET = 32;
+    private static final long add_child$OFFSET = $LAYOUT.byteOffset(groupElement("add_child"));
 
     /**
      * Offset for field:
@@ -389,7 +407,11 @@ public class _GtkBuildableIface {
      * void (*set_buildable_property)(GtkBuildable *, GtkBuilder *, const gchar *, const GValue *)
      * }
      */
-    public class set_buildable_property {
+    public final static class set_buildable_property {
+
+        private set_buildable_property() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -427,9 +449,11 @@ public class _GtkBuildableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -448,7 +472,7 @@ public class _GtkBuildableIface {
         return set_buildable_property$LAYOUT;
     }
 
-    private static final long set_buildable_property$OFFSET = 40;
+    private static final long set_buildable_property$OFFSET = $LAYOUT.byteOffset(groupElement("set_buildable_property"));
 
     /**
      * Offset for field:
@@ -485,7 +509,11 @@ public class _GtkBuildableIface {
      * GObject *(*construct_child)(GtkBuildable *, GtkBuilder *, const gchar *)
      * }
      */
-    public class construct_child {
+    public final static class construct_child {
+
+        private construct_child() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -523,9 +551,11 @@ public class _GtkBuildableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -544,7 +574,7 @@ public class _GtkBuildableIface {
         return construct_child$LAYOUT;
     }
 
-    private static final long construct_child$OFFSET = 48;
+    private static final long construct_child$OFFSET = $LAYOUT.byteOffset(groupElement("construct_child"));
 
     /**
      * Offset for field:
@@ -581,7 +611,11 @@ public class _GtkBuildableIface {
      * gboolean (*custom_tag_start)(GtkBuildable *, GtkBuilder *, GObject *, const gchar *, GMarkupParser *, gpointer *)
      * }
      */
-    public class custom_tag_start {
+    public final static class custom_tag_start {
+
+        private custom_tag_start() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -622,9 +656,11 @@ public class _GtkBuildableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -643,7 +679,7 @@ public class _GtkBuildableIface {
         return custom_tag_start$LAYOUT;
     }
 
-    private static final long custom_tag_start$OFFSET = 56;
+    private static final long custom_tag_start$OFFSET = $LAYOUT.byteOffset(groupElement("custom_tag_start"));
 
     /**
      * Offset for field:
@@ -680,7 +716,11 @@ public class _GtkBuildableIface {
      * void (*custom_tag_end)(GtkBuildable *, GtkBuilder *, GObject *, const gchar *, gpointer *)
      * }
      */
-    public class custom_tag_end {
+    public final static class custom_tag_end {
+
+        private custom_tag_end() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -719,9 +759,11 @@ public class _GtkBuildableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -740,7 +782,7 @@ public class _GtkBuildableIface {
         return custom_tag_end$LAYOUT;
     }
 
-    private static final long custom_tag_end$OFFSET = 64;
+    private static final long custom_tag_end$OFFSET = $LAYOUT.byteOffset(groupElement("custom_tag_end"));
 
     /**
      * Offset for field:
@@ -777,7 +819,11 @@ public class _GtkBuildableIface {
      * void (*custom_finished)(GtkBuildable *, GtkBuilder *, GObject *, const gchar *, gpointer)
      * }
      */
-    public class custom_finished {
+    public final static class custom_finished {
+
+        private custom_finished() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -816,9 +862,11 @@ public class _GtkBuildableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -837,7 +885,7 @@ public class _GtkBuildableIface {
         return custom_finished$LAYOUT;
     }
 
-    private static final long custom_finished$OFFSET = 72;
+    private static final long custom_finished$OFFSET = $LAYOUT.byteOffset(groupElement("custom_finished"));
 
     /**
      * Offset for field:
@@ -874,7 +922,11 @@ public class _GtkBuildableIface {
      * void (*parser_finished)(GtkBuildable *, GtkBuilder *)
      * }
      */
-    public class parser_finished {
+    public final static class parser_finished {
+
+        private parser_finished() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -910,9 +962,11 @@ public class _GtkBuildableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -931,7 +985,7 @@ public class _GtkBuildableIface {
         return parser_finished$LAYOUT;
     }
 
-    private static final long parser_finished$OFFSET = 80;
+    private static final long parser_finished$OFFSET = $LAYOUT.byteOffset(groupElement("parser_finished"));
 
     /**
      * Offset for field:
@@ -968,7 +1022,11 @@ public class _GtkBuildableIface {
      * GObject *(*get_internal_child)(GtkBuildable *, GtkBuilder *, const gchar *)
      * }
      */
-    public class get_internal_child {
+    public final static class get_internal_child {
+
+        private get_internal_child() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1006,9 +1064,11 @@ public class _GtkBuildableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1027,7 +1087,7 @@ public class _GtkBuildableIface {
         return get_internal_child$LAYOUT;
     }
 
-    private static final long get_internal_child$OFFSET = 88;
+    private static final long get_internal_child$OFFSET = $LAYOUT.byteOffset(groupElement("get_internal_child"));
 
     /**
      * Offset for field:
@@ -1088,7 +1148,7 @@ public class _GtkBuildableIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1096,7 +1156,7 @@ public class _GtkBuildableIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GtkColorSelectionChangePaletteFunc)(const GdkColor *, gint)
  * }
  */
-public class GtkColorSelectionChangePaletteFunc {
+public final class GtkColorSelectionChangePaletteFunc {
+
+    private GtkColorSelectionChangePaletteFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -53,9 +57,11 @@ public class GtkColorSelectionChangePaletteFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment colors, int n_colors) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment colors, int n_colors) {
         try {
              DOWN$MH.invokeExact(funcPtr, colors, n_colors);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

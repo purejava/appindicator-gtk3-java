@@ -52,7 +52,7 @@ public class _GtkFixedChild {
         return widget$LAYOUT;
     }
 
-    private static final long widget$OFFSET = 0;
+    private static final long widget$OFFSET = $LAYOUT.byteOffset(groupElement("widget"));
 
     /**
      * Offset for field:
@@ -96,7 +96,7 @@ public class _GtkFixedChild {
         return x$LAYOUT;
     }
 
-    private static final long x$OFFSET = 8;
+    private static final long x$OFFSET = $LAYOUT.byteOffset(groupElement("x"));
 
     /**
      * Offset for field:
@@ -140,7 +140,7 @@ public class _GtkFixedChild {
         return y$LAYOUT;
     }
 
-    private static final long y$OFFSET = 12;
+    private static final long y$OFFSET = $LAYOUT.byteOffset(groupElement("y"));
 
     /**
      * Offset for field:
@@ -201,7 +201,7 @@ public class _GtkFixedChild {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -209,7 +209,7 @@ public class _GtkFixedChild {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

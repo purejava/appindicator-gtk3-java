@@ -50,7 +50,7 @@ public class _AtkImplementorIface {
         return parent$LAYOUT;
     }
 
-    private static final long parent$OFFSET = 0;
+    private static final long parent$OFFSET = $LAYOUT.byteOffset(groupElement("parent"));
 
     /**
      * Offset for field:
@@ -87,7 +87,11 @@ public class _AtkImplementorIface {
      * AtkObject *(*ref_accessible)(AtkImplementor *)
      * }
      */
-    public class ref_accessible {
+    public final static class ref_accessible {
+
+        private ref_accessible() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -123,9 +127,11 @@ public class _AtkImplementorIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -144,7 +150,7 @@ public class _AtkImplementorIface {
         return ref_accessible$LAYOUT;
     }
 
-    private static final long ref_accessible$OFFSET = 16;
+    private static final long ref_accessible$OFFSET = $LAYOUT.byteOffset(groupElement("ref_accessible"));
 
     /**
      * Offset for field:
@@ -205,7 +211,7 @@ public class _AtkImplementorIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -213,7 +219,7 @@ public class _AtkImplementorIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

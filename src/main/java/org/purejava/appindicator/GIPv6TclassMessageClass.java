@@ -14,25 +14,20 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
- * struct user_fpsimd_struct {
- *     __uint128_t vregs[32];
- *     unsigned int fpsr;
- *     unsigned int fpcr;
+ * struct {
+ *     GSocketControlMessageClass parent_class;
  * }
  * }
  */
-public class user_fpsimd_struct {
+public class GIPv6TclassMessageClass {
 
-    user_fpsimd_struct() {
+    GIPv6TclassMessageClass() {
         // Should not be called directly
     }
 
     private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.paddingLayout(512),
-        app_indicator_h.C_INT.withName("fpsr"),
-        app_indicator_h.C_INT.withName("fpcr"),
-        MemoryLayout.paddingLayout(8)
-    ).withName("user_fpsimd_struct");
+        _GSocketControlMessageClass.layout().withName("parent_class")
+    ).withName("$anon$33:1");
 
     /**
      * The layout of this struct
@@ -41,92 +36,48 @@ public class user_fpsimd_struct {
         return $LAYOUT;
     }
 
-    private static final OfInt fpsr$LAYOUT = (OfInt)$LAYOUT.select(groupElement("fpsr"));
+    private static final GroupLayout parent_class$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("parent_class"));
 
     /**
      * Layout for field:
      * {@snippet lang=c :
-     * unsigned int fpsr
+     * GSocketControlMessageClass parent_class
      * }
      */
-    public static final OfInt fpsr$layout() {
-        return fpsr$LAYOUT;
+    public static final GroupLayout parent_class$layout() {
+        return parent_class$LAYOUT;
     }
 
-    private static final long fpsr$OFFSET = 512;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
      * {@snippet lang=c :
-     * unsigned int fpsr
+     * GSocketControlMessageClass parent_class
      * }
      */
-    public static final long fpsr$offset() {
-        return fpsr$OFFSET;
+    public static final long parent_class$offset() {
+        return parent_class$OFFSET;
     }
 
     /**
      * Getter for field:
      * {@snippet lang=c :
-     * unsigned int fpsr
+     * GSocketControlMessageClass parent_class
      * }
      */
-    public static int fpsr(MemorySegment struct) {
-        return struct.get(fpsr$LAYOUT, fpsr$OFFSET);
+    public static MemorySegment parent_class(MemorySegment struct) {
+        return struct.asSlice(parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
 
     /**
      * Setter for field:
      * {@snippet lang=c :
-     * unsigned int fpsr
+     * GSocketControlMessageClass parent_class
      * }
      */
-    public static void fpsr(MemorySegment struct, int fieldValue) {
-        struct.set(fpsr$LAYOUT, fpsr$OFFSET, fieldValue);
-    }
-
-    private static final OfInt fpcr$LAYOUT = (OfInt)$LAYOUT.select(groupElement("fpcr"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * unsigned int fpcr
-     * }
-     */
-    public static final OfInt fpcr$layout() {
-        return fpcr$LAYOUT;
-    }
-
-    private static final long fpcr$OFFSET = 516;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * unsigned int fpcr
-     * }
-     */
-    public static final long fpcr$offset() {
-        return fpcr$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * unsigned int fpcr
-     * }
-     */
-    public static int fpcr(MemorySegment struct) {
-        return struct.get(fpcr$LAYOUT, fpcr$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * unsigned int fpcr
-     * }
-     */
-    public static void fpcr(MemorySegment struct, int fieldValue) {
-        struct.set(fpcr$LAYOUT, fpcr$OFFSET, fieldValue);
+    public static void parent_class(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
 
     /**
@@ -158,7 +109,7 @@ public class user_fpsimd_struct {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -166,7 +117,7 @@ public class user_fpsimd_struct {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

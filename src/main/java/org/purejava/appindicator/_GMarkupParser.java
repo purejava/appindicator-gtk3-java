@@ -49,7 +49,11 @@ public class _GMarkupParser {
      * void (*start_element)(GMarkupParseContext *, const gchar *, const gchar **, const gchar **, gpointer, GError **)
      * }
      */
-    public class start_element {
+    public final static class start_element {
+
+        private start_element() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -89,9 +93,11 @@ public class _GMarkupParser {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -110,7 +116,7 @@ public class _GMarkupParser {
         return start_element$LAYOUT;
     }
 
-    private static final long start_element$OFFSET = 0;
+    private static final long start_element$OFFSET = $LAYOUT.byteOffset(groupElement("start_element"));
 
     /**
      * Offset for field:
@@ -147,7 +153,11 @@ public class _GMarkupParser {
      * void (*end_element)(GMarkupParseContext *, const gchar *, gpointer, GError **)
      * }
      */
-    public class end_element {
+    public final static class end_element {
+
+        private end_element() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -185,9 +195,11 @@ public class _GMarkupParser {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -206,7 +218,7 @@ public class _GMarkupParser {
         return end_element$LAYOUT;
     }
 
-    private static final long end_element$OFFSET = 8;
+    private static final long end_element$OFFSET = $LAYOUT.byteOffset(groupElement("end_element"));
 
     /**
      * Offset for field:
@@ -243,7 +255,11 @@ public class _GMarkupParser {
      * void (*text)(GMarkupParseContext *, const gchar *, gsize, gpointer, GError **)
      * }
      */
-    public class text {
+    public final static class text {
+
+        private text() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -282,9 +298,11 @@ public class _GMarkupParser {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -303,7 +321,7 @@ public class _GMarkupParser {
         return text$LAYOUT;
     }
 
-    private static final long text$OFFSET = 16;
+    private static final long text$OFFSET = $LAYOUT.byteOffset(groupElement("text"));
 
     /**
      * Offset for field:
@@ -340,7 +358,11 @@ public class _GMarkupParser {
      * void (*passthrough)(GMarkupParseContext *, const gchar *, gsize, gpointer, GError **)
      * }
      */
-    public class passthrough {
+    public final static class passthrough {
+
+        private passthrough() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -379,9 +401,11 @@ public class _GMarkupParser {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -400,7 +424,7 @@ public class _GMarkupParser {
         return passthrough$LAYOUT;
     }
 
-    private static final long passthrough$OFFSET = 24;
+    private static final long passthrough$OFFSET = $LAYOUT.byteOffset(groupElement("passthrough"));
 
     /**
      * Offset for field:
@@ -437,7 +461,11 @@ public class _GMarkupParser {
      * void (*error)(GMarkupParseContext *, GError *, gpointer)
      * }
      */
-    public class error {
+    public final static class error {
+
+        private error() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -474,9 +502,11 @@ public class _GMarkupParser {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -495,7 +525,7 @@ public class _GMarkupParser {
         return error$LAYOUT;
     }
 
-    private static final long error$OFFSET = 32;
+    private static final long error$OFFSET = $LAYOUT.byteOffset(groupElement("error"));
 
     /**
      * Offset for field:
@@ -556,7 +586,7 @@ public class _GMarkupParser {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -564,7 +594,7 @@ public class _GMarkupParser {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

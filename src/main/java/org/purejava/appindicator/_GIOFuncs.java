@@ -2,11 +2,15 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.lang.invoke.MethodHandle;
-import java.util.function.Consumer;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
-import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
@@ -51,7 +55,11 @@ public class _GIOFuncs {
      * GIOStatus (*io_read)(GIOChannel *, gchar *, gsize, gsize *, GError **)
      * }
      */
-    public class io_read {
+    public final static class io_read {
+
+        private io_read() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -91,9 +99,11 @@ public class _GIOFuncs {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -112,7 +122,7 @@ public class _GIOFuncs {
         return io_read$LAYOUT;
     }
 
-    private static final long io_read$OFFSET = 0;
+    private static final long io_read$OFFSET = $LAYOUT.byteOffset(groupElement("io_read"));
 
     /**
      * Offset for field:
@@ -149,7 +159,11 @@ public class _GIOFuncs {
      * GIOStatus (*io_write)(GIOChannel *, const gchar *, gsize, gsize *, GError **)
      * }
      */
-    public class io_write {
+    public final static class io_write {
+
+        private io_write() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -189,9 +203,11 @@ public class _GIOFuncs {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -210,7 +226,7 @@ public class _GIOFuncs {
         return io_write$LAYOUT;
     }
 
-    private static final long io_write$OFFSET = 8;
+    private static final long io_write$OFFSET = $LAYOUT.byteOffset(groupElement("io_write"));
 
     /**
      * Offset for field:
@@ -247,7 +263,11 @@ public class _GIOFuncs {
      * GIOStatus (*io_seek)(GIOChannel *, gint64, GSeekType, GError **)
      * }
      */
-    public class io_seek {
+    public final static class io_seek {
+
+        private io_seek() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -286,9 +306,11 @@ public class _GIOFuncs {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, long _x1, int _x2, MemorySegment _x3) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, long _x1, int _x2, MemorySegment _x3) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -307,7 +329,7 @@ public class _GIOFuncs {
         return io_seek$LAYOUT;
     }
 
-    private static final long io_seek$OFFSET = 16;
+    private static final long io_seek$OFFSET = $LAYOUT.byteOffset(groupElement("io_seek"));
 
     /**
      * Offset for field:
@@ -344,7 +366,11 @@ public class _GIOFuncs {
      * GIOStatus (*io_close)(GIOChannel *, GError **)
      * }
      */
-    public class io_close {
+    public final static class io_close {
+
+        private io_close() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -381,9 +407,11 @@ public class _GIOFuncs {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -402,7 +430,7 @@ public class _GIOFuncs {
         return io_close$LAYOUT;
     }
 
-    private static final long io_close$OFFSET = 24;
+    private static final long io_close$OFFSET = $LAYOUT.byteOffset(groupElement("io_close"));
 
     /**
      * Offset for field:
@@ -439,7 +467,11 @@ public class _GIOFuncs {
      * GSource *(*io_create_watch)(GIOChannel *, GIOCondition)
      * }
      */
-    public class io_create_watch {
+    public final static class io_create_watch {
+
+        private io_create_watch() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -476,9 +508,11 @@ public class _GIOFuncs {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -497,7 +531,7 @@ public class _GIOFuncs {
         return io_create_watch$LAYOUT;
     }
 
-    private static final long io_create_watch$OFFSET = 32;
+    private static final long io_create_watch$OFFSET = $LAYOUT.byteOffset(groupElement("io_create_watch"));
 
     /**
      * Offset for field:
@@ -534,7 +568,11 @@ public class _GIOFuncs {
      * void (*io_free)(GIOChannel *)
      * }
      */
-    public class io_free {
+    public final static class io_free {
+
+        private io_free() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -569,9 +607,11 @@ public class _GIOFuncs {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -590,7 +630,7 @@ public class _GIOFuncs {
         return io_free$LAYOUT;
     }
 
-    private static final long io_free$OFFSET = 40;
+    private static final long io_free$OFFSET = $LAYOUT.byteOffset(groupElement("io_free"));
 
     /**
      * Offset for field:
@@ -627,7 +667,11 @@ public class _GIOFuncs {
      * GIOStatus (*io_set_flags)(GIOChannel *, GIOFlags, GError **)
      * }
      */
-    public class io_set_flags {
+    public final static class io_set_flags {
+
+        private io_set_flags() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -665,9 +709,11 @@ public class _GIOFuncs {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -686,7 +732,7 @@ public class _GIOFuncs {
         return io_set_flags$LAYOUT;
     }
 
-    private static final long io_set_flags$OFFSET = 48;
+    private static final long io_set_flags$OFFSET = $LAYOUT.byteOffset(groupElement("io_set_flags"));
 
     /**
      * Offset for field:
@@ -723,7 +769,11 @@ public class _GIOFuncs {
      * GIOFlags (*io_get_flags)(GIOChannel *)
      * }
      */
-    public class io_get_flags {
+    public final static class io_get_flags {
+
+        private io_get_flags() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -759,9 +809,11 @@ public class _GIOFuncs {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -780,7 +832,7 @@ public class _GIOFuncs {
         return io_get_flags$LAYOUT;
     }
 
-    private static final long io_get_flags$OFFSET = 56;
+    private static final long io_get_flags$OFFSET = $LAYOUT.byteOffset(groupElement("io_get_flags"));
 
     /**
      * Offset for field:
@@ -841,7 +893,7 @@ public class _GIOFuncs {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -849,7 +901,7 @@ public class _GIOFuncs {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

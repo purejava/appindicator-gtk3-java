@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GtkTreeSelectionForeachFunc)(GtkTreeModel *, GtkTreePath *, GtkTreeIter *, gpointer)
  * }
  */
-public class GtkTreeSelectionForeachFunc {
+public final class GtkTreeSelectionForeachFunc {
+
+    private GtkTreeSelectionForeachFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -55,9 +59,11 @@ public class GtkTreeSelectionForeachFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment model, MemorySegment path, MemorySegment iter, MemorySegment data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment model, MemorySegment path, MemorySegment iter, MemorySegment data) {
         try {
              DOWN$MH.invokeExact(funcPtr, model, path, iter, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

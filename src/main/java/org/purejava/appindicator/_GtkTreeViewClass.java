@@ -94,7 +94,7 @@ public class _GtkTreeViewClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -131,7 +131,11 @@ public class _GtkTreeViewClass {
      * void (*row_activated)(GtkTreeView *, GtkTreePath *, GtkTreeViewColumn *)
      * }
      */
-    public class row_activated {
+    public final static class row_activated {
+
+        private row_activated() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -168,9 +172,11 @@ public class _GtkTreeViewClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -189,7 +195,7 @@ public class _GtkTreeViewClass {
         return row_activated$LAYOUT;
     }
 
-    private static final long row_activated$OFFSET = 976;
+    private static final long row_activated$OFFSET = $LAYOUT.byteOffset(groupElement("row_activated"));
 
     /**
      * Offset for field:
@@ -226,7 +232,11 @@ public class _GtkTreeViewClass {
      * gboolean (*test_expand_row)(GtkTreeView *, GtkTreeIter *, GtkTreePath *)
      * }
      */
-    public class test_expand_row {
+    public final static class test_expand_row {
+
+        private test_expand_row() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -264,9 +274,11 @@ public class _GtkTreeViewClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -285,7 +297,7 @@ public class _GtkTreeViewClass {
         return test_expand_row$LAYOUT;
     }
 
-    private static final long test_expand_row$OFFSET = 984;
+    private static final long test_expand_row$OFFSET = $LAYOUT.byteOffset(groupElement("test_expand_row"));
 
     /**
      * Offset for field:
@@ -322,7 +334,11 @@ public class _GtkTreeViewClass {
      * gboolean (*test_collapse_row)(GtkTreeView *, GtkTreeIter *, GtkTreePath *)
      * }
      */
-    public class test_collapse_row {
+    public final static class test_collapse_row {
+
+        private test_collapse_row() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -360,9 +376,11 @@ public class _GtkTreeViewClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -381,7 +399,7 @@ public class _GtkTreeViewClass {
         return test_collapse_row$LAYOUT;
     }
 
-    private static final long test_collapse_row$OFFSET = 992;
+    private static final long test_collapse_row$OFFSET = $LAYOUT.byteOffset(groupElement("test_collapse_row"));
 
     /**
      * Offset for field:
@@ -418,7 +436,11 @@ public class _GtkTreeViewClass {
      * void (*row_expanded)(GtkTreeView *, GtkTreeIter *, GtkTreePath *)
      * }
      */
-    public class row_expanded {
+    public final static class row_expanded {
+
+        private row_expanded() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -455,9 +477,11 @@ public class _GtkTreeViewClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -476,7 +500,7 @@ public class _GtkTreeViewClass {
         return row_expanded$LAYOUT;
     }
 
-    private static final long row_expanded$OFFSET = 1000;
+    private static final long row_expanded$OFFSET = $LAYOUT.byteOffset(groupElement("row_expanded"));
 
     /**
      * Offset for field:
@@ -513,7 +537,11 @@ public class _GtkTreeViewClass {
      * void (*row_collapsed)(GtkTreeView *, GtkTreeIter *, GtkTreePath *)
      * }
      */
-    public class row_collapsed {
+    public final static class row_collapsed {
+
+        private row_collapsed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -550,9 +578,11 @@ public class _GtkTreeViewClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -571,7 +601,7 @@ public class _GtkTreeViewClass {
         return row_collapsed$LAYOUT;
     }
 
-    private static final long row_collapsed$OFFSET = 1008;
+    private static final long row_collapsed$OFFSET = $LAYOUT.byteOffset(groupElement("row_collapsed"));
 
     /**
      * Offset for field:
@@ -608,7 +638,11 @@ public class _GtkTreeViewClass {
      * void (*columns_changed)(GtkTreeView *)
      * }
      */
-    public class columns_changed {
+    public final static class columns_changed {
+
+        private columns_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -643,9 +677,11 @@ public class _GtkTreeViewClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -664,7 +700,7 @@ public class _GtkTreeViewClass {
         return columns_changed$LAYOUT;
     }
 
-    private static final long columns_changed$OFFSET = 1016;
+    private static final long columns_changed$OFFSET = $LAYOUT.byteOffset(groupElement("columns_changed"));
 
     /**
      * Offset for field:
@@ -701,7 +737,11 @@ public class _GtkTreeViewClass {
      * void (*cursor_changed)(GtkTreeView *)
      * }
      */
-    public class cursor_changed {
+    public final static class cursor_changed {
+
+        private cursor_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -736,9 +776,11 @@ public class _GtkTreeViewClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -757,7 +799,7 @@ public class _GtkTreeViewClass {
         return cursor_changed$LAYOUT;
     }
 
-    private static final long cursor_changed$OFFSET = 1024;
+    private static final long cursor_changed$OFFSET = $LAYOUT.byteOffset(groupElement("cursor_changed"));
 
     /**
      * Offset for field:
@@ -794,7 +836,11 @@ public class _GtkTreeViewClass {
      * gboolean (*move_cursor)(GtkTreeView *, GtkMovementStep, gint)
      * }
      */
-    public class move_cursor {
+    public final static class move_cursor {
+
+        private move_cursor() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -832,9 +878,11 @@ public class _GtkTreeViewClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -853,7 +901,7 @@ public class _GtkTreeViewClass {
         return move_cursor$LAYOUT;
     }
 
-    private static final long move_cursor$OFFSET = 1032;
+    private static final long move_cursor$OFFSET = $LAYOUT.byteOffset(groupElement("move_cursor"));
 
     /**
      * Offset for field:
@@ -890,7 +938,11 @@ public class _GtkTreeViewClass {
      * gboolean (*select_all)(GtkTreeView *)
      * }
      */
-    public class select_all {
+    public final static class select_all {
+
+        private select_all() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -926,9 +978,11 @@ public class _GtkTreeViewClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -947,7 +1001,7 @@ public class _GtkTreeViewClass {
         return select_all$LAYOUT;
     }
 
-    private static final long select_all$OFFSET = 1040;
+    private static final long select_all$OFFSET = $LAYOUT.byteOffset(groupElement("select_all"));
 
     /**
      * Offset for field:
@@ -984,7 +1038,11 @@ public class _GtkTreeViewClass {
      * gboolean (*unselect_all)(GtkTreeView *)
      * }
      */
-    public class unselect_all {
+    public final static class unselect_all {
+
+        private unselect_all() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1020,9 +1078,11 @@ public class _GtkTreeViewClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1041,7 +1101,7 @@ public class _GtkTreeViewClass {
         return unselect_all$LAYOUT;
     }
 
-    private static final long unselect_all$OFFSET = 1048;
+    private static final long unselect_all$OFFSET = $LAYOUT.byteOffset(groupElement("unselect_all"));
 
     /**
      * Offset for field:
@@ -1078,7 +1138,11 @@ public class _GtkTreeViewClass {
      * gboolean (*select_cursor_row)(GtkTreeView *, gboolean)
      * }
      */
-    public class select_cursor_row {
+    public final static class select_cursor_row {
+
+        private select_cursor_row() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1115,9 +1179,11 @@ public class _GtkTreeViewClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1136,7 +1202,7 @@ public class _GtkTreeViewClass {
         return select_cursor_row$LAYOUT;
     }
 
-    private static final long select_cursor_row$OFFSET = 1056;
+    private static final long select_cursor_row$OFFSET = $LAYOUT.byteOffset(groupElement("select_cursor_row"));
 
     /**
      * Offset for field:
@@ -1173,7 +1239,11 @@ public class _GtkTreeViewClass {
      * gboolean (*toggle_cursor_row)(GtkTreeView *)
      * }
      */
-    public class toggle_cursor_row {
+    public final static class toggle_cursor_row {
+
+        private toggle_cursor_row() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1209,9 +1279,11 @@ public class _GtkTreeViewClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1230,7 +1302,7 @@ public class _GtkTreeViewClass {
         return toggle_cursor_row$LAYOUT;
     }
 
-    private static final long toggle_cursor_row$OFFSET = 1064;
+    private static final long toggle_cursor_row$OFFSET = $LAYOUT.byteOffset(groupElement("toggle_cursor_row"));
 
     /**
      * Offset for field:
@@ -1267,7 +1339,11 @@ public class _GtkTreeViewClass {
      * gboolean (*expand_collapse_cursor_row)(GtkTreeView *, gboolean, gboolean, gboolean)
      * }
      */
-    public class expand_collapse_cursor_row {
+    public final static class expand_collapse_cursor_row {
+
+        private expand_collapse_cursor_row() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1306,9 +1382,11 @@ public class _GtkTreeViewClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2, int _x3) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2, int _x3) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1327,7 +1405,7 @@ public class _GtkTreeViewClass {
         return expand_collapse_cursor_row$LAYOUT;
     }
 
-    private static final long expand_collapse_cursor_row$OFFSET = 1072;
+    private static final long expand_collapse_cursor_row$OFFSET = $LAYOUT.byteOffset(groupElement("expand_collapse_cursor_row"));
 
     /**
      * Offset for field:
@@ -1364,7 +1442,11 @@ public class _GtkTreeViewClass {
      * gboolean (*select_cursor_parent)(GtkTreeView *)
      * }
      */
-    public class select_cursor_parent {
+    public final static class select_cursor_parent {
+
+        private select_cursor_parent() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1400,9 +1482,11 @@ public class _GtkTreeViewClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1421,7 +1505,7 @@ public class _GtkTreeViewClass {
         return select_cursor_parent$LAYOUT;
     }
 
-    private static final long select_cursor_parent$OFFSET = 1080;
+    private static final long select_cursor_parent$OFFSET = $LAYOUT.byteOffset(groupElement("select_cursor_parent"));
 
     /**
      * Offset for field:
@@ -1458,7 +1542,11 @@ public class _GtkTreeViewClass {
      * gboolean (*start_interactive_search)(GtkTreeView *)
      * }
      */
-    public class start_interactive_search {
+    public final static class start_interactive_search {
+
+        private start_interactive_search() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1494,9 +1582,11 @@ public class _GtkTreeViewClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1515,7 +1605,7 @@ public class _GtkTreeViewClass {
         return start_interactive_search$LAYOUT;
     }
 
-    private static final long start_interactive_search$OFFSET = 1088;
+    private static final long start_interactive_search$OFFSET = $LAYOUT.byteOffset(groupElement("start_interactive_search"));
 
     /**
      * Offset for field:
@@ -1552,7 +1642,11 @@ public class _GtkTreeViewClass {
      * void (*_gtk_reserved1)(void)
      * }
      */
-    public class _gtk_reserved1 {
+    public final static class _gtk_reserved1 {
+
+        private _gtk_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1588,6 +1682,8 @@ public class _GtkTreeViewClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1606,7 +1702,7 @@ public class _GtkTreeViewClass {
         return _gtk_reserved1$LAYOUT;
     }
 
-    private static final long _gtk_reserved1$OFFSET = 1096;
+    private static final long _gtk_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved1"));
 
     /**
      * Offset for field:
@@ -1643,7 +1739,11 @@ public class _GtkTreeViewClass {
      * void (*_gtk_reserved2)(void)
      * }
      */
-    public class _gtk_reserved2 {
+    public final static class _gtk_reserved2 {
+
+        private _gtk_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1679,6 +1779,8 @@ public class _GtkTreeViewClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1697,7 +1799,7 @@ public class _GtkTreeViewClass {
         return _gtk_reserved2$LAYOUT;
     }
 
-    private static final long _gtk_reserved2$OFFSET = 1104;
+    private static final long _gtk_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved2"));
 
     /**
      * Offset for field:
@@ -1734,7 +1836,11 @@ public class _GtkTreeViewClass {
      * void (*_gtk_reserved3)(void)
      * }
      */
-    public class _gtk_reserved3 {
+    public final static class _gtk_reserved3 {
+
+        private _gtk_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1770,6 +1876,8 @@ public class _GtkTreeViewClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1788,7 +1896,7 @@ public class _GtkTreeViewClass {
         return _gtk_reserved3$LAYOUT;
     }
 
-    private static final long _gtk_reserved3$OFFSET = 1112;
+    private static final long _gtk_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved3"));
 
     /**
      * Offset for field:
@@ -1825,7 +1933,11 @@ public class _GtkTreeViewClass {
      * void (*_gtk_reserved4)(void)
      * }
      */
-    public class _gtk_reserved4 {
+    public final static class _gtk_reserved4 {
+
+        private _gtk_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1861,6 +1973,8 @@ public class _GtkTreeViewClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1879,7 +1993,7 @@ public class _GtkTreeViewClass {
         return _gtk_reserved4$LAYOUT;
     }
 
-    private static final long _gtk_reserved4$OFFSET = 1120;
+    private static final long _gtk_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved4"));
 
     /**
      * Offset for field:
@@ -1916,7 +2030,11 @@ public class _GtkTreeViewClass {
      * void (*_gtk_reserved5)(void)
      * }
      */
-    public class _gtk_reserved5 {
+    public final static class _gtk_reserved5 {
+
+        private _gtk_reserved5() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1952,6 +2070,8 @@ public class _GtkTreeViewClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1970,7 +2090,7 @@ public class _GtkTreeViewClass {
         return _gtk_reserved5$LAYOUT;
     }
 
-    private static final long _gtk_reserved5$OFFSET = 1128;
+    private static final long _gtk_reserved5$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved5"));
 
     /**
      * Offset for field:
@@ -2007,7 +2127,11 @@ public class _GtkTreeViewClass {
      * void (*_gtk_reserved6)(void)
      * }
      */
-    public class _gtk_reserved6 {
+    public final static class _gtk_reserved6 {
+
+        private _gtk_reserved6() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2043,6 +2167,8 @@ public class _GtkTreeViewClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2061,7 +2187,7 @@ public class _GtkTreeViewClass {
         return _gtk_reserved6$LAYOUT;
     }
 
-    private static final long _gtk_reserved6$OFFSET = 1136;
+    private static final long _gtk_reserved6$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved6"));
 
     /**
      * Offset for field:
@@ -2098,7 +2224,11 @@ public class _GtkTreeViewClass {
      * void (*_gtk_reserved7)(void)
      * }
      */
-    public class _gtk_reserved7 {
+    public final static class _gtk_reserved7 {
+
+        private _gtk_reserved7() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2134,6 +2264,8 @@ public class _GtkTreeViewClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2152,7 +2284,7 @@ public class _GtkTreeViewClass {
         return _gtk_reserved7$LAYOUT;
     }
 
-    private static final long _gtk_reserved7$OFFSET = 1144;
+    private static final long _gtk_reserved7$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved7"));
 
     /**
      * Offset for field:
@@ -2189,7 +2321,11 @@ public class _GtkTreeViewClass {
      * void (*_gtk_reserved8)(void)
      * }
      */
-    public class _gtk_reserved8 {
+    public final static class _gtk_reserved8 {
+
+        private _gtk_reserved8() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2225,6 +2361,8 @@ public class _GtkTreeViewClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2243,7 +2381,7 @@ public class _GtkTreeViewClass {
         return _gtk_reserved8$LAYOUT;
     }
 
-    private static final long _gtk_reserved8$OFFSET = 1152;
+    private static final long _gtk_reserved8$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved8"));
 
     /**
      * Offset for field:
@@ -2304,7 +2442,7 @@ public class _GtkTreeViewClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -2312,7 +2450,7 @@ public class _GtkTreeViewClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

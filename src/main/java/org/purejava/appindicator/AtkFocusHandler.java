@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*AtkFocusHandler)(AtkObject *, gboolean)
  * }
  */
-public class AtkFocusHandler {
+public final class AtkFocusHandler {
+
+    private AtkFocusHandler() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -53,9 +57,11 @@ public class AtkFocusHandler {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment object, int focus_in) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment object, int focus_in) {
         try {
              DOWN$MH.invokeExact(funcPtr, object, focus_in);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

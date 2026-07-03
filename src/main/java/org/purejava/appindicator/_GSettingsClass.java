@@ -58,7 +58,7 @@ public class _GSettingsClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -95,7 +95,11 @@ public class _GSettingsClass {
      * void (*writable_changed)(GSettings *, const gchar *)
      * }
      */
-    public class writable_changed {
+    public final static class writable_changed {
+
+        private writable_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -131,9 +135,11 @@ public class _GSettingsClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -152,7 +158,7 @@ public class _GSettingsClass {
         return writable_changed$LAYOUT;
     }
 
-    private static final long writable_changed$OFFSET = 136;
+    private static final long writable_changed$OFFSET = $LAYOUT.byteOffset(groupElement("writable_changed"));
 
     /**
      * Offset for field:
@@ -189,7 +195,11 @@ public class _GSettingsClass {
      * void (*changed)(GSettings *, const gchar *)
      * }
      */
-    public class changed {
+    public final static class changed {
+
+        private changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -225,9 +235,11 @@ public class _GSettingsClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -246,7 +258,7 @@ public class _GSettingsClass {
         return changed$LAYOUT;
     }
 
-    private static final long changed$OFFSET = 144;
+    private static final long changed$OFFSET = $LAYOUT.byteOffset(groupElement("changed"));
 
     /**
      * Offset for field:
@@ -283,7 +295,11 @@ public class _GSettingsClass {
      * gboolean (*writable_change_event)(GSettings *, GQuark)
      * }
      */
-    public class writable_change_event {
+    public final static class writable_change_event {
+
+        private writable_change_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -320,9 +336,11 @@ public class _GSettingsClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -341,7 +359,7 @@ public class _GSettingsClass {
         return writable_change_event$LAYOUT;
     }
 
-    private static final long writable_change_event$OFFSET = 152;
+    private static final long writable_change_event$OFFSET = $LAYOUT.byteOffset(groupElement("writable_change_event"));
 
     /**
      * Offset for field:
@@ -378,7 +396,11 @@ public class _GSettingsClass {
      * gboolean (*change_event)(GSettings *, const GQuark *, gint)
      * }
      */
-    public class change_event {
+    public final static class change_event {
+
+        private change_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -416,9 +438,11 @@ public class _GSettingsClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -437,7 +461,7 @@ public class _GSettingsClass {
         return change_event$LAYOUT;
     }
 
-    private static final long change_event$OFFSET = 160;
+    private static final long change_event$OFFSET = $LAYOUT.byteOffset(groupElement("change_event"));
 
     /**
      * Offset for field:
@@ -481,7 +505,7 @@ public class _GSettingsClass {
         return padding$LAYOUT;
     }
 
-    private static final long padding$OFFSET = 168;
+    private static final long padding$OFFSET = $LAYOUT.byteOffset(groupElement("padding"));
 
     /**
      * Offset for field:
@@ -533,7 +557,7 @@ public class _GSettingsClass {
      * }
      */
     public static MemorySegment padding(MemorySegment struct, long index0) {
-        return (MemorySegment)padding$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)padding$ELEM_HANDLE.get(struct, padding$OFFSET, index0);
     }
 
     /**
@@ -543,7 +567,7 @@ public class _GSettingsClass {
      * }
      */
     public static void padding(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        padding$ELEM_HANDLE.set(struct, padding$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -575,7 +599,7 @@ public class _GSettingsClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -583,7 +607,7 @@ public class _GSettingsClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

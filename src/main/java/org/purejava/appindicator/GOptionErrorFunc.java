@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GOptionErrorFunc)(GOptionContext *, GOptionGroup *, gpointer, GError **)
  * }
  */
-public class GOptionErrorFunc {
+public final class GOptionErrorFunc {
+
+    private GOptionErrorFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -55,9 +59,11 @@ public class GOptionErrorFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment context, MemorySegment group, MemorySegment data, MemorySegment error) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment context, MemorySegment group, MemorySegment data, MemorySegment error) {
         try {
              DOWN$MH.invokeExact(funcPtr, context, group, data, error);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

@@ -66,7 +66,7 @@ public class tm {
         return tm_sec$LAYOUT;
     }
 
-    private static final long tm_sec$OFFSET = 0;
+    private static final long tm_sec$OFFSET = $LAYOUT.byteOffset(groupElement("tm_sec"));
 
     /**
      * Offset for field:
@@ -110,7 +110,7 @@ public class tm {
         return tm_min$LAYOUT;
     }
 
-    private static final long tm_min$OFFSET = 4;
+    private static final long tm_min$OFFSET = $LAYOUT.byteOffset(groupElement("tm_min"));
 
     /**
      * Offset for field:
@@ -154,7 +154,7 @@ public class tm {
         return tm_hour$LAYOUT;
     }
 
-    private static final long tm_hour$OFFSET = 8;
+    private static final long tm_hour$OFFSET = $LAYOUT.byteOffset(groupElement("tm_hour"));
 
     /**
      * Offset for field:
@@ -198,7 +198,7 @@ public class tm {
         return tm_mday$LAYOUT;
     }
 
-    private static final long tm_mday$OFFSET = 12;
+    private static final long tm_mday$OFFSET = $LAYOUT.byteOffset(groupElement("tm_mday"));
 
     /**
      * Offset for field:
@@ -242,7 +242,7 @@ public class tm {
         return tm_mon$LAYOUT;
     }
 
-    private static final long tm_mon$OFFSET = 16;
+    private static final long tm_mon$OFFSET = $LAYOUT.byteOffset(groupElement("tm_mon"));
 
     /**
      * Offset for field:
@@ -286,7 +286,7 @@ public class tm {
         return tm_year$LAYOUT;
     }
 
-    private static final long tm_year$OFFSET = 20;
+    private static final long tm_year$OFFSET = $LAYOUT.byteOffset(groupElement("tm_year"));
 
     /**
      * Offset for field:
@@ -330,7 +330,7 @@ public class tm {
         return tm_wday$LAYOUT;
     }
 
-    private static final long tm_wday$OFFSET = 24;
+    private static final long tm_wday$OFFSET = $LAYOUT.byteOffset(groupElement("tm_wday"));
 
     /**
      * Offset for field:
@@ -374,7 +374,7 @@ public class tm {
         return tm_yday$LAYOUT;
     }
 
-    private static final long tm_yday$OFFSET = 28;
+    private static final long tm_yday$OFFSET = $LAYOUT.byteOffset(groupElement("tm_yday"));
 
     /**
      * Offset for field:
@@ -418,7 +418,7 @@ public class tm {
         return tm_isdst$LAYOUT;
     }
 
-    private static final long tm_isdst$OFFSET = 32;
+    private static final long tm_isdst$OFFSET = $LAYOUT.byteOffset(groupElement("tm_isdst"));
 
     /**
      * Offset for field:
@@ -462,7 +462,7 @@ public class tm {
         return tm_gmtoff$LAYOUT;
     }
 
-    private static final long tm_gmtoff$OFFSET = 40;
+    private static final long tm_gmtoff$OFFSET = $LAYOUT.byteOffset(groupElement("tm_gmtoff"));
 
     /**
      * Offset for field:
@@ -506,7 +506,7 @@ public class tm {
         return tm_zone$LAYOUT;
     }
 
-    private static final long tm_zone$OFFSET = 48;
+    private static final long tm_zone$OFFSET = $LAYOUT.byteOffset(groupElement("tm_zone"));
 
     /**
      * Offset for field:
@@ -567,7 +567,7 @@ public class tm {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -575,7 +575,7 @@ public class tm {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

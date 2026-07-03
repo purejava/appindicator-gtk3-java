@@ -54,7 +54,7 @@ public class hb_glyph_extents_t {
         return x_bearing$LAYOUT;
     }
 
-    private static final long x_bearing$OFFSET = 0;
+    private static final long x_bearing$OFFSET = $LAYOUT.byteOffset(groupElement("x_bearing"));
 
     /**
      * Offset for field:
@@ -98,7 +98,7 @@ public class hb_glyph_extents_t {
         return y_bearing$LAYOUT;
     }
 
-    private static final long y_bearing$OFFSET = 4;
+    private static final long y_bearing$OFFSET = $LAYOUT.byteOffset(groupElement("y_bearing"));
 
     /**
      * Offset for field:
@@ -142,7 +142,7 @@ public class hb_glyph_extents_t {
         return width$LAYOUT;
     }
 
-    private static final long width$OFFSET = 8;
+    private static final long width$OFFSET = $LAYOUT.byteOffset(groupElement("width"));
 
     /**
      * Offset for field:
@@ -186,7 +186,7 @@ public class hb_glyph_extents_t {
         return height$LAYOUT;
     }
 
-    private static final long height$OFFSET = 12;
+    private static final long height$OFFSET = $LAYOUT.byteOffset(groupElement("height"));
 
     /**
      * Offset for field:
@@ -247,7 +247,7 @@ public class hb_glyph_extents_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -255,7 +255,7 @@ public class hb_glyph_extents_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

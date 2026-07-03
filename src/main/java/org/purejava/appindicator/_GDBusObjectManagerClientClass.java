@@ -54,7 +54,7 @@ public class _GDBusObjectManagerClientClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -91,7 +91,11 @@ public class _GDBusObjectManagerClientClass {
      * void (*interface_proxy_signal)(GDBusObjectManagerClient *, GDBusObjectProxy *, GDBusProxy *, const gchar *, const gchar *, GVariant *)
      * }
      */
-    public class interface_proxy_signal {
+    public final static class interface_proxy_signal {
+
+        private interface_proxy_signal() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -131,9 +135,11 @@ public class _GDBusObjectManagerClientClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -152,7 +158,7 @@ public class _GDBusObjectManagerClientClass {
         return interface_proxy_signal$LAYOUT;
     }
 
-    private static final long interface_proxy_signal$OFFSET = 136;
+    private static final long interface_proxy_signal$OFFSET = $LAYOUT.byteOffset(groupElement("interface_proxy_signal"));
 
     /**
      * Offset for field:
@@ -189,7 +195,11 @@ public class _GDBusObjectManagerClientClass {
      * void (*interface_proxy_properties_changed)(GDBusObjectManagerClient *, GDBusObjectProxy *, GDBusProxy *, GVariant *, const gchar *const *)
      * }
      */
-    public class interface_proxy_properties_changed {
+    public final static class interface_proxy_properties_changed {
+
+        private interface_proxy_properties_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -228,9 +238,11 @@ public class _GDBusObjectManagerClientClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -249,7 +261,7 @@ public class _GDBusObjectManagerClientClass {
         return interface_proxy_properties_changed$LAYOUT;
     }
 
-    private static final long interface_proxy_properties_changed$OFFSET = 144;
+    private static final long interface_proxy_properties_changed$OFFSET = $LAYOUT.byteOffset(groupElement("interface_proxy_properties_changed"));
 
     /**
      * Offset for field:
@@ -293,7 +305,7 @@ public class _GDBusObjectManagerClientClass {
         return padding$LAYOUT;
     }
 
-    private static final long padding$OFFSET = 152;
+    private static final long padding$OFFSET = $LAYOUT.byteOffset(groupElement("padding"));
 
     /**
      * Offset for field:
@@ -345,7 +357,7 @@ public class _GDBusObjectManagerClientClass {
      * }
      */
     public static MemorySegment padding(MemorySegment struct, long index0) {
-        return (MemorySegment)padding$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)padding$ELEM_HANDLE.get(struct, padding$OFFSET, index0);
     }
 
     /**
@@ -355,7 +367,7 @@ public class _GDBusObjectManagerClientClass {
      * }
      */
     public static void padding(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        padding$ELEM_HANDLE.set(struct, padding$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -387,7 +399,7 @@ public class _GDBusObjectManagerClientClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -395,7 +407,7 @@ public class _GDBusObjectManagerClientClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gboolean (*GtkFlowBoxFilterFunc)(GtkFlowBoxChild *, gpointer)
  * }
  */
-public class GtkFlowBoxFilterFunc {
+public final class GtkFlowBoxFilterFunc {
+
+    private GtkFlowBoxFilterFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +58,11 @@ public class GtkFlowBoxFilterFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment child, MemorySegment user_data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment child, MemorySegment user_data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, child, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

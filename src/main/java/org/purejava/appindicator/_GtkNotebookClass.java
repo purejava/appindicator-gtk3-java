@@ -86,7 +86,7 @@ public class _GtkNotebookClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -123,7 +123,11 @@ public class _GtkNotebookClass {
      * void (*switch_page)(GtkNotebook *, GtkWidget *, guint)
      * }
      */
-    public class switch_page {
+    public final static class switch_page {
+
+        private switch_page() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -160,9 +164,11 @@ public class _GtkNotebookClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -181,7 +187,7 @@ public class _GtkNotebookClass {
         return switch_page$LAYOUT;
     }
 
-    private static final long switch_page$OFFSET = 976;
+    private static final long switch_page$OFFSET = $LAYOUT.byteOffset(groupElement("switch_page"));
 
     /**
      * Offset for field:
@@ -218,7 +224,11 @@ public class _GtkNotebookClass {
      * gboolean (*select_page)(GtkNotebook *, gboolean)
      * }
      */
-    public class select_page {
+    public final static class select_page {
+
+        private select_page() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -255,9 +265,11 @@ public class _GtkNotebookClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -276,7 +288,7 @@ public class _GtkNotebookClass {
         return select_page$LAYOUT;
     }
 
-    private static final long select_page$OFFSET = 984;
+    private static final long select_page$OFFSET = $LAYOUT.byteOffset(groupElement("select_page"));
 
     /**
      * Offset for field:
@@ -313,7 +325,11 @@ public class _GtkNotebookClass {
      * gboolean (*focus_tab)(GtkNotebook *, GtkNotebookTab)
      * }
      */
-    public class focus_tab {
+    public final static class focus_tab {
+
+        private focus_tab() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -350,9 +366,11 @@ public class _GtkNotebookClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -371,7 +389,7 @@ public class _GtkNotebookClass {
         return focus_tab$LAYOUT;
     }
 
-    private static final long focus_tab$OFFSET = 992;
+    private static final long focus_tab$OFFSET = $LAYOUT.byteOffset(groupElement("focus_tab"));
 
     /**
      * Offset for field:
@@ -408,7 +426,11 @@ public class _GtkNotebookClass {
      * gboolean (*change_current_page)(GtkNotebook *, gint)
      * }
      */
-    public class change_current_page {
+    public final static class change_current_page {
+
+        private change_current_page() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -445,9 +467,11 @@ public class _GtkNotebookClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -466,7 +490,7 @@ public class _GtkNotebookClass {
         return change_current_page$LAYOUT;
     }
 
-    private static final long change_current_page$OFFSET = 1000;
+    private static final long change_current_page$OFFSET = $LAYOUT.byteOffset(groupElement("change_current_page"));
 
     /**
      * Offset for field:
@@ -503,7 +527,11 @@ public class _GtkNotebookClass {
      * void (*move_focus_out)(GtkNotebook *, GtkDirectionType)
      * }
      */
-    public class move_focus_out {
+    public final static class move_focus_out {
+
+        private move_focus_out() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -539,9 +567,11 @@ public class _GtkNotebookClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -560,7 +590,7 @@ public class _GtkNotebookClass {
         return move_focus_out$LAYOUT;
     }
 
-    private static final long move_focus_out$OFFSET = 1008;
+    private static final long move_focus_out$OFFSET = $LAYOUT.byteOffset(groupElement("move_focus_out"));
 
     /**
      * Offset for field:
@@ -597,7 +627,11 @@ public class _GtkNotebookClass {
      * gboolean (*reorder_tab)(GtkNotebook *, GtkDirectionType, gboolean)
      * }
      */
-    public class reorder_tab {
+    public final static class reorder_tab {
+
+        private reorder_tab() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -635,9 +669,11 @@ public class _GtkNotebookClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -656,7 +692,7 @@ public class _GtkNotebookClass {
         return reorder_tab$LAYOUT;
     }
 
-    private static final long reorder_tab$OFFSET = 1016;
+    private static final long reorder_tab$OFFSET = $LAYOUT.byteOffset(groupElement("reorder_tab"));
 
     /**
      * Offset for field:
@@ -693,7 +729,11 @@ public class _GtkNotebookClass {
      * gint (*insert_page)(GtkNotebook *, GtkWidget *, GtkWidget *, GtkWidget *, gint)
      * }
      */
-    public class insert_page {
+    public final static class insert_page {
+
+        private insert_page() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -733,9 +773,11 @@ public class _GtkNotebookClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, int _x4) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, int _x4) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -754,7 +796,7 @@ public class _GtkNotebookClass {
         return insert_page$LAYOUT;
     }
 
-    private static final long insert_page$OFFSET = 1024;
+    private static final long insert_page$OFFSET = $LAYOUT.byteOffset(groupElement("insert_page"));
 
     /**
      * Offset for field:
@@ -791,7 +833,11 @@ public class _GtkNotebookClass {
      * GtkNotebook *(*create_window)(GtkNotebook *, GtkWidget *, gint, gint)
      * }
      */
-    public class create_window {
+    public final static class create_window {
+
+        private create_window() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -830,9 +876,11 @@ public class _GtkNotebookClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -851,7 +899,7 @@ public class _GtkNotebookClass {
         return create_window$LAYOUT;
     }
 
-    private static final long create_window$OFFSET = 1032;
+    private static final long create_window$OFFSET = $LAYOUT.byteOffset(groupElement("create_window"));
 
     /**
      * Offset for field:
@@ -888,7 +936,11 @@ public class _GtkNotebookClass {
      * void (*page_reordered)(GtkNotebook *, GtkWidget *, guint)
      * }
      */
-    public class page_reordered {
+    public final static class page_reordered {
+
+        private page_reordered() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -925,9 +977,11 @@ public class _GtkNotebookClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -946,7 +1000,7 @@ public class _GtkNotebookClass {
         return page_reordered$LAYOUT;
     }
 
-    private static final long page_reordered$OFFSET = 1040;
+    private static final long page_reordered$OFFSET = $LAYOUT.byteOffset(groupElement("page_reordered"));
 
     /**
      * Offset for field:
@@ -983,7 +1037,11 @@ public class _GtkNotebookClass {
      * void (*page_removed)(GtkNotebook *, GtkWidget *, guint)
      * }
      */
-    public class page_removed {
+    public final static class page_removed {
+
+        private page_removed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1020,9 +1078,11 @@ public class _GtkNotebookClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1041,7 +1101,7 @@ public class _GtkNotebookClass {
         return page_removed$LAYOUT;
     }
 
-    private static final long page_removed$OFFSET = 1048;
+    private static final long page_removed$OFFSET = $LAYOUT.byteOffset(groupElement("page_removed"));
 
     /**
      * Offset for field:
@@ -1078,7 +1138,11 @@ public class _GtkNotebookClass {
      * void (*page_added)(GtkNotebook *, GtkWidget *, guint)
      * }
      */
-    public class page_added {
+    public final static class page_added {
+
+        private page_added() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1115,9 +1179,11 @@ public class _GtkNotebookClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1136,7 +1202,7 @@ public class _GtkNotebookClass {
         return page_added$LAYOUT;
     }
 
-    private static final long page_added$OFFSET = 1056;
+    private static final long page_added$OFFSET = $LAYOUT.byteOffset(groupElement("page_added"));
 
     /**
      * Offset for field:
@@ -1173,7 +1239,11 @@ public class _GtkNotebookClass {
      * void (*_gtk_reserved1)(void)
      * }
      */
-    public class _gtk_reserved1 {
+    public final static class _gtk_reserved1 {
+
+        private _gtk_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1209,6 +1279,8 @@ public class _GtkNotebookClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1227,7 +1299,7 @@ public class _GtkNotebookClass {
         return _gtk_reserved1$LAYOUT;
     }
 
-    private static final long _gtk_reserved1$OFFSET = 1064;
+    private static final long _gtk_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved1"));
 
     /**
      * Offset for field:
@@ -1264,7 +1336,11 @@ public class _GtkNotebookClass {
      * void (*_gtk_reserved2)(void)
      * }
      */
-    public class _gtk_reserved2 {
+    public final static class _gtk_reserved2 {
+
+        private _gtk_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1300,6 +1376,8 @@ public class _GtkNotebookClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1318,7 +1396,7 @@ public class _GtkNotebookClass {
         return _gtk_reserved2$LAYOUT;
     }
 
-    private static final long _gtk_reserved2$OFFSET = 1072;
+    private static final long _gtk_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved2"));
 
     /**
      * Offset for field:
@@ -1355,7 +1433,11 @@ public class _GtkNotebookClass {
      * void (*_gtk_reserved3)(void)
      * }
      */
-    public class _gtk_reserved3 {
+    public final static class _gtk_reserved3 {
+
+        private _gtk_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1391,6 +1473,8 @@ public class _GtkNotebookClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1409,7 +1493,7 @@ public class _GtkNotebookClass {
         return _gtk_reserved3$LAYOUT;
     }
 
-    private static final long _gtk_reserved3$OFFSET = 1080;
+    private static final long _gtk_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved3"));
 
     /**
      * Offset for field:
@@ -1446,7 +1530,11 @@ public class _GtkNotebookClass {
      * void (*_gtk_reserved4)(void)
      * }
      */
-    public class _gtk_reserved4 {
+    public final static class _gtk_reserved4 {
+
+        private _gtk_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1482,6 +1570,8 @@ public class _GtkNotebookClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1500,7 +1590,7 @@ public class _GtkNotebookClass {
         return _gtk_reserved4$LAYOUT;
     }
 
-    private static final long _gtk_reserved4$OFFSET = 1088;
+    private static final long _gtk_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved4"));
 
     /**
      * Offset for field:
@@ -1537,7 +1627,11 @@ public class _GtkNotebookClass {
      * void (*_gtk_reserved5)(void)
      * }
      */
-    public class _gtk_reserved5 {
+    public final static class _gtk_reserved5 {
+
+        private _gtk_reserved5() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1573,6 +1667,8 @@ public class _GtkNotebookClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1591,7 +1687,7 @@ public class _GtkNotebookClass {
         return _gtk_reserved5$LAYOUT;
     }
 
-    private static final long _gtk_reserved5$OFFSET = 1096;
+    private static final long _gtk_reserved5$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved5"));
 
     /**
      * Offset for field:
@@ -1628,7 +1724,11 @@ public class _GtkNotebookClass {
      * void (*_gtk_reserved6)(void)
      * }
      */
-    public class _gtk_reserved6 {
+    public final static class _gtk_reserved6 {
+
+        private _gtk_reserved6() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1664,6 +1764,8 @@ public class _GtkNotebookClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1682,7 +1784,7 @@ public class _GtkNotebookClass {
         return _gtk_reserved6$LAYOUT;
     }
 
-    private static final long _gtk_reserved6$OFFSET = 1104;
+    private static final long _gtk_reserved6$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved6"));
 
     /**
      * Offset for field:
@@ -1719,7 +1821,11 @@ public class _GtkNotebookClass {
      * void (*_gtk_reserved7)(void)
      * }
      */
-    public class _gtk_reserved7 {
+    public final static class _gtk_reserved7 {
+
+        private _gtk_reserved7() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1755,6 +1861,8 @@ public class _GtkNotebookClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1773,7 +1881,7 @@ public class _GtkNotebookClass {
         return _gtk_reserved7$LAYOUT;
     }
 
-    private static final long _gtk_reserved7$OFFSET = 1112;
+    private static final long _gtk_reserved7$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved7"));
 
     /**
      * Offset for field:
@@ -1810,7 +1918,11 @@ public class _GtkNotebookClass {
      * void (*_gtk_reserved8)(void)
      * }
      */
-    public class _gtk_reserved8 {
+    public final static class _gtk_reserved8 {
+
+        private _gtk_reserved8() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1846,6 +1958,8 @@ public class _GtkNotebookClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1864,7 +1978,7 @@ public class _GtkNotebookClass {
         return _gtk_reserved8$LAYOUT;
     }
 
-    private static final long _gtk_reserved8$OFFSET = 1120;
+    private static final long _gtk_reserved8$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved8"));
 
     /**
      * Offset for field:
@@ -1925,7 +2039,7 @@ public class _GtkNotebookClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1933,7 +2047,7 @@ public class _GtkNotebookClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

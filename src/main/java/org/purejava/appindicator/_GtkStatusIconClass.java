@@ -70,7 +70,7 @@ public class _GtkStatusIconClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -107,7 +107,11 @@ public class _GtkStatusIconClass {
      * void (*activate)(GtkStatusIcon *)
      * }
      */
-    public class activate {
+    public final static class activate {
+
+        private activate() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -142,9 +146,11 @@ public class _GtkStatusIconClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -163,7 +169,7 @@ public class _GtkStatusIconClass {
         return activate$LAYOUT;
     }
 
-    private static final long activate$OFFSET = 136;
+    private static final long activate$OFFSET = $LAYOUT.byteOffset(groupElement("activate"));
 
     /**
      * Offset for field:
@@ -200,7 +206,11 @@ public class _GtkStatusIconClass {
      * void (*popup_menu)(GtkStatusIcon *, guint, guint32)
      * }
      */
-    public class popup_menu {
+    public final static class popup_menu {
+
+        private popup_menu() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -237,9 +247,11 @@ public class _GtkStatusIconClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -258,7 +270,7 @@ public class _GtkStatusIconClass {
         return popup_menu$LAYOUT;
     }
 
-    private static final long popup_menu$OFFSET = 144;
+    private static final long popup_menu$OFFSET = $LAYOUT.byteOffset(groupElement("popup_menu"));
 
     /**
      * Offset for field:
@@ -295,7 +307,11 @@ public class _GtkStatusIconClass {
      * gboolean (*size_changed)(GtkStatusIcon *, gint)
      * }
      */
-    public class size_changed {
+    public final static class size_changed {
+
+        private size_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -332,9 +348,11 @@ public class _GtkStatusIconClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -353,7 +371,7 @@ public class _GtkStatusIconClass {
         return size_changed$LAYOUT;
     }
 
-    private static final long size_changed$OFFSET = 152;
+    private static final long size_changed$OFFSET = $LAYOUT.byteOffset(groupElement("size_changed"));
 
     /**
      * Offset for field:
@@ -390,7 +408,11 @@ public class _GtkStatusIconClass {
      * gboolean (*button_press_event)(GtkStatusIcon *, GdkEventButton *)
      * }
      */
-    public class button_press_event {
+    public final static class button_press_event {
+
+        private button_press_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -427,9 +449,11 @@ public class _GtkStatusIconClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -448,7 +472,7 @@ public class _GtkStatusIconClass {
         return button_press_event$LAYOUT;
     }
 
-    private static final long button_press_event$OFFSET = 160;
+    private static final long button_press_event$OFFSET = $LAYOUT.byteOffset(groupElement("button_press_event"));
 
     /**
      * Offset for field:
@@ -485,7 +509,11 @@ public class _GtkStatusIconClass {
      * gboolean (*button_release_event)(GtkStatusIcon *, GdkEventButton *)
      * }
      */
-    public class button_release_event {
+    public final static class button_release_event {
+
+        private button_release_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -522,9 +550,11 @@ public class _GtkStatusIconClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -543,7 +573,7 @@ public class _GtkStatusIconClass {
         return button_release_event$LAYOUT;
     }
 
-    private static final long button_release_event$OFFSET = 168;
+    private static final long button_release_event$OFFSET = $LAYOUT.byteOffset(groupElement("button_release_event"));
 
     /**
      * Offset for field:
@@ -580,7 +610,11 @@ public class _GtkStatusIconClass {
      * gboolean (*scroll_event)(GtkStatusIcon *, GdkEventScroll *)
      * }
      */
-    public class scroll_event {
+    public final static class scroll_event {
+
+        private scroll_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -617,9 +651,11 @@ public class _GtkStatusIconClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -638,7 +674,7 @@ public class _GtkStatusIconClass {
         return scroll_event$LAYOUT;
     }
 
-    private static final long scroll_event$OFFSET = 176;
+    private static final long scroll_event$OFFSET = $LAYOUT.byteOffset(groupElement("scroll_event"));
 
     /**
      * Offset for field:
@@ -675,7 +711,11 @@ public class _GtkStatusIconClass {
      * gboolean (*query_tooltip)(GtkStatusIcon *, gint, gint, gboolean, GtkTooltip *)
      * }
      */
-    public class query_tooltip {
+    public final static class query_tooltip {
+
+        private query_tooltip() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -715,9 +755,11 @@ public class _GtkStatusIconClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2, int _x3, MemorySegment _x4) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2, int _x3, MemorySegment _x4) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -736,7 +778,7 @@ public class _GtkStatusIconClass {
         return query_tooltip$LAYOUT;
     }
 
-    private static final long query_tooltip$OFFSET = 184;
+    private static final long query_tooltip$OFFSET = $LAYOUT.byteOffset(groupElement("query_tooltip"));
 
     /**
      * Offset for field:
@@ -773,7 +815,11 @@ public class _GtkStatusIconClass {
      * void (*__gtk_reserved1)(void)
      * }
      */
-    public class __gtk_reserved1 {
+    public final static class __gtk_reserved1 {
+
+        private __gtk_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -809,6 +855,8 @@ public class _GtkStatusIconClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -827,7 +875,7 @@ public class _GtkStatusIconClass {
         return __gtk_reserved1$LAYOUT;
     }
 
-    private static final long __gtk_reserved1$OFFSET = 192;
+    private static final long __gtk_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("__gtk_reserved1"));
 
     /**
      * Offset for field:
@@ -864,7 +912,11 @@ public class _GtkStatusIconClass {
      * void (*__gtk_reserved2)(void)
      * }
      */
-    public class __gtk_reserved2 {
+    public final static class __gtk_reserved2 {
+
+        private __gtk_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -900,6 +952,8 @@ public class _GtkStatusIconClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -918,7 +972,7 @@ public class _GtkStatusIconClass {
         return __gtk_reserved2$LAYOUT;
     }
 
-    private static final long __gtk_reserved2$OFFSET = 200;
+    private static final long __gtk_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("__gtk_reserved2"));
 
     /**
      * Offset for field:
@@ -955,7 +1009,11 @@ public class _GtkStatusIconClass {
      * void (*__gtk_reserved3)(void)
      * }
      */
-    public class __gtk_reserved3 {
+    public final static class __gtk_reserved3 {
+
+        private __gtk_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -991,6 +1049,8 @@ public class _GtkStatusIconClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1009,7 +1069,7 @@ public class _GtkStatusIconClass {
         return __gtk_reserved3$LAYOUT;
     }
 
-    private static final long __gtk_reserved3$OFFSET = 208;
+    private static final long __gtk_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("__gtk_reserved3"));
 
     /**
      * Offset for field:
@@ -1046,7 +1106,11 @@ public class _GtkStatusIconClass {
      * void (*__gtk_reserved4)(void)
      * }
      */
-    public class __gtk_reserved4 {
+    public final static class __gtk_reserved4 {
+
+        private __gtk_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1082,6 +1146,8 @@ public class _GtkStatusIconClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1100,7 +1166,7 @@ public class _GtkStatusIconClass {
         return __gtk_reserved4$LAYOUT;
     }
 
-    private static final long __gtk_reserved4$OFFSET = 216;
+    private static final long __gtk_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("__gtk_reserved4"));
 
     /**
      * Offset for field:
@@ -1161,7 +1227,7 @@ public class _GtkStatusIconClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1169,7 +1235,7 @@ public class _GtkStatusIconClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -67,7 +67,7 @@ public class _GParamSpec {
         return g_type_instance$LAYOUT;
     }
 
-    private static final long g_type_instance$OFFSET = 0;
+    private static final long g_type_instance$OFFSET = $LAYOUT.byteOffset(groupElement("g_type_instance"));
 
     /**
      * Offset for field:
@@ -111,7 +111,7 @@ public class _GParamSpec {
         return name$LAYOUT;
     }
 
-    private static final long name$OFFSET = 8;
+    private static final long name$OFFSET = $LAYOUT.byteOffset(groupElement("name"));
 
     /**
      * Offset for field:
@@ -155,7 +155,7 @@ public class _GParamSpec {
         return flags$LAYOUT;
     }
 
-    private static final long flags$OFFSET = 16;
+    private static final long flags$OFFSET = $LAYOUT.byteOffset(groupElement("flags"));
 
     /**
      * Offset for field:
@@ -199,7 +199,7 @@ public class _GParamSpec {
         return value_type$LAYOUT;
     }
 
-    private static final long value_type$OFFSET = 24;
+    private static final long value_type$OFFSET = $LAYOUT.byteOffset(groupElement("value_type"));
 
     /**
      * Offset for field:
@@ -243,7 +243,7 @@ public class _GParamSpec {
         return owner_type$LAYOUT;
     }
 
-    private static final long owner_type$OFFSET = 32;
+    private static final long owner_type$OFFSET = $LAYOUT.byteOffset(groupElement("owner_type"));
 
     /**
      * Offset for field:
@@ -287,7 +287,7 @@ public class _GParamSpec {
         return _nick$LAYOUT;
     }
 
-    private static final long _nick$OFFSET = 40;
+    private static final long _nick$OFFSET = $LAYOUT.byteOffset(groupElement("_nick"));
 
     /**
      * Offset for field:
@@ -331,7 +331,7 @@ public class _GParamSpec {
         return _blurb$LAYOUT;
     }
 
-    private static final long _blurb$OFFSET = 48;
+    private static final long _blurb$OFFSET = $LAYOUT.byteOffset(groupElement("_blurb"));
 
     /**
      * Offset for field:
@@ -375,7 +375,7 @@ public class _GParamSpec {
         return qdata$LAYOUT;
     }
 
-    private static final long qdata$OFFSET = 56;
+    private static final long qdata$OFFSET = $LAYOUT.byteOffset(groupElement("qdata"));
 
     /**
      * Offset for field:
@@ -419,7 +419,7 @@ public class _GParamSpec {
         return ref_count$LAYOUT;
     }
 
-    private static final long ref_count$OFFSET = 64;
+    private static final long ref_count$OFFSET = $LAYOUT.byteOffset(groupElement("ref_count"));
 
     /**
      * Offset for field:
@@ -463,7 +463,7 @@ public class _GParamSpec {
         return param_id$LAYOUT;
     }
 
-    private static final long param_id$OFFSET = 68;
+    private static final long param_id$OFFSET = $LAYOUT.byteOffset(groupElement("param_id"));
 
     /**
      * Offset for field:
@@ -524,7 +524,7 @@ public class _GParamSpec {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -532,7 +532,7 @@ public class _GParamSpec {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*hb_paint_sweep_gradient_func_t)(hb_paint_funcs_t *, void *, hb_color_line_t *, float, float, float, float, void *)
  * }
  */
-public class hb_paint_sweep_gradient_func_t {
+public final class hb_paint_sweep_gradient_func_t {
+
+    private hb_paint_sweep_gradient_func_t() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -59,9 +63,11 @@ public class hb_paint_sweep_gradient_func_t {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment funcs, MemorySegment paint_data, MemorySegment color_line, float x0, float y0, float start_angle, float end_angle, MemorySegment user_data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment funcs, MemorySegment paint_data, MemorySegment color_line, float x0, float y0, float start_angle, float end_angle, MemorySegment user_data) {
         try {
              DOWN$MH.invokeExact(funcPtr, funcs, paint_data, color_line, x0, y0, start_angle, end_angle, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

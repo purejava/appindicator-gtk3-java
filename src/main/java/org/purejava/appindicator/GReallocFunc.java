@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gpointer (*GReallocFunc)(gpointer, gsize)
  * }
  */
-public class GReallocFunc {
+public final class GReallocFunc {
+
+    private GReallocFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +58,11 @@ public class GReallocFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment data, long size) {
+    public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment data, long size) {
         try {
             return (MemorySegment) DOWN$MH.invokeExact(funcPtr, data, size);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

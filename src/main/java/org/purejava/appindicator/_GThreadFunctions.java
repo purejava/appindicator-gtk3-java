@@ -81,7 +81,11 @@ public class _GThreadFunctions {
      * GMutex *(*mutex_new)(void)
      * }
      */
-    public class mutex_new {
+    public final static class mutex_new {
+
+        private mutex_new() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -118,6 +122,8 @@ public class _GThreadFunctions {
         public static MemorySegment invoke(MemorySegment funcPtr) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -136,7 +142,7 @@ public class _GThreadFunctions {
         return mutex_new$LAYOUT;
     }
 
-    private static final long mutex_new$OFFSET = 0;
+    private static final long mutex_new$OFFSET = $LAYOUT.byteOffset(groupElement("mutex_new"));
 
     /**
      * Offset for field:
@@ -173,7 +179,11 @@ public class _GThreadFunctions {
      * void (*mutex_lock)(GMutex *)
      * }
      */
-    public class mutex_lock {
+    public final static class mutex_lock {
+
+        private mutex_lock() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -208,9 +218,11 @@ public class _GThreadFunctions {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -229,7 +241,7 @@ public class _GThreadFunctions {
         return mutex_lock$LAYOUT;
     }
 
-    private static final long mutex_lock$OFFSET = 8;
+    private static final long mutex_lock$OFFSET = $LAYOUT.byteOffset(groupElement("mutex_lock"));
 
     /**
      * Offset for field:
@@ -266,7 +278,11 @@ public class _GThreadFunctions {
      * gboolean (*mutex_trylock)(GMutex *)
      * }
      */
-    public class mutex_trylock {
+    public final static class mutex_trylock {
+
+        private mutex_trylock() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -302,9 +318,11 @@ public class _GThreadFunctions {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -323,7 +341,7 @@ public class _GThreadFunctions {
         return mutex_trylock$LAYOUT;
     }
 
-    private static final long mutex_trylock$OFFSET = 16;
+    private static final long mutex_trylock$OFFSET = $LAYOUT.byteOffset(groupElement("mutex_trylock"));
 
     /**
      * Offset for field:
@@ -360,7 +378,11 @@ public class _GThreadFunctions {
      * void (*mutex_unlock)(GMutex *)
      * }
      */
-    public class mutex_unlock {
+    public final static class mutex_unlock {
+
+        private mutex_unlock() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -395,9 +417,11 @@ public class _GThreadFunctions {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -416,7 +440,7 @@ public class _GThreadFunctions {
         return mutex_unlock$LAYOUT;
     }
 
-    private static final long mutex_unlock$OFFSET = 24;
+    private static final long mutex_unlock$OFFSET = $LAYOUT.byteOffset(groupElement("mutex_unlock"));
 
     /**
      * Offset for field:
@@ -453,7 +477,11 @@ public class _GThreadFunctions {
      * void (*mutex_free)(GMutex *)
      * }
      */
-    public class mutex_free {
+    public final static class mutex_free {
+
+        private mutex_free() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -488,9 +516,11 @@ public class _GThreadFunctions {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -509,7 +539,7 @@ public class _GThreadFunctions {
         return mutex_free$LAYOUT;
     }
 
-    private static final long mutex_free$OFFSET = 32;
+    private static final long mutex_free$OFFSET = $LAYOUT.byteOffset(groupElement("mutex_free"));
 
     /**
      * Offset for field:
@@ -546,7 +576,11 @@ public class _GThreadFunctions {
      * GCond *(*cond_new)(void)
      * }
      */
-    public class cond_new {
+    public final static class cond_new {
+
+        private cond_new() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -583,6 +617,8 @@ public class _GThreadFunctions {
         public static MemorySegment invoke(MemorySegment funcPtr) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -601,7 +637,7 @@ public class _GThreadFunctions {
         return cond_new$LAYOUT;
     }
 
-    private static final long cond_new$OFFSET = 40;
+    private static final long cond_new$OFFSET = $LAYOUT.byteOffset(groupElement("cond_new"));
 
     /**
      * Offset for field:
@@ -638,7 +674,11 @@ public class _GThreadFunctions {
      * void (*cond_signal)(GCond *)
      * }
      */
-    public class cond_signal {
+    public final static class cond_signal {
+
+        private cond_signal() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -673,9 +713,11 @@ public class _GThreadFunctions {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -694,7 +736,7 @@ public class _GThreadFunctions {
         return cond_signal$LAYOUT;
     }
 
-    private static final long cond_signal$OFFSET = 48;
+    private static final long cond_signal$OFFSET = $LAYOUT.byteOffset(groupElement("cond_signal"));
 
     /**
      * Offset for field:
@@ -731,7 +773,11 @@ public class _GThreadFunctions {
      * void (*cond_broadcast)(GCond *)
      * }
      */
-    public class cond_broadcast {
+    public final static class cond_broadcast {
+
+        private cond_broadcast() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -766,9 +812,11 @@ public class _GThreadFunctions {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -787,7 +835,7 @@ public class _GThreadFunctions {
         return cond_broadcast$LAYOUT;
     }
 
-    private static final long cond_broadcast$OFFSET = 56;
+    private static final long cond_broadcast$OFFSET = $LAYOUT.byteOffset(groupElement("cond_broadcast"));
 
     /**
      * Offset for field:
@@ -824,7 +872,11 @@ public class _GThreadFunctions {
      * void (*cond_wait)(GCond *, GMutex *)
      * }
      */
-    public class cond_wait {
+    public final static class cond_wait {
+
+        private cond_wait() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -860,9 +912,11 @@ public class _GThreadFunctions {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -881,7 +935,7 @@ public class _GThreadFunctions {
         return cond_wait$LAYOUT;
     }
 
-    private static final long cond_wait$OFFSET = 64;
+    private static final long cond_wait$OFFSET = $LAYOUT.byteOffset(groupElement("cond_wait"));
 
     /**
      * Offset for field:
@@ -918,7 +972,11 @@ public class _GThreadFunctions {
      * gboolean (*cond_timed_wait)(GCond *, GMutex *, GTimeVal *)
      * }
      */
-    public class cond_timed_wait {
+    public final static class cond_timed_wait {
+
+        private cond_timed_wait() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -956,9 +1014,11 @@ public class _GThreadFunctions {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -977,7 +1037,7 @@ public class _GThreadFunctions {
         return cond_timed_wait$LAYOUT;
     }
 
-    private static final long cond_timed_wait$OFFSET = 72;
+    private static final long cond_timed_wait$OFFSET = $LAYOUT.byteOffset(groupElement("cond_timed_wait"));
 
     /**
      * Offset for field:
@@ -1014,7 +1074,11 @@ public class _GThreadFunctions {
      * void (*cond_free)(GCond *)
      * }
      */
-    public class cond_free {
+    public final static class cond_free {
+
+        private cond_free() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1049,9 +1113,11 @@ public class _GThreadFunctions {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1070,7 +1136,7 @@ public class _GThreadFunctions {
         return cond_free$LAYOUT;
     }
 
-    private static final long cond_free$OFFSET = 80;
+    private static final long cond_free$OFFSET = $LAYOUT.byteOffset(groupElement("cond_free"));
 
     /**
      * Offset for field:
@@ -1107,7 +1173,11 @@ public class _GThreadFunctions {
      * GPrivate *(*private_new)(GDestroyNotify)
      * }
      */
-    public class private_new {
+    public final static class private_new {
+
+        private private_new() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1143,9 +1213,11 @@ public class _GThreadFunctions {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1164,7 +1236,7 @@ public class _GThreadFunctions {
         return private_new$LAYOUT;
     }
 
-    private static final long private_new$OFFSET = 88;
+    private static final long private_new$OFFSET = $LAYOUT.byteOffset(groupElement("private_new"));
 
     /**
      * Offset for field:
@@ -1201,7 +1273,11 @@ public class _GThreadFunctions {
      * gpointer (*private_get)(GPrivate *)
      * }
      */
-    public class private_get {
+    public final static class private_get {
+
+        private private_get() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1237,9 +1313,11 @@ public class _GThreadFunctions {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1258,7 +1336,7 @@ public class _GThreadFunctions {
         return private_get$LAYOUT;
     }
 
-    private static final long private_get$OFFSET = 96;
+    private static final long private_get$OFFSET = $LAYOUT.byteOffset(groupElement("private_get"));
 
     /**
      * Offset for field:
@@ -1295,7 +1373,11 @@ public class _GThreadFunctions {
      * void (*private_set)(GPrivate *, gpointer)
      * }
      */
-    public class private_set {
+    public final static class private_set {
+
+        private private_set() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1331,9 +1413,11 @@ public class _GThreadFunctions {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1352,7 +1436,7 @@ public class _GThreadFunctions {
         return private_set$LAYOUT;
     }
 
-    private static final long private_set$OFFSET = 104;
+    private static final long private_set$OFFSET = $LAYOUT.byteOffset(groupElement("private_set"));
 
     /**
      * Offset for field:
@@ -1389,7 +1473,11 @@ public class _GThreadFunctions {
      * void (*thread_create)(GThreadFunc, gpointer, gulong, gboolean, gboolean, GThreadPriority, gpointer, GError **)
      * }
      */
-    public class thread_create {
+    public final static class thread_create {
+
+        private thread_create() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1431,9 +1519,11 @@ public class _GThreadFunctions {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, long _x2, int _x3, int _x4, int _x5, MemorySegment _x6, MemorySegment _x7) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, long _x2, int _x3, int _x4, int _x5, MemorySegment _x6, MemorySegment _x7) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1452,7 +1542,7 @@ public class _GThreadFunctions {
         return thread_create$LAYOUT;
     }
 
-    private static final long thread_create$OFFSET = 112;
+    private static final long thread_create$OFFSET = $LAYOUT.byteOffset(groupElement("thread_create"));
 
     /**
      * Offset for field:
@@ -1489,7 +1579,11 @@ public class _GThreadFunctions {
      * void (*thread_yield)(void)
      * }
      */
-    public class thread_yield {
+    public final static class thread_yield {
+
+        private thread_yield() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1525,6 +1619,8 @@ public class _GThreadFunctions {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1543,7 +1639,7 @@ public class _GThreadFunctions {
         return thread_yield$LAYOUT;
     }
 
-    private static final long thread_yield$OFFSET = 120;
+    private static final long thread_yield$OFFSET = $LAYOUT.byteOffset(groupElement("thread_yield"));
 
     /**
      * Offset for field:
@@ -1580,7 +1676,11 @@ public class _GThreadFunctions {
      * void (*thread_join)(gpointer)
      * }
      */
-    public class thread_join {
+    public final static class thread_join {
+
+        private thread_join() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1615,9 +1715,11 @@ public class _GThreadFunctions {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1636,7 +1738,7 @@ public class _GThreadFunctions {
         return thread_join$LAYOUT;
     }
 
-    private static final long thread_join$OFFSET = 128;
+    private static final long thread_join$OFFSET = $LAYOUT.byteOffset(groupElement("thread_join"));
 
     /**
      * Offset for field:
@@ -1673,7 +1775,11 @@ public class _GThreadFunctions {
      * void (*thread_exit)(void)
      * }
      */
-    public class thread_exit {
+    public final static class thread_exit {
+
+        private thread_exit() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1709,6 +1815,8 @@ public class _GThreadFunctions {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1727,7 +1835,7 @@ public class _GThreadFunctions {
         return thread_exit$LAYOUT;
     }
 
-    private static final long thread_exit$OFFSET = 136;
+    private static final long thread_exit$OFFSET = $LAYOUT.byteOffset(groupElement("thread_exit"));
 
     /**
      * Offset for field:
@@ -1764,7 +1872,11 @@ public class _GThreadFunctions {
      * void (*thread_set_priority)(gpointer, GThreadPriority)
      * }
      */
-    public class thread_set_priority {
+    public final static class thread_set_priority {
+
+        private thread_set_priority() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1800,9 +1912,11 @@ public class _GThreadFunctions {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1821,7 +1935,7 @@ public class _GThreadFunctions {
         return thread_set_priority$LAYOUT;
     }
 
-    private static final long thread_set_priority$OFFSET = 144;
+    private static final long thread_set_priority$OFFSET = $LAYOUT.byteOffset(groupElement("thread_set_priority"));
 
     /**
      * Offset for field:
@@ -1858,7 +1972,11 @@ public class _GThreadFunctions {
      * void (*thread_self)(gpointer)
      * }
      */
-    public class thread_self {
+    public final static class thread_self {
+
+        private thread_self() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1893,9 +2011,11 @@ public class _GThreadFunctions {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1914,7 +2034,7 @@ public class _GThreadFunctions {
         return thread_self$LAYOUT;
     }
 
-    private static final long thread_self$OFFSET = 152;
+    private static final long thread_self$OFFSET = $LAYOUT.byteOffset(groupElement("thread_self"));
 
     /**
      * Offset for field:
@@ -1951,7 +2071,11 @@ public class _GThreadFunctions {
      * gboolean (*thread_equal)(gpointer, gpointer)
      * }
      */
-    public class thread_equal {
+    public final static class thread_equal {
+
+        private thread_equal() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1988,9 +2112,11 @@ public class _GThreadFunctions {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2009,7 +2135,7 @@ public class _GThreadFunctions {
         return thread_equal$LAYOUT;
     }
 
-    private static final long thread_equal$OFFSET = 160;
+    private static final long thread_equal$OFFSET = $LAYOUT.byteOffset(groupElement("thread_equal"));
 
     /**
      * Offset for field:
@@ -2070,7 +2196,7 @@ public class _GThreadFunctions {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -2078,7 +2204,7 @@ public class _GThreadFunctions {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

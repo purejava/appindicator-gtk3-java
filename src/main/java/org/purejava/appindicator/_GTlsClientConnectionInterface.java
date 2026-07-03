@@ -50,7 +50,7 @@ public class _GTlsClientConnectionInterface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -87,7 +87,11 @@ public class _GTlsClientConnectionInterface {
      * void (*copy_session_state)(GTlsClientConnection *, GTlsClientConnection *)
      * }
      */
-    public class copy_session_state {
+    public final static class copy_session_state {
+
+        private copy_session_state() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -123,9 +127,11 @@ public class _GTlsClientConnectionInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -144,7 +150,7 @@ public class _GTlsClientConnectionInterface {
         return copy_session_state$LAYOUT;
     }
 
-    private static final long copy_session_state$OFFSET = 16;
+    private static final long copy_session_state$OFFSET = $LAYOUT.byteOffset(groupElement("copy_session_state"));
 
     /**
      * Offset for field:
@@ -205,7 +211,7 @@ public class _GTlsClientConnectionInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -213,7 +219,7 @@ public class _GTlsClientConnectionInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

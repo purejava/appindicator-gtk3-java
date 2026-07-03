@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*hb_draw_cubic_to_func_t)(hb_draw_funcs_t *, void *, hb_draw_state_t *, float, float, float, float, float, float, void *)
  * }
  */
-public class hb_draw_cubic_to_func_t {
+public final class hb_draw_cubic_to_func_t {
+
+    private hb_draw_cubic_to_func_t() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -61,9 +65,11 @@ public class hb_draw_cubic_to_func_t {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment dfuncs, MemorySegment draw_data, MemorySegment st, float control1_x, float control1_y, float control2_x, float control2_y, float to_x, float to_y, MemorySegment user_data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment dfuncs, MemorySegment draw_data, MemorySegment st, float control1_x, float control1_y, float control2_x, float control2_y, float to_x, float to_y, MemorySegment user_data) {
         try {
              DOWN$MH.invokeExact(funcPtr, dfuncs, draw_data, st, control1_x, control1_y, control2_x, control2_y, to_x, to_y, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

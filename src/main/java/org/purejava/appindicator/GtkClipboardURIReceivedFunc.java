@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GtkClipboardURIReceivedFunc)(GtkClipboard *, gchar **, gpointer)
  * }
  */
-public class GtkClipboardURIReceivedFunc {
+public final class GtkClipboardURIReceivedFunc {
+
+    private GtkClipboardURIReceivedFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +58,11 @@ public class GtkClipboardURIReceivedFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment clipboard, MemorySegment uris, MemorySegment data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment clipboard, MemorySegment uris, MemorySegment data) {
         try {
              DOWN$MH.invokeExact(funcPtr, clipboard, uris, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

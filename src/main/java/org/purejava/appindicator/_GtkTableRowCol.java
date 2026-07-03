@@ -58,7 +58,7 @@ public class _GtkTableRowCol {
         return requisition$LAYOUT;
     }
 
-    private static final long requisition$OFFSET = 0;
+    private static final long requisition$OFFSET = $LAYOUT.byteOffset(groupElement("requisition"));
 
     /**
      * Offset for field:
@@ -102,7 +102,7 @@ public class _GtkTableRowCol {
         return allocation$LAYOUT;
     }
 
-    private static final long allocation$OFFSET = 2;
+    private static final long allocation$OFFSET = $LAYOUT.byteOffset(groupElement("allocation"));
 
     /**
      * Offset for field:
@@ -146,7 +146,7 @@ public class _GtkTableRowCol {
         return spacing$LAYOUT;
     }
 
-    private static final long spacing$OFFSET = 4;
+    private static final long spacing$OFFSET = $LAYOUT.byteOffset(groupElement("spacing"));
 
     /**
      * Offset for field:
@@ -207,7 +207,7 @@ public class _GtkTableRowCol {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -215,7 +215,7 @@ public class _GtkTableRowCol {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

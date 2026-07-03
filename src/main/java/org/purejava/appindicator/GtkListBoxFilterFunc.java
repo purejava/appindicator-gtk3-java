@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gboolean (*GtkListBoxFilterFunc)(GtkListBoxRow *, gpointer)
  * }
  */
-public class GtkListBoxFilterFunc {
+public final class GtkListBoxFilterFunc {
+
+    private GtkListBoxFilterFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +58,11 @@ public class GtkListBoxFilterFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment row, MemorySegment user_data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment row, MemorySegment user_data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, row, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

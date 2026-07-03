@@ -46,7 +46,7 @@ public class timeval {
         return tv_sec$LAYOUT;
     }
 
-    private static final long tv_sec$OFFSET = 0;
+    private static final long tv_sec$OFFSET = $LAYOUT.byteOffset(groupElement("tv_sec"));
 
     /**
      * Offset for field:
@@ -90,7 +90,7 @@ public class timeval {
         return tv_usec$LAYOUT;
     }
 
-    private static final long tv_usec$OFFSET = 8;
+    private static final long tv_usec$OFFSET = $LAYOUT.byteOffset(groupElement("tv_usec"));
 
     /**
      * Offset for field:
@@ -151,7 +151,7 @@ public class timeval {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -159,7 +159,7 @@ public class timeval {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

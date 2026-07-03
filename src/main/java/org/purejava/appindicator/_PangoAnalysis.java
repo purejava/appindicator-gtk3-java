@@ -65,7 +65,7 @@ public class _PangoAnalysis {
         return shape_engine$LAYOUT;
     }
 
-    private static final long shape_engine$OFFSET = 0;
+    private static final long shape_engine$OFFSET = $LAYOUT.byteOffset(groupElement("shape_engine"));
 
     /**
      * Offset for field:
@@ -109,7 +109,7 @@ public class _PangoAnalysis {
         return lang_engine$LAYOUT;
     }
 
-    private static final long lang_engine$OFFSET = 8;
+    private static final long lang_engine$OFFSET = $LAYOUT.byteOffset(groupElement("lang_engine"));
 
     /**
      * Offset for field:
@@ -153,7 +153,7 @@ public class _PangoAnalysis {
         return font$LAYOUT;
     }
 
-    private static final long font$OFFSET = 16;
+    private static final long font$OFFSET = $LAYOUT.byteOffset(groupElement("font"));
 
     /**
      * Offset for field:
@@ -197,7 +197,7 @@ public class _PangoAnalysis {
         return level$LAYOUT;
     }
 
-    private static final long level$OFFSET = 24;
+    private static final long level$OFFSET = $LAYOUT.byteOffset(groupElement("level"));
 
     /**
      * Offset for field:
@@ -241,7 +241,7 @@ public class _PangoAnalysis {
         return gravity$LAYOUT;
     }
 
-    private static final long gravity$OFFSET = 25;
+    private static final long gravity$OFFSET = $LAYOUT.byteOffset(groupElement("gravity"));
 
     /**
      * Offset for field:
@@ -285,7 +285,7 @@ public class _PangoAnalysis {
         return flags$LAYOUT;
     }
 
-    private static final long flags$OFFSET = 26;
+    private static final long flags$OFFSET = $LAYOUT.byteOffset(groupElement("flags"));
 
     /**
      * Offset for field:
@@ -329,7 +329,7 @@ public class _PangoAnalysis {
         return script$LAYOUT;
     }
 
-    private static final long script$OFFSET = 27;
+    private static final long script$OFFSET = $LAYOUT.byteOffset(groupElement("script"));
 
     /**
      * Offset for field:
@@ -373,7 +373,7 @@ public class _PangoAnalysis {
         return language$LAYOUT;
     }
 
-    private static final long language$OFFSET = 32;
+    private static final long language$OFFSET = $LAYOUT.byteOffset(groupElement("language"));
 
     /**
      * Offset for field:
@@ -417,7 +417,7 @@ public class _PangoAnalysis {
         return extra_attrs$LAYOUT;
     }
 
-    private static final long extra_attrs$OFFSET = 40;
+    private static final long extra_attrs$OFFSET = $LAYOUT.byteOffset(groupElement("extra_attrs"));
 
     /**
      * Offset for field:
@@ -478,7 +478,7 @@ public class _PangoAnalysis {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -486,7 +486,7 @@ public class _PangoAnalysis {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

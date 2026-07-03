@@ -63,7 +63,7 @@ public class _GSignalQuery {
         return signal_id$LAYOUT;
     }
 
-    private static final long signal_id$OFFSET = 0;
+    private static final long signal_id$OFFSET = $LAYOUT.byteOffset(groupElement("signal_id"));
 
     /**
      * Offset for field:
@@ -107,7 +107,7 @@ public class _GSignalQuery {
         return signal_name$LAYOUT;
     }
 
-    private static final long signal_name$OFFSET = 8;
+    private static final long signal_name$OFFSET = $LAYOUT.byteOffset(groupElement("signal_name"));
 
     /**
      * Offset for field:
@@ -151,7 +151,7 @@ public class _GSignalQuery {
         return itype$LAYOUT;
     }
 
-    private static final long itype$OFFSET = 16;
+    private static final long itype$OFFSET = $LAYOUT.byteOffset(groupElement("itype"));
 
     /**
      * Offset for field:
@@ -195,7 +195,7 @@ public class _GSignalQuery {
         return signal_flags$LAYOUT;
     }
 
-    private static final long signal_flags$OFFSET = 24;
+    private static final long signal_flags$OFFSET = $LAYOUT.byteOffset(groupElement("signal_flags"));
 
     /**
      * Offset for field:
@@ -239,7 +239,7 @@ public class _GSignalQuery {
         return return_type$LAYOUT;
     }
 
-    private static final long return_type$OFFSET = 32;
+    private static final long return_type$OFFSET = $LAYOUT.byteOffset(groupElement("return_type"));
 
     /**
      * Offset for field:
@@ -283,7 +283,7 @@ public class _GSignalQuery {
         return n_params$LAYOUT;
     }
 
-    private static final long n_params$OFFSET = 40;
+    private static final long n_params$OFFSET = $LAYOUT.byteOffset(groupElement("n_params"));
 
     /**
      * Offset for field:
@@ -327,7 +327,7 @@ public class _GSignalQuery {
         return param_types$LAYOUT;
     }
 
-    private static final long param_types$OFFSET = 48;
+    private static final long param_types$OFFSET = $LAYOUT.byteOffset(groupElement("param_types"));
 
     /**
      * Offset for field:
@@ -388,7 +388,7 @@ public class _GSignalQuery {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -396,7 +396,7 @@ public class _GSignalQuery {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

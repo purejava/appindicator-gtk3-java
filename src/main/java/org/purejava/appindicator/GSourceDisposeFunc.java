@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GSourceDisposeFunc)(GSource *)
  * }
  */
-public class GSourceDisposeFunc {
+public final class GSourceDisposeFunc {
+
+    private GSourceDisposeFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -52,9 +56,11 @@ public class GSourceDisposeFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment source) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment source) {
         try {
              DOWN$MH.invokeExact(funcPtr, source);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

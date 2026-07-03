@@ -72,7 +72,7 @@ public class _GdkWindowClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -109,7 +109,11 @@ public class _GdkWindowClass {
      * GdkWindow *(*pick_embedded_child)(GdkWindow *, gdouble, gdouble)
      * }
      */
-    public class pick_embedded_child {
+    public final static class pick_embedded_child {
+
+        private pick_embedded_child() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -147,9 +151,11 @@ public class _GdkWindowClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, double _x1, double _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, double _x1, double _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -168,7 +174,7 @@ public class _GdkWindowClass {
         return pick_embedded_child$LAYOUT;
     }
 
-    private static final long pick_embedded_child$OFFSET = 136;
+    private static final long pick_embedded_child$OFFSET = $LAYOUT.byteOffset(groupElement("pick_embedded_child"));
 
     /**
      * Offset for field:
@@ -205,7 +211,11 @@ public class _GdkWindowClass {
      * void (*to_embedder)(GdkWindow *, gdouble, gdouble, gdouble *, gdouble *)
      * }
      */
-    public class to_embedder {
+    public final static class to_embedder {
+
+        private to_embedder() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -244,9 +254,11 @@ public class _GdkWindowClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, double _x1, double _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, double _x1, double _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -265,7 +277,7 @@ public class _GdkWindowClass {
         return to_embedder$LAYOUT;
     }
 
-    private static final long to_embedder$OFFSET = 144;
+    private static final long to_embedder$OFFSET = $LAYOUT.byteOffset(groupElement("to_embedder"));
 
     /**
      * Offset for field:
@@ -302,7 +314,11 @@ public class _GdkWindowClass {
      * void (*from_embedder)(GdkWindow *, gdouble, gdouble, gdouble *, gdouble *)
      * }
      */
-    public class from_embedder {
+    public final static class from_embedder {
+
+        private from_embedder() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -341,9 +357,11 @@ public class _GdkWindowClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, double _x1, double _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, double _x1, double _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -362,7 +380,7 @@ public class _GdkWindowClass {
         return from_embedder$LAYOUT;
     }
 
-    private static final long from_embedder$OFFSET = 152;
+    private static final long from_embedder$OFFSET = $LAYOUT.byteOffset(groupElement("from_embedder"));
 
     /**
      * Offset for field:
@@ -399,7 +417,11 @@ public class _GdkWindowClass {
      * cairo_surface_t *(*create_surface)(GdkWindow *, gint, gint)
      * }
      */
-    public class create_surface {
+    public final static class create_surface {
+
+        private create_surface() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -437,9 +459,11 @@ public class _GdkWindowClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -458,7 +482,7 @@ public class _GdkWindowClass {
         return create_surface$LAYOUT;
     }
 
-    private static final long create_surface$OFFSET = 160;
+    private static final long create_surface$OFFSET = $LAYOUT.byteOffset(groupElement("create_surface"));
 
     /**
      * Offset for field:
@@ -495,7 +519,11 @@ public class _GdkWindowClass {
      * void (*_gdk_reserved1)(void)
      * }
      */
-    public class _gdk_reserved1 {
+    public final static class _gdk_reserved1 {
+
+        private _gdk_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -531,6 +559,8 @@ public class _GdkWindowClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -549,7 +579,7 @@ public class _GdkWindowClass {
         return _gdk_reserved1$LAYOUT;
     }
 
-    private static final long _gdk_reserved1$OFFSET = 168;
+    private static final long _gdk_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_gdk_reserved1"));
 
     /**
      * Offset for field:
@@ -586,7 +616,11 @@ public class _GdkWindowClass {
      * void (*_gdk_reserved2)(void)
      * }
      */
-    public class _gdk_reserved2 {
+    public final static class _gdk_reserved2 {
+
+        private _gdk_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -622,6 +656,8 @@ public class _GdkWindowClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -640,7 +676,7 @@ public class _GdkWindowClass {
         return _gdk_reserved2$LAYOUT;
     }
 
-    private static final long _gdk_reserved2$OFFSET = 176;
+    private static final long _gdk_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_gdk_reserved2"));
 
     /**
      * Offset for field:
@@ -677,7 +713,11 @@ public class _GdkWindowClass {
      * void (*_gdk_reserved3)(void)
      * }
      */
-    public class _gdk_reserved3 {
+    public final static class _gdk_reserved3 {
+
+        private _gdk_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -713,6 +753,8 @@ public class _GdkWindowClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -731,7 +773,7 @@ public class _GdkWindowClass {
         return _gdk_reserved3$LAYOUT;
     }
 
-    private static final long _gdk_reserved3$OFFSET = 184;
+    private static final long _gdk_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_gdk_reserved3"));
 
     /**
      * Offset for field:
@@ -768,7 +810,11 @@ public class _GdkWindowClass {
      * void (*_gdk_reserved4)(void)
      * }
      */
-    public class _gdk_reserved4 {
+    public final static class _gdk_reserved4 {
+
+        private _gdk_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -804,6 +850,8 @@ public class _GdkWindowClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -822,7 +870,7 @@ public class _GdkWindowClass {
         return _gdk_reserved4$LAYOUT;
     }
 
-    private static final long _gdk_reserved4$OFFSET = 192;
+    private static final long _gdk_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_gdk_reserved4"));
 
     /**
      * Offset for field:
@@ -859,7 +907,11 @@ public class _GdkWindowClass {
      * void (*_gdk_reserved5)(void)
      * }
      */
-    public class _gdk_reserved5 {
+    public final static class _gdk_reserved5 {
+
+        private _gdk_reserved5() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -895,6 +947,8 @@ public class _GdkWindowClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -913,7 +967,7 @@ public class _GdkWindowClass {
         return _gdk_reserved5$LAYOUT;
     }
 
-    private static final long _gdk_reserved5$OFFSET = 200;
+    private static final long _gdk_reserved5$OFFSET = $LAYOUT.byteOffset(groupElement("_gdk_reserved5"));
 
     /**
      * Offset for field:
@@ -950,7 +1004,11 @@ public class _GdkWindowClass {
      * void (*_gdk_reserved6)(void)
      * }
      */
-    public class _gdk_reserved6 {
+    public final static class _gdk_reserved6 {
+
+        private _gdk_reserved6() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -986,6 +1044,8 @@ public class _GdkWindowClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1004,7 +1064,7 @@ public class _GdkWindowClass {
         return _gdk_reserved6$LAYOUT;
     }
 
-    private static final long _gdk_reserved6$OFFSET = 208;
+    private static final long _gdk_reserved6$OFFSET = $LAYOUT.byteOffset(groupElement("_gdk_reserved6"));
 
     /**
      * Offset for field:
@@ -1041,7 +1101,11 @@ public class _GdkWindowClass {
      * void (*_gdk_reserved7)(void)
      * }
      */
-    public class _gdk_reserved7 {
+    public final static class _gdk_reserved7 {
+
+        private _gdk_reserved7() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1077,6 +1141,8 @@ public class _GdkWindowClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1095,7 +1161,7 @@ public class _GdkWindowClass {
         return _gdk_reserved7$LAYOUT;
     }
 
-    private static final long _gdk_reserved7$OFFSET = 216;
+    private static final long _gdk_reserved7$OFFSET = $LAYOUT.byteOffset(groupElement("_gdk_reserved7"));
 
     /**
      * Offset for field:
@@ -1132,7 +1198,11 @@ public class _GdkWindowClass {
      * void (*_gdk_reserved8)(void)
      * }
      */
-    public class _gdk_reserved8 {
+    public final static class _gdk_reserved8 {
+
+        private _gdk_reserved8() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1168,6 +1238,8 @@ public class _GdkWindowClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1186,7 +1258,7 @@ public class _GdkWindowClass {
         return _gdk_reserved8$LAYOUT;
     }
 
-    private static final long _gdk_reserved8$OFFSET = 224;
+    private static final long _gdk_reserved8$OFFSET = $LAYOUT.byteOffset(groupElement("_gdk_reserved8"));
 
     /**
      * Offset for field:
@@ -1247,7 +1319,7 @@ public class _GdkWindowClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1255,7 +1327,7 @@ public class _GdkWindowClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

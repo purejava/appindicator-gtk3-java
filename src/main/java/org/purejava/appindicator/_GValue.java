@@ -58,7 +58,7 @@ public class _GValue {
         return g_type$LAYOUT;
     }
 
-    private static final long g_type$OFFSET = 0;
+    private static final long g_type$OFFSET = $LAYOUT.byteOffset(groupElement("g_type"));
 
     /**
      * Offset for field:
@@ -121,7 +121,7 @@ public class _GValue {
             app_indicator_h.C_FLOAT.withName("v_float"),
             app_indicator_h.C_DOUBLE.withName("v_double"),
             app_indicator_h.C_POINTER.withName("v_pointer")
-        ).withName("$anon$119:3");
+        ).withName("$anon$137:3");
 
         /**
          * The layout of this union
@@ -142,7 +142,7 @@ public class _GValue {
             return v_int$LAYOUT;
         }
 
-        private static final long v_int$OFFSET = 0;
+        private static final long v_int$OFFSET = $LAYOUT.byteOffset(groupElement("v_int"));
 
         /**
          * Offset for field:
@@ -186,7 +186,7 @@ public class _GValue {
             return v_uint$LAYOUT;
         }
 
-        private static final long v_uint$OFFSET = 0;
+        private static final long v_uint$OFFSET = $LAYOUT.byteOffset(groupElement("v_uint"));
 
         /**
          * Offset for field:
@@ -230,7 +230,7 @@ public class _GValue {
             return v_long$LAYOUT;
         }
 
-        private static final long v_long$OFFSET = 0;
+        private static final long v_long$OFFSET = $LAYOUT.byteOffset(groupElement("v_long"));
 
         /**
          * Offset for field:
@@ -274,7 +274,7 @@ public class _GValue {
             return v_ulong$LAYOUT;
         }
 
-        private static final long v_ulong$OFFSET = 0;
+        private static final long v_ulong$OFFSET = $LAYOUT.byteOffset(groupElement("v_ulong"));
 
         /**
          * Offset for field:
@@ -318,7 +318,7 @@ public class _GValue {
             return v_int64$LAYOUT;
         }
 
-        private static final long v_int64$OFFSET = 0;
+        private static final long v_int64$OFFSET = $LAYOUT.byteOffset(groupElement("v_int64"));
 
         /**
          * Offset for field:
@@ -362,7 +362,7 @@ public class _GValue {
             return v_uint64$LAYOUT;
         }
 
-        private static final long v_uint64$OFFSET = 0;
+        private static final long v_uint64$OFFSET = $LAYOUT.byteOffset(groupElement("v_uint64"));
 
         /**
          * Offset for field:
@@ -406,7 +406,7 @@ public class _GValue {
             return v_float$LAYOUT;
         }
 
-        private static final long v_float$OFFSET = 0;
+        private static final long v_float$OFFSET = $LAYOUT.byteOffset(groupElement("v_float"));
 
         /**
          * Offset for field:
@@ -450,7 +450,7 @@ public class _GValue {
             return v_double$LAYOUT;
         }
 
-        private static final long v_double$OFFSET = 0;
+        private static final long v_double$OFFSET = $LAYOUT.byteOffset(groupElement("v_double"));
 
         /**
          * Offset for field:
@@ -494,7 +494,7 @@ public class _GValue {
             return v_pointer$LAYOUT;
         }
 
-        private static final long v_pointer$OFFSET = 0;
+        private static final long v_pointer$OFFSET = $LAYOUT.byteOffset(groupElement("v_pointer"));
 
         /**
          * Offset for field:
@@ -555,7 +555,7 @@ public class _GValue {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -563,7 +563,7 @@ public class _GValue {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code elementCount * layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -593,7 +593,7 @@ public class _GValue {
         return data$LAYOUT;
     }
 
-    private static final long data$OFFSET = 8;
+    private static final long data$OFFSET = $LAYOUT.byteOffset(groupElement("data"));
 
     /**
      * Offset for field:
@@ -696,7 +696,9 @@ public class _GValue {
      */
     public static MemorySegment data(MemorySegment struct, long index0) {
         try {
-            return (MemorySegment)data$ELEM_HANDLE.invokeExact(struct, 0L, index0);
+            return (MemorySegment)data$ELEM_HANDLE.invokeExact(struct, data$OFFSET, index0);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
@@ -751,7 +753,7 @@ public class _GValue {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -759,7 +761,7 @@ public class _GValue {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

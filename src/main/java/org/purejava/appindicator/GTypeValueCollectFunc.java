@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gchar *(*GTypeValueCollectFunc)(GValue *, guint, GTypeCValue *, guint)
  * }
  */
-public class GTypeValueCollectFunc {
+public final class GTypeValueCollectFunc {
+
+    private GTypeValueCollectFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -56,9 +60,11 @@ public class GTypeValueCollectFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment value, int n_collect_values, MemorySegment collect_values, int collect_flags) {
+    public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment value, int n_collect_values, MemorySegment collect_values, int collect_flags) {
         try {
             return (MemorySegment) DOWN$MH.invokeExact(funcPtr, value, n_collect_values, collect_values, collect_flags);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

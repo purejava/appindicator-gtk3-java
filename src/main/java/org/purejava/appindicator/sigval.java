@@ -46,7 +46,7 @@ public class sigval {
         return sival_int$LAYOUT;
     }
 
-    private static final long sival_int$OFFSET = 0;
+    private static final long sival_int$OFFSET = $LAYOUT.byteOffset(groupElement("sival_int"));
 
     /**
      * Offset for field:
@@ -90,7 +90,7 @@ public class sigval {
         return sival_ptr$LAYOUT;
     }
 
-    private static final long sival_ptr$OFFSET = 0;
+    private static final long sival_ptr$OFFSET = $LAYOUT.byteOffset(groupElement("sival_ptr"));
 
     /**
      * Offset for field:
@@ -151,7 +151,7 @@ public class sigval {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -159,7 +159,7 @@ public class sigval {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

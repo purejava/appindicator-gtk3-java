@@ -54,7 +54,7 @@ public class _GTypeQuery {
         return type$LAYOUT;
     }
 
-    private static final long type$OFFSET = 0;
+    private static final long type$OFFSET = $LAYOUT.byteOffset(groupElement("type"));
 
     /**
      * Offset for field:
@@ -98,7 +98,7 @@ public class _GTypeQuery {
         return type_name$LAYOUT;
     }
 
-    private static final long type_name$OFFSET = 8;
+    private static final long type_name$OFFSET = $LAYOUT.byteOffset(groupElement("type_name"));
 
     /**
      * Offset for field:
@@ -142,7 +142,7 @@ public class _GTypeQuery {
         return class_size$LAYOUT;
     }
 
-    private static final long class_size$OFFSET = 16;
+    private static final long class_size$OFFSET = $LAYOUT.byteOffset(groupElement("class_size"));
 
     /**
      * Offset for field:
@@ -186,7 +186,7 @@ public class _GTypeQuery {
         return instance_size$LAYOUT;
     }
 
-    private static final long instance_size$OFFSET = 20;
+    private static final long instance_size$OFFSET = $LAYOUT.byteOffset(groupElement("instance_size"));
 
     /**
      * Offset for field:
@@ -247,7 +247,7 @@ public class _GTypeQuery {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -255,7 +255,7 @@ public class _GTypeQuery {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

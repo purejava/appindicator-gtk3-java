@@ -64,7 +64,7 @@ public class _PangoFontClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -101,7 +101,11 @@ public class _PangoFontClass {
      * PangoFontDescription *(*describe)(PangoFont *)
      * }
      */
-    public class describe {
+    public final static class describe {
+
+        private describe() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -137,9 +141,11 @@ public class _PangoFontClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -158,7 +164,7 @@ public class _PangoFontClass {
         return describe$LAYOUT;
     }
 
-    private static final long describe$OFFSET = 136;
+    private static final long describe$OFFSET = $LAYOUT.byteOffset(groupElement("describe"));
 
     /**
      * Offset for field:
@@ -195,7 +201,11 @@ public class _PangoFontClass {
      * PangoCoverage *(*get_coverage)(PangoFont *, PangoLanguage *)
      * }
      */
-    public class get_coverage {
+    public final static class get_coverage {
+
+        private get_coverage() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -232,9 +242,11 @@ public class _PangoFontClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -253,7 +265,7 @@ public class _PangoFontClass {
         return get_coverage$LAYOUT;
     }
 
-    private static final long get_coverage$OFFSET = 144;
+    private static final long get_coverage$OFFSET = $LAYOUT.byteOffset(groupElement("get_coverage"));
 
     /**
      * Offset for field:
@@ -290,7 +302,11 @@ public class _PangoFontClass {
      * void (*get_glyph_extents)(PangoFont *, PangoGlyph, PangoRectangle *, PangoRectangle *)
      * }
      */
-    public class get_glyph_extents {
+    public final static class get_glyph_extents {
+
+        private get_glyph_extents() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -328,9 +344,11 @@ public class _PangoFontClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -349,7 +367,7 @@ public class _PangoFontClass {
         return get_glyph_extents$LAYOUT;
     }
 
-    private static final long get_glyph_extents$OFFSET = 152;
+    private static final long get_glyph_extents$OFFSET = $LAYOUT.byteOffset(groupElement("get_glyph_extents"));
 
     /**
      * Offset for field:
@@ -386,7 +404,11 @@ public class _PangoFontClass {
      * PangoFontMetrics *(*get_metrics)(PangoFont *, PangoLanguage *)
      * }
      */
-    public class get_metrics {
+    public final static class get_metrics {
+
+        private get_metrics() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -423,9 +445,11 @@ public class _PangoFontClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -444,7 +468,7 @@ public class _PangoFontClass {
         return get_metrics$LAYOUT;
     }
 
-    private static final long get_metrics$OFFSET = 160;
+    private static final long get_metrics$OFFSET = $LAYOUT.byteOffset(groupElement("get_metrics"));
 
     /**
      * Offset for field:
@@ -481,7 +505,11 @@ public class _PangoFontClass {
      * PangoFontMap *(*get_font_map)(PangoFont *)
      * }
      */
-    public class get_font_map {
+    public final static class get_font_map {
+
+        private get_font_map() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -517,9 +545,11 @@ public class _PangoFontClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -538,7 +568,7 @@ public class _PangoFontClass {
         return get_font_map$LAYOUT;
     }
 
-    private static final long get_font_map$OFFSET = 168;
+    private static final long get_font_map$OFFSET = $LAYOUT.byteOffset(groupElement("get_font_map"));
 
     /**
      * Offset for field:
@@ -575,7 +605,11 @@ public class _PangoFontClass {
      * PangoFontDescription *(*describe_absolute)(PangoFont *)
      * }
      */
-    public class describe_absolute {
+    public final static class describe_absolute {
+
+        private describe_absolute() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -611,9 +645,11 @@ public class _PangoFontClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -632,7 +668,7 @@ public class _PangoFontClass {
         return describe_absolute$LAYOUT;
     }
 
-    private static final long describe_absolute$OFFSET = 176;
+    private static final long describe_absolute$OFFSET = $LAYOUT.byteOffset(groupElement("describe_absolute"));
 
     /**
      * Offset for field:
@@ -669,7 +705,11 @@ public class _PangoFontClass {
      * void (*get_features)(PangoFont *, hb_feature_t *, guint, guint *)
      * }
      */
-    public class get_features {
+    public final static class get_features {
+
+        private get_features() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -707,9 +747,11 @@ public class _PangoFontClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -728,7 +770,7 @@ public class _PangoFontClass {
         return get_features$LAYOUT;
     }
 
-    private static final long get_features$OFFSET = 184;
+    private static final long get_features$OFFSET = $LAYOUT.byteOffset(groupElement("get_features"));
 
     /**
      * Offset for field:
@@ -765,7 +807,11 @@ public class _PangoFontClass {
      * hb_font_t *(*create_hb_font)(PangoFont *)
      * }
      */
-    public class create_hb_font {
+    public final static class create_hb_font {
+
+        private create_hb_font() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -801,9 +847,11 @@ public class _PangoFontClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -822,7 +870,7 @@ public class _PangoFontClass {
         return create_hb_font$LAYOUT;
     }
 
-    private static final long create_hb_font$OFFSET = 192;
+    private static final long create_hb_font$OFFSET = $LAYOUT.byteOffset(groupElement("create_hb_font"));
 
     /**
      * Offset for field:
@@ -883,7 +931,7 @@ public class _PangoFontClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -891,7 +939,7 @@ public class _PangoFontClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

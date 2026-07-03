@@ -58,7 +58,7 @@ public class _GActionEntry {
         return name$LAYOUT;
     }
 
-    private static final long name$OFFSET = 0;
+    private static final long name$OFFSET = $LAYOUT.byteOffset(groupElement("name"));
 
     /**
      * Offset for field:
@@ -95,7 +95,11 @@ public class _GActionEntry {
      * void (*activate)(GSimpleAction *, GVariant *, gpointer)
      * }
      */
-    public class activate {
+    public final static class activate {
+
+        private activate() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -132,9 +136,11 @@ public class _GActionEntry {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -153,7 +159,7 @@ public class _GActionEntry {
         return activate$LAYOUT;
     }
 
-    private static final long activate$OFFSET = 8;
+    private static final long activate$OFFSET = $LAYOUT.byteOffset(groupElement("activate"));
 
     /**
      * Offset for field:
@@ -197,7 +203,7 @@ public class _GActionEntry {
         return parameter_type$LAYOUT;
     }
 
-    private static final long parameter_type$OFFSET = 16;
+    private static final long parameter_type$OFFSET = $LAYOUT.byteOffset(groupElement("parameter_type"));
 
     /**
      * Offset for field:
@@ -241,7 +247,7 @@ public class _GActionEntry {
         return state$LAYOUT;
     }
 
-    private static final long state$OFFSET = 24;
+    private static final long state$OFFSET = $LAYOUT.byteOffset(groupElement("state"));
 
     /**
      * Offset for field:
@@ -278,7 +284,11 @@ public class _GActionEntry {
      * void (*change_state)(GSimpleAction *, GVariant *, gpointer)
      * }
      */
-    public class change_state {
+    public final static class change_state {
+
+        private change_state() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -315,9 +325,11 @@ public class _GActionEntry {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -336,7 +348,7 @@ public class _GActionEntry {
         return change_state$LAYOUT;
     }
 
-    private static final long change_state$OFFSET = 32;
+    private static final long change_state$OFFSET = $LAYOUT.byteOffset(groupElement("change_state"));
 
     /**
      * Offset for field:
@@ -380,7 +392,7 @@ public class _GActionEntry {
         return padding$LAYOUT;
     }
 
-    private static final long padding$OFFSET = 40;
+    private static final long padding$OFFSET = $LAYOUT.byteOffset(groupElement("padding"));
 
     /**
      * Offset for field:
@@ -432,7 +444,7 @@ public class _GActionEntry {
      * }
      */
     public static long padding(MemorySegment struct, long index0) {
-        return (long)padding$ELEM_HANDLE.get(struct, 0L, index0);
+        return (long)padding$ELEM_HANDLE.get(struct, padding$OFFSET, index0);
     }
 
     /**
@@ -442,7 +454,7 @@ public class _GActionEntry {
      * }
      */
     public static void padding(MemorySegment struct, long index0, long fieldValue) {
-        padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        padding$ELEM_HANDLE.set(struct, padding$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -474,7 +486,7 @@ public class _GActionEntry {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -482,7 +494,7 @@ public class _GActionEntry {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

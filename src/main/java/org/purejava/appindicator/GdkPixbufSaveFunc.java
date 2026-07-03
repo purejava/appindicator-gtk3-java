@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gboolean (*GdkPixbufSaveFunc)(const gchar *, gsize, GError **, gpointer)
  * }
  */
-public class GdkPixbufSaveFunc {
+public final class GdkPixbufSaveFunc {
+
+    private GdkPixbufSaveFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -56,9 +60,11 @@ public class GdkPixbufSaveFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment buf, long count, MemorySegment error, MemorySegment data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment buf, long count, MemorySegment error, MemorySegment data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, buf, count, error, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

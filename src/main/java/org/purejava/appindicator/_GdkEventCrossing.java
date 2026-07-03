@@ -75,7 +75,7 @@ public class _GdkEventCrossing {
         return type$LAYOUT;
     }
 
-    private static final long type$OFFSET = 0;
+    private static final long type$OFFSET = $LAYOUT.byteOffset(groupElement("type"));
 
     /**
      * Offset for field:
@@ -119,7 +119,7 @@ public class _GdkEventCrossing {
         return window$LAYOUT;
     }
 
-    private static final long window$OFFSET = 8;
+    private static final long window$OFFSET = $LAYOUT.byteOffset(groupElement("window"));
 
     /**
      * Offset for field:
@@ -163,7 +163,7 @@ public class _GdkEventCrossing {
         return send_event$LAYOUT;
     }
 
-    private static final long send_event$OFFSET = 16;
+    private static final long send_event$OFFSET = $LAYOUT.byteOffset(groupElement("send_event"));
 
     /**
      * Offset for field:
@@ -207,7 +207,7 @@ public class _GdkEventCrossing {
         return subwindow$LAYOUT;
     }
 
-    private static final long subwindow$OFFSET = 24;
+    private static final long subwindow$OFFSET = $LAYOUT.byteOffset(groupElement("subwindow"));
 
     /**
      * Offset for field:
@@ -251,7 +251,7 @@ public class _GdkEventCrossing {
         return time$LAYOUT;
     }
 
-    private static final long time$OFFSET = 32;
+    private static final long time$OFFSET = $LAYOUT.byteOffset(groupElement("time"));
 
     /**
      * Offset for field:
@@ -295,7 +295,7 @@ public class _GdkEventCrossing {
         return x$LAYOUT;
     }
 
-    private static final long x$OFFSET = 40;
+    private static final long x$OFFSET = $LAYOUT.byteOffset(groupElement("x"));
 
     /**
      * Offset for field:
@@ -339,7 +339,7 @@ public class _GdkEventCrossing {
         return y$LAYOUT;
     }
 
-    private static final long y$OFFSET = 48;
+    private static final long y$OFFSET = $LAYOUT.byteOffset(groupElement("y"));
 
     /**
      * Offset for field:
@@ -383,7 +383,7 @@ public class _GdkEventCrossing {
         return x_root$LAYOUT;
     }
 
-    private static final long x_root$OFFSET = 56;
+    private static final long x_root$OFFSET = $LAYOUT.byteOffset(groupElement("x_root"));
 
     /**
      * Offset for field:
@@ -427,7 +427,7 @@ public class _GdkEventCrossing {
         return y_root$LAYOUT;
     }
 
-    private static final long y_root$OFFSET = 64;
+    private static final long y_root$OFFSET = $LAYOUT.byteOffset(groupElement("y_root"));
 
     /**
      * Offset for field:
@@ -471,7 +471,7 @@ public class _GdkEventCrossing {
         return mode$LAYOUT;
     }
 
-    private static final long mode$OFFSET = 72;
+    private static final long mode$OFFSET = $LAYOUT.byteOffset(groupElement("mode"));
 
     /**
      * Offset for field:
@@ -515,7 +515,7 @@ public class _GdkEventCrossing {
         return detail$LAYOUT;
     }
 
-    private static final long detail$OFFSET = 76;
+    private static final long detail$OFFSET = $LAYOUT.byteOffset(groupElement("detail"));
 
     /**
      * Offset for field:
@@ -559,7 +559,7 @@ public class _GdkEventCrossing {
         return focus$LAYOUT;
     }
 
-    private static final long focus$OFFSET = 80;
+    private static final long focus$OFFSET = $LAYOUT.byteOffset(groupElement("focus"));
 
     /**
      * Offset for field:
@@ -603,7 +603,7 @@ public class _GdkEventCrossing {
         return state$LAYOUT;
     }
 
-    private static final long state$OFFSET = 84;
+    private static final long state$OFFSET = $LAYOUT.byteOffset(groupElement("state"));
 
     /**
      * Offset for field:
@@ -664,7 +664,7 @@ public class _GdkEventCrossing {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -672,7 +672,7 @@ public class _GdkEventCrossing {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

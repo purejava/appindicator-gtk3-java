@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef const GDBusInterfaceVTable *(*GDBusSubtreeDispatchFunc)(GDBusConnection *, const gchar *, const gchar *, const gchar *, const gchar *, gpointer *, gpointer)
  * }
  */
-public class GDBusSubtreeDispatchFunc {
+public final class GDBusSubtreeDispatchFunc {
+
+    private GDBusSubtreeDispatchFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -59,9 +63,11 @@ public class GDBusSubtreeDispatchFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment connection, MemorySegment sender, MemorySegment object_path, MemorySegment interface_name, MemorySegment node, MemorySegment out_user_data, MemorySegment user_data) {
+    public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment connection, MemorySegment sender, MemorySegment object_path, MemorySegment interface_name, MemorySegment node, MemorySegment out_user_data, MemorySegment user_data) {
         try {
             return (MemorySegment) DOWN$MH.invokeExact(funcPtr, connection, sender, object_path, interface_name, node, out_user_data, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

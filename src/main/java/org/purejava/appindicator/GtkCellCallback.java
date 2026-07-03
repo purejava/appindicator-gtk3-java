@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gboolean (*GtkCellCallback)(GtkCellRenderer *, gpointer)
  * }
  */
-public class GtkCellCallback {
+public final class GtkCellCallback {
+
+    private GtkCellCallback() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +58,11 @@ public class GtkCellCallback {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment renderer, MemorySegment data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment renderer, MemorySegment data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, renderer, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

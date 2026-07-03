@@ -59,7 +59,7 @@ public class _GOutputMessage {
         return address$LAYOUT;
     }
 
-    private static final long address$OFFSET = 0;
+    private static final long address$OFFSET = $LAYOUT.byteOffset(groupElement("address"));
 
     /**
      * Offset for field:
@@ -103,7 +103,7 @@ public class _GOutputMessage {
         return vectors$LAYOUT;
     }
 
-    private static final long vectors$OFFSET = 8;
+    private static final long vectors$OFFSET = $LAYOUT.byteOffset(groupElement("vectors"));
 
     /**
      * Offset for field:
@@ -147,7 +147,7 @@ public class _GOutputMessage {
         return num_vectors$LAYOUT;
     }
 
-    private static final long num_vectors$OFFSET = 16;
+    private static final long num_vectors$OFFSET = $LAYOUT.byteOffset(groupElement("num_vectors"));
 
     /**
      * Offset for field:
@@ -191,7 +191,7 @@ public class _GOutputMessage {
         return bytes_sent$LAYOUT;
     }
 
-    private static final long bytes_sent$OFFSET = 20;
+    private static final long bytes_sent$OFFSET = $LAYOUT.byteOffset(groupElement("bytes_sent"));
 
     /**
      * Offset for field:
@@ -235,7 +235,7 @@ public class _GOutputMessage {
         return control_messages$LAYOUT;
     }
 
-    private static final long control_messages$OFFSET = 24;
+    private static final long control_messages$OFFSET = $LAYOUT.byteOffset(groupElement("control_messages"));
 
     /**
      * Offset for field:
@@ -279,7 +279,7 @@ public class _GOutputMessage {
         return num_control_messages$LAYOUT;
     }
 
-    private static final long num_control_messages$OFFSET = 32;
+    private static final long num_control_messages$OFFSET = $LAYOUT.byteOffset(groupElement("num_control_messages"));
 
     /**
      * Offset for field:
@@ -340,7 +340,7 @@ public class _GOutputMessage {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -348,7 +348,7 @@ public class _GOutputMessage {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

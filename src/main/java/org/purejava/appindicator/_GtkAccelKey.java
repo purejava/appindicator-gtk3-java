@@ -52,7 +52,7 @@ public class _GtkAccelKey {
         return accel_key$LAYOUT;
     }
 
-    private static final long accel_key$OFFSET = 0;
+    private static final long accel_key$OFFSET = $LAYOUT.byteOffset(groupElement("accel_key"));
 
     /**
      * Offset for field:
@@ -96,7 +96,7 @@ public class _GtkAccelKey {
         return accel_mods$LAYOUT;
     }
 
-    private static final long accel_mods$OFFSET = 4;
+    private static final long accel_mods$OFFSET = $LAYOUT.byteOffset(groupElement("accel_mods"));
 
     /**
      * Offset for field:
@@ -157,7 +157,7 @@ public class _GtkAccelKey {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -165,7 +165,7 @@ public class _GtkAccelKey {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

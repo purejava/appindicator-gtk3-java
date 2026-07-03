@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gboolean (*GOptionArgFunc)(const gchar *, const gchar *, gpointer, GError **)
  * }
  */
-public class GOptionArgFunc {
+public final class GOptionArgFunc {
+
+    private GOptionArgFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -56,9 +60,11 @@ public class GOptionArgFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment option_name, MemorySegment value, MemorySegment data, MemorySegment error) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment option_name, MemorySegment value, MemorySegment data, MemorySegment error) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, option_name, value, data, error);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

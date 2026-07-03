@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GtkPageSetupDoneFunc)(GtkPageSetup *, gpointer)
  * }
  */
-public class GtkPageSetupDoneFunc {
+public final class GtkPageSetupDoneFunc {
+
+    private GtkPageSetupDoneFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -53,9 +57,11 @@ public class GtkPageSetupDoneFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment page_setup, MemorySegment data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment page_setup, MemorySegment data) {
         try {
              DOWN$MH.invokeExact(funcPtr, page_setup, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

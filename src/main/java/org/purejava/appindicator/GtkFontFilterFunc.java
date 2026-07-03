@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gboolean (*GtkFontFilterFunc)(const PangoFontFamily *, const PangoFontFace *, gpointer)
  * }
  */
-public class GtkFontFilterFunc {
+public final class GtkFontFilterFunc {
+
+    private GtkFontFilterFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -55,9 +59,11 @@ public class GtkFontFilterFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment family, MemorySegment face, MemorySegment data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment family, MemorySegment face, MemorySegment data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, family, face, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

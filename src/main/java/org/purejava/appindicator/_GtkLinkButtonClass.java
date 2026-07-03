@@ -58,7 +58,7 @@ public class _GtkLinkButtonClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -95,7 +95,11 @@ public class _GtkLinkButtonClass {
      * gboolean (*activate_link)(GtkLinkButton *)
      * }
      */
-    public class activate_link {
+    public final static class activate_link {
+
+        private activate_link() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -131,9 +135,11 @@ public class _GtkLinkButtonClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -152,7 +158,7 @@ public class _GtkLinkButtonClass {
         return activate_link$LAYOUT;
     }
 
-    private static final long activate_link$OFFSET = 1088;
+    private static final long activate_link$OFFSET = $LAYOUT.byteOffset(groupElement("activate_link"));
 
     /**
      * Offset for field:
@@ -189,7 +195,11 @@ public class _GtkLinkButtonClass {
      * void (*_gtk_padding1)(void)
      * }
      */
-    public class _gtk_padding1 {
+    public final static class _gtk_padding1 {
+
+        private _gtk_padding1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -225,6 +235,8 @@ public class _GtkLinkButtonClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -243,7 +255,7 @@ public class _GtkLinkButtonClass {
         return _gtk_padding1$LAYOUT;
     }
 
-    private static final long _gtk_padding1$OFFSET = 1096;
+    private static final long _gtk_padding1$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_padding1"));
 
     /**
      * Offset for field:
@@ -280,7 +292,11 @@ public class _GtkLinkButtonClass {
      * void (*_gtk_padding2)(void)
      * }
      */
-    public class _gtk_padding2 {
+    public final static class _gtk_padding2 {
+
+        private _gtk_padding2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -316,6 +332,8 @@ public class _GtkLinkButtonClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -334,7 +352,7 @@ public class _GtkLinkButtonClass {
         return _gtk_padding2$LAYOUT;
     }
 
-    private static final long _gtk_padding2$OFFSET = 1104;
+    private static final long _gtk_padding2$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_padding2"));
 
     /**
      * Offset for field:
@@ -371,7 +389,11 @@ public class _GtkLinkButtonClass {
      * void (*_gtk_padding3)(void)
      * }
      */
-    public class _gtk_padding3 {
+    public final static class _gtk_padding3 {
+
+        private _gtk_padding3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -407,6 +429,8 @@ public class _GtkLinkButtonClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -425,7 +449,7 @@ public class _GtkLinkButtonClass {
         return _gtk_padding3$LAYOUT;
     }
 
-    private static final long _gtk_padding3$OFFSET = 1112;
+    private static final long _gtk_padding3$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_padding3"));
 
     /**
      * Offset for field:
@@ -462,7 +486,11 @@ public class _GtkLinkButtonClass {
      * void (*_gtk_padding4)(void)
      * }
      */
-    public class _gtk_padding4 {
+    public final static class _gtk_padding4 {
+
+        private _gtk_padding4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -498,6 +526,8 @@ public class _GtkLinkButtonClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -516,7 +546,7 @@ public class _GtkLinkButtonClass {
         return _gtk_padding4$LAYOUT;
     }
 
-    private static final long _gtk_padding4$OFFSET = 1120;
+    private static final long _gtk_padding4$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_padding4"));
 
     /**
      * Offset for field:
@@ -577,7 +607,7 @@ public class _GtkLinkButtonClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -585,7 +615,7 @@ public class _GtkLinkButtonClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

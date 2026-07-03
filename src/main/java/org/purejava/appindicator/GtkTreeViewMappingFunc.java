@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GtkTreeViewMappingFunc)(GtkTreeView *, GtkTreePath *, gpointer)
  * }
  */
-public class GtkTreeViewMappingFunc {
+public final class GtkTreeViewMappingFunc {
+
+    private GtkTreeViewMappingFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +58,11 @@ public class GtkTreeViewMappingFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment tree_view, MemorySegment path, MemorySegment user_data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment tree_view, MemorySegment path, MemorySegment user_data) {
         try {
              DOWN$MH.invokeExact(funcPtr, tree_view, path, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

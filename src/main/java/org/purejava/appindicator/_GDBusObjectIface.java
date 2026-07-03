@@ -58,7 +58,7 @@ public class _GDBusObjectIface {
         return parent_iface$LAYOUT;
     }
 
-    private static final long parent_iface$OFFSET = 0;
+    private static final long parent_iface$OFFSET = $LAYOUT.byteOffset(groupElement("parent_iface"));
 
     /**
      * Offset for field:
@@ -95,7 +95,11 @@ public class _GDBusObjectIface {
      * const gchar *(*get_object_path)(GDBusObject *)
      * }
      */
-    public class get_object_path {
+    public final static class get_object_path {
+
+        private get_object_path() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -131,9 +135,11 @@ public class _GDBusObjectIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -152,7 +158,7 @@ public class _GDBusObjectIface {
         return get_object_path$LAYOUT;
     }
 
-    private static final long get_object_path$OFFSET = 16;
+    private static final long get_object_path$OFFSET = $LAYOUT.byteOffset(groupElement("get_object_path"));
 
     /**
      * Offset for field:
@@ -189,7 +195,11 @@ public class _GDBusObjectIface {
      * GList *(*get_interfaces)(GDBusObject *)
      * }
      */
-    public class get_interfaces {
+    public final static class get_interfaces {
+
+        private get_interfaces() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -225,9 +235,11 @@ public class _GDBusObjectIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -246,7 +258,7 @@ public class _GDBusObjectIface {
         return get_interfaces$LAYOUT;
     }
 
-    private static final long get_interfaces$OFFSET = 24;
+    private static final long get_interfaces$OFFSET = $LAYOUT.byteOffset(groupElement("get_interfaces"));
 
     /**
      * Offset for field:
@@ -283,7 +295,11 @@ public class _GDBusObjectIface {
      * GDBusInterface *(*get_interface)(GDBusObject *, const gchar *)
      * }
      */
-    public class get_interface {
+    public final static class get_interface {
+
+        private get_interface() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -320,9 +336,11 @@ public class _GDBusObjectIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -341,7 +359,7 @@ public class _GDBusObjectIface {
         return get_interface$LAYOUT;
     }
 
-    private static final long get_interface$OFFSET = 32;
+    private static final long get_interface$OFFSET = $LAYOUT.byteOffset(groupElement("get_interface"));
 
     /**
      * Offset for field:
@@ -378,7 +396,11 @@ public class _GDBusObjectIface {
      * void (*interface_added)(GDBusObject *, GDBusInterface *)
      * }
      */
-    public class interface_added {
+    public final static class interface_added {
+
+        private interface_added() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -414,9 +436,11 @@ public class _GDBusObjectIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -435,7 +459,7 @@ public class _GDBusObjectIface {
         return interface_added$LAYOUT;
     }
 
-    private static final long interface_added$OFFSET = 40;
+    private static final long interface_added$OFFSET = $LAYOUT.byteOffset(groupElement("interface_added"));
 
     /**
      * Offset for field:
@@ -472,7 +496,11 @@ public class _GDBusObjectIface {
      * void (*interface_removed)(GDBusObject *, GDBusInterface *)
      * }
      */
-    public class interface_removed {
+    public final static class interface_removed {
+
+        private interface_removed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -508,9 +536,11 @@ public class _GDBusObjectIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -529,7 +559,7 @@ public class _GDBusObjectIface {
         return interface_removed$LAYOUT;
     }
 
-    private static final long interface_removed$OFFSET = 48;
+    private static final long interface_removed$OFFSET = $LAYOUT.byteOffset(groupElement("interface_removed"));
 
     /**
      * Offset for field:
@@ -590,7 +620,7 @@ public class _GDBusObjectIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -598,7 +628,7 @@ public class _GDBusObjectIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

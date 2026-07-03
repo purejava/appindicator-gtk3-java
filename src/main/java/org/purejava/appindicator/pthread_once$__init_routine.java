@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * void (*__init_routine)(void)
  * }
  */
-public class pthread_once$__init_routine {
+public final class pthread_once$__init_routine {
+
+    private pthread_once$__init_routine() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -53,6 +57,8 @@ public class pthread_once$__init_routine {
     public static void invoke(MemorySegment funcPtr) {
         try {
              DOWN$MH.invokeExact(funcPtr);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

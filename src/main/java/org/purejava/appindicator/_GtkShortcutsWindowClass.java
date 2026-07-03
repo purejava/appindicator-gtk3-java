@@ -52,7 +52,7 @@ public class _GtkShortcutsWindowClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -89,7 +89,11 @@ public class _GtkShortcutsWindowClass {
      * void (*close)(GtkShortcutsWindow *)
      * }
      */
-    public class close {
+    public final static class close {
+
+        private close() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -124,9 +128,11 @@ public class _GtkShortcutsWindowClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -145,7 +151,7 @@ public class _GtkShortcutsWindowClass {
         return close$LAYOUT;
     }
 
-    private static final long close$OFFSET = 1072;
+    private static final long close$OFFSET = $LAYOUT.byteOffset(groupElement("close"));
 
     /**
      * Offset for field:
@@ -182,7 +188,11 @@ public class _GtkShortcutsWindowClass {
      * void (*search)(GtkShortcutsWindow *)
      * }
      */
-    public class search {
+    public final static class search {
+
+        private search() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -217,9 +227,11 @@ public class _GtkShortcutsWindowClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -238,7 +250,7 @@ public class _GtkShortcutsWindowClass {
         return search$LAYOUT;
     }
 
-    private static final long search$OFFSET = 1080;
+    private static final long search$OFFSET = $LAYOUT.byteOffset(groupElement("search"));
 
     /**
      * Offset for field:
@@ -299,7 +311,7 @@ public class _GtkShortcutsWindowClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -307,7 +319,7 @@ public class _GtkShortcutsWindowClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

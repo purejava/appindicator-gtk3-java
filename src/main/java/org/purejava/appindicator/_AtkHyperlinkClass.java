@@ -68,7 +68,7 @@ public class _AtkHyperlinkClass {
         return parent$LAYOUT;
     }
 
-    private static final long parent$OFFSET = 0;
+    private static final long parent$OFFSET = $LAYOUT.byteOffset(groupElement("parent"));
 
     /**
      * Offset for field:
@@ -105,7 +105,11 @@ public class _AtkHyperlinkClass {
      * gchar *(*get_uri)(AtkHyperlink *, gint)
      * }
      */
-    public class get_uri {
+    public final static class get_uri {
+
+        private get_uri() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -142,9 +146,11 @@ public class _AtkHyperlinkClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -163,7 +169,7 @@ public class _AtkHyperlinkClass {
         return get_uri$LAYOUT;
     }
 
-    private static final long get_uri$OFFSET = 136;
+    private static final long get_uri$OFFSET = $LAYOUT.byteOffset(groupElement("get_uri"));
 
     /**
      * Offset for field:
@@ -200,7 +206,11 @@ public class _AtkHyperlinkClass {
      * AtkObject *(*get_object)(AtkHyperlink *, gint)
      * }
      */
-    public class get_object {
+    public final static class get_object {
+
+        private get_object() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -237,9 +247,11 @@ public class _AtkHyperlinkClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -258,7 +270,7 @@ public class _AtkHyperlinkClass {
         return get_object$LAYOUT;
     }
 
-    private static final long get_object$OFFSET = 144;
+    private static final long get_object$OFFSET = $LAYOUT.byteOffset(groupElement("get_object"));
 
     /**
      * Offset for field:
@@ -295,7 +307,11 @@ public class _AtkHyperlinkClass {
      * gint (*get_end_index)(AtkHyperlink *)
      * }
      */
-    public class get_end_index {
+    public final static class get_end_index {
+
+        private get_end_index() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -331,9 +347,11 @@ public class _AtkHyperlinkClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -352,7 +370,7 @@ public class _AtkHyperlinkClass {
         return get_end_index$LAYOUT;
     }
 
-    private static final long get_end_index$OFFSET = 152;
+    private static final long get_end_index$OFFSET = $LAYOUT.byteOffset(groupElement("get_end_index"));
 
     /**
      * Offset for field:
@@ -389,7 +407,11 @@ public class _AtkHyperlinkClass {
      * gint (*get_start_index)(AtkHyperlink *)
      * }
      */
-    public class get_start_index {
+    public final static class get_start_index {
+
+        private get_start_index() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -425,9 +447,11 @@ public class _AtkHyperlinkClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -446,7 +470,7 @@ public class _AtkHyperlinkClass {
         return get_start_index$LAYOUT;
     }
 
-    private static final long get_start_index$OFFSET = 160;
+    private static final long get_start_index$OFFSET = $LAYOUT.byteOffset(groupElement("get_start_index"));
 
     /**
      * Offset for field:
@@ -483,7 +507,11 @@ public class _AtkHyperlinkClass {
      * gboolean (*is_valid)(AtkHyperlink *)
      * }
      */
-    public class is_valid {
+    public final static class is_valid {
+
+        private is_valid() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -519,9 +547,11 @@ public class _AtkHyperlinkClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -540,7 +570,7 @@ public class _AtkHyperlinkClass {
         return is_valid$LAYOUT;
     }
 
-    private static final long is_valid$OFFSET = 168;
+    private static final long is_valid$OFFSET = $LAYOUT.byteOffset(groupElement("is_valid"));
 
     /**
      * Offset for field:
@@ -577,7 +607,11 @@ public class _AtkHyperlinkClass {
      * gint (*get_n_anchors)(AtkHyperlink *)
      * }
      */
-    public class get_n_anchors {
+    public final static class get_n_anchors {
+
+        private get_n_anchors() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -613,9 +647,11 @@ public class _AtkHyperlinkClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -634,7 +670,7 @@ public class _AtkHyperlinkClass {
         return get_n_anchors$LAYOUT;
     }
 
-    private static final long get_n_anchors$OFFSET = 176;
+    private static final long get_n_anchors$OFFSET = $LAYOUT.byteOffset(groupElement("get_n_anchors"));
 
     /**
      * Offset for field:
@@ -671,7 +707,11 @@ public class _AtkHyperlinkClass {
      * guint (*link_state)(AtkHyperlink *)
      * }
      */
-    public class link_state {
+    public final static class link_state {
+
+        private link_state() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -707,9 +747,11 @@ public class _AtkHyperlinkClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -728,7 +770,7 @@ public class _AtkHyperlinkClass {
         return link_state$LAYOUT;
     }
 
-    private static final long link_state$OFFSET = 184;
+    private static final long link_state$OFFSET = $LAYOUT.byteOffset(groupElement("link_state"));
 
     /**
      * Offset for field:
@@ -765,7 +807,11 @@ public class _AtkHyperlinkClass {
      * gboolean (*is_selected_link)(AtkHyperlink *)
      * }
      */
-    public class is_selected_link {
+    public final static class is_selected_link {
+
+        private is_selected_link() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -801,9 +847,11 @@ public class _AtkHyperlinkClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -822,7 +870,7 @@ public class _AtkHyperlinkClass {
         return is_selected_link$LAYOUT;
     }
 
-    private static final long is_selected_link$OFFSET = 192;
+    private static final long is_selected_link$OFFSET = $LAYOUT.byteOffset(groupElement("is_selected_link"));
 
     /**
      * Offset for field:
@@ -859,7 +907,11 @@ public class _AtkHyperlinkClass {
      * void (*link_activated)(AtkHyperlink *)
      * }
      */
-    public class link_activated {
+    public final static class link_activated {
+
+        private link_activated() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -894,9 +946,11 @@ public class _AtkHyperlinkClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -915,7 +969,7 @@ public class _AtkHyperlinkClass {
         return link_activated$LAYOUT;
     }
 
-    private static final long link_activated$OFFSET = 200;
+    private static final long link_activated$OFFSET = $LAYOUT.byteOffset(groupElement("link_activated"));
 
     /**
      * Offset for field:
@@ -959,7 +1013,7 @@ public class _AtkHyperlinkClass {
         return pad1$LAYOUT;
     }
 
-    private static final long pad1$OFFSET = 208;
+    private static final long pad1$OFFSET = $LAYOUT.byteOffset(groupElement("pad1"));
 
     /**
      * Offset for field:
@@ -1020,7 +1074,7 @@ public class _AtkHyperlinkClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1028,7 +1082,7 @@ public class _AtkHyperlinkClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

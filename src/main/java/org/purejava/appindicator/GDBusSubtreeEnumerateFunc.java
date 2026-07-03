@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gchar **(*GDBusSubtreeEnumerateFunc)(GDBusConnection *, const gchar *, const gchar *, gpointer)
  * }
  */
-public class GDBusSubtreeEnumerateFunc {
+public final class GDBusSubtreeEnumerateFunc {
+
+    private GDBusSubtreeEnumerateFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -56,9 +60,11 @@ public class GDBusSubtreeEnumerateFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment connection, MemorySegment sender, MemorySegment object_path, MemorySegment user_data) {
+    public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment connection, MemorySegment sender, MemorySegment object_path, MemorySegment user_data) {
         try {
             return (MemorySegment) DOWN$MH.invokeExact(funcPtr, connection, sender, object_path, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

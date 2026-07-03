@@ -68,7 +68,7 @@ public class _GSocketControlMessageClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -105,7 +105,11 @@ public class _GSocketControlMessageClass {
      * gsize (*get_size)(GSocketControlMessage *)
      * }
      */
-    public class get_size {
+    public final static class get_size {
+
+        private get_size() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -141,9 +145,11 @@ public class _GSocketControlMessageClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static long invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static long invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (long) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -162,7 +168,7 @@ public class _GSocketControlMessageClass {
         return get_size$LAYOUT;
     }
 
-    private static final long get_size$OFFSET = 136;
+    private static final long get_size$OFFSET = $LAYOUT.byteOffset(groupElement("get_size"));
 
     /**
      * Offset for field:
@@ -199,7 +205,11 @@ public class _GSocketControlMessageClass {
      * int (*get_level)(GSocketControlMessage *)
      * }
      */
-    public class get_level {
+    public final static class get_level {
+
+        private get_level() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -235,9 +245,11 @@ public class _GSocketControlMessageClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -256,7 +268,7 @@ public class _GSocketControlMessageClass {
         return get_level$LAYOUT;
     }
 
-    private static final long get_level$OFFSET = 144;
+    private static final long get_level$OFFSET = $LAYOUT.byteOffset(groupElement("get_level"));
 
     /**
      * Offset for field:
@@ -293,7 +305,11 @@ public class _GSocketControlMessageClass {
      * int (*get_type)(GSocketControlMessage *)
      * }
      */
-    public class get_type {
+    public final static class get_type {
+
+        private get_type() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -329,9 +345,11 @@ public class _GSocketControlMessageClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -350,7 +368,7 @@ public class _GSocketControlMessageClass {
         return get_type$LAYOUT;
     }
 
-    private static final long get_type$OFFSET = 152;
+    private static final long get_type$OFFSET = $LAYOUT.byteOffset(groupElement("get_type"));
 
     /**
      * Offset for field:
@@ -387,7 +405,11 @@ public class _GSocketControlMessageClass {
      * void (*serialize)(GSocketControlMessage *, gpointer)
      * }
      */
-    public class serialize {
+    public final static class serialize {
+
+        private serialize() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -423,9 +445,11 @@ public class _GSocketControlMessageClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -444,7 +468,7 @@ public class _GSocketControlMessageClass {
         return serialize$LAYOUT;
     }
 
-    private static final long serialize$OFFSET = 160;
+    private static final long serialize$OFFSET = $LAYOUT.byteOffset(groupElement("serialize"));
 
     /**
      * Offset for field:
@@ -481,7 +505,11 @@ public class _GSocketControlMessageClass {
      * GSocketControlMessage *(*deserialize)(int, int, gsize, gpointer)
      * }
      */
-    public class deserialize {
+    public final static class deserialize {
+
+        private deserialize() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -520,9 +548,11 @@ public class _GSocketControlMessageClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,int _x0, int _x1, long _x2, MemorySegment _x3) {
+        public static MemorySegment invoke(MemorySegment funcPtr, int _x0, int _x1, long _x2, MemorySegment _x3) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -541,7 +571,7 @@ public class _GSocketControlMessageClass {
         return deserialize$LAYOUT;
     }
 
-    private static final long deserialize$OFFSET = 168;
+    private static final long deserialize$OFFSET = $LAYOUT.byteOffset(groupElement("deserialize"));
 
     /**
      * Offset for field:
@@ -578,7 +608,11 @@ public class _GSocketControlMessageClass {
      * void (*_g_reserved1)(void)
      * }
      */
-    public class _g_reserved1 {
+    public final static class _g_reserved1 {
+
+        private _g_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -614,6 +648,8 @@ public class _GSocketControlMessageClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -632,7 +668,7 @@ public class _GSocketControlMessageClass {
         return _g_reserved1$LAYOUT;
     }
 
-    private static final long _g_reserved1$OFFSET = 176;
+    private static final long _g_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved1"));
 
     /**
      * Offset for field:
@@ -669,7 +705,11 @@ public class _GSocketControlMessageClass {
      * void (*_g_reserved2)(void)
      * }
      */
-    public class _g_reserved2 {
+    public final static class _g_reserved2 {
+
+        private _g_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -705,6 +745,8 @@ public class _GSocketControlMessageClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -723,7 +765,7 @@ public class _GSocketControlMessageClass {
         return _g_reserved2$LAYOUT;
     }
 
-    private static final long _g_reserved2$OFFSET = 184;
+    private static final long _g_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved2"));
 
     /**
      * Offset for field:
@@ -760,7 +802,11 @@ public class _GSocketControlMessageClass {
      * void (*_g_reserved3)(void)
      * }
      */
-    public class _g_reserved3 {
+    public final static class _g_reserved3 {
+
+        private _g_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -796,6 +842,8 @@ public class _GSocketControlMessageClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -814,7 +862,7 @@ public class _GSocketControlMessageClass {
         return _g_reserved3$LAYOUT;
     }
 
-    private static final long _g_reserved3$OFFSET = 192;
+    private static final long _g_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved3"));
 
     /**
      * Offset for field:
@@ -851,7 +899,11 @@ public class _GSocketControlMessageClass {
      * void (*_g_reserved4)(void)
      * }
      */
-    public class _g_reserved4 {
+    public final static class _g_reserved4 {
+
+        private _g_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -887,6 +939,8 @@ public class _GSocketControlMessageClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -905,7 +959,7 @@ public class _GSocketControlMessageClass {
         return _g_reserved4$LAYOUT;
     }
 
-    private static final long _g_reserved4$OFFSET = 200;
+    private static final long _g_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved4"));
 
     /**
      * Offset for field:
@@ -942,7 +996,11 @@ public class _GSocketControlMessageClass {
      * void (*_g_reserved5)(void)
      * }
      */
-    public class _g_reserved5 {
+    public final static class _g_reserved5 {
+
+        private _g_reserved5() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -978,6 +1036,8 @@ public class _GSocketControlMessageClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -996,7 +1056,7 @@ public class _GSocketControlMessageClass {
         return _g_reserved5$LAYOUT;
     }
 
-    private static final long _g_reserved5$OFFSET = 208;
+    private static final long _g_reserved5$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved5"));
 
     /**
      * Offset for field:
@@ -1057,7 +1117,7 @@ public class _GSocketControlMessageClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1065,7 +1125,7 @@ public class _GSocketControlMessageClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

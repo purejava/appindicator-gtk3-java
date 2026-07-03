@@ -2,11 +2,15 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.util.function.Consumer;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
-import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
-import static java.lang.foreign.ValueLayout.OfLong;
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
@@ -46,7 +50,7 @@ public class _GTimeVal {
         return tv_sec$LAYOUT;
     }
 
-    private static final long tv_sec$OFFSET = 0;
+    private static final long tv_sec$OFFSET = $LAYOUT.byteOffset(groupElement("tv_sec"));
 
     /**
      * Offset for field:
@@ -90,7 +94,7 @@ public class _GTimeVal {
         return tv_usec$LAYOUT;
     }
 
-    private static final long tv_usec$OFFSET = 8;
+    private static final long tv_usec$OFFSET = $LAYOUT.byteOffset(groupElement("tv_usec"));
 
     /**
      * Offset for field:
@@ -151,7 +155,7 @@ public class _GTimeVal {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -159,7 +163,7 @@ public class _GTimeVal {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

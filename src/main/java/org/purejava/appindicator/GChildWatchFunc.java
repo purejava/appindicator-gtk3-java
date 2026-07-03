@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GChildWatchFunc)(GPid, gint, gpointer)
  * }
  */
-public class GChildWatchFunc {
+public final class GChildWatchFunc {
+
+    private GChildWatchFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +58,11 @@ public class GChildWatchFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,int pid, int wait_status, MemorySegment user_data) {
+    public static void invoke(MemorySegment funcPtr, int pid, int wait_status, MemorySegment user_data) {
         try {
              DOWN$MH.invokeExact(funcPtr, pid, wait_status, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

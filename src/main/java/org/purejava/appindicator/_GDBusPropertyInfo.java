@@ -58,7 +58,7 @@ public class _GDBusPropertyInfo {
         return ref_count$LAYOUT;
     }
 
-    private static final long ref_count$OFFSET = 0;
+    private static final long ref_count$OFFSET = $LAYOUT.byteOffset(groupElement("ref_count"));
 
     /**
      * Offset for field:
@@ -102,7 +102,7 @@ public class _GDBusPropertyInfo {
         return name$LAYOUT;
     }
 
-    private static final long name$OFFSET = 8;
+    private static final long name$OFFSET = $LAYOUT.byteOffset(groupElement("name"));
 
     /**
      * Offset for field:
@@ -146,7 +146,7 @@ public class _GDBusPropertyInfo {
         return signature$LAYOUT;
     }
 
-    private static final long signature$OFFSET = 16;
+    private static final long signature$OFFSET = $LAYOUT.byteOffset(groupElement("signature"));
 
     /**
      * Offset for field:
@@ -190,7 +190,7 @@ public class _GDBusPropertyInfo {
         return flags$LAYOUT;
     }
 
-    private static final long flags$OFFSET = 24;
+    private static final long flags$OFFSET = $LAYOUT.byteOffset(groupElement("flags"));
 
     /**
      * Offset for field:
@@ -234,7 +234,7 @@ public class _GDBusPropertyInfo {
         return annotations$LAYOUT;
     }
 
-    private static final long annotations$OFFSET = 32;
+    private static final long annotations$OFFSET = $LAYOUT.byteOffset(groupElement("annotations"));
 
     /**
      * Offset for field:
@@ -295,7 +295,7 @@ public class _GDBusPropertyInfo {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -303,7 +303,7 @@ public class _GDBusPropertyInfo {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

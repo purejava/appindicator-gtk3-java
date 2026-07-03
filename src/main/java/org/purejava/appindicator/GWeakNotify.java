@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GWeakNotify)(gpointer, GObject *)
  * }
  */
-public class GWeakNotify {
+public final class GWeakNotify {
+
+    private GWeakNotify() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -53,9 +57,11 @@ public class GWeakNotify {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment data, MemorySegment where_the_object_was) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment data, MemorySegment where_the_object_was) {
         try {
              DOWN$MH.invokeExact(funcPtr, data, where_the_object_was);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

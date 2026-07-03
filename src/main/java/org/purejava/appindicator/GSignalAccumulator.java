@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gboolean (*GSignalAccumulator)(GSignalInvocationHint *, GValue *, const GValue *, gpointer)
  * }
  */
-public class GSignalAccumulator {
+public final class GSignalAccumulator {
+
+    private GSignalAccumulator() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -56,9 +60,11 @@ public class GSignalAccumulator {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment ihint, MemorySegment return_accu, MemorySegment handler_return, MemorySegment data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment ihint, MemorySegment return_accu, MemorySegment handler_return, MemorySegment data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, ihint, return_accu, handler_return, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

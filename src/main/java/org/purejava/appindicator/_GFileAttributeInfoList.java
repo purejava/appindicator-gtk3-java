@@ -51,7 +51,7 @@ public class _GFileAttributeInfoList {
         return infos$LAYOUT;
     }
 
-    private static final long infos$OFFSET = 0;
+    private static final long infos$OFFSET = $LAYOUT.byteOffset(groupElement("infos"));
 
     /**
      * Offset for field:
@@ -95,7 +95,7 @@ public class _GFileAttributeInfoList {
         return n_infos$LAYOUT;
     }
 
-    private static final long n_infos$OFFSET = 8;
+    private static final long n_infos$OFFSET = $LAYOUT.byteOffset(groupElement("n_infos"));
 
     /**
      * Offset for field:
@@ -156,7 +156,7 @@ public class _GFileAttributeInfoList {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -164,7 +164,7 @@ public class _GFileAttributeInfoList {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

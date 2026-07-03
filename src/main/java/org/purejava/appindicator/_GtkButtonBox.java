@@ -50,7 +50,7 @@ public class _GtkButtonBox {
         return box$LAYOUT;
     }
 
-    private static final long box$OFFSET = 0;
+    private static final long box$OFFSET = $LAYOUT.byteOffset(groupElement("box"));
 
     /**
      * Offset for field:
@@ -94,7 +94,7 @@ public class _GtkButtonBox {
         return priv$LAYOUT;
     }
 
-    private static final long priv$OFFSET = 48;
+    private static final long priv$OFFSET = $LAYOUT.byteOffset(groupElement("priv"));
 
     /**
      * Offset for field:
@@ -155,7 +155,7 @@ public class _GtkButtonBox {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -163,7 +163,7 @@ public class _GtkButtonBox {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

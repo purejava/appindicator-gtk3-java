@@ -52,7 +52,7 @@ public class _PangoAttribute {
         return klass$LAYOUT;
     }
 
-    private static final long klass$OFFSET = 0;
+    private static final long klass$OFFSET = $LAYOUT.byteOffset(groupElement("klass"));
 
     /**
      * Offset for field:
@@ -96,7 +96,7 @@ public class _PangoAttribute {
         return start_index$LAYOUT;
     }
 
-    private static final long start_index$OFFSET = 8;
+    private static final long start_index$OFFSET = $LAYOUT.byteOffset(groupElement("start_index"));
 
     /**
      * Offset for field:
@@ -140,7 +140,7 @@ public class _PangoAttribute {
         return end_index$LAYOUT;
     }
 
-    private static final long end_index$OFFSET = 12;
+    private static final long end_index$OFFSET = $LAYOUT.byteOffset(groupElement("end_index"));
 
     /**
      * Offset for field:
@@ -201,7 +201,7 @@ public class _PangoAttribute {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -209,7 +209,7 @@ public class _PangoAttribute {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

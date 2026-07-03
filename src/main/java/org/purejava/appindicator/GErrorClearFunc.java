@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GErrorClearFunc)(GError *)
  * }
  */
-public class GErrorClearFunc {
+public final class GErrorClearFunc {
+
+    private GErrorClearFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -52,9 +56,11 @@ public class GErrorClearFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment error) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment error) {
         try {
              DOWN$MH.invokeExact(funcPtr, error);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

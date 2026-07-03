@@ -53,7 +53,7 @@ public class _GParamSpecValueArray {
         return parent_instance$LAYOUT;
     }
 
-    private static final long parent_instance$OFFSET = 0;
+    private static final long parent_instance$OFFSET = $LAYOUT.byteOffset(groupElement("parent_instance"));
 
     /**
      * Offset for field:
@@ -97,7 +97,7 @@ public class _GParamSpecValueArray {
         return element_spec$LAYOUT;
     }
 
-    private static final long element_spec$OFFSET = 72;
+    private static final long element_spec$OFFSET = $LAYOUT.byteOffset(groupElement("element_spec"));
 
     /**
      * Offset for field:
@@ -141,7 +141,7 @@ public class _GParamSpecValueArray {
         return fixed_n_elements$LAYOUT;
     }
 
-    private static final long fixed_n_elements$OFFSET = 80;
+    private static final long fixed_n_elements$OFFSET = $LAYOUT.byteOffset(groupElement("fixed_n_elements"));
 
     /**
      * Offset for field:
@@ -202,7 +202,7 @@ public class _GParamSpecValueArray {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -210,7 +210,7 @@ public class _GParamSpecValueArray {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

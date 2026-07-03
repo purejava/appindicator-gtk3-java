@@ -2,11 +2,15 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.lang.invoke.MethodHandle;
-import java.util.function.Consumer;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
-import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
@@ -78,7 +82,7 @@ public class _GVfsClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -115,7 +119,11 @@ public class _GVfsClass {
      * gboolean (*is_active)(GVfs *)
      * }
      */
-    public class is_active {
+    public final static class is_active {
+
+        private is_active() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -151,9 +159,11 @@ public class _GVfsClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -172,7 +182,7 @@ public class _GVfsClass {
         return is_active$LAYOUT;
     }
 
-    private static final long is_active$OFFSET = 136;
+    private static final long is_active$OFFSET = $LAYOUT.byteOffset(groupElement("is_active"));
 
     /**
      * Offset for field:
@@ -209,7 +219,11 @@ public class _GVfsClass {
      * GFile *(*get_file_for_path)(GVfs *, const char *)
      * }
      */
-    public class get_file_for_path {
+    public final static class get_file_for_path {
+
+        private get_file_for_path() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -246,9 +260,11 @@ public class _GVfsClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -267,7 +283,7 @@ public class _GVfsClass {
         return get_file_for_path$LAYOUT;
     }
 
-    private static final long get_file_for_path$OFFSET = 144;
+    private static final long get_file_for_path$OFFSET = $LAYOUT.byteOffset(groupElement("get_file_for_path"));
 
     /**
      * Offset for field:
@@ -304,7 +320,11 @@ public class _GVfsClass {
      * GFile *(*get_file_for_uri)(GVfs *, const char *)
      * }
      */
-    public class get_file_for_uri {
+    public final static class get_file_for_uri {
+
+        private get_file_for_uri() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -341,9 +361,11 @@ public class _GVfsClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -362,7 +384,7 @@ public class _GVfsClass {
         return get_file_for_uri$LAYOUT;
     }
 
-    private static final long get_file_for_uri$OFFSET = 152;
+    private static final long get_file_for_uri$OFFSET = $LAYOUT.byteOffset(groupElement("get_file_for_uri"));
 
     /**
      * Offset for field:
@@ -399,7 +421,11 @@ public class _GVfsClass {
      * const gchar *const *(*get_supported_uri_schemes)(GVfs *)
      * }
      */
-    public class get_supported_uri_schemes {
+    public final static class get_supported_uri_schemes {
+
+        private get_supported_uri_schemes() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -435,9 +461,11 @@ public class _GVfsClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -456,7 +484,7 @@ public class _GVfsClass {
         return get_supported_uri_schemes$LAYOUT;
     }
 
-    private static final long get_supported_uri_schemes$OFFSET = 160;
+    private static final long get_supported_uri_schemes$OFFSET = $LAYOUT.byteOffset(groupElement("get_supported_uri_schemes"));
 
     /**
      * Offset for field:
@@ -493,7 +521,11 @@ public class _GVfsClass {
      * GFile *(*parse_name)(GVfs *, const char *)
      * }
      */
-    public class parse_name {
+    public final static class parse_name {
+
+        private parse_name() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -530,9 +562,11 @@ public class _GVfsClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -551,7 +585,7 @@ public class _GVfsClass {
         return parse_name$LAYOUT;
     }
 
-    private static final long parse_name$OFFSET = 168;
+    private static final long parse_name$OFFSET = $LAYOUT.byteOffset(groupElement("parse_name"));
 
     /**
      * Offset for field:
@@ -588,7 +622,11 @@ public class _GVfsClass {
      * void (*local_file_add_info)(GVfs *, const char *, guint64, GFileAttributeMatcher *, GFileInfo *, GCancellable *, gpointer *, GDestroyNotify *)
      * }
      */
-    public class local_file_add_info {
+    public final static class local_file_add_info {
+
+        private local_file_add_info() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -630,9 +668,11 @@ public class _GVfsClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6, MemorySegment _x7) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6, MemorySegment _x7) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -651,7 +691,7 @@ public class _GVfsClass {
         return local_file_add_info$LAYOUT;
     }
 
-    private static final long local_file_add_info$OFFSET = 176;
+    private static final long local_file_add_info$OFFSET = $LAYOUT.byteOffset(groupElement("local_file_add_info"));
 
     /**
      * Offset for field:
@@ -688,7 +728,11 @@ public class _GVfsClass {
      * void (*add_writable_namespaces)(GVfs *, GFileAttributeInfoList *)
      * }
      */
-    public class add_writable_namespaces {
+    public final static class add_writable_namespaces {
+
+        private add_writable_namespaces() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -724,9 +768,11 @@ public class _GVfsClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -745,7 +791,7 @@ public class _GVfsClass {
         return add_writable_namespaces$LAYOUT;
     }
 
-    private static final long add_writable_namespaces$OFFSET = 184;
+    private static final long add_writable_namespaces$OFFSET = $LAYOUT.byteOffset(groupElement("add_writable_namespaces"));
 
     /**
      * Offset for field:
@@ -782,7 +828,11 @@ public class _GVfsClass {
      * gboolean (*local_file_set_attributes)(GVfs *, const char *, GFileInfo *, GFileQueryInfoFlags, GCancellable *, GError **)
      * }
      */
-    public class local_file_set_attributes {
+    public final static class local_file_set_attributes {
+
+        private local_file_set_attributes() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -823,9 +873,11 @@ public class _GVfsClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -844,7 +896,7 @@ public class _GVfsClass {
         return local_file_set_attributes$LAYOUT;
     }
 
-    private static final long local_file_set_attributes$OFFSET = 192;
+    private static final long local_file_set_attributes$OFFSET = $LAYOUT.byteOffset(groupElement("local_file_set_attributes"));
 
     /**
      * Offset for field:
@@ -881,7 +933,11 @@ public class _GVfsClass {
      * void (*local_file_removed)(GVfs *, const char *)
      * }
      */
-    public class local_file_removed {
+    public final static class local_file_removed {
+
+        private local_file_removed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -917,9 +973,11 @@ public class _GVfsClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -938,7 +996,7 @@ public class _GVfsClass {
         return local_file_removed$LAYOUT;
     }
 
-    private static final long local_file_removed$OFFSET = 200;
+    private static final long local_file_removed$OFFSET = $LAYOUT.byteOffset(groupElement("local_file_removed"));
 
     /**
      * Offset for field:
@@ -975,7 +1033,11 @@ public class _GVfsClass {
      * void (*local_file_moved)(GVfs *, const char *, const char *)
      * }
      */
-    public class local_file_moved {
+    public final static class local_file_moved {
+
+        private local_file_moved() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1012,9 +1074,11 @@ public class _GVfsClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1033,7 +1097,7 @@ public class _GVfsClass {
         return local_file_moved$LAYOUT;
     }
 
-    private static final long local_file_moved$OFFSET = 208;
+    private static final long local_file_moved$OFFSET = $LAYOUT.byteOffset(groupElement("local_file_moved"));
 
     /**
      * Offset for field:
@@ -1070,7 +1134,11 @@ public class _GVfsClass {
      * GIcon *(*deserialize_icon)(GVfs *, GVariant *)
      * }
      */
-    public class deserialize_icon {
+    public final static class deserialize_icon {
+
+        private deserialize_icon() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1107,9 +1175,11 @@ public class _GVfsClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1128,7 +1198,7 @@ public class _GVfsClass {
         return deserialize_icon$LAYOUT;
     }
 
-    private static final long deserialize_icon$OFFSET = 216;
+    private static final long deserialize_icon$OFFSET = $LAYOUT.byteOffset(groupElement("deserialize_icon"));
 
     /**
      * Offset for field:
@@ -1165,7 +1235,11 @@ public class _GVfsClass {
      * void (*_g_reserved1)(void)
      * }
      */
-    public class _g_reserved1 {
+    public final static class _g_reserved1 {
+
+        private _g_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1201,6 +1275,8 @@ public class _GVfsClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1219,7 +1295,7 @@ public class _GVfsClass {
         return _g_reserved1$LAYOUT;
     }
 
-    private static final long _g_reserved1$OFFSET = 224;
+    private static final long _g_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved1"));
 
     /**
      * Offset for field:
@@ -1256,7 +1332,11 @@ public class _GVfsClass {
      * void (*_g_reserved2)(void)
      * }
      */
-    public class _g_reserved2 {
+    public final static class _g_reserved2 {
+
+        private _g_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1292,6 +1372,8 @@ public class _GVfsClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1310,7 +1392,7 @@ public class _GVfsClass {
         return _g_reserved2$LAYOUT;
     }
 
-    private static final long _g_reserved2$OFFSET = 232;
+    private static final long _g_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved2"));
 
     /**
      * Offset for field:
@@ -1347,7 +1429,11 @@ public class _GVfsClass {
      * void (*_g_reserved3)(void)
      * }
      */
-    public class _g_reserved3 {
+    public final static class _g_reserved3 {
+
+        private _g_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1383,6 +1469,8 @@ public class _GVfsClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1401,7 +1489,7 @@ public class _GVfsClass {
         return _g_reserved3$LAYOUT;
     }
 
-    private static final long _g_reserved3$OFFSET = 240;
+    private static final long _g_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved3"));
 
     /**
      * Offset for field:
@@ -1438,7 +1526,11 @@ public class _GVfsClass {
      * void (*_g_reserved4)(void)
      * }
      */
-    public class _g_reserved4 {
+    public final static class _g_reserved4 {
+
+        private _g_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1474,6 +1566,8 @@ public class _GVfsClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1492,7 +1586,7 @@ public class _GVfsClass {
         return _g_reserved4$LAYOUT;
     }
 
-    private static final long _g_reserved4$OFFSET = 248;
+    private static final long _g_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved4"));
 
     /**
      * Offset for field:
@@ -1529,7 +1623,11 @@ public class _GVfsClass {
      * void (*_g_reserved5)(void)
      * }
      */
-    public class _g_reserved5 {
+    public final static class _g_reserved5 {
+
+        private _g_reserved5() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1565,6 +1663,8 @@ public class _GVfsClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1583,7 +1683,7 @@ public class _GVfsClass {
         return _g_reserved5$LAYOUT;
     }
 
-    private static final long _g_reserved5$OFFSET = 256;
+    private static final long _g_reserved5$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved5"));
 
     /**
      * Offset for field:
@@ -1620,7 +1720,11 @@ public class _GVfsClass {
      * void (*_g_reserved6)(void)
      * }
      */
-    public class _g_reserved6 {
+    public final static class _g_reserved6 {
+
+        private _g_reserved6() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1656,6 +1760,8 @@ public class _GVfsClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1674,7 +1780,7 @@ public class _GVfsClass {
         return _g_reserved6$LAYOUT;
     }
 
-    private static final long _g_reserved6$OFFSET = 264;
+    private static final long _g_reserved6$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved6"));
 
     /**
      * Offset for field:
@@ -1735,7 +1841,7 @@ public class _GVfsClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1743,7 +1849,7 @@ public class _GVfsClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

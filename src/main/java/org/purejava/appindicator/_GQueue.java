@@ -49,7 +49,7 @@ public class _GQueue {
         return head$LAYOUT;
     }
 
-    private static final long head$OFFSET = 0;
+    private static final long head$OFFSET = $LAYOUT.byteOffset(groupElement("head"));
 
     /**
      * Offset for field:
@@ -93,7 +93,7 @@ public class _GQueue {
         return tail$LAYOUT;
     }
 
-    private static final long tail$OFFSET = 8;
+    private static final long tail$OFFSET = $LAYOUT.byteOffset(groupElement("tail"));
 
     /**
      * Offset for field:
@@ -137,7 +137,7 @@ public class _GQueue {
         return length$LAYOUT;
     }
 
-    private static final long length$OFFSET = 16;
+    private static final long length$OFFSET = $LAYOUT.byteOffset(groupElement("length"));
 
     /**
      * Offset for field:
@@ -198,7 +198,7 @@ public class _GQueue {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -206,7 +206,7 @@ public class _GQueue {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

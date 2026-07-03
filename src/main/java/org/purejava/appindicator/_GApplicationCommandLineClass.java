@@ -19,7 +19,8 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  *     void (*print_literal)(GApplicationCommandLine *, const gchar *);
  *     void (*printerr_literal)(GApplicationCommandLine *, const gchar *);
  *     GInputStream *(*get_stdin)(GApplicationCommandLine *);
- *     gpointer padding[11];
+ *     void (*done)(GApplicationCommandLine *);
+ *     gpointer padding[10];
  * }
  * }
  */
@@ -34,7 +35,8 @@ public class _GApplicationCommandLineClass {
         app_indicator_h.C_POINTER.withName("print_literal"),
         app_indicator_h.C_POINTER.withName("printerr_literal"),
         app_indicator_h.C_POINTER.withName("get_stdin"),
-        MemoryLayout.sequenceLayout(11, app_indicator_h.C_POINTER).withName("padding")
+        app_indicator_h.C_POINTER.withName("done"),
+        MemoryLayout.sequenceLayout(10, app_indicator_h.C_POINTER).withName("padding")
     ).withName("_GApplicationCommandLineClass");
 
     /**
@@ -56,7 +58,7 @@ public class _GApplicationCommandLineClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -93,7 +95,11 @@ public class _GApplicationCommandLineClass {
      * void (*print_literal)(GApplicationCommandLine *, const gchar *)
      * }
      */
-    public class print_literal {
+    public final static class print_literal {
+
+        private print_literal() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -129,9 +135,11 @@ public class _GApplicationCommandLineClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -150,7 +158,7 @@ public class _GApplicationCommandLineClass {
         return print_literal$LAYOUT;
     }
 
-    private static final long print_literal$OFFSET = 136;
+    private static final long print_literal$OFFSET = $LAYOUT.byteOffset(groupElement("print_literal"));
 
     /**
      * Offset for field:
@@ -187,7 +195,11 @@ public class _GApplicationCommandLineClass {
      * void (*printerr_literal)(GApplicationCommandLine *, const gchar *)
      * }
      */
-    public class printerr_literal {
+    public final static class printerr_literal {
+
+        private printerr_literal() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -223,9 +235,11 @@ public class _GApplicationCommandLineClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -244,7 +258,7 @@ public class _GApplicationCommandLineClass {
         return printerr_literal$LAYOUT;
     }
 
-    private static final long printerr_literal$OFFSET = 144;
+    private static final long printerr_literal$OFFSET = $LAYOUT.byteOffset(groupElement("printerr_literal"));
 
     /**
      * Offset for field:
@@ -281,7 +295,11 @@ public class _GApplicationCommandLineClass {
      * GInputStream *(*get_stdin)(GApplicationCommandLine *)
      * }
      */
-    public class get_stdin {
+    public final static class get_stdin {
+
+        private get_stdin() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -317,9 +335,11 @@ public class _GApplicationCommandLineClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -338,7 +358,7 @@ public class _GApplicationCommandLineClass {
         return get_stdin$LAYOUT;
     }
 
-    private static final long get_stdin$OFFSET = 152;
+    private static final long get_stdin$OFFSET = $LAYOUT.byteOffset(groupElement("get_stdin"));
 
     /**
      * Offset for field:
@@ -370,24 +390,123 @@ public class _GApplicationCommandLineClass {
         struct.set(get_stdin$LAYOUT, get_stdin$OFFSET, fieldValue);
     }
 
+    /**
+     * {@snippet lang=c :
+     * void (*done)(GApplicationCommandLine *)
+     * }
+     */
+    public final static class done {
+
+        private done() {
+            // Should not be called directly
+        }
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(done.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(done.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
+    }
+
+    private static final AddressLayout done$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("done"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*done)(GApplicationCommandLine *)
+     * }
+     */
+    public static final AddressLayout done$layout() {
+        return done$LAYOUT;
+    }
+
+    private static final long done$OFFSET = $LAYOUT.byteOffset(groupElement("done"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*done)(GApplicationCommandLine *)
+     * }
+     */
+    public static final long done$offset() {
+        return done$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * void (*done)(GApplicationCommandLine *)
+     * }
+     */
+    public static MemorySegment done(MemorySegment struct) {
+        return struct.get(done$LAYOUT, done$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * void (*done)(GApplicationCommandLine *)
+     * }
+     */
+    public static void done(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(done$LAYOUT, done$OFFSET, fieldValue);
+    }
+
     private static final SequenceLayout padding$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("padding"));
 
     /**
      * Layout for field:
      * {@snippet lang=c :
-     * gpointer padding[11]
+     * gpointer padding[10]
      * }
      */
     public static final SequenceLayout padding$layout() {
         return padding$LAYOUT;
     }
 
-    private static final long padding$OFFSET = 160;
+    private static final long padding$OFFSET = $LAYOUT.byteOffset(groupElement("padding"));
 
     /**
      * Offset for field:
      * {@snippet lang=c :
-     * gpointer padding[11]
+     * gpointer padding[10]
      * }
      */
     public static final long padding$offset() {
@@ -397,7 +516,7 @@ public class _GApplicationCommandLineClass {
     /**
      * Getter for field:
      * {@snippet lang=c :
-     * gpointer padding[11]
+     * gpointer padding[10]
      * }
      */
     public static MemorySegment padding(MemorySegment struct) {
@@ -407,19 +526,19 @@ public class _GApplicationCommandLineClass {
     /**
      * Setter for field:
      * {@snippet lang=c :
-     * gpointer padding[11]
+     * gpointer padding[10]
      * }
      */
     public static void padding(MemorySegment struct, MemorySegment fieldValue) {
         MemorySegment.copy(fieldValue, 0L, struct, padding$OFFSET, padding$LAYOUT.byteSize());
     }
 
-    private static long[] padding$DIMS = { 11 };
+    private static long[] padding$DIMS = { 10 };
 
     /**
      * Dimensions for array field:
      * {@snippet lang=c :
-     * gpointer padding[11]
+     * gpointer padding[10]
      * }
      */
     public static long[] padding$dimensions() {
@@ -430,21 +549,21 @@ public class _GApplicationCommandLineClass {
     /**
      * Indexed getter for field:
      * {@snippet lang=c :
-     * gpointer padding[11]
+     * gpointer padding[10]
      * }
      */
     public static MemorySegment padding(MemorySegment struct, long index0) {
-        return (MemorySegment)padding$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)padding$ELEM_HANDLE.get(struct, padding$OFFSET, index0);
     }
 
     /**
      * Indexed setter for field:
      * {@snippet lang=c :
-     * gpointer padding[11]
+     * gpointer padding[10]
      * }
      */
     public static void padding(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        padding$ELEM_HANDLE.set(struct, padding$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -476,7 +595,7 @@ public class _GApplicationCommandLineClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -484,7 +603,7 @@ public class _GApplicationCommandLineClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

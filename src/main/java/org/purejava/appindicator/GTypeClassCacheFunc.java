@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gboolean (*GTypeClassCacheFunc)(gpointer, GTypeClass *)
  * }
  */
-public class GTypeClassCacheFunc {
+public final class GTypeClassCacheFunc {
+
+    private GTypeClassCacheFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +58,11 @@ public class GTypeClassCacheFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment cache_data, MemorySegment g_class) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment cache_data, MemorySegment g_class) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, cache_data, g_class);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

@@ -52,7 +52,7 @@ public class _GInetAddressClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -89,7 +89,11 @@ public class _GInetAddressClass {
      * gchar *(*to_string)(GInetAddress *)
      * }
      */
-    public class to_string {
+    public final static class to_string {
+
+        private to_string() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -125,9 +129,11 @@ public class _GInetAddressClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -146,7 +152,7 @@ public class _GInetAddressClass {
         return to_string$LAYOUT;
     }
 
-    private static final long to_string$OFFSET = 136;
+    private static final long to_string$OFFSET = $LAYOUT.byteOffset(groupElement("to_string"));
 
     /**
      * Offset for field:
@@ -183,7 +189,11 @@ public class _GInetAddressClass {
      * const guint8 *(*to_bytes)(GInetAddress *)
      * }
      */
-    public class to_bytes {
+    public final static class to_bytes {
+
+        private to_bytes() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -219,9 +229,11 @@ public class _GInetAddressClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -240,7 +252,7 @@ public class _GInetAddressClass {
         return to_bytes$LAYOUT;
     }
 
-    private static final long to_bytes$OFFSET = 144;
+    private static final long to_bytes$OFFSET = $LAYOUT.byteOffset(groupElement("to_bytes"));
 
     /**
      * Offset for field:
@@ -301,7 +313,7 @@ public class _GInetAddressClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -309,7 +321,7 @@ public class _GInetAddressClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GSimpleAsyncThreadFunc)(GSimpleAsyncResult *, GObject *, GCancellable *)
  * }
  */
-public class GSimpleAsyncThreadFunc {
+public final class GSimpleAsyncThreadFunc {
+
+    private GSimpleAsyncThreadFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +58,11 @@ public class GSimpleAsyncThreadFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment res, MemorySegment object, MemorySegment cancellable) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment res, MemorySegment object, MemorySegment cancellable) {
         try {
              DOWN$MH.invokeExact(funcPtr, res, object, cancellable);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

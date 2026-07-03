@@ -58,7 +58,7 @@ public class _AtkObjectFactoryClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -95,7 +95,11 @@ public class _AtkObjectFactoryClass {
      * AtkObject *(*create_accessible)(GObject *)
      * }
      */
-    public class create_accessible {
+    public final static class create_accessible {
+
+        private create_accessible() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -131,9 +135,11 @@ public class _AtkObjectFactoryClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -152,7 +158,7 @@ public class _AtkObjectFactoryClass {
         return create_accessible$LAYOUT;
     }
 
-    private static final long create_accessible$OFFSET = 136;
+    private static final long create_accessible$OFFSET = $LAYOUT.byteOffset(groupElement("create_accessible"));
 
     /**
      * Offset for field:
@@ -189,7 +195,11 @@ public class _AtkObjectFactoryClass {
      * void (*invalidate)(AtkObjectFactory *)
      * }
      */
-    public class invalidate {
+    public final static class invalidate {
+
+        private invalidate() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -224,9 +234,11 @@ public class _AtkObjectFactoryClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -245,7 +257,7 @@ public class _AtkObjectFactoryClass {
         return invalidate$LAYOUT;
     }
 
-    private static final long invalidate$OFFSET = 144;
+    private static final long invalidate$OFFSET = $LAYOUT.byteOffset(groupElement("invalidate"));
 
     /**
      * Offset for field:
@@ -282,7 +294,11 @@ public class _AtkObjectFactoryClass {
      * GType (*get_accessible_type)(void)
      * }
      */
-    public class get_accessible_type {
+    public final static class get_accessible_type {
+
+        private get_accessible_type() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -319,6 +335,8 @@ public class _AtkObjectFactoryClass {
         public static long invoke(MemorySegment funcPtr) {
             try {
                 return (long) DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -337,7 +355,7 @@ public class _AtkObjectFactoryClass {
         return get_accessible_type$LAYOUT;
     }
 
-    private static final long get_accessible_type$OFFSET = 152;
+    private static final long get_accessible_type$OFFSET = $LAYOUT.byteOffset(groupElement("get_accessible_type"));
 
     /**
      * Offset for field:
@@ -381,7 +399,7 @@ public class _AtkObjectFactoryClass {
         return pad1$LAYOUT;
     }
 
-    private static final long pad1$OFFSET = 160;
+    private static final long pad1$OFFSET = $LAYOUT.byteOffset(groupElement("pad1"));
 
     /**
      * Offset for field:
@@ -425,7 +443,7 @@ public class _AtkObjectFactoryClass {
         return pad2$LAYOUT;
     }
 
-    private static final long pad2$OFFSET = 168;
+    private static final long pad2$OFFSET = $LAYOUT.byteOffset(groupElement("pad2"));
 
     /**
      * Offset for field:
@@ -486,7 +504,7 @@ public class _AtkObjectFactoryClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -494,7 +512,7 @@ public class _AtkObjectFactoryClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

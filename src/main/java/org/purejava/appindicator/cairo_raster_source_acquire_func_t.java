@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef cairo_surface_t *(*cairo_raster_source_acquire_func_t)(cairo_pattern_t *, void *, cairo_surface_t *, const cairo_rectangle_int_t *)
  * }
  */
-public class cairo_raster_source_acquire_func_t {
+public final class cairo_raster_source_acquire_func_t {
+
+    private cairo_raster_source_acquire_func_t() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -56,9 +60,11 @@ public class cairo_raster_source_acquire_func_t {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment pattern, MemorySegment callback_data, MemorySegment target, MemorySegment extents) {
+    public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment pattern, MemorySegment callback_data, MemorySegment target, MemorySegment extents) {
         try {
             return (MemorySegment) DOWN$MH.invokeExact(funcPtr, pattern, callback_data, target, extents);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

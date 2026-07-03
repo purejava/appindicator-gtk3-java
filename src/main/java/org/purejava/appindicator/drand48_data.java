@@ -56,7 +56,7 @@ public class drand48_data {
         return __x$LAYOUT;
     }
 
-    private static final long __x$OFFSET = 0;
+    private static final long __x$OFFSET = $LAYOUT.byteOffset(groupElement("__x"));
 
     /**
      * Offset for field:
@@ -108,7 +108,7 @@ public class drand48_data {
      * }
      */
     public static short __x(MemorySegment struct, long index0) {
-        return (short)__x$ELEM_HANDLE.get(struct, 0L, index0);
+        return (short)__x$ELEM_HANDLE.get(struct, __x$OFFSET, index0);
     }
 
     /**
@@ -118,7 +118,7 @@ public class drand48_data {
      * }
      */
     public static void __x(MemorySegment struct, long index0, short fieldValue) {
-        __x$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        __x$ELEM_HANDLE.set(struct, __x$OFFSET, index0, fieldValue);
     }
 
     private static final SequenceLayout __old_x$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("__old_x"));
@@ -133,7 +133,7 @@ public class drand48_data {
         return __old_x$LAYOUT;
     }
 
-    private static final long __old_x$OFFSET = 6;
+    private static final long __old_x$OFFSET = $LAYOUT.byteOffset(groupElement("__old_x"));
 
     /**
      * Offset for field:
@@ -185,7 +185,7 @@ public class drand48_data {
      * }
      */
     public static short __old_x(MemorySegment struct, long index0) {
-        return (short)__old_x$ELEM_HANDLE.get(struct, 0L, index0);
+        return (short)__old_x$ELEM_HANDLE.get(struct, __old_x$OFFSET, index0);
     }
 
     /**
@@ -195,7 +195,7 @@ public class drand48_data {
      * }
      */
     public static void __old_x(MemorySegment struct, long index0, short fieldValue) {
-        __old_x$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        __old_x$ELEM_HANDLE.set(struct, __old_x$OFFSET, index0, fieldValue);
     }
 
     private static final OfShort __c$LAYOUT = (OfShort)$LAYOUT.select(groupElement("__c"));
@@ -210,7 +210,7 @@ public class drand48_data {
         return __c$LAYOUT;
     }
 
-    private static final long __c$OFFSET = 12;
+    private static final long __c$OFFSET = $LAYOUT.byteOffset(groupElement("__c"));
 
     /**
      * Offset for field:
@@ -254,7 +254,7 @@ public class drand48_data {
         return __init$LAYOUT;
     }
 
-    private static final long __init$OFFSET = 14;
+    private static final long __init$OFFSET = $LAYOUT.byteOffset(groupElement("__init"));
 
     /**
      * Offset for field:
@@ -298,7 +298,7 @@ public class drand48_data {
         return __a$LAYOUT;
     }
 
-    private static final long __a$OFFSET = 16;
+    private static final long __a$OFFSET = $LAYOUT.byteOffset(groupElement("__a"));
 
     /**
      * Offset for field:
@@ -359,7 +359,7 @@ public class drand48_data {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -367,7 +367,7 @@ public class drand48_data {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

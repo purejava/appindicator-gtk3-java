@@ -17,11 +17,12 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * struct __pthread_cond_s {
  *     __atomic_wide_counter __wseq;
  *     __atomic_wide_counter __g1_start;
- *     unsigned int __g_refs[2];
  *     unsigned int __g_size[2];
  *     unsigned int __g1_orig_size;
  *     unsigned int __wrefs;
  *     unsigned int __g_signals[2];
+ *     unsigned int __unused_initialized_1;
+ *     unsigned int __unused_initialized_2;
  * }
  * }
  */
@@ -34,11 +35,12 @@ public class __pthread_cond_s {
     private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
         __atomic_wide_counter.layout().withName("__wseq"),
         __atomic_wide_counter.layout().withName("__g1_start"),
-        MemoryLayout.sequenceLayout(2, app_indicator_h.C_INT).withName("__g_refs"),
         MemoryLayout.sequenceLayout(2, app_indicator_h.C_INT).withName("__g_size"),
         app_indicator_h.C_INT.withName("__g1_orig_size"),
         app_indicator_h.C_INT.withName("__wrefs"),
-        MemoryLayout.sequenceLayout(2, app_indicator_h.C_INT).withName("__g_signals")
+        MemoryLayout.sequenceLayout(2, app_indicator_h.C_INT).withName("__g_signals"),
+        app_indicator_h.C_INT.withName("__unused_initialized_1"),
+        app_indicator_h.C_INT.withName("__unused_initialized_2")
     ).withName("__pthread_cond_s");
 
     /**
@@ -60,7 +62,7 @@ public class __pthread_cond_s {
         return __wseq$LAYOUT;
     }
 
-    private static final long __wseq$OFFSET = 0;
+    private static final long __wseq$OFFSET = $LAYOUT.byteOffset(groupElement("__wseq"));
 
     /**
      * Offset for field:
@@ -104,7 +106,7 @@ public class __pthread_cond_s {
         return __g1_start$LAYOUT;
     }
 
-    private static final long __g1_start$OFFSET = 8;
+    private static final long __g1_start$OFFSET = $LAYOUT.byteOffset(groupElement("__g1_start"));
 
     /**
      * Offset for field:
@@ -136,83 +138,6 @@ public class __pthread_cond_s {
         MemorySegment.copy(fieldValue, 0L, struct, __g1_start$OFFSET, __g1_start$LAYOUT.byteSize());
     }
 
-    private static final SequenceLayout __g_refs$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("__g_refs"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * unsigned int __g_refs[2]
-     * }
-     */
-    public static final SequenceLayout __g_refs$layout() {
-        return __g_refs$LAYOUT;
-    }
-
-    private static final long __g_refs$OFFSET = 16;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * unsigned int __g_refs[2]
-     * }
-     */
-    public static final long __g_refs$offset() {
-        return __g_refs$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * unsigned int __g_refs[2]
-     * }
-     */
-    public static MemorySegment __g_refs(MemorySegment struct) {
-        return struct.asSlice(__g_refs$OFFSET, __g_refs$LAYOUT.byteSize());
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * unsigned int __g_refs[2]
-     * }
-     */
-    public static void __g_refs(MemorySegment struct, MemorySegment fieldValue) {
-        MemorySegment.copy(fieldValue, 0L, struct, __g_refs$OFFSET, __g_refs$LAYOUT.byteSize());
-    }
-
-    private static long[] __g_refs$DIMS = { 2 };
-
-    /**
-     * Dimensions for array field:
-     * {@snippet lang=c :
-     * unsigned int __g_refs[2]
-     * }
-     */
-    public static long[] __g_refs$dimensions() {
-        return __g_refs$DIMS;
-    }
-    private static final VarHandle __g_refs$ELEM_HANDLE = __g_refs$LAYOUT.varHandle(sequenceElement());
-
-    /**
-     * Indexed getter for field:
-     * {@snippet lang=c :
-     * unsigned int __g_refs[2]
-     * }
-     */
-    public static int __g_refs(MemorySegment struct, long index0) {
-        return (int)__g_refs$ELEM_HANDLE.get(struct, 0L, index0);
-    }
-
-    /**
-     * Indexed setter for field:
-     * {@snippet lang=c :
-     * unsigned int __g_refs[2]
-     * }
-     */
-    public static void __g_refs(MemorySegment struct, long index0, int fieldValue) {
-        __g_refs$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
-    }
-
     private static final SequenceLayout __g_size$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("__g_size"));
 
     /**
@@ -225,7 +150,7 @@ public class __pthread_cond_s {
         return __g_size$LAYOUT;
     }
 
-    private static final long __g_size$OFFSET = 24;
+    private static final long __g_size$OFFSET = $LAYOUT.byteOffset(groupElement("__g_size"));
 
     /**
      * Offset for field:
@@ -277,7 +202,7 @@ public class __pthread_cond_s {
      * }
      */
     public static int __g_size(MemorySegment struct, long index0) {
-        return (int)__g_size$ELEM_HANDLE.get(struct, 0L, index0);
+        return (int)__g_size$ELEM_HANDLE.get(struct, __g_size$OFFSET, index0);
     }
 
     /**
@@ -287,7 +212,7 @@ public class __pthread_cond_s {
      * }
      */
     public static void __g_size(MemorySegment struct, long index0, int fieldValue) {
-        __g_size$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        __g_size$ELEM_HANDLE.set(struct, __g_size$OFFSET, index0, fieldValue);
     }
 
     private static final OfInt __g1_orig_size$LAYOUT = (OfInt)$LAYOUT.select(groupElement("__g1_orig_size"));
@@ -302,7 +227,7 @@ public class __pthread_cond_s {
         return __g1_orig_size$LAYOUT;
     }
 
-    private static final long __g1_orig_size$OFFSET = 32;
+    private static final long __g1_orig_size$OFFSET = $LAYOUT.byteOffset(groupElement("__g1_orig_size"));
 
     /**
      * Offset for field:
@@ -346,7 +271,7 @@ public class __pthread_cond_s {
         return __wrefs$LAYOUT;
     }
 
-    private static final long __wrefs$OFFSET = 36;
+    private static final long __wrefs$OFFSET = $LAYOUT.byteOffset(groupElement("__wrefs"));
 
     /**
      * Offset for field:
@@ -390,7 +315,7 @@ public class __pthread_cond_s {
         return __g_signals$LAYOUT;
     }
 
-    private static final long __g_signals$OFFSET = 40;
+    private static final long __g_signals$OFFSET = $LAYOUT.byteOffset(groupElement("__g_signals"));
 
     /**
      * Offset for field:
@@ -442,7 +367,7 @@ public class __pthread_cond_s {
      * }
      */
     public static int __g_signals(MemorySegment struct, long index0) {
-        return (int)__g_signals$ELEM_HANDLE.get(struct, 0L, index0);
+        return (int)__g_signals$ELEM_HANDLE.get(struct, __g_signals$OFFSET, index0);
     }
 
     /**
@@ -452,7 +377,95 @@ public class __pthread_cond_s {
      * }
      */
     public static void __g_signals(MemorySegment struct, long index0, int fieldValue) {
-        __g_signals$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        __g_signals$ELEM_HANDLE.set(struct, __g_signals$OFFSET, index0, fieldValue);
+    }
+
+    private static final OfInt __unused_initialized_1$LAYOUT = (OfInt)$LAYOUT.select(groupElement("__unused_initialized_1"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * unsigned int __unused_initialized_1
+     * }
+     */
+    public static final OfInt __unused_initialized_1$layout() {
+        return __unused_initialized_1$LAYOUT;
+    }
+
+    private static final long __unused_initialized_1$OFFSET = $LAYOUT.byteOffset(groupElement("__unused_initialized_1"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * unsigned int __unused_initialized_1
+     * }
+     */
+    public static final long __unused_initialized_1$offset() {
+        return __unused_initialized_1$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * unsigned int __unused_initialized_1
+     * }
+     */
+    public static int __unused_initialized_1(MemorySegment struct) {
+        return struct.get(__unused_initialized_1$LAYOUT, __unused_initialized_1$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * unsigned int __unused_initialized_1
+     * }
+     */
+    public static void __unused_initialized_1(MemorySegment struct, int fieldValue) {
+        struct.set(__unused_initialized_1$LAYOUT, __unused_initialized_1$OFFSET, fieldValue);
+    }
+
+    private static final OfInt __unused_initialized_2$LAYOUT = (OfInt)$LAYOUT.select(groupElement("__unused_initialized_2"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * unsigned int __unused_initialized_2
+     * }
+     */
+    public static final OfInt __unused_initialized_2$layout() {
+        return __unused_initialized_2$LAYOUT;
+    }
+
+    private static final long __unused_initialized_2$OFFSET = $LAYOUT.byteOffset(groupElement("__unused_initialized_2"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * unsigned int __unused_initialized_2
+     * }
+     */
+    public static final long __unused_initialized_2$offset() {
+        return __unused_initialized_2$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * unsigned int __unused_initialized_2
+     * }
+     */
+    public static int __unused_initialized_2(MemorySegment struct) {
+        return struct.get(__unused_initialized_2$LAYOUT, __unused_initialized_2$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * unsigned int __unused_initialized_2
+     * }
+     */
+    public static void __unused_initialized_2(MemorySegment struct, int fieldValue) {
+        struct.set(__unused_initialized_2$LAYOUT, __unused_initialized_2$OFFSET, fieldValue);
     }
 
     /**
@@ -484,7 +497,7 @@ public class __pthread_cond_s {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -492,7 +505,7 @@ public class __pthread_cond_s {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

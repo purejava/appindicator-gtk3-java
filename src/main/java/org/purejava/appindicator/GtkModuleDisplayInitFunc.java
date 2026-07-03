@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GtkModuleDisplayInitFunc)(GdkDisplay *)
  * }
  */
-public class GtkModuleDisplayInitFunc {
+public final class GtkModuleDisplayInitFunc {
+
+    private GtkModuleDisplayInitFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -52,9 +56,11 @@ public class GtkModuleDisplayInitFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment display) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment display) {
         try {
              DOWN$MH.invokeExact(funcPtr, display);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

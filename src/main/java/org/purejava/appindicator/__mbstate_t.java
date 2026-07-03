@@ -53,7 +53,7 @@ public class __mbstate_t {
         return __count$LAYOUT;
     }
 
-    private static final long __count$OFFSET = 0;
+    private static final long __count$OFFSET = $LAYOUT.byteOffset(groupElement("__count"));
 
     /**
      * Offset for field:
@@ -123,7 +123,7 @@ public class __mbstate_t {
             return __wch$LAYOUT;
         }
 
-        private static final long __wch$OFFSET = 0;
+        private static final long __wch$OFFSET = $LAYOUT.byteOffset(groupElement("__wch"));
 
         /**
          * Offset for field:
@@ -167,7 +167,7 @@ public class __mbstate_t {
             return __wchb$LAYOUT;
         }
 
-        private static final long __wchb$OFFSET = 0;
+        private static final long __wchb$OFFSET = $LAYOUT.byteOffset(groupElement("__wchb"));
 
         /**
          * Offset for field:
@@ -219,7 +219,7 @@ public class __mbstate_t {
          * }
          */
         public static byte __wchb(MemorySegment union, long index0) {
-            return (byte)__wchb$ELEM_HANDLE.get(union, 0L, index0);
+            return (byte)__wchb$ELEM_HANDLE.get(union, __wchb$OFFSET, index0);
         }
 
         /**
@@ -229,7 +229,7 @@ public class __mbstate_t {
          * }
          */
         public static void __wchb(MemorySegment union, long index0, byte fieldValue) {
-            __wchb$ELEM_HANDLE.set(union, 0L, index0, fieldValue);
+            __wchb$ELEM_HANDLE.set(union, __wchb$OFFSET, index0, fieldValue);
         }
 
         /**
@@ -261,7 +261,7 @@ public class __mbstate_t {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -269,7 +269,7 @@ public class __mbstate_t {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code elementCount * layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -292,7 +292,7 @@ public class __mbstate_t {
         return __value$LAYOUT;
     }
 
-    private static final long __value$OFFSET = 4;
+    private static final long __value$OFFSET = $LAYOUT.byteOffset(groupElement("__value"));
 
     /**
      * Offset for field:
@@ -362,7 +362,7 @@ public class __mbstate_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -370,7 +370,7 @@ public class __mbstate_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -63,7 +63,7 @@ public class _GtkScrolledWindowClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -107,7 +107,7 @@ public class _GtkScrolledWindowClass {
         return scrollbar_spacing$LAYOUT;
     }
 
-    private static final long scrollbar_spacing$OFFSET = 1008;
+    private static final long scrollbar_spacing$OFFSET = $LAYOUT.byteOffset(groupElement("scrollbar_spacing"));
 
     /**
      * Offset for field:
@@ -144,7 +144,11 @@ public class _GtkScrolledWindowClass {
      * gboolean (*scroll_child)(GtkScrolledWindow *, GtkScrollType, gboolean)
      * }
      */
-    public class scroll_child {
+    public final static class scroll_child {
+
+        private scroll_child() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -182,9 +186,11 @@ public class _GtkScrolledWindowClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -203,7 +209,7 @@ public class _GtkScrolledWindowClass {
         return scroll_child$LAYOUT;
     }
 
-    private static final long scroll_child$OFFSET = 1016;
+    private static final long scroll_child$OFFSET = $LAYOUT.byteOffset(groupElement("scroll_child"));
 
     /**
      * Offset for field:
@@ -240,7 +246,11 @@ public class _GtkScrolledWindowClass {
      * void (*move_focus_out)(GtkScrolledWindow *, GtkDirectionType)
      * }
      */
-    public class move_focus_out {
+    public final static class move_focus_out {
+
+        private move_focus_out() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -276,9 +286,11 @@ public class _GtkScrolledWindowClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -297,7 +309,7 @@ public class _GtkScrolledWindowClass {
         return move_focus_out$LAYOUT;
     }
 
-    private static final long move_focus_out$OFFSET = 1024;
+    private static final long move_focus_out$OFFSET = $LAYOUT.byteOffset(groupElement("move_focus_out"));
 
     /**
      * Offset for field:
@@ -334,7 +346,11 @@ public class _GtkScrolledWindowClass {
      * void (*_gtk_reserved1)(void)
      * }
      */
-    public class _gtk_reserved1 {
+    public final static class _gtk_reserved1 {
+
+        private _gtk_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -370,6 +386,8 @@ public class _GtkScrolledWindowClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -388,7 +406,7 @@ public class _GtkScrolledWindowClass {
         return _gtk_reserved1$LAYOUT;
     }
 
-    private static final long _gtk_reserved1$OFFSET = 1032;
+    private static final long _gtk_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved1"));
 
     /**
      * Offset for field:
@@ -425,7 +443,11 @@ public class _GtkScrolledWindowClass {
      * void (*_gtk_reserved2)(void)
      * }
      */
-    public class _gtk_reserved2 {
+    public final static class _gtk_reserved2 {
+
+        private _gtk_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -461,6 +483,8 @@ public class _GtkScrolledWindowClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -479,7 +503,7 @@ public class _GtkScrolledWindowClass {
         return _gtk_reserved2$LAYOUT;
     }
 
-    private static final long _gtk_reserved2$OFFSET = 1040;
+    private static final long _gtk_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved2"));
 
     /**
      * Offset for field:
@@ -516,7 +540,11 @@ public class _GtkScrolledWindowClass {
      * void (*_gtk_reserved3)(void)
      * }
      */
-    public class _gtk_reserved3 {
+    public final static class _gtk_reserved3 {
+
+        private _gtk_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -552,6 +580,8 @@ public class _GtkScrolledWindowClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -570,7 +600,7 @@ public class _GtkScrolledWindowClass {
         return _gtk_reserved3$LAYOUT;
     }
 
-    private static final long _gtk_reserved3$OFFSET = 1048;
+    private static final long _gtk_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved3"));
 
     /**
      * Offset for field:
@@ -607,7 +637,11 @@ public class _GtkScrolledWindowClass {
      * void (*_gtk_reserved4)(void)
      * }
      */
-    public class _gtk_reserved4 {
+    public final static class _gtk_reserved4 {
+
+        private _gtk_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -643,6 +677,8 @@ public class _GtkScrolledWindowClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -661,7 +697,7 @@ public class _GtkScrolledWindowClass {
         return _gtk_reserved4$LAYOUT;
     }
 
-    private static final long _gtk_reserved4$OFFSET = 1056;
+    private static final long _gtk_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved4"));
 
     /**
      * Offset for field:
@@ -722,7 +758,7 @@ public class _GtkScrolledWindowClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -730,7 +766,7 @@ public class _GtkScrolledWindowClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

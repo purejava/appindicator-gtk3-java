@@ -54,7 +54,7 @@ public class _GSocketConnectableIface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -91,7 +91,11 @@ public class _GSocketConnectableIface {
      * GSocketAddressEnumerator *(*enumerate)(GSocketConnectable *)
      * }
      */
-    public class enumerate {
+    public final static class enumerate {
+
+        private enumerate() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -127,9 +131,11 @@ public class _GSocketConnectableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -148,7 +154,7 @@ public class _GSocketConnectableIface {
         return enumerate$LAYOUT;
     }
 
-    private static final long enumerate$OFFSET = 16;
+    private static final long enumerate$OFFSET = $LAYOUT.byteOffset(groupElement("enumerate"));
 
     /**
      * Offset for field:
@@ -185,7 +191,11 @@ public class _GSocketConnectableIface {
      * GSocketAddressEnumerator *(*proxy_enumerate)(GSocketConnectable *)
      * }
      */
-    public class proxy_enumerate {
+    public final static class proxy_enumerate {
+
+        private proxy_enumerate() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -221,9 +231,11 @@ public class _GSocketConnectableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -242,7 +254,7 @@ public class _GSocketConnectableIface {
         return proxy_enumerate$LAYOUT;
     }
 
-    private static final long proxy_enumerate$OFFSET = 24;
+    private static final long proxy_enumerate$OFFSET = $LAYOUT.byteOffset(groupElement("proxy_enumerate"));
 
     /**
      * Offset for field:
@@ -279,7 +291,11 @@ public class _GSocketConnectableIface {
      * gchar *(*to_string)(GSocketConnectable *)
      * }
      */
-    public class to_string {
+    public final static class to_string {
+
+        private to_string() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -315,9 +331,11 @@ public class _GSocketConnectableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -336,7 +354,7 @@ public class _GSocketConnectableIface {
         return to_string$LAYOUT;
     }
 
-    private static final long to_string$OFFSET = 32;
+    private static final long to_string$OFFSET = $LAYOUT.byteOffset(groupElement("to_string"));
 
     /**
      * Offset for field:
@@ -397,7 +415,7 @@ public class _GSocketConnectableIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -405,7 +423,7 @@ public class _GSocketConnectableIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

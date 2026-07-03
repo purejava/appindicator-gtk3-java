@@ -56,7 +56,7 @@ public class _GDBusInterfaceIface {
         return parent_iface$LAYOUT;
     }
 
-    private static final long parent_iface$OFFSET = 0;
+    private static final long parent_iface$OFFSET = $LAYOUT.byteOffset(groupElement("parent_iface"));
 
     /**
      * Offset for field:
@@ -93,7 +93,11 @@ public class _GDBusInterfaceIface {
      * GDBusInterfaceInfo *(*get_info)(GDBusInterface *)
      * }
      */
-    public class get_info {
+    public final static class get_info {
+
+        private get_info() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -129,9 +133,11 @@ public class _GDBusInterfaceIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -150,7 +156,7 @@ public class _GDBusInterfaceIface {
         return get_info$LAYOUT;
     }
 
-    private static final long get_info$OFFSET = 16;
+    private static final long get_info$OFFSET = $LAYOUT.byteOffset(groupElement("get_info"));
 
     /**
      * Offset for field:
@@ -187,7 +193,11 @@ public class _GDBusInterfaceIface {
      * GDBusObject *(*get_object)(GDBusInterface *)
      * }
      */
-    public class get_object {
+    public final static class get_object {
+
+        private get_object() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -223,9 +233,11 @@ public class _GDBusInterfaceIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -244,7 +256,7 @@ public class _GDBusInterfaceIface {
         return get_object$LAYOUT;
     }
 
-    private static final long get_object$OFFSET = 24;
+    private static final long get_object$OFFSET = $LAYOUT.byteOffset(groupElement("get_object"));
 
     /**
      * Offset for field:
@@ -281,7 +293,11 @@ public class _GDBusInterfaceIface {
      * void (*set_object)(GDBusInterface *, GDBusObject *)
      * }
      */
-    public class set_object {
+    public final static class set_object {
+
+        private set_object() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -317,9 +333,11 @@ public class _GDBusInterfaceIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -338,7 +356,7 @@ public class _GDBusInterfaceIface {
         return set_object$LAYOUT;
     }
 
-    private static final long set_object$OFFSET = 32;
+    private static final long set_object$OFFSET = $LAYOUT.byteOffset(groupElement("set_object"));
 
     /**
      * Offset for field:
@@ -375,7 +393,11 @@ public class _GDBusInterfaceIface {
      * GDBusObject *(*dup_object)(GDBusInterface *)
      * }
      */
-    public class dup_object {
+    public final static class dup_object {
+
+        private dup_object() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -411,9 +433,11 @@ public class _GDBusInterfaceIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -432,7 +456,7 @@ public class _GDBusInterfaceIface {
         return dup_object$LAYOUT;
     }
 
-    private static final long dup_object$OFFSET = 40;
+    private static final long dup_object$OFFSET = $LAYOUT.byteOffset(groupElement("dup_object"));
 
     /**
      * Offset for field:
@@ -493,7 +517,7 @@ public class _GDBusInterfaceIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -501,7 +525,7 @@ public class _GDBusInterfaceIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

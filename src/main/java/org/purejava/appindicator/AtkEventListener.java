@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*AtkEventListener)(AtkObject *)
  * }
  */
-public class AtkEventListener {
+public final class AtkEventListener {
+
+    private AtkEventListener() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -52,9 +56,11 @@ public class AtkEventListener {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment obj) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment obj) {
         try {
              DOWN$MH.invokeExact(funcPtr, obj);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GBoxedFreeFunc)(gpointer)
  * }
  */
-public class GBoxedFreeFunc {
+public final class GBoxedFreeFunc {
+
+    private GBoxedFreeFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -52,9 +56,11 @@ public class GBoxedFreeFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment boxed) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment boxed) {
         try {
              DOWN$MH.invokeExact(funcPtr, boxed);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

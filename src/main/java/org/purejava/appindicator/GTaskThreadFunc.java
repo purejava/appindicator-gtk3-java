@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GTaskThreadFunc)(GTask *, gpointer, gpointer, GCancellable *)
  * }
  */
-public class GTaskThreadFunc {
+public final class GTaskThreadFunc {
+
+    private GTaskThreadFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -55,9 +59,11 @@ public class GTaskThreadFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment task, MemorySegment source_object, MemorySegment task_data, MemorySegment cancellable) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment task, MemorySegment source_object, MemorySegment task_data, MemorySegment cancellable) {
         try {
              DOWN$MH.invokeExact(funcPtr, task, source_object, task_data, cancellable);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

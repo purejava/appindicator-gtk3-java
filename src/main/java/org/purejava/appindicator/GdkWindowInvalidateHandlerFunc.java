@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GdkWindowInvalidateHandlerFunc)(GdkWindow *, cairo_region_t *)
  * }
  */
-public class GdkWindowInvalidateHandlerFunc {
+public final class GdkWindowInvalidateHandlerFunc {
+
+    private GdkWindowInvalidateHandlerFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -53,9 +57,11 @@ public class GdkWindowInvalidateHandlerFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment window, MemorySegment region) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment window, MemorySegment region) {
         try {
              DOWN$MH.invokeExact(funcPtr, window, region);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

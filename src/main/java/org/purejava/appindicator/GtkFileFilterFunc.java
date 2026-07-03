@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gboolean (*GtkFileFilterFunc)(const GtkFileFilterInfo *, gpointer)
  * }
  */
-public class GtkFileFilterFunc {
+public final class GtkFileFilterFunc {
+
+    private GtkFileFilterFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +58,11 @@ public class GtkFileFilterFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment filter_info, MemorySegment data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment filter_info, MemorySegment data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, filter_info, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

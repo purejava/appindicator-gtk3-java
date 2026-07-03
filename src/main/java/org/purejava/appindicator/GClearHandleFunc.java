@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GClearHandleFunc)(guint)
  * }
  */
-public class GClearHandleFunc {
+public final class GClearHandleFunc {
+
+    private GClearHandleFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -52,9 +56,11 @@ public class GClearHandleFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,int handle_id) {
+    public static void invoke(MemorySegment funcPtr, int handle_id) {
         try {
              DOWN$MH.invokeExact(funcPtr, handle_id);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

@@ -98,7 +98,7 @@ public class _GAppInfoIface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -135,7 +135,11 @@ public class _GAppInfoIface {
      * GAppInfo *(*dup)(GAppInfo *)
      * }
      */
-    public class dup {
+    public final static class dup {
+
+        private dup() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -171,9 +175,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -192,7 +198,7 @@ public class _GAppInfoIface {
         return dup$LAYOUT;
     }
 
-    private static final long dup$OFFSET = 16;
+    private static final long dup$OFFSET = $LAYOUT.byteOffset(groupElement("dup"));
 
     /**
      * Offset for field:
@@ -229,7 +235,11 @@ public class _GAppInfoIface {
      * gboolean (*equal)(GAppInfo *, GAppInfo *)
      * }
      */
-    public class equal {
+    public final static class equal {
+
+        private equal() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -266,9 +276,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -287,7 +299,7 @@ public class _GAppInfoIface {
         return equal$LAYOUT;
     }
 
-    private static final long equal$OFFSET = 24;
+    private static final long equal$OFFSET = $LAYOUT.byteOffset(groupElement("equal"));
 
     /**
      * Offset for field:
@@ -324,7 +336,11 @@ public class _GAppInfoIface {
      * const char *(*get_id)(GAppInfo *)
      * }
      */
-    public class get_id {
+    public final static class get_id {
+
+        private get_id() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -360,9 +376,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -381,7 +399,7 @@ public class _GAppInfoIface {
         return get_id$LAYOUT;
     }
 
-    private static final long get_id$OFFSET = 32;
+    private static final long get_id$OFFSET = $LAYOUT.byteOffset(groupElement("get_id"));
 
     /**
      * Offset for field:
@@ -418,7 +436,11 @@ public class _GAppInfoIface {
      * const char *(*get_name)(GAppInfo *)
      * }
      */
-    public class get_name {
+    public final static class get_name {
+
+        private get_name() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -454,9 +476,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -475,7 +499,7 @@ public class _GAppInfoIface {
         return get_name$LAYOUT;
     }
 
-    private static final long get_name$OFFSET = 40;
+    private static final long get_name$OFFSET = $LAYOUT.byteOffset(groupElement("get_name"));
 
     /**
      * Offset for field:
@@ -512,7 +536,11 @@ public class _GAppInfoIface {
      * const char *(*get_description)(GAppInfo *)
      * }
      */
-    public class get_description {
+    public final static class get_description {
+
+        private get_description() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -548,9 +576,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -569,7 +599,7 @@ public class _GAppInfoIface {
         return get_description$LAYOUT;
     }
 
-    private static final long get_description$OFFSET = 48;
+    private static final long get_description$OFFSET = $LAYOUT.byteOffset(groupElement("get_description"));
 
     /**
      * Offset for field:
@@ -606,7 +636,11 @@ public class _GAppInfoIface {
      * const char *(*get_executable)(GAppInfo *)
      * }
      */
-    public class get_executable {
+    public final static class get_executable {
+
+        private get_executable() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -642,9 +676,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -663,7 +699,7 @@ public class _GAppInfoIface {
         return get_executable$LAYOUT;
     }
 
-    private static final long get_executable$OFFSET = 56;
+    private static final long get_executable$OFFSET = $LAYOUT.byteOffset(groupElement("get_executable"));
 
     /**
      * Offset for field:
@@ -700,7 +736,11 @@ public class _GAppInfoIface {
      * GIcon *(*get_icon)(GAppInfo *)
      * }
      */
-    public class get_icon {
+    public final static class get_icon {
+
+        private get_icon() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -736,9 +776,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -757,7 +799,7 @@ public class _GAppInfoIface {
         return get_icon$LAYOUT;
     }
 
-    private static final long get_icon$OFFSET = 64;
+    private static final long get_icon$OFFSET = $LAYOUT.byteOffset(groupElement("get_icon"));
 
     /**
      * Offset for field:
@@ -794,7 +836,11 @@ public class _GAppInfoIface {
      * gboolean (*launch)(GAppInfo *, GList *, GAppLaunchContext *, GError **)
      * }
      */
-    public class launch {
+    public final static class launch {
+
+        private launch() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -833,9 +879,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -854,7 +902,7 @@ public class _GAppInfoIface {
         return launch$LAYOUT;
     }
 
-    private static final long launch$OFFSET = 72;
+    private static final long launch$OFFSET = $LAYOUT.byteOffset(groupElement("launch"));
 
     /**
      * Offset for field:
@@ -891,7 +939,11 @@ public class _GAppInfoIface {
      * gboolean (*supports_uris)(GAppInfo *)
      * }
      */
-    public class supports_uris {
+    public final static class supports_uris {
+
+        private supports_uris() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -927,9 +979,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -948,7 +1002,7 @@ public class _GAppInfoIface {
         return supports_uris$LAYOUT;
     }
 
-    private static final long supports_uris$OFFSET = 80;
+    private static final long supports_uris$OFFSET = $LAYOUT.byteOffset(groupElement("supports_uris"));
 
     /**
      * Offset for field:
@@ -985,7 +1039,11 @@ public class _GAppInfoIface {
      * gboolean (*supports_files)(GAppInfo *)
      * }
      */
-    public class supports_files {
+    public final static class supports_files {
+
+        private supports_files() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1021,9 +1079,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1042,7 +1102,7 @@ public class _GAppInfoIface {
         return supports_files$LAYOUT;
     }
 
-    private static final long supports_files$OFFSET = 88;
+    private static final long supports_files$OFFSET = $LAYOUT.byteOffset(groupElement("supports_files"));
 
     /**
      * Offset for field:
@@ -1079,7 +1139,11 @@ public class _GAppInfoIface {
      * gboolean (*launch_uris)(GAppInfo *, GList *, GAppLaunchContext *, GError **)
      * }
      */
-    public class launch_uris {
+    public final static class launch_uris {
+
+        private launch_uris() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1118,9 +1182,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1139,7 +1205,7 @@ public class _GAppInfoIface {
         return launch_uris$LAYOUT;
     }
 
-    private static final long launch_uris$OFFSET = 96;
+    private static final long launch_uris$OFFSET = $LAYOUT.byteOffset(groupElement("launch_uris"));
 
     /**
      * Offset for field:
@@ -1176,7 +1242,11 @@ public class _GAppInfoIface {
      * gboolean (*should_show)(GAppInfo *)
      * }
      */
-    public class should_show {
+    public final static class should_show {
+
+        private should_show() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1212,9 +1282,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1233,7 +1305,7 @@ public class _GAppInfoIface {
         return should_show$LAYOUT;
     }
 
-    private static final long should_show$OFFSET = 104;
+    private static final long should_show$OFFSET = $LAYOUT.byteOffset(groupElement("should_show"));
 
     /**
      * Offset for field:
@@ -1270,7 +1342,11 @@ public class _GAppInfoIface {
      * gboolean (*set_as_default_for_type)(GAppInfo *, const char *, GError **)
      * }
      */
-    public class set_as_default_for_type {
+    public final static class set_as_default_for_type {
+
+        private set_as_default_for_type() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1308,9 +1384,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1329,7 +1407,7 @@ public class _GAppInfoIface {
         return set_as_default_for_type$LAYOUT;
     }
 
-    private static final long set_as_default_for_type$OFFSET = 112;
+    private static final long set_as_default_for_type$OFFSET = $LAYOUT.byteOffset(groupElement("set_as_default_for_type"));
 
     /**
      * Offset for field:
@@ -1366,7 +1444,11 @@ public class _GAppInfoIface {
      * gboolean (*set_as_default_for_extension)(GAppInfo *, const char *, GError **)
      * }
      */
-    public class set_as_default_for_extension {
+    public final static class set_as_default_for_extension {
+
+        private set_as_default_for_extension() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1404,9 +1486,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1425,7 +1509,7 @@ public class _GAppInfoIface {
         return set_as_default_for_extension$LAYOUT;
     }
 
-    private static final long set_as_default_for_extension$OFFSET = 120;
+    private static final long set_as_default_for_extension$OFFSET = $LAYOUT.byteOffset(groupElement("set_as_default_for_extension"));
 
     /**
      * Offset for field:
@@ -1462,7 +1546,11 @@ public class _GAppInfoIface {
      * gboolean (*add_supports_type)(GAppInfo *, const char *, GError **)
      * }
      */
-    public class add_supports_type {
+    public final static class add_supports_type {
+
+        private add_supports_type() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1500,9 +1588,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1521,7 +1611,7 @@ public class _GAppInfoIface {
         return add_supports_type$LAYOUT;
     }
 
-    private static final long add_supports_type$OFFSET = 128;
+    private static final long add_supports_type$OFFSET = $LAYOUT.byteOffset(groupElement("add_supports_type"));
 
     /**
      * Offset for field:
@@ -1558,7 +1648,11 @@ public class _GAppInfoIface {
      * gboolean (*can_remove_supports_type)(GAppInfo *)
      * }
      */
-    public class can_remove_supports_type {
+    public final static class can_remove_supports_type {
+
+        private can_remove_supports_type() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1594,9 +1688,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1615,7 +1711,7 @@ public class _GAppInfoIface {
         return can_remove_supports_type$LAYOUT;
     }
 
-    private static final long can_remove_supports_type$OFFSET = 136;
+    private static final long can_remove_supports_type$OFFSET = $LAYOUT.byteOffset(groupElement("can_remove_supports_type"));
 
     /**
      * Offset for field:
@@ -1652,7 +1748,11 @@ public class _GAppInfoIface {
      * gboolean (*remove_supports_type)(GAppInfo *, const char *, GError **)
      * }
      */
-    public class remove_supports_type {
+    public final static class remove_supports_type {
+
+        private remove_supports_type() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1690,9 +1790,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1711,7 +1813,7 @@ public class _GAppInfoIface {
         return remove_supports_type$LAYOUT;
     }
 
-    private static final long remove_supports_type$OFFSET = 144;
+    private static final long remove_supports_type$OFFSET = $LAYOUT.byteOffset(groupElement("remove_supports_type"));
 
     /**
      * Offset for field:
@@ -1748,7 +1850,11 @@ public class _GAppInfoIface {
      * gboolean (*can_delete)(GAppInfo *)
      * }
      */
-    public class can_delete {
+    public final static class can_delete {
+
+        private can_delete() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1784,9 +1890,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1805,7 +1913,7 @@ public class _GAppInfoIface {
         return can_delete$LAYOUT;
     }
 
-    private static final long can_delete$OFFSET = 152;
+    private static final long can_delete$OFFSET = $LAYOUT.byteOffset(groupElement("can_delete"));
 
     /**
      * Offset for field:
@@ -1842,7 +1950,11 @@ public class _GAppInfoIface {
      * gboolean (*do_delete)(GAppInfo *)
      * }
      */
-    public class do_delete {
+    public final static class do_delete {
+
+        private do_delete() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1878,9 +1990,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1899,7 +2013,7 @@ public class _GAppInfoIface {
         return do_delete$LAYOUT;
     }
 
-    private static final long do_delete$OFFSET = 160;
+    private static final long do_delete$OFFSET = $LAYOUT.byteOffset(groupElement("do_delete"));
 
     /**
      * Offset for field:
@@ -1936,7 +2050,11 @@ public class _GAppInfoIface {
      * const char *(*get_commandline)(GAppInfo *)
      * }
      */
-    public class get_commandline {
+    public final static class get_commandline {
+
+        private get_commandline() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1972,9 +2090,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1993,7 +2113,7 @@ public class _GAppInfoIface {
         return get_commandline$LAYOUT;
     }
 
-    private static final long get_commandline$OFFSET = 168;
+    private static final long get_commandline$OFFSET = $LAYOUT.byteOffset(groupElement("get_commandline"));
 
     /**
      * Offset for field:
@@ -2030,7 +2150,11 @@ public class _GAppInfoIface {
      * const char *(*get_display_name)(GAppInfo *)
      * }
      */
-    public class get_display_name {
+    public final static class get_display_name {
+
+        private get_display_name() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2066,9 +2190,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2087,7 +2213,7 @@ public class _GAppInfoIface {
         return get_display_name$LAYOUT;
     }
 
-    private static final long get_display_name$OFFSET = 176;
+    private static final long get_display_name$OFFSET = $LAYOUT.byteOffset(groupElement("get_display_name"));
 
     /**
      * Offset for field:
@@ -2124,7 +2250,11 @@ public class _GAppInfoIface {
      * gboolean (*set_as_last_used_for_type)(GAppInfo *, const char *, GError **)
      * }
      */
-    public class set_as_last_used_for_type {
+    public final static class set_as_last_used_for_type {
+
+        private set_as_last_used_for_type() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2162,9 +2292,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2183,7 +2315,7 @@ public class _GAppInfoIface {
         return set_as_last_used_for_type$LAYOUT;
     }
 
-    private static final long set_as_last_used_for_type$OFFSET = 184;
+    private static final long set_as_last_used_for_type$OFFSET = $LAYOUT.byteOffset(groupElement("set_as_last_used_for_type"));
 
     /**
      * Offset for field:
@@ -2220,7 +2352,11 @@ public class _GAppInfoIface {
      * const char **(*get_supported_types)(GAppInfo *)
      * }
      */
-    public class get_supported_types {
+    public final static class get_supported_types {
+
+        private get_supported_types() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2256,9 +2392,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2277,7 +2415,7 @@ public class _GAppInfoIface {
         return get_supported_types$LAYOUT;
     }
 
-    private static final long get_supported_types$OFFSET = 192;
+    private static final long get_supported_types$OFFSET = $LAYOUT.byteOffset(groupElement("get_supported_types"));
 
     /**
      * Offset for field:
@@ -2314,7 +2452,11 @@ public class _GAppInfoIface {
      * void (*launch_uris_async)(GAppInfo *, GList *, GAppLaunchContext *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class launch_uris_async {
+    public final static class launch_uris_async {
+
+        private launch_uris_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2354,9 +2496,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2375,7 +2519,7 @@ public class _GAppInfoIface {
         return launch_uris_async$LAYOUT;
     }
 
-    private static final long launch_uris_async$OFFSET = 200;
+    private static final long launch_uris_async$OFFSET = $LAYOUT.byteOffset(groupElement("launch_uris_async"));
 
     /**
      * Offset for field:
@@ -2412,7 +2556,11 @@ public class _GAppInfoIface {
      * gboolean (*launch_uris_finish)(GAppInfo *, GAsyncResult *, GError **)
      * }
      */
-    public class launch_uris_finish {
+    public final static class launch_uris_finish {
+
+        private launch_uris_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2450,9 +2598,11 @@ public class _GAppInfoIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2471,7 +2621,7 @@ public class _GAppInfoIface {
         return launch_uris_finish$LAYOUT;
     }
 
-    private static final long launch_uris_finish$OFFSET = 208;
+    private static final long launch_uris_finish$OFFSET = $LAYOUT.byteOffset(groupElement("launch_uris_finish"));
 
     /**
      * Offset for field:
@@ -2532,7 +2682,7 @@ public class _GAppInfoIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -2540,7 +2690,7 @@ public class _GAppInfoIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

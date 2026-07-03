@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GtkTreeViewSearchPositionFunc)(GtkTreeView *, GtkWidget *, gpointer)
  * }
  */
-public class GtkTreeViewSearchPositionFunc {
+public final class GtkTreeViewSearchPositionFunc {
+
+    private GtkTreeViewSearchPositionFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +58,11 @@ public class GtkTreeViewSearchPositionFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment tree_view, MemorySegment search_dialog, MemorySegment user_data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment tree_view, MemorySegment search_dialog, MemorySegment user_data) {
         try {
              DOWN$MH.invokeExact(funcPtr, tree_view, search_dialog, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

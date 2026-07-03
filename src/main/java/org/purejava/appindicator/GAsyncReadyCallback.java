@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GAsyncReadyCallback)(GObject *, GAsyncResult *, gpointer)
  * }
  */
-public class GAsyncReadyCallback {
+public final class GAsyncReadyCallback {
+
+    private GAsyncReadyCallback() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +58,11 @@ public class GAsyncReadyCallback {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment source_object, MemorySegment res, MemorySegment data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment source_object, MemorySegment res, MemorySegment data) {
         try {
              DOWN$MH.invokeExact(funcPtr, source_object, res, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

@@ -25,7 +25,7 @@ public class ldiv_t {
     private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
         app_indicator_h.C_LONG.withName("quot"),
         app_indicator_h.C_LONG.withName("rem")
-    ).withName("$anon$67:9");
+    ).withName("$anon$71:9");
 
     /**
      * The layout of this struct
@@ -46,7 +46,7 @@ public class ldiv_t {
         return quot$LAYOUT;
     }
 
-    private static final long quot$OFFSET = 0;
+    private static final long quot$OFFSET = $LAYOUT.byteOffset(groupElement("quot"));
 
     /**
      * Offset for field:
@@ -90,7 +90,7 @@ public class ldiv_t {
         return rem$LAYOUT;
     }
 
-    private static final long rem$OFFSET = 8;
+    private static final long rem$OFFSET = $LAYOUT.byteOffset(groupElement("rem"));
 
     /**
      * Offset for field:
@@ -151,7 +151,7 @@ public class ldiv_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -159,7 +159,7 @@ public class ldiv_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gboolean (*GtkEntryCompletionMatchFunc)(GtkEntryCompletion *, const gchar *, GtkTreeIter *, gpointer)
  * }
  */
-public class GtkEntryCompletionMatchFunc {
+public final class GtkEntryCompletionMatchFunc {
+
+    private GtkEntryCompletionMatchFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -56,9 +60,11 @@ public class GtkEntryCompletionMatchFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment completion, MemorySegment key, MemorySegment iter, MemorySegment user_data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment completion, MemorySegment key, MemorySegment iter, MemorySegment user_data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, completion, key, iter, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

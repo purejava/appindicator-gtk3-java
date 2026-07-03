@@ -12,48 +12,17 @@ import java.util.stream.*;
 import static java.lang.foreign.ValueLayout.*;
 import static java.lang.foreign.MemoryLayout.PathElement.*;
 
-public class app_indicator_h_21 {
+class app_indicator_h_21 extends app_indicator_h$shared {
 
     app_indicator_h_21() {
         // Should not be called directly
     }
 
     static final Arena LIBRARY_ARENA = Arena.ofAuto();
-    static final boolean TRACE_DOWNCALLS = Boolean.getBoolean("jextract.trace.downcalls");
-
-    static void traceDowncall(String name, Object... args) {
-         String traceArgs = Arrays.stream(args)
-                       .map(Object::toString)
-                       .collect(Collectors.joining(", "));
-         System.out.printf("%s(%s)\n", name, traceArgs);
-    }
-
-    static MemorySegment findOrThrow(String symbol) {
-        return SYMBOL_LOOKUP.find(symbol)
-            .orElseThrow(() -> new UnsatisfiedLinkError("unresolved symbol: " + symbol));
-    }
-
-    static MethodHandle upcallHandle(Class<?> fi, String name, FunctionDescriptor fdesc) {
-        try {
-            return MethodHandles.lookup().findVirtual(fi, name, fdesc.toMethodType());
-        } catch (ReflectiveOperationException ex) {
-            throw new AssertionError(ex);
-        }
-    }
 
     static final SymbolLookup SYMBOL_LOOKUP = SymbolLookup.loaderLookup()
             .or(Linker.nativeLinker().defaultLookup());
 
-    public static final ValueLayout.OfBoolean C_BOOL = ValueLayout.JAVA_BOOLEAN;
-    public static final ValueLayout.OfByte C_CHAR = ValueLayout.JAVA_BYTE;
-    public static final ValueLayout.OfShort C_SHORT = ValueLayout.JAVA_SHORT;
-    public static final ValueLayout.OfInt C_INT = ValueLayout.JAVA_INT;
-    public static final ValueLayout.OfLong C_LONG_LONG = ValueLayout.JAVA_LONG;
-    public static final ValueLayout.OfFloat C_FLOAT = ValueLayout.JAVA_FLOAT;
-    public static final ValueLayout.OfDouble C_DOUBLE = ValueLayout.JAVA_DOUBLE;
-    public static final AddressLayout C_POINTER = ValueLayout.ADDRESS
-            .withTargetLayout(MemoryLayout.sequenceLayout(java.lang.Long.MAX_VALUE, JAVA_BYTE));
-    public static final ValueLayout.OfLong C_LONG = ValueLayout.JAVA_LONG;
     private static final int G_ANALYZER_ANALYZING = (int)0L;
     /**
      * {@snippet lang=c :
@@ -99,14 +68,23 @@ public class app_indicator_h_21 {
     public static int _DEFAULT_SOURCE() {
         return _DEFAULT_SOURCE;
     }
-    private static final int __GLIBC_USE_ISOC2X = (int)0L;
+    private static final int __GLIBC_USE_ISOC2Y = (int)0L;
     /**
      * {@snippet lang=c :
-     * #define __GLIBC_USE_ISOC2X 0
+     * #define __GLIBC_USE_ISOC2Y 0
      * }
      */
-    public static int __GLIBC_USE_ISOC2X() {
-        return __GLIBC_USE_ISOC2X;
+    public static int __GLIBC_USE_ISOC2Y() {
+        return __GLIBC_USE_ISOC2Y;
+    }
+    private static final int __GLIBC_USE_ISOC23 = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __GLIBC_USE_ISOC23 0
+     * }
+     */
+    public static int __GLIBC_USE_ISOC23() {
+        return __GLIBC_USE_ISOC23;
     }
     private static final int __USE_ISOC11 = (int)1L;
     /**
@@ -216,6 +194,15 @@ public class app_indicator_h_21 {
     public static int _ATFILE_SOURCE() {
         return _ATFILE_SOURCE;
     }
+    private static final int __USE_XOPEN2K24 = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __USE_XOPEN2K24 1
+     * }
+     */
+    public static int __USE_XOPEN2K24() {
+        return __USE_XOPEN2K24;
+    }
     private static final int __WORDSIZE = (int)64L;
     /**
      * {@snippet lang=c :
@@ -225,23 +212,32 @@ public class app_indicator_h_21 {
     public static int __WORDSIZE() {
         return __WORDSIZE;
     }
-    private static final int __WORDSIZE_TIME64_COMPAT32 = (int)0L;
+    private static final int __WORDSIZE_TIME64_COMPAT32 = (int)1L;
     /**
      * {@snippet lang=c :
-     * #define __WORDSIZE_TIME64_COMPAT32 0
+     * #define __WORDSIZE_TIME64_COMPAT32 1
      * }
      */
     public static int __WORDSIZE_TIME64_COMPAT32() {
         return __WORDSIZE_TIME64_COMPAT32;
     }
-    private static final int __TIMESIZE = (int)64L;
+    private static final int __SYSCALL_WORDSIZE = (int)64L;
     /**
      * {@snippet lang=c :
-     * #define __TIMESIZE 64
+     * #define __SYSCALL_WORDSIZE 64
      * }
      */
-    public static int __TIMESIZE() {
-        return __TIMESIZE;
+    public static int __SYSCALL_WORDSIZE() {
+        return __SYSCALL_WORDSIZE;
+    }
+    private static final int __USE_TIME_BITS64 = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __USE_TIME_BITS64 1
+     * }
+     */
+    public static int __USE_TIME_BITS64() {
+        return __USE_TIME_BITS64;
     }
     private static final int __USE_MISC = (int)1L;
     /**
@@ -288,6 +284,15 @@ public class app_indicator_h_21 {
     public static int __GLIBC_USE_DEPRECATED_SCANF() {
         return __GLIBC_USE_DEPRECATED_SCANF;
     }
+    private static final int __GLIBC_USE_C23_STRTOL = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __GLIBC_USE_C23_STRTOL 0
+     * }
+     */
+    public static int __GLIBC_USE_C23_STRTOL() {
+        return __GLIBC_USE_C23_STRTOL;
+    }
     private static final int _STDC_PREDEF_H = (int)1L;
     /**
      * {@snippet lang=c :
@@ -333,10 +338,10 @@ public class app_indicator_h_21 {
     public static int __GLIBC__() {
         return __GLIBC__;
     }
-    private static final int __GLIBC_MINOR__ = (int)35L;
+    private static final int __GLIBC_MINOR__ = (int)43L;
     /**
      * {@snippet lang=c :
-     * #define __GLIBC_MINOR__ 35
+     * #define __GLIBC_MINOR__ 43
      * }
      */
     public static int __GLIBC_MINOR__() {
@@ -396,14 +401,14 @@ public class app_indicator_h_21 {
     public static int __GLIBC_USE_IEC_60559_BFP_EXT() {
         return __GLIBC_USE_IEC_60559_BFP_EXT;
     }
-    private static final int __GLIBC_USE_IEC_60559_BFP_EXT_C2X = (int)0L;
+    private static final int __GLIBC_USE_IEC_60559_BFP_EXT_C23 = (int)0L;
     /**
      * {@snippet lang=c :
-     * #define __GLIBC_USE_IEC_60559_BFP_EXT_C2X 0
+     * #define __GLIBC_USE_IEC_60559_BFP_EXT_C23 0
      * }
      */
-    public static int __GLIBC_USE_IEC_60559_BFP_EXT_C2X() {
-        return __GLIBC_USE_IEC_60559_BFP_EXT_C2X;
+    public static int __GLIBC_USE_IEC_60559_BFP_EXT_C23() {
+        return __GLIBC_USE_IEC_60559_BFP_EXT_C23;
     }
     private static final int __GLIBC_USE_IEC_60559_EXT = (int)0L;
     /**
@@ -423,14 +428,14 @@ public class app_indicator_h_21 {
     public static int __GLIBC_USE_IEC_60559_FUNCS_EXT() {
         return __GLIBC_USE_IEC_60559_FUNCS_EXT;
     }
-    private static final int __GLIBC_USE_IEC_60559_FUNCS_EXT_C2X = (int)0L;
+    private static final int __GLIBC_USE_IEC_60559_FUNCS_EXT_C23 = (int)0L;
     /**
      * {@snippet lang=c :
-     * #define __GLIBC_USE_IEC_60559_FUNCS_EXT_C2X 0
+     * #define __GLIBC_USE_IEC_60559_FUNCS_EXT_C23 0
      * }
      */
-    public static int __GLIBC_USE_IEC_60559_FUNCS_EXT_C2X() {
-        return __GLIBC_USE_IEC_60559_FUNCS_EXT_C2X;
+    public static int __GLIBC_USE_IEC_60559_FUNCS_EXT_C23() {
+        return __GLIBC_USE_IEC_60559_FUNCS_EXT_C23;
     }
     private static final int __GLIBC_USE_IEC_60559_TYPES_EXT = (int)0L;
     /**
@@ -891,10 +896,10 @@ public class app_indicator_h_21 {
     public static int AIO_PRIO_DELTA_MAX() {
         return AIO_PRIO_DELTA_MAX;
     }
-    private static final int PTHREAD_STACK_MIN = (int)131072L;
+    private static final int PTHREAD_STACK_MIN = (int)16384L;
     /**
      * {@snippet lang=c :
-     * #define PTHREAD_STACK_MIN 131072
+     * #define PTHREAD_STACK_MIN 16384
      * }
      */
     public static int PTHREAD_STACK_MIN() {
@@ -1053,15 +1058,6 @@ public class app_indicator_h_21 {
     public static int CHARCLASS_NAME_MAX() {
         return CHARCLASS_NAME_MAX;
     }
-    private static final int CHAR_MIN = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * #define CHAR_MIN 0
-     * }
-     */
-    public static int CHAR_MIN() {
-        return CHAR_MIN;
-    }
     private static final int G_HAVE_GINT64 = (int)1L;
     /**
      * {@snippet lang=c :
@@ -1116,23 +1112,32 @@ public class app_indicator_h_21 {
     public static int GLIB_MAJOR_VERSION() {
         return GLIB_MAJOR_VERSION;
     }
-    private static final int GLIB_MINOR_VERSION = (int)78L;
+    private static final int GLIB_MINOR_VERSION = (int)88L;
     /**
      * {@snippet lang=c :
-     * #define GLIB_MINOR_VERSION 78
+     * #define GLIB_MINOR_VERSION 88
      * }
      */
     public static int GLIB_MINOR_VERSION() {
         return GLIB_MINOR_VERSION;
     }
-    private static final int GLIB_MICRO_VERSION = (int)4L;
+    private static final int GLIB_MICRO_VERSION = (int)2L;
     /**
      * {@snippet lang=c :
-     * #define GLIB_MICRO_VERSION 4
+     * #define GLIB_MICRO_VERSION 2
      * }
      */
     public static int GLIB_MICRO_VERSION() {
         return GLIB_MICRO_VERSION;
+    }
+    private static final int G_VA_COPY_AS_ARRAY = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define G_VA_COPY_AS_ARRAY 1
+     * }
+     */
+    public static int G_VA_COPY_AS_ARRAY() {
+        return G_VA_COPY_AS_ARRAY;
     }
     private static final int G_HAVE_ISO_VARARGS = (int)1L;
     /**
@@ -1286,6 +1291,15 @@ public class app_indicator_h_21 {
      */
     public static int __STATFS_MATCHES_STATFS64() {
         return __STATFS_MATCHES_STATFS64;
+    }
+    private static final int __KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64 = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64 1
+     * }
+     */
+    public static int __KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64() {
+        return __KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64;
     }
     private static final int __FD_SETSIZE = (int)1024L;
     /**
@@ -1710,14 +1724,32 @@ public class app_indicator_h_21 {
     public static int __HAVE_FLOAT128() {
         return __HAVE_FLOAT128;
     }
-    private static final int __HAVE_DISTINCT_FLOAT128 = (int)0L;
+    private static final int __HAVE_DISTINCT_FLOAT128 = (int)1L;
     /**
      * {@snippet lang=c :
-     * #define __HAVE_DISTINCT_FLOAT128 0
+     * #define __HAVE_DISTINCT_FLOAT128 1
      * }
      */
     public static int __HAVE_DISTINCT_FLOAT128() {
         return __HAVE_DISTINCT_FLOAT128;
+    }
+    private static final int __HAVE_FLOAT64X = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __HAVE_FLOAT64X 1
+     * }
+     */
+    public static int __HAVE_FLOAT64X() {
+        return __HAVE_FLOAT64X;
+    }
+    private static final int __HAVE_FLOAT64X_LONG_DOUBLE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __HAVE_FLOAT64X_LONG_DOUBLE 1
+     * }
+     */
+    public static int __HAVE_FLOAT64X_LONG_DOUBLE() {
+        return __HAVE_FLOAT64X_LONG_DOUBLE;
     }
     private static final int __HAVE_FLOAT16 = (int)0L;
     /**
@@ -1962,41 +1994,23 @@ public class app_indicator_h_21 {
     public static int _BITS_PTHREADTYPES_ARCH_H() {
         return _BITS_PTHREADTYPES_ARCH_H;
     }
-    private static final int __SIZEOF_PTHREAD_ATTR_T = (int)64L;
+    private static final int __SIZEOF_PTHREAD_MUTEX_T = (int)40L;
     /**
      * {@snippet lang=c :
-     * #define __SIZEOF_PTHREAD_ATTR_T 64
-     * }
-     */
-    public static int __SIZEOF_PTHREAD_ATTR_T() {
-        return __SIZEOF_PTHREAD_ATTR_T;
-    }
-    private static final int __SIZEOF_PTHREAD_MUTEX_T = (int)48L;
-    /**
-     * {@snippet lang=c :
-     * #define __SIZEOF_PTHREAD_MUTEX_T 48
+     * #define __SIZEOF_PTHREAD_MUTEX_T 40
      * }
      */
     public static int __SIZEOF_PTHREAD_MUTEX_T() {
         return __SIZEOF_PTHREAD_MUTEX_T;
     }
-    private static final int __SIZEOF_PTHREAD_MUTEXATTR_T = (int)8L;
+    private static final int __SIZEOF_PTHREAD_ATTR_T = (int)56L;
     /**
      * {@snippet lang=c :
-     * #define __SIZEOF_PTHREAD_MUTEXATTR_T 8
+     * #define __SIZEOF_PTHREAD_ATTR_T 56
      * }
      */
-    public static int __SIZEOF_PTHREAD_MUTEXATTR_T() {
-        return __SIZEOF_PTHREAD_MUTEXATTR_T;
-    }
-    private static final int __SIZEOF_PTHREAD_CONDATTR_T = (int)8L;
-    /**
-     * {@snippet lang=c :
-     * #define __SIZEOF_PTHREAD_CONDATTR_T 8
-     * }
-     */
-    public static int __SIZEOF_PTHREAD_CONDATTR_T() {
-        return __SIZEOF_PTHREAD_CONDATTR_T;
+    public static int __SIZEOF_PTHREAD_ATTR_T() {
+        return __SIZEOF_PTHREAD_ATTR_T;
     }
     private static final int __SIZEOF_PTHREAD_RWLOCK_T = (int)56L;
     /**
@@ -2016,14 +2030,14 @@ public class app_indicator_h_21 {
     public static int __SIZEOF_PTHREAD_BARRIER_T() {
         return __SIZEOF_PTHREAD_BARRIER_T;
     }
-    private static final int __SIZEOF_PTHREAD_BARRIERATTR_T = (int)8L;
+    private static final int __SIZEOF_PTHREAD_MUTEXATTR_T = (int)4L;
     /**
      * {@snippet lang=c :
-     * #define __SIZEOF_PTHREAD_BARRIERATTR_T 8
+     * #define __SIZEOF_PTHREAD_MUTEXATTR_T 4
      * }
      */
-    public static int __SIZEOF_PTHREAD_BARRIERATTR_T() {
-        return __SIZEOF_PTHREAD_BARRIERATTR_T;
+    public static int __SIZEOF_PTHREAD_MUTEXATTR_T() {
+        return __SIZEOF_PTHREAD_MUTEXATTR_T;
     }
     private static final int __SIZEOF_PTHREAD_COND_T = (int)48L;
     /**
@@ -2034,6 +2048,15 @@ public class app_indicator_h_21 {
     public static int __SIZEOF_PTHREAD_COND_T() {
         return __SIZEOF_PTHREAD_COND_T;
     }
+    private static final int __SIZEOF_PTHREAD_CONDATTR_T = (int)4L;
+    /**
+     * {@snippet lang=c :
+     * #define __SIZEOF_PTHREAD_CONDATTR_T 4
+     * }
+     */
+    public static int __SIZEOF_PTHREAD_CONDATTR_T() {
+        return __SIZEOF_PTHREAD_CONDATTR_T;
+    }
     private static final int __SIZEOF_PTHREAD_RWLOCKATTR_T = (int)8L;
     /**
      * {@snippet lang=c :
@@ -2042,6 +2065,15 @@ public class app_indicator_h_21 {
      */
     public static int __SIZEOF_PTHREAD_RWLOCKATTR_T() {
         return __SIZEOF_PTHREAD_RWLOCKATTR_T;
+    }
+    private static final int __SIZEOF_PTHREAD_BARRIERATTR_T = (int)4L;
+    /**
+     * {@snippet lang=c :
+     * #define __SIZEOF_PTHREAD_BARRIERATTR_T 4
+     * }
+     */
+    public static int __SIZEOF_PTHREAD_BARRIERATTR_T() {
+        return __SIZEOF_PTHREAD_BARRIERATTR_T;
     }
     private static final int _THREAD_MUTEX_INTERNAL_H = (int)1L;
     /**
@@ -2601,150 +2633,6 @@ public class app_indicator_h_21 {
     public static int _BITS_SIGCONTEXT_H() {
         return _BITS_SIGCONTEXT_H;
     }
-    private static final int __BITS_PER_LONG = (int)64L;
-    /**
-     * {@snippet lang=c :
-     * #define __BITS_PER_LONG 64
-     * }
-     */
-    public static int __BITS_PER_LONG() {
-        return __BITS_PER_LONG;
-    }
-    private static final int FPSIMD_MAGIC = (int)1179680769L;
-    /**
-     * {@snippet lang=c :
-     * #define FPSIMD_MAGIC 1179680769
-     * }
-     */
-    public static int FPSIMD_MAGIC() {
-        return FPSIMD_MAGIC;
-    }
-    private static final int ESR_MAGIC = (int)1163088385L;
-    /**
-     * {@snippet lang=c :
-     * #define ESR_MAGIC 1163088385
-     * }
-     */
-    public static int ESR_MAGIC() {
-        return ESR_MAGIC;
-    }
-    private static final int EXTRA_MAGIC = (int)1163416577L;
-    /**
-     * {@snippet lang=c :
-     * #define EXTRA_MAGIC 1163416577
-     * }
-     */
-    public static int EXTRA_MAGIC() {
-        return EXTRA_MAGIC;
-    }
-    private static final int SVE_MAGIC = (int)1398162689L;
-    /**
-     * {@snippet lang=c :
-     * #define SVE_MAGIC 1398162689
-     * }
-     */
-    public static int SVE_MAGIC() {
-        return SVE_MAGIC;
-    }
-    private static final int SVE_SIG_FLAG_SM = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * #define SVE_SIG_FLAG_SM 1
-     * }
-     */
-    public static int SVE_SIG_FLAG_SM() {
-        return SVE_SIG_FLAG_SM;
-    }
-    private static final int TPIDR2_MAGIC = (int)1414547714L;
-    /**
-     * {@snippet lang=c :
-     * #define TPIDR2_MAGIC 1414547714
-     * }
-     */
-    public static int TPIDR2_MAGIC() {
-        return TPIDR2_MAGIC;
-    }
-    private static final int ZA_MAGIC = (int)1412850501L;
-    /**
-     * {@snippet lang=c :
-     * #define ZA_MAGIC 1412850501
-     * }
-     */
-    public static int ZA_MAGIC() {
-        return ZA_MAGIC;
-    }
-    private static final int ZT_MAGIC = (int)1515474433L;
-    /**
-     * {@snippet lang=c :
-     * #define ZT_MAGIC 1515474433
-     * }
-     */
-    public static int ZT_MAGIC() {
-        return ZT_MAGIC;
-    }
-    private static final int __SVE_VQ_BYTES = (int)16L;
-    /**
-     * {@snippet lang=c :
-     * #define __SVE_VQ_BYTES 16
-     * }
-     */
-    public static int __SVE_VQ_BYTES() {
-        return __SVE_VQ_BYTES;
-    }
-    private static final int __SVE_VQ_MIN = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * #define __SVE_VQ_MIN 1
-     * }
-     */
-    public static int __SVE_VQ_MIN() {
-        return __SVE_VQ_MIN;
-    }
-    private static final int __SVE_VQ_MAX = (int)512L;
-    /**
-     * {@snippet lang=c :
-     * #define __SVE_VQ_MAX 512
-     * }
-     */
-    public static int __SVE_VQ_MAX() {
-        return __SVE_VQ_MAX;
-    }
-    private static final int __SVE_NUM_ZREGS = (int)32L;
-    /**
-     * {@snippet lang=c :
-     * #define __SVE_NUM_ZREGS 32
-     * }
-     */
-    public static int __SVE_NUM_ZREGS() {
-        return __SVE_NUM_ZREGS;
-    }
-    private static final int __SVE_NUM_PREGS = (int)16L;
-    /**
-     * {@snippet lang=c :
-     * #define __SVE_NUM_PREGS 16
-     * }
-     */
-    public static int __SVE_NUM_PREGS() {
-        return __SVE_NUM_PREGS;
-    }
-    private static final int __SVE_ZREGS_OFFSET = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * #define __SVE_ZREGS_OFFSET 0
-     * }
-     */
-    public static int __SVE_ZREGS_OFFSET() {
-        return __SVE_ZREGS_OFFSET;
-    }
-    private static final int ZT_SIG_REG_SIZE = (int)512L;
-    /**
-     * {@snippet lang=c :
-     * #define ZT_SIG_REG_SIZE 512
-     * }
-     */
-    public static int ZT_SIG_REG_SIZE() {
-        return ZT_SIG_REG_SIZE;
-    }
     private static final int __stack_t_defined = (int)1L;
     /**
      * {@snippet lang=c :
@@ -2763,32 +2651,14 @@ public class app_indicator_h_21 {
     public static int _SYS_UCONTEXT_H() {
         return _SYS_UCONTEXT_H;
     }
-    private static final int _SYS_PROCFS_H = (int)1L;
+    private static final int __NGREG = (int)23L;
     /**
      * {@snippet lang=c :
-     * #define _SYS_PROCFS_H 1
+     * #define __NGREG 23
      * }
      */
-    public static int _SYS_PROCFS_H() {
-        return _SYS_PROCFS_H;
-    }
-    private static final int _SYS_TIME_H = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * #define _SYS_TIME_H 1
-     * }
-     */
-    public static int _SYS_TIME_H() {
-        return _SYS_TIME_H;
-    }
-    private static final int _SYS_USER_H = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * #define _SYS_USER_H 1
-     * }
-     */
-    public static int _SYS_USER_H() {
-        return _SYS_USER_H;
+    public static int __NGREG() {
+        return __NGREG;
     }
     private static final int _BITS_SIGSTACK_H = (int)1L;
     /**
@@ -2799,19 +2669,19 @@ public class app_indicator_h_21 {
     public static int _BITS_SIGSTACK_H() {
         return _BITS_SIGSTACK_H;
     }
-    private static final int MINSIGSTKSZ = (int)5120L;
+    private static final int MINSIGSTKSZ = (int)2048L;
     /**
      * {@snippet lang=c :
-     * #define MINSIGSTKSZ 5120
+     * #define MINSIGSTKSZ 2048
      * }
      */
     public static int MINSIGSTKSZ() {
         return MINSIGSTKSZ;
     }
-    private static final int SIGSTKSZ = (int)16384L;
+    private static final int SIGSTKSZ = (int)8192L;
     /**
      * {@snippet lang=c :
-     * #define SIGSTKSZ 16384
+     * #define SIGSTKSZ 8192
      * }
      */
     public static int SIGSTKSZ() {
@@ -2870,6 +2740,42 @@ public class app_indicator_h_21 {
      */
     public static int _DIRENT_MATCHES_DIRENT64() {
         return _DIRENT_MATCHES_DIRENT64;
+    }
+    private static final int _STDINT_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _STDINT_H 1
+     * }
+     */
+    public static int _STDINT_H() {
+        return _STDINT_H;
+    }
+    private static final int _BITS_WCHAR_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_WCHAR_H 1
+     * }
+     */
+    public static int _BITS_WCHAR_H() {
+        return _BITS_WCHAR_H;
+    }
+    private static final int _BITS_STDINT_UINTN_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_STDINT_UINTN_H 1
+     * }
+     */
+    public static int _BITS_STDINT_UINTN_H() {
+        return _BITS_STDINT_UINTN_H;
+    }
+    private static final int _BITS_STDINT_LEAST_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_STDINT_LEAST_H 1
+     * }
+     */
+    public static int _BITS_STDINT_LEAST_H() {
+        return _BITS_STDINT_LEAST_H;
     }
     private static final int G_PRIORITY_DEFAULT = (int)0L;
     /**
@@ -4410,6 +4316,15 @@ public class app_indicator_h_21 {
     public static int _POSIX_CHOWN_RESTRICTED() {
         return _POSIX_CHOWN_RESTRICTED;
     }
+    private static final int _POSIX_VDISABLE = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_VDISABLE 0
+     * }
+     */
+    public static int _POSIX_VDISABLE() {
+        return _POSIX_VDISABLE;
+    }
     private static final int _POSIX_NO_TRUNC = (int)1L;
     /**
      * {@snippet lang=c :
@@ -4734,50 +4649,41 @@ public class app_indicator_h_21 {
     public static int PANGO_VERSION_MAJOR() {
         return PANGO_VERSION_MAJOR;
     }
-    private static final int PANGO_VERSION_MINOR = (int)52L;
+    private static final int PANGO_VERSION_MINOR = (int)58L;
     /**
      * {@snippet lang=c :
-     * #define PANGO_VERSION_MINOR 52
+     * #define PANGO_VERSION_MINOR 58
      * }
      */
     public static int PANGO_VERSION_MINOR() {
         return PANGO_VERSION_MINOR;
     }
-    private static final int PANGO_VERSION_MICRO = (int)1L;
+    private static final int PANGO_VERSION_MICRO = (int)0L;
     /**
      * {@snippet lang=c :
-     * #define PANGO_VERSION_MICRO 1
+     * #define PANGO_VERSION_MICRO 0
      * }
      */
     public static int PANGO_VERSION_MICRO() {
         return PANGO_VERSION_MICRO;
     }
-    private static final int _STDINT_H = (int)1L;
+    private static final int _INTTYPES_H = (int)1L;
     /**
      * {@snippet lang=c :
-     * #define _STDINT_H 1
+     * #define _INTTYPES_H 1
      * }
      */
-    public static int _STDINT_H() {
-        return _STDINT_H;
+    public static int _INTTYPES_H() {
+        return _INTTYPES_H;
     }
-    private static final int _BITS_WCHAR_H = (int)1L;
+    private static final int ____gwchar_t_defined = (int)1L;
     /**
      * {@snippet lang=c :
-     * #define _BITS_WCHAR_H 1
+     * #define ____gwchar_t_defined 1
      * }
      */
-    public static int _BITS_WCHAR_H() {
-        return _BITS_WCHAR_H;
-    }
-    private static final int _BITS_STDINT_UINTN_H = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * #define _BITS_STDINT_UINTN_H 1
-     * }
-     */
-    public static int _BITS_STDINT_UINTN_H() {
-        return _BITS_STDINT_UINTN_H;
+    public static int ____gwchar_t_defined() {
+        return ____gwchar_t_defined;
     }
     private static final int HB_FEATURE_GLOBAL_START = (int)0L;
     /**
@@ -4797,28 +4703,28 @@ public class app_indicator_h_21 {
     public static int HB_UNICODE_COMBINING_CLASS_CCC133() {
         return HB_UNICODE_COMBINING_CLASS_CCC133;
     }
-    private static final int HB_VERSION_MAJOR = (int)8L;
+    private static final int HB_VERSION_MAJOR = (int)14L;
     /**
      * {@snippet lang=c :
-     * #define HB_VERSION_MAJOR 8
+     * #define HB_VERSION_MAJOR 14
      * }
      */
     public static int HB_VERSION_MAJOR() {
         return HB_VERSION_MAJOR;
     }
-    private static final int HB_VERSION_MINOR = (int)3L;
+    private static final int HB_VERSION_MINOR = (int)2L;
     /**
      * {@snippet lang=c :
-     * #define HB_VERSION_MINOR 3
+     * #define HB_VERSION_MINOR 2
      * }
      */
     public static int HB_VERSION_MINOR() {
         return HB_VERSION_MINOR;
     }
-    private static final int HB_VERSION_MICRO = (int)0L;
+    private static final int HB_VERSION_MICRO = (int)1L;
     /**
      * {@snippet lang=c :
-     * #define HB_VERSION_MICRO 0
+     * #define HB_VERSION_MICRO 1
      * }
      */
     public static int HB_VERSION_MICRO() {
@@ -4941,6 +4847,15 @@ public class app_indicator_h_21 {
     public static int _IO_USER_LOCK() {
         return _IO_USER_LOCK;
     }
+    private static final int __cookie_io_functions_t_defined = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __cookie_io_functions_t_defined 1
+     * }
+     */
+    public static int __cookie_io_functions_t_defined() {
+        return __cookie_io_functions_t_defined;
+    }
     private static final int _IOFBF = (int)0L;
     /**
      * {@snippet lang=c :
@@ -4977,15 +4892,6 @@ public class app_indicator_h_21 {
     public static int BUFSIZ() {
         return BUFSIZ;
     }
-    private static final int _BITS_STDIO_LIM_H = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * #define _BITS_STDIO_LIM_H 1
-     * }
-     */
-    public static int _BITS_STDIO_LIM_H() {
-        return _BITS_STDIO_LIM_H;
-    }
     private static final int L_tmpnam = (int)20L;
     /**
      * {@snippet lang=c :
@@ -5003,6 +4909,15 @@ public class app_indicator_h_21 {
      */
     public static int TMP_MAX() {
         return TMP_MAX;
+    }
+    private static final int _BITS_STDIO_LIM_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_STDIO_LIM_H 1
+     * }
+     */
+    public static int _BITS_STDIO_LIM_H() {
+        return _BITS_STDIO_LIM_H;
     }
     private static final int FILENAME_MAX = (int)4096L;
     /**
@@ -5049,10 +4964,10 @@ public class app_indicator_h_21 {
     public static int CAIRO_VERSION_MINOR() {
         return CAIRO_VERSION_MINOR;
     }
-    private static final int CAIRO_VERSION_MICRO = (int)0L;
+    private static final int CAIRO_VERSION_MICRO = (int)4L;
     /**
      * {@snippet lang=c :
-     * #define CAIRO_VERSION_MICRO 0
+     * #define CAIRO_VERSION_MICRO 4
      * }
      */
     public static int CAIRO_VERSION_MICRO() {
@@ -9053,6 +8968,60 @@ public class app_indicator_h_21 {
      */
     public static int GDK_KEY_k() {
         return GDK_KEY_k;
+    }
+    private static final int GDK_KEY_l = (int)108L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_l 108
+     * }
+     */
+    public static int GDK_KEY_l() {
+        return GDK_KEY_l;
+    }
+    private static final int GDK_KEY_m = (int)109L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_m 109
+     * }
+     */
+    public static int GDK_KEY_m() {
+        return GDK_KEY_m;
+    }
+    private static final int GDK_KEY_n = (int)110L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_n 110
+     * }
+     */
+    public static int GDK_KEY_n() {
+        return GDK_KEY_n;
+    }
+    private static final int GDK_KEY_o = (int)111L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_o 111
+     * }
+     */
+    public static int GDK_KEY_o() {
+        return GDK_KEY_o;
+    }
+    private static final int GDK_KEY_p = (int)112L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_p 112
+     * }
+     */
+    public static int GDK_KEY_p() {
+        return GDK_KEY_p;
+    }
+    private static final int GDK_KEY_q = (int)113L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_q 113
+     * }
+     */
+    public static int GDK_KEY_q() {
+        return GDK_KEY_q;
     }
 }
 

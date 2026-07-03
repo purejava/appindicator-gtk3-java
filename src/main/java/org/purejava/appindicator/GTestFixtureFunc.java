@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GTestFixtureFunc)(gpointer, gconstpointer)
  * }
  */
-public class GTestFixtureFunc {
+public final class GTestFixtureFunc {
+
+    private GTestFixtureFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -53,9 +57,11 @@ public class GTestFixtureFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment fixture, MemorySegment user_data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment fixture, MemorySegment user_data) {
         try {
              DOWN$MH.invokeExact(funcPtr, fixture, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

@@ -48,7 +48,7 @@ public class _GtkHSeparator {
         return separator$LAYOUT;
     }
 
-    private static final long separator$OFFSET = 0;
+    private static final long separator$OFFSET = $LAYOUT.byteOffset(groupElement("separator"));
 
     /**
      * Offset for field:
@@ -109,7 +109,7 @@ public class _GtkHSeparator {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -117,7 +117,7 @@ public class _GtkHSeparator {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

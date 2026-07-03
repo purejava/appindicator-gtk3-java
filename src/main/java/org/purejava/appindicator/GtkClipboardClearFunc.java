@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GtkClipboardClearFunc)(GtkClipboard *, gpointer)
  * }
  */
-public class GtkClipboardClearFunc {
+public final class GtkClipboardClearFunc {
+
+    private GtkClipboardClearFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -53,9 +57,11 @@ public class GtkClipboardClearFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment clipboard, MemorySegment user_data_or_owner) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment clipboard, MemorySegment user_data_or_owner) {
         try {
              DOWN$MH.invokeExact(funcPtr, clipboard, user_data_or_owner);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

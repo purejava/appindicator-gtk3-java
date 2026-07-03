@@ -124,7 +124,7 @@ public class _GtkStyleClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -161,7 +161,11 @@ public class _GtkStyleClass {
      * void (*realize)(GtkStyle *)
      * }
      */
-    public class realize {
+    public final static class realize {
+
+        private realize() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -196,9 +200,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -217,7 +223,7 @@ public class _GtkStyleClass {
         return realize$LAYOUT;
     }
 
-    private static final long realize$OFFSET = 136;
+    private static final long realize$OFFSET = $LAYOUT.byteOffset(groupElement("realize"));
 
     /**
      * Offset for field:
@@ -254,7 +260,11 @@ public class _GtkStyleClass {
      * void (*unrealize)(GtkStyle *)
      * }
      */
-    public class unrealize {
+    public final static class unrealize {
+
+        private unrealize() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -289,9 +299,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -310,7 +322,7 @@ public class _GtkStyleClass {
         return unrealize$LAYOUT;
     }
 
-    private static final long unrealize$OFFSET = 144;
+    private static final long unrealize$OFFSET = $LAYOUT.byteOffset(groupElement("unrealize"));
 
     /**
      * Offset for field:
@@ -347,7 +359,11 @@ public class _GtkStyleClass {
      * void (*copy)(GtkStyle *, GtkStyle *)
      * }
      */
-    public class copy {
+    public final static class copy {
+
+        private copy() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -383,9 +399,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -404,7 +422,7 @@ public class _GtkStyleClass {
         return copy$LAYOUT;
     }
 
-    private static final long copy$OFFSET = 152;
+    private static final long copy$OFFSET = $LAYOUT.byteOffset(groupElement("copy"));
 
     /**
      * Offset for field:
@@ -441,7 +459,11 @@ public class _GtkStyleClass {
      * GtkStyle *(*clone)(GtkStyle *)
      * }
      */
-    public class clone {
+    public final static class clone {
+
+        private clone() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -477,9 +499,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -498,7 +522,7 @@ public class _GtkStyleClass {
         return clone$LAYOUT;
     }
 
-    private static final long clone$OFFSET = 160;
+    private static final long clone$OFFSET = $LAYOUT.byteOffset(groupElement("clone"));
 
     /**
      * Offset for field:
@@ -535,7 +559,11 @@ public class _GtkStyleClass {
      * void (*init_from_rc)(GtkStyle *, GtkRcStyle *)
      * }
      */
-    public class init_from_rc {
+    public final static class init_from_rc {
+
+        private init_from_rc() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -571,9 +599,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -592,7 +622,7 @@ public class _GtkStyleClass {
         return init_from_rc$LAYOUT;
     }
 
-    private static final long init_from_rc$OFFSET = 168;
+    private static final long init_from_rc$OFFSET = $LAYOUT.byteOffset(groupElement("init_from_rc"));
 
     /**
      * Offset for field:
@@ -629,7 +659,11 @@ public class _GtkStyleClass {
      * void (*set_background)(GtkStyle *, GdkWindow *, GtkStateType)
      * }
      */
-    public class set_background {
+    public final static class set_background {
+
+        private set_background() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -666,9 +700,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -687,7 +723,7 @@ public class _GtkStyleClass {
         return set_background$LAYOUT;
     }
 
-    private static final long set_background$OFFSET = 176;
+    private static final long set_background$OFFSET = $LAYOUT.byteOffset(groupElement("set_background"));
 
     /**
      * Offset for field:
@@ -724,7 +760,11 @@ public class _GtkStyleClass {
      * GdkPixbuf *(*render_icon)(GtkStyle *, const GtkIconSource *, GtkTextDirection, GtkStateType, GtkIconSize, GtkWidget *, const gchar *)
      * }
      */
-    public class render_icon {
+    public final static class render_icon {
+
+        private render_icon() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -766,9 +806,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, int _x4, MemorySegment _x5, MemorySegment _x6) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, int _x4, MemorySegment _x5, MemorySegment _x6) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -787,7 +829,7 @@ public class _GtkStyleClass {
         return render_icon$LAYOUT;
     }
 
-    private static final long render_icon$OFFSET = 184;
+    private static final long render_icon$OFFSET = $LAYOUT.byteOffset(groupElement("render_icon"));
 
     /**
      * Offset for field:
@@ -824,7 +866,11 @@ public class _GtkStyleClass {
      * void (*draw_hline)(GtkStyle *, cairo_t *, GtkStateType, GtkWidget *, const gchar *, gint, gint, gint)
      * }
      */
-    public class draw_hline {
+    public final static class draw_hline {
+
+        private draw_hline() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -866,9 +912,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, int _x5, int _x6, int _x7) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, int _x5, int _x6, int _x7) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -887,7 +935,7 @@ public class _GtkStyleClass {
         return draw_hline$LAYOUT;
     }
 
-    private static final long draw_hline$OFFSET = 192;
+    private static final long draw_hline$OFFSET = $LAYOUT.byteOffset(groupElement("draw_hline"));
 
     /**
      * Offset for field:
@@ -924,7 +972,11 @@ public class _GtkStyleClass {
      * void (*draw_vline)(GtkStyle *, cairo_t *, GtkStateType, GtkWidget *, const gchar *, gint, gint, gint)
      * }
      */
-    public class draw_vline {
+    public final static class draw_vline {
+
+        private draw_vline() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -966,9 +1018,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, int _x5, int _x6, int _x7) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, int _x5, int _x6, int _x7) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -987,7 +1041,7 @@ public class _GtkStyleClass {
         return draw_vline$LAYOUT;
     }
 
-    private static final long draw_vline$OFFSET = 200;
+    private static final long draw_vline$OFFSET = $LAYOUT.byteOffset(groupElement("draw_vline"));
 
     /**
      * Offset for field:
@@ -1024,7 +1078,11 @@ public class _GtkStyleClass {
      * void (*draw_shadow)(GtkStyle *, cairo_t *, GtkStateType, GtkShadowType, GtkWidget *, const gchar *, gint, gint, gint, gint)
      * }
      */
-    public class draw_shadow {
+    public final static class draw_shadow {
+
+        private draw_shadow() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1068,9 +1126,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8, _x9);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1089,7 +1149,7 @@ public class _GtkStyleClass {
         return draw_shadow$LAYOUT;
     }
 
-    private static final long draw_shadow$OFFSET = 208;
+    private static final long draw_shadow$OFFSET = $LAYOUT.byteOffset(groupElement("draw_shadow"));
 
     /**
      * Offset for field:
@@ -1126,7 +1186,11 @@ public class _GtkStyleClass {
      * void (*draw_arrow)(GtkStyle *, cairo_t *, GtkStateType, GtkShadowType, GtkWidget *, const gchar *, GtkArrowType, gboolean, gint, gint, gint, gint)
      * }
      */
-    public class draw_arrow {
+    public final static class draw_arrow {
+
+        private draw_arrow() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1172,9 +1236,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9, int _x10, int _x11) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9, int _x10, int _x11) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8, _x9, _x10, _x11);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1193,7 +1259,7 @@ public class _GtkStyleClass {
         return draw_arrow$LAYOUT;
     }
 
-    private static final long draw_arrow$OFFSET = 216;
+    private static final long draw_arrow$OFFSET = $LAYOUT.byteOffset(groupElement("draw_arrow"));
 
     /**
      * Offset for field:
@@ -1230,7 +1296,11 @@ public class _GtkStyleClass {
      * void (*draw_diamond)(GtkStyle *, cairo_t *, GtkStateType, GtkShadowType, GtkWidget *, const gchar *, gint, gint, gint, gint)
      * }
      */
-    public class draw_diamond {
+    public final static class draw_diamond {
+
+        private draw_diamond() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1274,9 +1344,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8, _x9);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1295,7 +1367,7 @@ public class _GtkStyleClass {
         return draw_diamond$LAYOUT;
     }
 
-    private static final long draw_diamond$OFFSET = 224;
+    private static final long draw_diamond$OFFSET = $LAYOUT.byteOffset(groupElement("draw_diamond"));
 
     /**
      * Offset for field:
@@ -1332,7 +1404,11 @@ public class _GtkStyleClass {
      * void (*draw_box)(GtkStyle *, cairo_t *, GtkStateType, GtkShadowType, GtkWidget *, const gchar *, gint, gint, gint, gint)
      * }
      */
-    public class draw_box {
+    public final static class draw_box {
+
+        private draw_box() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1376,9 +1452,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8, _x9);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1397,7 +1475,7 @@ public class _GtkStyleClass {
         return draw_box$LAYOUT;
     }
 
-    private static final long draw_box$OFFSET = 232;
+    private static final long draw_box$OFFSET = $LAYOUT.byteOffset(groupElement("draw_box"));
 
     /**
      * Offset for field:
@@ -1434,7 +1512,11 @@ public class _GtkStyleClass {
      * void (*draw_flat_box)(GtkStyle *, cairo_t *, GtkStateType, GtkShadowType, GtkWidget *, const gchar *, gint, gint, gint, gint)
      * }
      */
-    public class draw_flat_box {
+    public final static class draw_flat_box {
+
+        private draw_flat_box() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1478,9 +1560,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8, _x9);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1499,7 +1583,7 @@ public class _GtkStyleClass {
         return draw_flat_box$LAYOUT;
     }
 
-    private static final long draw_flat_box$OFFSET = 240;
+    private static final long draw_flat_box$OFFSET = $LAYOUT.byteOffset(groupElement("draw_flat_box"));
 
     /**
      * Offset for field:
@@ -1536,7 +1620,11 @@ public class _GtkStyleClass {
      * void (*draw_check)(GtkStyle *, cairo_t *, GtkStateType, GtkShadowType, GtkWidget *, const gchar *, gint, gint, gint, gint)
      * }
      */
-    public class draw_check {
+    public final static class draw_check {
+
+        private draw_check() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1580,9 +1668,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8, _x9);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1601,7 +1691,7 @@ public class _GtkStyleClass {
         return draw_check$LAYOUT;
     }
 
-    private static final long draw_check$OFFSET = 248;
+    private static final long draw_check$OFFSET = $LAYOUT.byteOffset(groupElement("draw_check"));
 
     /**
      * Offset for field:
@@ -1638,7 +1728,11 @@ public class _GtkStyleClass {
      * void (*draw_option)(GtkStyle *, cairo_t *, GtkStateType, GtkShadowType, GtkWidget *, const gchar *, gint, gint, gint, gint)
      * }
      */
-    public class draw_option {
+    public final static class draw_option {
+
+        private draw_option() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1682,9 +1776,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8, _x9);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1703,7 +1799,7 @@ public class _GtkStyleClass {
         return draw_option$LAYOUT;
     }
 
-    private static final long draw_option$OFFSET = 256;
+    private static final long draw_option$OFFSET = $LAYOUT.byteOffset(groupElement("draw_option"));
 
     /**
      * Offset for field:
@@ -1740,7 +1836,11 @@ public class _GtkStyleClass {
      * void (*draw_tab)(GtkStyle *, cairo_t *, GtkStateType, GtkShadowType, GtkWidget *, const gchar *, gint, gint, gint, gint)
      * }
      */
-    public class draw_tab {
+    public final static class draw_tab {
+
+        private draw_tab() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1784,9 +1884,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8, _x9);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1805,7 +1907,7 @@ public class _GtkStyleClass {
         return draw_tab$LAYOUT;
     }
 
-    private static final long draw_tab$OFFSET = 264;
+    private static final long draw_tab$OFFSET = $LAYOUT.byteOffset(groupElement("draw_tab"));
 
     /**
      * Offset for field:
@@ -1842,7 +1944,11 @@ public class _GtkStyleClass {
      * void (*draw_shadow_gap)(GtkStyle *, cairo_t *, GtkStateType, GtkShadowType, GtkWidget *, const gchar *, gint, gint, gint, gint, GtkPositionType, gint, gint)
      * }
      */
-    public class draw_shadow_gap {
+    public final static class draw_shadow_gap {
+
+        private draw_shadow_gap() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1889,9 +1995,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9, int _x10, int _x11, int _x12) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9, int _x10, int _x11, int _x12) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8, _x9, _x10, _x11, _x12);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1910,7 +2018,7 @@ public class _GtkStyleClass {
         return draw_shadow_gap$LAYOUT;
     }
 
-    private static final long draw_shadow_gap$OFFSET = 272;
+    private static final long draw_shadow_gap$OFFSET = $LAYOUT.byteOffset(groupElement("draw_shadow_gap"));
 
     /**
      * Offset for field:
@@ -1947,7 +2055,11 @@ public class _GtkStyleClass {
      * void (*draw_box_gap)(GtkStyle *, cairo_t *, GtkStateType, GtkShadowType, GtkWidget *, const gchar *, gint, gint, gint, gint, GtkPositionType, gint, gint)
      * }
      */
-    public class draw_box_gap {
+    public final static class draw_box_gap {
+
+        private draw_box_gap() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1994,9 +2106,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9, int _x10, int _x11, int _x12) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9, int _x10, int _x11, int _x12) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8, _x9, _x10, _x11, _x12);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2015,7 +2129,7 @@ public class _GtkStyleClass {
         return draw_box_gap$LAYOUT;
     }
 
-    private static final long draw_box_gap$OFFSET = 280;
+    private static final long draw_box_gap$OFFSET = $LAYOUT.byteOffset(groupElement("draw_box_gap"));
 
     /**
      * Offset for field:
@@ -2052,7 +2166,11 @@ public class _GtkStyleClass {
      * void (*draw_extension)(GtkStyle *, cairo_t *, GtkStateType, GtkShadowType, GtkWidget *, const gchar *, gint, gint, gint, gint, GtkPositionType)
      * }
      */
-    public class draw_extension {
+    public final static class draw_extension {
+
+        private draw_extension() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2097,9 +2215,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9, int _x10) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9, int _x10) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8, _x9, _x10);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2118,7 +2238,7 @@ public class _GtkStyleClass {
         return draw_extension$LAYOUT;
     }
 
-    private static final long draw_extension$OFFSET = 288;
+    private static final long draw_extension$OFFSET = $LAYOUT.byteOffset(groupElement("draw_extension"));
 
     /**
      * Offset for field:
@@ -2155,7 +2275,11 @@ public class _GtkStyleClass {
      * void (*draw_focus)(GtkStyle *, cairo_t *, GtkStateType, GtkWidget *, const gchar *, gint, gint, gint, gint)
      * }
      */
-    public class draw_focus {
+    public final static class draw_focus {
+
+        private draw_focus() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2198,9 +2322,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, int _x5, int _x6, int _x7, int _x8) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, int _x5, int _x6, int _x7, int _x8) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2219,7 +2345,7 @@ public class _GtkStyleClass {
         return draw_focus$LAYOUT;
     }
 
-    private static final long draw_focus$OFFSET = 296;
+    private static final long draw_focus$OFFSET = $LAYOUT.byteOffset(groupElement("draw_focus"));
 
     /**
      * Offset for field:
@@ -2256,7 +2382,11 @@ public class _GtkStyleClass {
      * void (*draw_slider)(GtkStyle *, cairo_t *, GtkStateType, GtkShadowType, GtkWidget *, const gchar *, gint, gint, gint, gint, GtkOrientation)
      * }
      */
-    public class draw_slider {
+    public final static class draw_slider {
+
+        private draw_slider() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2301,9 +2431,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9, int _x10) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9, int _x10) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8, _x9, _x10);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2322,7 +2454,7 @@ public class _GtkStyleClass {
         return draw_slider$LAYOUT;
     }
 
-    private static final long draw_slider$OFFSET = 304;
+    private static final long draw_slider$OFFSET = $LAYOUT.byteOffset(groupElement("draw_slider"));
 
     /**
      * Offset for field:
@@ -2359,7 +2491,11 @@ public class _GtkStyleClass {
      * void (*draw_handle)(GtkStyle *, cairo_t *, GtkStateType, GtkShadowType, GtkWidget *, const gchar *, gint, gint, gint, gint, GtkOrientation)
      * }
      */
-    public class draw_handle {
+    public final static class draw_handle {
+
+        private draw_handle() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2404,9 +2540,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9, int _x10) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, int _x8, int _x9, int _x10) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8, _x9, _x10);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2425,7 +2563,7 @@ public class _GtkStyleClass {
         return draw_handle$LAYOUT;
     }
 
-    private static final long draw_handle$OFFSET = 312;
+    private static final long draw_handle$OFFSET = $LAYOUT.byteOffset(groupElement("draw_handle"));
 
     /**
      * Offset for field:
@@ -2462,7 +2600,11 @@ public class _GtkStyleClass {
      * void (*draw_expander)(GtkStyle *, cairo_t *, GtkStateType, GtkWidget *, const gchar *, gint, gint, GtkExpanderStyle)
      * }
      */
-    public class draw_expander {
+    public final static class draw_expander {
+
+        private draw_expander() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2504,9 +2646,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, int _x5, int _x6, int _x7) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, int _x5, int _x6, int _x7) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2525,7 +2669,7 @@ public class _GtkStyleClass {
         return draw_expander$LAYOUT;
     }
 
-    private static final long draw_expander$OFFSET = 320;
+    private static final long draw_expander$OFFSET = $LAYOUT.byteOffset(groupElement("draw_expander"));
 
     /**
      * Offset for field:
@@ -2562,7 +2706,11 @@ public class _GtkStyleClass {
      * void (*draw_layout)(GtkStyle *, cairo_t *, GtkStateType, gboolean, GtkWidget *, const gchar *, gint, gint, PangoLayout *)
      * }
      */
-    public class draw_layout {
+    public final static class draw_layout {
+
+        private draw_layout() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2605,9 +2753,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, MemorySegment _x8) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, int _x6, int _x7, MemorySegment _x8) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2626,7 +2776,7 @@ public class _GtkStyleClass {
         return draw_layout$LAYOUT;
     }
 
-    private static final long draw_layout$OFFSET = 328;
+    private static final long draw_layout$OFFSET = $LAYOUT.byteOffset(groupElement("draw_layout"));
 
     /**
      * Offset for field:
@@ -2663,7 +2813,11 @@ public class _GtkStyleClass {
      * void (*draw_resize_grip)(GtkStyle *, cairo_t *, GtkStateType, GtkWidget *, const gchar *, GdkWindowEdge, gint, gint, gint, gint)
      * }
      */
-    public class draw_resize_grip {
+    public final static class draw_resize_grip {
+
+        private draw_resize_grip() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2707,9 +2861,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, int _x5, int _x6, int _x7, int _x8, int _x9) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, int _x5, int _x6, int _x7, int _x8, int _x9) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8, _x9);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2728,7 +2884,7 @@ public class _GtkStyleClass {
         return draw_resize_grip$LAYOUT;
     }
 
-    private static final long draw_resize_grip$OFFSET = 336;
+    private static final long draw_resize_grip$OFFSET = $LAYOUT.byteOffset(groupElement("draw_resize_grip"));
 
     /**
      * Offset for field:
@@ -2765,7 +2921,11 @@ public class _GtkStyleClass {
      * void (*draw_spinner)(GtkStyle *, cairo_t *, GtkStateType, GtkWidget *, const gchar *, guint, gint, gint, gint, gint)
      * }
      */
-    public class draw_spinner {
+    public final static class draw_spinner {
+
+        private draw_spinner() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2809,9 +2969,11 @@ public class _GtkStyleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, int _x5, int _x6, int _x7, int _x8, int _x9) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, int _x5, int _x6, int _x7, int _x8, int _x9) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8, _x9);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2830,7 +2992,7 @@ public class _GtkStyleClass {
         return draw_spinner$LAYOUT;
     }
 
-    private static final long draw_spinner$OFFSET = 344;
+    private static final long draw_spinner$OFFSET = $LAYOUT.byteOffset(groupElement("draw_spinner"));
 
     /**
      * Offset for field:
@@ -2867,7 +3029,11 @@ public class _GtkStyleClass {
      * void (*_gtk_reserved1)(void)
      * }
      */
-    public class _gtk_reserved1 {
+    public final static class _gtk_reserved1 {
+
+        private _gtk_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2903,6 +3069,8 @@ public class _GtkStyleClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2921,7 +3089,7 @@ public class _GtkStyleClass {
         return _gtk_reserved1$LAYOUT;
     }
 
-    private static final long _gtk_reserved1$OFFSET = 352;
+    private static final long _gtk_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved1"));
 
     /**
      * Offset for field:
@@ -2958,7 +3126,11 @@ public class _GtkStyleClass {
      * void (*_gtk_reserved2)(void)
      * }
      */
-    public class _gtk_reserved2 {
+    public final static class _gtk_reserved2 {
+
+        private _gtk_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2994,6 +3166,8 @@ public class _GtkStyleClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3012,7 +3186,7 @@ public class _GtkStyleClass {
         return _gtk_reserved2$LAYOUT;
     }
 
-    private static final long _gtk_reserved2$OFFSET = 360;
+    private static final long _gtk_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved2"));
 
     /**
      * Offset for field:
@@ -3049,7 +3223,11 @@ public class _GtkStyleClass {
      * void (*_gtk_reserved3)(void)
      * }
      */
-    public class _gtk_reserved3 {
+    public final static class _gtk_reserved3 {
+
+        private _gtk_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3085,6 +3263,8 @@ public class _GtkStyleClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3103,7 +3283,7 @@ public class _GtkStyleClass {
         return _gtk_reserved3$LAYOUT;
     }
 
-    private static final long _gtk_reserved3$OFFSET = 368;
+    private static final long _gtk_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved3"));
 
     /**
      * Offset for field:
@@ -3140,7 +3320,11 @@ public class _GtkStyleClass {
      * void (*_gtk_reserved4)(void)
      * }
      */
-    public class _gtk_reserved4 {
+    public final static class _gtk_reserved4 {
+
+        private _gtk_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3176,6 +3360,8 @@ public class _GtkStyleClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3194,7 +3380,7 @@ public class _GtkStyleClass {
         return _gtk_reserved4$LAYOUT;
     }
 
-    private static final long _gtk_reserved4$OFFSET = 376;
+    private static final long _gtk_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved4"));
 
     /**
      * Offset for field:
@@ -3231,7 +3417,11 @@ public class _GtkStyleClass {
      * void (*_gtk_reserved5)(void)
      * }
      */
-    public class _gtk_reserved5 {
+    public final static class _gtk_reserved5 {
+
+        private _gtk_reserved5() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3267,6 +3457,8 @@ public class _GtkStyleClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3285,7 +3477,7 @@ public class _GtkStyleClass {
         return _gtk_reserved5$LAYOUT;
     }
 
-    private static final long _gtk_reserved5$OFFSET = 384;
+    private static final long _gtk_reserved5$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved5"));
 
     /**
      * Offset for field:
@@ -3322,7 +3514,11 @@ public class _GtkStyleClass {
      * void (*_gtk_reserved6)(void)
      * }
      */
-    public class _gtk_reserved6 {
+    public final static class _gtk_reserved6 {
+
+        private _gtk_reserved6() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3358,6 +3554,8 @@ public class _GtkStyleClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3376,7 +3574,7 @@ public class _GtkStyleClass {
         return _gtk_reserved6$LAYOUT;
     }
 
-    private static final long _gtk_reserved6$OFFSET = 392;
+    private static final long _gtk_reserved6$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved6"));
 
     /**
      * Offset for field:
@@ -3413,7 +3611,11 @@ public class _GtkStyleClass {
      * void (*_gtk_reserved7)(void)
      * }
      */
-    public class _gtk_reserved7 {
+    public final static class _gtk_reserved7 {
+
+        private _gtk_reserved7() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3449,6 +3651,8 @@ public class _GtkStyleClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3467,7 +3671,7 @@ public class _GtkStyleClass {
         return _gtk_reserved7$LAYOUT;
     }
 
-    private static final long _gtk_reserved7$OFFSET = 400;
+    private static final long _gtk_reserved7$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved7"));
 
     /**
      * Offset for field:
@@ -3504,7 +3708,11 @@ public class _GtkStyleClass {
      * void (*_gtk_reserved8)(void)
      * }
      */
-    public class _gtk_reserved8 {
+    public final static class _gtk_reserved8 {
+
+        private _gtk_reserved8() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3540,6 +3748,8 @@ public class _GtkStyleClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3558,7 +3768,7 @@ public class _GtkStyleClass {
         return _gtk_reserved8$LAYOUT;
     }
 
-    private static final long _gtk_reserved8$OFFSET = 408;
+    private static final long _gtk_reserved8$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved8"));
 
     /**
      * Offset for field:
@@ -3595,7 +3805,11 @@ public class _GtkStyleClass {
      * void (*_gtk_reserved9)(void)
      * }
      */
-    public class _gtk_reserved9 {
+    public final static class _gtk_reserved9 {
+
+        private _gtk_reserved9() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3631,6 +3845,8 @@ public class _GtkStyleClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3649,7 +3865,7 @@ public class _GtkStyleClass {
         return _gtk_reserved9$LAYOUT;
     }
 
-    private static final long _gtk_reserved9$OFFSET = 416;
+    private static final long _gtk_reserved9$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved9"));
 
     /**
      * Offset for field:
@@ -3686,7 +3902,11 @@ public class _GtkStyleClass {
      * void (*_gtk_reserved10)(void)
      * }
      */
-    public class _gtk_reserved10 {
+    public final static class _gtk_reserved10 {
+
+        private _gtk_reserved10() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3722,6 +3942,8 @@ public class _GtkStyleClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3740,7 +3962,7 @@ public class _GtkStyleClass {
         return _gtk_reserved10$LAYOUT;
     }
 
-    private static final long _gtk_reserved10$OFFSET = 424;
+    private static final long _gtk_reserved10$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved10"));
 
     /**
      * Offset for field:
@@ -3777,7 +3999,11 @@ public class _GtkStyleClass {
      * void (*_gtk_reserved11)(void)
      * }
      */
-    public class _gtk_reserved11 {
+    public final static class _gtk_reserved11 {
+
+        private _gtk_reserved11() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3813,6 +4039,8 @@ public class _GtkStyleClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3831,7 +4059,7 @@ public class _GtkStyleClass {
         return _gtk_reserved11$LAYOUT;
     }
 
-    private static final long _gtk_reserved11$OFFSET = 432;
+    private static final long _gtk_reserved11$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved11"));
 
     /**
      * Offset for field:
@@ -3892,7 +4120,7 @@ public class _GtkStyleClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -3900,7 +4128,7 @@ public class _GtkStyleClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

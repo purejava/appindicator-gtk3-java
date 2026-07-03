@@ -74,7 +74,7 @@ public class _GFileEnumeratorClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -111,7 +111,11 @@ public class _GFileEnumeratorClass {
      * GFileInfo *(*next_file)(GFileEnumerator *, GCancellable *, GError **)
      * }
      */
-    public class next_file {
+    public final static class next_file {
+
+        private next_file() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -149,9 +153,11 @@ public class _GFileEnumeratorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -170,7 +176,7 @@ public class _GFileEnumeratorClass {
         return next_file$LAYOUT;
     }
 
-    private static final long next_file$OFFSET = 136;
+    private static final long next_file$OFFSET = $LAYOUT.byteOffset(groupElement("next_file"));
 
     /**
      * Offset for field:
@@ -207,7 +213,11 @@ public class _GFileEnumeratorClass {
      * gboolean (*close_fn)(GFileEnumerator *, GCancellable *, GError **)
      * }
      */
-    public class close_fn {
+    public final static class close_fn {
+
+        private close_fn() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -245,9 +255,11 @@ public class _GFileEnumeratorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -266,7 +278,7 @@ public class _GFileEnumeratorClass {
         return close_fn$LAYOUT;
     }
 
-    private static final long close_fn$OFFSET = 144;
+    private static final long close_fn$OFFSET = $LAYOUT.byteOffset(groupElement("close_fn"));
 
     /**
      * Offset for field:
@@ -303,7 +315,11 @@ public class _GFileEnumeratorClass {
      * void (*next_files_async)(GFileEnumerator *, int, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class next_files_async {
+    public final static class next_files_async {
+
+        private next_files_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -343,9 +359,11 @@ public class _GFileEnumeratorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -364,7 +382,7 @@ public class _GFileEnumeratorClass {
         return next_files_async$LAYOUT;
     }
 
-    private static final long next_files_async$OFFSET = 152;
+    private static final long next_files_async$OFFSET = $LAYOUT.byteOffset(groupElement("next_files_async"));
 
     /**
      * Offset for field:
@@ -401,7 +419,11 @@ public class _GFileEnumeratorClass {
      * GList *(*next_files_finish)(GFileEnumerator *, GAsyncResult *, GError **)
      * }
      */
-    public class next_files_finish {
+    public final static class next_files_finish {
+
+        private next_files_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -439,9 +461,11 @@ public class _GFileEnumeratorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -460,7 +484,7 @@ public class _GFileEnumeratorClass {
         return next_files_finish$LAYOUT;
     }
 
-    private static final long next_files_finish$OFFSET = 160;
+    private static final long next_files_finish$OFFSET = $LAYOUT.byteOffset(groupElement("next_files_finish"));
 
     /**
      * Offset for field:
@@ -497,7 +521,11 @@ public class _GFileEnumeratorClass {
      * void (*close_async)(GFileEnumerator *, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class close_async {
+    public final static class close_async {
+
+        private close_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -536,9 +564,11 @@ public class _GFileEnumeratorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -557,7 +587,7 @@ public class _GFileEnumeratorClass {
         return close_async$LAYOUT;
     }
 
-    private static final long close_async$OFFSET = 168;
+    private static final long close_async$OFFSET = $LAYOUT.byteOffset(groupElement("close_async"));
 
     /**
      * Offset for field:
@@ -594,7 +624,11 @@ public class _GFileEnumeratorClass {
      * gboolean (*close_finish)(GFileEnumerator *, GAsyncResult *, GError **)
      * }
      */
-    public class close_finish {
+    public final static class close_finish {
+
+        private close_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -632,9 +666,11 @@ public class _GFileEnumeratorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -653,7 +689,7 @@ public class _GFileEnumeratorClass {
         return close_finish$LAYOUT;
     }
 
-    private static final long close_finish$OFFSET = 176;
+    private static final long close_finish$OFFSET = $LAYOUT.byteOffset(groupElement("close_finish"));
 
     /**
      * Offset for field:
@@ -690,7 +726,11 @@ public class _GFileEnumeratorClass {
      * void (*_g_reserved1)(void)
      * }
      */
-    public class _g_reserved1 {
+    public final static class _g_reserved1 {
+
+        private _g_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -726,6 +766,8 @@ public class _GFileEnumeratorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -744,7 +786,7 @@ public class _GFileEnumeratorClass {
         return _g_reserved1$LAYOUT;
     }
 
-    private static final long _g_reserved1$OFFSET = 184;
+    private static final long _g_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved1"));
 
     /**
      * Offset for field:
@@ -781,7 +823,11 @@ public class _GFileEnumeratorClass {
      * void (*_g_reserved2)(void)
      * }
      */
-    public class _g_reserved2 {
+    public final static class _g_reserved2 {
+
+        private _g_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -817,6 +863,8 @@ public class _GFileEnumeratorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -835,7 +883,7 @@ public class _GFileEnumeratorClass {
         return _g_reserved2$LAYOUT;
     }
 
-    private static final long _g_reserved2$OFFSET = 192;
+    private static final long _g_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved2"));
 
     /**
      * Offset for field:
@@ -872,7 +920,11 @@ public class _GFileEnumeratorClass {
      * void (*_g_reserved3)(void)
      * }
      */
-    public class _g_reserved3 {
+    public final static class _g_reserved3 {
+
+        private _g_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -908,6 +960,8 @@ public class _GFileEnumeratorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -926,7 +980,7 @@ public class _GFileEnumeratorClass {
         return _g_reserved3$LAYOUT;
     }
 
-    private static final long _g_reserved3$OFFSET = 200;
+    private static final long _g_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved3"));
 
     /**
      * Offset for field:
@@ -963,7 +1017,11 @@ public class _GFileEnumeratorClass {
      * void (*_g_reserved4)(void)
      * }
      */
-    public class _g_reserved4 {
+    public final static class _g_reserved4 {
+
+        private _g_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -999,6 +1057,8 @@ public class _GFileEnumeratorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1017,7 +1077,7 @@ public class _GFileEnumeratorClass {
         return _g_reserved4$LAYOUT;
     }
 
-    private static final long _g_reserved4$OFFSET = 208;
+    private static final long _g_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved4"));
 
     /**
      * Offset for field:
@@ -1054,7 +1114,11 @@ public class _GFileEnumeratorClass {
      * void (*_g_reserved5)(void)
      * }
      */
-    public class _g_reserved5 {
+    public final static class _g_reserved5 {
+
+        private _g_reserved5() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1090,6 +1154,8 @@ public class _GFileEnumeratorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1108,7 +1174,7 @@ public class _GFileEnumeratorClass {
         return _g_reserved5$LAYOUT;
     }
 
-    private static final long _g_reserved5$OFFSET = 216;
+    private static final long _g_reserved5$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved5"));
 
     /**
      * Offset for field:
@@ -1145,7 +1211,11 @@ public class _GFileEnumeratorClass {
      * void (*_g_reserved6)(void)
      * }
      */
-    public class _g_reserved6 {
+    public final static class _g_reserved6 {
+
+        private _g_reserved6() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1181,6 +1251,8 @@ public class _GFileEnumeratorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1199,7 +1271,7 @@ public class _GFileEnumeratorClass {
         return _g_reserved6$LAYOUT;
     }
 
-    private static final long _g_reserved6$OFFSET = 224;
+    private static final long _g_reserved6$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved6"));
 
     /**
      * Offset for field:
@@ -1236,7 +1308,11 @@ public class _GFileEnumeratorClass {
      * void (*_g_reserved7)(void)
      * }
      */
-    public class _g_reserved7 {
+    public final static class _g_reserved7 {
+
+        private _g_reserved7() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1272,6 +1348,8 @@ public class _GFileEnumeratorClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1290,7 +1368,7 @@ public class _GFileEnumeratorClass {
         return _g_reserved7$LAYOUT;
     }
 
-    private static final long _g_reserved7$OFFSET = 232;
+    private static final long _g_reserved7$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved7"));
 
     /**
      * Offset for field:
@@ -1351,7 +1429,7 @@ public class _GFileEnumeratorClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1359,7 +1437,7 @@ public class _GFileEnumeratorClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

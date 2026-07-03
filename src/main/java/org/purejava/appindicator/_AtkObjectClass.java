@@ -102,7 +102,7 @@ public class _AtkObjectClass {
         return parent$LAYOUT;
     }
 
-    private static final long parent$OFFSET = 0;
+    private static final long parent$OFFSET = $LAYOUT.byteOffset(groupElement("parent"));
 
     /**
      * Offset for field:
@@ -139,7 +139,11 @@ public class _AtkObjectClass {
      * const gchar *(*get_name)(AtkObject *)
      * }
      */
-    public class get_name {
+    public final static class get_name {
+
+        private get_name() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -175,9 +179,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -196,7 +202,7 @@ public class _AtkObjectClass {
         return get_name$LAYOUT;
     }
 
-    private static final long get_name$OFFSET = 136;
+    private static final long get_name$OFFSET = $LAYOUT.byteOffset(groupElement("get_name"));
 
     /**
      * Offset for field:
@@ -233,7 +239,11 @@ public class _AtkObjectClass {
      * const gchar *(*get_description)(AtkObject *)
      * }
      */
-    public class get_description {
+    public final static class get_description {
+
+        private get_description() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -269,9 +279,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -290,7 +302,7 @@ public class _AtkObjectClass {
         return get_description$LAYOUT;
     }
 
-    private static final long get_description$OFFSET = 144;
+    private static final long get_description$OFFSET = $LAYOUT.byteOffset(groupElement("get_description"));
 
     /**
      * Offset for field:
@@ -327,7 +339,11 @@ public class _AtkObjectClass {
      * AtkObject *(*get_parent)(AtkObject *)
      * }
      */
-    public class get_parent {
+    public final static class get_parent {
+
+        private get_parent() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -363,9 +379,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -384,7 +402,7 @@ public class _AtkObjectClass {
         return get_parent$LAYOUT;
     }
 
-    private static final long get_parent$OFFSET = 152;
+    private static final long get_parent$OFFSET = $LAYOUT.byteOffset(groupElement("get_parent"));
 
     /**
      * Offset for field:
@@ -421,7 +439,11 @@ public class _AtkObjectClass {
      * gint (*get_n_children)(AtkObject *)
      * }
      */
-    public class get_n_children {
+    public final static class get_n_children {
+
+        private get_n_children() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -457,9 +479,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -478,7 +502,7 @@ public class _AtkObjectClass {
         return get_n_children$LAYOUT;
     }
 
-    private static final long get_n_children$OFFSET = 160;
+    private static final long get_n_children$OFFSET = $LAYOUT.byteOffset(groupElement("get_n_children"));
 
     /**
      * Offset for field:
@@ -515,7 +539,11 @@ public class _AtkObjectClass {
      * AtkObject *(*ref_child)(AtkObject *, gint)
      * }
      */
-    public class ref_child {
+    public final static class ref_child {
+
+        private ref_child() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -552,9 +580,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -573,7 +603,7 @@ public class _AtkObjectClass {
         return ref_child$LAYOUT;
     }
 
-    private static final long ref_child$OFFSET = 168;
+    private static final long ref_child$OFFSET = $LAYOUT.byteOffset(groupElement("ref_child"));
 
     /**
      * Offset for field:
@@ -610,7 +640,11 @@ public class _AtkObjectClass {
      * gint (*get_index_in_parent)(AtkObject *)
      * }
      */
-    public class get_index_in_parent {
+    public final static class get_index_in_parent {
+
+        private get_index_in_parent() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -646,9 +680,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -667,7 +703,7 @@ public class _AtkObjectClass {
         return get_index_in_parent$LAYOUT;
     }
 
-    private static final long get_index_in_parent$OFFSET = 176;
+    private static final long get_index_in_parent$OFFSET = $LAYOUT.byteOffset(groupElement("get_index_in_parent"));
 
     /**
      * Offset for field:
@@ -704,7 +740,11 @@ public class _AtkObjectClass {
      * AtkRelationSet *(*ref_relation_set)(AtkObject *)
      * }
      */
-    public class ref_relation_set {
+    public final static class ref_relation_set {
+
+        private ref_relation_set() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -740,9 +780,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -761,7 +803,7 @@ public class _AtkObjectClass {
         return ref_relation_set$LAYOUT;
     }
 
-    private static final long ref_relation_set$OFFSET = 184;
+    private static final long ref_relation_set$OFFSET = $LAYOUT.byteOffset(groupElement("ref_relation_set"));
 
     /**
      * Offset for field:
@@ -798,7 +840,11 @@ public class _AtkObjectClass {
      * AtkRole (*get_role)(AtkObject *)
      * }
      */
-    public class get_role {
+    public final static class get_role {
+
+        private get_role() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -834,9 +880,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -855,7 +903,7 @@ public class _AtkObjectClass {
         return get_role$LAYOUT;
     }
 
-    private static final long get_role$OFFSET = 192;
+    private static final long get_role$OFFSET = $LAYOUT.byteOffset(groupElement("get_role"));
 
     /**
      * Offset for field:
@@ -892,7 +940,11 @@ public class _AtkObjectClass {
      * AtkLayer (*get_layer)(AtkObject *)
      * }
      */
-    public class get_layer {
+    public final static class get_layer {
+
+        private get_layer() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -928,9 +980,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -949,7 +1003,7 @@ public class _AtkObjectClass {
         return get_layer$LAYOUT;
     }
 
-    private static final long get_layer$OFFSET = 200;
+    private static final long get_layer$OFFSET = $LAYOUT.byteOffset(groupElement("get_layer"));
 
     /**
      * Offset for field:
@@ -986,7 +1040,11 @@ public class _AtkObjectClass {
      * gint (*get_mdi_zorder)(AtkObject *)
      * }
      */
-    public class get_mdi_zorder {
+    public final static class get_mdi_zorder {
+
+        private get_mdi_zorder() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1022,9 +1080,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1043,7 +1103,7 @@ public class _AtkObjectClass {
         return get_mdi_zorder$LAYOUT;
     }
 
-    private static final long get_mdi_zorder$OFFSET = 208;
+    private static final long get_mdi_zorder$OFFSET = $LAYOUT.byteOffset(groupElement("get_mdi_zorder"));
 
     /**
      * Offset for field:
@@ -1080,7 +1140,11 @@ public class _AtkObjectClass {
      * AtkStateSet *(*ref_state_set)(AtkObject *)
      * }
      */
-    public class ref_state_set {
+    public final static class ref_state_set {
+
+        private ref_state_set() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1116,9 +1180,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1137,7 +1203,7 @@ public class _AtkObjectClass {
         return ref_state_set$LAYOUT;
     }
 
-    private static final long ref_state_set$OFFSET = 216;
+    private static final long ref_state_set$OFFSET = $LAYOUT.byteOffset(groupElement("ref_state_set"));
 
     /**
      * Offset for field:
@@ -1174,7 +1240,11 @@ public class _AtkObjectClass {
      * void (*set_name)(AtkObject *, const gchar *)
      * }
      */
-    public class set_name {
+    public final static class set_name {
+
+        private set_name() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1210,9 +1280,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1231,7 +1303,7 @@ public class _AtkObjectClass {
         return set_name$LAYOUT;
     }
 
-    private static final long set_name$OFFSET = 224;
+    private static final long set_name$OFFSET = $LAYOUT.byteOffset(groupElement("set_name"));
 
     /**
      * Offset for field:
@@ -1268,7 +1340,11 @@ public class _AtkObjectClass {
      * void (*set_description)(AtkObject *, const gchar *)
      * }
      */
-    public class set_description {
+    public final static class set_description {
+
+        private set_description() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1304,9 +1380,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1325,7 +1403,7 @@ public class _AtkObjectClass {
         return set_description$LAYOUT;
     }
 
-    private static final long set_description$OFFSET = 232;
+    private static final long set_description$OFFSET = $LAYOUT.byteOffset(groupElement("set_description"));
 
     /**
      * Offset for field:
@@ -1362,7 +1440,11 @@ public class _AtkObjectClass {
      * void (*set_parent)(AtkObject *, AtkObject *)
      * }
      */
-    public class set_parent {
+    public final static class set_parent {
+
+        private set_parent() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1398,9 +1480,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1419,7 +1503,7 @@ public class _AtkObjectClass {
         return set_parent$LAYOUT;
     }
 
-    private static final long set_parent$OFFSET = 240;
+    private static final long set_parent$OFFSET = $LAYOUT.byteOffset(groupElement("set_parent"));
 
     /**
      * Offset for field:
@@ -1456,7 +1540,11 @@ public class _AtkObjectClass {
      * void (*set_role)(AtkObject *, AtkRole)
      * }
      */
-    public class set_role {
+    public final static class set_role {
+
+        private set_role() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1492,9 +1580,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1513,7 +1603,7 @@ public class _AtkObjectClass {
         return set_role$LAYOUT;
     }
 
-    private static final long set_role$OFFSET = 248;
+    private static final long set_role$OFFSET = $LAYOUT.byteOffset(groupElement("set_role"));
 
     /**
      * Offset for field:
@@ -1550,7 +1640,11 @@ public class _AtkObjectClass {
      * guint (*connect_property_change_handler)(AtkObject *, AtkPropertyChangeHandler *)
      * }
      */
-    public class connect_property_change_handler {
+    public final static class connect_property_change_handler {
+
+        private connect_property_change_handler() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1587,9 +1681,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1608,7 +1704,7 @@ public class _AtkObjectClass {
         return connect_property_change_handler$LAYOUT;
     }
 
-    private static final long connect_property_change_handler$OFFSET = 256;
+    private static final long connect_property_change_handler$OFFSET = $LAYOUT.byteOffset(groupElement("connect_property_change_handler"));
 
     /**
      * Offset for field:
@@ -1645,7 +1741,11 @@ public class _AtkObjectClass {
      * void (*remove_property_change_handler)(AtkObject *, guint)
      * }
      */
-    public class remove_property_change_handler {
+    public final static class remove_property_change_handler {
+
+        private remove_property_change_handler() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1681,9 +1781,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1702,7 +1804,7 @@ public class _AtkObjectClass {
         return remove_property_change_handler$LAYOUT;
     }
 
-    private static final long remove_property_change_handler$OFFSET = 264;
+    private static final long remove_property_change_handler$OFFSET = $LAYOUT.byteOffset(groupElement("remove_property_change_handler"));
 
     /**
      * Offset for field:
@@ -1739,7 +1841,11 @@ public class _AtkObjectClass {
      * void (*initialize)(AtkObject *, gpointer)
      * }
      */
-    public class initialize {
+    public final static class initialize {
+
+        private initialize() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1775,9 +1881,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1796,7 +1904,7 @@ public class _AtkObjectClass {
         return initialize$LAYOUT;
     }
 
-    private static final long initialize$OFFSET = 272;
+    private static final long initialize$OFFSET = $LAYOUT.byteOffset(groupElement("initialize"));
 
     /**
      * Offset for field:
@@ -1833,7 +1941,11 @@ public class _AtkObjectClass {
      * void (*children_changed)(AtkObject *, guint, gpointer)
      * }
      */
-    public class children_changed {
+    public final static class children_changed {
+
+        private children_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1870,9 +1982,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1891,7 +2005,7 @@ public class _AtkObjectClass {
         return children_changed$LAYOUT;
     }
 
-    private static final long children_changed$OFFSET = 280;
+    private static final long children_changed$OFFSET = $LAYOUT.byteOffset(groupElement("children_changed"));
 
     /**
      * Offset for field:
@@ -1928,7 +2042,11 @@ public class _AtkObjectClass {
      * void (*focus_event)(AtkObject *, gboolean)
      * }
      */
-    public class focus_event {
+    public final static class focus_event {
+
+        private focus_event() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1964,9 +2082,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1985,7 +2105,7 @@ public class _AtkObjectClass {
         return focus_event$LAYOUT;
     }
 
-    private static final long focus_event$OFFSET = 288;
+    private static final long focus_event$OFFSET = $LAYOUT.byteOffset(groupElement("focus_event"));
 
     /**
      * Offset for field:
@@ -2022,7 +2142,11 @@ public class _AtkObjectClass {
      * void (*property_change)(AtkObject *, AtkPropertyValues *)
      * }
      */
-    public class property_change {
+    public final static class property_change {
+
+        private property_change() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2058,9 +2182,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2079,7 +2205,7 @@ public class _AtkObjectClass {
         return property_change$LAYOUT;
     }
 
-    private static final long property_change$OFFSET = 296;
+    private static final long property_change$OFFSET = $LAYOUT.byteOffset(groupElement("property_change"));
 
     /**
      * Offset for field:
@@ -2116,7 +2242,11 @@ public class _AtkObjectClass {
      * void (*state_change)(AtkObject *, const gchar *, gboolean)
      * }
      */
-    public class state_change {
+    public final static class state_change {
+
+        private state_change() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2153,9 +2283,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2174,7 +2306,7 @@ public class _AtkObjectClass {
         return state_change$LAYOUT;
     }
 
-    private static final long state_change$OFFSET = 304;
+    private static final long state_change$OFFSET = $LAYOUT.byteOffset(groupElement("state_change"));
 
     /**
      * Offset for field:
@@ -2211,7 +2343,11 @@ public class _AtkObjectClass {
      * void (*visible_data_changed)(AtkObject *)
      * }
      */
-    public class visible_data_changed {
+    public final static class visible_data_changed {
+
+        private visible_data_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2246,9 +2382,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2267,7 +2405,7 @@ public class _AtkObjectClass {
         return visible_data_changed$LAYOUT;
     }
 
-    private static final long visible_data_changed$OFFSET = 312;
+    private static final long visible_data_changed$OFFSET = $LAYOUT.byteOffset(groupElement("visible_data_changed"));
 
     /**
      * Offset for field:
@@ -2304,7 +2442,11 @@ public class _AtkObjectClass {
      * void (*active_descendant_changed)(AtkObject *, gpointer *)
      * }
      */
-    public class active_descendant_changed {
+    public final static class active_descendant_changed {
+
+        private active_descendant_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2340,9 +2482,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2361,7 +2505,7 @@ public class _AtkObjectClass {
         return active_descendant_changed$LAYOUT;
     }
 
-    private static final long active_descendant_changed$OFFSET = 320;
+    private static final long active_descendant_changed$OFFSET = $LAYOUT.byteOffset(groupElement("active_descendant_changed"));
 
     /**
      * Offset for field:
@@ -2398,7 +2542,11 @@ public class _AtkObjectClass {
      * AtkAttributeSet *(*get_attributes)(AtkObject *)
      * }
      */
-    public class get_attributes {
+    public final static class get_attributes {
+
+        private get_attributes() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2434,9 +2582,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2455,7 +2605,7 @@ public class _AtkObjectClass {
         return get_attributes$LAYOUT;
     }
 
-    private static final long get_attributes$OFFSET = 328;
+    private static final long get_attributes$OFFSET = $LAYOUT.byteOffset(groupElement("get_attributes"));
 
     /**
      * Offset for field:
@@ -2492,7 +2642,11 @@ public class _AtkObjectClass {
      * const gchar *(*get_object_locale)(AtkObject *)
      * }
      */
-    public class get_object_locale {
+    public final static class get_object_locale {
+
+        private get_object_locale() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2528,9 +2682,11 @@ public class _AtkObjectClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2549,7 +2705,7 @@ public class _AtkObjectClass {
         return get_object_locale$LAYOUT;
     }
 
-    private static final long get_object_locale$OFFSET = 336;
+    private static final long get_object_locale$OFFSET = $LAYOUT.byteOffset(groupElement("get_object_locale"));
 
     /**
      * Offset for field:
@@ -2593,7 +2749,7 @@ public class _AtkObjectClass {
         return pad1$LAYOUT;
     }
 
-    private static final long pad1$OFFSET = 344;
+    private static final long pad1$OFFSET = $LAYOUT.byteOffset(groupElement("pad1"));
 
     /**
      * Offset for field:
@@ -2654,7 +2810,7 @@ public class _AtkObjectClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -2662,7 +2818,7 @@ public class _AtkObjectClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

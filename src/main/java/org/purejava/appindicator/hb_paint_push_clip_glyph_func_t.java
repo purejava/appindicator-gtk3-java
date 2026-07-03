@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*hb_paint_push_clip_glyph_func_t)(hb_paint_funcs_t *, void *, hb_codepoint_t, hb_font_t *, void *)
  * }
  */
-public class hb_paint_push_clip_glyph_func_t {
+public final class hb_paint_push_clip_glyph_func_t {
+
+    private hb_paint_push_clip_glyph_func_t() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -56,9 +60,11 @@ public class hb_paint_push_clip_glyph_func_t {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment funcs, MemorySegment paint_data, int glyph, MemorySegment font, MemorySegment user_data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment funcs, MemorySegment paint_data, int glyph, MemorySegment font, MemorySegment user_data) {
         try {
              DOWN$MH.invokeExact(funcPtr, funcs, paint_data, glyph, font, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

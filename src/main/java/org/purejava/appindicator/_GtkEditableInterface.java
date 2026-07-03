@@ -68,7 +68,7 @@ public class _GtkEditableInterface {
         return base_iface$LAYOUT;
     }
 
-    private static final long base_iface$OFFSET = 0;
+    private static final long base_iface$OFFSET = $LAYOUT.byteOffset(groupElement("base_iface"));
 
     /**
      * Offset for field:
@@ -105,7 +105,11 @@ public class _GtkEditableInterface {
      * void (*insert_text)(GtkEditable *, const gchar *, gint, gint *)
      * }
      */
-    public class insert_text {
+    public final static class insert_text {
+
+        private insert_text() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -143,9 +147,11 @@ public class _GtkEditableInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -164,7 +170,7 @@ public class _GtkEditableInterface {
         return insert_text$LAYOUT;
     }
 
-    private static final long insert_text$OFFSET = 16;
+    private static final long insert_text$OFFSET = $LAYOUT.byteOffset(groupElement("insert_text"));
 
     /**
      * Offset for field:
@@ -201,7 +207,11 @@ public class _GtkEditableInterface {
      * void (*delete_text)(GtkEditable *, gint, gint)
      * }
      */
-    public class delete_text {
+    public final static class delete_text {
+
+        private delete_text() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -238,9 +248,11 @@ public class _GtkEditableInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -259,7 +271,7 @@ public class _GtkEditableInterface {
         return delete_text$LAYOUT;
     }
 
-    private static final long delete_text$OFFSET = 24;
+    private static final long delete_text$OFFSET = $LAYOUT.byteOffset(groupElement("delete_text"));
 
     /**
      * Offset for field:
@@ -296,7 +308,11 @@ public class _GtkEditableInterface {
      * void (*changed)(GtkEditable *)
      * }
      */
-    public class changed {
+    public final static class changed {
+
+        private changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -331,9 +347,11 @@ public class _GtkEditableInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -352,7 +370,7 @@ public class _GtkEditableInterface {
         return changed$LAYOUT;
     }
 
-    private static final long changed$OFFSET = 32;
+    private static final long changed$OFFSET = $LAYOUT.byteOffset(groupElement("changed"));
 
     /**
      * Offset for field:
@@ -389,7 +407,11 @@ public class _GtkEditableInterface {
      * void (*do_insert_text)(GtkEditable *, const gchar *, gint, gint *)
      * }
      */
-    public class do_insert_text {
+    public final static class do_insert_text {
+
+        private do_insert_text() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -427,9 +449,11 @@ public class _GtkEditableInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -448,7 +472,7 @@ public class _GtkEditableInterface {
         return do_insert_text$LAYOUT;
     }
 
-    private static final long do_insert_text$OFFSET = 40;
+    private static final long do_insert_text$OFFSET = $LAYOUT.byteOffset(groupElement("do_insert_text"));
 
     /**
      * Offset for field:
@@ -485,7 +509,11 @@ public class _GtkEditableInterface {
      * void (*do_delete_text)(GtkEditable *, gint, gint)
      * }
      */
-    public class do_delete_text {
+    public final static class do_delete_text {
+
+        private do_delete_text() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -522,9 +550,11 @@ public class _GtkEditableInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -543,7 +573,7 @@ public class _GtkEditableInterface {
         return do_delete_text$LAYOUT;
     }
 
-    private static final long do_delete_text$OFFSET = 48;
+    private static final long do_delete_text$OFFSET = $LAYOUT.byteOffset(groupElement("do_delete_text"));
 
     /**
      * Offset for field:
@@ -580,7 +610,11 @@ public class _GtkEditableInterface {
      * gchar *(*get_chars)(GtkEditable *, gint, gint)
      * }
      */
-    public class get_chars {
+    public final static class get_chars {
+
+        private get_chars() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -618,9 +652,11 @@ public class _GtkEditableInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -639,7 +675,7 @@ public class _GtkEditableInterface {
         return get_chars$LAYOUT;
     }
 
-    private static final long get_chars$OFFSET = 56;
+    private static final long get_chars$OFFSET = $LAYOUT.byteOffset(groupElement("get_chars"));
 
     /**
      * Offset for field:
@@ -676,7 +712,11 @@ public class _GtkEditableInterface {
      * void (*set_selection_bounds)(GtkEditable *, gint, gint)
      * }
      */
-    public class set_selection_bounds {
+    public final static class set_selection_bounds {
+
+        private set_selection_bounds() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -713,9 +753,11 @@ public class _GtkEditableInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -734,7 +776,7 @@ public class _GtkEditableInterface {
         return set_selection_bounds$LAYOUT;
     }
 
-    private static final long set_selection_bounds$OFFSET = 64;
+    private static final long set_selection_bounds$OFFSET = $LAYOUT.byteOffset(groupElement("set_selection_bounds"));
 
     /**
      * Offset for field:
@@ -771,7 +813,11 @@ public class _GtkEditableInterface {
      * gboolean (*get_selection_bounds)(GtkEditable *, gint *, gint *)
      * }
      */
-    public class get_selection_bounds {
+    public final static class get_selection_bounds {
+
+        private get_selection_bounds() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -809,9 +855,11 @@ public class _GtkEditableInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -830,7 +878,7 @@ public class _GtkEditableInterface {
         return get_selection_bounds$LAYOUT;
     }
 
-    private static final long get_selection_bounds$OFFSET = 72;
+    private static final long get_selection_bounds$OFFSET = $LAYOUT.byteOffset(groupElement("get_selection_bounds"));
 
     /**
      * Offset for field:
@@ -867,7 +915,11 @@ public class _GtkEditableInterface {
      * void (*set_position)(GtkEditable *, gint)
      * }
      */
-    public class set_position {
+    public final static class set_position {
+
+        private set_position() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -903,9 +955,11 @@ public class _GtkEditableInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -924,7 +978,7 @@ public class _GtkEditableInterface {
         return set_position$LAYOUT;
     }
 
-    private static final long set_position$OFFSET = 80;
+    private static final long set_position$OFFSET = $LAYOUT.byteOffset(groupElement("set_position"));
 
     /**
      * Offset for field:
@@ -961,7 +1015,11 @@ public class _GtkEditableInterface {
      * gint (*get_position)(GtkEditable *)
      * }
      */
-    public class get_position {
+    public final static class get_position {
+
+        private get_position() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -997,9 +1055,11 @@ public class _GtkEditableInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1018,7 +1078,7 @@ public class _GtkEditableInterface {
         return get_position$LAYOUT;
     }
 
-    private static final long get_position$OFFSET = 88;
+    private static final long get_position$OFFSET = $LAYOUT.byteOffset(groupElement("get_position"));
 
     /**
      * Offset for field:
@@ -1079,7 +1139,7 @@ public class _GtkEditableInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1087,7 +1147,7 @@ public class _GtkEditableInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

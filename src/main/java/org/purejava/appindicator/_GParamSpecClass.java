@@ -62,7 +62,7 @@ public class _GParamSpecClass {
         return g_type_class$LAYOUT;
     }
 
-    private static final long g_type_class$OFFSET = 0;
+    private static final long g_type_class$OFFSET = $LAYOUT.byteOffset(groupElement("g_type_class"));
 
     /**
      * Offset for field:
@@ -106,7 +106,7 @@ public class _GParamSpecClass {
         return value_type$LAYOUT;
     }
 
-    private static final long value_type$OFFSET = 8;
+    private static final long value_type$OFFSET = $LAYOUT.byteOffset(groupElement("value_type"));
 
     /**
      * Offset for field:
@@ -143,7 +143,11 @@ public class _GParamSpecClass {
      * void (*finalize)(GParamSpec *)
      * }
      */
-    public class finalize {
+    public final static class finalize {
+
+        private finalize() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -178,9 +182,11 @@ public class _GParamSpecClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -199,7 +205,7 @@ public class _GParamSpecClass {
         return finalize$LAYOUT;
     }
 
-    private static final long finalize$OFFSET = 16;
+    private static final long finalize$OFFSET = $LAYOUT.byteOffset(groupElement("finalize"));
 
     /**
      * Offset for field:
@@ -236,7 +242,11 @@ public class _GParamSpecClass {
      * void (*value_set_default)(GParamSpec *, GValue *)
      * }
      */
-    public class value_set_default {
+    public final static class value_set_default {
+
+        private value_set_default() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -272,9 +282,11 @@ public class _GParamSpecClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -293,7 +305,7 @@ public class _GParamSpecClass {
         return value_set_default$LAYOUT;
     }
 
-    private static final long value_set_default$OFFSET = 24;
+    private static final long value_set_default$OFFSET = $LAYOUT.byteOffset(groupElement("value_set_default"));
 
     /**
      * Offset for field:
@@ -330,7 +342,11 @@ public class _GParamSpecClass {
      * gboolean (*value_validate)(GParamSpec *, GValue *)
      * }
      */
-    public class value_validate {
+    public final static class value_validate {
+
+        private value_validate() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -367,9 +383,11 @@ public class _GParamSpecClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -388,7 +406,7 @@ public class _GParamSpecClass {
         return value_validate$LAYOUT;
     }
 
-    private static final long value_validate$OFFSET = 32;
+    private static final long value_validate$OFFSET = $LAYOUT.byteOffset(groupElement("value_validate"));
 
     /**
      * Offset for field:
@@ -425,7 +443,11 @@ public class _GParamSpecClass {
      * gint (*values_cmp)(GParamSpec *, const GValue *, const GValue *)
      * }
      */
-    public class values_cmp {
+    public final static class values_cmp {
+
+        private values_cmp() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -463,9 +485,11 @@ public class _GParamSpecClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -484,7 +508,7 @@ public class _GParamSpecClass {
         return values_cmp$LAYOUT;
     }
 
-    private static final long values_cmp$OFFSET = 40;
+    private static final long values_cmp$OFFSET = $LAYOUT.byteOffset(groupElement("values_cmp"));
 
     /**
      * Offset for field:
@@ -521,7 +545,11 @@ public class _GParamSpecClass {
      * gboolean (*value_is_valid)(GParamSpec *, const GValue *)
      * }
      */
-    public class value_is_valid {
+    public final static class value_is_valid {
+
+        private value_is_valid() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -558,9 +586,11 @@ public class _GParamSpecClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -579,7 +609,7 @@ public class _GParamSpecClass {
         return value_is_valid$LAYOUT;
     }
 
-    private static final long value_is_valid$OFFSET = 48;
+    private static final long value_is_valid$OFFSET = $LAYOUT.byteOffset(groupElement("value_is_valid"));
 
     /**
      * Offset for field:
@@ -623,7 +653,7 @@ public class _GParamSpecClass {
         return dummy$LAYOUT;
     }
 
-    private static final long dummy$OFFSET = 56;
+    private static final long dummy$OFFSET = $LAYOUT.byteOffset(groupElement("dummy"));
 
     /**
      * Offset for field:
@@ -675,7 +705,7 @@ public class _GParamSpecClass {
      * }
      */
     public static MemorySegment dummy(MemorySegment struct, long index0) {
-        return (MemorySegment)dummy$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)dummy$ELEM_HANDLE.get(struct, dummy$OFFSET, index0);
     }
 
     /**
@@ -685,7 +715,7 @@ public class _GParamSpecClass {
      * }
      */
     public static void dummy(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        dummy$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        dummy$ELEM_HANDLE.set(struct, dummy$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -717,7 +747,7 @@ public class _GParamSpecClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -725,7 +755,7 @@ public class _GParamSpecClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

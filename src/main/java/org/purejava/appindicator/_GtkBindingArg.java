@@ -54,7 +54,7 @@ public class _GtkBindingArg {
         return arg_type$LAYOUT;
     }
 
-    private static final long arg_type$OFFSET = 0;
+    private static final long arg_type$OFFSET = $LAYOUT.byteOffset(groupElement("arg_type"));
 
     /**
      * Offset for field:
@@ -126,7 +126,7 @@ public class _GtkBindingArg {
             return long_data$LAYOUT;
         }
 
-        private static final long long_data$OFFSET = 0;
+        private static final long long_data$OFFSET = $LAYOUT.byteOffset(groupElement("long_data"));
 
         /**
          * Offset for field:
@@ -170,7 +170,7 @@ public class _GtkBindingArg {
             return double_data$LAYOUT;
         }
 
-        private static final long double_data$OFFSET = 0;
+        private static final long double_data$OFFSET = $LAYOUT.byteOffset(groupElement("double_data"));
 
         /**
          * Offset for field:
@@ -214,7 +214,7 @@ public class _GtkBindingArg {
             return string_data$LAYOUT;
         }
 
-        private static final long string_data$OFFSET = 0;
+        private static final long string_data$OFFSET = $LAYOUT.byteOffset(groupElement("string_data"));
 
         /**
          * Offset for field:
@@ -275,7 +275,7 @@ public class _GtkBindingArg {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -283,7 +283,7 @@ public class _GtkBindingArg {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code elementCount * layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -307,7 +307,7 @@ public class _GtkBindingArg {
         return d$LAYOUT;
     }
 
-    private static final long d$OFFSET = 8;
+    private static final long d$OFFSET = $LAYOUT.byteOffset(groupElement("d"));
 
     /**
      * Offset for field:
@@ -380,7 +380,7 @@ public class _GtkBindingArg {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -388,7 +388,7 @@ public class _GtkBindingArg {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

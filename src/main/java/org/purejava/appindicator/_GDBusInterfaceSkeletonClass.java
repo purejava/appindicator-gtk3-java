@@ -20,7 +20,8 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  *     GDBusInterfaceVTable *(*get_vtable)(GDBusInterfaceSkeleton *);
  *     GVariant *(*get_properties)(GDBusInterfaceSkeleton *);
  *     void (*flush)(GDBusInterfaceSkeleton *);
- *     gpointer vfunc_padding[8];
+ *     void (*method_dispatch)(GDBusInterfaceSkeleton *, GDBusInterfaceMethodCallFunc, GDBusMethodInvocation *, GDBusInterfaceSkeletonFlags, GDBusObject *);
+ *     gpointer vfunc_padding[7];
  *     gboolean (*g_authorize_method)(GDBusInterfaceSkeleton *, GDBusMethodInvocation *);
  *     gpointer signal_padding[8];
  * }
@@ -38,7 +39,8 @@ public class _GDBusInterfaceSkeletonClass {
         app_indicator_h.C_POINTER.withName("get_vtable"),
         app_indicator_h.C_POINTER.withName("get_properties"),
         app_indicator_h.C_POINTER.withName("flush"),
-        MemoryLayout.sequenceLayout(8, app_indicator_h.C_POINTER).withName("vfunc_padding"),
+        app_indicator_h.C_POINTER.withName("method_dispatch"),
+        MemoryLayout.sequenceLayout(7, app_indicator_h.C_POINTER).withName("vfunc_padding"),
         app_indicator_h.C_POINTER.withName("g_authorize_method"),
         MemoryLayout.sequenceLayout(8, app_indicator_h.C_POINTER).withName("signal_padding")
     ).withName("_GDBusInterfaceSkeletonClass");
@@ -62,7 +64,7 @@ public class _GDBusInterfaceSkeletonClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -99,7 +101,11 @@ public class _GDBusInterfaceSkeletonClass {
      * GDBusInterfaceInfo *(*get_info)(GDBusInterfaceSkeleton *)
      * }
      */
-    public class get_info {
+    public final static class get_info {
+
+        private get_info() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -135,9 +141,11 @@ public class _GDBusInterfaceSkeletonClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -156,7 +164,7 @@ public class _GDBusInterfaceSkeletonClass {
         return get_info$LAYOUT;
     }
 
-    private static final long get_info$OFFSET = 136;
+    private static final long get_info$OFFSET = $LAYOUT.byteOffset(groupElement("get_info"));
 
     /**
      * Offset for field:
@@ -193,7 +201,11 @@ public class _GDBusInterfaceSkeletonClass {
      * GDBusInterfaceVTable *(*get_vtable)(GDBusInterfaceSkeleton *)
      * }
      */
-    public class get_vtable {
+    public final static class get_vtable {
+
+        private get_vtable() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -229,9 +241,11 @@ public class _GDBusInterfaceSkeletonClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -250,7 +264,7 @@ public class _GDBusInterfaceSkeletonClass {
         return get_vtable$LAYOUT;
     }
 
-    private static final long get_vtable$OFFSET = 144;
+    private static final long get_vtable$OFFSET = $LAYOUT.byteOffset(groupElement("get_vtable"));
 
     /**
      * Offset for field:
@@ -287,7 +301,11 @@ public class _GDBusInterfaceSkeletonClass {
      * GVariant *(*get_properties)(GDBusInterfaceSkeleton *)
      * }
      */
-    public class get_properties {
+    public final static class get_properties {
+
+        private get_properties() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -323,9 +341,11 @@ public class _GDBusInterfaceSkeletonClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -344,7 +364,7 @@ public class _GDBusInterfaceSkeletonClass {
         return get_properties$LAYOUT;
     }
 
-    private static final long get_properties$OFFSET = 152;
+    private static final long get_properties$OFFSET = $LAYOUT.byteOffset(groupElement("get_properties"));
 
     /**
      * Offset for field:
@@ -381,7 +401,11 @@ public class _GDBusInterfaceSkeletonClass {
      * void (*flush)(GDBusInterfaceSkeleton *)
      * }
      */
-    public class flush {
+    public final static class flush {
+
+        private flush() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -416,9 +440,11 @@ public class _GDBusInterfaceSkeletonClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -437,7 +463,7 @@ public class _GDBusInterfaceSkeletonClass {
         return flush$LAYOUT;
     }
 
-    private static final long flush$OFFSET = 160;
+    private static final long flush$OFFSET = $LAYOUT.byteOffset(groupElement("flush"));
 
     /**
      * Offset for field:
@@ -469,24 +495,127 @@ public class _GDBusInterfaceSkeletonClass {
         struct.set(flush$LAYOUT, flush$OFFSET, fieldValue);
     }
 
+    /**
+     * {@snippet lang=c :
+     * void (*method_dispatch)(GDBusInterfaceSkeleton *, GDBusInterfaceMethodCallFunc, GDBusMethodInvocation *, GDBusInterfaceSkeletonFlags, GDBusObject *)
+     * }
+     */
+    public final static class method_dispatch {
+
+        private method_dispatch() {
+            // Should not be called directly
+        }
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, MemorySegment _x4);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(method_dispatch.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(method_dispatch.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, MemorySegment _x4) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
+    }
+
+    private static final AddressLayout method_dispatch$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("method_dispatch"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*method_dispatch)(GDBusInterfaceSkeleton *, GDBusInterfaceMethodCallFunc, GDBusMethodInvocation *, GDBusInterfaceSkeletonFlags, GDBusObject *)
+     * }
+     */
+    public static final AddressLayout method_dispatch$layout() {
+        return method_dispatch$LAYOUT;
+    }
+
+    private static final long method_dispatch$OFFSET = $LAYOUT.byteOffset(groupElement("method_dispatch"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*method_dispatch)(GDBusInterfaceSkeleton *, GDBusInterfaceMethodCallFunc, GDBusMethodInvocation *, GDBusInterfaceSkeletonFlags, GDBusObject *)
+     * }
+     */
+    public static final long method_dispatch$offset() {
+        return method_dispatch$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * void (*method_dispatch)(GDBusInterfaceSkeleton *, GDBusInterfaceMethodCallFunc, GDBusMethodInvocation *, GDBusInterfaceSkeletonFlags, GDBusObject *)
+     * }
+     */
+    public static MemorySegment method_dispatch(MemorySegment struct) {
+        return struct.get(method_dispatch$LAYOUT, method_dispatch$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * void (*method_dispatch)(GDBusInterfaceSkeleton *, GDBusInterfaceMethodCallFunc, GDBusMethodInvocation *, GDBusInterfaceSkeletonFlags, GDBusObject *)
+     * }
+     */
+    public static void method_dispatch(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(method_dispatch$LAYOUT, method_dispatch$OFFSET, fieldValue);
+    }
+
     private static final SequenceLayout vfunc_padding$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("vfunc_padding"));
 
     /**
      * Layout for field:
      * {@snippet lang=c :
-     * gpointer vfunc_padding[8]
+     * gpointer vfunc_padding[7]
      * }
      */
     public static final SequenceLayout vfunc_padding$layout() {
         return vfunc_padding$LAYOUT;
     }
 
-    private static final long vfunc_padding$OFFSET = 168;
+    private static final long vfunc_padding$OFFSET = $LAYOUT.byteOffset(groupElement("vfunc_padding"));
 
     /**
      * Offset for field:
      * {@snippet lang=c :
-     * gpointer vfunc_padding[8]
+     * gpointer vfunc_padding[7]
      * }
      */
     public static final long vfunc_padding$offset() {
@@ -496,7 +625,7 @@ public class _GDBusInterfaceSkeletonClass {
     /**
      * Getter for field:
      * {@snippet lang=c :
-     * gpointer vfunc_padding[8]
+     * gpointer vfunc_padding[7]
      * }
      */
     public static MemorySegment vfunc_padding(MemorySegment struct) {
@@ -506,19 +635,19 @@ public class _GDBusInterfaceSkeletonClass {
     /**
      * Setter for field:
      * {@snippet lang=c :
-     * gpointer vfunc_padding[8]
+     * gpointer vfunc_padding[7]
      * }
      */
     public static void vfunc_padding(MemorySegment struct, MemorySegment fieldValue) {
         MemorySegment.copy(fieldValue, 0L, struct, vfunc_padding$OFFSET, vfunc_padding$LAYOUT.byteSize());
     }
 
-    private static long[] vfunc_padding$DIMS = { 8 };
+    private static long[] vfunc_padding$DIMS = { 7 };
 
     /**
      * Dimensions for array field:
      * {@snippet lang=c :
-     * gpointer vfunc_padding[8]
+     * gpointer vfunc_padding[7]
      * }
      */
     public static long[] vfunc_padding$dimensions() {
@@ -529,21 +658,21 @@ public class _GDBusInterfaceSkeletonClass {
     /**
      * Indexed getter for field:
      * {@snippet lang=c :
-     * gpointer vfunc_padding[8]
+     * gpointer vfunc_padding[7]
      * }
      */
     public static MemorySegment vfunc_padding(MemorySegment struct, long index0) {
-        return (MemorySegment)vfunc_padding$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)vfunc_padding$ELEM_HANDLE.get(struct, vfunc_padding$OFFSET, index0);
     }
 
     /**
      * Indexed setter for field:
      * {@snippet lang=c :
-     * gpointer vfunc_padding[8]
+     * gpointer vfunc_padding[7]
      * }
      */
     public static void vfunc_padding(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        vfunc_padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        vfunc_padding$ELEM_HANDLE.set(struct, vfunc_padding$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -551,7 +680,11 @@ public class _GDBusInterfaceSkeletonClass {
      * gboolean (*g_authorize_method)(GDBusInterfaceSkeleton *, GDBusMethodInvocation *)
      * }
      */
-    public class g_authorize_method {
+    public final static class g_authorize_method {
+
+        private g_authorize_method() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -588,9 +721,11 @@ public class _GDBusInterfaceSkeletonClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -609,7 +744,7 @@ public class _GDBusInterfaceSkeletonClass {
         return g_authorize_method$LAYOUT;
     }
 
-    private static final long g_authorize_method$OFFSET = 232;
+    private static final long g_authorize_method$OFFSET = $LAYOUT.byteOffset(groupElement("g_authorize_method"));
 
     /**
      * Offset for field:
@@ -653,7 +788,7 @@ public class _GDBusInterfaceSkeletonClass {
         return signal_padding$LAYOUT;
     }
 
-    private static final long signal_padding$OFFSET = 240;
+    private static final long signal_padding$OFFSET = $LAYOUT.byteOffset(groupElement("signal_padding"));
 
     /**
      * Offset for field:
@@ -705,7 +840,7 @@ public class _GDBusInterfaceSkeletonClass {
      * }
      */
     public static MemorySegment signal_padding(MemorySegment struct, long index0) {
-        return (MemorySegment)signal_padding$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)signal_padding$ELEM_HANDLE.get(struct, signal_padding$OFFSET, index0);
     }
 
     /**
@@ -715,7 +850,7 @@ public class _GDBusInterfaceSkeletonClass {
      * }
      */
     public static void signal_padding(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        signal_padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        signal_padding$ELEM_HANDLE.set(struct, signal_padding$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -747,7 +882,7 @@ public class _GDBusInterfaceSkeletonClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -755,7 +890,7 @@ public class _GDBusInterfaceSkeletonClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

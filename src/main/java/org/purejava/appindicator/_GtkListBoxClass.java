@@ -70,7 +70,7 @@ public class _GtkListBoxClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -107,7 +107,11 @@ public class _GtkListBoxClass {
      * void (*row_selected)(GtkListBox *, GtkListBoxRow *)
      * }
      */
-    public class row_selected {
+    public final static class row_selected {
+
+        private row_selected() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -143,9 +147,11 @@ public class _GtkListBoxClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -164,7 +170,7 @@ public class _GtkListBoxClass {
         return row_selected$LAYOUT;
     }
 
-    private static final long row_selected$OFFSET = 976;
+    private static final long row_selected$OFFSET = $LAYOUT.byteOffset(groupElement("row_selected"));
 
     /**
      * Offset for field:
@@ -201,7 +207,11 @@ public class _GtkListBoxClass {
      * void (*row_activated)(GtkListBox *, GtkListBoxRow *)
      * }
      */
-    public class row_activated {
+    public final static class row_activated {
+
+        private row_activated() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -237,9 +247,11 @@ public class _GtkListBoxClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -258,7 +270,7 @@ public class _GtkListBoxClass {
         return row_activated$LAYOUT;
     }
 
-    private static final long row_activated$OFFSET = 984;
+    private static final long row_activated$OFFSET = $LAYOUT.byteOffset(groupElement("row_activated"));
 
     /**
      * Offset for field:
@@ -295,7 +307,11 @@ public class _GtkListBoxClass {
      * void (*activate_cursor_row)(GtkListBox *)
      * }
      */
-    public class activate_cursor_row {
+    public final static class activate_cursor_row {
+
+        private activate_cursor_row() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -330,9 +346,11 @@ public class _GtkListBoxClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -351,7 +369,7 @@ public class _GtkListBoxClass {
         return activate_cursor_row$LAYOUT;
     }
 
-    private static final long activate_cursor_row$OFFSET = 992;
+    private static final long activate_cursor_row$OFFSET = $LAYOUT.byteOffset(groupElement("activate_cursor_row"));
 
     /**
      * Offset for field:
@@ -388,7 +406,11 @@ public class _GtkListBoxClass {
      * void (*toggle_cursor_row)(GtkListBox *)
      * }
      */
-    public class toggle_cursor_row {
+    public final static class toggle_cursor_row {
+
+        private toggle_cursor_row() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -423,9 +445,11 @@ public class _GtkListBoxClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -444,7 +468,7 @@ public class _GtkListBoxClass {
         return toggle_cursor_row$LAYOUT;
     }
 
-    private static final long toggle_cursor_row$OFFSET = 1000;
+    private static final long toggle_cursor_row$OFFSET = $LAYOUT.byteOffset(groupElement("toggle_cursor_row"));
 
     /**
      * Offset for field:
@@ -481,7 +505,11 @@ public class _GtkListBoxClass {
      * void (*move_cursor)(GtkListBox *, GtkMovementStep, gint)
      * }
      */
-    public class move_cursor {
+    public final static class move_cursor {
+
+        private move_cursor() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -518,9 +546,11 @@ public class _GtkListBoxClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -539,7 +569,7 @@ public class _GtkListBoxClass {
         return move_cursor$LAYOUT;
     }
 
-    private static final long move_cursor$OFFSET = 1008;
+    private static final long move_cursor$OFFSET = $LAYOUT.byteOffset(groupElement("move_cursor"));
 
     /**
      * Offset for field:
@@ -576,7 +606,11 @@ public class _GtkListBoxClass {
      * void (*selected_rows_changed)(GtkListBox *)
      * }
      */
-    public class selected_rows_changed {
+    public final static class selected_rows_changed {
+
+        private selected_rows_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -611,9 +645,11 @@ public class _GtkListBoxClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -632,7 +668,7 @@ public class _GtkListBoxClass {
         return selected_rows_changed$LAYOUT;
     }
 
-    private static final long selected_rows_changed$OFFSET = 1016;
+    private static final long selected_rows_changed$OFFSET = $LAYOUT.byteOffset(groupElement("selected_rows_changed"));
 
     /**
      * Offset for field:
@@ -669,7 +705,11 @@ public class _GtkListBoxClass {
      * void (*select_all)(GtkListBox *)
      * }
      */
-    public class select_all {
+    public final static class select_all {
+
+        private select_all() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -704,9 +744,11 @@ public class _GtkListBoxClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -725,7 +767,7 @@ public class _GtkListBoxClass {
         return select_all$LAYOUT;
     }
 
-    private static final long select_all$OFFSET = 1024;
+    private static final long select_all$OFFSET = $LAYOUT.byteOffset(groupElement("select_all"));
 
     /**
      * Offset for field:
@@ -762,7 +804,11 @@ public class _GtkListBoxClass {
      * void (*unselect_all)(GtkListBox *)
      * }
      */
-    public class unselect_all {
+    public final static class unselect_all {
+
+        private unselect_all() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -797,9 +843,11 @@ public class _GtkListBoxClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -818,7 +866,7 @@ public class _GtkListBoxClass {
         return unselect_all$LAYOUT;
     }
 
-    private static final long unselect_all$OFFSET = 1032;
+    private static final long unselect_all$OFFSET = $LAYOUT.byteOffset(groupElement("unselect_all"));
 
     /**
      * Offset for field:
@@ -855,7 +903,11 @@ public class _GtkListBoxClass {
      * void (*_gtk_reserved1)(void)
      * }
      */
-    public class _gtk_reserved1 {
+    public final static class _gtk_reserved1 {
+
+        private _gtk_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -891,6 +943,8 @@ public class _GtkListBoxClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -909,7 +963,7 @@ public class _GtkListBoxClass {
         return _gtk_reserved1$LAYOUT;
     }
 
-    private static final long _gtk_reserved1$OFFSET = 1040;
+    private static final long _gtk_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved1"));
 
     /**
      * Offset for field:
@@ -946,7 +1000,11 @@ public class _GtkListBoxClass {
      * void (*_gtk_reserved2)(void)
      * }
      */
-    public class _gtk_reserved2 {
+    public final static class _gtk_reserved2 {
+
+        private _gtk_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -982,6 +1040,8 @@ public class _GtkListBoxClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1000,7 +1060,7 @@ public class _GtkListBoxClass {
         return _gtk_reserved2$LAYOUT;
     }
 
-    private static final long _gtk_reserved2$OFFSET = 1048;
+    private static final long _gtk_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved2"));
 
     /**
      * Offset for field:
@@ -1037,7 +1097,11 @@ public class _GtkListBoxClass {
      * void (*_gtk_reserved3)(void)
      * }
      */
-    public class _gtk_reserved3 {
+    public final static class _gtk_reserved3 {
+
+        private _gtk_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1073,6 +1137,8 @@ public class _GtkListBoxClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1091,7 +1157,7 @@ public class _GtkListBoxClass {
         return _gtk_reserved3$LAYOUT;
     }
 
-    private static final long _gtk_reserved3$OFFSET = 1056;
+    private static final long _gtk_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved3"));
 
     /**
      * Offset for field:
@@ -1152,7 +1218,7 @@ public class _GtkListBoxClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1160,7 +1226,7 @@ public class _GtkListBoxClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -50,7 +50,7 @@ public class _GtkPageRange {
         return start$LAYOUT;
     }
 
-    private static final long start$OFFSET = 0;
+    private static final long start$OFFSET = $LAYOUT.byteOffset(groupElement("start"));
 
     /**
      * Offset for field:
@@ -94,7 +94,7 @@ public class _GtkPageRange {
         return end$LAYOUT;
     }
 
-    private static final long end$OFFSET = 4;
+    private static final long end$OFFSET = $LAYOUT.byteOffset(groupElement("end"));
 
     /**
      * Offset for field:
@@ -155,7 +155,7 @@ public class _GtkPageRange {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -163,7 +163,7 @@ public class _GtkPageRange {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

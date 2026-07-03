@@ -54,7 +54,7 @@ public class _GSocketAddressEnumeratorClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -91,7 +91,11 @@ public class _GSocketAddressEnumeratorClass {
      * GSocketAddress *(*next)(GSocketAddressEnumerator *, GCancellable *, GError **)
      * }
      */
-    public class next {
+    public final static class next {
+
+        private next() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -129,9 +133,11 @@ public class _GSocketAddressEnumeratorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -150,7 +156,7 @@ public class _GSocketAddressEnumeratorClass {
         return next$LAYOUT;
     }
 
-    private static final long next$OFFSET = 136;
+    private static final long next$OFFSET = $LAYOUT.byteOffset(groupElement("next"));
 
     /**
      * Offset for field:
@@ -187,7 +193,11 @@ public class _GSocketAddressEnumeratorClass {
      * void (*next_async)(GSocketAddressEnumerator *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class next_async {
+    public final static class next_async {
+
+        private next_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -225,9 +235,11 @@ public class _GSocketAddressEnumeratorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -246,7 +258,7 @@ public class _GSocketAddressEnumeratorClass {
         return next_async$LAYOUT;
     }
 
-    private static final long next_async$OFFSET = 144;
+    private static final long next_async$OFFSET = $LAYOUT.byteOffset(groupElement("next_async"));
 
     /**
      * Offset for field:
@@ -283,7 +295,11 @@ public class _GSocketAddressEnumeratorClass {
      * GSocketAddress *(*next_finish)(GSocketAddressEnumerator *, GAsyncResult *, GError **)
      * }
      */
-    public class next_finish {
+    public final static class next_finish {
+
+        private next_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -321,9 +337,11 @@ public class _GSocketAddressEnumeratorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -342,7 +360,7 @@ public class _GSocketAddressEnumeratorClass {
         return next_finish$LAYOUT;
     }
 
-    private static final long next_finish$OFFSET = 152;
+    private static final long next_finish$OFFSET = $LAYOUT.byteOffset(groupElement("next_finish"));
 
     /**
      * Offset for field:
@@ -403,7 +421,7 @@ public class _GSocketAddressEnumeratorClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -411,7 +429,7 @@ public class _GSocketAddressEnumeratorClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

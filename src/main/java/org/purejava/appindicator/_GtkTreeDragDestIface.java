@@ -52,7 +52,7 @@ public class _GtkTreeDragDestIface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -89,7 +89,11 @@ public class _GtkTreeDragDestIface {
      * gboolean (*drag_data_received)(GtkTreeDragDest *, GtkTreePath *, GtkSelectionData *)
      * }
      */
-    public class drag_data_received {
+    public final static class drag_data_received {
+
+        private drag_data_received() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -127,9 +131,11 @@ public class _GtkTreeDragDestIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -148,7 +154,7 @@ public class _GtkTreeDragDestIface {
         return drag_data_received$LAYOUT;
     }
 
-    private static final long drag_data_received$OFFSET = 16;
+    private static final long drag_data_received$OFFSET = $LAYOUT.byteOffset(groupElement("drag_data_received"));
 
     /**
      * Offset for field:
@@ -185,7 +191,11 @@ public class _GtkTreeDragDestIface {
      * gboolean (*row_drop_possible)(GtkTreeDragDest *, GtkTreePath *, GtkSelectionData *)
      * }
      */
-    public class row_drop_possible {
+    public final static class row_drop_possible {
+
+        private row_drop_possible() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -223,9 +233,11 @@ public class _GtkTreeDragDestIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -244,7 +256,7 @@ public class _GtkTreeDragDestIface {
         return row_drop_possible$LAYOUT;
     }
 
-    private static final long row_drop_possible$OFFSET = 24;
+    private static final long row_drop_possible$OFFSET = $LAYOUT.byteOffset(groupElement("row_drop_possible"));
 
     /**
      * Offset for field:
@@ -305,7 +317,7 @@ public class _GtkTreeDragDestIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -313,7 +325,7 @@ public class _GtkTreeDragDestIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

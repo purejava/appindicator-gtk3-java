@@ -62,7 +62,7 @@ public class _GtkRecentFilterInfo {
         return contains$LAYOUT;
     }
 
-    private static final long contains$OFFSET = 0;
+    private static final long contains$OFFSET = $LAYOUT.byteOffset(groupElement("contains"));
 
     /**
      * Offset for field:
@@ -106,7 +106,7 @@ public class _GtkRecentFilterInfo {
         return uri$LAYOUT;
     }
 
-    private static final long uri$OFFSET = 8;
+    private static final long uri$OFFSET = $LAYOUT.byteOffset(groupElement("uri"));
 
     /**
      * Offset for field:
@@ -150,7 +150,7 @@ public class _GtkRecentFilterInfo {
         return display_name$LAYOUT;
     }
 
-    private static final long display_name$OFFSET = 16;
+    private static final long display_name$OFFSET = $LAYOUT.byteOffset(groupElement("display_name"));
 
     /**
      * Offset for field:
@@ -194,7 +194,7 @@ public class _GtkRecentFilterInfo {
         return mime_type$LAYOUT;
     }
 
-    private static final long mime_type$OFFSET = 24;
+    private static final long mime_type$OFFSET = $LAYOUT.byteOffset(groupElement("mime_type"));
 
     /**
      * Offset for field:
@@ -238,7 +238,7 @@ public class _GtkRecentFilterInfo {
         return applications$LAYOUT;
     }
 
-    private static final long applications$OFFSET = 32;
+    private static final long applications$OFFSET = $LAYOUT.byteOffset(groupElement("applications"));
 
     /**
      * Offset for field:
@@ -282,7 +282,7 @@ public class _GtkRecentFilterInfo {
         return groups$LAYOUT;
     }
 
-    private static final long groups$OFFSET = 40;
+    private static final long groups$OFFSET = $LAYOUT.byteOffset(groupElement("groups"));
 
     /**
      * Offset for field:
@@ -326,7 +326,7 @@ public class _GtkRecentFilterInfo {
         return age$LAYOUT;
     }
 
-    private static final long age$OFFSET = 48;
+    private static final long age$OFFSET = $LAYOUT.byteOffset(groupElement("age"));
 
     /**
      * Offset for field:
@@ -387,7 +387,7 @@ public class _GtkRecentFilterInfo {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -395,7 +395,7 @@ public class _GtkRecentFilterInfo {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

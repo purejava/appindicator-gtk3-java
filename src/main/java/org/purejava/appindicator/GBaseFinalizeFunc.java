@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GBaseFinalizeFunc)(gpointer)
  * }
  */
-public class GBaseFinalizeFunc {
+public final class GBaseFinalizeFunc {
+
+    private GBaseFinalizeFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -52,9 +56,11 @@ public class GBaseFinalizeFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment g_class) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment g_class) {
         try {
              DOWN$MH.invokeExact(funcPtr, g_class);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

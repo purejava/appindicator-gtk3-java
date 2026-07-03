@@ -54,7 +54,7 @@ public class _GDBusInterfaceVTable {
         return method_call$LAYOUT;
     }
 
-    private static final long method_call$OFFSET = 0;
+    private static final long method_call$OFFSET = $LAYOUT.byteOffset(groupElement("method_call"));
 
     /**
      * Offset for field:
@@ -98,7 +98,7 @@ public class _GDBusInterfaceVTable {
         return get_property$LAYOUT;
     }
 
-    private static final long get_property$OFFSET = 8;
+    private static final long get_property$OFFSET = $LAYOUT.byteOffset(groupElement("get_property"));
 
     /**
      * Offset for field:
@@ -142,7 +142,7 @@ public class _GDBusInterfaceVTable {
         return set_property$LAYOUT;
     }
 
-    private static final long set_property$OFFSET = 16;
+    private static final long set_property$OFFSET = $LAYOUT.byteOffset(groupElement("set_property"));
 
     /**
      * Offset for field:
@@ -186,7 +186,7 @@ public class _GDBusInterfaceVTable {
         return padding$LAYOUT;
     }
 
-    private static final long padding$OFFSET = 24;
+    private static final long padding$OFFSET = $LAYOUT.byteOffset(groupElement("padding"));
 
     /**
      * Offset for field:
@@ -238,7 +238,7 @@ public class _GDBusInterfaceVTable {
      * }
      */
     public static MemorySegment padding(MemorySegment struct, long index0) {
-        return (MemorySegment)padding$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)padding$ELEM_HANDLE.get(struct, padding$OFFSET, index0);
     }
 
     /**
@@ -248,7 +248,7 @@ public class _GDBusInterfaceVTable {
      * }
      */
     public static void padding(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        padding$ELEM_HANDLE.set(struct, padding$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -280,7 +280,7 @@ public class _GDBusInterfaceVTable {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -288,7 +288,7 @@ public class _GDBusInterfaceVTable {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

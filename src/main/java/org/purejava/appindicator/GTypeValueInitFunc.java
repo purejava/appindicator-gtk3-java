@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GTypeValueInitFunc)(GValue *)
  * }
  */
-public class GTypeValueInitFunc {
+public final class GTypeValueInitFunc {
+
+    private GTypeValueInitFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -52,9 +56,11 @@ public class GTypeValueInitFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment value) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment value) {
         try {
              DOWN$MH.invokeExact(funcPtr, value);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

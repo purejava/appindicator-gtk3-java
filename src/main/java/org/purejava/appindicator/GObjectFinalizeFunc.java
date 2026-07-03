@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GObjectFinalizeFunc)(GObject *)
  * }
  */
-public class GObjectFinalizeFunc {
+public final class GObjectFinalizeFunc {
+
+    private GObjectFinalizeFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -52,9 +56,11 @@ public class GObjectFinalizeFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment object) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment object) {
         try {
              DOWN$MH.invokeExact(funcPtr, object);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

@@ -56,7 +56,7 @@ public class _PangoGlyphString {
         return num_glyphs$LAYOUT;
     }
 
-    private static final long num_glyphs$OFFSET = 0;
+    private static final long num_glyphs$OFFSET = $LAYOUT.byteOffset(groupElement("num_glyphs"));
 
     /**
      * Offset for field:
@@ -100,7 +100,7 @@ public class _PangoGlyphString {
         return glyphs$LAYOUT;
     }
 
-    private static final long glyphs$OFFSET = 8;
+    private static final long glyphs$OFFSET = $LAYOUT.byteOffset(groupElement("glyphs"));
 
     /**
      * Offset for field:
@@ -144,7 +144,7 @@ public class _PangoGlyphString {
         return log_clusters$LAYOUT;
     }
 
-    private static final long log_clusters$OFFSET = 16;
+    private static final long log_clusters$OFFSET = $LAYOUT.byteOffset(groupElement("log_clusters"));
 
     /**
      * Offset for field:
@@ -188,7 +188,7 @@ public class _PangoGlyphString {
         return space$LAYOUT;
     }
 
-    private static final long space$OFFSET = 24;
+    private static final long space$OFFSET = $LAYOUT.byteOffset(groupElement("space"));
 
     /**
      * Offset for field:
@@ -249,7 +249,7 @@ public class _PangoGlyphString {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -257,7 +257,7 @@ public class _PangoGlyphString {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

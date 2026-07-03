@@ -70,7 +70,7 @@ public class _GtkCalendarClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -107,7 +107,11 @@ public class _GtkCalendarClass {
      * void (*month_changed)(GtkCalendar *)
      * }
      */
-    public class month_changed {
+    public final static class month_changed {
+
+        private month_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -142,9 +146,11 @@ public class _GtkCalendarClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -163,7 +169,7 @@ public class _GtkCalendarClass {
         return month_changed$LAYOUT;
     }
 
-    private static final long month_changed$OFFSET = 824;
+    private static final long month_changed$OFFSET = $LAYOUT.byteOffset(groupElement("month_changed"));
 
     /**
      * Offset for field:
@@ -200,7 +206,11 @@ public class _GtkCalendarClass {
      * void (*day_selected)(GtkCalendar *)
      * }
      */
-    public class day_selected {
+    public final static class day_selected {
+
+        private day_selected() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -235,9 +245,11 @@ public class _GtkCalendarClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -256,7 +268,7 @@ public class _GtkCalendarClass {
         return day_selected$LAYOUT;
     }
 
-    private static final long day_selected$OFFSET = 832;
+    private static final long day_selected$OFFSET = $LAYOUT.byteOffset(groupElement("day_selected"));
 
     /**
      * Offset for field:
@@ -293,7 +305,11 @@ public class _GtkCalendarClass {
      * void (*day_selected_double_click)(GtkCalendar *)
      * }
      */
-    public class day_selected_double_click {
+    public final static class day_selected_double_click {
+
+        private day_selected_double_click() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -328,9 +344,11 @@ public class _GtkCalendarClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -349,7 +367,7 @@ public class _GtkCalendarClass {
         return day_selected_double_click$LAYOUT;
     }
 
-    private static final long day_selected_double_click$OFFSET = 840;
+    private static final long day_selected_double_click$OFFSET = $LAYOUT.byteOffset(groupElement("day_selected_double_click"));
 
     /**
      * Offset for field:
@@ -386,7 +404,11 @@ public class _GtkCalendarClass {
      * void (*prev_month)(GtkCalendar *)
      * }
      */
-    public class prev_month {
+    public final static class prev_month {
+
+        private prev_month() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -421,9 +443,11 @@ public class _GtkCalendarClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -442,7 +466,7 @@ public class _GtkCalendarClass {
         return prev_month$LAYOUT;
     }
 
-    private static final long prev_month$OFFSET = 848;
+    private static final long prev_month$OFFSET = $LAYOUT.byteOffset(groupElement("prev_month"));
 
     /**
      * Offset for field:
@@ -479,7 +503,11 @@ public class _GtkCalendarClass {
      * void (*next_month)(GtkCalendar *)
      * }
      */
-    public class next_month {
+    public final static class next_month {
+
+        private next_month() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -514,9 +542,11 @@ public class _GtkCalendarClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -535,7 +565,7 @@ public class _GtkCalendarClass {
         return next_month$LAYOUT;
     }
 
-    private static final long next_month$OFFSET = 856;
+    private static final long next_month$OFFSET = $LAYOUT.byteOffset(groupElement("next_month"));
 
     /**
      * Offset for field:
@@ -572,7 +602,11 @@ public class _GtkCalendarClass {
      * void (*prev_year)(GtkCalendar *)
      * }
      */
-    public class prev_year {
+    public final static class prev_year {
+
+        private prev_year() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -607,9 +641,11 @@ public class _GtkCalendarClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -628,7 +664,7 @@ public class _GtkCalendarClass {
         return prev_year$LAYOUT;
     }
 
-    private static final long prev_year$OFFSET = 864;
+    private static final long prev_year$OFFSET = $LAYOUT.byteOffset(groupElement("prev_year"));
 
     /**
      * Offset for field:
@@ -665,7 +701,11 @@ public class _GtkCalendarClass {
      * void (*next_year)(GtkCalendar *)
      * }
      */
-    public class next_year {
+    public final static class next_year {
+
+        private next_year() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -700,9 +740,11 @@ public class _GtkCalendarClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -721,7 +763,7 @@ public class _GtkCalendarClass {
         return next_year$LAYOUT;
     }
 
-    private static final long next_year$OFFSET = 872;
+    private static final long next_year$OFFSET = $LAYOUT.byteOffset(groupElement("next_year"));
 
     /**
      * Offset for field:
@@ -758,7 +800,11 @@ public class _GtkCalendarClass {
      * void (*_gtk_reserved1)(void)
      * }
      */
-    public class _gtk_reserved1 {
+    public final static class _gtk_reserved1 {
+
+        private _gtk_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -794,6 +840,8 @@ public class _GtkCalendarClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -812,7 +860,7 @@ public class _GtkCalendarClass {
         return _gtk_reserved1$LAYOUT;
     }
 
-    private static final long _gtk_reserved1$OFFSET = 880;
+    private static final long _gtk_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved1"));
 
     /**
      * Offset for field:
@@ -849,7 +897,11 @@ public class _GtkCalendarClass {
      * void (*_gtk_reserved2)(void)
      * }
      */
-    public class _gtk_reserved2 {
+    public final static class _gtk_reserved2 {
+
+        private _gtk_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -885,6 +937,8 @@ public class _GtkCalendarClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -903,7 +957,7 @@ public class _GtkCalendarClass {
         return _gtk_reserved2$LAYOUT;
     }
 
-    private static final long _gtk_reserved2$OFFSET = 888;
+    private static final long _gtk_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved2"));
 
     /**
      * Offset for field:
@@ -940,7 +994,11 @@ public class _GtkCalendarClass {
      * void (*_gtk_reserved3)(void)
      * }
      */
-    public class _gtk_reserved3 {
+    public final static class _gtk_reserved3 {
+
+        private _gtk_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -976,6 +1034,8 @@ public class _GtkCalendarClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -994,7 +1054,7 @@ public class _GtkCalendarClass {
         return _gtk_reserved3$LAYOUT;
     }
 
-    private static final long _gtk_reserved3$OFFSET = 896;
+    private static final long _gtk_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved3"));
 
     /**
      * Offset for field:
@@ -1031,7 +1091,11 @@ public class _GtkCalendarClass {
      * void (*_gtk_reserved4)(void)
      * }
      */
-    public class _gtk_reserved4 {
+    public final static class _gtk_reserved4 {
+
+        private _gtk_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1067,6 +1131,8 @@ public class _GtkCalendarClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1085,7 +1151,7 @@ public class _GtkCalendarClass {
         return _gtk_reserved4$LAYOUT;
     }
 
-    private static final long _gtk_reserved4$OFFSET = 904;
+    private static final long _gtk_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_gtk_reserved4"));
 
     /**
      * Offset for field:
@@ -1146,7 +1212,7 @@ public class _GtkCalendarClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1154,7 +1220,7 @@ public class _GtkCalendarClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

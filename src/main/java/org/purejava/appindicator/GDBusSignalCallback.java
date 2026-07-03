@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GDBusSignalCallback)(GDBusConnection *, const gchar *, const gchar *, const gchar *, const gchar *, GVariant *, gpointer)
  * }
  */
-public class GDBusSignalCallback {
+public final class GDBusSignalCallback {
+
+    private GDBusSignalCallback() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -58,9 +62,11 @@ public class GDBusSignalCallback {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment connection, MemorySegment sender_name, MemorySegment object_path, MemorySegment interface_name, MemorySegment signal_name, MemorySegment parameters, MemorySegment user_data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment connection, MemorySegment sender_name, MemorySegment object_path, MemorySegment interface_name, MemorySegment signal_name, MemorySegment parameters, MemorySegment user_data) {
         try {
              DOWN$MH.invokeExact(funcPtr, connection, sender_name, object_path, interface_name, signal_name, parameters, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

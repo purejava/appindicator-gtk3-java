@@ -65,7 +65,7 @@ public class _GdkEventSelection {
         return type$LAYOUT;
     }
 
-    private static final long type$OFFSET = 0;
+    private static final long type$OFFSET = $LAYOUT.byteOffset(groupElement("type"));
 
     /**
      * Offset for field:
@@ -109,7 +109,7 @@ public class _GdkEventSelection {
         return window$LAYOUT;
     }
 
-    private static final long window$OFFSET = 8;
+    private static final long window$OFFSET = $LAYOUT.byteOffset(groupElement("window"));
 
     /**
      * Offset for field:
@@ -153,7 +153,7 @@ public class _GdkEventSelection {
         return send_event$LAYOUT;
     }
 
-    private static final long send_event$OFFSET = 16;
+    private static final long send_event$OFFSET = $LAYOUT.byteOffset(groupElement("send_event"));
 
     /**
      * Offset for field:
@@ -197,7 +197,7 @@ public class _GdkEventSelection {
         return selection$LAYOUT;
     }
 
-    private static final long selection$OFFSET = 24;
+    private static final long selection$OFFSET = $LAYOUT.byteOffset(groupElement("selection"));
 
     /**
      * Offset for field:
@@ -241,7 +241,7 @@ public class _GdkEventSelection {
         return target$LAYOUT;
     }
 
-    private static final long target$OFFSET = 32;
+    private static final long target$OFFSET = $LAYOUT.byteOffset(groupElement("target"));
 
     /**
      * Offset for field:
@@ -285,7 +285,7 @@ public class _GdkEventSelection {
         return property$LAYOUT;
     }
 
-    private static final long property$OFFSET = 40;
+    private static final long property$OFFSET = $LAYOUT.byteOffset(groupElement("property"));
 
     /**
      * Offset for field:
@@ -329,7 +329,7 @@ public class _GdkEventSelection {
         return time$LAYOUT;
     }
 
-    private static final long time$OFFSET = 48;
+    private static final long time$OFFSET = $LAYOUT.byteOffset(groupElement("time"));
 
     /**
      * Offset for field:
@@ -373,7 +373,7 @@ public class _GdkEventSelection {
         return requestor$LAYOUT;
     }
 
-    private static final long requestor$OFFSET = 56;
+    private static final long requestor$OFFSET = $LAYOUT.byteOffset(groupElement("requestor"));
 
     /**
      * Offset for field:
@@ -434,7 +434,7 @@ public class _GdkEventSelection {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -442,7 +442,7 @@ public class _GdkEventSelection {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

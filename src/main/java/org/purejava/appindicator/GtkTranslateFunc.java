@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gchar *(*GtkTranslateFunc)(const gchar *, gpointer)
  * }
  */
-public class GtkTranslateFunc {
+public final class GtkTranslateFunc {
+
+    private GtkTranslateFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +58,11 @@ public class GtkTranslateFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment path, MemorySegment func_data) {
+    public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment path, MemorySegment func_data) {
         try {
             return (MemorySegment) DOWN$MH.invokeExact(funcPtr, path, func_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

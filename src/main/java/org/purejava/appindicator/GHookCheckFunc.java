@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gboolean (*GHookCheckFunc)(gpointer)
  * }
  */
-public class GHookCheckFunc {
+public final class GHookCheckFunc {
+
+    private GHookCheckFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -53,9 +57,11 @@ public class GHookCheckFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

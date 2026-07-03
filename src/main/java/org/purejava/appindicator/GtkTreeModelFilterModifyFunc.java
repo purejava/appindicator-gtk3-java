@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GtkTreeModelFilterModifyFunc)(GtkTreeModel *, GtkTreeIter *, GValue *, gint, gpointer)
  * }
  */
-public class GtkTreeModelFilterModifyFunc {
+public final class GtkTreeModelFilterModifyFunc {
+
+    private GtkTreeModelFilterModifyFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -56,9 +60,11 @@ public class GtkTreeModelFilterModifyFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment model, MemorySegment iter, MemorySegment value, int column, MemorySegment data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment model, MemorySegment iter, MemorySegment value, int column, MemorySegment data) {
         try {
              DOWN$MH.invokeExact(funcPtr, model, iter, value, column, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

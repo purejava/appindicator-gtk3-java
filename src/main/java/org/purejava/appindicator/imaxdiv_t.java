@@ -14,24 +14,22 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
- * struct elf_siginfo {
- *     int si_signo;
- *     int si_code;
- *     int si_errno;
+ * struct {
+ *     long quot;
+ *     long rem;
  * }
  * }
  */
-public class elf_siginfo {
+public class imaxdiv_t {
 
-    elf_siginfo() {
+    imaxdiv_t() {
         // Should not be called directly
     }
 
     private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-        app_indicator_h.C_INT.withName("si_signo"),
-        app_indicator_h.C_INT.withName("si_code"),
-        app_indicator_h.C_INT.withName("si_errno")
-    ).withName("elf_siginfo");
+        app_indicator_h.C_LONG.withName("quot"),
+        app_indicator_h.C_LONG.withName("rem")
+    ).withName("$anon$337:9");
 
     /**
      * The layout of this struct
@@ -40,136 +38,92 @@ public class elf_siginfo {
         return $LAYOUT;
     }
 
-    private static final OfInt si_signo$LAYOUT = (OfInt)$LAYOUT.select(groupElement("si_signo"));
+    private static final OfLong quot$LAYOUT = (OfLong)$LAYOUT.select(groupElement("quot"));
 
     /**
      * Layout for field:
      * {@snippet lang=c :
-     * int si_signo
+     * long quot
      * }
      */
-    public static final OfInt si_signo$layout() {
-        return si_signo$LAYOUT;
+    public static final OfLong quot$layout() {
+        return quot$LAYOUT;
     }
 
-    private static final long si_signo$OFFSET = 0;
+    private static final long quot$OFFSET = $LAYOUT.byteOffset(groupElement("quot"));
 
     /**
      * Offset for field:
      * {@snippet lang=c :
-     * int si_signo
+     * long quot
      * }
      */
-    public static final long si_signo$offset() {
-        return si_signo$OFFSET;
+    public static final long quot$offset() {
+        return quot$OFFSET;
     }
 
     /**
      * Getter for field:
      * {@snippet lang=c :
-     * int si_signo
+     * long quot
      * }
      */
-    public static int si_signo(MemorySegment struct) {
-        return struct.get(si_signo$LAYOUT, si_signo$OFFSET);
+    public static long quot(MemorySegment struct) {
+        return struct.get(quot$LAYOUT, quot$OFFSET);
     }
 
     /**
      * Setter for field:
      * {@snippet lang=c :
-     * int si_signo
+     * long quot
      * }
      */
-    public static void si_signo(MemorySegment struct, int fieldValue) {
-        struct.set(si_signo$LAYOUT, si_signo$OFFSET, fieldValue);
+    public static void quot(MemorySegment struct, long fieldValue) {
+        struct.set(quot$LAYOUT, quot$OFFSET, fieldValue);
     }
 
-    private static final OfInt si_code$LAYOUT = (OfInt)$LAYOUT.select(groupElement("si_code"));
+    private static final OfLong rem$LAYOUT = (OfLong)$LAYOUT.select(groupElement("rem"));
 
     /**
      * Layout for field:
      * {@snippet lang=c :
-     * int si_code
+     * long rem
      * }
      */
-    public static final OfInt si_code$layout() {
-        return si_code$LAYOUT;
+    public static final OfLong rem$layout() {
+        return rem$LAYOUT;
     }
 
-    private static final long si_code$OFFSET = 4;
+    private static final long rem$OFFSET = $LAYOUT.byteOffset(groupElement("rem"));
 
     /**
      * Offset for field:
      * {@snippet lang=c :
-     * int si_code
+     * long rem
      * }
      */
-    public static final long si_code$offset() {
-        return si_code$OFFSET;
+    public static final long rem$offset() {
+        return rem$OFFSET;
     }
 
     /**
      * Getter for field:
      * {@snippet lang=c :
-     * int si_code
+     * long rem
      * }
      */
-    public static int si_code(MemorySegment struct) {
-        return struct.get(si_code$LAYOUT, si_code$OFFSET);
+    public static long rem(MemorySegment struct) {
+        return struct.get(rem$LAYOUT, rem$OFFSET);
     }
 
     /**
      * Setter for field:
      * {@snippet lang=c :
-     * int si_code
+     * long rem
      * }
      */
-    public static void si_code(MemorySegment struct, int fieldValue) {
-        struct.set(si_code$LAYOUT, si_code$OFFSET, fieldValue);
-    }
-
-    private static final OfInt si_errno$LAYOUT = (OfInt)$LAYOUT.select(groupElement("si_errno"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * int si_errno
-     * }
-     */
-    public static final OfInt si_errno$layout() {
-        return si_errno$LAYOUT;
-    }
-
-    private static final long si_errno$OFFSET = 8;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * int si_errno
-     * }
-     */
-    public static final long si_errno$offset() {
-        return si_errno$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * int si_errno
-     * }
-     */
-    public static int si_errno(MemorySegment struct) {
-        return struct.get(si_errno$LAYOUT, si_errno$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * int si_errno
-     * }
-     */
-    public static void si_errno(MemorySegment struct, int fieldValue) {
-        struct.set(si_errno$LAYOUT, si_errno$OFFSET, fieldValue);
+    public static void rem(MemorySegment struct, long fieldValue) {
+        struct.set(rem$LAYOUT, rem$OFFSET, fieldValue);
     }
 
     /**
@@ -201,7 +155,7 @@ public class elf_siginfo {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -209,7 +163,7 @@ public class elf_siginfo {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

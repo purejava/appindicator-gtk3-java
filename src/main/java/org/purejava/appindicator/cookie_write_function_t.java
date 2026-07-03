@@ -14,20 +14,27 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
- * typedef void (*__kernel_sighandler_t)(int)
+ * typedef __ssize_t (cookie_write_function_t)(void *, const char *, size_t)
  * }
  */
-public class __kernel_sighandler_t {
+public final class cookie_write_function_t {
+
+    private cookie_write_function_t() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
      */
     public interface Function {
-        void apply(int _x0);
+        long apply(MemorySegment __cookie, MemorySegment __buf, long __nbytes);
     }
 
-    private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
-        app_indicator_h.C_INT
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_LONG,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_LONG
     );
 
     /**
@@ -37,13 +44,13 @@ public class __kernel_sighandler_t {
         return $DESC;
     }
 
-    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(__kernel_sighandler_t.Function.class, "apply", $DESC);
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(cookie_write_function_t.Function.class, "apply", $DESC);
 
     /**
      * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
      * The lifetime of the returned segment is managed by {@code arena}
      */
-    public static MemorySegment allocate(__kernel_sighandler_t.Function fi, Arena arena) {
+    public static MemorySegment allocate(cookie_write_function_t.Function fi, Arena arena) {
         return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
     }
 
@@ -52,9 +59,11 @@ public class __kernel_sighandler_t {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,int _x0) {
+    public static long invoke(MemorySegment funcPtr, MemorySegment __cookie, MemorySegment __buf, long __nbytes) {
         try {
-             DOWN$MH.invokeExact(funcPtr, _x0);
+            return (long) DOWN$MH.invokeExact(funcPtr, __cookie, __buf, __nbytes);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

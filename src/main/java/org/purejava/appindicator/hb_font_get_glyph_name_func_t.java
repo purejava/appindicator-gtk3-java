@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef hb_bool_t (*hb_font_get_glyph_name_func_t)(hb_font_t *, void *, hb_codepoint_t, char *, unsigned int, void *)
  * }
  */
-public class hb_font_get_glyph_name_func_t {
+public final class hb_font_get_glyph_name_func_t {
+
+    private hb_font_get_glyph_name_func_t() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -58,9 +62,11 @@ public class hb_font_get_glyph_name_func_t {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment font, MemorySegment font_data, int glyph, MemorySegment name, int size, MemorySegment user_data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment font, MemorySegment font_data, int glyph, MemorySegment name, int size, MemorySegment user_data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, font, font_data, glyph, name, size, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

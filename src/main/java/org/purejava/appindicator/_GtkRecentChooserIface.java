@@ -76,7 +76,7 @@ public class _GtkRecentChooserIface {
         return base_iface$LAYOUT;
     }
 
-    private static final long base_iface$OFFSET = 0;
+    private static final long base_iface$OFFSET = $LAYOUT.byteOffset(groupElement("base_iface"));
 
     /**
      * Offset for field:
@@ -113,7 +113,11 @@ public class _GtkRecentChooserIface {
      * gboolean (*set_current_uri)(GtkRecentChooser *, const gchar *, GError **)
      * }
      */
-    public class set_current_uri {
+    public final static class set_current_uri {
+
+        private set_current_uri() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -151,9 +155,11 @@ public class _GtkRecentChooserIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -172,7 +178,7 @@ public class _GtkRecentChooserIface {
         return set_current_uri$LAYOUT;
     }
 
-    private static final long set_current_uri$OFFSET = 16;
+    private static final long set_current_uri$OFFSET = $LAYOUT.byteOffset(groupElement("set_current_uri"));
 
     /**
      * Offset for field:
@@ -209,7 +215,11 @@ public class _GtkRecentChooserIface {
      * gchar *(*get_current_uri)(GtkRecentChooser *)
      * }
      */
-    public class get_current_uri {
+    public final static class get_current_uri {
+
+        private get_current_uri() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -245,9 +255,11 @@ public class _GtkRecentChooserIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -266,7 +278,7 @@ public class _GtkRecentChooserIface {
         return get_current_uri$LAYOUT;
     }
 
-    private static final long get_current_uri$OFFSET = 24;
+    private static final long get_current_uri$OFFSET = $LAYOUT.byteOffset(groupElement("get_current_uri"));
 
     /**
      * Offset for field:
@@ -303,7 +315,11 @@ public class _GtkRecentChooserIface {
      * gboolean (*select_uri)(GtkRecentChooser *, const gchar *, GError **)
      * }
      */
-    public class select_uri {
+    public final static class select_uri {
+
+        private select_uri() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -341,9 +357,11 @@ public class _GtkRecentChooserIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -362,7 +380,7 @@ public class _GtkRecentChooserIface {
         return select_uri$LAYOUT;
     }
 
-    private static final long select_uri$OFFSET = 32;
+    private static final long select_uri$OFFSET = $LAYOUT.byteOffset(groupElement("select_uri"));
 
     /**
      * Offset for field:
@@ -399,7 +417,11 @@ public class _GtkRecentChooserIface {
      * void (*unselect_uri)(GtkRecentChooser *, const gchar *)
      * }
      */
-    public class unselect_uri {
+    public final static class unselect_uri {
+
+        private unselect_uri() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -435,9 +457,11 @@ public class _GtkRecentChooserIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -456,7 +480,7 @@ public class _GtkRecentChooserIface {
         return unselect_uri$LAYOUT;
     }
 
-    private static final long unselect_uri$OFFSET = 40;
+    private static final long unselect_uri$OFFSET = $LAYOUT.byteOffset(groupElement("unselect_uri"));
 
     /**
      * Offset for field:
@@ -493,7 +517,11 @@ public class _GtkRecentChooserIface {
      * void (*select_all)(GtkRecentChooser *)
      * }
      */
-    public class select_all {
+    public final static class select_all {
+
+        private select_all() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -528,9 +556,11 @@ public class _GtkRecentChooserIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -549,7 +579,7 @@ public class _GtkRecentChooserIface {
         return select_all$LAYOUT;
     }
 
-    private static final long select_all$OFFSET = 48;
+    private static final long select_all$OFFSET = $LAYOUT.byteOffset(groupElement("select_all"));
 
     /**
      * Offset for field:
@@ -586,7 +616,11 @@ public class _GtkRecentChooserIface {
      * void (*unselect_all)(GtkRecentChooser *)
      * }
      */
-    public class unselect_all {
+    public final static class unselect_all {
+
+        private unselect_all() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -621,9 +655,11 @@ public class _GtkRecentChooserIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -642,7 +678,7 @@ public class _GtkRecentChooserIface {
         return unselect_all$LAYOUT;
     }
 
-    private static final long unselect_all$OFFSET = 56;
+    private static final long unselect_all$OFFSET = $LAYOUT.byteOffset(groupElement("unselect_all"));
 
     /**
      * Offset for field:
@@ -679,7 +715,11 @@ public class _GtkRecentChooserIface {
      * GList *(*get_items)(GtkRecentChooser *)
      * }
      */
-    public class get_items {
+    public final static class get_items {
+
+        private get_items() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -715,9 +755,11 @@ public class _GtkRecentChooserIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -736,7 +778,7 @@ public class _GtkRecentChooserIface {
         return get_items$LAYOUT;
     }
 
-    private static final long get_items$OFFSET = 64;
+    private static final long get_items$OFFSET = $LAYOUT.byteOffset(groupElement("get_items"));
 
     /**
      * Offset for field:
@@ -773,7 +815,11 @@ public class _GtkRecentChooserIface {
      * GtkRecentManager *(*get_recent_manager)(GtkRecentChooser *)
      * }
      */
-    public class get_recent_manager {
+    public final static class get_recent_manager {
+
+        private get_recent_manager() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -809,9 +855,11 @@ public class _GtkRecentChooserIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -830,7 +878,7 @@ public class _GtkRecentChooserIface {
         return get_recent_manager$LAYOUT;
     }
 
-    private static final long get_recent_manager$OFFSET = 72;
+    private static final long get_recent_manager$OFFSET = $LAYOUT.byteOffset(groupElement("get_recent_manager"));
 
     /**
      * Offset for field:
@@ -867,7 +915,11 @@ public class _GtkRecentChooserIface {
      * void (*add_filter)(GtkRecentChooser *, GtkRecentFilter *)
      * }
      */
-    public class add_filter {
+    public final static class add_filter {
+
+        private add_filter() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -903,9 +955,11 @@ public class _GtkRecentChooserIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -924,7 +978,7 @@ public class _GtkRecentChooserIface {
         return add_filter$LAYOUT;
     }
 
-    private static final long add_filter$OFFSET = 80;
+    private static final long add_filter$OFFSET = $LAYOUT.byteOffset(groupElement("add_filter"));
 
     /**
      * Offset for field:
@@ -961,7 +1015,11 @@ public class _GtkRecentChooserIface {
      * void (*remove_filter)(GtkRecentChooser *, GtkRecentFilter *)
      * }
      */
-    public class remove_filter {
+    public final static class remove_filter {
+
+        private remove_filter() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -997,9 +1055,11 @@ public class _GtkRecentChooserIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1018,7 +1078,7 @@ public class _GtkRecentChooserIface {
         return remove_filter$LAYOUT;
     }
 
-    private static final long remove_filter$OFFSET = 88;
+    private static final long remove_filter$OFFSET = $LAYOUT.byteOffset(groupElement("remove_filter"));
 
     /**
      * Offset for field:
@@ -1055,7 +1115,11 @@ public class _GtkRecentChooserIface {
      * GSList *(*list_filters)(GtkRecentChooser *)
      * }
      */
-    public class list_filters {
+    public final static class list_filters {
+
+        private list_filters() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1091,9 +1155,11 @@ public class _GtkRecentChooserIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1112,7 +1178,7 @@ public class _GtkRecentChooserIface {
         return list_filters$LAYOUT;
     }
 
-    private static final long list_filters$OFFSET = 96;
+    private static final long list_filters$OFFSET = $LAYOUT.byteOffset(groupElement("list_filters"));
 
     /**
      * Offset for field:
@@ -1149,7 +1215,11 @@ public class _GtkRecentChooserIface {
      * void (*set_sort_func)(GtkRecentChooser *, GtkRecentSortFunc, gpointer, GDestroyNotify)
      * }
      */
-    public class set_sort_func {
+    public final static class set_sort_func {
+
+        private set_sort_func() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1187,9 +1257,11 @@ public class _GtkRecentChooserIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1208,7 +1280,7 @@ public class _GtkRecentChooserIface {
         return set_sort_func$LAYOUT;
     }
 
-    private static final long set_sort_func$OFFSET = 104;
+    private static final long set_sort_func$OFFSET = $LAYOUT.byteOffset(groupElement("set_sort_func"));
 
     /**
      * Offset for field:
@@ -1245,7 +1317,11 @@ public class _GtkRecentChooserIface {
      * void (*item_activated)(GtkRecentChooser *)
      * }
      */
-    public class item_activated {
+    public final static class item_activated {
+
+        private item_activated() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1280,9 +1356,11 @@ public class _GtkRecentChooserIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1301,7 +1379,7 @@ public class _GtkRecentChooserIface {
         return item_activated$LAYOUT;
     }
 
-    private static final long item_activated$OFFSET = 112;
+    private static final long item_activated$OFFSET = $LAYOUT.byteOffset(groupElement("item_activated"));
 
     /**
      * Offset for field:
@@ -1338,7 +1416,11 @@ public class _GtkRecentChooserIface {
      * void (*selection_changed)(GtkRecentChooser *)
      * }
      */
-    public class selection_changed {
+    public final static class selection_changed {
+
+        private selection_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1373,9 +1455,11 @@ public class _GtkRecentChooserIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1394,7 +1478,7 @@ public class _GtkRecentChooserIface {
         return selection_changed$LAYOUT;
     }
 
-    private static final long selection_changed$OFFSET = 120;
+    private static final long selection_changed$OFFSET = $LAYOUT.byteOffset(groupElement("selection_changed"));
 
     /**
      * Offset for field:
@@ -1455,7 +1539,7 @@ public class _GtkRecentChooserIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1463,7 +1547,7 @@ public class _GtkRecentChooserIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -54,7 +54,7 @@ public class _GActionMapInterface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -91,7 +91,11 @@ public class _GActionMapInterface {
      * GAction *(*lookup_action)(GActionMap *, const gchar *)
      * }
      */
-    public class lookup_action {
+    public final static class lookup_action {
+
+        private lookup_action() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -128,9 +132,11 @@ public class _GActionMapInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -149,7 +155,7 @@ public class _GActionMapInterface {
         return lookup_action$LAYOUT;
     }
 
-    private static final long lookup_action$OFFSET = 16;
+    private static final long lookup_action$OFFSET = $LAYOUT.byteOffset(groupElement("lookup_action"));
 
     /**
      * Offset for field:
@@ -186,7 +192,11 @@ public class _GActionMapInterface {
      * void (*add_action)(GActionMap *, GAction *)
      * }
      */
-    public class add_action {
+    public final static class add_action {
+
+        private add_action() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -222,9 +232,11 @@ public class _GActionMapInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -243,7 +255,7 @@ public class _GActionMapInterface {
         return add_action$LAYOUT;
     }
 
-    private static final long add_action$OFFSET = 24;
+    private static final long add_action$OFFSET = $LAYOUT.byteOffset(groupElement("add_action"));
 
     /**
      * Offset for field:
@@ -280,7 +292,11 @@ public class _GActionMapInterface {
      * void (*remove_action)(GActionMap *, const gchar *)
      * }
      */
-    public class remove_action {
+    public final static class remove_action {
+
+        private remove_action() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -316,9 +332,11 @@ public class _GActionMapInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -337,7 +355,7 @@ public class _GActionMapInterface {
         return remove_action$LAYOUT;
     }
 
-    private static final long remove_action$OFFSET = 32;
+    private static final long remove_action$OFFSET = $LAYOUT.byteOffset(groupElement("remove_action"));
 
     /**
      * Offset for field:
@@ -398,7 +416,7 @@ public class _GActionMapInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -406,7 +424,7 @@ public class _GActionMapInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

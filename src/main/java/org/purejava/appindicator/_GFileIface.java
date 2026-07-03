@@ -119,6 +119,7 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  *     gboolean (*measure_disk_usage)(GFile *, GFileMeasureFlags, GCancellable *, GFileMeasureProgressCallback, gpointer, guint64 *, guint64 *, guint64 *, GError **);
  *     void (*measure_disk_usage_async)(GFile *, GFileMeasureFlags, gint, GCancellable *, GFileMeasureProgressCallback, gpointer, GAsyncReadyCallback, gpointer);
  *     gboolean (*measure_disk_usage_finish)(GFile *, GAsyncResult *, guint64 *, guint64 *, guint64 *, GError **);
+ *     gboolean (*query_exists)(GFile *, GCancellable *);
  * }
  * }
  */
@@ -233,7 +234,8 @@ public class _GFileIface {
         app_indicator_h.C_POINTER.withName("poll_mountable_finish"),
         app_indicator_h.C_POINTER.withName("measure_disk_usage"),
         app_indicator_h.C_POINTER.withName("measure_disk_usage_async"),
-        app_indicator_h.C_POINTER.withName("measure_disk_usage_finish")
+        app_indicator_h.C_POINTER.withName("measure_disk_usage_finish"),
+        app_indicator_h.C_POINTER.withName("query_exists")
     ).withName("_GFileIface");
 
     /**
@@ -255,7 +257,7 @@ public class _GFileIface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -292,7 +294,11 @@ public class _GFileIface {
      * GFile *(*dup)(GFile *)
      * }
      */
-    public class dup {
+    public final static class dup {
+
+        private dup() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -328,9 +334,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -349,7 +357,7 @@ public class _GFileIface {
         return dup$LAYOUT;
     }
 
-    private static final long dup$OFFSET = 16;
+    private static final long dup$OFFSET = $LAYOUT.byteOffset(groupElement("dup"));
 
     /**
      * Offset for field:
@@ -386,7 +394,11 @@ public class _GFileIface {
      * guint (*hash)(GFile *)
      * }
      */
-    public class hash {
+    public final static class hash {
+
+        private hash() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -422,9 +434,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -443,7 +457,7 @@ public class _GFileIface {
         return hash$LAYOUT;
     }
 
-    private static final long hash$OFFSET = 24;
+    private static final long hash$OFFSET = $LAYOUT.byteOffset(groupElement("hash"));
 
     /**
      * Offset for field:
@@ -480,7 +494,11 @@ public class _GFileIface {
      * gboolean (*equal)(GFile *, GFile *)
      * }
      */
-    public class equal {
+    public final static class equal {
+
+        private equal() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -517,9 +535,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -538,7 +558,7 @@ public class _GFileIface {
         return equal$LAYOUT;
     }
 
-    private static final long equal$OFFSET = 32;
+    private static final long equal$OFFSET = $LAYOUT.byteOffset(groupElement("equal"));
 
     /**
      * Offset for field:
@@ -575,7 +595,11 @@ public class _GFileIface {
      * gboolean (*is_native)(GFile *)
      * }
      */
-    public class is_native {
+    public final static class is_native {
+
+        private is_native() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -611,9 +635,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -632,7 +658,7 @@ public class _GFileIface {
         return is_native$LAYOUT;
     }
 
-    private static final long is_native$OFFSET = 40;
+    private static final long is_native$OFFSET = $LAYOUT.byteOffset(groupElement("is_native"));
 
     /**
      * Offset for field:
@@ -669,7 +695,11 @@ public class _GFileIface {
      * gboolean (*has_uri_scheme)(GFile *, const char *)
      * }
      */
-    public class has_uri_scheme {
+    public final static class has_uri_scheme {
+
+        private has_uri_scheme() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -706,9 +736,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -727,7 +759,7 @@ public class _GFileIface {
         return has_uri_scheme$LAYOUT;
     }
 
-    private static final long has_uri_scheme$OFFSET = 48;
+    private static final long has_uri_scheme$OFFSET = $LAYOUT.byteOffset(groupElement("has_uri_scheme"));
 
     /**
      * Offset for field:
@@ -764,7 +796,11 @@ public class _GFileIface {
      * char *(*get_uri_scheme)(GFile *)
      * }
      */
-    public class get_uri_scheme {
+    public final static class get_uri_scheme {
+
+        private get_uri_scheme() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -800,9 +836,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -821,7 +859,7 @@ public class _GFileIface {
         return get_uri_scheme$LAYOUT;
     }
 
-    private static final long get_uri_scheme$OFFSET = 56;
+    private static final long get_uri_scheme$OFFSET = $LAYOUT.byteOffset(groupElement("get_uri_scheme"));
 
     /**
      * Offset for field:
@@ -858,7 +896,11 @@ public class _GFileIface {
      * char *(*get_basename)(GFile *)
      * }
      */
-    public class get_basename {
+    public final static class get_basename {
+
+        private get_basename() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -894,9 +936,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -915,7 +959,7 @@ public class _GFileIface {
         return get_basename$LAYOUT;
     }
 
-    private static final long get_basename$OFFSET = 64;
+    private static final long get_basename$OFFSET = $LAYOUT.byteOffset(groupElement("get_basename"));
 
     /**
      * Offset for field:
@@ -952,7 +996,11 @@ public class _GFileIface {
      * char *(*get_path)(GFile *)
      * }
      */
-    public class get_path {
+    public final static class get_path {
+
+        private get_path() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -988,9 +1036,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1009,7 +1059,7 @@ public class _GFileIface {
         return get_path$LAYOUT;
     }
 
-    private static final long get_path$OFFSET = 72;
+    private static final long get_path$OFFSET = $LAYOUT.byteOffset(groupElement("get_path"));
 
     /**
      * Offset for field:
@@ -1046,7 +1096,11 @@ public class _GFileIface {
      * char *(*get_uri)(GFile *)
      * }
      */
-    public class get_uri {
+    public final static class get_uri {
+
+        private get_uri() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1082,9 +1136,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1103,7 +1159,7 @@ public class _GFileIface {
         return get_uri$LAYOUT;
     }
 
-    private static final long get_uri$OFFSET = 80;
+    private static final long get_uri$OFFSET = $LAYOUT.byteOffset(groupElement("get_uri"));
 
     /**
      * Offset for field:
@@ -1140,7 +1196,11 @@ public class _GFileIface {
      * char *(*get_parse_name)(GFile *)
      * }
      */
-    public class get_parse_name {
+    public final static class get_parse_name {
+
+        private get_parse_name() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1176,9 +1236,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1197,7 +1259,7 @@ public class _GFileIface {
         return get_parse_name$LAYOUT;
     }
 
-    private static final long get_parse_name$OFFSET = 88;
+    private static final long get_parse_name$OFFSET = $LAYOUT.byteOffset(groupElement("get_parse_name"));
 
     /**
      * Offset for field:
@@ -1234,7 +1296,11 @@ public class _GFileIface {
      * GFile *(*get_parent)(GFile *)
      * }
      */
-    public class get_parent {
+    public final static class get_parent {
+
+        private get_parent() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1270,9 +1336,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1291,7 +1359,7 @@ public class _GFileIface {
         return get_parent$LAYOUT;
     }
 
-    private static final long get_parent$OFFSET = 96;
+    private static final long get_parent$OFFSET = $LAYOUT.byteOffset(groupElement("get_parent"));
 
     /**
      * Offset for field:
@@ -1328,7 +1396,11 @@ public class _GFileIface {
      * gboolean (*prefix_matches)(GFile *, GFile *)
      * }
      */
-    public class prefix_matches {
+    public final static class prefix_matches {
+
+        private prefix_matches() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1365,9 +1437,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1386,7 +1460,7 @@ public class _GFileIface {
         return prefix_matches$LAYOUT;
     }
 
-    private static final long prefix_matches$OFFSET = 104;
+    private static final long prefix_matches$OFFSET = $LAYOUT.byteOffset(groupElement("prefix_matches"));
 
     /**
      * Offset for field:
@@ -1423,7 +1497,11 @@ public class _GFileIface {
      * char *(*get_relative_path)(GFile *, GFile *)
      * }
      */
-    public class get_relative_path {
+    public final static class get_relative_path {
+
+        private get_relative_path() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1460,9 +1538,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1481,7 +1561,7 @@ public class _GFileIface {
         return get_relative_path$LAYOUT;
     }
 
-    private static final long get_relative_path$OFFSET = 112;
+    private static final long get_relative_path$OFFSET = $LAYOUT.byteOffset(groupElement("get_relative_path"));
 
     /**
      * Offset for field:
@@ -1518,7 +1598,11 @@ public class _GFileIface {
      * GFile *(*resolve_relative_path)(GFile *, const char *)
      * }
      */
-    public class resolve_relative_path {
+    public final static class resolve_relative_path {
+
+        private resolve_relative_path() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1555,9 +1639,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1576,7 +1662,7 @@ public class _GFileIface {
         return resolve_relative_path$LAYOUT;
     }
 
-    private static final long resolve_relative_path$OFFSET = 120;
+    private static final long resolve_relative_path$OFFSET = $LAYOUT.byteOffset(groupElement("resolve_relative_path"));
 
     /**
      * Offset for field:
@@ -1613,7 +1699,11 @@ public class _GFileIface {
      * GFile *(*get_child_for_display_name)(GFile *, const char *, GError **)
      * }
      */
-    public class get_child_for_display_name {
+    public final static class get_child_for_display_name {
+
+        private get_child_for_display_name() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1651,9 +1741,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1672,7 +1764,7 @@ public class _GFileIface {
         return get_child_for_display_name$LAYOUT;
     }
 
-    private static final long get_child_for_display_name$OFFSET = 128;
+    private static final long get_child_for_display_name$OFFSET = $LAYOUT.byteOffset(groupElement("get_child_for_display_name"));
 
     /**
      * Offset for field:
@@ -1709,7 +1801,11 @@ public class _GFileIface {
      * GFileEnumerator *(*enumerate_children)(GFile *, const char *, GFileQueryInfoFlags, GCancellable *, GError **)
      * }
      */
-    public class enumerate_children {
+    public final static class enumerate_children {
+
+        private enumerate_children() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1749,9 +1845,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1770,7 +1868,7 @@ public class _GFileIface {
         return enumerate_children$LAYOUT;
     }
 
-    private static final long enumerate_children$OFFSET = 136;
+    private static final long enumerate_children$OFFSET = $LAYOUT.byteOffset(groupElement("enumerate_children"));
 
     /**
      * Offset for field:
@@ -1807,7 +1905,11 @@ public class _GFileIface {
      * void (*enumerate_children_async)(GFile *, const char *, GFileQueryInfoFlags, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class enumerate_children_async {
+    public final static class enumerate_children_async {
+
+        private enumerate_children_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1848,9 +1950,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1869,7 +1973,7 @@ public class _GFileIface {
         return enumerate_children_async$LAYOUT;
     }
 
-    private static final long enumerate_children_async$OFFSET = 144;
+    private static final long enumerate_children_async$OFFSET = $LAYOUT.byteOffset(groupElement("enumerate_children_async"));
 
     /**
      * Offset for field:
@@ -1906,7 +2010,11 @@ public class _GFileIface {
      * GFileEnumerator *(*enumerate_children_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class enumerate_children_finish {
+    public final static class enumerate_children_finish {
+
+        private enumerate_children_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1944,9 +2052,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1965,7 +2075,7 @@ public class _GFileIface {
         return enumerate_children_finish$LAYOUT;
     }
 
-    private static final long enumerate_children_finish$OFFSET = 152;
+    private static final long enumerate_children_finish$OFFSET = $LAYOUT.byteOffset(groupElement("enumerate_children_finish"));
 
     /**
      * Offset for field:
@@ -2002,7 +2112,11 @@ public class _GFileIface {
      * GFileInfo *(*query_info)(GFile *, const char *, GFileQueryInfoFlags, GCancellable *, GError **)
      * }
      */
-    public class query_info {
+    public final static class query_info {
+
+        private query_info() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2042,9 +2156,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2063,7 +2179,7 @@ public class _GFileIface {
         return query_info$LAYOUT;
     }
 
-    private static final long query_info$OFFSET = 160;
+    private static final long query_info$OFFSET = $LAYOUT.byteOffset(groupElement("query_info"));
 
     /**
      * Offset for field:
@@ -2100,7 +2216,11 @@ public class _GFileIface {
      * void (*query_info_async)(GFile *, const char *, GFileQueryInfoFlags, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class query_info_async {
+    public final static class query_info_async {
+
+        private query_info_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2141,9 +2261,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2162,7 +2284,7 @@ public class _GFileIface {
         return query_info_async$LAYOUT;
     }
 
-    private static final long query_info_async$OFFSET = 168;
+    private static final long query_info_async$OFFSET = $LAYOUT.byteOffset(groupElement("query_info_async"));
 
     /**
      * Offset for field:
@@ -2199,7 +2321,11 @@ public class _GFileIface {
      * GFileInfo *(*query_info_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class query_info_finish {
+    public final static class query_info_finish {
+
+        private query_info_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2237,9 +2363,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2258,7 +2386,7 @@ public class _GFileIface {
         return query_info_finish$LAYOUT;
     }
 
-    private static final long query_info_finish$OFFSET = 176;
+    private static final long query_info_finish$OFFSET = $LAYOUT.byteOffset(groupElement("query_info_finish"));
 
     /**
      * Offset for field:
@@ -2295,7 +2423,11 @@ public class _GFileIface {
      * GFileInfo *(*query_filesystem_info)(GFile *, const char *, GCancellable *, GError **)
      * }
      */
-    public class query_filesystem_info {
+    public final static class query_filesystem_info {
+
+        private query_filesystem_info() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2334,9 +2466,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2355,7 +2489,7 @@ public class _GFileIface {
         return query_filesystem_info$LAYOUT;
     }
 
-    private static final long query_filesystem_info$OFFSET = 184;
+    private static final long query_filesystem_info$OFFSET = $LAYOUT.byteOffset(groupElement("query_filesystem_info"));
 
     /**
      * Offset for field:
@@ -2392,7 +2526,11 @@ public class _GFileIface {
      * void (*query_filesystem_info_async)(GFile *, const char *, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class query_filesystem_info_async {
+    public final static class query_filesystem_info_async {
+
+        private query_filesystem_info_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2432,9 +2570,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2453,7 +2593,7 @@ public class _GFileIface {
         return query_filesystem_info_async$LAYOUT;
     }
 
-    private static final long query_filesystem_info_async$OFFSET = 192;
+    private static final long query_filesystem_info_async$OFFSET = $LAYOUT.byteOffset(groupElement("query_filesystem_info_async"));
 
     /**
      * Offset for field:
@@ -2490,7 +2630,11 @@ public class _GFileIface {
      * GFileInfo *(*query_filesystem_info_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class query_filesystem_info_finish {
+    public final static class query_filesystem_info_finish {
+
+        private query_filesystem_info_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2528,9 +2672,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2549,7 +2695,7 @@ public class _GFileIface {
         return query_filesystem_info_finish$LAYOUT;
     }
 
-    private static final long query_filesystem_info_finish$OFFSET = 200;
+    private static final long query_filesystem_info_finish$OFFSET = $LAYOUT.byteOffset(groupElement("query_filesystem_info_finish"));
 
     /**
      * Offset for field:
@@ -2586,7 +2732,11 @@ public class _GFileIface {
      * GMount *(*find_enclosing_mount)(GFile *, GCancellable *, GError **)
      * }
      */
-    public class find_enclosing_mount {
+    public final static class find_enclosing_mount {
+
+        private find_enclosing_mount() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2624,9 +2774,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2645,7 +2797,7 @@ public class _GFileIface {
         return find_enclosing_mount$LAYOUT;
     }
 
-    private static final long find_enclosing_mount$OFFSET = 208;
+    private static final long find_enclosing_mount$OFFSET = $LAYOUT.byteOffset(groupElement("find_enclosing_mount"));
 
     /**
      * Offset for field:
@@ -2682,7 +2834,11 @@ public class _GFileIface {
      * void (*find_enclosing_mount_async)(GFile *, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class find_enclosing_mount_async {
+    public final static class find_enclosing_mount_async {
+
+        private find_enclosing_mount_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2721,9 +2877,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2742,7 +2900,7 @@ public class _GFileIface {
         return find_enclosing_mount_async$LAYOUT;
     }
 
-    private static final long find_enclosing_mount_async$OFFSET = 216;
+    private static final long find_enclosing_mount_async$OFFSET = $LAYOUT.byteOffset(groupElement("find_enclosing_mount_async"));
 
     /**
      * Offset for field:
@@ -2779,7 +2937,11 @@ public class _GFileIface {
      * GMount *(*find_enclosing_mount_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class find_enclosing_mount_finish {
+    public final static class find_enclosing_mount_finish {
+
+        private find_enclosing_mount_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2817,9 +2979,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2838,7 +3002,7 @@ public class _GFileIface {
         return find_enclosing_mount_finish$LAYOUT;
     }
 
-    private static final long find_enclosing_mount_finish$OFFSET = 224;
+    private static final long find_enclosing_mount_finish$OFFSET = $LAYOUT.byteOffset(groupElement("find_enclosing_mount_finish"));
 
     /**
      * Offset for field:
@@ -2875,7 +3039,11 @@ public class _GFileIface {
      * GFile *(*set_display_name)(GFile *, const char *, GCancellable *, GError **)
      * }
      */
-    public class set_display_name {
+    public final static class set_display_name {
+
+        private set_display_name() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2914,9 +3082,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2935,7 +3105,7 @@ public class _GFileIface {
         return set_display_name$LAYOUT;
     }
 
-    private static final long set_display_name$OFFSET = 232;
+    private static final long set_display_name$OFFSET = $LAYOUT.byteOffset(groupElement("set_display_name"));
 
     /**
      * Offset for field:
@@ -2972,7 +3142,11 @@ public class _GFileIface {
      * void (*set_display_name_async)(GFile *, const char *, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class set_display_name_async {
+    public final static class set_display_name_async {
+
+        private set_display_name_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3012,9 +3186,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3033,7 +3209,7 @@ public class _GFileIface {
         return set_display_name_async$LAYOUT;
     }
 
-    private static final long set_display_name_async$OFFSET = 240;
+    private static final long set_display_name_async$OFFSET = $LAYOUT.byteOffset(groupElement("set_display_name_async"));
 
     /**
      * Offset for field:
@@ -3070,7 +3246,11 @@ public class _GFileIface {
      * GFile *(*set_display_name_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class set_display_name_finish {
+    public final static class set_display_name_finish {
+
+        private set_display_name_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3108,9 +3288,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3129,7 +3311,7 @@ public class _GFileIface {
         return set_display_name_finish$LAYOUT;
     }
 
-    private static final long set_display_name_finish$OFFSET = 248;
+    private static final long set_display_name_finish$OFFSET = $LAYOUT.byteOffset(groupElement("set_display_name_finish"));
 
     /**
      * Offset for field:
@@ -3166,7 +3348,11 @@ public class _GFileIface {
      * GFileAttributeInfoList *(*query_settable_attributes)(GFile *, GCancellable *, GError **)
      * }
      */
-    public class query_settable_attributes {
+    public final static class query_settable_attributes {
+
+        private query_settable_attributes() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3204,9 +3390,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3225,7 +3413,7 @@ public class _GFileIface {
         return query_settable_attributes$LAYOUT;
     }
 
-    private static final long query_settable_attributes$OFFSET = 256;
+    private static final long query_settable_attributes$OFFSET = $LAYOUT.byteOffset(groupElement("query_settable_attributes"));
 
     /**
      * Offset for field:
@@ -3262,7 +3450,11 @@ public class _GFileIface {
      * void (*_query_settable_attributes_async)(void)
      * }
      */
-    public class _query_settable_attributes_async {
+    public final static class _query_settable_attributes_async {
+
+        private _query_settable_attributes_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3298,6 +3490,8 @@ public class _GFileIface {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3316,7 +3510,7 @@ public class _GFileIface {
         return _query_settable_attributes_async$LAYOUT;
     }
 
-    private static final long _query_settable_attributes_async$OFFSET = 264;
+    private static final long _query_settable_attributes_async$OFFSET = $LAYOUT.byteOffset(groupElement("_query_settable_attributes_async"));
 
     /**
      * Offset for field:
@@ -3353,7 +3547,11 @@ public class _GFileIface {
      * void (*_query_settable_attributes_finish)(void)
      * }
      */
-    public class _query_settable_attributes_finish {
+    public final static class _query_settable_attributes_finish {
+
+        private _query_settable_attributes_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3389,6 +3587,8 @@ public class _GFileIface {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3407,7 +3607,7 @@ public class _GFileIface {
         return _query_settable_attributes_finish$LAYOUT;
     }
 
-    private static final long _query_settable_attributes_finish$OFFSET = 272;
+    private static final long _query_settable_attributes_finish$OFFSET = $LAYOUT.byteOffset(groupElement("_query_settable_attributes_finish"));
 
     /**
      * Offset for field:
@@ -3444,7 +3644,11 @@ public class _GFileIface {
      * GFileAttributeInfoList *(*query_writable_namespaces)(GFile *, GCancellable *, GError **)
      * }
      */
-    public class query_writable_namespaces {
+    public final static class query_writable_namespaces {
+
+        private query_writable_namespaces() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3482,9 +3686,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3503,7 +3709,7 @@ public class _GFileIface {
         return query_writable_namespaces$LAYOUT;
     }
 
-    private static final long query_writable_namespaces$OFFSET = 280;
+    private static final long query_writable_namespaces$OFFSET = $LAYOUT.byteOffset(groupElement("query_writable_namespaces"));
 
     /**
      * Offset for field:
@@ -3540,7 +3746,11 @@ public class _GFileIface {
      * void (*_query_writable_namespaces_async)(void)
      * }
      */
-    public class _query_writable_namespaces_async {
+    public final static class _query_writable_namespaces_async {
+
+        private _query_writable_namespaces_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3576,6 +3786,8 @@ public class _GFileIface {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3594,7 +3806,7 @@ public class _GFileIface {
         return _query_writable_namespaces_async$LAYOUT;
     }
 
-    private static final long _query_writable_namespaces_async$OFFSET = 288;
+    private static final long _query_writable_namespaces_async$OFFSET = $LAYOUT.byteOffset(groupElement("_query_writable_namespaces_async"));
 
     /**
      * Offset for field:
@@ -3631,7 +3843,11 @@ public class _GFileIface {
      * void (*_query_writable_namespaces_finish)(void)
      * }
      */
-    public class _query_writable_namespaces_finish {
+    public final static class _query_writable_namespaces_finish {
+
+        private _query_writable_namespaces_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3667,6 +3883,8 @@ public class _GFileIface {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3685,7 +3903,7 @@ public class _GFileIface {
         return _query_writable_namespaces_finish$LAYOUT;
     }
 
-    private static final long _query_writable_namespaces_finish$OFFSET = 296;
+    private static final long _query_writable_namespaces_finish$OFFSET = $LAYOUT.byteOffset(groupElement("_query_writable_namespaces_finish"));
 
     /**
      * Offset for field:
@@ -3722,7 +3940,11 @@ public class _GFileIface {
      * gboolean (*set_attribute)(GFile *, const char *, GFileAttributeType, gpointer, GFileQueryInfoFlags, GCancellable *, GError **)
      * }
      */
-    public class set_attribute {
+    public final static class set_attribute {
+
+        private set_attribute() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3764,9 +3986,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, int _x4, MemorySegment _x5, MemorySegment _x6) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, int _x4, MemorySegment _x5, MemorySegment _x6) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3785,7 +4009,7 @@ public class _GFileIface {
         return set_attribute$LAYOUT;
     }
 
-    private static final long set_attribute$OFFSET = 304;
+    private static final long set_attribute$OFFSET = $LAYOUT.byteOffset(groupElement("set_attribute"));
 
     /**
      * Offset for field:
@@ -3822,7 +4046,11 @@ public class _GFileIface {
      * gboolean (*set_attributes_from_info)(GFile *, GFileInfo *, GFileQueryInfoFlags, GCancellable *, GError **)
      * }
      */
-    public class set_attributes_from_info {
+    public final static class set_attributes_from_info {
+
+        private set_attributes_from_info() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3862,9 +4090,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3883,7 +4113,7 @@ public class _GFileIface {
         return set_attributes_from_info$LAYOUT;
     }
 
-    private static final long set_attributes_from_info$OFFSET = 312;
+    private static final long set_attributes_from_info$OFFSET = $LAYOUT.byteOffset(groupElement("set_attributes_from_info"));
 
     /**
      * Offset for field:
@@ -3920,7 +4150,11 @@ public class _GFileIface {
      * void (*set_attributes_async)(GFile *, GFileInfo *, GFileQueryInfoFlags, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class set_attributes_async {
+    public final static class set_attributes_async {
+
+        private set_attributes_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3961,9 +4195,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3982,7 +4218,7 @@ public class _GFileIface {
         return set_attributes_async$LAYOUT;
     }
 
-    private static final long set_attributes_async$OFFSET = 320;
+    private static final long set_attributes_async$OFFSET = $LAYOUT.byteOffset(groupElement("set_attributes_async"));
 
     /**
      * Offset for field:
@@ -4019,7 +4255,11 @@ public class _GFileIface {
      * gboolean (*set_attributes_finish)(GFile *, GAsyncResult *, GFileInfo **, GError **)
      * }
      */
-    public class set_attributes_finish {
+    public final static class set_attributes_finish {
+
+        private set_attributes_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -4058,9 +4298,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -4079,7 +4321,7 @@ public class _GFileIface {
         return set_attributes_finish$LAYOUT;
     }
 
-    private static final long set_attributes_finish$OFFSET = 328;
+    private static final long set_attributes_finish$OFFSET = $LAYOUT.byteOffset(groupElement("set_attributes_finish"));
 
     /**
      * Offset for field:
@@ -4116,7 +4358,11 @@ public class _GFileIface {
      * GFileInputStream *(*read_fn)(GFile *, GCancellable *, GError **)
      * }
      */
-    public class read_fn {
+    public final static class read_fn {
+
+        private read_fn() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -4154,9 +4400,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -4175,7 +4423,7 @@ public class _GFileIface {
         return read_fn$LAYOUT;
     }
 
-    private static final long read_fn$OFFSET = 336;
+    private static final long read_fn$OFFSET = $LAYOUT.byteOffset(groupElement("read_fn"));
 
     /**
      * Offset for field:
@@ -4212,7 +4460,11 @@ public class _GFileIface {
      * void (*read_async)(GFile *, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class read_async {
+    public final static class read_async {
+
+        private read_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -4251,9 +4503,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -4272,7 +4526,7 @@ public class _GFileIface {
         return read_async$LAYOUT;
     }
 
-    private static final long read_async$OFFSET = 344;
+    private static final long read_async$OFFSET = $LAYOUT.byteOffset(groupElement("read_async"));
 
     /**
      * Offset for field:
@@ -4309,7 +4563,11 @@ public class _GFileIface {
      * GFileInputStream *(*read_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class read_finish {
+    public final static class read_finish {
+
+        private read_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -4347,9 +4605,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -4368,7 +4628,7 @@ public class _GFileIface {
         return read_finish$LAYOUT;
     }
 
-    private static final long read_finish$OFFSET = 352;
+    private static final long read_finish$OFFSET = $LAYOUT.byteOffset(groupElement("read_finish"));
 
     /**
      * Offset for field:
@@ -4405,7 +4665,11 @@ public class _GFileIface {
      * GFileOutputStream *(*append_to)(GFile *, GFileCreateFlags, GCancellable *, GError **)
      * }
      */
-    public class append_to {
+    public final static class append_to {
+
+        private append_to() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -4444,9 +4708,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -4465,7 +4731,7 @@ public class _GFileIface {
         return append_to$LAYOUT;
     }
 
-    private static final long append_to$OFFSET = 360;
+    private static final long append_to$OFFSET = $LAYOUT.byteOffset(groupElement("append_to"));
 
     /**
      * Offset for field:
@@ -4502,7 +4768,11 @@ public class _GFileIface {
      * void (*append_to_async)(GFile *, GFileCreateFlags, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class append_to_async {
+    public final static class append_to_async {
+
+        private append_to_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -4542,9 +4812,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -4563,7 +4835,7 @@ public class _GFileIface {
         return append_to_async$LAYOUT;
     }
 
-    private static final long append_to_async$OFFSET = 368;
+    private static final long append_to_async$OFFSET = $LAYOUT.byteOffset(groupElement("append_to_async"));
 
     /**
      * Offset for field:
@@ -4600,7 +4872,11 @@ public class _GFileIface {
      * GFileOutputStream *(*append_to_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class append_to_finish {
+    public final static class append_to_finish {
+
+        private append_to_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -4638,9 +4914,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -4659,7 +4937,7 @@ public class _GFileIface {
         return append_to_finish$LAYOUT;
     }
 
-    private static final long append_to_finish$OFFSET = 376;
+    private static final long append_to_finish$OFFSET = $LAYOUT.byteOffset(groupElement("append_to_finish"));
 
     /**
      * Offset for field:
@@ -4696,7 +4974,11 @@ public class _GFileIface {
      * GFileOutputStream *(*create)(GFile *, GFileCreateFlags, GCancellable *, GError **)
      * }
      */
-    public class create {
+    public final static class create {
+
+        private create() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -4735,9 +5017,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -4756,7 +5040,7 @@ public class _GFileIface {
         return create$LAYOUT;
     }
 
-    private static final long create$OFFSET = 384;
+    private static final long create$OFFSET = $LAYOUT.byteOffset(groupElement("create"));
 
     /**
      * Offset for field:
@@ -4793,7 +5077,11 @@ public class _GFileIface {
      * void (*create_async)(GFile *, GFileCreateFlags, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class create_async {
+    public final static class create_async {
+
+        private create_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -4833,9 +5121,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -4854,7 +5144,7 @@ public class _GFileIface {
         return create_async$LAYOUT;
     }
 
-    private static final long create_async$OFFSET = 392;
+    private static final long create_async$OFFSET = $LAYOUT.byteOffset(groupElement("create_async"));
 
     /**
      * Offset for field:
@@ -4891,7 +5181,11 @@ public class _GFileIface {
      * GFileOutputStream *(*create_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class create_finish {
+    public final static class create_finish {
+
+        private create_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -4929,9 +5223,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -4950,7 +5246,7 @@ public class _GFileIface {
         return create_finish$LAYOUT;
     }
 
-    private static final long create_finish$OFFSET = 400;
+    private static final long create_finish$OFFSET = $LAYOUT.byteOffset(groupElement("create_finish"));
 
     /**
      * Offset for field:
@@ -4987,7 +5283,11 @@ public class _GFileIface {
      * GFileOutputStream *(*replace)(GFile *, const char *, gboolean, GFileCreateFlags, GCancellable *, GError **)
      * }
      */
-    public class replace {
+    public final static class replace {
+
+        private replace() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -5028,9 +5328,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -5049,7 +5351,7 @@ public class _GFileIface {
         return replace$LAYOUT;
     }
 
-    private static final long replace$OFFSET = 408;
+    private static final long replace$OFFSET = $LAYOUT.byteOffset(groupElement("replace"));
 
     /**
      * Offset for field:
@@ -5086,7 +5388,11 @@ public class _GFileIface {
      * void (*replace_async)(GFile *, const char *, gboolean, GFileCreateFlags, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class replace_async {
+    public final static class replace_async {
+
+        private replace_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -5128,9 +5434,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, int _x4, MemorySegment _x5, MemorySegment _x6, MemorySegment _x7) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, int _x4, MemorySegment _x5, MemorySegment _x6, MemorySegment _x7) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -5149,7 +5457,7 @@ public class _GFileIface {
         return replace_async$LAYOUT;
     }
 
-    private static final long replace_async$OFFSET = 416;
+    private static final long replace_async$OFFSET = $LAYOUT.byteOffset(groupElement("replace_async"));
 
     /**
      * Offset for field:
@@ -5186,7 +5494,11 @@ public class _GFileIface {
      * GFileOutputStream *(*replace_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class replace_finish {
+    public final static class replace_finish {
+
+        private replace_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -5224,9 +5536,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -5245,7 +5559,7 @@ public class _GFileIface {
         return replace_finish$LAYOUT;
     }
 
-    private static final long replace_finish$OFFSET = 424;
+    private static final long replace_finish$OFFSET = $LAYOUT.byteOffset(groupElement("replace_finish"));
 
     /**
      * Offset for field:
@@ -5282,7 +5596,11 @@ public class _GFileIface {
      * gboolean (*delete_file)(GFile *, GCancellable *, GError **)
      * }
      */
-    public class delete_file {
+    public final static class delete_file {
+
+        private delete_file() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -5320,9 +5638,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -5341,7 +5661,7 @@ public class _GFileIface {
         return delete_file$LAYOUT;
     }
 
-    private static final long delete_file$OFFSET = 432;
+    private static final long delete_file$OFFSET = $LAYOUT.byteOffset(groupElement("delete_file"));
 
     /**
      * Offset for field:
@@ -5378,7 +5698,11 @@ public class _GFileIface {
      * void (*delete_file_async)(GFile *, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class delete_file_async {
+    public final static class delete_file_async {
+
+        private delete_file_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -5417,9 +5741,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -5438,7 +5764,7 @@ public class _GFileIface {
         return delete_file_async$LAYOUT;
     }
 
-    private static final long delete_file_async$OFFSET = 440;
+    private static final long delete_file_async$OFFSET = $LAYOUT.byteOffset(groupElement("delete_file_async"));
 
     /**
      * Offset for field:
@@ -5475,7 +5801,11 @@ public class _GFileIface {
      * gboolean (*delete_file_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class delete_file_finish {
+    public final static class delete_file_finish {
+
+        private delete_file_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -5513,9 +5843,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -5534,7 +5866,7 @@ public class _GFileIface {
         return delete_file_finish$LAYOUT;
     }
 
-    private static final long delete_file_finish$OFFSET = 448;
+    private static final long delete_file_finish$OFFSET = $LAYOUT.byteOffset(groupElement("delete_file_finish"));
 
     /**
      * Offset for field:
@@ -5571,7 +5903,11 @@ public class _GFileIface {
      * gboolean (*trash)(GFile *, GCancellable *, GError **)
      * }
      */
-    public class trash {
+    public final static class trash {
+
+        private trash() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -5609,9 +5945,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -5630,7 +5968,7 @@ public class _GFileIface {
         return trash$LAYOUT;
     }
 
-    private static final long trash$OFFSET = 456;
+    private static final long trash$OFFSET = $LAYOUT.byteOffset(groupElement("trash"));
 
     /**
      * Offset for field:
@@ -5667,7 +6005,11 @@ public class _GFileIface {
      * void (*trash_async)(GFile *, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class trash_async {
+    public final static class trash_async {
+
+        private trash_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -5706,9 +6048,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -5727,7 +6071,7 @@ public class _GFileIface {
         return trash_async$LAYOUT;
     }
 
-    private static final long trash_async$OFFSET = 464;
+    private static final long trash_async$OFFSET = $LAYOUT.byteOffset(groupElement("trash_async"));
 
     /**
      * Offset for field:
@@ -5764,7 +6108,11 @@ public class _GFileIface {
      * gboolean (*trash_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class trash_finish {
+    public final static class trash_finish {
+
+        private trash_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -5802,9 +6150,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -5823,7 +6173,7 @@ public class _GFileIface {
         return trash_finish$LAYOUT;
     }
 
-    private static final long trash_finish$OFFSET = 472;
+    private static final long trash_finish$OFFSET = $LAYOUT.byteOffset(groupElement("trash_finish"));
 
     /**
      * Offset for field:
@@ -5860,7 +6210,11 @@ public class _GFileIface {
      * gboolean (*make_directory)(GFile *, GCancellable *, GError **)
      * }
      */
-    public class make_directory {
+    public final static class make_directory {
+
+        private make_directory() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -5898,9 +6252,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -5919,7 +6275,7 @@ public class _GFileIface {
         return make_directory$LAYOUT;
     }
 
-    private static final long make_directory$OFFSET = 480;
+    private static final long make_directory$OFFSET = $LAYOUT.byteOffset(groupElement("make_directory"));
 
     /**
      * Offset for field:
@@ -5956,7 +6312,11 @@ public class _GFileIface {
      * void (*make_directory_async)(GFile *, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class make_directory_async {
+    public final static class make_directory_async {
+
+        private make_directory_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -5995,9 +6355,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -6016,7 +6378,7 @@ public class _GFileIface {
         return make_directory_async$LAYOUT;
     }
 
-    private static final long make_directory_async$OFFSET = 488;
+    private static final long make_directory_async$OFFSET = $LAYOUT.byteOffset(groupElement("make_directory_async"));
 
     /**
      * Offset for field:
@@ -6053,7 +6415,11 @@ public class _GFileIface {
      * gboolean (*make_directory_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class make_directory_finish {
+    public final static class make_directory_finish {
+
+        private make_directory_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -6091,9 +6457,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -6112,7 +6480,7 @@ public class _GFileIface {
         return make_directory_finish$LAYOUT;
     }
 
-    private static final long make_directory_finish$OFFSET = 496;
+    private static final long make_directory_finish$OFFSET = $LAYOUT.byteOffset(groupElement("make_directory_finish"));
 
     /**
      * Offset for field:
@@ -6149,7 +6517,11 @@ public class _GFileIface {
      * gboolean (*make_symbolic_link)(GFile *, const char *, GCancellable *, GError **)
      * }
      */
-    public class make_symbolic_link {
+    public final static class make_symbolic_link {
+
+        private make_symbolic_link() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -6188,9 +6560,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -6209,7 +6583,7 @@ public class _GFileIface {
         return make_symbolic_link$LAYOUT;
     }
 
-    private static final long make_symbolic_link$OFFSET = 504;
+    private static final long make_symbolic_link$OFFSET = $LAYOUT.byteOffset(groupElement("make_symbolic_link"));
 
     /**
      * Offset for field:
@@ -6246,7 +6620,11 @@ public class _GFileIface {
      * void (*make_symbolic_link_async)(GFile *, const char *, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class make_symbolic_link_async {
+    public final static class make_symbolic_link_async {
+
+        private make_symbolic_link_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -6286,9 +6664,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -6307,7 +6687,7 @@ public class _GFileIface {
         return make_symbolic_link_async$LAYOUT;
     }
 
-    private static final long make_symbolic_link_async$OFFSET = 512;
+    private static final long make_symbolic_link_async$OFFSET = $LAYOUT.byteOffset(groupElement("make_symbolic_link_async"));
 
     /**
      * Offset for field:
@@ -6344,7 +6724,11 @@ public class _GFileIface {
      * gboolean (*make_symbolic_link_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class make_symbolic_link_finish {
+    public final static class make_symbolic_link_finish {
+
+        private make_symbolic_link_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -6382,9 +6766,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -6403,7 +6789,7 @@ public class _GFileIface {
         return make_symbolic_link_finish$LAYOUT;
     }
 
-    private static final long make_symbolic_link_finish$OFFSET = 520;
+    private static final long make_symbolic_link_finish$OFFSET = $LAYOUT.byteOffset(groupElement("make_symbolic_link_finish"));
 
     /**
      * Offset for field:
@@ -6440,7 +6826,11 @@ public class _GFileIface {
      * gboolean (*copy)(GFile *, GFile *, GFileCopyFlags, GCancellable *, GFileProgressCallback, gpointer, GError **)
      * }
      */
-    public class copy {
+    public final static class copy {
+
+        private copy() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -6482,9 +6872,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -6503,7 +6895,7 @@ public class _GFileIface {
         return copy$LAYOUT;
     }
 
-    private static final long copy$OFFSET = 528;
+    private static final long copy$OFFSET = $LAYOUT.byteOffset(groupElement("copy"));
 
     /**
      * Offset for field:
@@ -6540,7 +6932,11 @@ public class _GFileIface {
      * void (*copy_async)(GFile *, GFile *, GFileCopyFlags, int, GCancellable *, GFileProgressCallback, gpointer, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class copy_async {
+    public final static class copy_async {
+
+        private copy_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -6583,9 +6979,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6, MemorySegment _x7, MemorySegment _x8) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6, MemorySegment _x7, MemorySegment _x8) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -6604,7 +7002,7 @@ public class _GFileIface {
         return copy_async$LAYOUT;
     }
 
-    private static final long copy_async$OFFSET = 536;
+    private static final long copy_async$OFFSET = $LAYOUT.byteOffset(groupElement("copy_async"));
 
     /**
      * Offset for field:
@@ -6641,7 +7039,11 @@ public class _GFileIface {
      * gboolean (*copy_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class copy_finish {
+    public final static class copy_finish {
+
+        private copy_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -6679,9 +7081,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -6700,7 +7104,7 @@ public class _GFileIface {
         return copy_finish$LAYOUT;
     }
 
-    private static final long copy_finish$OFFSET = 544;
+    private static final long copy_finish$OFFSET = $LAYOUT.byteOffset(groupElement("copy_finish"));
 
     /**
      * Offset for field:
@@ -6737,7 +7141,11 @@ public class _GFileIface {
      * gboolean (*move)(GFile *, GFile *, GFileCopyFlags, GCancellable *, GFileProgressCallback, gpointer, GError **)
      * }
      */
-    public class move {
+    public final static class move {
+
+        private move() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -6779,9 +7187,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -6800,7 +7210,7 @@ public class _GFileIface {
         return move$LAYOUT;
     }
 
-    private static final long move$OFFSET = 552;
+    private static final long move$OFFSET = $LAYOUT.byteOffset(groupElement("move"));
 
     /**
      * Offset for field:
@@ -6837,7 +7247,11 @@ public class _GFileIface {
      * void (*move_async)(GFile *, GFile *, GFileCopyFlags, int, GCancellable *, GFileProgressCallback, gpointer, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class move_async {
+    public final static class move_async {
+
+        private move_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -6880,9 +7294,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6, MemorySegment _x7, MemorySegment _x8) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6, MemorySegment _x7, MemorySegment _x8) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -6901,7 +7317,7 @@ public class _GFileIface {
         return move_async$LAYOUT;
     }
 
-    private static final long move_async$OFFSET = 560;
+    private static final long move_async$OFFSET = $LAYOUT.byteOffset(groupElement("move_async"));
 
     /**
      * Offset for field:
@@ -6938,7 +7354,11 @@ public class _GFileIface {
      * gboolean (*move_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class move_finish {
+    public final static class move_finish {
+
+        private move_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -6976,9 +7396,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -6997,7 +7419,7 @@ public class _GFileIface {
         return move_finish$LAYOUT;
     }
 
-    private static final long move_finish$OFFSET = 568;
+    private static final long move_finish$OFFSET = $LAYOUT.byteOffset(groupElement("move_finish"));
 
     /**
      * Offset for field:
@@ -7034,7 +7456,11 @@ public class _GFileIface {
      * void (*mount_mountable)(GFile *, GMountMountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class mount_mountable {
+    public final static class mount_mountable {
+
+        private mount_mountable() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -7074,9 +7500,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -7095,7 +7523,7 @@ public class _GFileIface {
         return mount_mountable$LAYOUT;
     }
 
-    private static final long mount_mountable$OFFSET = 576;
+    private static final long mount_mountable$OFFSET = $LAYOUT.byteOffset(groupElement("mount_mountable"));
 
     /**
      * Offset for field:
@@ -7132,7 +7560,11 @@ public class _GFileIface {
      * GFile *(*mount_mountable_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class mount_mountable_finish {
+    public final static class mount_mountable_finish {
+
+        private mount_mountable_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -7170,9 +7602,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -7191,7 +7625,7 @@ public class _GFileIface {
         return mount_mountable_finish$LAYOUT;
     }
 
-    private static final long mount_mountable_finish$OFFSET = 584;
+    private static final long mount_mountable_finish$OFFSET = $LAYOUT.byteOffset(groupElement("mount_mountable_finish"));
 
     /**
      * Offset for field:
@@ -7228,7 +7662,11 @@ public class _GFileIface {
      * void (*unmount_mountable)(GFile *, GMountUnmountFlags, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class unmount_mountable {
+    public final static class unmount_mountable {
+
+        private unmount_mountable() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -7267,9 +7705,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -7288,7 +7728,7 @@ public class _GFileIface {
         return unmount_mountable$LAYOUT;
     }
 
-    private static final long unmount_mountable$OFFSET = 592;
+    private static final long unmount_mountable$OFFSET = $LAYOUT.byteOffset(groupElement("unmount_mountable"));
 
     /**
      * Offset for field:
@@ -7325,7 +7765,11 @@ public class _GFileIface {
      * gboolean (*unmount_mountable_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class unmount_mountable_finish {
+    public final static class unmount_mountable_finish {
+
+        private unmount_mountable_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -7363,9 +7807,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -7384,7 +7830,7 @@ public class _GFileIface {
         return unmount_mountable_finish$LAYOUT;
     }
 
-    private static final long unmount_mountable_finish$OFFSET = 600;
+    private static final long unmount_mountable_finish$OFFSET = $LAYOUT.byteOffset(groupElement("unmount_mountable_finish"));
 
     /**
      * Offset for field:
@@ -7421,7 +7867,11 @@ public class _GFileIface {
      * void (*eject_mountable)(GFile *, GMountUnmountFlags, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class eject_mountable {
+    public final static class eject_mountable {
+
+        private eject_mountable() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -7460,9 +7910,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -7481,7 +7933,7 @@ public class _GFileIface {
         return eject_mountable$LAYOUT;
     }
 
-    private static final long eject_mountable$OFFSET = 608;
+    private static final long eject_mountable$OFFSET = $LAYOUT.byteOffset(groupElement("eject_mountable"));
 
     /**
      * Offset for field:
@@ -7518,7 +7970,11 @@ public class _GFileIface {
      * gboolean (*eject_mountable_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class eject_mountable_finish {
+    public final static class eject_mountable_finish {
+
+        private eject_mountable_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -7556,9 +8012,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -7577,7 +8035,7 @@ public class _GFileIface {
         return eject_mountable_finish$LAYOUT;
     }
 
-    private static final long eject_mountable_finish$OFFSET = 616;
+    private static final long eject_mountable_finish$OFFSET = $LAYOUT.byteOffset(groupElement("eject_mountable_finish"));
 
     /**
      * Offset for field:
@@ -7614,7 +8072,11 @@ public class _GFileIface {
      * void (*mount_enclosing_volume)(GFile *, GMountMountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class mount_enclosing_volume {
+    public final static class mount_enclosing_volume {
+
+        private mount_enclosing_volume() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -7654,9 +8116,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -7675,7 +8139,7 @@ public class _GFileIface {
         return mount_enclosing_volume$LAYOUT;
     }
 
-    private static final long mount_enclosing_volume$OFFSET = 624;
+    private static final long mount_enclosing_volume$OFFSET = $LAYOUT.byteOffset(groupElement("mount_enclosing_volume"));
 
     /**
      * Offset for field:
@@ -7712,7 +8176,11 @@ public class _GFileIface {
      * gboolean (*mount_enclosing_volume_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class mount_enclosing_volume_finish {
+    public final static class mount_enclosing_volume_finish {
+
+        private mount_enclosing_volume_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -7750,9 +8218,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -7771,7 +8241,7 @@ public class _GFileIface {
         return mount_enclosing_volume_finish$LAYOUT;
     }
 
-    private static final long mount_enclosing_volume_finish$OFFSET = 632;
+    private static final long mount_enclosing_volume_finish$OFFSET = $LAYOUT.byteOffset(groupElement("mount_enclosing_volume_finish"));
 
     /**
      * Offset for field:
@@ -7808,7 +8278,11 @@ public class _GFileIface {
      * GFileMonitor *(*monitor_dir)(GFile *, GFileMonitorFlags, GCancellable *, GError **)
      * }
      */
-    public class monitor_dir {
+    public final static class monitor_dir {
+
+        private monitor_dir() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -7847,9 +8321,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -7868,7 +8344,7 @@ public class _GFileIface {
         return monitor_dir$LAYOUT;
     }
 
-    private static final long monitor_dir$OFFSET = 640;
+    private static final long monitor_dir$OFFSET = $LAYOUT.byteOffset(groupElement("monitor_dir"));
 
     /**
      * Offset for field:
@@ -7905,7 +8381,11 @@ public class _GFileIface {
      * GFileMonitor *(*monitor_file)(GFile *, GFileMonitorFlags, GCancellable *, GError **)
      * }
      */
-    public class monitor_file {
+    public final static class monitor_file {
+
+        private monitor_file() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -7944,9 +8424,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -7965,7 +8447,7 @@ public class _GFileIface {
         return monitor_file$LAYOUT;
     }
 
-    private static final long monitor_file$OFFSET = 648;
+    private static final long monitor_file$OFFSET = $LAYOUT.byteOffset(groupElement("monitor_file"));
 
     /**
      * Offset for field:
@@ -8002,7 +8484,11 @@ public class _GFileIface {
      * GFileIOStream *(*open_readwrite)(GFile *, GCancellable *, GError **)
      * }
      */
-    public class open_readwrite {
+    public final static class open_readwrite {
+
+        private open_readwrite() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -8040,9 +8526,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -8061,7 +8549,7 @@ public class _GFileIface {
         return open_readwrite$LAYOUT;
     }
 
-    private static final long open_readwrite$OFFSET = 656;
+    private static final long open_readwrite$OFFSET = $LAYOUT.byteOffset(groupElement("open_readwrite"));
 
     /**
      * Offset for field:
@@ -8098,7 +8586,11 @@ public class _GFileIface {
      * void (*open_readwrite_async)(GFile *, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class open_readwrite_async {
+    public final static class open_readwrite_async {
+
+        private open_readwrite_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -8137,9 +8629,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -8158,7 +8652,7 @@ public class _GFileIface {
         return open_readwrite_async$LAYOUT;
     }
 
-    private static final long open_readwrite_async$OFFSET = 664;
+    private static final long open_readwrite_async$OFFSET = $LAYOUT.byteOffset(groupElement("open_readwrite_async"));
 
     /**
      * Offset for field:
@@ -8195,7 +8689,11 @@ public class _GFileIface {
      * GFileIOStream *(*open_readwrite_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class open_readwrite_finish {
+    public final static class open_readwrite_finish {
+
+        private open_readwrite_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -8233,9 +8731,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -8254,7 +8754,7 @@ public class _GFileIface {
         return open_readwrite_finish$LAYOUT;
     }
 
-    private static final long open_readwrite_finish$OFFSET = 672;
+    private static final long open_readwrite_finish$OFFSET = $LAYOUT.byteOffset(groupElement("open_readwrite_finish"));
 
     /**
      * Offset for field:
@@ -8291,7 +8791,11 @@ public class _GFileIface {
      * GFileIOStream *(*create_readwrite)(GFile *, GFileCreateFlags, GCancellable *, GError **)
      * }
      */
-    public class create_readwrite {
+    public final static class create_readwrite {
+
+        private create_readwrite() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -8330,9 +8834,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -8351,7 +8857,7 @@ public class _GFileIface {
         return create_readwrite$LAYOUT;
     }
 
-    private static final long create_readwrite$OFFSET = 680;
+    private static final long create_readwrite$OFFSET = $LAYOUT.byteOffset(groupElement("create_readwrite"));
 
     /**
      * Offset for field:
@@ -8388,7 +8894,11 @@ public class _GFileIface {
      * void (*create_readwrite_async)(GFile *, GFileCreateFlags, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class create_readwrite_async {
+    public final static class create_readwrite_async {
+
+        private create_readwrite_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -8428,9 +8938,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -8449,7 +8961,7 @@ public class _GFileIface {
         return create_readwrite_async$LAYOUT;
     }
 
-    private static final long create_readwrite_async$OFFSET = 688;
+    private static final long create_readwrite_async$OFFSET = $LAYOUT.byteOffset(groupElement("create_readwrite_async"));
 
     /**
      * Offset for field:
@@ -8486,7 +8998,11 @@ public class _GFileIface {
      * GFileIOStream *(*create_readwrite_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class create_readwrite_finish {
+    public final static class create_readwrite_finish {
+
+        private create_readwrite_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -8524,9 +9040,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -8545,7 +9063,7 @@ public class _GFileIface {
         return create_readwrite_finish$LAYOUT;
     }
 
-    private static final long create_readwrite_finish$OFFSET = 696;
+    private static final long create_readwrite_finish$OFFSET = $LAYOUT.byteOffset(groupElement("create_readwrite_finish"));
 
     /**
      * Offset for field:
@@ -8582,7 +9100,11 @@ public class _GFileIface {
      * GFileIOStream *(*replace_readwrite)(GFile *, const char *, gboolean, GFileCreateFlags, GCancellable *, GError **)
      * }
      */
-    public class replace_readwrite {
+    public final static class replace_readwrite {
+
+        private replace_readwrite() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -8623,9 +9145,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -8644,7 +9168,7 @@ public class _GFileIface {
         return replace_readwrite$LAYOUT;
     }
 
-    private static final long replace_readwrite$OFFSET = 704;
+    private static final long replace_readwrite$OFFSET = $LAYOUT.byteOffset(groupElement("replace_readwrite"));
 
     /**
      * Offset for field:
@@ -8681,7 +9205,11 @@ public class _GFileIface {
      * void (*replace_readwrite_async)(GFile *, const char *, gboolean, GFileCreateFlags, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class replace_readwrite_async {
+    public final static class replace_readwrite_async {
+
+        private replace_readwrite_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -8723,9 +9251,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, int _x4, MemorySegment _x5, MemorySegment _x6, MemorySegment _x7) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, int _x4, MemorySegment _x5, MemorySegment _x6, MemorySegment _x7) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -8744,7 +9274,7 @@ public class _GFileIface {
         return replace_readwrite_async$LAYOUT;
     }
 
-    private static final long replace_readwrite_async$OFFSET = 712;
+    private static final long replace_readwrite_async$OFFSET = $LAYOUT.byteOffset(groupElement("replace_readwrite_async"));
 
     /**
      * Offset for field:
@@ -8781,7 +9311,11 @@ public class _GFileIface {
      * GFileIOStream *(*replace_readwrite_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class replace_readwrite_finish {
+    public final static class replace_readwrite_finish {
+
+        private replace_readwrite_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -8819,9 +9353,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -8840,7 +9376,7 @@ public class _GFileIface {
         return replace_readwrite_finish$LAYOUT;
     }
 
-    private static final long replace_readwrite_finish$OFFSET = 720;
+    private static final long replace_readwrite_finish$OFFSET = $LAYOUT.byteOffset(groupElement("replace_readwrite_finish"));
 
     /**
      * Offset for field:
@@ -8877,7 +9413,11 @@ public class _GFileIface {
      * void (*start_mountable)(GFile *, GDriveStartFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class start_mountable {
+    public final static class start_mountable {
+
+        private start_mountable() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -8917,9 +9457,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -8938,7 +9480,7 @@ public class _GFileIface {
         return start_mountable$LAYOUT;
     }
 
-    private static final long start_mountable$OFFSET = 728;
+    private static final long start_mountable$OFFSET = $LAYOUT.byteOffset(groupElement("start_mountable"));
 
     /**
      * Offset for field:
@@ -8975,7 +9517,11 @@ public class _GFileIface {
      * gboolean (*start_mountable_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class start_mountable_finish {
+    public final static class start_mountable_finish {
+
+        private start_mountable_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -9013,9 +9559,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -9034,7 +9582,7 @@ public class _GFileIface {
         return start_mountable_finish$LAYOUT;
     }
 
-    private static final long start_mountable_finish$OFFSET = 736;
+    private static final long start_mountable_finish$OFFSET = $LAYOUT.byteOffset(groupElement("start_mountable_finish"));
 
     /**
      * Offset for field:
@@ -9071,7 +9619,11 @@ public class _GFileIface {
      * void (*stop_mountable)(GFile *, GMountUnmountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class stop_mountable {
+    public final static class stop_mountable {
+
+        private stop_mountable() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -9111,9 +9663,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -9132,7 +9686,7 @@ public class _GFileIface {
         return stop_mountable$LAYOUT;
     }
 
-    private static final long stop_mountable$OFFSET = 744;
+    private static final long stop_mountable$OFFSET = $LAYOUT.byteOffset(groupElement("stop_mountable"));
 
     /**
      * Offset for field:
@@ -9169,7 +9723,11 @@ public class _GFileIface {
      * gboolean (*stop_mountable_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class stop_mountable_finish {
+    public final static class stop_mountable_finish {
+
+        private stop_mountable_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -9207,9 +9765,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -9228,7 +9788,7 @@ public class _GFileIface {
         return stop_mountable_finish$LAYOUT;
     }
 
-    private static final long stop_mountable_finish$OFFSET = 752;
+    private static final long stop_mountable_finish$OFFSET = $LAYOUT.byteOffset(groupElement("stop_mountable_finish"));
 
     /**
      * Offset for field:
@@ -9272,7 +9832,7 @@ public class _GFileIface {
         return supports_thread_contexts$LAYOUT;
     }
 
-    private static final long supports_thread_contexts$OFFSET = 760;
+    private static final long supports_thread_contexts$OFFSET = $LAYOUT.byteOffset(groupElement("supports_thread_contexts"));
 
     /**
      * Offset for field:
@@ -9309,7 +9869,11 @@ public class _GFileIface {
      * void (*unmount_mountable_with_operation)(GFile *, GMountUnmountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class unmount_mountable_with_operation {
+    public final static class unmount_mountable_with_operation {
+
+        private unmount_mountable_with_operation() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -9349,9 +9913,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -9370,7 +9936,7 @@ public class _GFileIface {
         return unmount_mountable_with_operation$LAYOUT;
     }
 
-    private static final long unmount_mountable_with_operation$OFFSET = 768;
+    private static final long unmount_mountable_with_operation$OFFSET = $LAYOUT.byteOffset(groupElement("unmount_mountable_with_operation"));
 
     /**
      * Offset for field:
@@ -9407,7 +9973,11 @@ public class _GFileIface {
      * gboolean (*unmount_mountable_with_operation_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class unmount_mountable_with_operation_finish {
+    public final static class unmount_mountable_with_operation_finish {
+
+        private unmount_mountable_with_operation_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -9445,9 +10015,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -9466,7 +10038,7 @@ public class _GFileIface {
         return unmount_mountable_with_operation_finish$LAYOUT;
     }
 
-    private static final long unmount_mountable_with_operation_finish$OFFSET = 776;
+    private static final long unmount_mountable_with_operation_finish$OFFSET = $LAYOUT.byteOffset(groupElement("unmount_mountable_with_operation_finish"));
 
     /**
      * Offset for field:
@@ -9503,7 +10075,11 @@ public class _GFileIface {
      * void (*eject_mountable_with_operation)(GFile *, GMountUnmountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class eject_mountable_with_operation {
+    public final static class eject_mountable_with_operation {
+
+        private eject_mountable_with_operation() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -9543,9 +10119,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -9564,7 +10142,7 @@ public class _GFileIface {
         return eject_mountable_with_operation$LAYOUT;
     }
 
-    private static final long eject_mountable_with_operation$OFFSET = 784;
+    private static final long eject_mountable_with_operation$OFFSET = $LAYOUT.byteOffset(groupElement("eject_mountable_with_operation"));
 
     /**
      * Offset for field:
@@ -9601,7 +10179,11 @@ public class _GFileIface {
      * gboolean (*eject_mountable_with_operation_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class eject_mountable_with_operation_finish {
+    public final static class eject_mountable_with_operation_finish {
+
+        private eject_mountable_with_operation_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -9639,9 +10221,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -9660,7 +10244,7 @@ public class _GFileIface {
         return eject_mountable_with_operation_finish$LAYOUT;
     }
 
-    private static final long eject_mountable_with_operation_finish$OFFSET = 792;
+    private static final long eject_mountable_with_operation_finish$OFFSET = $LAYOUT.byteOffset(groupElement("eject_mountable_with_operation_finish"));
 
     /**
      * Offset for field:
@@ -9697,7 +10281,11 @@ public class _GFileIface {
      * void (*poll_mountable)(GFile *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class poll_mountable {
+    public final static class poll_mountable {
+
+        private poll_mountable() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -9735,9 +10323,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -9756,7 +10346,7 @@ public class _GFileIface {
         return poll_mountable$LAYOUT;
     }
 
-    private static final long poll_mountable$OFFSET = 800;
+    private static final long poll_mountable$OFFSET = $LAYOUT.byteOffset(groupElement("poll_mountable"));
 
     /**
      * Offset for field:
@@ -9793,7 +10383,11 @@ public class _GFileIface {
      * gboolean (*poll_mountable_finish)(GFile *, GAsyncResult *, GError **)
      * }
      */
-    public class poll_mountable_finish {
+    public final static class poll_mountable_finish {
+
+        private poll_mountable_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -9831,9 +10425,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -9852,7 +10448,7 @@ public class _GFileIface {
         return poll_mountable_finish$LAYOUT;
     }
 
-    private static final long poll_mountable_finish$OFFSET = 808;
+    private static final long poll_mountable_finish$OFFSET = $LAYOUT.byteOffset(groupElement("poll_mountable_finish"));
 
     /**
      * Offset for field:
@@ -9889,7 +10485,11 @@ public class _GFileIface {
      * gboolean (*measure_disk_usage)(GFile *, GFileMeasureFlags, GCancellable *, GFileMeasureProgressCallback, gpointer, guint64 *, guint64 *, guint64 *, GError **)
      * }
      */
-    public class measure_disk_usage {
+    public final static class measure_disk_usage {
+
+        private measure_disk_usage() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -9933,9 +10533,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6, MemorySegment _x7, MemorySegment _x8) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6, MemorySegment _x7, MemorySegment _x8) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -9954,7 +10556,7 @@ public class _GFileIface {
         return measure_disk_usage$LAYOUT;
     }
 
-    private static final long measure_disk_usage$OFFSET = 816;
+    private static final long measure_disk_usage$OFFSET = $LAYOUT.byteOffset(groupElement("measure_disk_usage"));
 
     /**
      * Offset for field:
@@ -9991,7 +10593,11 @@ public class _GFileIface {
      * void (*measure_disk_usage_async)(GFile *, GFileMeasureFlags, gint, GCancellable *, GFileMeasureProgressCallback, gpointer, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class measure_disk_usage_async {
+    public final static class measure_disk_usage_async {
+
+        private measure_disk_usage_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -10033,9 +10639,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6, MemorySegment _x7) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6, MemorySegment _x7) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -10054,7 +10662,7 @@ public class _GFileIface {
         return measure_disk_usage_async$LAYOUT;
     }
 
-    private static final long measure_disk_usage_async$OFFSET = 824;
+    private static final long measure_disk_usage_async$OFFSET = $LAYOUT.byteOffset(groupElement("measure_disk_usage_async"));
 
     /**
      * Offset for field:
@@ -10091,7 +10699,11 @@ public class _GFileIface {
      * gboolean (*measure_disk_usage_finish)(GFile *, GAsyncResult *, guint64 *, guint64 *, guint64 *, GError **)
      * }
      */
-    public class measure_disk_usage_finish {
+    public final static class measure_disk_usage_finish {
+
+        private measure_disk_usage_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -10132,9 +10744,11 @@ public class _GFileIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -10153,7 +10767,7 @@ public class _GFileIface {
         return measure_disk_usage_finish$LAYOUT;
     }
 
-    private static final long measure_disk_usage_finish$OFFSET = 832;
+    private static final long measure_disk_usage_finish$OFFSET = $LAYOUT.byteOffset(groupElement("measure_disk_usage_finish"));
 
     /**
      * Offset for field:
@@ -10186,6 +10800,107 @@ public class _GFileIface {
     }
 
     /**
+     * {@snippet lang=c :
+     * gboolean (*query_exists)(GFile *, GCancellable *)
+     * }
+     */
+    public final static class query_exists {
+
+        private query_exists() {
+            // Should not be called directly
+        }
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(query_exists.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(query_exists.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
+    }
+
+    private static final AddressLayout query_exists$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("query_exists"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*query_exists)(GFile *, GCancellable *)
+     * }
+     */
+    public static final AddressLayout query_exists$layout() {
+        return query_exists$LAYOUT;
+    }
+
+    private static final long query_exists$OFFSET = $LAYOUT.byteOffset(groupElement("query_exists"));
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*query_exists)(GFile *, GCancellable *)
+     * }
+     */
+    public static final long query_exists$offset() {
+        return query_exists$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gboolean (*query_exists)(GFile *, GCancellable *)
+     * }
+     */
+    public static MemorySegment query_exists(MemorySegment struct) {
+        return struct.get(query_exists$LAYOUT, query_exists$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gboolean (*query_exists)(GFile *, GCancellable *)
+     * }
+     */
+    public static void query_exists(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(query_exists$LAYOUT, query_exists$OFFSET, fieldValue);
+    }
+
+    /**
      * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
      * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
      */
@@ -10214,7 +10929,7 @@ public class _GFileIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -10222,7 +10937,7 @@ public class _GFileIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

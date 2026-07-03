@@ -54,7 +54,7 @@ public class _GtkTreeDragSourceIface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -91,7 +91,11 @@ public class _GtkTreeDragSourceIface {
      * gboolean (*row_draggable)(GtkTreeDragSource *, GtkTreePath *)
      * }
      */
-    public class row_draggable {
+    public final static class row_draggable {
+
+        private row_draggable() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -128,9 +132,11 @@ public class _GtkTreeDragSourceIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -149,7 +155,7 @@ public class _GtkTreeDragSourceIface {
         return row_draggable$LAYOUT;
     }
 
-    private static final long row_draggable$OFFSET = 16;
+    private static final long row_draggable$OFFSET = $LAYOUT.byteOffset(groupElement("row_draggable"));
 
     /**
      * Offset for field:
@@ -186,7 +192,11 @@ public class _GtkTreeDragSourceIface {
      * gboolean (*drag_data_get)(GtkTreeDragSource *, GtkTreePath *, GtkSelectionData *)
      * }
      */
-    public class drag_data_get {
+    public final static class drag_data_get {
+
+        private drag_data_get() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -224,9 +234,11 @@ public class _GtkTreeDragSourceIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -245,7 +257,7 @@ public class _GtkTreeDragSourceIface {
         return drag_data_get$LAYOUT;
     }
 
-    private static final long drag_data_get$OFFSET = 24;
+    private static final long drag_data_get$OFFSET = $LAYOUT.byteOffset(groupElement("drag_data_get"));
 
     /**
      * Offset for field:
@@ -282,7 +294,11 @@ public class _GtkTreeDragSourceIface {
      * gboolean (*drag_data_delete)(GtkTreeDragSource *, GtkTreePath *)
      * }
      */
-    public class drag_data_delete {
+    public final static class drag_data_delete {
+
+        private drag_data_delete() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -319,9 +335,11 @@ public class _GtkTreeDragSourceIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -340,7 +358,7 @@ public class _GtkTreeDragSourceIface {
         return drag_data_delete$LAYOUT;
     }
 
-    private static final long drag_data_delete$OFFSET = 32;
+    private static final long drag_data_delete$OFFSET = $LAYOUT.byteOffset(groupElement("drag_data_delete"));
 
     /**
      * Offset for field:
@@ -401,7 +419,7 @@ public class _GtkTreeDragSourceIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -409,7 +427,7 @@ public class _GtkTreeDragSourceIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

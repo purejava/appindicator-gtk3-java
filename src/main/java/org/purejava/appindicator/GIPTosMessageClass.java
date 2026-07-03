@@ -14,22 +14,20 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
- * struct timezone {
- *     int tz_minuteswest;
- *     int tz_dsttime;
+ * struct {
+ *     GSocketControlMessageClass parent_class;
  * }
  * }
  */
-public class timezone {
+public class GIPTosMessageClass {
 
-    timezone() {
+    GIPTosMessageClass() {
         // Should not be called directly
     }
 
     private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-        app_indicator_h.C_INT.withName("tz_minuteswest"),
-        app_indicator_h.C_INT.withName("tz_dsttime")
-    ).withName("timezone");
+        _GSocketControlMessageClass.layout().withName("parent_class")
+    ).withName("$anon$33:1");
 
     /**
      * The layout of this struct
@@ -38,92 +36,48 @@ public class timezone {
         return $LAYOUT;
     }
 
-    private static final OfInt tz_minuteswest$LAYOUT = (OfInt)$LAYOUT.select(groupElement("tz_minuteswest"));
+    private static final GroupLayout parent_class$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("parent_class"));
 
     /**
      * Layout for field:
      * {@snippet lang=c :
-     * int tz_minuteswest
+     * GSocketControlMessageClass parent_class
      * }
      */
-    public static final OfInt tz_minuteswest$layout() {
-        return tz_minuteswest$LAYOUT;
+    public static final GroupLayout parent_class$layout() {
+        return parent_class$LAYOUT;
     }
 
-    private static final long tz_minuteswest$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
      * {@snippet lang=c :
-     * int tz_minuteswest
+     * GSocketControlMessageClass parent_class
      * }
      */
-    public static final long tz_minuteswest$offset() {
-        return tz_minuteswest$OFFSET;
+    public static final long parent_class$offset() {
+        return parent_class$OFFSET;
     }
 
     /**
      * Getter for field:
      * {@snippet lang=c :
-     * int tz_minuteswest
+     * GSocketControlMessageClass parent_class
      * }
      */
-    public static int tz_minuteswest(MemorySegment struct) {
-        return struct.get(tz_minuteswest$LAYOUT, tz_minuteswest$OFFSET);
+    public static MemorySegment parent_class(MemorySegment struct) {
+        return struct.asSlice(parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
 
     /**
      * Setter for field:
      * {@snippet lang=c :
-     * int tz_minuteswest
+     * GSocketControlMessageClass parent_class
      * }
      */
-    public static void tz_minuteswest(MemorySegment struct, int fieldValue) {
-        struct.set(tz_minuteswest$LAYOUT, tz_minuteswest$OFFSET, fieldValue);
-    }
-
-    private static final OfInt tz_dsttime$LAYOUT = (OfInt)$LAYOUT.select(groupElement("tz_dsttime"));
-
-    /**
-     * Layout for field:
-     * {@snippet lang=c :
-     * int tz_dsttime
-     * }
-     */
-    public static final OfInt tz_dsttime$layout() {
-        return tz_dsttime$LAYOUT;
-    }
-
-    private static final long tz_dsttime$OFFSET = 4;
-
-    /**
-     * Offset for field:
-     * {@snippet lang=c :
-     * int tz_dsttime
-     * }
-     */
-    public static final long tz_dsttime$offset() {
-        return tz_dsttime$OFFSET;
-    }
-
-    /**
-     * Getter for field:
-     * {@snippet lang=c :
-     * int tz_dsttime
-     * }
-     */
-    public static int tz_dsttime(MemorySegment struct) {
-        return struct.get(tz_dsttime$LAYOUT, tz_dsttime$OFFSET);
-    }
-
-    /**
-     * Setter for field:
-     * {@snippet lang=c :
-     * int tz_dsttime
-     * }
-     */
-    public static void tz_dsttime(MemorySegment struct, int fieldValue) {
-        struct.set(tz_dsttime$LAYOUT, tz_dsttime$OFFSET, fieldValue);
+    public static void parent_class(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
 
     /**
@@ -155,7 +109,7 @@ public class timezone {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -163,7 +117,7 @@ public class timezone {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GtkFlowBoxForeachFunc)(GtkFlowBox *, GtkFlowBoxChild *, gpointer)
  * }
  */
-public class GtkFlowBoxForeachFunc {
+public final class GtkFlowBoxForeachFunc {
+
+    private GtkFlowBoxForeachFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +58,11 @@ public class GtkFlowBoxForeachFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment box, MemorySegment child, MemorySegment user_data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment box, MemorySegment child, MemorySegment user_data) {
         try {
              DOWN$MH.invokeExact(funcPtr, box, child, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

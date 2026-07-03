@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GObjectSetPropertyFunc)(GObject *, guint, const GValue *, GParamSpec *)
  * }
  */
-public class GObjectSetPropertyFunc {
+public final class GObjectSetPropertyFunc {
+
+    private GObjectSetPropertyFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -55,9 +59,11 @@ public class GObjectSetPropertyFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment object, int property_id, MemorySegment value, MemorySegment pspec) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment object, int property_id, MemorySegment value, MemorySegment pspec) {
         try {
              DOWN$MH.invokeExact(funcPtr, object, property_id, value, pspec);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

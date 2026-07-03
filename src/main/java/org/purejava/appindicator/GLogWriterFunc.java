@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef GLogWriterOutput (*GLogWriterFunc)(GLogLevelFlags, const GLogField *, gsize, gpointer)
  * }
  */
-public class GLogWriterFunc {
+public final class GLogWriterFunc {
+
+    private GLogWriterFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -56,9 +60,11 @@ public class GLogWriterFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,int log_level, MemorySegment fields, long n_fields, MemorySegment user_data) {
+    public static int invoke(MemorySegment funcPtr, int log_level, MemorySegment fields, long n_fields, MemorySegment user_data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, log_level, fields, n_fields, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

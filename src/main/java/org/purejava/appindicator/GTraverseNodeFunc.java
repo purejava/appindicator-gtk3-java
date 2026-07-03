@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gboolean (*GTraverseNodeFunc)(GTreeNode *, gpointer)
  * }
  */
-public class GTraverseNodeFunc {
+public final class GTraverseNodeFunc {
+
+    private GTraverseNodeFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +58,11 @@ public class GTraverseNodeFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment node, MemorySegment data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment node, MemorySegment data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, node, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

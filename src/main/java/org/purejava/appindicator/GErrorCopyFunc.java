@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GErrorCopyFunc)(const GError *, GError *)
  * }
  */
-public class GErrorCopyFunc {
+public final class GErrorCopyFunc {
+
+    private GErrorCopyFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -53,9 +57,11 @@ public class GErrorCopyFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment src_error, MemorySegment dest_error) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment src_error, MemorySegment dest_error) {
         try {
              DOWN$MH.invokeExact(funcPtr, src_error, dest_error);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

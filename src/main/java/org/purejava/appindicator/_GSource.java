@@ -70,7 +70,7 @@ public class _GSource {
         return callback_data$LAYOUT;
     }
 
-    private static final long callback_data$OFFSET = 0;
+    private static final long callback_data$OFFSET = $LAYOUT.byteOffset(groupElement("callback_data"));
 
     /**
      * Offset for field:
@@ -114,7 +114,7 @@ public class _GSource {
         return callback_funcs$LAYOUT;
     }
 
-    private static final long callback_funcs$OFFSET = 8;
+    private static final long callback_funcs$OFFSET = $LAYOUT.byteOffset(groupElement("callback_funcs"));
 
     /**
      * Offset for field:
@@ -158,7 +158,7 @@ public class _GSource {
         return source_funcs$LAYOUT;
     }
 
-    private static final long source_funcs$OFFSET = 16;
+    private static final long source_funcs$OFFSET = $LAYOUT.byteOffset(groupElement("source_funcs"));
 
     /**
      * Offset for field:
@@ -202,7 +202,7 @@ public class _GSource {
         return ref_count$LAYOUT;
     }
 
-    private static final long ref_count$OFFSET = 24;
+    private static final long ref_count$OFFSET = $LAYOUT.byteOffset(groupElement("ref_count"));
 
     /**
      * Offset for field:
@@ -246,7 +246,7 @@ public class _GSource {
         return context$LAYOUT;
     }
 
-    private static final long context$OFFSET = 32;
+    private static final long context$OFFSET = $LAYOUT.byteOffset(groupElement("context"));
 
     /**
      * Offset for field:
@@ -290,7 +290,7 @@ public class _GSource {
         return priority$LAYOUT;
     }
 
-    private static final long priority$OFFSET = 40;
+    private static final long priority$OFFSET = $LAYOUT.byteOffset(groupElement("priority"));
 
     /**
      * Offset for field:
@@ -334,7 +334,7 @@ public class _GSource {
         return flags$LAYOUT;
     }
 
-    private static final long flags$OFFSET = 44;
+    private static final long flags$OFFSET = $LAYOUT.byteOffset(groupElement("flags"));
 
     /**
      * Offset for field:
@@ -378,7 +378,7 @@ public class _GSource {
         return source_id$LAYOUT;
     }
 
-    private static final long source_id$OFFSET = 48;
+    private static final long source_id$OFFSET = $LAYOUT.byteOffset(groupElement("source_id"));
 
     /**
      * Offset for field:
@@ -422,7 +422,7 @@ public class _GSource {
         return poll_fds$LAYOUT;
     }
 
-    private static final long poll_fds$OFFSET = 56;
+    private static final long poll_fds$OFFSET = $LAYOUT.byteOffset(groupElement("poll_fds"));
 
     /**
      * Offset for field:
@@ -466,7 +466,7 @@ public class _GSource {
         return prev$LAYOUT;
     }
 
-    private static final long prev$OFFSET = 64;
+    private static final long prev$OFFSET = $LAYOUT.byteOffset(groupElement("prev"));
 
     /**
      * Offset for field:
@@ -510,7 +510,7 @@ public class _GSource {
         return next$LAYOUT;
     }
 
-    private static final long next$OFFSET = 72;
+    private static final long next$OFFSET = $LAYOUT.byteOffset(groupElement("next"));
 
     /**
      * Offset for field:
@@ -554,7 +554,7 @@ public class _GSource {
         return name$LAYOUT;
     }
 
-    private static final long name$OFFSET = 80;
+    private static final long name$OFFSET = $LAYOUT.byteOffset(groupElement("name"));
 
     /**
      * Offset for field:
@@ -598,7 +598,7 @@ public class _GSource {
         return priv$LAYOUT;
     }
 
-    private static final long priv$OFFSET = 88;
+    private static final long priv$OFFSET = $LAYOUT.byteOffset(groupElement("priv"));
 
     /**
      * Offset for field:
@@ -659,7 +659,7 @@ public class _GSource {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -667,7 +667,7 @@ public class _GSource {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

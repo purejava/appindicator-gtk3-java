@@ -84,7 +84,7 @@ public class _GtkThemingEngineClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -121,7 +121,11 @@ public class _GtkThemingEngineClass {
      * void (*render_line)(GtkThemingEngine *, cairo_t *, gdouble, gdouble, gdouble, gdouble)
      * }
      */
-    public class render_line {
+    public final static class render_line {
+
+        private render_line() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -161,9 +165,11 @@ public class _GtkThemingEngineClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -182,7 +188,7 @@ public class _GtkThemingEngineClass {
         return render_line$LAYOUT;
     }
 
-    private static final long render_line$OFFSET = 136;
+    private static final long render_line$OFFSET = $LAYOUT.byteOffset(groupElement("render_line"));
 
     /**
      * Offset for field:
@@ -219,7 +225,11 @@ public class _GtkThemingEngineClass {
      * void (*render_background)(GtkThemingEngine *, cairo_t *, gdouble, gdouble, gdouble, gdouble)
      * }
      */
-    public class render_background {
+    public final static class render_background {
+
+        private render_background() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -259,9 +269,11 @@ public class _GtkThemingEngineClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -280,7 +292,7 @@ public class _GtkThemingEngineClass {
         return render_background$LAYOUT;
     }
 
-    private static final long render_background$OFFSET = 144;
+    private static final long render_background$OFFSET = $LAYOUT.byteOffset(groupElement("render_background"));
 
     /**
      * Offset for field:
@@ -317,7 +329,11 @@ public class _GtkThemingEngineClass {
      * void (*render_frame)(GtkThemingEngine *, cairo_t *, gdouble, gdouble, gdouble, gdouble)
      * }
      */
-    public class render_frame {
+    public final static class render_frame {
+
+        private render_frame() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -357,9 +373,11 @@ public class _GtkThemingEngineClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -378,7 +396,7 @@ public class _GtkThemingEngineClass {
         return render_frame$LAYOUT;
     }
 
-    private static final long render_frame$OFFSET = 152;
+    private static final long render_frame$OFFSET = $LAYOUT.byteOffset(groupElement("render_frame"));
 
     /**
      * Offset for field:
@@ -415,7 +433,11 @@ public class _GtkThemingEngineClass {
      * void (*render_frame_gap)(GtkThemingEngine *, cairo_t *, gdouble, gdouble, gdouble, gdouble, GtkPositionType, gdouble, gdouble)
      * }
      */
-    public class render_frame_gap {
+    public final static class render_frame_gap {
+
+        private render_frame_gap() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -458,9 +480,11 @@ public class _GtkThemingEngineClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5, int _x6, double _x7, double _x8) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5, int _x6, double _x7, double _x8) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -479,7 +503,7 @@ public class _GtkThemingEngineClass {
         return render_frame_gap$LAYOUT;
     }
 
-    private static final long render_frame_gap$OFFSET = 160;
+    private static final long render_frame_gap$OFFSET = $LAYOUT.byteOffset(groupElement("render_frame_gap"));
 
     /**
      * Offset for field:
@@ -516,7 +540,11 @@ public class _GtkThemingEngineClass {
      * void (*render_extension)(GtkThemingEngine *, cairo_t *, gdouble, gdouble, gdouble, gdouble, GtkPositionType)
      * }
      */
-    public class render_extension {
+    public final static class render_extension {
+
+        private render_extension() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -557,9 +585,11 @@ public class _GtkThemingEngineClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5, int _x6) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5, int _x6) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -578,7 +608,7 @@ public class _GtkThemingEngineClass {
         return render_extension$LAYOUT;
     }
 
-    private static final long render_extension$OFFSET = 168;
+    private static final long render_extension$OFFSET = $LAYOUT.byteOffset(groupElement("render_extension"));
 
     /**
      * Offset for field:
@@ -615,7 +645,11 @@ public class _GtkThemingEngineClass {
      * void (*render_check)(GtkThemingEngine *, cairo_t *, gdouble, gdouble, gdouble, gdouble)
      * }
      */
-    public class render_check {
+    public final static class render_check {
+
+        private render_check() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -655,9 +689,11 @@ public class _GtkThemingEngineClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -676,7 +712,7 @@ public class _GtkThemingEngineClass {
         return render_check$LAYOUT;
     }
 
-    private static final long render_check$OFFSET = 176;
+    private static final long render_check$OFFSET = $LAYOUT.byteOffset(groupElement("render_check"));
 
     /**
      * Offset for field:
@@ -713,7 +749,11 @@ public class _GtkThemingEngineClass {
      * void (*render_option)(GtkThemingEngine *, cairo_t *, gdouble, gdouble, gdouble, gdouble)
      * }
      */
-    public class render_option {
+    public final static class render_option {
+
+        private render_option() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -753,9 +793,11 @@ public class _GtkThemingEngineClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -774,7 +816,7 @@ public class _GtkThemingEngineClass {
         return render_option$LAYOUT;
     }
 
-    private static final long render_option$OFFSET = 184;
+    private static final long render_option$OFFSET = $LAYOUT.byteOffset(groupElement("render_option"));
 
     /**
      * Offset for field:
@@ -811,7 +853,11 @@ public class _GtkThemingEngineClass {
      * void (*render_arrow)(GtkThemingEngine *, cairo_t *, gdouble, gdouble, gdouble, gdouble)
      * }
      */
-    public class render_arrow {
+    public final static class render_arrow {
+
+        private render_arrow() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -851,9 +897,11 @@ public class _GtkThemingEngineClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -872,7 +920,7 @@ public class _GtkThemingEngineClass {
         return render_arrow$LAYOUT;
     }
 
-    private static final long render_arrow$OFFSET = 192;
+    private static final long render_arrow$OFFSET = $LAYOUT.byteOffset(groupElement("render_arrow"));
 
     /**
      * Offset for field:
@@ -909,7 +957,11 @@ public class _GtkThemingEngineClass {
      * void (*render_expander)(GtkThemingEngine *, cairo_t *, gdouble, gdouble, gdouble, gdouble)
      * }
      */
-    public class render_expander {
+    public final static class render_expander {
+
+        private render_expander() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -949,9 +1001,11 @@ public class _GtkThemingEngineClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -970,7 +1024,7 @@ public class _GtkThemingEngineClass {
         return render_expander$LAYOUT;
     }
 
-    private static final long render_expander$OFFSET = 200;
+    private static final long render_expander$OFFSET = $LAYOUT.byteOffset(groupElement("render_expander"));
 
     /**
      * Offset for field:
@@ -1007,7 +1061,11 @@ public class _GtkThemingEngineClass {
      * void (*render_focus)(GtkThemingEngine *, cairo_t *, gdouble, gdouble, gdouble, gdouble)
      * }
      */
-    public class render_focus {
+    public final static class render_focus {
+
+        private render_focus() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1047,9 +1105,11 @@ public class _GtkThemingEngineClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1068,7 +1128,7 @@ public class _GtkThemingEngineClass {
         return render_focus$LAYOUT;
     }
 
-    private static final long render_focus$OFFSET = 208;
+    private static final long render_focus$OFFSET = $LAYOUT.byteOffset(groupElement("render_focus"));
 
     /**
      * Offset for field:
@@ -1105,7 +1165,11 @@ public class _GtkThemingEngineClass {
      * void (*render_layout)(GtkThemingEngine *, cairo_t *, gdouble, gdouble, PangoLayout *)
      * }
      */
-    public class render_layout {
+    public final static class render_layout {
+
+        private render_layout() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1144,9 +1208,11 @@ public class _GtkThemingEngineClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1165,7 +1231,7 @@ public class _GtkThemingEngineClass {
         return render_layout$LAYOUT;
     }
 
-    private static final long render_layout$OFFSET = 216;
+    private static final long render_layout$OFFSET = $LAYOUT.byteOffset(groupElement("render_layout"));
 
     /**
      * Offset for field:
@@ -1202,7 +1268,11 @@ public class _GtkThemingEngineClass {
      * void (*render_slider)(GtkThemingEngine *, cairo_t *, gdouble, gdouble, gdouble, gdouble, GtkOrientation)
      * }
      */
-    public class render_slider {
+    public final static class render_slider {
+
+        private render_slider() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1243,9 +1313,11 @@ public class _GtkThemingEngineClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5, int _x6) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5, int _x6) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1264,7 +1336,7 @@ public class _GtkThemingEngineClass {
         return render_slider$LAYOUT;
     }
 
-    private static final long render_slider$OFFSET = 224;
+    private static final long render_slider$OFFSET = $LAYOUT.byteOffset(groupElement("render_slider"));
 
     /**
      * Offset for field:
@@ -1301,7 +1373,11 @@ public class _GtkThemingEngineClass {
      * void (*render_handle)(GtkThemingEngine *, cairo_t *, gdouble, gdouble, gdouble, gdouble)
      * }
      */
-    public class render_handle {
+    public final static class render_handle {
+
+        private render_handle() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1341,9 +1417,11 @@ public class _GtkThemingEngineClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1362,7 +1440,7 @@ public class _GtkThemingEngineClass {
         return render_handle$LAYOUT;
     }
 
-    private static final long render_handle$OFFSET = 232;
+    private static final long render_handle$OFFSET = $LAYOUT.byteOffset(groupElement("render_handle"));
 
     /**
      * Offset for field:
@@ -1399,7 +1477,11 @@ public class _GtkThemingEngineClass {
      * void (*render_activity)(GtkThemingEngine *, cairo_t *, gdouble, gdouble, gdouble, gdouble)
      * }
      */
-    public class render_activity {
+    public final static class render_activity {
+
+        private render_activity() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1439,9 +1521,11 @@ public class _GtkThemingEngineClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, double _x2, double _x3, double _x4, double _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1460,7 +1544,7 @@ public class _GtkThemingEngineClass {
         return render_activity$LAYOUT;
     }
 
-    private static final long render_activity$OFFSET = 240;
+    private static final long render_activity$OFFSET = $LAYOUT.byteOffset(groupElement("render_activity"));
 
     /**
      * Offset for field:
@@ -1497,7 +1581,11 @@ public class _GtkThemingEngineClass {
      * GdkPixbuf *(*render_icon_pixbuf)(GtkThemingEngine *, const GtkIconSource *, GtkIconSize)
      * }
      */
-    public class render_icon_pixbuf {
+    public final static class render_icon_pixbuf {
+
+        private render_icon_pixbuf() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1535,9 +1623,11 @@ public class _GtkThemingEngineClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1556,7 +1646,7 @@ public class _GtkThemingEngineClass {
         return render_icon_pixbuf$LAYOUT;
     }
 
-    private static final long render_icon_pixbuf$OFFSET = 248;
+    private static final long render_icon_pixbuf$OFFSET = $LAYOUT.byteOffset(groupElement("render_icon_pixbuf"));
 
     /**
      * Offset for field:
@@ -1593,7 +1683,11 @@ public class _GtkThemingEngineClass {
      * void (*render_icon)(GtkThemingEngine *, cairo_t *, GdkPixbuf *, gdouble, gdouble)
      * }
      */
-    public class render_icon {
+    public final static class render_icon {
+
+        private render_icon() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1632,9 +1726,11 @@ public class _GtkThemingEngineClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, double _x3, double _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, double _x3, double _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1653,7 +1749,7 @@ public class _GtkThemingEngineClass {
         return render_icon$LAYOUT;
     }
 
-    private static final long render_icon$OFFSET = 256;
+    private static final long render_icon$OFFSET = $LAYOUT.byteOffset(groupElement("render_icon"));
 
     /**
      * Offset for field:
@@ -1690,7 +1786,11 @@ public class _GtkThemingEngineClass {
      * void (*render_icon_surface)(GtkThemingEngine *, cairo_t *, cairo_surface_t *, gdouble, gdouble)
      * }
      */
-    public class render_icon_surface {
+    public final static class render_icon_surface {
+
+        private render_icon_surface() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1729,9 +1829,11 @@ public class _GtkThemingEngineClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, double _x3, double _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, double _x3, double _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1750,7 +1852,7 @@ public class _GtkThemingEngineClass {
         return render_icon_surface$LAYOUT;
     }
 
-    private static final long render_icon_surface$OFFSET = 264;
+    private static final long render_icon_surface$OFFSET = $LAYOUT.byteOffset(groupElement("render_icon_surface"));
 
     /**
      * Offset for field:
@@ -1794,7 +1896,7 @@ public class _GtkThemingEngineClass {
         return padding$LAYOUT;
     }
 
-    private static final long padding$OFFSET = 272;
+    private static final long padding$OFFSET = $LAYOUT.byteOffset(groupElement("padding"));
 
     /**
      * Offset for field:
@@ -1846,7 +1948,7 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static MemorySegment padding(MemorySegment struct, long index0) {
-        return (MemorySegment)padding$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)padding$ELEM_HANDLE.get(struct, padding$OFFSET, index0);
     }
 
     /**
@@ -1856,7 +1958,7 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static void padding(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        padding$ELEM_HANDLE.set(struct, padding$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -1888,7 +1990,7 @@ public class _GtkThemingEngineClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1896,7 +1998,7 @@ public class _GtkThemingEngineClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

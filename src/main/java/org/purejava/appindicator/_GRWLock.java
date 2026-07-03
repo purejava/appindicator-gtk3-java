@@ -47,7 +47,7 @@ public class _GRWLock {
         return p$LAYOUT;
     }
 
-    private static final long p$OFFSET = 0;
+    private static final long p$OFFSET = $LAYOUT.byteOffset(groupElement("p"));
 
     /**
      * Offset for field:
@@ -91,7 +91,7 @@ public class _GRWLock {
         return i$LAYOUT;
     }
 
-    private static final long i$OFFSET = 8;
+    private static final long i$OFFSET = $LAYOUT.byteOffset(groupElement("i"));
 
     /**
      * Offset for field:
@@ -143,7 +143,7 @@ public class _GRWLock {
      * }
      */
     public static int i(MemorySegment struct, long index0) {
-        return (int)i$ELEM_HANDLE.get(struct, 0L, index0);
+        return (int)i$ELEM_HANDLE.get(struct, i$OFFSET, index0);
     }
 
     /**
@@ -153,7 +153,7 @@ public class _GRWLock {
      * }
      */
     public static void i(MemorySegment struct, long index0, int fieldValue) {
-        i$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        i$ELEM_HANDLE.set(struct, i$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -185,7 +185,7 @@ public class _GRWLock {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -193,7 +193,7 @@ public class _GRWLock {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gpointer (*GCacheDupFunc)(gpointer)
  * }
  */
-public class GCacheDupFunc {
+public final class GCacheDupFunc {
+
+    private GCacheDupFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -53,9 +57,11 @@ public class GCacheDupFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment value) {
+    public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment value) {
         try {
             return (MemorySegment) DOWN$MH.invokeExact(funcPtr, value);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

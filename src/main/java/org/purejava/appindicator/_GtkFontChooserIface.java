@@ -64,7 +64,7 @@ public class _GtkFontChooserIface {
         return base_iface$LAYOUT;
     }
 
-    private static final long base_iface$OFFSET = 0;
+    private static final long base_iface$OFFSET = $LAYOUT.byteOffset(groupElement("base_iface"));
 
     /**
      * Offset for field:
@@ -101,7 +101,11 @@ public class _GtkFontChooserIface {
      * PangoFontFamily *(*get_font_family)(GtkFontChooser *)
      * }
      */
-    public class get_font_family {
+    public final static class get_font_family {
+
+        private get_font_family() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -137,9 +141,11 @@ public class _GtkFontChooserIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -158,7 +164,7 @@ public class _GtkFontChooserIface {
         return get_font_family$LAYOUT;
     }
 
-    private static final long get_font_family$OFFSET = 16;
+    private static final long get_font_family$OFFSET = $LAYOUT.byteOffset(groupElement("get_font_family"));
 
     /**
      * Offset for field:
@@ -195,7 +201,11 @@ public class _GtkFontChooserIface {
      * PangoFontFace *(*get_font_face)(GtkFontChooser *)
      * }
      */
-    public class get_font_face {
+    public final static class get_font_face {
+
+        private get_font_face() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -231,9 +241,11 @@ public class _GtkFontChooserIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -252,7 +264,7 @@ public class _GtkFontChooserIface {
         return get_font_face$LAYOUT;
     }
 
-    private static final long get_font_face$OFFSET = 24;
+    private static final long get_font_face$OFFSET = $LAYOUT.byteOffset(groupElement("get_font_face"));
 
     /**
      * Offset for field:
@@ -289,7 +301,11 @@ public class _GtkFontChooserIface {
      * gint (*get_font_size)(GtkFontChooser *)
      * }
      */
-    public class get_font_size {
+    public final static class get_font_size {
+
+        private get_font_size() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -325,9 +341,11 @@ public class _GtkFontChooserIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -346,7 +364,7 @@ public class _GtkFontChooserIface {
         return get_font_size$LAYOUT;
     }
 
-    private static final long get_font_size$OFFSET = 32;
+    private static final long get_font_size$OFFSET = $LAYOUT.byteOffset(groupElement("get_font_size"));
 
     /**
      * Offset for field:
@@ -383,7 +401,11 @@ public class _GtkFontChooserIface {
      * void (*set_filter_func)(GtkFontChooser *, GtkFontFilterFunc, gpointer, GDestroyNotify)
      * }
      */
-    public class set_filter_func {
+    public final static class set_filter_func {
+
+        private set_filter_func() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -421,9 +443,11 @@ public class _GtkFontChooserIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -442,7 +466,7 @@ public class _GtkFontChooserIface {
         return set_filter_func$LAYOUT;
     }
 
-    private static final long set_filter_func$OFFSET = 40;
+    private static final long set_filter_func$OFFSET = $LAYOUT.byteOffset(groupElement("set_filter_func"));
 
     /**
      * Offset for field:
@@ -479,7 +503,11 @@ public class _GtkFontChooserIface {
      * void (*font_activated)(GtkFontChooser *, const gchar *)
      * }
      */
-    public class font_activated {
+    public final static class font_activated {
+
+        private font_activated() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -515,9 +543,11 @@ public class _GtkFontChooserIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -536,7 +566,7 @@ public class _GtkFontChooserIface {
         return font_activated$LAYOUT;
     }
 
-    private static final long font_activated$OFFSET = 48;
+    private static final long font_activated$OFFSET = $LAYOUT.byteOffset(groupElement("font_activated"));
 
     /**
      * Offset for field:
@@ -573,7 +603,11 @@ public class _GtkFontChooserIface {
      * void (*set_font_map)(GtkFontChooser *, PangoFontMap *)
      * }
      */
-    public class set_font_map {
+    public final static class set_font_map {
+
+        private set_font_map() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -609,9 +643,11 @@ public class _GtkFontChooserIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -630,7 +666,7 @@ public class _GtkFontChooserIface {
         return set_font_map$LAYOUT;
     }
 
-    private static final long set_font_map$OFFSET = 56;
+    private static final long set_font_map$OFFSET = $LAYOUT.byteOffset(groupElement("set_font_map"));
 
     /**
      * Offset for field:
@@ -667,7 +703,11 @@ public class _GtkFontChooserIface {
      * PangoFontMap *(*get_font_map)(GtkFontChooser *)
      * }
      */
-    public class get_font_map {
+    public final static class get_font_map {
+
+        private get_font_map() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -703,9 +743,11 @@ public class _GtkFontChooserIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -724,7 +766,7 @@ public class _GtkFontChooserIface {
         return get_font_map$LAYOUT;
     }
 
-    private static final long get_font_map$OFFSET = 64;
+    private static final long get_font_map$OFFSET = $LAYOUT.byteOffset(groupElement("get_font_map"));
 
     /**
      * Offset for field:
@@ -768,7 +810,7 @@ public class _GtkFontChooserIface {
         return padding$LAYOUT;
     }
 
-    private static final long padding$OFFSET = 72;
+    private static final long padding$OFFSET = $LAYOUT.byteOffset(groupElement("padding"));
 
     /**
      * Offset for field:
@@ -820,7 +862,7 @@ public class _GtkFontChooserIface {
      * }
      */
     public static MemorySegment padding(MemorySegment struct, long index0) {
-        return (MemorySegment)padding$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)padding$ELEM_HANDLE.get(struct, padding$OFFSET, index0);
     }
 
     /**
@@ -830,7 +872,7 @@ public class _GtkFontChooserIface {
      * }
      */
     public static void padding(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        padding$ELEM_HANDLE.set(struct, padding$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -862,7 +904,7 @@ public class _GtkFontChooserIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -870,7 +912,7 @@ public class _GtkFontChooserIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

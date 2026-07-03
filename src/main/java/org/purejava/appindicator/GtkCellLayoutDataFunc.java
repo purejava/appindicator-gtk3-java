@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GtkCellLayoutDataFunc)(GtkCellLayout *, GtkCellRenderer *, GtkTreeModel *, GtkTreeIter *, gpointer)
  * }
  */
-public class GtkCellLayoutDataFunc {
+public final class GtkCellLayoutDataFunc {
+
+    private GtkCellLayoutDataFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -56,9 +60,11 @@ public class GtkCellLayoutDataFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment cell_layout, MemorySegment cell, MemorySegment tree_model, MemorySegment iter, MemorySegment data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment cell_layout, MemorySegment cell, MemorySegment tree_model, MemorySegment iter, MemorySegment data) {
         try {
              DOWN$MH.invokeExact(funcPtr, cell_layout, cell, tree_model, iter, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

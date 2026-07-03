@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gboolean (*GSocketSourceFunc)(GSocket *, GIOCondition, gpointer)
  * }
  */
-public class GSocketSourceFunc {
+public final class GSocketSourceFunc {
+
+    private GSocketSourceFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -55,9 +59,11 @@ public class GSocketSourceFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment socket, int condition, MemorySegment data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment socket, int condition, MemorySegment data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, socket, condition, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

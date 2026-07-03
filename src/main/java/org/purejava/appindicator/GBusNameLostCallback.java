@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GBusNameLostCallback)(GDBusConnection *, const gchar *, gpointer)
  * }
  */
-public class GBusNameLostCallback {
+public final class GBusNameLostCallback {
+
+    private GBusNameLostCallback() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +58,11 @@ public class GBusNameLostCallback {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment connection, MemorySegment name, MemorySegment user_data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment connection, MemorySegment name, MemorySegment user_data) {
         try {
              DOWN$MH.invokeExact(funcPtr, connection, name, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

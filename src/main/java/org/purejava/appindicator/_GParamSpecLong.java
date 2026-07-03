@@ -54,7 +54,7 @@ public class _GParamSpecLong {
         return parent_instance$LAYOUT;
     }
 
-    private static final long parent_instance$OFFSET = 0;
+    private static final long parent_instance$OFFSET = $LAYOUT.byteOffset(groupElement("parent_instance"));
 
     /**
      * Offset for field:
@@ -98,7 +98,7 @@ public class _GParamSpecLong {
         return minimum$LAYOUT;
     }
 
-    private static final long minimum$OFFSET = 72;
+    private static final long minimum$OFFSET = $LAYOUT.byteOffset(groupElement("minimum"));
 
     /**
      * Offset for field:
@@ -142,7 +142,7 @@ public class _GParamSpecLong {
         return maximum$LAYOUT;
     }
 
-    private static final long maximum$OFFSET = 80;
+    private static final long maximum$OFFSET = $LAYOUT.byteOffset(groupElement("maximum"));
 
     /**
      * Offset for field:
@@ -186,7 +186,7 @@ public class _GParamSpecLong {
         return default_value$LAYOUT;
     }
 
-    private static final long default_value$OFFSET = 88;
+    private static final long default_value$OFFSET = $LAYOUT.byteOffset(groupElement("default_value"));
 
     /**
      * Offset for field:
@@ -247,7 +247,7 @@ public class _GParamSpecLong {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -255,7 +255,7 @@ public class _GParamSpecLong {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

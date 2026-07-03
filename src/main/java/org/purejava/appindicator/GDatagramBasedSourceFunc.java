@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gboolean (*GDatagramBasedSourceFunc)(GDatagramBased *, GIOCondition, gpointer)
  * }
  */
-public class GDatagramBasedSourceFunc {
+public final class GDatagramBasedSourceFunc {
+
+    private GDatagramBasedSourceFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -55,9 +59,11 @@ public class GDatagramBasedSourceFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment datagram_based, int condition, MemorySegment data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment datagram_based, int condition, MemorySegment data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, datagram_based, condition, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gboolean (*GHookFindFunc)(GHook *, gpointer)
  * }
  */
-public class GHookFindFunc {
+public final class GHookFindFunc {
+
+    private GHookFindFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +58,11 @@ public class GHookFindFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment hook, MemorySegment data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment hook, MemorySegment data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, hook, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

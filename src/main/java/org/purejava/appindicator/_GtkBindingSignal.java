@@ -55,7 +55,7 @@ public class _GtkBindingSignal {
         return next$LAYOUT;
     }
 
-    private static final long next$OFFSET = 0;
+    private static final long next$OFFSET = $LAYOUT.byteOffset(groupElement("next"));
 
     /**
      * Offset for field:
@@ -99,7 +99,7 @@ public class _GtkBindingSignal {
         return signal_name$LAYOUT;
     }
 
-    private static final long signal_name$OFFSET = 8;
+    private static final long signal_name$OFFSET = $LAYOUT.byteOffset(groupElement("signal_name"));
 
     /**
      * Offset for field:
@@ -143,7 +143,7 @@ public class _GtkBindingSignal {
         return n_args$LAYOUT;
     }
 
-    private static final long n_args$OFFSET = 16;
+    private static final long n_args$OFFSET = $LAYOUT.byteOffset(groupElement("n_args"));
 
     /**
      * Offset for field:
@@ -187,7 +187,7 @@ public class _GtkBindingSignal {
         return args$LAYOUT;
     }
 
-    private static final long args$OFFSET = 24;
+    private static final long args$OFFSET = $LAYOUT.byteOffset(groupElement("args"));
 
     /**
      * Offset for field:
@@ -248,7 +248,7 @@ public class _GtkBindingSignal {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -256,7 +256,7 @@ public class _GtkBindingSignal {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

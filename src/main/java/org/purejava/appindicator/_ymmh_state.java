@@ -14,20 +14,20 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
- * struct {
- *     unsigned long fds_bits[16];
+ * struct _ymmh_state {
+ *     __uint32_t ymmh_space[64];
  * }
  * }
  */
-public class __kernel_fd_set {
+public class _ymmh_state {
 
-    __kernel_fd_set() {
+    _ymmh_state() {
         // Should not be called directly
     }
 
     private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.sequenceLayout(16, app_indicator_h.C_LONG).withName("fds_bits")
-    ).withName("$anon$25:9");
+        MemoryLayout.sequenceLayout(64, app_indicator_h.C_INT).withName("ymmh_space")
+    ).withName("_ymmh_state");
 
     /**
      * The layout of this struct
@@ -36,81 +36,81 @@ public class __kernel_fd_set {
         return $LAYOUT;
     }
 
-    private static final SequenceLayout fds_bits$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("fds_bits"));
+    private static final SequenceLayout ymmh_space$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("ymmh_space"));
 
     /**
      * Layout for field:
      * {@snippet lang=c :
-     * unsigned long fds_bits[16]
+     * __uint32_t ymmh_space[64]
      * }
      */
-    public static final SequenceLayout fds_bits$layout() {
-        return fds_bits$LAYOUT;
+    public static final SequenceLayout ymmh_space$layout() {
+        return ymmh_space$LAYOUT;
     }
 
-    private static final long fds_bits$OFFSET = 0;
+    private static final long ymmh_space$OFFSET = $LAYOUT.byteOffset(groupElement("ymmh_space"));
 
     /**
      * Offset for field:
      * {@snippet lang=c :
-     * unsigned long fds_bits[16]
+     * __uint32_t ymmh_space[64]
      * }
      */
-    public static final long fds_bits$offset() {
-        return fds_bits$OFFSET;
+    public static final long ymmh_space$offset() {
+        return ymmh_space$OFFSET;
     }
 
     /**
      * Getter for field:
      * {@snippet lang=c :
-     * unsigned long fds_bits[16]
+     * __uint32_t ymmh_space[64]
      * }
      */
-    public static MemorySegment fds_bits(MemorySegment struct) {
-        return struct.asSlice(fds_bits$OFFSET, fds_bits$LAYOUT.byteSize());
+    public static MemorySegment ymmh_space(MemorySegment struct) {
+        return struct.asSlice(ymmh_space$OFFSET, ymmh_space$LAYOUT.byteSize());
     }
 
     /**
      * Setter for field:
      * {@snippet lang=c :
-     * unsigned long fds_bits[16]
+     * __uint32_t ymmh_space[64]
      * }
      */
-    public static void fds_bits(MemorySegment struct, MemorySegment fieldValue) {
-        MemorySegment.copy(fieldValue, 0L, struct, fds_bits$OFFSET, fds_bits$LAYOUT.byteSize());
+    public static void ymmh_space(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, ymmh_space$OFFSET, ymmh_space$LAYOUT.byteSize());
     }
 
-    private static long[] fds_bits$DIMS = { 16 };
+    private static long[] ymmh_space$DIMS = { 64 };
 
     /**
      * Dimensions for array field:
      * {@snippet lang=c :
-     * unsigned long fds_bits[16]
+     * __uint32_t ymmh_space[64]
      * }
      */
-    public static long[] fds_bits$dimensions() {
-        return fds_bits$DIMS;
+    public static long[] ymmh_space$dimensions() {
+        return ymmh_space$DIMS;
     }
-    private static final VarHandle fds_bits$ELEM_HANDLE = fds_bits$LAYOUT.varHandle(sequenceElement());
+    private static final VarHandle ymmh_space$ELEM_HANDLE = ymmh_space$LAYOUT.varHandle(sequenceElement());
 
     /**
      * Indexed getter for field:
      * {@snippet lang=c :
-     * unsigned long fds_bits[16]
+     * __uint32_t ymmh_space[64]
      * }
      */
-    public static long fds_bits(MemorySegment struct, long index0) {
-        return (long)fds_bits$ELEM_HANDLE.get(struct, 0L, index0);
+    public static int ymmh_space(MemorySegment struct, long index0) {
+        return (int)ymmh_space$ELEM_HANDLE.get(struct, ymmh_space$OFFSET, index0);
     }
 
     /**
      * Indexed setter for field:
      * {@snippet lang=c :
-     * unsigned long fds_bits[16]
+     * __uint32_t ymmh_space[64]
      * }
      */
-    public static void fds_bits(MemorySegment struct, long index0, long fieldValue) {
-        fds_bits$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+    public static void ymmh_space(MemorySegment struct, long index0, int fieldValue) {
+        ymmh_space$ELEM_HANDLE.set(struct, ymmh_space$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -142,7 +142,7 @@ public class __kernel_fd_set {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -150,7 +150,7 @@ public class __kernel_fd_set {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -48,7 +48,11 @@ public class _pthread_cleanup_buffer {
      * void (*__routine)(void *)
      * }
      */
-    public class __routine {
+    public final static class __routine {
+
+        private __routine() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -83,9 +87,11 @@ public class _pthread_cleanup_buffer {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -104,7 +110,7 @@ public class _pthread_cleanup_buffer {
         return __routine$LAYOUT;
     }
 
-    private static final long __routine$OFFSET = 0;
+    private static final long __routine$OFFSET = $LAYOUT.byteOffset(groupElement("__routine"));
 
     /**
      * Offset for field:
@@ -148,7 +154,7 @@ public class _pthread_cleanup_buffer {
         return __arg$LAYOUT;
     }
 
-    private static final long __arg$OFFSET = 8;
+    private static final long __arg$OFFSET = $LAYOUT.byteOffset(groupElement("__arg"));
 
     /**
      * Offset for field:
@@ -192,7 +198,7 @@ public class _pthread_cleanup_buffer {
         return __canceltype$LAYOUT;
     }
 
-    private static final long __canceltype$OFFSET = 16;
+    private static final long __canceltype$OFFSET = $LAYOUT.byteOffset(groupElement("__canceltype"));
 
     /**
      * Offset for field:
@@ -236,7 +242,7 @@ public class _pthread_cleanup_buffer {
         return __prev$LAYOUT;
     }
 
-    private static final long __prev$OFFSET = 24;
+    private static final long __prev$OFFSET = $LAYOUT.byteOffset(groupElement("__prev"));
 
     /**
      * Offset for field:
@@ -297,7 +303,7 @@ public class _pthread_cleanup_buffer {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -305,7 +311,7 @@ public class _pthread_cleanup_buffer {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

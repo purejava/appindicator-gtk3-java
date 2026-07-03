@@ -54,7 +54,7 @@ public class _GAsyncResultIface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -91,7 +91,11 @@ public class _GAsyncResultIface {
      * gpointer (*get_user_data)(GAsyncResult *)
      * }
      */
-    public class get_user_data {
+    public final static class get_user_data {
+
+        private get_user_data() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -127,9 +131,11 @@ public class _GAsyncResultIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -148,7 +154,7 @@ public class _GAsyncResultIface {
         return get_user_data$LAYOUT;
     }
 
-    private static final long get_user_data$OFFSET = 16;
+    private static final long get_user_data$OFFSET = $LAYOUT.byteOffset(groupElement("get_user_data"));
 
     /**
      * Offset for field:
@@ -185,7 +191,11 @@ public class _GAsyncResultIface {
      * GObject *(*get_source_object)(GAsyncResult *)
      * }
      */
-    public class get_source_object {
+    public final static class get_source_object {
+
+        private get_source_object() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -221,9 +231,11 @@ public class _GAsyncResultIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -242,7 +254,7 @@ public class _GAsyncResultIface {
         return get_source_object$LAYOUT;
     }
 
-    private static final long get_source_object$OFFSET = 24;
+    private static final long get_source_object$OFFSET = $LAYOUT.byteOffset(groupElement("get_source_object"));
 
     /**
      * Offset for field:
@@ -279,7 +291,11 @@ public class _GAsyncResultIface {
      * gboolean (*is_tagged)(GAsyncResult *, gpointer)
      * }
      */
-    public class is_tagged {
+    public final static class is_tagged {
+
+        private is_tagged() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -316,9 +332,11 @@ public class _GAsyncResultIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -337,7 +355,7 @@ public class _GAsyncResultIface {
         return is_tagged$LAYOUT;
     }
 
-    private static final long is_tagged$OFFSET = 32;
+    private static final long is_tagged$OFFSET = $LAYOUT.byteOffset(groupElement("is_tagged"));
 
     /**
      * Offset for field:
@@ -398,7 +416,7 @@ public class _GAsyncResultIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -406,7 +424,7 @@ public class _GAsyncResultIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

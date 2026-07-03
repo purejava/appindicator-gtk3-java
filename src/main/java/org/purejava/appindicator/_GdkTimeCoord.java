@@ -51,7 +51,7 @@ public class _GdkTimeCoord {
         return time$LAYOUT;
     }
 
-    private static final long time$OFFSET = 0;
+    private static final long time$OFFSET = $LAYOUT.byteOffset(groupElement("time"));
 
     /**
      * Offset for field:
@@ -95,7 +95,7 @@ public class _GdkTimeCoord {
         return axes$LAYOUT;
     }
 
-    private static final long axes$OFFSET = 8;
+    private static final long axes$OFFSET = $LAYOUT.byteOffset(groupElement("axes"));
 
     /**
      * Offset for field:
@@ -147,7 +147,7 @@ public class _GdkTimeCoord {
      * }
      */
     public static double axes(MemorySegment struct, long index0) {
-        return (double)axes$ELEM_HANDLE.get(struct, 0L, index0);
+        return (double)axes$ELEM_HANDLE.get(struct, axes$OFFSET, index0);
     }
 
     /**
@@ -157,7 +157,7 @@ public class _GdkTimeCoord {
      * }
      */
     public static void axes(MemorySegment struct, long index0, double fieldValue) {
-        axes$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        axes$ELEM_HANDLE.set(struct, axes$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -189,7 +189,7 @@ public class _GdkTimeCoord {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -197,7 +197,7 @@ public class _GdkTimeCoord {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -79,7 +79,7 @@ public class _GdkEventTouchpadPinch {
         return type$LAYOUT;
     }
 
-    private static final long type$OFFSET = 0;
+    private static final long type$OFFSET = $LAYOUT.byteOffset(groupElement("type"));
 
     /**
      * Offset for field:
@@ -123,7 +123,7 @@ public class _GdkEventTouchpadPinch {
         return window$LAYOUT;
     }
 
-    private static final long window$OFFSET = 8;
+    private static final long window$OFFSET = $LAYOUT.byteOffset(groupElement("window"));
 
     /**
      * Offset for field:
@@ -167,7 +167,7 @@ public class _GdkEventTouchpadPinch {
         return send_event$LAYOUT;
     }
 
-    private static final long send_event$OFFSET = 16;
+    private static final long send_event$OFFSET = $LAYOUT.byteOffset(groupElement("send_event"));
 
     /**
      * Offset for field:
@@ -211,7 +211,7 @@ public class _GdkEventTouchpadPinch {
         return phase$LAYOUT;
     }
 
-    private static final long phase$OFFSET = 17;
+    private static final long phase$OFFSET = $LAYOUT.byteOffset(groupElement("phase"));
 
     /**
      * Offset for field:
@@ -255,7 +255,7 @@ public class _GdkEventTouchpadPinch {
         return n_fingers$LAYOUT;
     }
 
-    private static final long n_fingers$OFFSET = 18;
+    private static final long n_fingers$OFFSET = $LAYOUT.byteOffset(groupElement("n_fingers"));
 
     /**
      * Offset for field:
@@ -299,7 +299,7 @@ public class _GdkEventTouchpadPinch {
         return time$LAYOUT;
     }
 
-    private static final long time$OFFSET = 20;
+    private static final long time$OFFSET = $LAYOUT.byteOffset(groupElement("time"));
 
     /**
      * Offset for field:
@@ -343,7 +343,7 @@ public class _GdkEventTouchpadPinch {
         return x$LAYOUT;
     }
 
-    private static final long x$OFFSET = 24;
+    private static final long x$OFFSET = $LAYOUT.byteOffset(groupElement("x"));
 
     /**
      * Offset for field:
@@ -387,7 +387,7 @@ public class _GdkEventTouchpadPinch {
         return y$LAYOUT;
     }
 
-    private static final long y$OFFSET = 32;
+    private static final long y$OFFSET = $LAYOUT.byteOffset(groupElement("y"));
 
     /**
      * Offset for field:
@@ -431,7 +431,7 @@ public class _GdkEventTouchpadPinch {
         return dx$LAYOUT;
     }
 
-    private static final long dx$OFFSET = 40;
+    private static final long dx$OFFSET = $LAYOUT.byteOffset(groupElement("dx"));
 
     /**
      * Offset for field:
@@ -475,7 +475,7 @@ public class _GdkEventTouchpadPinch {
         return dy$LAYOUT;
     }
 
-    private static final long dy$OFFSET = 48;
+    private static final long dy$OFFSET = $LAYOUT.byteOffset(groupElement("dy"));
 
     /**
      * Offset for field:
@@ -519,7 +519,7 @@ public class _GdkEventTouchpadPinch {
         return angle_delta$LAYOUT;
     }
 
-    private static final long angle_delta$OFFSET = 56;
+    private static final long angle_delta$OFFSET = $LAYOUT.byteOffset(groupElement("angle_delta"));
 
     /**
      * Offset for field:
@@ -563,7 +563,7 @@ public class _GdkEventTouchpadPinch {
         return scale$LAYOUT;
     }
 
-    private static final long scale$OFFSET = 64;
+    private static final long scale$OFFSET = $LAYOUT.byteOffset(groupElement("scale"));
 
     /**
      * Offset for field:
@@ -607,7 +607,7 @@ public class _GdkEventTouchpadPinch {
         return x_root$LAYOUT;
     }
 
-    private static final long x_root$OFFSET = 72;
+    private static final long x_root$OFFSET = $LAYOUT.byteOffset(groupElement("x_root"));
 
     /**
      * Offset for field:
@@ -651,7 +651,7 @@ public class _GdkEventTouchpadPinch {
         return y_root$LAYOUT;
     }
 
-    private static final long y_root$OFFSET = 80;
+    private static final long y_root$OFFSET = $LAYOUT.byteOffset(groupElement("y_root"));
 
     /**
      * Offset for field:
@@ -695,7 +695,7 @@ public class _GdkEventTouchpadPinch {
         return state$LAYOUT;
     }
 
-    private static final long state$OFFSET = 88;
+    private static final long state$OFFSET = $LAYOUT.byteOffset(groupElement("state"));
 
     /**
      * Offset for field:
@@ -756,7 +756,7 @@ public class _GdkEventTouchpadPinch {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -764,7 +764,7 @@ public class _GdkEventTouchpadPinch {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -54,7 +54,7 @@ public class _GFlagsClass {
         return g_type_class$LAYOUT;
     }
 
-    private static final long g_type_class$OFFSET = 0;
+    private static final long g_type_class$OFFSET = $LAYOUT.byteOffset(groupElement("g_type_class"));
 
     /**
      * Offset for field:
@@ -98,7 +98,7 @@ public class _GFlagsClass {
         return mask$LAYOUT;
     }
 
-    private static final long mask$OFFSET = 8;
+    private static final long mask$OFFSET = $LAYOUT.byteOffset(groupElement("mask"));
 
     /**
      * Offset for field:
@@ -142,7 +142,7 @@ public class _GFlagsClass {
         return n_values$LAYOUT;
     }
 
-    private static final long n_values$OFFSET = 12;
+    private static final long n_values$OFFSET = $LAYOUT.byteOffset(groupElement("n_values"));
 
     /**
      * Offset for field:
@@ -186,7 +186,7 @@ public class _GFlagsClass {
         return values$LAYOUT;
     }
 
-    private static final long values$OFFSET = 16;
+    private static final long values$OFFSET = $LAYOUT.byteOffset(groupElement("values"));
 
     /**
      * Offset for field:
@@ -247,7 +247,7 @@ public class _GFlagsClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -255,7 +255,7 @@ public class _GFlagsClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

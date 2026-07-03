@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gboolean (*GtkTextBufferDeserializeFunc)(GtkTextBuffer *, GtkTextBuffer *, GtkTextIter *, const guint8 *, gsize, gboolean, gpointer, GError **)
  * }
  */
-public class GtkTextBufferDeserializeFunc {
+public final class GtkTextBufferDeserializeFunc {
+
+    private GtkTextBufferDeserializeFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -60,9 +64,11 @@ public class GtkTextBufferDeserializeFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment register_buffer, MemorySegment content_buffer, MemorySegment iter, MemorySegment data, long length, int create_tags, MemorySegment user_data, MemorySegment error) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment register_buffer, MemorySegment content_buffer, MemorySegment iter, MemorySegment data, long length, int create_tags, MemorySegment user_data, MemorySegment error) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, register_buffer, content_buffer, iter, data, length, create_tags, user_data, error);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

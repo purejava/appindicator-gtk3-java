@@ -52,7 +52,7 @@ public class _GtkTargetPair {
         return target$LAYOUT;
     }
 
-    private static final long target$OFFSET = 0;
+    private static final long target$OFFSET = $LAYOUT.byteOffset(groupElement("target"));
 
     /**
      * Offset for field:
@@ -96,7 +96,7 @@ public class _GtkTargetPair {
         return flags$LAYOUT;
     }
 
-    private static final long flags$OFFSET = 8;
+    private static final long flags$OFFSET = $LAYOUT.byteOffset(groupElement("flags"));
 
     /**
      * Offset for field:
@@ -140,7 +140,7 @@ public class _GtkTargetPair {
         return info$LAYOUT;
     }
 
-    private static final long info$OFFSET = 12;
+    private static final long info$OFFSET = $LAYOUT.byteOffset(groupElement("info"));
 
     /**
      * Offset for field:
@@ -201,7 +201,7 @@ public class _GtkTargetPair {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -209,7 +209,7 @@ public class _GtkTargetPair {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

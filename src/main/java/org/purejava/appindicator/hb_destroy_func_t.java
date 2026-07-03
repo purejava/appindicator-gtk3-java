@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*hb_destroy_func_t)(void *)
  * }
  */
-public class hb_destroy_func_t {
+public final class hb_destroy_func_t {
+
+    private hb_destroy_func_t() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -52,9 +56,11 @@ public class hb_destroy_func_t {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment user_data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment user_data) {
         try {
              DOWN$MH.invokeExact(funcPtr, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

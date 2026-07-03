@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef cairo_status_t (*cairo_read_func_t)(void *, unsigned char *, unsigned int)
  * }
  */
-public class cairo_read_func_t {
+public final class cairo_read_func_t {
+
+    private cairo_read_func_t() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -55,9 +59,11 @@ public class cairo_read_func_t {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment closure, MemorySegment data, int length) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment closure, MemorySegment data, int length) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, closure, data, length);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

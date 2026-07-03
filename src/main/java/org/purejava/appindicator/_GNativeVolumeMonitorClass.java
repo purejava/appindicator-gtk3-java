@@ -50,7 +50,7 @@ public class _GNativeVolumeMonitorClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -87,7 +87,11 @@ public class _GNativeVolumeMonitorClass {
      * GMount *(*get_mount_for_mount_path)(const char *, GCancellable *)
      * }
      */
-    public class get_mount_for_mount_path {
+    public final static class get_mount_for_mount_path {
+
+        private get_mount_for_mount_path() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -124,9 +128,11 @@ public class _GNativeVolumeMonitorClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -145,7 +151,7 @@ public class _GNativeVolumeMonitorClass {
         return get_mount_for_mount_path$LAYOUT;
     }
 
-    private static final long get_mount_for_mount_path$OFFSET = 336;
+    private static final long get_mount_for_mount_path$OFFSET = $LAYOUT.byteOffset(groupElement("get_mount_for_mount_path"));
 
     /**
      * Offset for field:
@@ -206,7 +212,7 @@ public class _GNativeVolumeMonitorClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -214,7 +220,7 @@ public class _GNativeVolumeMonitorClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

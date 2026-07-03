@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GtkIconViewForeachFunc)(GtkIconView *, GtkTreePath *, gpointer)
  * }
  */
-public class GtkIconViewForeachFunc {
+public final class GtkIconViewForeachFunc {
+
+    private GtkIconViewForeachFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +58,11 @@ public class GtkIconViewForeachFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment icon_view, MemorySegment path, MemorySegment data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment icon_view, MemorySegment path, MemorySegment data) {
         try {
              DOWN$MH.invokeExact(funcPtr, icon_view, path, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

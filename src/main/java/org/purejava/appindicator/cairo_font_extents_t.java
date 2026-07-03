@@ -56,7 +56,7 @@ public class cairo_font_extents_t {
         return ascent$LAYOUT;
     }
 
-    private static final long ascent$OFFSET = 0;
+    private static final long ascent$OFFSET = $LAYOUT.byteOffset(groupElement("ascent"));
 
     /**
      * Offset for field:
@@ -100,7 +100,7 @@ public class cairo_font_extents_t {
         return descent$LAYOUT;
     }
 
-    private static final long descent$OFFSET = 8;
+    private static final long descent$OFFSET = $LAYOUT.byteOffset(groupElement("descent"));
 
     /**
      * Offset for field:
@@ -144,7 +144,7 @@ public class cairo_font_extents_t {
         return height$LAYOUT;
     }
 
-    private static final long height$OFFSET = 16;
+    private static final long height$OFFSET = $LAYOUT.byteOffset(groupElement("height"));
 
     /**
      * Offset for field:
@@ -188,7 +188,7 @@ public class cairo_font_extents_t {
         return max_x_advance$LAYOUT;
     }
 
-    private static final long max_x_advance$OFFSET = 24;
+    private static final long max_x_advance$OFFSET = $LAYOUT.byteOffset(groupElement("max_x_advance"));
 
     /**
      * Offset for field:
@@ -232,7 +232,7 @@ public class cairo_font_extents_t {
         return max_y_advance$LAYOUT;
     }
 
-    private static final long max_y_advance$OFFSET = 32;
+    private static final long max_y_advance$OFFSET = $LAYOUT.byteOffset(groupElement("max_y_advance"));
 
     /**
      * Offset for field:
@@ -293,7 +293,7 @@ public class cairo_font_extents_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -301,7 +301,7 @@ public class cairo_font_extents_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

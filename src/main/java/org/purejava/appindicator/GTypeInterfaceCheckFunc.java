@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GTypeInterfaceCheckFunc)(gpointer, gpointer)
  * }
  */
-public class GTypeInterfaceCheckFunc {
+public final class GTypeInterfaceCheckFunc {
+
+    private GTypeInterfaceCheckFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -53,9 +57,11 @@ public class GTypeInterfaceCheckFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment check_data, MemorySegment g_iface) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment check_data, MemorySegment g_iface) {
         try {
              DOWN$MH.invokeExact(funcPtr, check_data, g_iface);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

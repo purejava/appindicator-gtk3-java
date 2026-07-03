@@ -88,7 +88,7 @@ public class _GOutputStreamClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -125,7 +125,11 @@ public class _GOutputStreamClass {
      * gssize (*write_fn)(GOutputStream *, const void *, gsize, GCancellable *, GError **)
      * }
      */
-    public class write_fn {
+    public final static class write_fn {
+
+        private write_fn() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -165,9 +169,11 @@ public class _GOutputStreamClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static long invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static long invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                 return (long) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -186,7 +192,7 @@ public class _GOutputStreamClass {
         return write_fn$LAYOUT;
     }
 
-    private static final long write_fn$OFFSET = 136;
+    private static final long write_fn$OFFSET = $LAYOUT.byteOffset(groupElement("write_fn"));
 
     /**
      * Offset for field:
@@ -223,7 +229,11 @@ public class _GOutputStreamClass {
      * gssize (*splice)(GOutputStream *, GInputStream *, GOutputStreamSpliceFlags, GCancellable *, GError **)
      * }
      */
-    public class splice {
+    public final static class splice {
+
+        private splice() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -263,9 +273,11 @@ public class _GOutputStreamClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static long invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static long invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                 return (long) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -284,7 +296,7 @@ public class _GOutputStreamClass {
         return splice$LAYOUT;
     }
 
-    private static final long splice$OFFSET = 144;
+    private static final long splice$OFFSET = $LAYOUT.byteOffset(groupElement("splice"));
 
     /**
      * Offset for field:
@@ -321,7 +333,11 @@ public class _GOutputStreamClass {
      * gboolean (*flush)(GOutputStream *, GCancellable *, GError **)
      * }
      */
-    public class flush {
+    public final static class flush {
+
+        private flush() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -359,9 +375,11 @@ public class _GOutputStreamClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -380,7 +398,7 @@ public class _GOutputStreamClass {
         return flush$LAYOUT;
     }
 
-    private static final long flush$OFFSET = 152;
+    private static final long flush$OFFSET = $LAYOUT.byteOffset(groupElement("flush"));
 
     /**
      * Offset for field:
@@ -417,7 +435,11 @@ public class _GOutputStreamClass {
      * gboolean (*close_fn)(GOutputStream *, GCancellable *, GError **)
      * }
      */
-    public class close_fn {
+    public final static class close_fn {
+
+        private close_fn() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -455,9 +477,11 @@ public class _GOutputStreamClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -476,7 +500,7 @@ public class _GOutputStreamClass {
         return close_fn$LAYOUT;
     }
 
-    private static final long close_fn$OFFSET = 160;
+    private static final long close_fn$OFFSET = $LAYOUT.byteOffset(groupElement("close_fn"));
 
     /**
      * Offset for field:
@@ -513,7 +537,11 @@ public class _GOutputStreamClass {
      * void (*write_async)(GOutputStream *, const void *, gsize, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class write_async {
+    public final static class write_async {
+
+        private write_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -554,9 +582,11 @@ public class _GOutputStreamClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, long _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, long _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -575,7 +605,7 @@ public class _GOutputStreamClass {
         return write_async$LAYOUT;
     }
 
-    private static final long write_async$OFFSET = 168;
+    private static final long write_async$OFFSET = $LAYOUT.byteOffset(groupElement("write_async"));
 
     /**
      * Offset for field:
@@ -612,7 +642,11 @@ public class _GOutputStreamClass {
      * gssize (*write_finish)(GOutputStream *, GAsyncResult *, GError **)
      * }
      */
-    public class write_finish {
+    public final static class write_finish {
+
+        private write_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -650,9 +684,11 @@ public class _GOutputStreamClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static long invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static long invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (long) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -671,7 +707,7 @@ public class _GOutputStreamClass {
         return write_finish$LAYOUT;
     }
 
-    private static final long write_finish$OFFSET = 176;
+    private static final long write_finish$OFFSET = $LAYOUT.byteOffset(groupElement("write_finish"));
 
     /**
      * Offset for field:
@@ -708,7 +744,11 @@ public class _GOutputStreamClass {
      * void (*splice_async)(GOutputStream *, GInputStream *, GOutputStreamSpliceFlags, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class splice_async {
+    public final static class splice_async {
+
+        private splice_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -749,9 +789,11 @@ public class _GOutputStreamClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -770,7 +812,7 @@ public class _GOutputStreamClass {
         return splice_async$LAYOUT;
     }
 
-    private static final long splice_async$OFFSET = 184;
+    private static final long splice_async$OFFSET = $LAYOUT.byteOffset(groupElement("splice_async"));
 
     /**
      * Offset for field:
@@ -807,7 +849,11 @@ public class _GOutputStreamClass {
      * gssize (*splice_finish)(GOutputStream *, GAsyncResult *, GError **)
      * }
      */
-    public class splice_finish {
+    public final static class splice_finish {
+
+        private splice_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -845,9 +891,11 @@ public class _GOutputStreamClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static long invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static long invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (long) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -866,7 +914,7 @@ public class _GOutputStreamClass {
         return splice_finish$LAYOUT;
     }
 
-    private static final long splice_finish$OFFSET = 192;
+    private static final long splice_finish$OFFSET = $LAYOUT.byteOffset(groupElement("splice_finish"));
 
     /**
      * Offset for field:
@@ -903,7 +951,11 @@ public class _GOutputStreamClass {
      * void (*flush_async)(GOutputStream *, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class flush_async {
+    public final static class flush_async {
+
+        private flush_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -942,9 +994,11 @@ public class _GOutputStreamClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -963,7 +1017,7 @@ public class _GOutputStreamClass {
         return flush_async$LAYOUT;
     }
 
-    private static final long flush_async$OFFSET = 200;
+    private static final long flush_async$OFFSET = $LAYOUT.byteOffset(groupElement("flush_async"));
 
     /**
      * Offset for field:
@@ -1000,7 +1054,11 @@ public class _GOutputStreamClass {
      * gboolean (*flush_finish)(GOutputStream *, GAsyncResult *, GError **)
      * }
      */
-    public class flush_finish {
+    public final static class flush_finish {
+
+        private flush_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1038,9 +1096,11 @@ public class _GOutputStreamClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1059,7 +1119,7 @@ public class _GOutputStreamClass {
         return flush_finish$LAYOUT;
     }
 
-    private static final long flush_finish$OFFSET = 208;
+    private static final long flush_finish$OFFSET = $LAYOUT.byteOffset(groupElement("flush_finish"));
 
     /**
      * Offset for field:
@@ -1096,7 +1156,11 @@ public class _GOutputStreamClass {
      * void (*close_async)(GOutputStream *, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class close_async {
+    public final static class close_async {
+
+        private close_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1135,9 +1199,11 @@ public class _GOutputStreamClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1156,7 +1222,7 @@ public class _GOutputStreamClass {
         return close_async$LAYOUT;
     }
 
-    private static final long close_async$OFFSET = 216;
+    private static final long close_async$OFFSET = $LAYOUT.byteOffset(groupElement("close_async"));
 
     /**
      * Offset for field:
@@ -1193,7 +1259,11 @@ public class _GOutputStreamClass {
      * gboolean (*close_finish)(GOutputStream *, GAsyncResult *, GError **)
      * }
      */
-    public class close_finish {
+    public final static class close_finish {
+
+        private close_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1231,9 +1301,11 @@ public class _GOutputStreamClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1252,7 +1324,7 @@ public class _GOutputStreamClass {
         return close_finish$LAYOUT;
     }
 
-    private static final long close_finish$OFFSET = 224;
+    private static final long close_finish$OFFSET = $LAYOUT.byteOffset(groupElement("close_finish"));
 
     /**
      * Offset for field:
@@ -1289,7 +1361,11 @@ public class _GOutputStreamClass {
      * gboolean (*writev_fn)(GOutputStream *, const GOutputVector *, gsize, gsize *, GCancellable *, GError **)
      * }
      */
-    public class writev_fn {
+    public final static class writev_fn {
+
+        private writev_fn() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1330,9 +1406,11 @@ public class _GOutputStreamClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1351,7 +1429,7 @@ public class _GOutputStreamClass {
         return writev_fn$LAYOUT;
     }
 
-    private static final long writev_fn$OFFSET = 232;
+    private static final long writev_fn$OFFSET = $LAYOUT.byteOffset(groupElement("writev_fn"));
 
     /**
      * Offset for field:
@@ -1388,7 +1466,11 @@ public class _GOutputStreamClass {
      * void (*writev_async)(GOutputStream *, const GOutputVector *, gsize, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class writev_async {
+    public final static class writev_async {
+
+        private writev_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1429,9 +1511,11 @@ public class _GOutputStreamClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, long _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, long _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1450,7 +1534,7 @@ public class _GOutputStreamClass {
         return writev_async$LAYOUT;
     }
 
-    private static final long writev_async$OFFSET = 240;
+    private static final long writev_async$OFFSET = $LAYOUT.byteOffset(groupElement("writev_async"));
 
     /**
      * Offset for field:
@@ -1487,7 +1571,11 @@ public class _GOutputStreamClass {
      * gboolean (*writev_finish)(GOutputStream *, GAsyncResult *, gsize *, GError **)
      * }
      */
-    public class writev_finish {
+    public final static class writev_finish {
+
+        private writev_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1526,9 +1614,11 @@ public class _GOutputStreamClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1547,7 +1637,7 @@ public class _GOutputStreamClass {
         return writev_finish$LAYOUT;
     }
 
-    private static final long writev_finish$OFFSET = 248;
+    private static final long writev_finish$OFFSET = $LAYOUT.byteOffset(groupElement("writev_finish"));
 
     /**
      * Offset for field:
@@ -1584,7 +1674,11 @@ public class _GOutputStreamClass {
      * void (*_g_reserved4)(void)
      * }
      */
-    public class _g_reserved4 {
+    public final static class _g_reserved4 {
+
+        private _g_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1620,6 +1714,8 @@ public class _GOutputStreamClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1638,7 +1734,7 @@ public class _GOutputStreamClass {
         return _g_reserved4$LAYOUT;
     }
 
-    private static final long _g_reserved4$OFFSET = 256;
+    private static final long _g_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved4"));
 
     /**
      * Offset for field:
@@ -1675,7 +1771,11 @@ public class _GOutputStreamClass {
      * void (*_g_reserved5)(void)
      * }
      */
-    public class _g_reserved5 {
+    public final static class _g_reserved5 {
+
+        private _g_reserved5() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1711,6 +1811,8 @@ public class _GOutputStreamClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1729,7 +1831,7 @@ public class _GOutputStreamClass {
         return _g_reserved5$LAYOUT;
     }
 
-    private static final long _g_reserved5$OFFSET = 264;
+    private static final long _g_reserved5$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved5"));
 
     /**
      * Offset for field:
@@ -1766,7 +1868,11 @@ public class _GOutputStreamClass {
      * void (*_g_reserved6)(void)
      * }
      */
-    public class _g_reserved6 {
+    public final static class _g_reserved6 {
+
+        private _g_reserved6() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1802,6 +1908,8 @@ public class _GOutputStreamClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1820,7 +1928,7 @@ public class _GOutputStreamClass {
         return _g_reserved6$LAYOUT;
     }
 
-    private static final long _g_reserved6$OFFSET = 272;
+    private static final long _g_reserved6$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved6"));
 
     /**
      * Offset for field:
@@ -1857,7 +1965,11 @@ public class _GOutputStreamClass {
      * void (*_g_reserved7)(void)
      * }
      */
-    public class _g_reserved7 {
+    public final static class _g_reserved7 {
+
+        private _g_reserved7() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1893,6 +2005,8 @@ public class _GOutputStreamClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1911,7 +2025,7 @@ public class _GOutputStreamClass {
         return _g_reserved7$LAYOUT;
     }
 
-    private static final long _g_reserved7$OFFSET = 280;
+    private static final long _g_reserved7$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved7"));
 
     /**
      * Offset for field:
@@ -1948,7 +2062,11 @@ public class _GOutputStreamClass {
      * void (*_g_reserved8)(void)
      * }
      */
-    public class _g_reserved8 {
+    public final static class _g_reserved8 {
+
+        private _g_reserved8() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1984,6 +2102,8 @@ public class _GOutputStreamClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2002,7 +2122,7 @@ public class _GOutputStreamClass {
         return _g_reserved8$LAYOUT;
     }
 
-    private static final long _g_reserved8$OFFSET = 288;
+    private static final long _g_reserved8$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved8"));
 
     /**
      * Offset for field:
@@ -2063,7 +2183,7 @@ public class _GOutputStreamClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -2071,7 +2191,7 @@ public class _GOutputStreamClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

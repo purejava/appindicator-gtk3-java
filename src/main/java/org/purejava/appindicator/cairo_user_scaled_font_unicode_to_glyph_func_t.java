@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef cairo_status_t (*cairo_user_scaled_font_unicode_to_glyph_func_t)(cairo_scaled_font_t *, unsigned long, unsigned long *)
  * }
  */
-public class cairo_user_scaled_font_unicode_to_glyph_func_t {
+public final class cairo_user_scaled_font_unicode_to_glyph_func_t {
+
+    private cairo_user_scaled_font_unicode_to_glyph_func_t() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -55,9 +59,11 @@ public class cairo_user_scaled_font_unicode_to_glyph_func_t {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment scaled_font, long unicode, MemorySegment glyph_index) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment scaled_font, long unicode, MemorySegment glyph_index) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, scaled_font, unicode, glyph_index);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

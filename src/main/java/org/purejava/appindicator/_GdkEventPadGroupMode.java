@@ -60,7 +60,7 @@ public class _GdkEventPadGroupMode {
         return type$LAYOUT;
     }
 
-    private static final long type$OFFSET = 0;
+    private static final long type$OFFSET = $LAYOUT.byteOffset(groupElement("type"));
 
     /**
      * Offset for field:
@@ -104,7 +104,7 @@ public class _GdkEventPadGroupMode {
         return window$LAYOUT;
     }
 
-    private static final long window$OFFSET = 8;
+    private static final long window$OFFSET = $LAYOUT.byteOffset(groupElement("window"));
 
     /**
      * Offset for field:
@@ -148,7 +148,7 @@ public class _GdkEventPadGroupMode {
         return send_event$LAYOUT;
     }
 
-    private static final long send_event$OFFSET = 16;
+    private static final long send_event$OFFSET = $LAYOUT.byteOffset(groupElement("send_event"));
 
     /**
      * Offset for field:
@@ -192,7 +192,7 @@ public class _GdkEventPadGroupMode {
         return time$LAYOUT;
     }
 
-    private static final long time$OFFSET = 20;
+    private static final long time$OFFSET = $LAYOUT.byteOffset(groupElement("time"));
 
     /**
      * Offset for field:
@@ -236,7 +236,7 @@ public class _GdkEventPadGroupMode {
         return group$LAYOUT;
     }
 
-    private static final long group$OFFSET = 24;
+    private static final long group$OFFSET = $LAYOUT.byteOffset(groupElement("group"));
 
     /**
      * Offset for field:
@@ -280,7 +280,7 @@ public class _GdkEventPadGroupMode {
         return mode$LAYOUT;
     }
 
-    private static final long mode$OFFSET = 28;
+    private static final long mode$OFFSET = $LAYOUT.byteOffset(groupElement("mode"));
 
     /**
      * Offset for field:
@@ -341,7 +341,7 @@ public class _GdkEventPadGroupMode {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -349,7 +349,7 @@ public class _GdkEventPadGroupMode {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

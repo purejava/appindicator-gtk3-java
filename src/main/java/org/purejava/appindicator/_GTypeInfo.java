@@ -2,11 +2,15 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.util.function.Consumer;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
-import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
-import static java.lang.foreign.ValueLayout.OfShort;
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
@@ -64,7 +68,7 @@ public class _GTypeInfo {
         return class_size$LAYOUT;
     }
 
-    private static final long class_size$OFFSET = 0;
+    private static final long class_size$OFFSET = $LAYOUT.byteOffset(groupElement("class_size"));
 
     /**
      * Offset for field:
@@ -108,7 +112,7 @@ public class _GTypeInfo {
         return base_init$LAYOUT;
     }
 
-    private static final long base_init$OFFSET = 8;
+    private static final long base_init$OFFSET = $LAYOUT.byteOffset(groupElement("base_init"));
 
     /**
      * Offset for field:
@@ -152,7 +156,7 @@ public class _GTypeInfo {
         return base_finalize$LAYOUT;
     }
 
-    private static final long base_finalize$OFFSET = 16;
+    private static final long base_finalize$OFFSET = $LAYOUT.byteOffset(groupElement("base_finalize"));
 
     /**
      * Offset for field:
@@ -196,7 +200,7 @@ public class _GTypeInfo {
         return class_init$LAYOUT;
     }
 
-    private static final long class_init$OFFSET = 24;
+    private static final long class_init$OFFSET = $LAYOUT.byteOffset(groupElement("class_init"));
 
     /**
      * Offset for field:
@@ -240,7 +244,7 @@ public class _GTypeInfo {
         return class_finalize$LAYOUT;
     }
 
-    private static final long class_finalize$OFFSET = 32;
+    private static final long class_finalize$OFFSET = $LAYOUT.byteOffset(groupElement("class_finalize"));
 
     /**
      * Offset for field:
@@ -284,7 +288,7 @@ public class _GTypeInfo {
         return class_data$LAYOUT;
     }
 
-    private static final long class_data$OFFSET = 40;
+    private static final long class_data$OFFSET = $LAYOUT.byteOffset(groupElement("class_data"));
 
     /**
      * Offset for field:
@@ -328,7 +332,7 @@ public class _GTypeInfo {
         return instance_size$LAYOUT;
     }
 
-    private static final long instance_size$OFFSET = 48;
+    private static final long instance_size$OFFSET = $LAYOUT.byteOffset(groupElement("instance_size"));
 
     /**
      * Offset for field:
@@ -372,7 +376,7 @@ public class _GTypeInfo {
         return n_preallocs$LAYOUT;
     }
 
-    private static final long n_preallocs$OFFSET = 50;
+    private static final long n_preallocs$OFFSET = $LAYOUT.byteOffset(groupElement("n_preallocs"));
 
     /**
      * Offset for field:
@@ -416,7 +420,7 @@ public class _GTypeInfo {
         return instance_init$LAYOUT;
     }
 
-    private static final long instance_init$OFFSET = 56;
+    private static final long instance_init$OFFSET = $LAYOUT.byteOffset(groupElement("instance_init"));
 
     /**
      * Offset for field:
@@ -460,7 +464,7 @@ public class _GTypeInfo {
         return value_table$LAYOUT;
     }
 
-    private static final long value_table$OFFSET = 64;
+    private static final long value_table$OFFSET = $LAYOUT.byteOffset(groupElement("value_table"));
 
     /**
      * Offset for field:
@@ -521,7 +525,7 @@ public class _GTypeInfo {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -529,7 +533,7 @@ public class _GTypeInfo {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gboolean (*GPollableSourceFunc)(GObject *, gpointer)
  * }
  */
-public class GPollableSourceFunc {
+public final class GPollableSourceFunc {
+
+    private GPollableSourceFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +58,11 @@ public class GPollableSourceFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment pollable_stream, MemorySegment data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment pollable_stream, MemorySegment data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, pollable_stream, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

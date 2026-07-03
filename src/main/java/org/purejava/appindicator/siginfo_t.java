@@ -2,13 +2,15 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.lang.invoke.VarHandle;
-import java.util.function.Consumer;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
-import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
-import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
 import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
@@ -97,7 +99,7 @@ public class siginfo_t {
         return si_signo$LAYOUT;
     }
 
-    private static final long si_signo$OFFSET = 0;
+    private static final long si_signo$OFFSET = $LAYOUT.byteOffset(groupElement("si_signo"));
 
     /**
      * Offset for field:
@@ -141,7 +143,7 @@ public class siginfo_t {
         return si_errno$LAYOUT;
     }
 
-    private static final long si_errno$OFFSET = 4;
+    private static final long si_errno$OFFSET = $LAYOUT.byteOffset(groupElement("si_errno"));
 
     /**
      * Offset for field:
@@ -185,7 +187,7 @@ public class siginfo_t {
         return si_code$LAYOUT;
     }
 
-    private static final long si_code$OFFSET = 8;
+    private static final long si_code$OFFSET = $LAYOUT.byteOffset(groupElement("si_code"));
 
     /**
      * Offset for field:
@@ -229,7 +231,7 @@ public class siginfo_t {
         return __pad0$LAYOUT;
     }
 
-    private static final long __pad0$OFFSET = 12;
+    private static final long __pad0$OFFSET = $LAYOUT.byteOffset(groupElement("__pad0"));
 
     /**
      * Offset for field:
@@ -345,7 +347,7 @@ public class siginfo_t {
             return _pad$LAYOUT;
         }
 
-        private static final long _pad$OFFSET = 0;
+        private static final long _pad$OFFSET = $LAYOUT.byteOffset(groupElement("_pad"));
 
         /**
          * Offset for field:
@@ -397,7 +399,7 @@ public class siginfo_t {
          * }
          */
         public static int _pad(MemorySegment union, long index0) {
-            return (int)_pad$ELEM_HANDLE.get(union, 0L, index0);
+            return (int)_pad$ELEM_HANDLE.get(union, _pad$OFFSET, index0);
         }
 
         /**
@@ -407,7 +409,7 @@ public class siginfo_t {
          * }
          */
         public static void _pad(MemorySegment union, long index0, int fieldValue) {
-            _pad$ELEM_HANDLE.set(union, 0L, index0, fieldValue);
+            _pad$ELEM_HANDLE.set(union, _pad$OFFSET, index0, fieldValue);
         }
 
         /**
@@ -448,7 +450,7 @@ public class siginfo_t {
                 return si_pid$LAYOUT;
             }
 
-            private static final long si_pid$OFFSET = 0;
+            private static final long si_pid$OFFSET = $LAYOUT.byteOffset(groupElement("si_pid"));
 
             /**
              * Offset for field:
@@ -492,7 +494,7 @@ public class siginfo_t {
                 return si_uid$LAYOUT;
             }
 
-            private static final long si_uid$OFFSET = 4;
+            private static final long si_uid$OFFSET = $LAYOUT.byteOffset(groupElement("si_uid"));
 
             /**
              * Offset for field:
@@ -553,7 +555,7 @@ public class siginfo_t {
             }
 
             /**
-             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
              * The returned segment has size {@code layout().byteSize()}
              */
             public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -561,7 +563,7 @@ public class siginfo_t {
             }
 
             /**
-             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
              * The returned segment has size {@code elementCount * layout().byteSize()}
              */
             public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -584,7 +586,7 @@ public class siginfo_t {
             return _kill$LAYOUT;
         }
 
-        private static final long _kill$OFFSET = 0;
+        private static final long _kill$OFFSET = $LAYOUT.byteOffset(groupElement("_kill"));
 
         /**
          * Offset for field:
@@ -665,7 +667,7 @@ public class siginfo_t {
                 return si_tid$LAYOUT;
             }
 
-            private static final long si_tid$OFFSET = 0;
+            private static final long si_tid$OFFSET = $LAYOUT.byteOffset(groupElement("si_tid"));
 
             /**
              * Offset for field:
@@ -709,7 +711,7 @@ public class siginfo_t {
                 return si_overrun$LAYOUT;
             }
 
-            private static final long si_overrun$OFFSET = 4;
+            private static final long si_overrun$OFFSET = $LAYOUT.byteOffset(groupElement("si_overrun"));
 
             /**
              * Offset for field:
@@ -753,7 +755,7 @@ public class siginfo_t {
                 return si_sigval$LAYOUT;
             }
 
-            private static final long si_sigval$OFFSET = 8;
+            private static final long si_sigval$OFFSET = $LAYOUT.byteOffset(groupElement("si_sigval"));
 
             /**
              * Offset for field:
@@ -814,7 +816,7 @@ public class siginfo_t {
             }
 
             /**
-             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
              * The returned segment has size {@code layout().byteSize()}
              */
             public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -822,7 +824,7 @@ public class siginfo_t {
             }
 
             /**
-             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
              * The returned segment has size {@code elementCount * layout().byteSize()}
              */
             public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -846,7 +848,7 @@ public class siginfo_t {
             return _timer$LAYOUT;
         }
 
-        private static final long _timer$OFFSET = 0;
+        private static final long _timer$OFFSET = $LAYOUT.byteOffset(groupElement("_timer"));
 
         /**
          * Offset for field:
@@ -930,7 +932,7 @@ public class siginfo_t {
                 return si_pid$LAYOUT;
             }
 
-            private static final long si_pid$OFFSET = 0;
+            private static final long si_pid$OFFSET = $LAYOUT.byteOffset(groupElement("si_pid"));
 
             /**
              * Offset for field:
@@ -974,7 +976,7 @@ public class siginfo_t {
                 return si_uid$LAYOUT;
             }
 
-            private static final long si_uid$OFFSET = 4;
+            private static final long si_uid$OFFSET = $LAYOUT.byteOffset(groupElement("si_uid"));
 
             /**
              * Offset for field:
@@ -1018,7 +1020,7 @@ public class siginfo_t {
                 return si_sigval$LAYOUT;
             }
 
-            private static final long si_sigval$OFFSET = 8;
+            private static final long si_sigval$OFFSET = $LAYOUT.byteOffset(groupElement("si_sigval"));
 
             /**
              * Offset for field:
@@ -1079,7 +1081,7 @@ public class siginfo_t {
             }
 
             /**
-             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
              * The returned segment has size {@code layout().byteSize()}
              */
             public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1087,7 +1089,7 @@ public class siginfo_t {
             }
 
             /**
-             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
              * The returned segment has size {@code elementCount * layout().byteSize()}
              */
             public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1111,7 +1113,7 @@ public class siginfo_t {
             return _rt$LAYOUT;
         }
 
-        private static final long _rt$OFFSET = 0;
+        private static final long _rt$OFFSET = $LAYOUT.byteOffset(groupElement("_rt"));
 
         /**
          * Offset for field:
@@ -1200,7 +1202,7 @@ public class siginfo_t {
                 return si_pid$LAYOUT;
             }
 
-            private static final long si_pid$OFFSET = 0;
+            private static final long si_pid$OFFSET = $LAYOUT.byteOffset(groupElement("si_pid"));
 
             /**
              * Offset for field:
@@ -1244,7 +1246,7 @@ public class siginfo_t {
                 return si_uid$LAYOUT;
             }
 
-            private static final long si_uid$OFFSET = 4;
+            private static final long si_uid$OFFSET = $LAYOUT.byteOffset(groupElement("si_uid"));
 
             /**
              * Offset for field:
@@ -1288,7 +1290,7 @@ public class siginfo_t {
                 return si_status$LAYOUT;
             }
 
-            private static final long si_status$OFFSET = 8;
+            private static final long si_status$OFFSET = $LAYOUT.byteOffset(groupElement("si_status"));
 
             /**
              * Offset for field:
@@ -1332,7 +1334,7 @@ public class siginfo_t {
                 return si_utime$LAYOUT;
             }
 
-            private static final long si_utime$OFFSET = 16;
+            private static final long si_utime$OFFSET = $LAYOUT.byteOffset(groupElement("si_utime"));
 
             /**
              * Offset for field:
@@ -1376,7 +1378,7 @@ public class siginfo_t {
                 return si_stime$LAYOUT;
             }
 
-            private static final long si_stime$OFFSET = 24;
+            private static final long si_stime$OFFSET = $LAYOUT.byteOffset(groupElement("si_stime"));
 
             /**
              * Offset for field:
@@ -1437,7 +1439,7 @@ public class siginfo_t {
             }
 
             /**
-             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
              * The returned segment has size {@code layout().byteSize()}
              */
             public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1445,7 +1447,7 @@ public class siginfo_t {
             }
 
             /**
-             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
              * The returned segment has size {@code elementCount * layout().byteSize()}
              */
             public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1471,7 +1473,7 @@ public class siginfo_t {
             return _sigchld$LAYOUT;
         }
 
-        private static final long _sigchld$OFFSET = 0;
+        private static final long _sigchld$OFFSET = $LAYOUT.byteOffset(groupElement("_sigchld"));
 
         /**
          * Offset for field:
@@ -1568,7 +1570,7 @@ public class siginfo_t {
                 return si_addr$LAYOUT;
             }
 
-            private static final long si_addr$OFFSET = 0;
+            private static final long si_addr$OFFSET = $LAYOUT.byteOffset(groupElement("si_addr"));
 
             /**
              * Offset for field:
@@ -1612,7 +1614,7 @@ public class siginfo_t {
                 return si_addr_lsb$LAYOUT;
             }
 
-            private static final long si_addr_lsb$OFFSET = 8;
+            private static final long si_addr_lsb$OFFSET = $LAYOUT.byteOffset(groupElement("si_addr_lsb"));
 
             /**
              * Offset for field:
@@ -1711,7 +1713,7 @@ public class siginfo_t {
                         return _lower$LAYOUT;
                     }
 
-                    private static final long _lower$OFFSET = 0;
+                    private static final long _lower$OFFSET = $LAYOUT.byteOffset(groupElement("_lower"));
 
                     /**
                      * Offset for field:
@@ -1755,7 +1757,7 @@ public class siginfo_t {
                         return _upper$LAYOUT;
                     }
 
-                    private static final long _upper$OFFSET = 8;
+                    private static final long _upper$OFFSET = $LAYOUT.byteOffset(groupElement("_upper"));
 
                     /**
                      * Offset for field:
@@ -1816,7 +1818,7 @@ public class siginfo_t {
                     }
 
                     /**
-                     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+                     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
                      * The returned segment has size {@code layout().byteSize()}
                      */
                     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1824,7 +1826,7 @@ public class siginfo_t {
                     }
 
                     /**
-                     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+                     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
                      * The returned segment has size {@code elementCount * layout().byteSize()}
                      */
                     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1847,7 +1849,7 @@ public class siginfo_t {
                     return _addr_bnd$LAYOUT;
                 }
 
-                private static final long _addr_bnd$OFFSET = 0;
+                private static final long _addr_bnd$OFFSET = $LAYOUT.byteOffset(groupElement("_addr_bnd"));
 
                 /**
                  * Offset for field:
@@ -1900,7 +1902,7 @@ public class siginfo_t {
                     return _pkey$LAYOUT;
                 }
 
-                private static final long _pkey$OFFSET = 0;
+                private static final long _pkey$OFFSET = $LAYOUT.byteOffset(groupElement("_pkey"));
 
                 /**
                  * Offset for field:
@@ -1961,7 +1963,7 @@ public class siginfo_t {
                 }
 
                 /**
-                 * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+                 * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
                  * The returned segment has size {@code layout().byteSize()}
                  */
                 public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1969,7 +1971,7 @@ public class siginfo_t {
                 }
 
                 /**
-                 * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+                 * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
                  * The returned segment has size {@code elementCount * layout().byteSize()}
                  */
                 public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1995,7 +1997,7 @@ public class siginfo_t {
                 return _bounds$LAYOUT;
             }
 
-            private static final long _bounds$OFFSET = 16;
+            private static final long _bounds$OFFSET = $LAYOUT.byteOffset(groupElement("_bounds"));
 
             /**
              * Offset for field:
@@ -2074,7 +2076,7 @@ public class siginfo_t {
             }
 
             /**
-             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
              * The returned segment has size {@code layout().byteSize()}
              */
             public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -2082,7 +2084,7 @@ public class siginfo_t {
             }
 
             /**
-             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
              * The returned segment has size {@code elementCount * layout().byteSize()}
              */
             public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -2112,7 +2114,7 @@ public class siginfo_t {
             return _sigfault$LAYOUT;
         }
 
-        private static final long _sigfault$OFFSET = 0;
+        private static final long _sigfault$OFFSET = $LAYOUT.byteOffset(groupElement("_sigfault"));
 
         /**
          * Offset for field:
@@ -2213,7 +2215,7 @@ public class siginfo_t {
                 return si_band$LAYOUT;
             }
 
-            private static final long si_band$OFFSET = 0;
+            private static final long si_band$OFFSET = $LAYOUT.byteOffset(groupElement("si_band"));
 
             /**
              * Offset for field:
@@ -2257,7 +2259,7 @@ public class siginfo_t {
                 return si_fd$LAYOUT;
             }
 
-            private static final long si_fd$OFFSET = 8;
+            private static final long si_fd$OFFSET = $LAYOUT.byteOffset(groupElement("si_fd"));
 
             /**
              * Offset for field:
@@ -2318,7 +2320,7 @@ public class siginfo_t {
             }
 
             /**
-             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
              * The returned segment has size {@code layout().byteSize()}
              */
             public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -2326,7 +2328,7 @@ public class siginfo_t {
             }
 
             /**
-             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
              * The returned segment has size {@code elementCount * layout().byteSize()}
              */
             public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -2349,7 +2351,7 @@ public class siginfo_t {
             return _sigpoll$LAYOUT;
         }
 
-        private static final long _sigpoll$OFFSET = 0;
+        private static final long _sigpoll$OFFSET = $LAYOUT.byteOffset(groupElement("_sigpoll"));
 
         /**
          * Offset for field:
@@ -2430,7 +2432,7 @@ public class siginfo_t {
                 return _call_addr$LAYOUT;
             }
 
-            private static final long _call_addr$OFFSET = 0;
+            private static final long _call_addr$OFFSET = $LAYOUT.byteOffset(groupElement("_call_addr"));
 
             /**
              * Offset for field:
@@ -2474,7 +2476,7 @@ public class siginfo_t {
                 return _syscall$LAYOUT;
             }
 
-            private static final long _syscall$OFFSET = 8;
+            private static final long _syscall$OFFSET = $LAYOUT.byteOffset(groupElement("_syscall"));
 
             /**
              * Offset for field:
@@ -2518,7 +2520,7 @@ public class siginfo_t {
                 return _arch$LAYOUT;
             }
 
-            private static final long _arch$OFFSET = 12;
+            private static final long _arch$OFFSET = $LAYOUT.byteOffset(groupElement("_arch"));
 
             /**
              * Offset for field:
@@ -2579,7 +2581,7 @@ public class siginfo_t {
             }
 
             /**
-             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
              * The returned segment has size {@code layout().byteSize()}
              */
             public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -2587,7 +2589,7 @@ public class siginfo_t {
             }
 
             /**
-             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
              * The returned segment has size {@code elementCount * layout().byteSize()}
              */
             public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -2611,7 +2613,7 @@ public class siginfo_t {
             return _sigsys$LAYOUT;
         }
 
-        private static final long _sigsys$OFFSET = 0;
+        private static final long _sigsys$OFFSET = $LAYOUT.byteOffset(groupElement("_sigsys"));
 
         /**
          * Offset for field:
@@ -2684,7 +2686,7 @@ public class siginfo_t {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -2692,7 +2694,7 @@ public class siginfo_t {
         }
 
         /**
-         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
          * The returned segment has size {@code elementCount * layout().byteSize()}
          */
         public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -2755,7 +2757,7 @@ public class siginfo_t {
         return _sifields$LAYOUT;
     }
 
-    private static final long _sifields$OFFSET = 16;
+    private static final long _sifields$OFFSET = $LAYOUT.byteOffset(groupElement("_sifields"));
 
     /**
      * Offset for field:
@@ -2945,7 +2947,7 @@ public class siginfo_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -2953,7 +2955,7 @@ public class siginfo_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

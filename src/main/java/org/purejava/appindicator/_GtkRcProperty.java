@@ -54,7 +54,7 @@ public class _GtkRcProperty {
         return type_name$LAYOUT;
     }
 
-    private static final long type_name$OFFSET = 0;
+    private static final long type_name$OFFSET = $LAYOUT.byteOffset(groupElement("type_name"));
 
     /**
      * Offset for field:
@@ -98,7 +98,7 @@ public class _GtkRcProperty {
         return property_name$LAYOUT;
     }
 
-    private static final long property_name$OFFSET = 4;
+    private static final long property_name$OFFSET = $LAYOUT.byteOffset(groupElement("property_name"));
 
     /**
      * Offset for field:
@@ -142,7 +142,7 @@ public class _GtkRcProperty {
         return origin$LAYOUT;
     }
 
-    private static final long origin$OFFSET = 8;
+    private static final long origin$OFFSET = $LAYOUT.byteOffset(groupElement("origin"));
 
     /**
      * Offset for field:
@@ -186,7 +186,7 @@ public class _GtkRcProperty {
         return value$LAYOUT;
     }
 
-    private static final long value$OFFSET = 16;
+    private static final long value$OFFSET = $LAYOUT.byteOffset(groupElement("value"));
 
     /**
      * Offset for field:
@@ -247,7 +247,7 @@ public class _GtkRcProperty {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -255,7 +255,7 @@ public class _GtkRcProperty {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -56,7 +56,7 @@ public class _GtkGLAreaClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -93,7 +93,11 @@ public class _GtkGLAreaClass {
      * gboolean (*render)(GtkGLArea *, GdkGLContext *)
      * }
      */
-    public class render {
+    public final static class render {
+
+        private render() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -130,9 +134,11 @@ public class _GtkGLAreaClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -151,7 +157,7 @@ public class _GtkGLAreaClass {
         return render$LAYOUT;
     }
 
-    private static final long render$OFFSET = 824;
+    private static final long render$OFFSET = $LAYOUT.byteOffset(groupElement("render"));
 
     /**
      * Offset for field:
@@ -188,7 +194,11 @@ public class _GtkGLAreaClass {
      * void (*resize)(GtkGLArea *, int, int)
      * }
      */
-    public class resize {
+    public final static class resize {
+
+        private resize() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -225,9 +235,11 @@ public class _GtkGLAreaClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -246,7 +258,7 @@ public class _GtkGLAreaClass {
         return resize$LAYOUT;
     }
 
-    private static final long resize$OFFSET = 832;
+    private static final long resize$OFFSET = $LAYOUT.byteOffset(groupElement("resize"));
 
     /**
      * Offset for field:
@@ -283,7 +295,11 @@ public class _GtkGLAreaClass {
      * GdkGLContext *(*create_context)(GtkGLArea *)
      * }
      */
-    public class create_context {
+    public final static class create_context {
+
+        private create_context() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -319,9 +335,11 @@ public class _GtkGLAreaClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -340,7 +358,7 @@ public class _GtkGLAreaClass {
         return create_context$LAYOUT;
     }
 
-    private static final long create_context$OFFSET = 840;
+    private static final long create_context$OFFSET = $LAYOUT.byteOffset(groupElement("create_context"));
 
     /**
      * Offset for field:
@@ -384,7 +402,7 @@ public class _GtkGLAreaClass {
         return _padding$LAYOUT;
     }
 
-    private static final long _padding$OFFSET = 848;
+    private static final long _padding$OFFSET = $LAYOUT.byteOffset(groupElement("_padding"));
 
     /**
      * Offset for field:
@@ -436,7 +454,7 @@ public class _GtkGLAreaClass {
      * }
      */
     public static MemorySegment _padding(MemorySegment struct, long index0) {
-        return (MemorySegment)_padding$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)_padding$ELEM_HANDLE.get(struct, _padding$OFFSET, index0);
     }
 
     /**
@@ -446,7 +464,7 @@ public class _GtkGLAreaClass {
      * }
      */
     public static void _padding(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        _padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        _padding$ELEM_HANDLE.set(struct, _padding$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -478,7 +496,7 @@ public class _GtkGLAreaClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -486,7 +504,7 @@ public class _GtkGLAreaClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

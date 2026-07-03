@@ -50,7 +50,7 @@ public class _GtkPopoverMenuClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -94,7 +94,7 @@ public class _GtkPopoverMenuClass {
         return reserved$LAYOUT;
     }
 
-    private static final long reserved$OFFSET = 1096;
+    private static final long reserved$OFFSET = $LAYOUT.byteOffset(groupElement("reserved"));
 
     /**
      * Offset for field:
@@ -146,7 +146,7 @@ public class _GtkPopoverMenuClass {
      * }
      */
     public static MemorySegment reserved(MemorySegment struct, long index0) {
-        return (MemorySegment)reserved$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)reserved$ELEM_HANDLE.get(struct, reserved$OFFSET, index0);
     }
 
     /**
@@ -156,7 +156,7 @@ public class _GtkPopoverMenuClass {
      * }
      */
     public static void reserved(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        reserved$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        reserved$ELEM_HANDLE.set(struct, reserved$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -188,7 +188,7 @@ public class _GtkPopoverMenuClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -196,7 +196,7 @@ public class _GtkPopoverMenuClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

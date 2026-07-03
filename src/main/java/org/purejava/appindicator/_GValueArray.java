@@ -54,7 +54,7 @@ public class _GValueArray {
         return n_values$LAYOUT;
     }
 
-    private static final long n_values$OFFSET = 0;
+    private static final long n_values$OFFSET = $LAYOUT.byteOffset(groupElement("n_values"));
 
     /**
      * Offset for field:
@@ -98,7 +98,7 @@ public class _GValueArray {
         return values$LAYOUT;
     }
 
-    private static final long values$OFFSET = 8;
+    private static final long values$OFFSET = $LAYOUT.byteOffset(groupElement("values"));
 
     /**
      * Offset for field:
@@ -142,7 +142,7 @@ public class _GValueArray {
         return n_prealloced$LAYOUT;
     }
 
-    private static final long n_prealloced$OFFSET = 16;
+    private static final long n_prealloced$OFFSET = $LAYOUT.byteOffset(groupElement("n_prealloced"));
 
     /**
      * Offset for field:
@@ -203,7 +203,7 @@ public class _GValueArray {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -211,7 +211,7 @@ public class _GValueArray {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

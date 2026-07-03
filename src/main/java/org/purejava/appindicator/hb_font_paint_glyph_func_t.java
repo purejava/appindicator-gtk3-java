@@ -14,19 +14,24 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
- * typedef void (*hb_font_paint_glyph_func_t)(hb_font_t *, void *, hb_codepoint_t, hb_paint_funcs_t *, void *, unsigned int, hb_color_t, void *)
+ * typedef hb_bool_t (*hb_font_paint_glyph_func_t)(hb_font_t *, void *, hb_codepoint_t, hb_paint_funcs_t *, void *, unsigned int, hb_color_t, void *)
  * }
  */
-public class hb_font_paint_glyph_func_t {
+public final class hb_font_paint_glyph_func_t {
+
+    private hb_font_paint_glyph_func_t() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
      */
     public interface Function {
-        void apply(MemorySegment font, MemorySegment font_data, int glyph, MemorySegment paint_funcs, MemorySegment paint_data, int palette_index, int foreground, MemorySegment user_data);
+        int apply(MemorySegment font, MemorySegment font_data, int glyph, MemorySegment paint_funcs, MemorySegment paint_data, int palette_index, int foreground, MemorySegment user_data);
     }
 
-    private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_INT,
         app_indicator_h.C_POINTER,
         app_indicator_h.C_POINTER,
         app_indicator_h.C_INT,
@@ -59,9 +64,11 @@ public class hb_font_paint_glyph_func_t {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment font, MemorySegment font_data, int glyph, MemorySegment paint_funcs, MemorySegment paint_data, int palette_index, int foreground, MemorySegment user_data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment font, MemorySegment font_data, int glyph, MemorySegment paint_funcs, MemorySegment paint_data, int palette_index, int foreground, MemorySegment user_data) {
         try {
-             DOWN$MH.invokeExact(funcPtr, font, font_data, glyph, paint_funcs, paint_data, palette_index, foreground, user_data);
+            return (int) DOWN$MH.invokeExact(funcPtr, font, font_data, glyph, paint_funcs, paint_data, palette_index, foreground, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

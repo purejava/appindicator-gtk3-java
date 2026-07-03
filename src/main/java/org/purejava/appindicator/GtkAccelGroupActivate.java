@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gboolean (*GtkAccelGroupActivate)(GtkAccelGroup *, GObject *, guint, GdkModifierType)
  * }
  */
-public class GtkAccelGroupActivate {
+public final class GtkAccelGroupActivate {
+
+    private GtkAccelGroupActivate() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -56,9 +60,11 @@ public class GtkAccelGroupActivate {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment accel_group, MemorySegment acceleratable, int keyval, int modifier) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment accel_group, MemorySegment acceleratable, int keyval, int modifier) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, accel_group, acceleratable, keyval, modifier);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

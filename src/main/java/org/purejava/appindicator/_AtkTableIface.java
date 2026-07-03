@@ -120,7 +120,7 @@ public class _AtkTableIface {
         return parent$LAYOUT;
     }
 
-    private static final long parent$OFFSET = 0;
+    private static final long parent$OFFSET = $LAYOUT.byteOffset(groupElement("parent"));
 
     /**
      * Offset for field:
@@ -157,7 +157,11 @@ public class _AtkTableIface {
      * AtkObject *(*ref_at)(AtkTable *, gint, gint)
      * }
      */
-    public class ref_at {
+    public final static class ref_at {
+
+        private ref_at() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -195,9 +199,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -216,7 +222,7 @@ public class _AtkTableIface {
         return ref_at$LAYOUT;
     }
 
-    private static final long ref_at$OFFSET = 16;
+    private static final long ref_at$OFFSET = $LAYOUT.byteOffset(groupElement("ref_at"));
 
     /**
      * Offset for field:
@@ -253,7 +259,11 @@ public class _AtkTableIface {
      * gint (*get_index_at)(AtkTable *, gint, gint)
      * }
      */
-    public class get_index_at {
+    public final static class get_index_at {
+
+        private get_index_at() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -291,9 +301,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -312,7 +324,7 @@ public class _AtkTableIface {
         return get_index_at$LAYOUT;
     }
 
-    private static final long get_index_at$OFFSET = 24;
+    private static final long get_index_at$OFFSET = $LAYOUT.byteOffset(groupElement("get_index_at"));
 
     /**
      * Offset for field:
@@ -349,7 +361,11 @@ public class _AtkTableIface {
      * gint (*get_column_at_index)(AtkTable *, gint)
      * }
      */
-    public class get_column_at_index {
+    public final static class get_column_at_index {
+
+        private get_column_at_index() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -386,9 +402,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -407,7 +425,7 @@ public class _AtkTableIface {
         return get_column_at_index$LAYOUT;
     }
 
-    private static final long get_column_at_index$OFFSET = 32;
+    private static final long get_column_at_index$OFFSET = $LAYOUT.byteOffset(groupElement("get_column_at_index"));
 
     /**
      * Offset for field:
@@ -444,7 +462,11 @@ public class _AtkTableIface {
      * gint (*get_row_at_index)(AtkTable *, gint)
      * }
      */
-    public class get_row_at_index {
+    public final static class get_row_at_index {
+
+        private get_row_at_index() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -481,9 +503,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -502,7 +526,7 @@ public class _AtkTableIface {
         return get_row_at_index$LAYOUT;
     }
 
-    private static final long get_row_at_index$OFFSET = 40;
+    private static final long get_row_at_index$OFFSET = $LAYOUT.byteOffset(groupElement("get_row_at_index"));
 
     /**
      * Offset for field:
@@ -539,7 +563,11 @@ public class _AtkTableIface {
      * gint (*get_n_columns)(AtkTable *)
      * }
      */
-    public class get_n_columns {
+    public final static class get_n_columns {
+
+        private get_n_columns() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -575,9 +603,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -596,7 +626,7 @@ public class _AtkTableIface {
         return get_n_columns$LAYOUT;
     }
 
-    private static final long get_n_columns$OFFSET = 48;
+    private static final long get_n_columns$OFFSET = $LAYOUT.byteOffset(groupElement("get_n_columns"));
 
     /**
      * Offset for field:
@@ -633,7 +663,11 @@ public class _AtkTableIface {
      * gint (*get_n_rows)(AtkTable *)
      * }
      */
-    public class get_n_rows {
+    public final static class get_n_rows {
+
+        private get_n_rows() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -669,9 +703,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -690,7 +726,7 @@ public class _AtkTableIface {
         return get_n_rows$LAYOUT;
     }
 
-    private static final long get_n_rows$OFFSET = 56;
+    private static final long get_n_rows$OFFSET = $LAYOUT.byteOffset(groupElement("get_n_rows"));
 
     /**
      * Offset for field:
@@ -727,7 +763,11 @@ public class _AtkTableIface {
      * gint (*get_column_extent_at)(AtkTable *, gint, gint)
      * }
      */
-    public class get_column_extent_at {
+    public final static class get_column_extent_at {
+
+        private get_column_extent_at() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -765,9 +805,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -786,7 +828,7 @@ public class _AtkTableIface {
         return get_column_extent_at$LAYOUT;
     }
 
-    private static final long get_column_extent_at$OFFSET = 64;
+    private static final long get_column_extent_at$OFFSET = $LAYOUT.byteOffset(groupElement("get_column_extent_at"));
 
     /**
      * Offset for field:
@@ -823,7 +865,11 @@ public class _AtkTableIface {
      * gint (*get_row_extent_at)(AtkTable *, gint, gint)
      * }
      */
-    public class get_row_extent_at {
+    public final static class get_row_extent_at {
+
+        private get_row_extent_at() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -861,9 +907,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -882,7 +930,7 @@ public class _AtkTableIface {
         return get_row_extent_at$LAYOUT;
     }
 
-    private static final long get_row_extent_at$OFFSET = 72;
+    private static final long get_row_extent_at$OFFSET = $LAYOUT.byteOffset(groupElement("get_row_extent_at"));
 
     /**
      * Offset for field:
@@ -919,7 +967,11 @@ public class _AtkTableIface {
      * AtkObject *(*get_caption)(AtkTable *)
      * }
      */
-    public class get_caption {
+    public final static class get_caption {
+
+        private get_caption() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -955,9 +1007,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -976,7 +1030,7 @@ public class _AtkTableIface {
         return get_caption$LAYOUT;
     }
 
-    private static final long get_caption$OFFSET = 80;
+    private static final long get_caption$OFFSET = $LAYOUT.byteOffset(groupElement("get_caption"));
 
     /**
      * Offset for field:
@@ -1013,7 +1067,11 @@ public class _AtkTableIface {
      * const gchar *(*get_column_description)(AtkTable *, gint)
      * }
      */
-    public class get_column_description {
+    public final static class get_column_description {
+
+        private get_column_description() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1050,9 +1108,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1071,7 +1131,7 @@ public class _AtkTableIface {
         return get_column_description$LAYOUT;
     }
 
-    private static final long get_column_description$OFFSET = 88;
+    private static final long get_column_description$OFFSET = $LAYOUT.byteOffset(groupElement("get_column_description"));
 
     /**
      * Offset for field:
@@ -1108,7 +1168,11 @@ public class _AtkTableIface {
      * AtkObject *(*get_column_header)(AtkTable *, gint)
      * }
      */
-    public class get_column_header {
+    public final static class get_column_header {
+
+        private get_column_header() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1145,9 +1209,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1166,7 +1232,7 @@ public class _AtkTableIface {
         return get_column_header$LAYOUT;
     }
 
-    private static final long get_column_header$OFFSET = 96;
+    private static final long get_column_header$OFFSET = $LAYOUT.byteOffset(groupElement("get_column_header"));
 
     /**
      * Offset for field:
@@ -1203,7 +1269,11 @@ public class _AtkTableIface {
      * const gchar *(*get_row_description)(AtkTable *, gint)
      * }
      */
-    public class get_row_description {
+    public final static class get_row_description {
+
+        private get_row_description() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1240,9 +1310,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1261,7 +1333,7 @@ public class _AtkTableIface {
         return get_row_description$LAYOUT;
     }
 
-    private static final long get_row_description$OFFSET = 104;
+    private static final long get_row_description$OFFSET = $LAYOUT.byteOffset(groupElement("get_row_description"));
 
     /**
      * Offset for field:
@@ -1298,7 +1370,11 @@ public class _AtkTableIface {
      * AtkObject *(*get_row_header)(AtkTable *, gint)
      * }
      */
-    public class get_row_header {
+    public final static class get_row_header {
+
+        private get_row_header() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1335,9 +1411,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1356,7 +1434,7 @@ public class _AtkTableIface {
         return get_row_header$LAYOUT;
     }
 
-    private static final long get_row_header$OFFSET = 112;
+    private static final long get_row_header$OFFSET = $LAYOUT.byteOffset(groupElement("get_row_header"));
 
     /**
      * Offset for field:
@@ -1393,7 +1471,11 @@ public class _AtkTableIface {
      * AtkObject *(*get_summary)(AtkTable *)
      * }
      */
-    public class get_summary {
+    public final static class get_summary {
+
+        private get_summary() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1429,9 +1511,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1450,7 +1534,7 @@ public class _AtkTableIface {
         return get_summary$LAYOUT;
     }
 
-    private static final long get_summary$OFFSET = 120;
+    private static final long get_summary$OFFSET = $LAYOUT.byteOffset(groupElement("get_summary"));
 
     /**
      * Offset for field:
@@ -1487,7 +1571,11 @@ public class _AtkTableIface {
      * void (*set_caption)(AtkTable *, AtkObject *)
      * }
      */
-    public class set_caption {
+    public final static class set_caption {
+
+        private set_caption() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1523,9 +1611,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1544,7 +1634,7 @@ public class _AtkTableIface {
         return set_caption$LAYOUT;
     }
 
-    private static final long set_caption$OFFSET = 128;
+    private static final long set_caption$OFFSET = $LAYOUT.byteOffset(groupElement("set_caption"));
 
     /**
      * Offset for field:
@@ -1581,7 +1671,11 @@ public class _AtkTableIface {
      * void (*set_column_description)(AtkTable *, gint, const gchar *)
      * }
      */
-    public class set_column_description {
+    public final static class set_column_description {
+
+        private set_column_description() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1618,9 +1712,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1639,7 +1735,7 @@ public class _AtkTableIface {
         return set_column_description$LAYOUT;
     }
 
-    private static final long set_column_description$OFFSET = 136;
+    private static final long set_column_description$OFFSET = $LAYOUT.byteOffset(groupElement("set_column_description"));
 
     /**
      * Offset for field:
@@ -1676,7 +1772,11 @@ public class _AtkTableIface {
      * void (*set_column_header)(AtkTable *, gint, AtkObject *)
      * }
      */
-    public class set_column_header {
+    public final static class set_column_header {
+
+        private set_column_header() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1713,9 +1813,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1734,7 +1836,7 @@ public class _AtkTableIface {
         return set_column_header$LAYOUT;
     }
 
-    private static final long set_column_header$OFFSET = 144;
+    private static final long set_column_header$OFFSET = $LAYOUT.byteOffset(groupElement("set_column_header"));
 
     /**
      * Offset for field:
@@ -1771,7 +1873,11 @@ public class _AtkTableIface {
      * void (*set_row_description)(AtkTable *, gint, const gchar *)
      * }
      */
-    public class set_row_description {
+    public final static class set_row_description {
+
+        private set_row_description() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1808,9 +1914,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1829,7 +1937,7 @@ public class _AtkTableIface {
         return set_row_description$LAYOUT;
     }
 
-    private static final long set_row_description$OFFSET = 152;
+    private static final long set_row_description$OFFSET = $LAYOUT.byteOffset(groupElement("set_row_description"));
 
     /**
      * Offset for field:
@@ -1866,7 +1974,11 @@ public class _AtkTableIface {
      * void (*set_row_header)(AtkTable *, gint, AtkObject *)
      * }
      */
-    public class set_row_header {
+    public final static class set_row_header {
+
+        private set_row_header() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1903,9 +2015,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1924,7 +2038,7 @@ public class _AtkTableIface {
         return set_row_header$LAYOUT;
     }
 
-    private static final long set_row_header$OFFSET = 160;
+    private static final long set_row_header$OFFSET = $LAYOUT.byteOffset(groupElement("set_row_header"));
 
     /**
      * Offset for field:
@@ -1961,7 +2075,11 @@ public class _AtkTableIface {
      * void (*set_summary)(AtkTable *, AtkObject *)
      * }
      */
-    public class set_summary {
+    public final static class set_summary {
+
+        private set_summary() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1997,9 +2115,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2018,7 +2138,7 @@ public class _AtkTableIface {
         return set_summary$LAYOUT;
     }
 
-    private static final long set_summary$OFFSET = 168;
+    private static final long set_summary$OFFSET = $LAYOUT.byteOffset(groupElement("set_summary"));
 
     /**
      * Offset for field:
@@ -2055,7 +2175,11 @@ public class _AtkTableIface {
      * gint (*get_selected_columns)(AtkTable *, gint **)
      * }
      */
-    public class get_selected_columns {
+    public final static class get_selected_columns {
+
+        private get_selected_columns() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2092,9 +2216,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2113,7 +2239,7 @@ public class _AtkTableIface {
         return get_selected_columns$LAYOUT;
     }
 
-    private static final long get_selected_columns$OFFSET = 176;
+    private static final long get_selected_columns$OFFSET = $LAYOUT.byteOffset(groupElement("get_selected_columns"));
 
     /**
      * Offset for field:
@@ -2150,7 +2276,11 @@ public class _AtkTableIface {
      * gint (*get_selected_rows)(AtkTable *, gint **)
      * }
      */
-    public class get_selected_rows {
+    public final static class get_selected_rows {
+
+        private get_selected_rows() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2187,9 +2317,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2208,7 +2340,7 @@ public class _AtkTableIface {
         return get_selected_rows$LAYOUT;
     }
 
-    private static final long get_selected_rows$OFFSET = 184;
+    private static final long get_selected_rows$OFFSET = $LAYOUT.byteOffset(groupElement("get_selected_rows"));
 
     /**
      * Offset for field:
@@ -2245,7 +2377,11 @@ public class _AtkTableIface {
      * gboolean (*is_column_selected)(AtkTable *, gint)
      * }
      */
-    public class is_column_selected {
+    public final static class is_column_selected {
+
+        private is_column_selected() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2282,9 +2418,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2303,7 +2441,7 @@ public class _AtkTableIface {
         return is_column_selected$LAYOUT;
     }
 
-    private static final long is_column_selected$OFFSET = 192;
+    private static final long is_column_selected$OFFSET = $LAYOUT.byteOffset(groupElement("is_column_selected"));
 
     /**
      * Offset for field:
@@ -2340,7 +2478,11 @@ public class _AtkTableIface {
      * gboolean (*is_row_selected)(AtkTable *, gint)
      * }
      */
-    public class is_row_selected {
+    public final static class is_row_selected {
+
+        private is_row_selected() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2377,9 +2519,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2398,7 +2542,7 @@ public class _AtkTableIface {
         return is_row_selected$LAYOUT;
     }
 
-    private static final long is_row_selected$OFFSET = 200;
+    private static final long is_row_selected$OFFSET = $LAYOUT.byteOffset(groupElement("is_row_selected"));
 
     /**
      * Offset for field:
@@ -2435,7 +2579,11 @@ public class _AtkTableIface {
      * gboolean (*is_selected)(AtkTable *, gint, gint)
      * }
      */
-    public class is_selected {
+    public final static class is_selected {
+
+        private is_selected() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2473,9 +2621,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2494,7 +2644,7 @@ public class _AtkTableIface {
         return is_selected$LAYOUT;
     }
 
-    private static final long is_selected$OFFSET = 208;
+    private static final long is_selected$OFFSET = $LAYOUT.byteOffset(groupElement("is_selected"));
 
     /**
      * Offset for field:
@@ -2531,7 +2681,11 @@ public class _AtkTableIface {
      * gboolean (*add_row_selection)(AtkTable *, gint)
      * }
      */
-    public class add_row_selection {
+    public final static class add_row_selection {
+
+        private add_row_selection() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2568,9 +2722,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2589,7 +2745,7 @@ public class _AtkTableIface {
         return add_row_selection$LAYOUT;
     }
 
-    private static final long add_row_selection$OFFSET = 216;
+    private static final long add_row_selection$OFFSET = $LAYOUT.byteOffset(groupElement("add_row_selection"));
 
     /**
      * Offset for field:
@@ -2626,7 +2782,11 @@ public class _AtkTableIface {
      * gboolean (*remove_row_selection)(AtkTable *, gint)
      * }
      */
-    public class remove_row_selection {
+    public final static class remove_row_selection {
+
+        private remove_row_selection() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2663,9 +2823,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2684,7 +2846,7 @@ public class _AtkTableIface {
         return remove_row_selection$LAYOUT;
     }
 
-    private static final long remove_row_selection$OFFSET = 224;
+    private static final long remove_row_selection$OFFSET = $LAYOUT.byteOffset(groupElement("remove_row_selection"));
 
     /**
      * Offset for field:
@@ -2721,7 +2883,11 @@ public class _AtkTableIface {
      * gboolean (*add_column_selection)(AtkTable *, gint)
      * }
      */
-    public class add_column_selection {
+    public final static class add_column_selection {
+
+        private add_column_selection() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2758,9 +2924,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2779,7 +2947,7 @@ public class _AtkTableIface {
         return add_column_selection$LAYOUT;
     }
 
-    private static final long add_column_selection$OFFSET = 232;
+    private static final long add_column_selection$OFFSET = $LAYOUT.byteOffset(groupElement("add_column_selection"));
 
     /**
      * Offset for field:
@@ -2816,7 +2984,11 @@ public class _AtkTableIface {
      * gboolean (*remove_column_selection)(AtkTable *, gint)
      * }
      */
-    public class remove_column_selection {
+    public final static class remove_column_selection {
+
+        private remove_column_selection() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2853,9 +3025,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2874,7 +3048,7 @@ public class _AtkTableIface {
         return remove_column_selection$LAYOUT;
     }
 
-    private static final long remove_column_selection$OFFSET = 240;
+    private static final long remove_column_selection$OFFSET = $LAYOUT.byteOffset(groupElement("remove_column_selection"));
 
     /**
      * Offset for field:
@@ -2911,7 +3085,11 @@ public class _AtkTableIface {
      * void (*row_inserted)(AtkTable *, gint, gint)
      * }
      */
-    public class row_inserted {
+    public final static class row_inserted {
+
+        private row_inserted() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2948,9 +3126,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2969,7 +3149,7 @@ public class _AtkTableIface {
         return row_inserted$LAYOUT;
     }
 
-    private static final long row_inserted$OFFSET = 248;
+    private static final long row_inserted$OFFSET = $LAYOUT.byteOffset(groupElement("row_inserted"));
 
     /**
      * Offset for field:
@@ -3006,7 +3186,11 @@ public class _AtkTableIface {
      * void (*column_inserted)(AtkTable *, gint, gint)
      * }
      */
-    public class column_inserted {
+    public final static class column_inserted {
+
+        private column_inserted() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3043,9 +3227,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3064,7 +3250,7 @@ public class _AtkTableIface {
         return column_inserted$LAYOUT;
     }
 
-    private static final long column_inserted$OFFSET = 256;
+    private static final long column_inserted$OFFSET = $LAYOUT.byteOffset(groupElement("column_inserted"));
 
     /**
      * Offset for field:
@@ -3101,7 +3287,11 @@ public class _AtkTableIface {
      * void (*row_deleted)(AtkTable *, gint, gint)
      * }
      */
-    public class row_deleted {
+    public final static class row_deleted {
+
+        private row_deleted() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3138,9 +3328,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3159,7 +3351,7 @@ public class _AtkTableIface {
         return row_deleted$LAYOUT;
     }
 
-    private static final long row_deleted$OFFSET = 264;
+    private static final long row_deleted$OFFSET = $LAYOUT.byteOffset(groupElement("row_deleted"));
 
     /**
      * Offset for field:
@@ -3196,7 +3388,11 @@ public class _AtkTableIface {
      * void (*column_deleted)(AtkTable *, gint, gint)
      * }
      */
-    public class column_deleted {
+    public final static class column_deleted {
+
+        private column_deleted() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3233,9 +3429,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, int _x2) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3254,7 +3452,7 @@ public class _AtkTableIface {
         return column_deleted$LAYOUT;
     }
 
-    private static final long column_deleted$OFFSET = 272;
+    private static final long column_deleted$OFFSET = $LAYOUT.byteOffset(groupElement("column_deleted"));
 
     /**
      * Offset for field:
@@ -3291,7 +3489,11 @@ public class _AtkTableIface {
      * void (*row_reordered)(AtkTable *)
      * }
      */
-    public class row_reordered {
+    public final static class row_reordered {
+
+        private row_reordered() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3326,9 +3528,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3347,7 +3551,7 @@ public class _AtkTableIface {
         return row_reordered$LAYOUT;
     }
 
-    private static final long row_reordered$OFFSET = 280;
+    private static final long row_reordered$OFFSET = $LAYOUT.byteOffset(groupElement("row_reordered"));
 
     /**
      * Offset for field:
@@ -3384,7 +3588,11 @@ public class _AtkTableIface {
      * void (*column_reordered)(AtkTable *)
      * }
      */
-    public class column_reordered {
+    public final static class column_reordered {
+
+        private column_reordered() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3419,9 +3627,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3440,7 +3650,7 @@ public class _AtkTableIface {
         return column_reordered$LAYOUT;
     }
 
-    private static final long column_reordered$OFFSET = 288;
+    private static final long column_reordered$OFFSET = $LAYOUT.byteOffset(groupElement("column_reordered"));
 
     /**
      * Offset for field:
@@ -3477,7 +3687,11 @@ public class _AtkTableIface {
      * void (*model_changed)(AtkTable *)
      * }
      */
-    public class model_changed {
+    public final static class model_changed {
+
+        private model_changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -3512,9 +3726,11 @@ public class _AtkTableIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -3533,7 +3749,7 @@ public class _AtkTableIface {
         return model_changed$LAYOUT;
     }
 
-    private static final long model_changed$OFFSET = 296;
+    private static final long model_changed$OFFSET = $LAYOUT.byteOffset(groupElement("model_changed"));
 
     /**
      * Offset for field:
@@ -3594,7 +3810,7 @@ public class _AtkTableIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -3602,7 +3818,7 @@ public class _AtkTableIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -14,20 +14,20 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
- * struct {
- *     int val[2];
+ * struct _libc_xmmreg {
+ *     __uint32_t element[4];
  * }
  * }
  */
-public class __kernel_fsid_t {
+public class _libc_xmmreg {
 
-    __kernel_fsid_t() {
+    _libc_xmmreg() {
         // Should not be called directly
     }
 
     private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.sequenceLayout(2, app_indicator_h.C_INT).withName("val")
-    ).withName("$anon$79:9");
+        MemoryLayout.sequenceLayout(4, app_indicator_h.C_INT).withName("element")
+    ).withName("_libc_xmmreg");
 
     /**
      * The layout of this struct
@@ -36,81 +36,81 @@ public class __kernel_fsid_t {
         return $LAYOUT;
     }
 
-    private static final SequenceLayout val$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("val"));
+    private static final SequenceLayout element$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("element"));
 
     /**
      * Layout for field:
      * {@snippet lang=c :
-     * int val[2]
+     * __uint32_t element[4]
      * }
      */
-    public static final SequenceLayout val$layout() {
-        return val$LAYOUT;
+    public static final SequenceLayout element$layout() {
+        return element$LAYOUT;
     }
 
-    private static final long val$OFFSET = 0;
+    private static final long element$OFFSET = $LAYOUT.byteOffset(groupElement("element"));
 
     /**
      * Offset for field:
      * {@snippet lang=c :
-     * int val[2]
+     * __uint32_t element[4]
      * }
      */
-    public static final long val$offset() {
-        return val$OFFSET;
+    public static final long element$offset() {
+        return element$OFFSET;
     }
 
     /**
      * Getter for field:
      * {@snippet lang=c :
-     * int val[2]
+     * __uint32_t element[4]
      * }
      */
-    public static MemorySegment val(MemorySegment struct) {
-        return struct.asSlice(val$OFFSET, val$LAYOUT.byteSize());
+    public static MemorySegment element(MemorySegment struct) {
+        return struct.asSlice(element$OFFSET, element$LAYOUT.byteSize());
     }
 
     /**
      * Setter for field:
      * {@snippet lang=c :
-     * int val[2]
+     * __uint32_t element[4]
      * }
      */
-    public static void val(MemorySegment struct, MemorySegment fieldValue) {
-        MemorySegment.copy(fieldValue, 0L, struct, val$OFFSET, val$LAYOUT.byteSize());
+    public static void element(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, element$OFFSET, element$LAYOUT.byteSize());
     }
 
-    private static long[] val$DIMS = { 2 };
+    private static long[] element$DIMS = { 4 };
 
     /**
      * Dimensions for array field:
      * {@snippet lang=c :
-     * int val[2]
+     * __uint32_t element[4]
      * }
      */
-    public static long[] val$dimensions() {
-        return val$DIMS;
+    public static long[] element$dimensions() {
+        return element$DIMS;
     }
-    private static final VarHandle val$ELEM_HANDLE = val$LAYOUT.varHandle(sequenceElement());
+    private static final VarHandle element$ELEM_HANDLE = element$LAYOUT.varHandle(sequenceElement());
 
     /**
      * Indexed getter for field:
      * {@snippet lang=c :
-     * int val[2]
+     * __uint32_t element[4]
      * }
      */
-    public static int val(MemorySegment struct, long index0) {
-        return (int)val$ELEM_HANDLE.get(struct, 0L, index0);
+    public static int element(MemorySegment struct, long index0) {
+        return (int)element$ELEM_HANDLE.get(struct, element$OFFSET, index0);
     }
 
     /**
      * Indexed setter for field:
      * {@snippet lang=c :
-     * int val[2]
+     * __uint32_t element[4]
      * }
      */
-    public static void val(MemorySegment struct, long index0, int fieldValue) {
-        val$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+    public static void element(MemorySegment struct, long index0, int fieldValue) {
+        element$ELEM_HANDLE.set(struct, element$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -142,7 +142,7 @@ public class __kernel_fsid_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -150,7 +150,7 @@ public class __kernel_fsid_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

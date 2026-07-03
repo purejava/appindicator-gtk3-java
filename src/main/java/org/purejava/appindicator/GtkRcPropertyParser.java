@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gboolean (*GtkRcPropertyParser)(const GParamSpec *, const GString *, GValue *)
  * }
  */
-public class GtkRcPropertyParser {
+public final class GtkRcPropertyParser {
+
+    private GtkRcPropertyParser() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -55,9 +59,11 @@ public class GtkRcPropertyParser {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment pspec, MemorySegment rc_string, MemorySegment property_value) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment pspec, MemorySegment rc_string, MemorySegment property_value) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, pspec, rc_string, property_value);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

@@ -56,7 +56,7 @@ public class _GtkActionableInterface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -93,7 +93,11 @@ public class _GtkActionableInterface {
      * const gchar *(*get_action_name)(GtkActionable *)
      * }
      */
-    public class get_action_name {
+    public final static class get_action_name {
+
+        private get_action_name() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -129,9 +133,11 @@ public class _GtkActionableInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -150,7 +156,7 @@ public class _GtkActionableInterface {
         return get_action_name$LAYOUT;
     }
 
-    private static final long get_action_name$OFFSET = 16;
+    private static final long get_action_name$OFFSET = $LAYOUT.byteOffset(groupElement("get_action_name"));
 
     /**
      * Offset for field:
@@ -187,7 +193,11 @@ public class _GtkActionableInterface {
      * void (*set_action_name)(GtkActionable *, const gchar *)
      * }
      */
-    public class set_action_name {
+    public final static class set_action_name {
+
+        private set_action_name() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -223,9 +233,11 @@ public class _GtkActionableInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -244,7 +256,7 @@ public class _GtkActionableInterface {
         return set_action_name$LAYOUT;
     }
 
-    private static final long set_action_name$OFFSET = 24;
+    private static final long set_action_name$OFFSET = $LAYOUT.byteOffset(groupElement("set_action_name"));
 
     /**
      * Offset for field:
@@ -281,7 +293,11 @@ public class _GtkActionableInterface {
      * GVariant *(*get_action_target_value)(GtkActionable *)
      * }
      */
-    public class get_action_target_value {
+    public final static class get_action_target_value {
+
+        private get_action_target_value() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -317,9 +333,11 @@ public class _GtkActionableInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -338,7 +356,7 @@ public class _GtkActionableInterface {
         return get_action_target_value$LAYOUT;
     }
 
-    private static final long get_action_target_value$OFFSET = 32;
+    private static final long get_action_target_value$OFFSET = $LAYOUT.byteOffset(groupElement("get_action_target_value"));
 
     /**
      * Offset for field:
@@ -375,7 +393,11 @@ public class _GtkActionableInterface {
      * void (*set_action_target_value)(GtkActionable *, GVariant *)
      * }
      */
-    public class set_action_target_value {
+    public final static class set_action_target_value {
+
+        private set_action_target_value() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -411,9 +433,11 @@ public class _GtkActionableInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -432,7 +456,7 @@ public class _GtkActionableInterface {
         return set_action_target_value$LAYOUT;
     }
 
-    private static final long set_action_target_value$OFFSET = 40;
+    private static final long set_action_target_value$OFFSET = $LAYOUT.byteOffset(groupElement("set_action_target_value"));
 
     /**
      * Offset for field:
@@ -493,7 +517,7 @@ public class _GtkActionableInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -501,7 +525,7 @@ public class _GtkActionableInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

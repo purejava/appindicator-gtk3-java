@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GDestroyNotify)(gpointer)
  * }
  */
-public class GDestroyNotify {
+public final class GDestroyNotify {
+
+    private GDestroyNotify() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -52,9 +56,11 @@ public class GDestroyNotify {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment data) {
         try {
              DOWN$MH.invokeExact(funcPtr, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

@@ -2,12 +2,15 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.lang.invoke.VarHandle;
-import java.util.function.Consumer;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
-import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
-import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
@@ -47,7 +50,7 @@ public class _GRecMutex {
         return p$LAYOUT;
     }
 
-    private static final long p$OFFSET = 0;
+    private static final long p$OFFSET = $LAYOUT.byteOffset(groupElement("p"));
 
     /**
      * Offset for field:
@@ -91,7 +94,7 @@ public class _GRecMutex {
         return i$LAYOUT;
     }
 
-    private static final long i$OFFSET = 8;
+    private static final long i$OFFSET = $LAYOUT.byteOffset(groupElement("i"));
 
     /**
      * Offset for field:
@@ -143,7 +146,7 @@ public class _GRecMutex {
      * }
      */
     public static int i(MemorySegment struct, long index0) {
-        return (int)i$ELEM_HANDLE.get(struct, 0L, index0);
+        return (int)i$ELEM_HANDLE.get(struct, i$OFFSET, index0);
     }
 
     /**
@@ -153,7 +156,7 @@ public class _GRecMutex {
      * }
      */
     public static void i(MemorySegment struct, long index0, int fieldValue) {
-        i$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        i$ELEM_HANDLE.set(struct, i$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -185,7 +188,7 @@ public class _GRecMutex {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -193,7 +196,7 @@ public class _GRecMutex {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

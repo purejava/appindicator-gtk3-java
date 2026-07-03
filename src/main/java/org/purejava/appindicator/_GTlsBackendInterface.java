@@ -66,7 +66,7 @@ public class _GTlsBackendInterface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -103,7 +103,11 @@ public class _GTlsBackendInterface {
      * gboolean (*supports_tls)(GTlsBackend *)
      * }
      */
-    public class supports_tls {
+    public final static class supports_tls {
+
+        private supports_tls() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -139,9 +143,11 @@ public class _GTlsBackendInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -160,7 +166,7 @@ public class _GTlsBackendInterface {
         return supports_tls$LAYOUT;
     }
 
-    private static final long supports_tls$OFFSET = 16;
+    private static final long supports_tls$OFFSET = $LAYOUT.byteOffset(groupElement("supports_tls"));
 
     /**
      * Offset for field:
@@ -197,7 +203,11 @@ public class _GTlsBackendInterface {
      * GType (*get_certificate_type)(void)
      * }
      */
-    public class get_certificate_type {
+    public final static class get_certificate_type {
+
+        private get_certificate_type() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -234,6 +244,8 @@ public class _GTlsBackendInterface {
         public static long invoke(MemorySegment funcPtr) {
             try {
                 return (long) DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -252,7 +264,7 @@ public class _GTlsBackendInterface {
         return get_certificate_type$LAYOUT;
     }
 
-    private static final long get_certificate_type$OFFSET = 24;
+    private static final long get_certificate_type$OFFSET = $LAYOUT.byteOffset(groupElement("get_certificate_type"));
 
     /**
      * Offset for field:
@@ -289,7 +301,11 @@ public class _GTlsBackendInterface {
      * GType (*get_client_connection_type)(void)
      * }
      */
-    public class get_client_connection_type {
+    public final static class get_client_connection_type {
+
+        private get_client_connection_type() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -326,6 +342,8 @@ public class _GTlsBackendInterface {
         public static long invoke(MemorySegment funcPtr) {
             try {
                 return (long) DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -344,7 +362,7 @@ public class _GTlsBackendInterface {
         return get_client_connection_type$LAYOUT;
     }
 
-    private static final long get_client_connection_type$OFFSET = 32;
+    private static final long get_client_connection_type$OFFSET = $LAYOUT.byteOffset(groupElement("get_client_connection_type"));
 
     /**
      * Offset for field:
@@ -381,7 +399,11 @@ public class _GTlsBackendInterface {
      * GType (*get_server_connection_type)(void)
      * }
      */
-    public class get_server_connection_type {
+    public final static class get_server_connection_type {
+
+        private get_server_connection_type() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -418,6 +440,8 @@ public class _GTlsBackendInterface {
         public static long invoke(MemorySegment funcPtr) {
             try {
                 return (long) DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -436,7 +460,7 @@ public class _GTlsBackendInterface {
         return get_server_connection_type$LAYOUT;
     }
 
-    private static final long get_server_connection_type$OFFSET = 40;
+    private static final long get_server_connection_type$OFFSET = $LAYOUT.byteOffset(groupElement("get_server_connection_type"));
 
     /**
      * Offset for field:
@@ -473,7 +497,11 @@ public class _GTlsBackendInterface {
      * GType (*get_file_database_type)(void)
      * }
      */
-    public class get_file_database_type {
+    public final static class get_file_database_type {
+
+        private get_file_database_type() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -510,6 +538,8 @@ public class _GTlsBackendInterface {
         public static long invoke(MemorySegment funcPtr) {
             try {
                 return (long) DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -528,7 +558,7 @@ public class _GTlsBackendInterface {
         return get_file_database_type$LAYOUT;
     }
 
-    private static final long get_file_database_type$OFFSET = 48;
+    private static final long get_file_database_type$OFFSET = $LAYOUT.byteOffset(groupElement("get_file_database_type"));
 
     /**
      * Offset for field:
@@ -565,7 +595,11 @@ public class _GTlsBackendInterface {
      * GTlsDatabase *(*get_default_database)(GTlsBackend *)
      * }
      */
-    public class get_default_database {
+    public final static class get_default_database {
+
+        private get_default_database() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -601,9 +635,11 @@ public class _GTlsBackendInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -622,7 +658,7 @@ public class _GTlsBackendInterface {
         return get_default_database$LAYOUT;
     }
 
-    private static final long get_default_database$OFFSET = 56;
+    private static final long get_default_database$OFFSET = $LAYOUT.byteOffset(groupElement("get_default_database"));
 
     /**
      * Offset for field:
@@ -659,7 +695,11 @@ public class _GTlsBackendInterface {
      * gboolean (*supports_dtls)(GTlsBackend *)
      * }
      */
-    public class supports_dtls {
+    public final static class supports_dtls {
+
+        private supports_dtls() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -695,9 +735,11 @@ public class _GTlsBackendInterface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -716,7 +758,7 @@ public class _GTlsBackendInterface {
         return supports_dtls$LAYOUT;
     }
 
-    private static final long supports_dtls$OFFSET = 64;
+    private static final long supports_dtls$OFFSET = $LAYOUT.byteOffset(groupElement("supports_dtls"));
 
     /**
      * Offset for field:
@@ -753,7 +795,11 @@ public class _GTlsBackendInterface {
      * GType (*get_dtls_client_connection_type)(void)
      * }
      */
-    public class get_dtls_client_connection_type {
+    public final static class get_dtls_client_connection_type {
+
+        private get_dtls_client_connection_type() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -790,6 +836,8 @@ public class _GTlsBackendInterface {
         public static long invoke(MemorySegment funcPtr) {
             try {
                 return (long) DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -808,7 +856,7 @@ public class _GTlsBackendInterface {
         return get_dtls_client_connection_type$LAYOUT;
     }
 
-    private static final long get_dtls_client_connection_type$OFFSET = 72;
+    private static final long get_dtls_client_connection_type$OFFSET = $LAYOUT.byteOffset(groupElement("get_dtls_client_connection_type"));
 
     /**
      * Offset for field:
@@ -845,7 +893,11 @@ public class _GTlsBackendInterface {
      * GType (*get_dtls_server_connection_type)(void)
      * }
      */
-    public class get_dtls_server_connection_type {
+    public final static class get_dtls_server_connection_type {
+
+        private get_dtls_server_connection_type() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -882,6 +934,8 @@ public class _GTlsBackendInterface {
         public static long invoke(MemorySegment funcPtr) {
             try {
                 return (long) DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -900,7 +954,7 @@ public class _GTlsBackendInterface {
         return get_dtls_server_connection_type$LAYOUT;
     }
 
-    private static final long get_dtls_server_connection_type$OFFSET = 80;
+    private static final long get_dtls_server_connection_type$OFFSET = $LAYOUT.byteOffset(groupElement("get_dtls_server_connection_type"));
 
     /**
      * Offset for field:
@@ -961,7 +1015,7 @@ public class _GTlsBackendInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -969,7 +1023,7 @@ public class _GTlsBackendInterface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

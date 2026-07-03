@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef hb_codepoint_t (*hb_unicode_mirroring_func_t)(hb_unicode_funcs_t *, hb_codepoint_t, void *)
  * }
  */
-public class hb_unicode_mirroring_func_t {
+public final class hb_unicode_mirroring_func_t {
+
+    private hb_unicode_mirroring_func_t() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -55,9 +59,11 @@ public class hb_unicode_mirroring_func_t {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment ufuncs, int unicode, MemorySegment user_data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment ufuncs, int unicode, MemorySegment user_data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, ufuncs, unicode, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

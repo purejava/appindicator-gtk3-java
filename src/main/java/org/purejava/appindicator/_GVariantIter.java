@@ -48,7 +48,7 @@ public class _GVariantIter {
         return x$LAYOUT;
     }
 
-    private static final long x$OFFSET = 0;
+    private static final long x$OFFSET = $LAYOUT.byteOffset(groupElement("x"));
 
     /**
      * Offset for field:
@@ -100,7 +100,7 @@ public class _GVariantIter {
      * }
      */
     public static long x(MemorySegment struct, long index0) {
-        return (long)x$ELEM_HANDLE.get(struct, 0L, index0);
+        return (long)x$ELEM_HANDLE.get(struct, x$OFFSET, index0);
     }
 
     /**
@@ -110,7 +110,7 @@ public class _GVariantIter {
      * }
      */
     public static void x(MemorySegment struct, long index0, long fieldValue) {
-        x$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        x$ELEM_HANDLE.set(struct, x$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -142,7 +142,7 @@ public class _GVariantIter {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -150,7 +150,7 @@ public class _GVariantIter {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -56,7 +56,7 @@ public class hb_glyph_info_t {
         return codepoint$LAYOUT;
     }
 
-    private static final long codepoint$OFFSET = 0;
+    private static final long codepoint$OFFSET = $LAYOUT.byteOffset(groupElement("codepoint"));
 
     /**
      * Offset for field:
@@ -100,7 +100,7 @@ public class hb_glyph_info_t {
         return mask$LAYOUT;
     }
 
-    private static final long mask$OFFSET = 4;
+    private static final long mask$OFFSET = $LAYOUT.byteOffset(groupElement("mask"));
 
     /**
      * Offset for field:
@@ -144,7 +144,7 @@ public class hb_glyph_info_t {
         return cluster$LAYOUT;
     }
 
-    private static final long cluster$OFFSET = 8;
+    private static final long cluster$OFFSET = $LAYOUT.byteOffset(groupElement("cluster"));
 
     /**
      * Offset for field:
@@ -188,7 +188,7 @@ public class hb_glyph_info_t {
         return var1$LAYOUT;
     }
 
-    private static final long var1$OFFSET = 12;
+    private static final long var1$OFFSET = $LAYOUT.byteOffset(groupElement("var1"));
 
     /**
      * Offset for field:
@@ -232,7 +232,7 @@ public class hb_glyph_info_t {
         return var2$LAYOUT;
     }
 
-    private static final long var2$OFFSET = 16;
+    private static final long var2$OFFSET = $LAYOUT.byteOffset(groupElement("var2"));
 
     /**
      * Offset for field:
@@ -293,7 +293,7 @@ public class hb_glyph_info_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -301,7 +301,7 @@ public class hb_glyph_info_t {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

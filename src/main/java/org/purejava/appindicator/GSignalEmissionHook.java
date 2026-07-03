@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gboolean (*GSignalEmissionHook)(GSignalInvocationHint *, guint, const GValue *, gpointer)
  * }
  */
-public class GSignalEmissionHook {
+public final class GSignalEmissionHook {
+
+    private GSignalEmissionHook() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -56,9 +60,11 @@ public class GSignalEmissionHook {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment ihint, int n_param_values, MemorySegment param_values, MemorySegment data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment ihint, int n_param_values, MemorySegment param_values, MemorySegment data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, ihint, n_param_values, param_values, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

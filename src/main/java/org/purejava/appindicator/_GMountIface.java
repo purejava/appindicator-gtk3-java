@@ -102,7 +102,7 @@ public class _GMountIface {
         return g_iface$LAYOUT;
     }
 
-    private static final long g_iface$OFFSET = 0;
+    private static final long g_iface$OFFSET = $LAYOUT.byteOffset(groupElement("g_iface"));
 
     /**
      * Offset for field:
@@ -139,7 +139,11 @@ public class _GMountIface {
      * void (*changed)(GMount *)
      * }
      */
-    public class changed {
+    public final static class changed {
+
+        private changed() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -174,9 +178,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -195,7 +201,7 @@ public class _GMountIface {
         return changed$LAYOUT;
     }
 
-    private static final long changed$OFFSET = 16;
+    private static final long changed$OFFSET = $LAYOUT.byteOffset(groupElement("changed"));
 
     /**
      * Offset for field:
@@ -232,7 +238,11 @@ public class _GMountIface {
      * void (*unmounted)(GMount *)
      * }
      */
-    public class unmounted {
+    public final static class unmounted {
+
+        private unmounted() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -267,9 +277,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -288,7 +300,7 @@ public class _GMountIface {
         return unmounted$LAYOUT;
     }
 
-    private static final long unmounted$OFFSET = 24;
+    private static final long unmounted$OFFSET = $LAYOUT.byteOffset(groupElement("unmounted"));
 
     /**
      * Offset for field:
@@ -325,7 +337,11 @@ public class _GMountIface {
      * GFile *(*get_root)(GMount *)
      * }
      */
-    public class get_root {
+    public final static class get_root {
+
+        private get_root() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -361,9 +377,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -382,7 +400,7 @@ public class _GMountIface {
         return get_root$LAYOUT;
     }
 
-    private static final long get_root$OFFSET = 32;
+    private static final long get_root$OFFSET = $LAYOUT.byteOffset(groupElement("get_root"));
 
     /**
      * Offset for field:
@@ -419,7 +437,11 @@ public class _GMountIface {
      * char *(*get_name)(GMount *)
      * }
      */
-    public class get_name {
+    public final static class get_name {
+
+        private get_name() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -455,9 +477,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -476,7 +500,7 @@ public class _GMountIface {
         return get_name$LAYOUT;
     }
 
-    private static final long get_name$OFFSET = 40;
+    private static final long get_name$OFFSET = $LAYOUT.byteOffset(groupElement("get_name"));
 
     /**
      * Offset for field:
@@ -513,7 +537,11 @@ public class _GMountIface {
      * GIcon *(*get_icon)(GMount *)
      * }
      */
-    public class get_icon {
+    public final static class get_icon {
+
+        private get_icon() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -549,9 +577,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -570,7 +600,7 @@ public class _GMountIface {
         return get_icon$LAYOUT;
     }
 
-    private static final long get_icon$OFFSET = 48;
+    private static final long get_icon$OFFSET = $LAYOUT.byteOffset(groupElement("get_icon"));
 
     /**
      * Offset for field:
@@ -607,7 +637,11 @@ public class _GMountIface {
      * char *(*get_uuid)(GMount *)
      * }
      */
-    public class get_uuid {
+    public final static class get_uuid {
+
+        private get_uuid() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -643,9 +677,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -664,7 +700,7 @@ public class _GMountIface {
         return get_uuid$LAYOUT;
     }
 
-    private static final long get_uuid$OFFSET = 56;
+    private static final long get_uuid$OFFSET = $LAYOUT.byteOffset(groupElement("get_uuid"));
 
     /**
      * Offset for field:
@@ -701,7 +737,11 @@ public class _GMountIface {
      * GVolume *(*get_volume)(GMount *)
      * }
      */
-    public class get_volume {
+    public final static class get_volume {
+
+        private get_volume() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -737,9 +777,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -758,7 +800,7 @@ public class _GMountIface {
         return get_volume$LAYOUT;
     }
 
-    private static final long get_volume$OFFSET = 64;
+    private static final long get_volume$OFFSET = $LAYOUT.byteOffset(groupElement("get_volume"));
 
     /**
      * Offset for field:
@@ -795,7 +837,11 @@ public class _GMountIface {
      * GDrive *(*get_drive)(GMount *)
      * }
      */
-    public class get_drive {
+    public final static class get_drive {
+
+        private get_drive() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -831,9 +877,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -852,7 +900,7 @@ public class _GMountIface {
         return get_drive$LAYOUT;
     }
 
-    private static final long get_drive$OFFSET = 72;
+    private static final long get_drive$OFFSET = $LAYOUT.byteOffset(groupElement("get_drive"));
 
     /**
      * Offset for field:
@@ -889,7 +937,11 @@ public class _GMountIface {
      * gboolean (*can_unmount)(GMount *)
      * }
      */
-    public class can_unmount {
+    public final static class can_unmount {
+
+        private can_unmount() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -925,9 +977,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -946,7 +1000,7 @@ public class _GMountIface {
         return can_unmount$LAYOUT;
     }
 
-    private static final long can_unmount$OFFSET = 80;
+    private static final long can_unmount$OFFSET = $LAYOUT.byteOffset(groupElement("can_unmount"));
 
     /**
      * Offset for field:
@@ -983,7 +1037,11 @@ public class _GMountIface {
      * gboolean (*can_eject)(GMount *)
      * }
      */
-    public class can_eject {
+    public final static class can_eject {
+
+        private can_eject() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1019,9 +1077,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1040,7 +1100,7 @@ public class _GMountIface {
         return can_eject$LAYOUT;
     }
 
-    private static final long can_eject$OFFSET = 88;
+    private static final long can_eject$OFFSET = $LAYOUT.byteOffset(groupElement("can_eject"));
 
     /**
      * Offset for field:
@@ -1077,7 +1137,11 @@ public class _GMountIface {
      * void (*unmount)(GMount *, GMountUnmountFlags, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class unmount {
+    public final static class unmount {
+
+        private unmount() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1116,9 +1180,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1137,7 +1203,7 @@ public class _GMountIface {
         return unmount$LAYOUT;
     }
 
-    private static final long unmount$OFFSET = 96;
+    private static final long unmount$OFFSET = $LAYOUT.byteOffset(groupElement("unmount"));
 
     /**
      * Offset for field:
@@ -1174,7 +1240,11 @@ public class _GMountIface {
      * gboolean (*unmount_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public class unmount_finish {
+    public final static class unmount_finish {
+
+        private unmount_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1212,9 +1282,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1233,7 +1305,7 @@ public class _GMountIface {
         return unmount_finish$LAYOUT;
     }
 
-    private static final long unmount_finish$OFFSET = 104;
+    private static final long unmount_finish$OFFSET = $LAYOUT.byteOffset(groupElement("unmount_finish"));
 
     /**
      * Offset for field:
@@ -1270,7 +1342,11 @@ public class _GMountIface {
      * void (*eject)(GMount *, GMountUnmountFlags, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class eject {
+    public final static class eject {
+
+        private eject() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1309,9 +1385,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1330,7 +1408,7 @@ public class _GMountIface {
         return eject$LAYOUT;
     }
 
-    private static final long eject$OFFSET = 112;
+    private static final long eject$OFFSET = $LAYOUT.byteOffset(groupElement("eject"));
 
     /**
      * Offset for field:
@@ -1367,7 +1445,11 @@ public class _GMountIface {
      * gboolean (*eject_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public class eject_finish {
+    public final static class eject_finish {
+
+        private eject_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1405,9 +1487,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1426,7 +1510,7 @@ public class _GMountIface {
         return eject_finish$LAYOUT;
     }
 
-    private static final long eject_finish$OFFSET = 120;
+    private static final long eject_finish$OFFSET = $LAYOUT.byteOffset(groupElement("eject_finish"));
 
     /**
      * Offset for field:
@@ -1463,7 +1547,11 @@ public class _GMountIface {
      * void (*remount)(GMount *, GMountMountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class remount {
+    public final static class remount {
+
+        private remount() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1503,9 +1591,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1524,7 +1614,7 @@ public class _GMountIface {
         return remount$LAYOUT;
     }
 
-    private static final long remount$OFFSET = 128;
+    private static final long remount$OFFSET = $LAYOUT.byteOffset(groupElement("remount"));
 
     /**
      * Offset for field:
@@ -1561,7 +1651,11 @@ public class _GMountIface {
      * gboolean (*remount_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public class remount_finish {
+    public final static class remount_finish {
+
+        private remount_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1599,9 +1693,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1620,7 +1716,7 @@ public class _GMountIface {
         return remount_finish$LAYOUT;
     }
 
-    private static final long remount_finish$OFFSET = 136;
+    private static final long remount_finish$OFFSET = $LAYOUT.byteOffset(groupElement("remount_finish"));
 
     /**
      * Offset for field:
@@ -1657,7 +1753,11 @@ public class _GMountIface {
      * void (*guess_content_type)(GMount *, gboolean, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class guess_content_type {
+    public final static class guess_content_type {
+
+        private guess_content_type() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1696,9 +1796,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1717,7 +1819,7 @@ public class _GMountIface {
         return guess_content_type$LAYOUT;
     }
 
-    private static final long guess_content_type$OFFSET = 144;
+    private static final long guess_content_type$OFFSET = $LAYOUT.byteOffset(groupElement("guess_content_type"));
 
     /**
      * Offset for field:
@@ -1754,7 +1856,11 @@ public class _GMountIface {
      * gchar **(*guess_content_type_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public class guess_content_type_finish {
+    public final static class guess_content_type_finish {
+
+        private guess_content_type_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1792,9 +1898,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1813,7 +1921,7 @@ public class _GMountIface {
         return guess_content_type_finish$LAYOUT;
     }
 
-    private static final long guess_content_type_finish$OFFSET = 152;
+    private static final long guess_content_type_finish$OFFSET = $LAYOUT.byteOffset(groupElement("guess_content_type_finish"));
 
     /**
      * Offset for field:
@@ -1850,7 +1958,11 @@ public class _GMountIface {
      * gchar **(*guess_content_type_sync)(GMount *, gboolean, GCancellable *, GError **)
      * }
      */
-    public class guess_content_type_sync {
+    public final static class guess_content_type_sync {
+
+        private guess_content_type_sync() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1889,9 +2001,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1910,7 +2024,7 @@ public class _GMountIface {
         return guess_content_type_sync$LAYOUT;
     }
 
-    private static final long guess_content_type_sync$OFFSET = 160;
+    private static final long guess_content_type_sync$OFFSET = $LAYOUT.byteOffset(groupElement("guess_content_type_sync"));
 
     /**
      * Offset for field:
@@ -1947,7 +2061,11 @@ public class _GMountIface {
      * void (*pre_unmount)(GMount *)
      * }
      */
-    public class pre_unmount {
+    public final static class pre_unmount {
+
+        private pre_unmount() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1982,9 +2100,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2003,7 +2123,7 @@ public class _GMountIface {
         return pre_unmount$LAYOUT;
     }
 
-    private static final long pre_unmount$OFFSET = 168;
+    private static final long pre_unmount$OFFSET = $LAYOUT.byteOffset(groupElement("pre_unmount"));
 
     /**
      * Offset for field:
@@ -2040,7 +2160,11 @@ public class _GMountIface {
      * void (*unmount_with_operation)(GMount *, GMountUnmountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class unmount_with_operation {
+    public final static class unmount_with_operation {
+
+        private unmount_with_operation() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2080,9 +2204,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2101,7 +2227,7 @@ public class _GMountIface {
         return unmount_with_operation$LAYOUT;
     }
 
-    private static final long unmount_with_operation$OFFSET = 176;
+    private static final long unmount_with_operation$OFFSET = $LAYOUT.byteOffset(groupElement("unmount_with_operation"));
 
     /**
      * Offset for field:
@@ -2138,7 +2264,11 @@ public class _GMountIface {
      * gboolean (*unmount_with_operation_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public class unmount_with_operation_finish {
+    public final static class unmount_with_operation_finish {
+
+        private unmount_with_operation_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2176,9 +2306,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2197,7 +2329,7 @@ public class _GMountIface {
         return unmount_with_operation_finish$LAYOUT;
     }
 
-    private static final long unmount_with_operation_finish$OFFSET = 184;
+    private static final long unmount_with_operation_finish$OFFSET = $LAYOUT.byteOffset(groupElement("unmount_with_operation_finish"));
 
     /**
      * Offset for field:
@@ -2234,7 +2366,11 @@ public class _GMountIface {
      * void (*eject_with_operation)(GMount *, GMountUnmountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class eject_with_operation {
+    public final static class eject_with_operation {
+
+        private eject_with_operation() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2274,9 +2410,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2295,7 +2433,7 @@ public class _GMountIface {
         return eject_with_operation$LAYOUT;
     }
 
-    private static final long eject_with_operation$OFFSET = 192;
+    private static final long eject_with_operation$OFFSET = $LAYOUT.byteOffset(groupElement("eject_with_operation"));
 
     /**
      * Offset for field:
@@ -2332,7 +2470,11 @@ public class _GMountIface {
      * gboolean (*eject_with_operation_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public class eject_with_operation_finish {
+    public final static class eject_with_operation_finish {
+
+        private eject_with_operation_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2370,9 +2512,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2391,7 +2535,7 @@ public class _GMountIface {
         return eject_with_operation_finish$LAYOUT;
     }
 
-    private static final long eject_with_operation_finish$OFFSET = 200;
+    private static final long eject_with_operation_finish$OFFSET = $LAYOUT.byteOffset(groupElement("eject_with_operation_finish"));
 
     /**
      * Offset for field:
@@ -2428,7 +2572,11 @@ public class _GMountIface {
      * GFile *(*get_default_location)(GMount *)
      * }
      */
-    public class get_default_location {
+    public final static class get_default_location {
+
+        private get_default_location() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2464,9 +2612,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2485,7 +2635,7 @@ public class _GMountIface {
         return get_default_location$LAYOUT;
     }
 
-    private static final long get_default_location$OFFSET = 208;
+    private static final long get_default_location$OFFSET = $LAYOUT.byteOffset(groupElement("get_default_location"));
 
     /**
      * Offset for field:
@@ -2522,7 +2672,11 @@ public class _GMountIface {
      * const gchar *(*get_sort_key)(GMount *)
      * }
      */
-    public class get_sort_key {
+    public final static class get_sort_key {
+
+        private get_sort_key() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2558,9 +2712,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2579,7 +2735,7 @@ public class _GMountIface {
         return get_sort_key$LAYOUT;
     }
 
-    private static final long get_sort_key$OFFSET = 216;
+    private static final long get_sort_key$OFFSET = $LAYOUT.byteOffset(groupElement("get_sort_key"));
 
     /**
      * Offset for field:
@@ -2616,7 +2772,11 @@ public class _GMountIface {
      * GIcon *(*get_symbolic_icon)(GMount *)
      * }
      */
-    public class get_symbolic_icon {
+    public final static class get_symbolic_icon {
+
+        private get_symbolic_icon() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -2652,9 +2812,11 @@ public class _GMountIface {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -2673,7 +2835,7 @@ public class _GMountIface {
         return get_symbolic_icon$LAYOUT;
     }
 
-    private static final long get_symbolic_icon$OFFSET = 224;
+    private static final long get_symbolic_icon$OFFSET = $LAYOUT.byteOffset(groupElement("get_symbolic_icon"));
 
     /**
      * Offset for field:
@@ -2734,7 +2896,7 @@ public class _GMountIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -2742,7 +2904,7 @@ public class _GMountIface {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gboolean (*GdkWindowChildFunc)(GdkWindow *, gpointer)
  * }
  */
-public class GdkWindowChildFunc {
+public final class GdkWindowChildFunc {
+
+    private GdkWindowChildFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -54,9 +58,11 @@ public class GdkWindowChildFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment window, MemorySegment user_data) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment window, MemorySegment user_data) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, window, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

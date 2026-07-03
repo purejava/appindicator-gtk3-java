@@ -60,7 +60,7 @@ public class _GTypeModuleClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -97,7 +97,11 @@ public class _GTypeModuleClass {
      * gboolean (*load)(GTypeModule *)
      * }
      */
-    public class load {
+    public final static class load {
+
+        private load() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -133,9 +137,11 @@ public class _GTypeModuleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -154,7 +160,7 @@ public class _GTypeModuleClass {
         return load$LAYOUT;
     }
 
-    private static final long load$OFFSET = 136;
+    private static final long load$OFFSET = $LAYOUT.byteOffset(groupElement("load"));
 
     /**
      * Offset for field:
@@ -191,7 +197,11 @@ public class _GTypeModuleClass {
      * void (*unload)(GTypeModule *)
      * }
      */
-    public class unload {
+    public final static class unload {
+
+        private unload() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -226,9 +236,11 @@ public class _GTypeModuleClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -247,7 +259,7 @@ public class _GTypeModuleClass {
         return unload$LAYOUT;
     }
 
-    private static final long unload$OFFSET = 144;
+    private static final long unload$OFFSET = $LAYOUT.byteOffset(groupElement("unload"));
 
     /**
      * Offset for field:
@@ -284,7 +296,11 @@ public class _GTypeModuleClass {
      * void (*reserved1)(void)
      * }
      */
-    public class reserved1 {
+    public final static class reserved1 {
+
+        private reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -320,6 +336,8 @@ public class _GTypeModuleClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -338,7 +356,7 @@ public class _GTypeModuleClass {
         return reserved1$LAYOUT;
     }
 
-    private static final long reserved1$OFFSET = 152;
+    private static final long reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("reserved1"));
 
     /**
      * Offset for field:
@@ -375,7 +393,11 @@ public class _GTypeModuleClass {
      * void (*reserved2)(void)
      * }
      */
-    public class reserved2 {
+    public final static class reserved2 {
+
+        private reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -411,6 +433,8 @@ public class _GTypeModuleClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -429,7 +453,7 @@ public class _GTypeModuleClass {
         return reserved2$LAYOUT;
     }
 
-    private static final long reserved2$OFFSET = 160;
+    private static final long reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("reserved2"));
 
     /**
      * Offset for field:
@@ -466,7 +490,11 @@ public class _GTypeModuleClass {
      * void (*reserved3)(void)
      * }
      */
-    public class reserved3 {
+    public final static class reserved3 {
+
+        private reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -502,6 +530,8 @@ public class _GTypeModuleClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -520,7 +550,7 @@ public class _GTypeModuleClass {
         return reserved3$LAYOUT;
     }
 
-    private static final long reserved3$OFFSET = 168;
+    private static final long reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("reserved3"));
 
     /**
      * Offset for field:
@@ -557,7 +587,11 @@ public class _GTypeModuleClass {
      * void (*reserved4)(void)
      * }
      */
-    public class reserved4 {
+    public final static class reserved4 {
+
+        private reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -593,6 +627,8 @@ public class _GTypeModuleClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -611,7 +647,7 @@ public class _GTypeModuleClass {
         return reserved4$LAYOUT;
     }
 
-    private static final long reserved4$OFFSET = 176;
+    private static final long reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("reserved4"));
 
     /**
      * Offset for field:
@@ -672,7 +708,7 @@ public class _GTypeModuleClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -680,7 +716,7 @@ public class _GTypeModuleClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

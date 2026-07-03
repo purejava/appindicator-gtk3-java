@@ -70,7 +70,7 @@ public class _GFileInputStreamClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -107,7 +107,11 @@ public class _GFileInputStreamClass {
      * goffset (*tell)(GFileInputStream *)
      * }
      */
-    public class tell {
+    public final static class tell {
+
+        private tell() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -143,9 +147,11 @@ public class _GFileInputStreamClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static long invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static long invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (long) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -164,7 +170,7 @@ public class _GFileInputStreamClass {
         return tell$LAYOUT;
     }
 
-    private static final long tell$OFFSET = 248;
+    private static final long tell$OFFSET = $LAYOUT.byteOffset(groupElement("tell"));
 
     /**
      * Offset for field:
@@ -201,7 +207,11 @@ public class _GFileInputStreamClass {
      * gboolean (*can_seek)(GFileInputStream *)
      * }
      */
-    public class can_seek {
+    public final static class can_seek {
+
+        private can_seek() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -237,9 +247,11 @@ public class _GFileInputStreamClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -258,7 +270,7 @@ public class _GFileInputStreamClass {
         return can_seek$LAYOUT;
     }
 
-    private static final long can_seek$OFFSET = 256;
+    private static final long can_seek$OFFSET = $LAYOUT.byteOffset(groupElement("can_seek"));
 
     /**
      * Offset for field:
@@ -295,7 +307,11 @@ public class _GFileInputStreamClass {
      * gboolean (*seek)(GFileInputStream *, goffset, GSeekType, GCancellable *, GError **)
      * }
      */
-    public class seek {
+    public final static class seek {
+
+        private seek() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -335,9 +351,11 @@ public class _GFileInputStreamClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, long _x1, int _x2, MemorySegment _x3, MemorySegment _x4) {
+        public static int invoke(MemorySegment funcPtr, MemorySegment _x0, long _x1, int _x2, MemorySegment _x3, MemorySegment _x4) {
             try {
                 return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -356,7 +374,7 @@ public class _GFileInputStreamClass {
         return seek$LAYOUT;
     }
 
-    private static final long seek$OFFSET = 264;
+    private static final long seek$OFFSET = $LAYOUT.byteOffset(groupElement("seek"));
 
     /**
      * Offset for field:
@@ -393,7 +411,11 @@ public class _GFileInputStreamClass {
      * GFileInfo *(*query_info)(GFileInputStream *, const char *, GCancellable *, GError **)
      * }
      */
-    public class query_info {
+    public final static class query_info {
+
+        private query_info() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -432,9 +454,11 @@ public class _GFileInputStreamClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -453,7 +477,7 @@ public class _GFileInputStreamClass {
         return query_info$LAYOUT;
     }
 
-    private static final long query_info$OFFSET = 272;
+    private static final long query_info$OFFSET = $LAYOUT.byteOffset(groupElement("query_info"));
 
     /**
      * Offset for field:
@@ -490,7 +514,11 @@ public class _GFileInputStreamClass {
      * void (*query_info_async)(GFileInputStream *, const char *, int, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public class query_info_async {
+    public final static class query_info_async {
+
+        private query_info_async() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -530,9 +558,11 @@ public class _GFileInputStreamClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -551,7 +581,7 @@ public class _GFileInputStreamClass {
         return query_info_async$LAYOUT;
     }
 
-    private static final long query_info_async$OFFSET = 280;
+    private static final long query_info_async$OFFSET = $LAYOUT.byteOffset(groupElement("query_info_async"));
 
     /**
      * Offset for field:
@@ -588,7 +618,11 @@ public class _GFileInputStreamClass {
      * GFileInfo *(*query_info_finish)(GFileInputStream *, GAsyncResult *, GError **)
      * }
      */
-    public class query_info_finish {
+    public final static class query_info_finish {
+
+        private query_info_finish() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -626,9 +660,11 @@ public class _GFileInputStreamClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+        public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
             try {
                 return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -647,7 +683,7 @@ public class _GFileInputStreamClass {
         return query_info_finish$LAYOUT;
     }
 
-    private static final long query_info_finish$OFFSET = 288;
+    private static final long query_info_finish$OFFSET = $LAYOUT.byteOffset(groupElement("query_info_finish"));
 
     /**
      * Offset for field:
@@ -684,7 +720,11 @@ public class _GFileInputStreamClass {
      * void (*_g_reserved1)(void)
      * }
      */
-    public class _g_reserved1 {
+    public final static class _g_reserved1 {
+
+        private _g_reserved1() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -720,6 +760,8 @@ public class _GFileInputStreamClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -738,7 +780,7 @@ public class _GFileInputStreamClass {
         return _g_reserved1$LAYOUT;
     }
 
-    private static final long _g_reserved1$OFFSET = 296;
+    private static final long _g_reserved1$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved1"));
 
     /**
      * Offset for field:
@@ -775,7 +817,11 @@ public class _GFileInputStreamClass {
      * void (*_g_reserved2)(void)
      * }
      */
-    public class _g_reserved2 {
+    public final static class _g_reserved2 {
+
+        private _g_reserved2() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -811,6 +857,8 @@ public class _GFileInputStreamClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -829,7 +877,7 @@ public class _GFileInputStreamClass {
         return _g_reserved2$LAYOUT;
     }
 
-    private static final long _g_reserved2$OFFSET = 304;
+    private static final long _g_reserved2$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved2"));
 
     /**
      * Offset for field:
@@ -866,7 +914,11 @@ public class _GFileInputStreamClass {
      * void (*_g_reserved3)(void)
      * }
      */
-    public class _g_reserved3 {
+    public final static class _g_reserved3 {
+
+        private _g_reserved3() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -902,6 +954,8 @@ public class _GFileInputStreamClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -920,7 +974,7 @@ public class _GFileInputStreamClass {
         return _g_reserved3$LAYOUT;
     }
 
-    private static final long _g_reserved3$OFFSET = 312;
+    private static final long _g_reserved3$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved3"));
 
     /**
      * Offset for field:
@@ -957,7 +1011,11 @@ public class _GFileInputStreamClass {
      * void (*_g_reserved4)(void)
      * }
      */
-    public class _g_reserved4 {
+    public final static class _g_reserved4 {
+
+        private _g_reserved4() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -993,6 +1051,8 @@ public class _GFileInputStreamClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1011,7 +1071,7 @@ public class _GFileInputStreamClass {
         return _g_reserved4$LAYOUT;
     }
 
-    private static final long _g_reserved4$OFFSET = 320;
+    private static final long _g_reserved4$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved4"));
 
     /**
      * Offset for field:
@@ -1048,7 +1108,11 @@ public class _GFileInputStreamClass {
      * void (*_g_reserved5)(void)
      * }
      */
-    public class _g_reserved5 {
+    public final static class _g_reserved5 {
+
+        private _g_reserved5() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -1084,6 +1148,8 @@ public class _GFileInputStreamClass {
         public static void invoke(MemorySegment funcPtr) {
             try {
                  DOWN$MH.invokeExact(funcPtr);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -1102,7 +1168,7 @@ public class _GFileInputStreamClass {
         return _g_reserved5$LAYOUT;
     }
 
-    private static final long _g_reserved5$OFFSET = 328;
+    private static final long _g_reserved5$OFFSET = $LAYOUT.byteOffset(groupElement("_g_reserved5"));
 
     /**
      * Offset for field:
@@ -1163,7 +1229,7 @@ public class _GFileInputStreamClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -1171,7 +1237,7 @@ public class _GFileInputStreamClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

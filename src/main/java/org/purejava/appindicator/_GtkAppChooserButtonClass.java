@@ -52,7 +52,7 @@ public class _GtkAppChooserButtonClass {
         return parent_class$LAYOUT;
     }
 
-    private static final long parent_class$OFFSET = 0;
+    private static final long parent_class$OFFSET = $LAYOUT.byteOffset(groupElement("parent_class"));
 
     /**
      * Offset for field:
@@ -89,7 +89,11 @@ public class _GtkAppChooserButtonClass {
      * void (*custom_item_activated)(GtkAppChooserButton *, const gchar *)
      * }
      */
-    public class custom_item_activated {
+    public final static class custom_item_activated {
+
+        private custom_item_activated() {
+            // Should not be called directly
+        }
 
         /**
          * The function pointer signature, expressed as a functional interface
@@ -125,9 +129,11 @@ public class _GtkAppChooserButtonClass {
         /**
          * Invoke the upcall stub {@code funcPtr}, with given parameters
          */
-        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+        public static void invoke(MemorySegment funcPtr, MemorySegment _x0, MemorySegment _x1) {
             try {
                  DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Error | RuntimeException ex) {
+                throw ex;
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }
@@ -146,7 +152,7 @@ public class _GtkAppChooserButtonClass {
         return custom_item_activated$LAYOUT;
     }
 
-    private static final long custom_item_activated$OFFSET = 1048;
+    private static final long custom_item_activated$OFFSET = $LAYOUT.byteOffset(groupElement("custom_item_activated"));
 
     /**
      * Offset for field:
@@ -190,7 +196,7 @@ public class _GtkAppChooserButtonClass {
         return padding$LAYOUT;
     }
 
-    private static final long padding$OFFSET = 1056;
+    private static final long padding$OFFSET = $LAYOUT.byteOffset(groupElement("padding"));
 
     /**
      * Offset for field:
@@ -242,7 +248,7 @@ public class _GtkAppChooserButtonClass {
      * }
      */
     public static MemorySegment padding(MemorySegment struct, long index0) {
-        return (MemorySegment)padding$ELEM_HANDLE.get(struct, 0L, index0);
+        return (MemorySegment)padding$ELEM_HANDLE.get(struct, padding$OFFSET, index0);
     }
 
     /**
@@ -252,7 +258,7 @@ public class _GtkAppChooserButtonClass {
      * }
      */
     public static void padding(MemorySegment struct, long index0, MemorySegment fieldValue) {
-        padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+        padding$ELEM_HANDLE.set(struct, padding$OFFSET, index0, fieldValue);
     }
 
     /**
@@ -284,7 +290,7 @@ public class _GtkAppChooserButtonClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -292,7 +298,7 @@ public class _GtkAppChooserButtonClass {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

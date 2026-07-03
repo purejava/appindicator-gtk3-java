@@ -70,7 +70,7 @@ public class _GTokenValue {
         return v_symbol$LAYOUT;
     }
 
-    private static final long v_symbol$OFFSET = 0;
+    private static final long v_symbol$OFFSET = $LAYOUT.byteOffset(groupElement("v_symbol"));
 
     /**
      * Offset for field:
@@ -114,7 +114,7 @@ public class _GTokenValue {
         return v_identifier$LAYOUT;
     }
 
-    private static final long v_identifier$OFFSET = 0;
+    private static final long v_identifier$OFFSET = $LAYOUT.byteOffset(groupElement("v_identifier"));
 
     /**
      * Offset for field:
@@ -158,7 +158,7 @@ public class _GTokenValue {
         return v_binary$LAYOUT;
     }
 
-    private static final long v_binary$OFFSET = 0;
+    private static final long v_binary$OFFSET = $LAYOUT.byteOffset(groupElement("v_binary"));
 
     /**
      * Offset for field:
@@ -202,7 +202,7 @@ public class _GTokenValue {
         return v_octal$LAYOUT;
     }
 
-    private static final long v_octal$OFFSET = 0;
+    private static final long v_octal$OFFSET = $LAYOUT.byteOffset(groupElement("v_octal"));
 
     /**
      * Offset for field:
@@ -246,7 +246,7 @@ public class _GTokenValue {
         return v_int$LAYOUT;
     }
 
-    private static final long v_int$OFFSET = 0;
+    private static final long v_int$OFFSET = $LAYOUT.byteOffset(groupElement("v_int"));
 
     /**
      * Offset for field:
@@ -290,7 +290,7 @@ public class _GTokenValue {
         return v_int64$LAYOUT;
     }
 
-    private static final long v_int64$OFFSET = 0;
+    private static final long v_int64$OFFSET = $LAYOUT.byteOffset(groupElement("v_int64"));
 
     /**
      * Offset for field:
@@ -334,7 +334,7 @@ public class _GTokenValue {
         return v_float$LAYOUT;
     }
 
-    private static final long v_float$OFFSET = 0;
+    private static final long v_float$OFFSET = $LAYOUT.byteOffset(groupElement("v_float"));
 
     /**
      * Offset for field:
@@ -378,7 +378,7 @@ public class _GTokenValue {
         return v_hex$LAYOUT;
     }
 
-    private static final long v_hex$OFFSET = 0;
+    private static final long v_hex$OFFSET = $LAYOUT.byteOffset(groupElement("v_hex"));
 
     /**
      * Offset for field:
@@ -422,7 +422,7 @@ public class _GTokenValue {
         return v_string$LAYOUT;
     }
 
-    private static final long v_string$OFFSET = 0;
+    private static final long v_string$OFFSET = $LAYOUT.byteOffset(groupElement("v_string"));
 
     /**
      * Offset for field:
@@ -466,7 +466,7 @@ public class _GTokenValue {
         return v_comment$LAYOUT;
     }
 
-    private static final long v_comment$OFFSET = 0;
+    private static final long v_comment$OFFSET = $LAYOUT.byteOffset(groupElement("v_comment"));
 
     /**
      * Offset for field:
@@ -510,7 +510,7 @@ public class _GTokenValue {
         return v_char$LAYOUT;
     }
 
-    private static final long v_char$OFFSET = 0;
+    private static final long v_char$OFFSET = $LAYOUT.byteOffset(groupElement("v_char"));
 
     /**
      * Offset for field:
@@ -554,7 +554,7 @@ public class _GTokenValue {
         return v_error$LAYOUT;
     }
 
-    private static final long v_error$OFFSET = 0;
+    private static final long v_error$OFFSET = $LAYOUT.byteOffset(groupElement("v_error"));
 
     /**
      * Offset for field:
@@ -615,7 +615,7 @@ public class _GTokenValue {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -623,7 +623,7 @@ public class _GTokenValue {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

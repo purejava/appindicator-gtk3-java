@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*GtkTreeDestroyCountFunc)(GtkTreeView *, GtkTreePath *, gint, gpointer)
  * }
  */
-public class GtkTreeDestroyCountFunc {
+public final class GtkTreeDestroyCountFunc {
+
+    private GtkTreeDestroyCountFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -55,9 +59,11 @@ public class GtkTreeDestroyCountFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment tree_view, MemorySegment path, int children, MemorySegment user_data) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment tree_view, MemorySegment path, int children, MemorySegment user_data) {
         try {
              DOWN$MH.invokeExact(funcPtr, tree_view, path, children, user_data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

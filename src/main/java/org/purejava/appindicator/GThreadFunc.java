@@ -17,7 +17,11 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef gpointer (*GThreadFunc)(gpointer)
  * }
  */
-public class GThreadFunc {
+public final class GThreadFunc {
+
+    private GThreadFunc() {
+        // Should not be called directly
+    }
 
     /**
      * The function pointer signature, expressed as a functional interface
@@ -53,9 +57,11 @@ public class GThreadFunc {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment data) {
+    public static MemorySegment invoke(MemorySegment funcPtr, MemorySegment data) {
         try {
             return (MemorySegment) DOWN$MH.invokeExact(funcPtr, data);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

@@ -54,7 +54,7 @@ public class cairo_path {
         return status$LAYOUT;
     }
 
-    private static final long status$OFFSET = 0;
+    private static final long status$OFFSET = $LAYOUT.byteOffset(groupElement("status"));
 
     /**
      * Offset for field:
@@ -98,7 +98,7 @@ public class cairo_path {
         return data$LAYOUT;
     }
 
-    private static final long data$OFFSET = 8;
+    private static final long data$OFFSET = $LAYOUT.byteOffset(groupElement("data"));
 
     /**
      * Offset for field:
@@ -142,7 +142,7 @@ public class cairo_path {
         return num_data$LAYOUT;
     }
 
-    private static final long num_data$OFFSET = 16;
+    private static final long num_data$OFFSET = $LAYOUT.byteOffset(groupElement("num_data"));
 
     /**
      * Offset for field:
@@ -203,7 +203,7 @@ public class cairo_path {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -211,7 +211,7 @@ public class cairo_path {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {

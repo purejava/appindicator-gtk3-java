@@ -75,7 +75,7 @@ public class _GdkWindowAttr {
         return title$LAYOUT;
     }
 
-    private static final long title$OFFSET = 0;
+    private static final long title$OFFSET = $LAYOUT.byteOffset(groupElement("title"));
 
     /**
      * Offset for field:
@@ -119,7 +119,7 @@ public class _GdkWindowAttr {
         return event_mask$LAYOUT;
     }
 
-    private static final long event_mask$OFFSET = 8;
+    private static final long event_mask$OFFSET = $LAYOUT.byteOffset(groupElement("event_mask"));
 
     /**
      * Offset for field:
@@ -163,7 +163,7 @@ public class _GdkWindowAttr {
         return x$LAYOUT;
     }
 
-    private static final long x$OFFSET = 12;
+    private static final long x$OFFSET = $LAYOUT.byteOffset(groupElement("x"));
 
     /**
      * Offset for field:
@@ -207,7 +207,7 @@ public class _GdkWindowAttr {
         return y$LAYOUT;
     }
 
-    private static final long y$OFFSET = 16;
+    private static final long y$OFFSET = $LAYOUT.byteOffset(groupElement("y"));
 
     /**
      * Offset for field:
@@ -251,7 +251,7 @@ public class _GdkWindowAttr {
         return width$LAYOUT;
     }
 
-    private static final long width$OFFSET = 20;
+    private static final long width$OFFSET = $LAYOUT.byteOffset(groupElement("width"));
 
     /**
      * Offset for field:
@@ -295,7 +295,7 @@ public class _GdkWindowAttr {
         return height$LAYOUT;
     }
 
-    private static final long height$OFFSET = 24;
+    private static final long height$OFFSET = $LAYOUT.byteOffset(groupElement("height"));
 
     /**
      * Offset for field:
@@ -339,7 +339,7 @@ public class _GdkWindowAttr {
         return wclass$LAYOUT;
     }
 
-    private static final long wclass$OFFSET = 28;
+    private static final long wclass$OFFSET = $LAYOUT.byteOffset(groupElement("wclass"));
 
     /**
      * Offset for field:
@@ -383,7 +383,7 @@ public class _GdkWindowAttr {
         return visual$LAYOUT;
     }
 
-    private static final long visual$OFFSET = 32;
+    private static final long visual$OFFSET = $LAYOUT.byteOffset(groupElement("visual"));
 
     /**
      * Offset for field:
@@ -427,7 +427,7 @@ public class _GdkWindowAttr {
         return window_type$LAYOUT;
     }
 
-    private static final long window_type$OFFSET = 40;
+    private static final long window_type$OFFSET = $LAYOUT.byteOffset(groupElement("window_type"));
 
     /**
      * Offset for field:
@@ -471,7 +471,7 @@ public class _GdkWindowAttr {
         return cursor$LAYOUT;
     }
 
-    private static final long cursor$OFFSET = 48;
+    private static final long cursor$OFFSET = $LAYOUT.byteOffset(groupElement("cursor"));
 
     /**
      * Offset for field:
@@ -515,7 +515,7 @@ public class _GdkWindowAttr {
         return wmclass_name$LAYOUT;
     }
 
-    private static final long wmclass_name$OFFSET = 56;
+    private static final long wmclass_name$OFFSET = $LAYOUT.byteOffset(groupElement("wmclass_name"));
 
     /**
      * Offset for field:
@@ -559,7 +559,7 @@ public class _GdkWindowAttr {
         return wmclass_class$LAYOUT;
     }
 
-    private static final long wmclass_class$OFFSET = 64;
+    private static final long wmclass_class$OFFSET = $LAYOUT.byteOffset(groupElement("wmclass_class"));
 
     /**
      * Offset for field:
@@ -603,7 +603,7 @@ public class _GdkWindowAttr {
         return override_redirect$LAYOUT;
     }
 
-    private static final long override_redirect$OFFSET = 72;
+    private static final long override_redirect$OFFSET = $LAYOUT.byteOffset(groupElement("override_redirect"));
 
     /**
      * Offset for field:
@@ -647,7 +647,7 @@ public class _GdkWindowAttr {
         return type_hint$LAYOUT;
     }
 
-    private static final long type_hint$OFFSET = 76;
+    private static final long type_hint$OFFSET = $LAYOUT.byteOffset(groupElement("type_hint"));
 
     /**
      * Offset for field:
@@ -708,7 +708,7 @@ public class _GdkWindowAttr {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
@@ -716,7 +716,7 @@ public class _GdkWindowAttr {
     }
 
     /**
-     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction} (if any).
      * The returned segment has size {@code elementCount * layout().byteSize()}
      */
     public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
