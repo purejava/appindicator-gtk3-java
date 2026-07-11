@@ -26,7 +26,9 @@ version = "1.4.3"
 description = "Java bindings for libayatana-appindicator in 100% pure Java"
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_25
+        toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
     withSourcesJar()
     withJavadocJar()
 }
