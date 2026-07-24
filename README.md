@@ -2,6 +2,7 @@
 ![appindicator-gtk3-java](appindicator-gtk3-java.svg)
 
 [![License](https://img.shields.io/github/license/purejava/appindicator-gtk3-java.svg)](https://github.com/purejava/appindicator-gtk3-java/blob/master/LICENSE)
+<a href="#supported-platforms"><img alt="Linux" src="https://img.shields.io/badge/Linux-supported-blue.svg" /></a>
 
 Java bindings for libayatana-appindicator and libappindicator-gtk3 in 100% pure Java
 
