@@ -2,15 +2,1494 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.lang.invoke.MethodHandle;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
-import static java.lang.foreign.ValueLayout.OfInt;
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 class app_indicator_h_9 extends app_indicator_h_10 {
 
     app_indicator_h_9() {
         // Should not be called directly
+    }
+
+    private static class pango_layout_iter_get_line_extents {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pango_layout_iter_get_line_extents");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void pango_layout_iter_get_line_extents(PangoLayoutIter *iter, PangoRectangle *ink_rect, PangoRectangle *logical_rect)
+     * }
+     */
+    public static FunctionDescriptor pango_layout_iter_get_line_extents$descriptor() {
+        return pango_layout_iter_get_line_extents.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void pango_layout_iter_get_line_extents(PangoLayoutIter *iter, PangoRectangle *ink_rect, PangoRectangle *logical_rect)
+     * }
+     */
+    public static MethodHandle pango_layout_iter_get_line_extents$handle() {
+        return pango_layout_iter_get_line_extents.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void pango_layout_iter_get_line_extents(PangoLayoutIter *iter, PangoRectangle *ink_rect, PangoRectangle *logical_rect)
+     * }
+     */
+    public static MemorySegment pango_layout_iter_get_line_extents$address() {
+        return pango_layout_iter_get_line_extents.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void pango_layout_iter_get_line_extents(PangoLayoutIter *iter, PangoRectangle *ink_rect, PangoRectangle *logical_rect)
+     * }
+     */
+    public static void pango_layout_iter_get_line_extents(MemorySegment iter, MemorySegment ink_rect, MemorySegment logical_rect) {
+        var mh$ = pango_layout_iter_get_line_extents.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pango_layout_iter_get_line_extents", iter, ink_rect, logical_rect);
+            }
+            mh$.invokeExact(iter, ink_rect, logical_rect);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pango_layout_iter_get_line_yrange {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pango_layout_iter_get_line_yrange");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void pango_layout_iter_get_line_yrange(PangoLayoutIter *iter, int *y0_, int *y1_)
+     * }
+     */
+    public static FunctionDescriptor pango_layout_iter_get_line_yrange$descriptor() {
+        return pango_layout_iter_get_line_yrange.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void pango_layout_iter_get_line_yrange(PangoLayoutIter *iter, int *y0_, int *y1_)
+     * }
+     */
+    public static MethodHandle pango_layout_iter_get_line_yrange$handle() {
+        return pango_layout_iter_get_line_yrange.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void pango_layout_iter_get_line_yrange(PangoLayoutIter *iter, int *y0_, int *y1_)
+     * }
+     */
+    public static MemorySegment pango_layout_iter_get_line_yrange$address() {
+        return pango_layout_iter_get_line_yrange.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void pango_layout_iter_get_line_yrange(PangoLayoutIter *iter, int *y0_, int *y1_)
+     * }
+     */
+    public static void pango_layout_iter_get_line_yrange(MemorySegment iter, MemorySegment y0_, MemorySegment y1_) {
+        var mh$ = pango_layout_iter_get_line_yrange.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pango_layout_iter_get_line_yrange", iter, y0_, y1_);
+            }
+            mh$.invokeExact(iter, y0_, y1_);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pango_layout_iter_get_layout_extents {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pango_layout_iter_get_layout_extents");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void pango_layout_iter_get_layout_extents(PangoLayoutIter *iter, PangoRectangle *ink_rect, PangoRectangle *logical_rect)
+     * }
+     */
+    public static FunctionDescriptor pango_layout_iter_get_layout_extents$descriptor() {
+        return pango_layout_iter_get_layout_extents.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void pango_layout_iter_get_layout_extents(PangoLayoutIter *iter, PangoRectangle *ink_rect, PangoRectangle *logical_rect)
+     * }
+     */
+    public static MethodHandle pango_layout_iter_get_layout_extents$handle() {
+        return pango_layout_iter_get_layout_extents.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void pango_layout_iter_get_layout_extents(PangoLayoutIter *iter, PangoRectangle *ink_rect, PangoRectangle *logical_rect)
+     * }
+     */
+    public static MemorySegment pango_layout_iter_get_layout_extents$address() {
+        return pango_layout_iter_get_layout_extents.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void pango_layout_iter_get_layout_extents(PangoLayoutIter *iter, PangoRectangle *ink_rect, PangoRectangle *logical_rect)
+     * }
+     */
+    public static void pango_layout_iter_get_layout_extents(MemorySegment iter, MemorySegment ink_rect, MemorySegment logical_rect) {
+        var mh$ = pango_layout_iter_get_layout_extents.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pango_layout_iter_get_layout_extents", iter, ink_rect, logical_rect);
+            }
+            mh$.invokeExact(iter, ink_rect, logical_rect);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pango_layout_iter_get_baseline {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pango_layout_iter_get_baseline");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pango_layout_iter_get_baseline(PangoLayoutIter *iter)
+     * }
+     */
+    public static FunctionDescriptor pango_layout_iter_get_baseline$descriptor() {
+        return pango_layout_iter_get_baseline.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pango_layout_iter_get_baseline(PangoLayoutIter *iter)
+     * }
+     */
+    public static MethodHandle pango_layout_iter_get_baseline$handle() {
+        return pango_layout_iter_get_baseline.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pango_layout_iter_get_baseline(PangoLayoutIter *iter)
+     * }
+     */
+    public static MemorySegment pango_layout_iter_get_baseline$address() {
+        return pango_layout_iter_get_baseline.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pango_layout_iter_get_baseline(PangoLayoutIter *iter)
+     * }
+     */
+    public static int pango_layout_iter_get_baseline(MemorySegment iter) {
+        var mh$ = pango_layout_iter_get_baseline.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pango_layout_iter_get_baseline", iter);
+            }
+            return (int)mh$.invokeExact(iter);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pango_layout_iter_get_run_baseline {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pango_layout_iter_get_run_baseline");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pango_layout_iter_get_run_baseline(PangoLayoutIter *iter)
+     * }
+     */
+    public static FunctionDescriptor pango_layout_iter_get_run_baseline$descriptor() {
+        return pango_layout_iter_get_run_baseline.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pango_layout_iter_get_run_baseline(PangoLayoutIter *iter)
+     * }
+     */
+    public static MethodHandle pango_layout_iter_get_run_baseline$handle() {
+        return pango_layout_iter_get_run_baseline.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pango_layout_iter_get_run_baseline(PangoLayoutIter *iter)
+     * }
+     */
+    public static MemorySegment pango_layout_iter_get_run_baseline$address() {
+        return pango_layout_iter_get_run_baseline.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pango_layout_iter_get_run_baseline(PangoLayoutIter *iter)
+     * }
+     */
+    public static int pango_layout_iter_get_run_baseline(MemorySegment iter) {
+        var mh$ = pango_layout_iter_get_run_baseline.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pango_layout_iter_get_run_baseline", iter);
+            }
+            return (int)mh$.invokeExact(iter);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet lang=c :
+     * typedef PangoLayout *PangoLayout_autoptr
+     * }
+     */
+    public static final AddressLayout PangoLayout_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *PangoLayout_listautoptr
+     * }
+     */
+    public static final AddressLayout PangoLayout_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *PangoLayout_slistautoptr
+     * }
+     */
+    public static final AddressLayout PangoLayout_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *PangoLayout_queueautoptr
+     * }
+     */
+    public static final AddressLayout PangoLayout_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef PangoLayoutIter *PangoLayoutIter_autoptr
+     * }
+     */
+    public static final AddressLayout PangoLayoutIter_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *PangoLayoutIter_listautoptr
+     * }
+     */
+    public static final AddressLayout PangoLayoutIter_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *PangoLayoutIter_slistautoptr
+     * }
+     */
+    public static final AddressLayout PangoLayoutIter_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *PangoLayoutIter_queueautoptr
+     * }
+     */
+    public static final AddressLayout PangoLayoutIter_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef PangoLayoutLine *PangoLayoutLine_autoptr
+     * }
+     */
+    public static final AddressLayout PangoLayoutLine_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *PangoLayoutLine_listautoptr
+     * }
+     */
+    public static final AddressLayout PangoLayoutLine_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *PangoLayoutLine_slistautoptr
+     * }
+     */
+    public static final AddressLayout PangoLayoutLine_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *PangoLayoutLine_queueautoptr
+     * }
+     */
+    public static final AddressLayout PangoLayoutLine_queueautoptr = app_indicator_h.C_POINTER;
+
+    private static class pango_markup_parser_new {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pango_markup_parser_new");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GMarkupParseContext *pango_markup_parser_new(gunichar accel_marker)
+     * }
+     */
+    public static FunctionDescriptor pango_markup_parser_new$descriptor() {
+        return pango_markup_parser_new.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GMarkupParseContext *pango_markup_parser_new(gunichar accel_marker)
+     * }
+     */
+    public static MethodHandle pango_markup_parser_new$handle() {
+        return pango_markup_parser_new.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GMarkupParseContext *pango_markup_parser_new(gunichar accel_marker)
+     * }
+     */
+    public static MemorySegment pango_markup_parser_new$address() {
+        return pango_markup_parser_new.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern GMarkupParseContext *pango_markup_parser_new(gunichar accel_marker)
+     * }
+     */
+    public static MemorySegment pango_markup_parser_new(int accel_marker) {
+        var mh$ = pango_markup_parser_new.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pango_markup_parser_new", accel_marker);
+            }
+            return (MemorySegment)mh$.invokeExact(accel_marker);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pango_markup_parser_finish {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pango_markup_parser_finish");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern gboolean pango_markup_parser_finish(GMarkupParseContext *context, PangoAttrList **attr_list, char **text, gunichar *accel_char, GError **error)
+     * }
+     */
+    public static FunctionDescriptor pango_markup_parser_finish$descriptor() {
+        return pango_markup_parser_finish.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern gboolean pango_markup_parser_finish(GMarkupParseContext *context, PangoAttrList **attr_list, char **text, gunichar *accel_char, GError **error)
+     * }
+     */
+    public static MethodHandle pango_markup_parser_finish$handle() {
+        return pango_markup_parser_finish.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean pango_markup_parser_finish(GMarkupParseContext *context, PangoAttrList **attr_list, char **text, gunichar *accel_char, GError **error)
+     * }
+     */
+    public static MemorySegment pango_markup_parser_finish$address() {
+        return pango_markup_parser_finish.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern gboolean pango_markup_parser_finish(GMarkupParseContext *context, PangoAttrList **attr_list, char **text, gunichar *accel_char, GError **error)
+     * }
+     */
+    public static int pango_markup_parser_finish(MemorySegment context, MemorySegment attr_list, MemorySegment text, MemorySegment accel_char, MemorySegment error) {
+        var mh$ = pango_markup_parser_finish.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pango_markup_parser_finish", context, attr_list, text, accel_char, error);
+            }
+            return (int)mh$.invokeExact(context, attr_list, text, accel_char, error);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pango_parse_markup {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pango_parse_markup");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern gboolean pango_parse_markup(const char *markup_text, int length, gunichar accel_marker, PangoAttrList **attr_list, char **text, gunichar *accel_char, GError **error)
+     * }
+     */
+    public static FunctionDescriptor pango_parse_markup$descriptor() {
+        return pango_parse_markup.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern gboolean pango_parse_markup(const char *markup_text, int length, gunichar accel_marker, PangoAttrList **attr_list, char **text, gunichar *accel_char, GError **error)
+     * }
+     */
+    public static MethodHandle pango_parse_markup$handle() {
+        return pango_parse_markup.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean pango_parse_markup(const char *markup_text, int length, gunichar accel_marker, PangoAttrList **attr_list, char **text, gunichar *accel_char, GError **error)
+     * }
+     */
+    public static MemorySegment pango_parse_markup$address() {
+        return pango_parse_markup.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern gboolean pango_parse_markup(const char *markup_text, int length, gunichar accel_marker, PangoAttrList **attr_list, char **text, gunichar *accel_char, GError **error)
+     * }
+     */
+    public static int pango_parse_markup(MemorySegment markup_text, int length, int accel_marker, MemorySegment attr_list, MemorySegment text, MemorySegment accel_char, MemorySegment error) {
+        var mh$ = pango_parse_markup.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pango_parse_markup", markup_text, length, accel_marker, attr_list, text, accel_char, error);
+            }
+            return (int)mh$.invokeExact(markup_text, length, accel_marker, attr_list, text, accel_char, error);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    private static final int PANGO_RENDER_PART_FOREGROUND = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.PANGO_RENDER_PART_FOREGROUND = 0
+     * }
+     */
+    public static int PANGO_RENDER_PART_FOREGROUND() {
+        return PANGO_RENDER_PART_FOREGROUND;
+    }
+    private static final int PANGO_RENDER_PART_BACKGROUND = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.PANGO_RENDER_PART_BACKGROUND = 1
+     * }
+     */
+    public static int PANGO_RENDER_PART_BACKGROUND() {
+        return PANGO_RENDER_PART_BACKGROUND;
+    }
+    private static final int PANGO_RENDER_PART_UNDERLINE = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.PANGO_RENDER_PART_UNDERLINE = 2
+     * }
+     */
+    public static int PANGO_RENDER_PART_UNDERLINE() {
+        return PANGO_RENDER_PART_UNDERLINE;
+    }
+    private static final int PANGO_RENDER_PART_STRIKETHROUGH = (int)3L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.PANGO_RENDER_PART_STRIKETHROUGH = 3
+     * }
+     */
+    public static int PANGO_RENDER_PART_STRIKETHROUGH() {
+        return PANGO_RENDER_PART_STRIKETHROUGH;
+    }
+    private static final int PANGO_RENDER_PART_OVERLINE = (int)4L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.PANGO_RENDER_PART_OVERLINE = 4
+     * }
+     */
+    public static int PANGO_RENDER_PART_OVERLINE() {
+        return PANGO_RENDER_PART_OVERLINE;
+    }
+
+    private static class pango_renderer_get_type {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG    );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pango_renderer_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GType pango_renderer_get_type()
+     * }
+     */
+    public static FunctionDescriptor pango_renderer_get_type$descriptor() {
+        return pango_renderer_get_type.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GType pango_renderer_get_type()
+     * }
+     */
+    public static MethodHandle pango_renderer_get_type$handle() {
+        return pango_renderer_get_type.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType pango_renderer_get_type()
+     * }
+     */
+    public static MemorySegment pango_renderer_get_type$address() {
+        return pango_renderer_get_type.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern GType pango_renderer_get_type()
+     * }
+     */
+    public static long pango_renderer_get_type() {
+        var mh$ = pango_renderer_get_type.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pango_renderer_get_type");
+            }
+            return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pango_renderer_draw_layout {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pango_renderer_draw_layout");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_layout(PangoRenderer *renderer, PangoLayout *layout, int x, int y)
+     * }
+     */
+    public static FunctionDescriptor pango_renderer_draw_layout$descriptor() {
+        return pango_renderer_draw_layout.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_layout(PangoRenderer *renderer, PangoLayout *layout, int x, int y)
+     * }
+     */
+    public static MethodHandle pango_renderer_draw_layout$handle() {
+        return pango_renderer_draw_layout.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_layout(PangoRenderer *renderer, PangoLayout *layout, int x, int y)
+     * }
+     */
+    public static MemorySegment pango_renderer_draw_layout$address() {
+        return pango_renderer_draw_layout.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_layout(PangoRenderer *renderer, PangoLayout *layout, int x, int y)
+     * }
+     */
+    public static void pango_renderer_draw_layout(MemorySegment renderer, MemorySegment layout, int x, int y) {
+        var mh$ = pango_renderer_draw_layout.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pango_renderer_draw_layout", renderer, layout, x, y);
+            }
+            mh$.invokeExact(renderer, layout, x, y);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pango_renderer_draw_layout_line {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pango_renderer_draw_layout_line");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_layout_line(PangoRenderer *renderer, PangoLayoutLine *line, int x, int y)
+     * }
+     */
+    public static FunctionDescriptor pango_renderer_draw_layout_line$descriptor() {
+        return pango_renderer_draw_layout_line.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_layout_line(PangoRenderer *renderer, PangoLayoutLine *line, int x, int y)
+     * }
+     */
+    public static MethodHandle pango_renderer_draw_layout_line$handle() {
+        return pango_renderer_draw_layout_line.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_layout_line(PangoRenderer *renderer, PangoLayoutLine *line, int x, int y)
+     * }
+     */
+    public static MemorySegment pango_renderer_draw_layout_line$address() {
+        return pango_renderer_draw_layout_line.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_layout_line(PangoRenderer *renderer, PangoLayoutLine *line, int x, int y)
+     * }
+     */
+    public static void pango_renderer_draw_layout_line(MemorySegment renderer, MemorySegment line, int x, int y) {
+        var mh$ = pango_renderer_draw_layout_line.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pango_renderer_draw_layout_line", renderer, line, x, y);
+            }
+            mh$.invokeExact(renderer, line, x, y);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pango_renderer_draw_glyphs {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pango_renderer_draw_glyphs");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_glyphs(PangoRenderer *renderer, PangoFont *font, PangoGlyphString *glyphs, int x, int y)
+     * }
+     */
+    public static FunctionDescriptor pango_renderer_draw_glyphs$descriptor() {
+        return pango_renderer_draw_glyphs.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_glyphs(PangoRenderer *renderer, PangoFont *font, PangoGlyphString *glyphs, int x, int y)
+     * }
+     */
+    public static MethodHandle pango_renderer_draw_glyphs$handle() {
+        return pango_renderer_draw_glyphs.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_glyphs(PangoRenderer *renderer, PangoFont *font, PangoGlyphString *glyphs, int x, int y)
+     * }
+     */
+    public static MemorySegment pango_renderer_draw_glyphs$address() {
+        return pango_renderer_draw_glyphs.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_glyphs(PangoRenderer *renderer, PangoFont *font, PangoGlyphString *glyphs, int x, int y)
+     * }
+     */
+    public static void pango_renderer_draw_glyphs(MemorySegment renderer, MemorySegment font, MemorySegment glyphs, int x, int y) {
+        var mh$ = pango_renderer_draw_glyphs.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pango_renderer_draw_glyphs", renderer, font, glyphs, x, y);
+            }
+            mh$.invokeExact(renderer, font, glyphs, x, y);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pango_renderer_draw_glyph_item {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pango_renderer_draw_glyph_item");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_glyph_item(PangoRenderer *renderer, const char *text, PangoGlyphItem *glyph_item, int x, int y)
+     * }
+     */
+    public static FunctionDescriptor pango_renderer_draw_glyph_item$descriptor() {
+        return pango_renderer_draw_glyph_item.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_glyph_item(PangoRenderer *renderer, const char *text, PangoGlyphItem *glyph_item, int x, int y)
+     * }
+     */
+    public static MethodHandle pango_renderer_draw_glyph_item$handle() {
+        return pango_renderer_draw_glyph_item.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_glyph_item(PangoRenderer *renderer, const char *text, PangoGlyphItem *glyph_item, int x, int y)
+     * }
+     */
+    public static MemorySegment pango_renderer_draw_glyph_item$address() {
+        return pango_renderer_draw_glyph_item.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_glyph_item(PangoRenderer *renderer, const char *text, PangoGlyphItem *glyph_item, int x, int y)
+     * }
+     */
+    public static void pango_renderer_draw_glyph_item(MemorySegment renderer, MemorySegment text, MemorySegment glyph_item, int x, int y) {
+        var mh$ = pango_renderer_draw_glyph_item.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pango_renderer_draw_glyph_item", renderer, text, glyph_item, x, y);
+            }
+            mh$.invokeExact(renderer, text, glyph_item, x, y);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pango_renderer_draw_rectangle {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pango_renderer_draw_rectangle");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_rectangle(PangoRenderer *renderer, PangoRenderPart part, int x, int y, int width, int height)
+     * }
+     */
+    public static FunctionDescriptor pango_renderer_draw_rectangle$descriptor() {
+        return pango_renderer_draw_rectangle.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_rectangle(PangoRenderer *renderer, PangoRenderPart part, int x, int y, int width, int height)
+     * }
+     */
+    public static MethodHandle pango_renderer_draw_rectangle$handle() {
+        return pango_renderer_draw_rectangle.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_rectangle(PangoRenderer *renderer, PangoRenderPart part, int x, int y, int width, int height)
+     * }
+     */
+    public static MemorySegment pango_renderer_draw_rectangle$address() {
+        return pango_renderer_draw_rectangle.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_rectangle(PangoRenderer *renderer, PangoRenderPart part, int x, int y, int width, int height)
+     * }
+     */
+    public static void pango_renderer_draw_rectangle(MemorySegment renderer, int part, int x, int y, int width, int height) {
+        var mh$ = pango_renderer_draw_rectangle.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pango_renderer_draw_rectangle", renderer, part, x, y, width, height);
+            }
+            mh$.invokeExact(renderer, part, x, y, width, height);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pango_renderer_draw_error_underline {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pango_renderer_draw_error_underline");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_error_underline(PangoRenderer *renderer, int x, int y, int width, int height)
+     * }
+     */
+    public static FunctionDescriptor pango_renderer_draw_error_underline$descriptor() {
+        return pango_renderer_draw_error_underline.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_error_underline(PangoRenderer *renderer, int x, int y, int width, int height)
+     * }
+     */
+    public static MethodHandle pango_renderer_draw_error_underline$handle() {
+        return pango_renderer_draw_error_underline.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_error_underline(PangoRenderer *renderer, int x, int y, int width, int height)
+     * }
+     */
+    public static MemorySegment pango_renderer_draw_error_underline$address() {
+        return pango_renderer_draw_error_underline.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_error_underline(PangoRenderer *renderer, int x, int y, int width, int height)
+     * }
+     */
+    public static void pango_renderer_draw_error_underline(MemorySegment renderer, int x, int y, int width, int height) {
+        var mh$ = pango_renderer_draw_error_underline.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pango_renderer_draw_error_underline", renderer, x, y, width, height);
+            }
+            mh$.invokeExact(renderer, x, y, width, height);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pango_renderer_draw_trapezoid {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_DOUBLE,
+            app_indicator_h.C_DOUBLE,
+            app_indicator_h.C_DOUBLE,
+            app_indicator_h.C_DOUBLE,
+            app_indicator_h.C_DOUBLE,
+            app_indicator_h.C_DOUBLE
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pango_renderer_draw_trapezoid");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_trapezoid(PangoRenderer *renderer, PangoRenderPart part, double y1_, double x11, double x21, double y2, double x12, double x22)
+     * }
+     */
+    public static FunctionDescriptor pango_renderer_draw_trapezoid$descriptor() {
+        return pango_renderer_draw_trapezoid.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_trapezoid(PangoRenderer *renderer, PangoRenderPart part, double y1_, double x11, double x21, double y2, double x12, double x22)
+     * }
+     */
+    public static MethodHandle pango_renderer_draw_trapezoid$handle() {
+        return pango_renderer_draw_trapezoid.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_trapezoid(PangoRenderer *renderer, PangoRenderPart part, double y1_, double x11, double x21, double y2, double x12, double x22)
+     * }
+     */
+    public static MemorySegment pango_renderer_draw_trapezoid$address() {
+        return pango_renderer_draw_trapezoid.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_trapezoid(PangoRenderer *renderer, PangoRenderPart part, double y1_, double x11, double x21, double y2, double x12, double x22)
+     * }
+     */
+    public static void pango_renderer_draw_trapezoid(MemorySegment renderer, int part, double y1_, double x11, double x21, double y2, double x12, double x22) {
+        var mh$ = pango_renderer_draw_trapezoid.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pango_renderer_draw_trapezoid", renderer, part, y1_, x11, x21, y2, x12, x22);
+            }
+            mh$.invokeExact(renderer, part, y1_, x11, x21, y2, x12, x22);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pango_renderer_draw_glyph {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_DOUBLE,
+            app_indicator_h.C_DOUBLE
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pango_renderer_draw_glyph");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_glyph(PangoRenderer *renderer, PangoFont *font, PangoGlyph glyph, double x, double y)
+     * }
+     */
+    public static FunctionDescriptor pango_renderer_draw_glyph$descriptor() {
+        return pango_renderer_draw_glyph.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_glyph(PangoRenderer *renderer, PangoFont *font, PangoGlyph glyph, double x, double y)
+     * }
+     */
+    public static MethodHandle pango_renderer_draw_glyph$handle() {
+        return pango_renderer_draw_glyph.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_glyph(PangoRenderer *renderer, PangoFont *font, PangoGlyph glyph, double x, double y)
+     * }
+     */
+    public static MemorySegment pango_renderer_draw_glyph$address() {
+        return pango_renderer_draw_glyph.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void pango_renderer_draw_glyph(PangoRenderer *renderer, PangoFont *font, PangoGlyph glyph, double x, double y)
+     * }
+     */
+    public static void pango_renderer_draw_glyph(MemorySegment renderer, MemorySegment font, int glyph, double x, double y) {
+        var mh$ = pango_renderer_draw_glyph.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pango_renderer_draw_glyph", renderer, font, glyph, x, y);
+            }
+            mh$.invokeExact(renderer, font, glyph, x, y);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pango_renderer_activate {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pango_renderer_activate");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_activate(PangoRenderer *renderer)
+     * }
+     */
+    public static FunctionDescriptor pango_renderer_activate$descriptor() {
+        return pango_renderer_activate.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_activate(PangoRenderer *renderer)
+     * }
+     */
+    public static MethodHandle pango_renderer_activate$handle() {
+        return pango_renderer_activate.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_activate(PangoRenderer *renderer)
+     * }
+     */
+    public static MemorySegment pango_renderer_activate$address() {
+        return pango_renderer_activate.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void pango_renderer_activate(PangoRenderer *renderer)
+     * }
+     */
+    public static void pango_renderer_activate(MemorySegment renderer) {
+        var mh$ = pango_renderer_activate.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pango_renderer_activate", renderer);
+            }
+            mh$.invokeExact(renderer);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pango_renderer_deactivate {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pango_renderer_deactivate");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_deactivate(PangoRenderer *renderer)
+     * }
+     */
+    public static FunctionDescriptor pango_renderer_deactivate$descriptor() {
+        return pango_renderer_deactivate.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_deactivate(PangoRenderer *renderer)
+     * }
+     */
+    public static MethodHandle pango_renderer_deactivate$handle() {
+        return pango_renderer_deactivate.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_deactivate(PangoRenderer *renderer)
+     * }
+     */
+    public static MemorySegment pango_renderer_deactivate$address() {
+        return pango_renderer_deactivate.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void pango_renderer_deactivate(PangoRenderer *renderer)
+     * }
+     */
+    public static void pango_renderer_deactivate(MemorySegment renderer) {
+        var mh$ = pango_renderer_deactivate.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pango_renderer_deactivate", renderer);
+            }
+            mh$.invokeExact(renderer);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pango_renderer_part_changed {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pango_renderer_part_changed");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_part_changed(PangoRenderer *renderer, PangoRenderPart part)
+     * }
+     */
+    public static FunctionDescriptor pango_renderer_part_changed$descriptor() {
+        return pango_renderer_part_changed.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_part_changed(PangoRenderer *renderer, PangoRenderPart part)
+     * }
+     */
+    public static MethodHandle pango_renderer_part_changed$handle() {
+        return pango_renderer_part_changed.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_part_changed(PangoRenderer *renderer, PangoRenderPart part)
+     * }
+     */
+    public static MemorySegment pango_renderer_part_changed$address() {
+        return pango_renderer_part_changed.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void pango_renderer_part_changed(PangoRenderer *renderer, PangoRenderPart part)
+     * }
+     */
+    public static void pango_renderer_part_changed(MemorySegment renderer, int part) {
+        var mh$ = pango_renderer_part_changed.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pango_renderer_part_changed", renderer, part);
+            }
+            mh$.invokeExact(renderer, part);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pango_renderer_set_color {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pango_renderer_set_color");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_set_color(PangoRenderer *renderer, PangoRenderPart part, const PangoColor *color)
+     * }
+     */
+    public static FunctionDescriptor pango_renderer_set_color$descriptor() {
+        return pango_renderer_set_color.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_set_color(PangoRenderer *renderer, PangoRenderPart part, const PangoColor *color)
+     * }
+     */
+    public static MethodHandle pango_renderer_set_color$handle() {
+        return pango_renderer_set_color.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void pango_renderer_set_color(PangoRenderer *renderer, PangoRenderPart part, const PangoColor *color)
+     * }
+     */
+    public static MemorySegment pango_renderer_set_color$address() {
+        return pango_renderer_set_color.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void pango_renderer_set_color(PangoRenderer *renderer, PangoRenderPart part, const PangoColor *color)
+     * }
+     */
+    public static void pango_renderer_set_color(MemorySegment renderer, int part, MemorySegment color) {
+        var mh$ = pango_renderer_set_color.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pango_renderer_set_color", renderer, part, color);
+            }
+            mh$.invokeExact(renderer, part, color);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pango_renderer_get_color {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pango_renderer_get_color");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern PangoColor *pango_renderer_get_color(PangoRenderer *renderer, PangoRenderPart part)
+     * }
+     */
+    public static FunctionDescriptor pango_renderer_get_color$descriptor() {
+        return pango_renderer_get_color.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern PangoColor *pango_renderer_get_color(PangoRenderer *renderer, PangoRenderPart part)
+     * }
+     */
+    public static MethodHandle pango_renderer_get_color$handle() {
+        return pango_renderer_get_color.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern PangoColor *pango_renderer_get_color(PangoRenderer *renderer, PangoRenderPart part)
+     * }
+     */
+    public static MemorySegment pango_renderer_get_color$address() {
+        return pango_renderer_get_color.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern PangoColor *pango_renderer_get_color(PangoRenderer *renderer, PangoRenderPart part)
+     * }
+     */
+    public static MemorySegment pango_renderer_get_color(MemorySegment renderer, int part) {
+        var mh$ = pango_renderer_get_color.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pango_renderer_get_color", renderer, part);
+            }
+            return (MemorySegment)mh$.invokeExact(renderer, part);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
     }
 
     private static class pango_renderer_set_alpha {
@@ -36028,406 +37507,6 @@ class app_indicator_h_9 extends app_indicator_h_10 {
      */
     public static int GDK_NOTIFY_VIRTUAL() {
         return GDK_NOTIFY_VIRTUAL;
-    }
-    private static final int GDK_NOTIFY_INFERIOR = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_NOTIFY_INFERIOR = 2
-     * }
-     */
-    public static int GDK_NOTIFY_INFERIOR() {
-        return GDK_NOTIFY_INFERIOR;
-    }
-    private static final int GDK_NOTIFY_NONLINEAR = (int)3L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_NOTIFY_NONLINEAR = 3
-     * }
-     */
-    public static int GDK_NOTIFY_NONLINEAR() {
-        return GDK_NOTIFY_NONLINEAR;
-    }
-    private static final int GDK_NOTIFY_NONLINEAR_VIRTUAL = (int)4L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_NOTIFY_NONLINEAR_VIRTUAL = 4
-     * }
-     */
-    public static int GDK_NOTIFY_NONLINEAR_VIRTUAL() {
-        return GDK_NOTIFY_NONLINEAR_VIRTUAL;
-    }
-    private static final int GDK_NOTIFY_UNKNOWN = (int)5L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_NOTIFY_UNKNOWN = 5
-     * }
-     */
-    public static int GDK_NOTIFY_UNKNOWN() {
-        return GDK_NOTIFY_UNKNOWN;
-    }
-    private static final int GDK_CROSSING_NORMAL = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_CROSSING_NORMAL = 0
-     * }
-     */
-    public static int GDK_CROSSING_NORMAL() {
-        return GDK_CROSSING_NORMAL;
-    }
-    private static final int GDK_CROSSING_GRAB = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_CROSSING_GRAB = 1
-     * }
-     */
-    public static int GDK_CROSSING_GRAB() {
-        return GDK_CROSSING_GRAB;
-    }
-    private static final int GDK_CROSSING_UNGRAB = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_CROSSING_UNGRAB = 2
-     * }
-     */
-    public static int GDK_CROSSING_UNGRAB() {
-        return GDK_CROSSING_UNGRAB;
-    }
-    private static final int GDK_CROSSING_GTK_GRAB = (int)3L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_CROSSING_GTK_GRAB = 3
-     * }
-     */
-    public static int GDK_CROSSING_GTK_GRAB() {
-        return GDK_CROSSING_GTK_GRAB;
-    }
-    private static final int GDK_CROSSING_GTK_UNGRAB = (int)4L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_CROSSING_GTK_UNGRAB = 4
-     * }
-     */
-    public static int GDK_CROSSING_GTK_UNGRAB() {
-        return GDK_CROSSING_GTK_UNGRAB;
-    }
-    private static final int GDK_CROSSING_STATE_CHANGED = (int)5L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_CROSSING_STATE_CHANGED = 5
-     * }
-     */
-    public static int GDK_CROSSING_STATE_CHANGED() {
-        return GDK_CROSSING_STATE_CHANGED;
-    }
-    private static final int GDK_CROSSING_TOUCH_BEGIN = (int)6L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_CROSSING_TOUCH_BEGIN = 6
-     * }
-     */
-    public static int GDK_CROSSING_TOUCH_BEGIN() {
-        return GDK_CROSSING_TOUCH_BEGIN;
-    }
-    private static final int GDK_CROSSING_TOUCH_END = (int)7L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_CROSSING_TOUCH_END = 7
-     * }
-     */
-    public static int GDK_CROSSING_TOUCH_END() {
-        return GDK_CROSSING_TOUCH_END;
-    }
-    private static final int GDK_CROSSING_DEVICE_SWITCH = (int)8L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_CROSSING_DEVICE_SWITCH = 8
-     * }
-     */
-    public static int GDK_CROSSING_DEVICE_SWITCH() {
-        return GDK_CROSSING_DEVICE_SWITCH;
-    }
-    private static final int GDK_PROPERTY_NEW_VALUE = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_PROPERTY_NEW_VALUE = 0
-     * }
-     */
-    public static int GDK_PROPERTY_NEW_VALUE() {
-        return GDK_PROPERTY_NEW_VALUE;
-    }
-    private static final int GDK_PROPERTY_DELETE = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_PROPERTY_DELETE = 1
-     * }
-     */
-    public static int GDK_PROPERTY_DELETE() {
-        return GDK_PROPERTY_DELETE;
-    }
-    private static final int GDK_WINDOW_STATE_WITHDRAWN = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_WINDOW_STATE_WITHDRAWN = 1
-     * }
-     */
-    public static int GDK_WINDOW_STATE_WITHDRAWN() {
-        return GDK_WINDOW_STATE_WITHDRAWN;
-    }
-    private static final int GDK_WINDOW_STATE_ICONIFIED = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_WINDOW_STATE_ICONIFIED = 2
-     * }
-     */
-    public static int GDK_WINDOW_STATE_ICONIFIED() {
-        return GDK_WINDOW_STATE_ICONIFIED;
-    }
-    private static final int GDK_WINDOW_STATE_MAXIMIZED = (int)4L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_WINDOW_STATE_MAXIMIZED = 4
-     * }
-     */
-    public static int GDK_WINDOW_STATE_MAXIMIZED() {
-        return GDK_WINDOW_STATE_MAXIMIZED;
-    }
-    private static final int GDK_WINDOW_STATE_STICKY = (int)8L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_WINDOW_STATE_STICKY = 8
-     * }
-     */
-    public static int GDK_WINDOW_STATE_STICKY() {
-        return GDK_WINDOW_STATE_STICKY;
-    }
-    private static final int GDK_WINDOW_STATE_FULLSCREEN = (int)16L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_WINDOW_STATE_FULLSCREEN = 16
-     * }
-     */
-    public static int GDK_WINDOW_STATE_FULLSCREEN() {
-        return GDK_WINDOW_STATE_FULLSCREEN;
-    }
-    private static final int GDK_WINDOW_STATE_ABOVE = (int)32L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_WINDOW_STATE_ABOVE = 32
-     * }
-     */
-    public static int GDK_WINDOW_STATE_ABOVE() {
-        return GDK_WINDOW_STATE_ABOVE;
-    }
-    private static final int GDK_WINDOW_STATE_BELOW = (int)64L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_WINDOW_STATE_BELOW = 64
-     * }
-     */
-    public static int GDK_WINDOW_STATE_BELOW() {
-        return GDK_WINDOW_STATE_BELOW;
-    }
-    private static final int GDK_WINDOW_STATE_FOCUSED = (int)128L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_WINDOW_STATE_FOCUSED = 128
-     * }
-     */
-    public static int GDK_WINDOW_STATE_FOCUSED() {
-        return GDK_WINDOW_STATE_FOCUSED;
-    }
-    private static final int GDK_WINDOW_STATE_TILED = (int)256L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_WINDOW_STATE_TILED = 256
-     * }
-     */
-    public static int GDK_WINDOW_STATE_TILED() {
-        return GDK_WINDOW_STATE_TILED;
-    }
-    private static final int GDK_WINDOW_STATE_TOP_TILED = (int)512L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_WINDOW_STATE_TOP_TILED = 512
-     * }
-     */
-    public static int GDK_WINDOW_STATE_TOP_TILED() {
-        return GDK_WINDOW_STATE_TOP_TILED;
-    }
-    private static final int GDK_WINDOW_STATE_TOP_RESIZABLE = (int)1024L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_WINDOW_STATE_TOP_RESIZABLE = 1024
-     * }
-     */
-    public static int GDK_WINDOW_STATE_TOP_RESIZABLE() {
-        return GDK_WINDOW_STATE_TOP_RESIZABLE;
-    }
-    private static final int GDK_WINDOW_STATE_RIGHT_TILED = (int)2048L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_WINDOW_STATE_RIGHT_TILED = 2048
-     * }
-     */
-    public static int GDK_WINDOW_STATE_RIGHT_TILED() {
-        return GDK_WINDOW_STATE_RIGHT_TILED;
-    }
-    private static final int GDK_WINDOW_STATE_RIGHT_RESIZABLE = (int)4096L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_WINDOW_STATE_RIGHT_RESIZABLE = 4096
-     * }
-     */
-    public static int GDK_WINDOW_STATE_RIGHT_RESIZABLE() {
-        return GDK_WINDOW_STATE_RIGHT_RESIZABLE;
-    }
-    private static final int GDK_WINDOW_STATE_BOTTOM_TILED = (int)8192L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_WINDOW_STATE_BOTTOM_TILED = 8192
-     * }
-     */
-    public static int GDK_WINDOW_STATE_BOTTOM_TILED() {
-        return GDK_WINDOW_STATE_BOTTOM_TILED;
-    }
-    private static final int GDK_WINDOW_STATE_BOTTOM_RESIZABLE = (int)16384L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_WINDOW_STATE_BOTTOM_RESIZABLE = 16384
-     * }
-     */
-    public static int GDK_WINDOW_STATE_BOTTOM_RESIZABLE() {
-        return GDK_WINDOW_STATE_BOTTOM_RESIZABLE;
-    }
-    private static final int GDK_WINDOW_STATE_LEFT_TILED = (int)32768L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_WINDOW_STATE_LEFT_TILED = 32768
-     * }
-     */
-    public static int GDK_WINDOW_STATE_LEFT_TILED() {
-        return GDK_WINDOW_STATE_LEFT_TILED;
-    }
-    private static final int GDK_WINDOW_STATE_LEFT_RESIZABLE = (int)65536L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_WINDOW_STATE_LEFT_RESIZABLE = 65536
-     * }
-     */
-    public static int GDK_WINDOW_STATE_LEFT_RESIZABLE() {
-        return GDK_WINDOW_STATE_LEFT_RESIZABLE;
-    }
-    private static final int GDK_SETTING_ACTION_NEW = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_SETTING_ACTION_NEW = 0
-     * }
-     */
-    public static int GDK_SETTING_ACTION_NEW() {
-        return GDK_SETTING_ACTION_NEW;
-    }
-    private static final int GDK_SETTING_ACTION_CHANGED = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_SETTING_ACTION_CHANGED = 1
-     * }
-     */
-    public static int GDK_SETTING_ACTION_CHANGED() {
-        return GDK_SETTING_ACTION_CHANGED;
-    }
-    private static final int GDK_SETTING_ACTION_DELETED = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_SETTING_ACTION_DELETED = 2
-     * }
-     */
-    public static int GDK_SETTING_ACTION_DELETED() {
-        return GDK_SETTING_ACTION_DELETED;
-    }
-    private static final int GDK_OWNER_CHANGE_NEW_OWNER = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_OWNER_CHANGE_NEW_OWNER = 0
-     * }
-     */
-    public static int GDK_OWNER_CHANGE_NEW_OWNER() {
-        return GDK_OWNER_CHANGE_NEW_OWNER;
-    }
-    private static final int GDK_OWNER_CHANGE_DESTROY = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_OWNER_CHANGE_DESTROY = 1
-     * }
-     */
-    public static int GDK_OWNER_CHANGE_DESTROY() {
-        return GDK_OWNER_CHANGE_DESTROY;
-    }
-    private static final int GDK_OWNER_CHANGE_CLOSE = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GDK_OWNER_CHANGE_CLOSE = 2
-     * }
-     */
-    public static int GDK_OWNER_CHANGE_CLOSE() {
-        return GDK_OWNER_CHANGE_CLOSE;
-    }
-
-    private static class gdk_event_get_type {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_LONG    );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gdk_event_get_type");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GType gdk_event_get_type()
-     * }
-     */
-    public static FunctionDescriptor gdk_event_get_type$descriptor() {
-        return gdk_event_get_type.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GType gdk_event_get_type()
-     * }
-     */
-    public static MethodHandle gdk_event_get_type$handle() {
-        return gdk_event_get_type.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern GType gdk_event_get_type()
-     * }
-     */
-    public static MemorySegment gdk_event_get_type$address() {
-        return gdk_event_get_type.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern GType gdk_event_get_type()
-     * }
-     */
-    public static long gdk_event_get_type() {
-        var mh$ = gdk_event_get_type.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gdk_event_get_type");
-            }
-            return (long)mh$.invokeExact();
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
     }
 }
 

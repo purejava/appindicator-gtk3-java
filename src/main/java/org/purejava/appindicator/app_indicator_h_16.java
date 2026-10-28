@@ -2,15 +2,626 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.lang.invoke.MethodHandle;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
 import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 class app_indicator_h_16 extends app_indicator_h_17 {
 
     app_indicator_h_16() {
         // Should not be called directly
+    }
+
+    private static class g_variant_get_handle {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_get_handle");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern gint32 g_variant_get_handle(GVariant *value)
+     * }
+     */
+    public static FunctionDescriptor g_variant_get_handle$descriptor() {
+        return g_variant_get_handle.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern gint32 g_variant_get_handle(GVariant *value)
+     * }
+     */
+    public static MethodHandle g_variant_get_handle$handle() {
+        return g_variant_get_handle.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gint32 g_variant_get_handle(GVariant *value)
+     * }
+     */
+    public static MemorySegment g_variant_get_handle$address() {
+        return g_variant_get_handle.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern gint32 g_variant_get_handle(GVariant *value)
+     * }
+     */
+    public static int g_variant_get_handle(MemorySegment value) {
+        var mh$ = g_variant_get_handle.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_variant_get_handle", value);
+            }
+            return (int)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_variant_get_double {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_DOUBLE,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_get_double");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern gdouble g_variant_get_double(GVariant *value)
+     * }
+     */
+    public static FunctionDescriptor g_variant_get_double$descriptor() {
+        return g_variant_get_double.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern gdouble g_variant_get_double(GVariant *value)
+     * }
+     */
+    public static MethodHandle g_variant_get_double$handle() {
+        return g_variant_get_double.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gdouble g_variant_get_double(GVariant *value)
+     * }
+     */
+    public static MemorySegment g_variant_get_double$address() {
+        return g_variant_get_double.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern gdouble g_variant_get_double(GVariant *value)
+     * }
+     */
+    public static double g_variant_get_double(MemorySegment value) {
+        var mh$ = g_variant_get_double.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_variant_get_double", value);
+            }
+            return (double)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_variant_get_variant {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_get_variant");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GVariant *g_variant_get_variant(GVariant *value)
+     * }
+     */
+    public static FunctionDescriptor g_variant_get_variant$descriptor() {
+        return g_variant_get_variant.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GVariant *g_variant_get_variant(GVariant *value)
+     * }
+     */
+    public static MethodHandle g_variant_get_variant$handle() {
+        return g_variant_get_variant.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GVariant *g_variant_get_variant(GVariant *value)
+     * }
+     */
+    public static MemorySegment g_variant_get_variant$address() {
+        return g_variant_get_variant.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern GVariant *g_variant_get_variant(GVariant *value)
+     * }
+     */
+    public static MemorySegment g_variant_get_variant(MemorySegment value) {
+        var mh$ = g_variant_get_variant.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_variant_get_variant", value);
+            }
+            return (MemorySegment)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_variant_get_string {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_get_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern const gchar *g_variant_get_string(GVariant *value, gsize *length)
+     * }
+     */
+    public static FunctionDescriptor g_variant_get_string$descriptor() {
+        return g_variant_get_string.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern const gchar *g_variant_get_string(GVariant *value, gsize *length)
+     * }
+     */
+    public static MethodHandle g_variant_get_string$handle() {
+        return g_variant_get_string.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern const gchar *g_variant_get_string(GVariant *value, gsize *length)
+     * }
+     */
+    public static MemorySegment g_variant_get_string$address() {
+        return g_variant_get_string.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern const gchar *g_variant_get_string(GVariant *value, gsize *length)
+     * }
+     */
+    public static MemorySegment g_variant_get_string(MemorySegment value, MemorySegment length) {
+        var mh$ = g_variant_get_string.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_variant_get_string", value, length);
+            }
+            return (MemorySegment)mh$.invokeExact(value, length);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_variant_dup_string {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_dup_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern gchar *g_variant_dup_string(GVariant *value, gsize *length)
+     * }
+     */
+    public static FunctionDescriptor g_variant_dup_string$descriptor() {
+        return g_variant_dup_string.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern gchar *g_variant_dup_string(GVariant *value, gsize *length)
+     * }
+     */
+    public static MethodHandle g_variant_dup_string$handle() {
+        return g_variant_dup_string.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gchar *g_variant_dup_string(GVariant *value, gsize *length)
+     * }
+     */
+    public static MemorySegment g_variant_dup_string$address() {
+        return g_variant_dup_string.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern gchar *g_variant_dup_string(GVariant *value, gsize *length)
+     * }
+     */
+    public static MemorySegment g_variant_dup_string(MemorySegment value, MemorySegment length) {
+        var mh$ = g_variant_dup_string.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_variant_dup_string", value, length);
+            }
+            return (MemorySegment)mh$.invokeExact(value, length);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_variant_get_strv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_get_strv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern const gchar **g_variant_get_strv(GVariant *value, gsize *length)
+     * }
+     */
+    public static FunctionDescriptor g_variant_get_strv$descriptor() {
+        return g_variant_get_strv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern const gchar **g_variant_get_strv(GVariant *value, gsize *length)
+     * }
+     */
+    public static MethodHandle g_variant_get_strv$handle() {
+        return g_variant_get_strv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern const gchar **g_variant_get_strv(GVariant *value, gsize *length)
+     * }
+     */
+    public static MemorySegment g_variant_get_strv$address() {
+        return g_variant_get_strv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern const gchar **g_variant_get_strv(GVariant *value, gsize *length)
+     * }
+     */
+    public static MemorySegment g_variant_get_strv(MemorySegment value, MemorySegment length) {
+        var mh$ = g_variant_get_strv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_variant_get_strv", value, length);
+            }
+            return (MemorySegment)mh$.invokeExact(value, length);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_variant_dup_strv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_dup_strv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern gchar **g_variant_dup_strv(GVariant *value, gsize *length)
+     * }
+     */
+    public static FunctionDescriptor g_variant_dup_strv$descriptor() {
+        return g_variant_dup_strv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern gchar **g_variant_dup_strv(GVariant *value, gsize *length)
+     * }
+     */
+    public static MethodHandle g_variant_dup_strv$handle() {
+        return g_variant_dup_strv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gchar **g_variant_dup_strv(GVariant *value, gsize *length)
+     * }
+     */
+    public static MemorySegment g_variant_dup_strv$address() {
+        return g_variant_dup_strv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern gchar **g_variant_dup_strv(GVariant *value, gsize *length)
+     * }
+     */
+    public static MemorySegment g_variant_dup_strv(MemorySegment value, MemorySegment length) {
+        var mh$ = g_variant_dup_strv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_variant_dup_strv", value, length);
+            }
+            return (MemorySegment)mh$.invokeExact(value, length);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_variant_get_objv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_get_objv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern const gchar **g_variant_get_objv(GVariant *value, gsize *length)
+     * }
+     */
+    public static FunctionDescriptor g_variant_get_objv$descriptor() {
+        return g_variant_get_objv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern const gchar **g_variant_get_objv(GVariant *value, gsize *length)
+     * }
+     */
+    public static MethodHandle g_variant_get_objv$handle() {
+        return g_variant_get_objv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern const gchar **g_variant_get_objv(GVariant *value, gsize *length)
+     * }
+     */
+    public static MemorySegment g_variant_get_objv$address() {
+        return g_variant_get_objv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern const gchar **g_variant_get_objv(GVariant *value, gsize *length)
+     * }
+     */
+    public static MemorySegment g_variant_get_objv(MemorySegment value, MemorySegment length) {
+        var mh$ = g_variant_get_objv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_variant_get_objv", value, length);
+            }
+            return (MemorySegment)mh$.invokeExact(value, length);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_variant_dup_objv {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_dup_objv");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern gchar **g_variant_dup_objv(GVariant *value, gsize *length)
+     * }
+     */
+    public static FunctionDescriptor g_variant_dup_objv$descriptor() {
+        return g_variant_dup_objv.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern gchar **g_variant_dup_objv(GVariant *value, gsize *length)
+     * }
+     */
+    public static MethodHandle g_variant_dup_objv$handle() {
+        return g_variant_dup_objv.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gchar **g_variant_dup_objv(GVariant *value, gsize *length)
+     * }
+     */
+    public static MemorySegment g_variant_dup_objv$address() {
+        return g_variant_dup_objv.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern gchar **g_variant_dup_objv(GVariant *value, gsize *length)
+     * }
+     */
+    public static MemorySegment g_variant_dup_objv(MemorySegment value, MemorySegment length) {
+        var mh$ = g_variant_dup_objv.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_variant_dup_objv", value, length);
+            }
+            return (MemorySegment)mh$.invokeExact(value, length);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_variant_get_bytestring {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_get_bytestring");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern const gchar *g_variant_get_bytestring(GVariant *value)
+     * }
+     */
+    public static FunctionDescriptor g_variant_get_bytestring$descriptor() {
+        return g_variant_get_bytestring.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern const gchar *g_variant_get_bytestring(GVariant *value)
+     * }
+     */
+    public static MethodHandle g_variant_get_bytestring$handle() {
+        return g_variant_get_bytestring.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern const gchar *g_variant_get_bytestring(GVariant *value)
+     * }
+     */
+    public static MemorySegment g_variant_get_bytestring$address() {
+        return g_variant_get_bytestring.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern const gchar *g_variant_get_bytestring(GVariant *value)
+     * }
+     */
+    public static MemorySegment g_variant_get_bytestring(MemorySegment value) {
+        var mh$ = g_variant_get_bytestring.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_variant_get_bytestring", value);
+            }
+            return (MemorySegment)mh$.invokeExact(value);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
     }
 
     private static class g_variant_dup_bytestring {
@@ -44093,615 +44704,6 @@ class app_indicator_h_16 extends app_indicator_h_17 {
                 traceDowncall("pthread_mutexattr_init", __attr);
             }
             return (int)mh$.invokeExact(__attr);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pthread_mutexattr_destroy {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_mutexattr_destroy");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_destroy(pthread_mutexattr_t *__attr)
-     * }
-     */
-    public static FunctionDescriptor pthread_mutexattr_destroy$descriptor() {
-        return pthread_mutexattr_destroy.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_destroy(pthread_mutexattr_t *__attr)
-     * }
-     */
-    public static MethodHandle pthread_mutexattr_destroy$handle() {
-        return pthread_mutexattr_destroy.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_destroy(pthread_mutexattr_t *__attr)
-     * }
-     */
-    public static MemorySegment pthread_mutexattr_destroy$address() {
-        return pthread_mutexattr_destroy.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_destroy(pthread_mutexattr_t *__attr)
-     * }
-     */
-    public static int pthread_mutexattr_destroy(MemorySegment __attr) {
-        var mh$ = pthread_mutexattr_destroy.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pthread_mutexattr_destroy", __attr);
-            }
-            return (int)mh$.invokeExact(__attr);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pthread_mutexattr_getpshared {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_mutexattr_getpshared");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_getpshared(const pthread_mutexattr_t *restrict __attr, int *restrict __pshared)
-     * }
-     */
-    public static FunctionDescriptor pthread_mutexattr_getpshared$descriptor() {
-        return pthread_mutexattr_getpshared.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_getpshared(const pthread_mutexattr_t *restrict __attr, int *restrict __pshared)
-     * }
-     */
-    public static MethodHandle pthread_mutexattr_getpshared$handle() {
-        return pthread_mutexattr_getpshared.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_getpshared(const pthread_mutexattr_t *restrict __attr, int *restrict __pshared)
-     * }
-     */
-    public static MemorySegment pthread_mutexattr_getpshared$address() {
-        return pthread_mutexattr_getpshared.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_getpshared(const pthread_mutexattr_t *restrict __attr, int *restrict __pshared)
-     * }
-     */
-    public static int pthread_mutexattr_getpshared(MemorySegment __attr, MemorySegment __pshared) {
-        var mh$ = pthread_mutexattr_getpshared.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pthread_mutexattr_getpshared", __attr, __pshared);
-            }
-            return (int)mh$.invokeExact(__attr, __pshared);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pthread_mutexattr_setpshared {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_mutexattr_setpshared");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_setpshared(pthread_mutexattr_t *__attr, int __pshared)
-     * }
-     */
-    public static FunctionDescriptor pthread_mutexattr_setpshared$descriptor() {
-        return pthread_mutexattr_setpshared.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_setpshared(pthread_mutexattr_t *__attr, int __pshared)
-     * }
-     */
-    public static MethodHandle pthread_mutexattr_setpshared$handle() {
-        return pthread_mutexattr_setpshared.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_setpshared(pthread_mutexattr_t *__attr, int __pshared)
-     * }
-     */
-    public static MemorySegment pthread_mutexattr_setpshared$address() {
-        return pthread_mutexattr_setpshared.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_setpshared(pthread_mutexattr_t *__attr, int __pshared)
-     * }
-     */
-    public static int pthread_mutexattr_setpshared(MemorySegment __attr, int __pshared) {
-        var mh$ = pthread_mutexattr_setpshared.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pthread_mutexattr_setpshared", __attr, __pshared);
-            }
-            return (int)mh$.invokeExact(__attr, __pshared);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pthread_mutexattr_gettype {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_mutexattr_gettype");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_gettype(const pthread_mutexattr_t *restrict __attr, int *restrict __kind)
-     * }
-     */
-    public static FunctionDescriptor pthread_mutexattr_gettype$descriptor() {
-        return pthread_mutexattr_gettype.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_gettype(const pthread_mutexattr_t *restrict __attr, int *restrict __kind)
-     * }
-     */
-    public static MethodHandle pthread_mutexattr_gettype$handle() {
-        return pthread_mutexattr_gettype.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_gettype(const pthread_mutexattr_t *restrict __attr, int *restrict __kind)
-     * }
-     */
-    public static MemorySegment pthread_mutexattr_gettype$address() {
-        return pthread_mutexattr_gettype.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_gettype(const pthread_mutexattr_t *restrict __attr, int *restrict __kind)
-     * }
-     */
-    public static int pthread_mutexattr_gettype(MemorySegment __attr, MemorySegment __kind) {
-        var mh$ = pthread_mutexattr_gettype.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pthread_mutexattr_gettype", __attr, __kind);
-            }
-            return (int)mh$.invokeExact(__attr, __kind);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pthread_mutexattr_settype {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_mutexattr_settype");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_settype(pthread_mutexattr_t *__attr, int __kind)
-     * }
-     */
-    public static FunctionDescriptor pthread_mutexattr_settype$descriptor() {
-        return pthread_mutexattr_settype.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_settype(pthread_mutexattr_t *__attr, int __kind)
-     * }
-     */
-    public static MethodHandle pthread_mutexattr_settype$handle() {
-        return pthread_mutexattr_settype.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_settype(pthread_mutexattr_t *__attr, int __kind)
-     * }
-     */
-    public static MemorySegment pthread_mutexattr_settype$address() {
-        return pthread_mutexattr_settype.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_settype(pthread_mutexattr_t *__attr, int __kind)
-     * }
-     */
-    public static int pthread_mutexattr_settype(MemorySegment __attr, int __kind) {
-        var mh$ = pthread_mutexattr_settype.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pthread_mutexattr_settype", __attr, __kind);
-            }
-            return (int)mh$.invokeExact(__attr, __kind);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pthread_mutexattr_getprotocol {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_mutexattr_getprotocol");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_getprotocol(const pthread_mutexattr_t *restrict __attr, int *restrict __protocol)
-     * }
-     */
-    public static FunctionDescriptor pthread_mutexattr_getprotocol$descriptor() {
-        return pthread_mutexattr_getprotocol.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_getprotocol(const pthread_mutexattr_t *restrict __attr, int *restrict __protocol)
-     * }
-     */
-    public static MethodHandle pthread_mutexattr_getprotocol$handle() {
-        return pthread_mutexattr_getprotocol.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_getprotocol(const pthread_mutexattr_t *restrict __attr, int *restrict __protocol)
-     * }
-     */
-    public static MemorySegment pthread_mutexattr_getprotocol$address() {
-        return pthread_mutexattr_getprotocol.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_getprotocol(const pthread_mutexattr_t *restrict __attr, int *restrict __protocol)
-     * }
-     */
-    public static int pthread_mutexattr_getprotocol(MemorySegment __attr, MemorySegment __protocol) {
-        var mh$ = pthread_mutexattr_getprotocol.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pthread_mutexattr_getprotocol", __attr, __protocol);
-            }
-            return (int)mh$.invokeExact(__attr, __protocol);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pthread_mutexattr_setprotocol {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_mutexattr_setprotocol");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_setprotocol(pthread_mutexattr_t *__attr, int __protocol)
-     * }
-     */
-    public static FunctionDescriptor pthread_mutexattr_setprotocol$descriptor() {
-        return pthread_mutexattr_setprotocol.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_setprotocol(pthread_mutexattr_t *__attr, int __protocol)
-     * }
-     */
-    public static MethodHandle pthread_mutexattr_setprotocol$handle() {
-        return pthread_mutexattr_setprotocol.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_setprotocol(pthread_mutexattr_t *__attr, int __protocol)
-     * }
-     */
-    public static MemorySegment pthread_mutexattr_setprotocol$address() {
-        return pthread_mutexattr_setprotocol.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_setprotocol(pthread_mutexattr_t *__attr, int __protocol)
-     * }
-     */
-    public static int pthread_mutexattr_setprotocol(MemorySegment __attr, int __protocol) {
-        var mh$ = pthread_mutexattr_setprotocol.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pthread_mutexattr_setprotocol", __attr, __protocol);
-            }
-            return (int)mh$.invokeExact(__attr, __protocol);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pthread_mutexattr_getprioceiling {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_mutexattr_getprioceiling");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_getprioceiling(const pthread_mutexattr_t *restrict __attr, int *restrict __prioceiling)
-     * }
-     */
-    public static FunctionDescriptor pthread_mutexattr_getprioceiling$descriptor() {
-        return pthread_mutexattr_getprioceiling.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_getprioceiling(const pthread_mutexattr_t *restrict __attr, int *restrict __prioceiling)
-     * }
-     */
-    public static MethodHandle pthread_mutexattr_getprioceiling$handle() {
-        return pthread_mutexattr_getprioceiling.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_getprioceiling(const pthread_mutexattr_t *restrict __attr, int *restrict __prioceiling)
-     * }
-     */
-    public static MemorySegment pthread_mutexattr_getprioceiling$address() {
-        return pthread_mutexattr_getprioceiling.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_getprioceiling(const pthread_mutexattr_t *restrict __attr, int *restrict __prioceiling)
-     * }
-     */
-    public static int pthread_mutexattr_getprioceiling(MemorySegment __attr, MemorySegment __prioceiling) {
-        var mh$ = pthread_mutexattr_getprioceiling.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pthread_mutexattr_getprioceiling", __attr, __prioceiling);
-            }
-            return (int)mh$.invokeExact(__attr, __prioceiling);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pthread_mutexattr_setprioceiling {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_mutexattr_setprioceiling");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_setprioceiling(pthread_mutexattr_t *__attr, int __prioceiling)
-     * }
-     */
-    public static FunctionDescriptor pthread_mutexattr_setprioceiling$descriptor() {
-        return pthread_mutexattr_setprioceiling.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_setprioceiling(pthread_mutexattr_t *__attr, int __prioceiling)
-     * }
-     */
-    public static MethodHandle pthread_mutexattr_setprioceiling$handle() {
-        return pthread_mutexattr_setprioceiling.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_setprioceiling(pthread_mutexattr_t *__attr, int __prioceiling)
-     * }
-     */
-    public static MemorySegment pthread_mutexattr_setprioceiling$address() {
-        return pthread_mutexattr_setprioceiling.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_setprioceiling(pthread_mutexattr_t *__attr, int __prioceiling)
-     * }
-     */
-    public static int pthread_mutexattr_setprioceiling(MemorySegment __attr, int __prioceiling) {
-        var mh$ = pthread_mutexattr_setprioceiling.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pthread_mutexattr_setprioceiling", __attr, __prioceiling);
-            }
-            return (int)mh$.invokeExact(__attr, __prioceiling);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class pthread_mutexattr_getrobust {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_mutexattr_getrobust");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_getrobust(const pthread_mutexattr_t *__attr, int *__robustness)
-     * }
-     */
-    public static FunctionDescriptor pthread_mutexattr_getrobust$descriptor() {
-        return pthread_mutexattr_getrobust.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_getrobust(const pthread_mutexattr_t *__attr, int *__robustness)
-     * }
-     */
-    public static MethodHandle pthread_mutexattr_getrobust$handle() {
-        return pthread_mutexattr_getrobust.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_getrobust(const pthread_mutexattr_t *__attr, int *__robustness)
-     * }
-     */
-    public static MemorySegment pthread_mutexattr_getrobust$address() {
-        return pthread_mutexattr_getrobust.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern int pthread_mutexattr_getrobust(const pthread_mutexattr_t *__attr, int *__robustness)
-     * }
-     */
-    public static int pthread_mutexattr_getrobust(MemorySegment __attr, MemorySegment __robustness) {
-        var mh$ = pthread_mutexattr_getrobust.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("pthread_mutexattr_getrobust", __attr, __robustness);
-            }
-            return (int)mh$.invokeExact(__attr, __robustness);
         } catch (Error | RuntimeException ex) {
            throw ex;
         } catch (Throwable ex$) {

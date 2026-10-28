@@ -2,15 +2,82 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.lang.invoke.MethodHandle;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
 import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 class app_indicator_h_18 extends app_indicator_h_19 {
 
     app_indicator_h_18() {
         // Should not be called directly
+    }
+
+    private static class memchr {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_LONG
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("memchr");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void *memchr(const void *__s, int __c, size_t __n)
+     * }
+     */
+    public static FunctionDescriptor memchr$descriptor() {
+        return memchr.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void *memchr(const void *__s, int __c, size_t __n)
+     * }
+     */
+    public static MethodHandle memchr$handle() {
+        return memchr.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void *memchr(const void *__s, int __c, size_t __n)
+     * }
+     */
+    public static MemorySegment memchr$address() {
+        return memchr.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void *memchr(const void *__s, int __c, size_t __n)
+     * }
+     */
+    public static MemorySegment memchr(MemorySegment __s, int __c, long __n) {
+        var mh$ = memchr.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("memchr", __s, __c, __n);
+            }
+            return (MemorySegment)mh$.invokeExact(__s, __c, __n);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
     }
 
     private static class strcpy {
@@ -11321,10 +11388,19 @@ class app_indicator_h_18 extends app_indicator_h_19 {
     public static int G_USER_DIRECTORY_VIDEOS() {
         return G_USER_DIRECTORY_VIDEOS;
     }
-    private static final int G_USER_N_DIRECTORIES = (int)8L;
+    private static final int G_USER_DIRECTORY_PROJECTS = (int)8L;
     /**
      * {@snippet lang=c :
-     * enum <anonymous>.G_USER_N_DIRECTORIES = 8
+     * enum <anonymous>.G_USER_DIRECTORY_PROJECTS = 8
+     * }
+     */
+    public static int G_USER_DIRECTORY_PROJECTS() {
+        return G_USER_DIRECTORY_PROJECTS;
+    }
+    private static final int G_USER_N_DIRECTORIES = (int)9L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.G_USER_N_DIRECTORIES = 9
      * }
      */
     public static int G_USER_N_DIRECTORIES() {
@@ -48175,125 +48251,6 @@ class app_indicator_h_18 extends app_indicator_h_19 {
                 traceDowncall("g_list_free", list);
             }
             mh$.invokeExact(list);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_list_free_1 {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_list_free_1");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void g_list_free_1(GList *list)
-     * }
-     */
-    public static FunctionDescriptor g_list_free_1$descriptor() {
-        return g_list_free_1.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void g_list_free_1(GList *list)
-     * }
-     */
-    public static MethodHandle g_list_free_1$handle() {
-        return g_list_free_1.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void g_list_free_1(GList *list)
-     * }
-     */
-    public static MemorySegment g_list_free_1$address() {
-        return g_list_free_1.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void g_list_free_1(GList *list)
-     * }
-     */
-    public static void g_list_free_1(MemorySegment list) {
-        var mh$ = g_list_free_1.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_list_free_1", list);
-            }
-            mh$.invokeExact(list);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_list_free_full {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_list_free_full");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void g_list_free_full(GList *list, GDestroyNotify free_func)
-     * }
-     */
-    public static FunctionDescriptor g_list_free_full$descriptor() {
-        return g_list_free_full.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void g_list_free_full(GList *list, GDestroyNotify free_func)
-     * }
-     */
-    public static MethodHandle g_list_free_full$handle() {
-        return g_list_free_full.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void g_list_free_full(GList *list, GDestroyNotify free_func)
-     * }
-     */
-    public static MemorySegment g_list_free_full$address() {
-        return g_list_free_full.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void g_list_free_full(GList *list, GDestroyNotify free_func)
-     * }
-     */
-    public static void g_list_free_full(MemorySegment list, MemorySegment free_func) {
-        var mh$ = g_list_free_full.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_list_free_full", list, free_func);
-            }
-            mh$.invokeExact(list, free_func);
         } catch (Error | RuntimeException ex) {
            throw ex;
         } catch (Throwable ex$) {

@@ -2,10 +2,15 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.util.function.Consumer;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
-import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
@@ -24,7 +29,7 @@ public class GTestLogBuffer {
     private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
         app_indicator_h.C_POINTER.withName("data"),
         app_indicator_h.C_POINTER.withName("msgs")
-    ).withName("$anon$729:9");
+    ).withName("$anon$764:9");
 
     /**
      * The layout of this struct

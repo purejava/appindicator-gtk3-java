@@ -2,13 +2,640 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.lang.invoke.MethodHandle;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 class app_indicator_h_13 extends app_indicator_h_14 {
 
     app_indicator_h_13() {
         // Should not be called directly
+    }
+
+    private static class g_credentials_set_native {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_credentials_set_native");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_credentials_set_native(GCredentials *credentials, GCredentialsType native_type, gpointer native)
+     * }
+     */
+    public static FunctionDescriptor g_credentials_set_native$descriptor() {
+        return g_credentials_set_native.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_credentials_set_native(GCredentials *credentials, GCredentialsType native_type, gpointer native)
+     * }
+     */
+    public static MethodHandle g_credentials_set_native$handle() {
+        return g_credentials_set_native.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_credentials_set_native(GCredentials *credentials, GCredentialsType native_type, gpointer native)
+     * }
+     */
+    public static MemorySegment g_credentials_set_native$address() {
+        return g_credentials_set_native.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_credentials_set_native(GCredentials *credentials, GCredentialsType native_type, gpointer native)
+     * }
+     */
+    public static void g_credentials_set_native(MemorySegment credentials, int native_type, MemorySegment native_) {
+        var mh$ = g_credentials_set_native.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_credentials_set_native", credentials, native_type, native_);
+            }
+            mh$.invokeExact(credentials, native_type, native_);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_credentials_is_same_user {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_credentials_is_same_user");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern gboolean g_credentials_is_same_user(GCredentials *credentials, GCredentials *other_credentials, GError **error)
+     * }
+     */
+    public static FunctionDescriptor g_credentials_is_same_user$descriptor() {
+        return g_credentials_is_same_user.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern gboolean g_credentials_is_same_user(GCredentials *credentials, GCredentials *other_credentials, GError **error)
+     * }
+     */
+    public static MethodHandle g_credentials_is_same_user$handle() {
+        return g_credentials_is_same_user.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_credentials_is_same_user(GCredentials *credentials, GCredentials *other_credentials, GError **error)
+     * }
+     */
+    public static MemorySegment g_credentials_is_same_user$address() {
+        return g_credentials_is_same_user.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern gboolean g_credentials_is_same_user(GCredentials *credentials, GCredentials *other_credentials, GError **error)
+     * }
+     */
+    public static int g_credentials_is_same_user(MemorySegment credentials, MemorySegment other_credentials, MemorySegment error) {
+        var mh$ = g_credentials_is_same_user.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_credentials_is_same_user", credentials, other_credentials, error);
+            }
+            return (int)mh$.invokeExact(credentials, other_credentials, error);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_credentials_get_unix_pid {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_credentials_get_unix_pid");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern pid_t g_credentials_get_unix_pid(GCredentials *credentials, GError **error)
+     * }
+     */
+    public static FunctionDescriptor g_credentials_get_unix_pid$descriptor() {
+        return g_credentials_get_unix_pid.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern pid_t g_credentials_get_unix_pid(GCredentials *credentials, GError **error)
+     * }
+     */
+    public static MethodHandle g_credentials_get_unix_pid$handle() {
+        return g_credentials_get_unix_pid.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern pid_t g_credentials_get_unix_pid(GCredentials *credentials, GError **error)
+     * }
+     */
+    public static MemorySegment g_credentials_get_unix_pid$address() {
+        return g_credentials_get_unix_pid.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern pid_t g_credentials_get_unix_pid(GCredentials *credentials, GError **error)
+     * }
+     */
+    public static int g_credentials_get_unix_pid(MemorySegment credentials, MemorySegment error) {
+        var mh$ = g_credentials_get_unix_pid.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_credentials_get_unix_pid", credentials, error);
+            }
+            return (int)mh$.invokeExact(credentials, error);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_credentials_get_unix_user {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_credentials_get_unix_user");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern uid_t g_credentials_get_unix_user(GCredentials *credentials, GError **error)
+     * }
+     */
+    public static FunctionDescriptor g_credentials_get_unix_user$descriptor() {
+        return g_credentials_get_unix_user.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern uid_t g_credentials_get_unix_user(GCredentials *credentials, GError **error)
+     * }
+     */
+    public static MethodHandle g_credentials_get_unix_user$handle() {
+        return g_credentials_get_unix_user.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern uid_t g_credentials_get_unix_user(GCredentials *credentials, GError **error)
+     * }
+     */
+    public static MemorySegment g_credentials_get_unix_user$address() {
+        return g_credentials_get_unix_user.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern uid_t g_credentials_get_unix_user(GCredentials *credentials, GError **error)
+     * }
+     */
+    public static int g_credentials_get_unix_user(MemorySegment credentials, MemorySegment error) {
+        var mh$ = g_credentials_get_unix_user.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_credentials_get_unix_user", credentials, error);
+            }
+            return (int)mh$.invokeExact(credentials, error);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_credentials_set_unix_user {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_credentials_set_unix_user");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern gboolean g_credentials_set_unix_user(GCredentials *credentials, uid_t uid, GError **error)
+     * }
+     */
+    public static FunctionDescriptor g_credentials_set_unix_user$descriptor() {
+        return g_credentials_set_unix_user.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern gboolean g_credentials_set_unix_user(GCredentials *credentials, uid_t uid, GError **error)
+     * }
+     */
+    public static MethodHandle g_credentials_set_unix_user$handle() {
+        return g_credentials_set_unix_user.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_credentials_set_unix_user(GCredentials *credentials, uid_t uid, GError **error)
+     * }
+     */
+    public static MemorySegment g_credentials_set_unix_user$address() {
+        return g_credentials_set_unix_user.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern gboolean g_credentials_set_unix_user(GCredentials *credentials, uid_t uid, GError **error)
+     * }
+     */
+    public static int g_credentials_set_unix_user(MemorySegment credentials, int uid, MemorySegment error) {
+        var mh$ = g_credentials_set_unix_user.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_credentials_set_unix_user", credentials, uid, error);
+            }
+            return (int)mh$.invokeExact(credentials, uid, error);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_datagram_based_get_type {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG    );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_datagram_based_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GType g_datagram_based_get_type()
+     * }
+     */
+    public static FunctionDescriptor g_datagram_based_get_type$descriptor() {
+        return g_datagram_based_get_type.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GType g_datagram_based_get_type()
+     * }
+     */
+    public static MethodHandle g_datagram_based_get_type$handle() {
+        return g_datagram_based_get_type.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType g_datagram_based_get_type()
+     * }
+     */
+    public static MemorySegment g_datagram_based_get_type$address() {
+        return g_datagram_based_get_type.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern GType g_datagram_based_get_type()
+     * }
+     */
+    public static long g_datagram_based_get_type() {
+        var mh$ = g_datagram_based_get_type.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_datagram_based_get_type");
+            }
+            return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_datagram_based_receive_messages {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_datagram_based_receive_messages");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern gint g_datagram_based_receive_messages(GDatagramBased *datagram_based, GInputMessage *messages, guint num_messages, gint flags, gint64 timeout, GCancellable *cancellable, GError **error)
+     * }
+     */
+    public static FunctionDescriptor g_datagram_based_receive_messages$descriptor() {
+        return g_datagram_based_receive_messages.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern gint g_datagram_based_receive_messages(GDatagramBased *datagram_based, GInputMessage *messages, guint num_messages, gint flags, gint64 timeout, GCancellable *cancellable, GError **error)
+     * }
+     */
+    public static MethodHandle g_datagram_based_receive_messages$handle() {
+        return g_datagram_based_receive_messages.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gint g_datagram_based_receive_messages(GDatagramBased *datagram_based, GInputMessage *messages, guint num_messages, gint flags, gint64 timeout, GCancellable *cancellable, GError **error)
+     * }
+     */
+    public static MemorySegment g_datagram_based_receive_messages$address() {
+        return g_datagram_based_receive_messages.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern gint g_datagram_based_receive_messages(GDatagramBased *datagram_based, GInputMessage *messages, guint num_messages, gint flags, gint64 timeout, GCancellable *cancellable, GError **error)
+     * }
+     */
+    public static int g_datagram_based_receive_messages(MemorySegment datagram_based, MemorySegment messages, int num_messages, int flags, long timeout, MemorySegment cancellable, MemorySegment error) {
+        var mh$ = g_datagram_based_receive_messages.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_datagram_based_receive_messages", datagram_based, messages, num_messages, flags, timeout, cancellable, error);
+            }
+            return (int)mh$.invokeExact(datagram_based, messages, num_messages, flags, timeout, cancellable, error);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_datagram_based_send_messages {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_datagram_based_send_messages");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern gint g_datagram_based_send_messages(GDatagramBased *datagram_based, GOutputMessage *messages, guint num_messages, gint flags, gint64 timeout, GCancellable *cancellable, GError **error)
+     * }
+     */
+    public static FunctionDescriptor g_datagram_based_send_messages$descriptor() {
+        return g_datagram_based_send_messages.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern gint g_datagram_based_send_messages(GDatagramBased *datagram_based, GOutputMessage *messages, guint num_messages, gint flags, gint64 timeout, GCancellable *cancellable, GError **error)
+     * }
+     */
+    public static MethodHandle g_datagram_based_send_messages$handle() {
+        return g_datagram_based_send_messages.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gint g_datagram_based_send_messages(GDatagramBased *datagram_based, GOutputMessage *messages, guint num_messages, gint flags, gint64 timeout, GCancellable *cancellable, GError **error)
+     * }
+     */
+    public static MemorySegment g_datagram_based_send_messages$address() {
+        return g_datagram_based_send_messages.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern gint g_datagram_based_send_messages(GDatagramBased *datagram_based, GOutputMessage *messages, guint num_messages, gint flags, gint64 timeout, GCancellable *cancellable, GError **error)
+     * }
+     */
+    public static int g_datagram_based_send_messages(MemorySegment datagram_based, MemorySegment messages, int num_messages, int flags, long timeout, MemorySegment cancellable, MemorySegment error) {
+        var mh$ = g_datagram_based_send_messages.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_datagram_based_send_messages", datagram_based, messages, num_messages, flags, timeout, cancellable, error);
+            }
+            return (int)mh$.invokeExact(datagram_based, messages, num_messages, flags, timeout, cancellable, error);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_datagram_based_create_source {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_datagram_based_create_source");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GSource *g_datagram_based_create_source(GDatagramBased *datagram_based, GIOCondition condition, GCancellable *cancellable)
+     * }
+     */
+    public static FunctionDescriptor g_datagram_based_create_source$descriptor() {
+        return g_datagram_based_create_source.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GSource *g_datagram_based_create_source(GDatagramBased *datagram_based, GIOCondition condition, GCancellable *cancellable)
+     * }
+     */
+    public static MethodHandle g_datagram_based_create_source$handle() {
+        return g_datagram_based_create_source.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GSource *g_datagram_based_create_source(GDatagramBased *datagram_based, GIOCondition condition, GCancellable *cancellable)
+     * }
+     */
+    public static MemorySegment g_datagram_based_create_source$address() {
+        return g_datagram_based_create_source.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern GSource *g_datagram_based_create_source(GDatagramBased *datagram_based, GIOCondition condition, GCancellable *cancellable)
+     * }
+     */
+    public static MemorySegment g_datagram_based_create_source(MemorySegment datagram_based, int condition, MemorySegment cancellable) {
+        var mh$ = g_datagram_based_create_source.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_datagram_based_create_source", datagram_based, condition, cancellable);
+            }
+            return (MemorySegment)mh$.invokeExact(datagram_based, condition, cancellable);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_datagram_based_condition_check {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_datagram_based_condition_check");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GIOCondition g_datagram_based_condition_check(GDatagramBased *datagram_based, GIOCondition condition)
+     * }
+     */
+    public static FunctionDescriptor g_datagram_based_condition_check$descriptor() {
+        return g_datagram_based_condition_check.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GIOCondition g_datagram_based_condition_check(GDatagramBased *datagram_based, GIOCondition condition)
+     * }
+     */
+    public static MethodHandle g_datagram_based_condition_check$handle() {
+        return g_datagram_based_condition_check.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GIOCondition g_datagram_based_condition_check(GDatagramBased *datagram_based, GIOCondition condition)
+     * }
+     */
+    public static MemorySegment g_datagram_based_condition_check$address() {
+        return g_datagram_based_condition_check.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern GIOCondition g_datagram_based_condition_check(GDatagramBased *datagram_based, GIOCondition condition)
+     * }
+     */
+    public static int g_datagram_based_condition_check(MemorySegment datagram_based, int condition) {
+        var mh$ = g_datagram_based_condition_check.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_datagram_based_condition_check", datagram_based, condition);
+            }
+            return (int)mh$.invokeExact(datagram_based, condition);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
     }
 
     private static class g_datagram_based_condition_wait {
@@ -2365,6 +2992,54 @@ class app_indicator_h_13 extends app_indicator_h_14 {
            throw new AssertionError("should not reach here", ex$);
         }
     }
+    /**
+     * {@snippet lang=c :
+     * typedef GDBusActionGroup *GDBusActionGroup_autoptr
+     * }
+     */
+    public static final AddressLayout GDBusActionGroup_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GDBusActionGroup_listautoptr
+     * }
+     */
+    public static final AddressLayout GDBusActionGroup_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GDBusActionGroup_slistautoptr
+     * }
+     */
+    public static final AddressLayout GDBusActionGroup_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GDBusActionGroup_queueautoptr
+     * }
+     */
+    public static final AddressLayout GDBusActionGroup_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GDBusActionGroupClass *GDBusActionGroupClass_autoptr
+     * }
+     */
+    public static final AddressLayout GDBusActionGroupClass_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GDBusActionGroupClass_listautoptr
+     * }
+     */
+    public static final AddressLayout GDBusActionGroupClass_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GDBusActionGroupClass_slistautoptr
+     * }
+     */
+    public static final AddressLayout GDBusActionGroupClass_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GDBusActionGroupClass_queueautoptr
+     * }
+     */
+    public static final AddressLayout GDBusActionGroupClass_queueautoptr = app_indicator_h.C_POINTER;
 
     private static class g_dbus_action_group_get {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
@@ -24847,6 +25522,54 @@ class app_indicator_h_13 extends app_indicator_h_14 {
            throw new AssertionError("should not reach here", ex$);
         }
     }
+    /**
+     * {@snippet lang=c :
+     * typedef GEmblem *GEmblem_autoptr
+     * }
+     */
+    public static final AddressLayout GEmblem_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GEmblem_listautoptr
+     * }
+     */
+    public static final AddressLayout GEmblem_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GEmblem_slistautoptr
+     * }
+     */
+    public static final AddressLayout GEmblem_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GEmblem_queueautoptr
+     * }
+     */
+    public static final AddressLayout GEmblem_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GEmblemClass *GEmblemClass_autoptr
+     * }
+     */
+    public static final AddressLayout GEmblemClass_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GEmblemClass_listautoptr
+     * }
+     */
+    public static final AddressLayout GEmblemClass_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GEmblemClass_slistautoptr
+     * }
+     */
+    public static final AddressLayout GEmblemClass_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GEmblemClass_queueautoptr
+     * }
+     */
+    public static final AddressLayout GEmblemClass_queueautoptr = app_indicator_h.C_POINTER;
 
     private static class g_emblem_new {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
@@ -56407,1587 +57130,6 @@ class app_indicator_h_13 extends app_indicator_h_14 {
                 traceDowncall("g_menu_model_is_mutable", model);
             }
             return (int)mh$.invokeExact(model);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_model_get_n_items {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_model_get_n_items");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern gint g_menu_model_get_n_items(GMenuModel *model)
-     * }
-     */
-    public static FunctionDescriptor g_menu_model_get_n_items$descriptor() {
-        return g_menu_model_get_n_items.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern gint g_menu_model_get_n_items(GMenuModel *model)
-     * }
-     */
-    public static MethodHandle g_menu_model_get_n_items$handle() {
-        return g_menu_model_get_n_items.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern gint g_menu_model_get_n_items(GMenuModel *model)
-     * }
-     */
-    public static MemorySegment g_menu_model_get_n_items$address() {
-        return g_menu_model_get_n_items.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern gint g_menu_model_get_n_items(GMenuModel *model)
-     * }
-     */
-    public static int g_menu_model_get_n_items(MemorySegment model) {
-        var mh$ = g_menu_model_get_n_items.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_model_get_n_items", model);
-            }
-            return (int)mh$.invokeExact(model);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_model_iterate_item_attributes {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_model_iterate_item_attributes");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GMenuAttributeIter *g_menu_model_iterate_item_attributes(GMenuModel *model, gint item_index)
-     * }
-     */
-    public static FunctionDescriptor g_menu_model_iterate_item_attributes$descriptor() {
-        return g_menu_model_iterate_item_attributes.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GMenuAttributeIter *g_menu_model_iterate_item_attributes(GMenuModel *model, gint item_index)
-     * }
-     */
-    public static MethodHandle g_menu_model_iterate_item_attributes$handle() {
-        return g_menu_model_iterate_item_attributes.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern GMenuAttributeIter *g_menu_model_iterate_item_attributes(GMenuModel *model, gint item_index)
-     * }
-     */
-    public static MemorySegment g_menu_model_iterate_item_attributes$address() {
-        return g_menu_model_iterate_item_attributes.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern GMenuAttributeIter *g_menu_model_iterate_item_attributes(GMenuModel *model, gint item_index)
-     * }
-     */
-    public static MemorySegment g_menu_model_iterate_item_attributes(MemorySegment model, int item_index) {
-        var mh$ = g_menu_model_iterate_item_attributes.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_model_iterate_item_attributes", model, item_index);
-            }
-            return (MemorySegment)mh$.invokeExact(model, item_index);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_model_get_item_attribute_value {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_model_get_item_attribute_value");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GVariant *g_menu_model_get_item_attribute_value(GMenuModel *model, gint item_index, const gchar *attribute, const GVariantType *expected_type)
-     * }
-     */
-    public static FunctionDescriptor g_menu_model_get_item_attribute_value$descriptor() {
-        return g_menu_model_get_item_attribute_value.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GVariant *g_menu_model_get_item_attribute_value(GMenuModel *model, gint item_index, const gchar *attribute, const GVariantType *expected_type)
-     * }
-     */
-    public static MethodHandle g_menu_model_get_item_attribute_value$handle() {
-        return g_menu_model_get_item_attribute_value.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern GVariant *g_menu_model_get_item_attribute_value(GMenuModel *model, gint item_index, const gchar *attribute, const GVariantType *expected_type)
-     * }
-     */
-    public static MemorySegment g_menu_model_get_item_attribute_value$address() {
-        return g_menu_model_get_item_attribute_value.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern GVariant *g_menu_model_get_item_attribute_value(GMenuModel *model, gint item_index, const gchar *attribute, const GVariantType *expected_type)
-     * }
-     */
-    public static MemorySegment g_menu_model_get_item_attribute_value(MemorySegment model, int item_index, MemorySegment attribute, MemorySegment expected_type) {
-        var mh$ = g_menu_model_get_item_attribute_value.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_model_get_item_attribute_value", model, item_index, attribute, expected_type);
-            }
-            return (MemorySegment)mh$.invokeExact(model, item_index, attribute, expected_type);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    /**
-     * Variadic invoker class for:
-     * {@snippet lang=c :
-     * extern gboolean g_menu_model_get_item_attribute(GMenuModel *model, gint item_index, const gchar *attribute, const gchar *format_string, ...)
-     * }
-     */
-    public static class g_menu_model_get_item_attribute {
-        private static final FunctionDescriptor BASE_DESC = FunctionDescriptor.of(
-                app_indicator_h.C_INT,
-                app_indicator_h.C_POINTER,
-                app_indicator_h.C_INT,
-                app_indicator_h.C_POINTER,
-                app_indicator_h.C_POINTER
-            );
-        private static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_model_get_item_attribute");
-
-        private final MethodHandle handle;
-        private final FunctionDescriptor descriptor;
-        private final MethodHandle spreader;
-
-        private g_menu_model_get_item_attribute(MethodHandle handle, FunctionDescriptor descriptor, MethodHandle spreader) {
-            this.handle = handle;
-            this.descriptor = descriptor;
-            this.spreader = spreader;
-        }
-
-        /**
-         * Variadic invoker factory for:
-         * {@snippet lang=c :
-         * extern gboolean g_menu_model_get_item_attribute(GMenuModel *model, gint item_index, const gchar *attribute, const gchar *format_string, ...)
-         * }
-         */
-        public static g_menu_model_get_item_attribute makeInvoker(MemoryLayout... layouts) {
-            FunctionDescriptor desc$ = BASE_DESC.appendArgumentLayouts(layouts);
-            Linker.Option fva$ = Linker.Option.firstVariadicArg(BASE_DESC.argumentLayouts().size());
-            var mh$ = Linker.nativeLinker().downcallHandle(ADDR, desc$, fva$);
-            var spreader$ = mh$.asSpreader(Object[].class, layouts.length);
-            return new g_menu_model_get_item_attribute(mh$, desc$, spreader$);
-        }
-
-        /**
-         * {@return the address}
-         */
-        public static MemorySegment address() {
-            return ADDR;
-        }
-
-        /**
-         * {@return the specialized method handle}
-         */
-        public MethodHandle handle() {
-            return handle;
-        }
-
-        /**
-         * {@return the specialized descriptor}
-         */
-        public FunctionDescriptor descriptor() {
-            return descriptor;
-        }
-
-        public int apply(MemorySegment model, int item_index, MemorySegment attribute, MemorySegment format_string, Object... x4) {
-            try {
-                if (TRACE_DOWNCALLS) {
-                    traceDowncall("g_menu_model_get_item_attribute", model, item_index, attribute, format_string, x4);
-                }
-                return (int) spreader.invokeExact(model, item_index, attribute, format_string, x4);
-            } catch(IllegalArgumentException | ClassCastException ex$)  {
-                throw ex$; // rethrow IAE from passing wrong number/type of args
-            } catch (Throwable ex$) {
-               throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static class g_menu_model_iterate_item_links {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_model_iterate_item_links");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GMenuLinkIter *g_menu_model_iterate_item_links(GMenuModel *model, gint item_index)
-     * }
-     */
-    public static FunctionDescriptor g_menu_model_iterate_item_links$descriptor() {
-        return g_menu_model_iterate_item_links.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GMenuLinkIter *g_menu_model_iterate_item_links(GMenuModel *model, gint item_index)
-     * }
-     */
-    public static MethodHandle g_menu_model_iterate_item_links$handle() {
-        return g_menu_model_iterate_item_links.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern GMenuLinkIter *g_menu_model_iterate_item_links(GMenuModel *model, gint item_index)
-     * }
-     */
-    public static MemorySegment g_menu_model_iterate_item_links$address() {
-        return g_menu_model_iterate_item_links.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern GMenuLinkIter *g_menu_model_iterate_item_links(GMenuModel *model, gint item_index)
-     * }
-     */
-    public static MemorySegment g_menu_model_iterate_item_links(MemorySegment model, int item_index) {
-        var mh$ = g_menu_model_iterate_item_links.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_model_iterate_item_links", model, item_index);
-            }
-            return (MemorySegment)mh$.invokeExact(model, item_index);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_model_get_item_link {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_model_get_item_link");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GMenuModel *g_menu_model_get_item_link(GMenuModel *model, gint item_index, const gchar *link)
-     * }
-     */
-    public static FunctionDescriptor g_menu_model_get_item_link$descriptor() {
-        return g_menu_model_get_item_link.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GMenuModel *g_menu_model_get_item_link(GMenuModel *model, gint item_index, const gchar *link)
-     * }
-     */
-    public static MethodHandle g_menu_model_get_item_link$handle() {
-        return g_menu_model_get_item_link.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern GMenuModel *g_menu_model_get_item_link(GMenuModel *model, gint item_index, const gchar *link)
-     * }
-     */
-    public static MemorySegment g_menu_model_get_item_link$address() {
-        return g_menu_model_get_item_link.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern GMenuModel *g_menu_model_get_item_link(GMenuModel *model, gint item_index, const gchar *link)
-     * }
-     */
-    public static MemorySegment g_menu_model_get_item_link(MemorySegment model, int item_index, MemorySegment link) {
-        var mh$ = g_menu_model_get_item_link.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_model_get_item_link", model, item_index, link);
-            }
-            return (MemorySegment)mh$.invokeExact(model, item_index, link);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_model_items_changed {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_model_items_changed");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void g_menu_model_items_changed(GMenuModel *model, gint position, gint removed, gint added)
-     * }
-     */
-    public static FunctionDescriptor g_menu_model_items_changed$descriptor() {
-        return g_menu_model_items_changed.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void g_menu_model_items_changed(GMenuModel *model, gint position, gint removed, gint added)
-     * }
-     */
-    public static MethodHandle g_menu_model_items_changed$handle() {
-        return g_menu_model_items_changed.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void g_menu_model_items_changed(GMenuModel *model, gint position, gint removed, gint added)
-     * }
-     */
-    public static MemorySegment g_menu_model_items_changed$address() {
-        return g_menu_model_items_changed.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void g_menu_model_items_changed(GMenuModel *model, gint position, gint removed, gint added)
-     * }
-     */
-    public static void g_menu_model_items_changed(MemorySegment model, int position, int removed, int added) {
-        var mh$ = g_menu_model_items_changed.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_model_items_changed", model, position, removed, added);
-            }
-            mh$.invokeExact(model, position, removed, added);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_attribute_iter_get_type {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_LONG    );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_attribute_iter_get_type");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GType g_menu_attribute_iter_get_type()
-     * }
-     */
-    public static FunctionDescriptor g_menu_attribute_iter_get_type$descriptor() {
-        return g_menu_attribute_iter_get_type.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GType g_menu_attribute_iter_get_type()
-     * }
-     */
-    public static MethodHandle g_menu_attribute_iter_get_type$handle() {
-        return g_menu_attribute_iter_get_type.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern GType g_menu_attribute_iter_get_type()
-     * }
-     */
-    public static MemorySegment g_menu_attribute_iter_get_type$address() {
-        return g_menu_attribute_iter_get_type.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern GType g_menu_attribute_iter_get_type()
-     * }
-     */
-    public static long g_menu_attribute_iter_get_type() {
-        var mh$ = g_menu_attribute_iter_get_type.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_attribute_iter_get_type");
-            }
-            return (long)mh$.invokeExact();
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_attribute_iter_get_next {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_attribute_iter_get_next");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern gboolean g_menu_attribute_iter_get_next(GMenuAttributeIter *iter, const gchar **out_name, GVariant **value)
-     * }
-     */
-    public static FunctionDescriptor g_menu_attribute_iter_get_next$descriptor() {
-        return g_menu_attribute_iter_get_next.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern gboolean g_menu_attribute_iter_get_next(GMenuAttributeIter *iter, const gchar **out_name, GVariant **value)
-     * }
-     */
-    public static MethodHandle g_menu_attribute_iter_get_next$handle() {
-        return g_menu_attribute_iter_get_next.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern gboolean g_menu_attribute_iter_get_next(GMenuAttributeIter *iter, const gchar **out_name, GVariant **value)
-     * }
-     */
-    public static MemorySegment g_menu_attribute_iter_get_next$address() {
-        return g_menu_attribute_iter_get_next.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern gboolean g_menu_attribute_iter_get_next(GMenuAttributeIter *iter, const gchar **out_name, GVariant **value)
-     * }
-     */
-    public static int g_menu_attribute_iter_get_next(MemorySegment iter, MemorySegment out_name, MemorySegment value) {
-        var mh$ = g_menu_attribute_iter_get_next.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_attribute_iter_get_next", iter, out_name, value);
-            }
-            return (int)mh$.invokeExact(iter, out_name, value);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_attribute_iter_next {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_attribute_iter_next");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern gboolean g_menu_attribute_iter_next(GMenuAttributeIter *iter)
-     * }
-     */
-    public static FunctionDescriptor g_menu_attribute_iter_next$descriptor() {
-        return g_menu_attribute_iter_next.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern gboolean g_menu_attribute_iter_next(GMenuAttributeIter *iter)
-     * }
-     */
-    public static MethodHandle g_menu_attribute_iter_next$handle() {
-        return g_menu_attribute_iter_next.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern gboolean g_menu_attribute_iter_next(GMenuAttributeIter *iter)
-     * }
-     */
-    public static MemorySegment g_menu_attribute_iter_next$address() {
-        return g_menu_attribute_iter_next.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern gboolean g_menu_attribute_iter_next(GMenuAttributeIter *iter)
-     * }
-     */
-    public static int g_menu_attribute_iter_next(MemorySegment iter) {
-        var mh$ = g_menu_attribute_iter_next.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_attribute_iter_next", iter);
-            }
-            return (int)mh$.invokeExact(iter);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_attribute_iter_get_name {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_attribute_iter_get_name");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern const gchar *g_menu_attribute_iter_get_name(GMenuAttributeIter *iter)
-     * }
-     */
-    public static FunctionDescriptor g_menu_attribute_iter_get_name$descriptor() {
-        return g_menu_attribute_iter_get_name.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern const gchar *g_menu_attribute_iter_get_name(GMenuAttributeIter *iter)
-     * }
-     */
-    public static MethodHandle g_menu_attribute_iter_get_name$handle() {
-        return g_menu_attribute_iter_get_name.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern const gchar *g_menu_attribute_iter_get_name(GMenuAttributeIter *iter)
-     * }
-     */
-    public static MemorySegment g_menu_attribute_iter_get_name$address() {
-        return g_menu_attribute_iter_get_name.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern const gchar *g_menu_attribute_iter_get_name(GMenuAttributeIter *iter)
-     * }
-     */
-    public static MemorySegment g_menu_attribute_iter_get_name(MemorySegment iter) {
-        var mh$ = g_menu_attribute_iter_get_name.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_attribute_iter_get_name", iter);
-            }
-            return (MemorySegment)mh$.invokeExact(iter);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_attribute_iter_get_value {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_attribute_iter_get_value");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GVariant *g_menu_attribute_iter_get_value(GMenuAttributeIter *iter)
-     * }
-     */
-    public static FunctionDescriptor g_menu_attribute_iter_get_value$descriptor() {
-        return g_menu_attribute_iter_get_value.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GVariant *g_menu_attribute_iter_get_value(GMenuAttributeIter *iter)
-     * }
-     */
-    public static MethodHandle g_menu_attribute_iter_get_value$handle() {
-        return g_menu_attribute_iter_get_value.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern GVariant *g_menu_attribute_iter_get_value(GMenuAttributeIter *iter)
-     * }
-     */
-    public static MemorySegment g_menu_attribute_iter_get_value$address() {
-        return g_menu_attribute_iter_get_value.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern GVariant *g_menu_attribute_iter_get_value(GMenuAttributeIter *iter)
-     * }
-     */
-    public static MemorySegment g_menu_attribute_iter_get_value(MemorySegment iter) {
-        var mh$ = g_menu_attribute_iter_get_value.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_attribute_iter_get_value", iter);
-            }
-            return (MemorySegment)mh$.invokeExact(iter);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_link_iter_get_type {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_LONG    );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_link_iter_get_type");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GType g_menu_link_iter_get_type()
-     * }
-     */
-    public static FunctionDescriptor g_menu_link_iter_get_type$descriptor() {
-        return g_menu_link_iter_get_type.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GType g_menu_link_iter_get_type()
-     * }
-     */
-    public static MethodHandle g_menu_link_iter_get_type$handle() {
-        return g_menu_link_iter_get_type.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern GType g_menu_link_iter_get_type()
-     * }
-     */
-    public static MemorySegment g_menu_link_iter_get_type$address() {
-        return g_menu_link_iter_get_type.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern GType g_menu_link_iter_get_type()
-     * }
-     */
-    public static long g_menu_link_iter_get_type() {
-        var mh$ = g_menu_link_iter_get_type.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_link_iter_get_type");
-            }
-            return (long)mh$.invokeExact();
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_link_iter_get_next {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_link_iter_get_next");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern gboolean g_menu_link_iter_get_next(GMenuLinkIter *iter, const gchar **out_link, GMenuModel **value)
-     * }
-     */
-    public static FunctionDescriptor g_menu_link_iter_get_next$descriptor() {
-        return g_menu_link_iter_get_next.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern gboolean g_menu_link_iter_get_next(GMenuLinkIter *iter, const gchar **out_link, GMenuModel **value)
-     * }
-     */
-    public static MethodHandle g_menu_link_iter_get_next$handle() {
-        return g_menu_link_iter_get_next.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern gboolean g_menu_link_iter_get_next(GMenuLinkIter *iter, const gchar **out_link, GMenuModel **value)
-     * }
-     */
-    public static MemorySegment g_menu_link_iter_get_next$address() {
-        return g_menu_link_iter_get_next.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern gboolean g_menu_link_iter_get_next(GMenuLinkIter *iter, const gchar **out_link, GMenuModel **value)
-     * }
-     */
-    public static int g_menu_link_iter_get_next(MemorySegment iter, MemorySegment out_link, MemorySegment value) {
-        var mh$ = g_menu_link_iter_get_next.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_link_iter_get_next", iter, out_link, value);
-            }
-            return (int)mh$.invokeExact(iter, out_link, value);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_link_iter_next {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_link_iter_next");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern gboolean g_menu_link_iter_next(GMenuLinkIter *iter)
-     * }
-     */
-    public static FunctionDescriptor g_menu_link_iter_next$descriptor() {
-        return g_menu_link_iter_next.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern gboolean g_menu_link_iter_next(GMenuLinkIter *iter)
-     * }
-     */
-    public static MethodHandle g_menu_link_iter_next$handle() {
-        return g_menu_link_iter_next.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern gboolean g_menu_link_iter_next(GMenuLinkIter *iter)
-     * }
-     */
-    public static MemorySegment g_menu_link_iter_next$address() {
-        return g_menu_link_iter_next.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern gboolean g_menu_link_iter_next(GMenuLinkIter *iter)
-     * }
-     */
-    public static int g_menu_link_iter_next(MemorySegment iter) {
-        var mh$ = g_menu_link_iter_next.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_link_iter_next", iter);
-            }
-            return (int)mh$.invokeExact(iter);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_link_iter_get_name {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_link_iter_get_name");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern const gchar *g_menu_link_iter_get_name(GMenuLinkIter *iter)
-     * }
-     */
-    public static FunctionDescriptor g_menu_link_iter_get_name$descriptor() {
-        return g_menu_link_iter_get_name.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern const gchar *g_menu_link_iter_get_name(GMenuLinkIter *iter)
-     * }
-     */
-    public static MethodHandle g_menu_link_iter_get_name$handle() {
-        return g_menu_link_iter_get_name.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern const gchar *g_menu_link_iter_get_name(GMenuLinkIter *iter)
-     * }
-     */
-    public static MemorySegment g_menu_link_iter_get_name$address() {
-        return g_menu_link_iter_get_name.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern const gchar *g_menu_link_iter_get_name(GMenuLinkIter *iter)
-     * }
-     */
-    public static MemorySegment g_menu_link_iter_get_name(MemorySegment iter) {
-        var mh$ = g_menu_link_iter_get_name.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_link_iter_get_name", iter);
-            }
-            return (MemorySegment)mh$.invokeExact(iter);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_link_iter_get_value {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_link_iter_get_value");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GMenuModel *g_menu_link_iter_get_value(GMenuLinkIter *iter)
-     * }
-     */
-    public static FunctionDescriptor g_menu_link_iter_get_value$descriptor() {
-        return g_menu_link_iter_get_value.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GMenuModel *g_menu_link_iter_get_value(GMenuLinkIter *iter)
-     * }
-     */
-    public static MethodHandle g_menu_link_iter_get_value$handle() {
-        return g_menu_link_iter_get_value.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern GMenuModel *g_menu_link_iter_get_value(GMenuLinkIter *iter)
-     * }
-     */
-    public static MemorySegment g_menu_link_iter_get_value$address() {
-        return g_menu_link_iter_get_value.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern GMenuModel *g_menu_link_iter_get_value(GMenuLinkIter *iter)
-     * }
-     */
-    public static MemorySegment g_menu_link_iter_get_value(MemorySegment iter) {
-        var mh$ = g_menu_link_iter_get_value.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_link_iter_get_value", iter);
-            }
-            return (MemorySegment)mh$.invokeExact(iter);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_get_type {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_LONG    );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_get_type");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GType g_menu_get_type()
-     * }
-     */
-    public static FunctionDescriptor g_menu_get_type$descriptor() {
-        return g_menu_get_type.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GType g_menu_get_type()
-     * }
-     */
-    public static MethodHandle g_menu_get_type$handle() {
-        return g_menu_get_type.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern GType g_menu_get_type()
-     * }
-     */
-    public static MemorySegment g_menu_get_type$address() {
-        return g_menu_get_type.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern GType g_menu_get_type()
-     * }
-     */
-    public static long g_menu_get_type() {
-        var mh$ = g_menu_get_type.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_get_type");
-            }
-            return (long)mh$.invokeExact();
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_new {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER    );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_new");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GMenu *g_menu_new()
-     * }
-     */
-    public static FunctionDescriptor g_menu_new$descriptor() {
-        return g_menu_new.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GMenu *g_menu_new()
-     * }
-     */
-    public static MethodHandle g_menu_new$handle() {
-        return g_menu_new.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern GMenu *g_menu_new()
-     * }
-     */
-    public static MemorySegment g_menu_new$address() {
-        return g_menu_new.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern GMenu *g_menu_new()
-     * }
-     */
-    public static MemorySegment g_menu_new() {
-        var mh$ = g_menu_new.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_new");
-            }
-            return (MemorySegment)mh$.invokeExact();
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_freeze {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_freeze");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void g_menu_freeze(GMenu *menu)
-     * }
-     */
-    public static FunctionDescriptor g_menu_freeze$descriptor() {
-        return g_menu_freeze.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void g_menu_freeze(GMenu *menu)
-     * }
-     */
-    public static MethodHandle g_menu_freeze$handle() {
-        return g_menu_freeze.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void g_menu_freeze(GMenu *menu)
-     * }
-     */
-    public static MemorySegment g_menu_freeze$address() {
-        return g_menu_freeze.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void g_menu_freeze(GMenu *menu)
-     * }
-     */
-    public static void g_menu_freeze(MemorySegment menu) {
-        var mh$ = g_menu_freeze.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_freeze", menu);
-            }
-            mh$.invokeExact(menu);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_insert_item {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_insert_item");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void g_menu_insert_item(GMenu *menu, gint position, GMenuItem *item)
-     * }
-     */
-    public static FunctionDescriptor g_menu_insert_item$descriptor() {
-        return g_menu_insert_item.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void g_menu_insert_item(GMenu *menu, gint position, GMenuItem *item)
-     * }
-     */
-    public static MethodHandle g_menu_insert_item$handle() {
-        return g_menu_insert_item.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void g_menu_insert_item(GMenu *menu, gint position, GMenuItem *item)
-     * }
-     */
-    public static MemorySegment g_menu_insert_item$address() {
-        return g_menu_insert_item.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void g_menu_insert_item(GMenu *menu, gint position, GMenuItem *item)
-     * }
-     */
-    public static void g_menu_insert_item(MemorySegment menu, int position, MemorySegment item) {
-        var mh$ = g_menu_insert_item.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_insert_item", menu, position, item);
-            }
-            mh$.invokeExact(menu, position, item);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_prepend_item {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_prepend_item");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void g_menu_prepend_item(GMenu *menu, GMenuItem *item)
-     * }
-     */
-    public static FunctionDescriptor g_menu_prepend_item$descriptor() {
-        return g_menu_prepend_item.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void g_menu_prepend_item(GMenu *menu, GMenuItem *item)
-     * }
-     */
-    public static MethodHandle g_menu_prepend_item$handle() {
-        return g_menu_prepend_item.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void g_menu_prepend_item(GMenu *menu, GMenuItem *item)
-     * }
-     */
-    public static MemorySegment g_menu_prepend_item$address() {
-        return g_menu_prepend_item.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void g_menu_prepend_item(GMenu *menu, GMenuItem *item)
-     * }
-     */
-    public static void g_menu_prepend_item(MemorySegment menu, MemorySegment item) {
-        var mh$ = g_menu_prepend_item.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_prepend_item", menu, item);
-            }
-            mh$.invokeExact(menu, item);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_append_item {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_append_item");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void g_menu_append_item(GMenu *menu, GMenuItem *item)
-     * }
-     */
-    public static FunctionDescriptor g_menu_append_item$descriptor() {
-        return g_menu_append_item.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void g_menu_append_item(GMenu *menu, GMenuItem *item)
-     * }
-     */
-    public static MethodHandle g_menu_append_item$handle() {
-        return g_menu_append_item.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void g_menu_append_item(GMenu *menu, GMenuItem *item)
-     * }
-     */
-    public static MemorySegment g_menu_append_item$address() {
-        return g_menu_append_item.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void g_menu_append_item(GMenu *menu, GMenuItem *item)
-     * }
-     */
-    public static void g_menu_append_item(MemorySegment menu, MemorySegment item) {
-        var mh$ = g_menu_append_item.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_append_item", menu, item);
-            }
-            mh$.invokeExact(menu, item);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_remove {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_remove");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void g_menu_remove(GMenu *menu, gint position)
-     * }
-     */
-    public static FunctionDescriptor g_menu_remove$descriptor() {
-        return g_menu_remove.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void g_menu_remove(GMenu *menu, gint position)
-     * }
-     */
-    public static MethodHandle g_menu_remove$handle() {
-        return g_menu_remove.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void g_menu_remove(GMenu *menu, gint position)
-     * }
-     */
-    public static MemorySegment g_menu_remove$address() {
-        return g_menu_remove.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void g_menu_remove(GMenu *menu, gint position)
-     * }
-     */
-    public static void g_menu_remove(MemorySegment menu, int position) {
-        var mh$ = g_menu_remove.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_remove", menu, position);
-            }
-            mh$.invokeExact(menu, position);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_remove_all {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_remove_all");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void g_menu_remove_all(GMenu *menu)
-     * }
-     */
-    public static FunctionDescriptor g_menu_remove_all$descriptor() {
-        return g_menu_remove_all.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void g_menu_remove_all(GMenu *menu)
-     * }
-     */
-    public static MethodHandle g_menu_remove_all$handle() {
-        return g_menu_remove_all.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void g_menu_remove_all(GMenu *menu)
-     * }
-     */
-    public static MemorySegment g_menu_remove_all$address() {
-        return g_menu_remove_all.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void g_menu_remove_all(GMenu *menu)
-     * }
-     */
-    public static void g_menu_remove_all(MemorySegment menu) {
-        var mh$ = g_menu_remove_all.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_remove_all", menu);
-            }
-            mh$.invokeExact(menu);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_menu_insert {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_menu_insert");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void g_menu_insert(GMenu *menu, gint position, const gchar *label, const gchar *detailed_action)
-     * }
-     */
-    public static FunctionDescriptor g_menu_insert$descriptor() {
-        return g_menu_insert.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void g_menu_insert(GMenu *menu, gint position, const gchar *label, const gchar *detailed_action)
-     * }
-     */
-    public static MethodHandle g_menu_insert$handle() {
-        return g_menu_insert.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void g_menu_insert(GMenu *menu, gint position, const gchar *label, const gchar *detailed_action)
-     * }
-     */
-    public static MemorySegment g_menu_insert$address() {
-        return g_menu_insert.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void g_menu_insert(GMenu *menu, gint position, const gchar *label, const gchar *detailed_action)
-     * }
-     */
-    public static void g_menu_insert(MemorySegment menu, int position, MemorySegment label, MemorySegment detailed_action) {
-        var mh$ = g_menu_insert.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_menu_insert", menu, position, label, detailed_action);
-            }
-            mh$.invokeExact(menu, position, label, detailed_action);
         } catch (Error | RuntimeException ex) {
            throw ex;
         } catch (Throwable ex$) {

@@ -2,12 +2,15 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.util.function.Consumer;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
-import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
-import static java.lang.foreign.ValueLayout.OfFloat;
-import static java.lang.foreign.ValueLayout.OfInt;
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
@@ -28,7 +31,7 @@ public class hb_color_stop_t {
         app_indicator_h.C_FLOAT.withName("offset"),
         app_indicator_h.C_INT.withName("is_foreground"),
         app_indicator_h.C_INT.withName("color")
-    ).withName("$anon$401:9");
+    ).withName("$anon$539:9");
 
     /**
      * The layout of this struct

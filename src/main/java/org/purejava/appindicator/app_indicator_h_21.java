@@ -2,9 +2,15 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.Linker;
-import java.lang.foreign.SymbolLookup;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 class app_indicator_h_21 extends app_indicator_h$shared {
 
@@ -332,10 +338,10 @@ class app_indicator_h_21 extends app_indicator_h$shared {
     public static int __GLIBC__() {
         return __GLIBC__;
     }
-    private static final int __GLIBC_MINOR__ = (int)43L;
+    private static final int __GLIBC_MINOR__ = (int)44L;
     /**
      * {@snippet lang=c :
-     * #define __GLIBC_MINOR__ 43
+     * #define __GLIBC_MINOR__ 44
      * }
      */
     public static int __GLIBC_MINOR__() {
@@ -1106,19 +1112,19 @@ class app_indicator_h_21 extends app_indicator_h$shared {
     public static int GLIB_MAJOR_VERSION() {
         return GLIB_MAJOR_VERSION;
     }
-    private static final int GLIB_MINOR_VERSION = (int)88L;
+    private static final int GLIB_MINOR_VERSION = (int)90L;
     /**
      * {@snippet lang=c :
-     * #define GLIB_MINOR_VERSION 88
+     * #define GLIB_MINOR_VERSION 90
      * }
      */
     public static int GLIB_MINOR_VERSION() {
         return GLIB_MINOR_VERSION;
     }
-    private static final int GLIB_MICRO_VERSION = (int)2L;
+    private static final int GLIB_MICRO_VERSION = (int)1L;
     /**
      * {@snippet lang=c :
-     * #define GLIB_MICRO_VERSION 2
+     * #define GLIB_MICRO_VERSION 1
      * }
      */
     public static int GLIB_MICRO_VERSION() {
@@ -4013,6 +4019,15 @@ class app_indicator_h_21 extends app_indicator_h$shared {
     public static int EHWPOISON() {
         return EHWPOISON;
     }
+    private static final int EFTYPE = (int)134L;
+    /**
+     * {@snippet lang=c :
+     * #define EFTYPE 134
+     * }
+     */
+    public static int EFTYPE() {
+        return EFTYPE;
+    }
     private static final int G_USEC_PER_SEC = (int)1000000L;
     /**
      * {@snippet lang=c :
@@ -4652,10 +4667,10 @@ class app_indicator_h_21 extends app_indicator_h$shared {
     public static int PANGO_VERSION_MINOR() {
         return PANGO_VERSION_MINOR;
     }
-    private static final int PANGO_VERSION_MICRO = (int)0L;
+    private static final int PANGO_VERSION_MICRO = (int)2L;
     /**
      * {@snippet lang=c :
-     * #define PANGO_VERSION_MICRO 0
+     * #define PANGO_VERSION_MICRO 2
      * }
      */
     public static int PANGO_VERSION_MICRO() {
@@ -4697,28 +4712,28 @@ class app_indicator_h_21 extends app_indicator_h$shared {
     public static int HB_UNICODE_COMBINING_CLASS_CCC133() {
         return HB_UNICODE_COMBINING_CLASS_CCC133;
     }
-    private static final int HB_VERSION_MAJOR = (int)14L;
+    private static final int HB_VERSION_MAJOR = (int)15L;
     /**
      * {@snippet lang=c :
-     * #define HB_VERSION_MAJOR 14
+     * #define HB_VERSION_MAJOR 15
      * }
      */
     public static int HB_VERSION_MAJOR() {
         return HB_VERSION_MAJOR;
     }
-    private static final int HB_VERSION_MINOR = (int)2L;
+    private static final int HB_VERSION_MINOR = (int)0L;
     /**
      * {@snippet lang=c :
-     * #define HB_VERSION_MINOR 2
+     * #define HB_VERSION_MINOR 0
      * }
      */
     public static int HB_VERSION_MINOR() {
         return HB_VERSION_MINOR;
     }
-    private static final int HB_VERSION_MICRO = (int)1L;
+    private static final int HB_VERSION_MICRO = (int)0L;
     /**
      * {@snippet lang=c :
-     * #define HB_VERSION_MICRO 1
+     * #define HB_VERSION_MICRO 0
      * }
      */
     public static int HB_VERSION_MICRO() {
@@ -4958,10 +4973,10 @@ class app_indicator_h_21 extends app_indicator_h$shared {
     public static int CAIRO_VERSION_MINOR() {
         return CAIRO_VERSION_MINOR;
     }
-    private static final int CAIRO_VERSION_MICRO = (int)4L;
+    private static final int CAIRO_VERSION_MICRO = (int)6L;
     /**
      * {@snippet lang=c :
-     * #define CAIRO_VERSION_MICRO 4
+     * #define CAIRO_VERSION_MICRO 6
      * }
      */
     public static int CAIRO_VERSION_MICRO() {
@@ -9007,15 +9022,6 @@ class app_indicator_h_21 extends app_indicator_h$shared {
      */
     public static int GDK_KEY_p() {
         return GDK_KEY_p;
-    }
-    private static final int GDK_KEY_q = (int)113L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_KEY_q 113
-     * }
-     */
-    public static int GDK_KEY_q() {
-        return GDK_KEY_q;
     }
 }
 

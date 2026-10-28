@@ -2,17 +2,255 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.AddressLayout;
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.Linker;
-import java.lang.foreign.MemorySegment;
-import java.lang.invoke.MethodHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 class app_indicator_h_1 extends app_indicator_h_2 {
 
     app_indicator_h_1() {
         // Should not be called directly
     }
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkDrawingArea_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkDrawingArea_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkDrawingArea_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkDrawingArea_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkDrawingArea_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkDrawingArea_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkEditable *GtkEditable_autoptr
+     * }
+     */
+    public static final AddressLayout GtkEditable_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkEditable_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkEditable_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkEditable_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkEditable_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkEditable_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkEditable_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkEntry *GtkEntry_autoptr
+     * }
+     */
+    public static final AddressLayout GtkEntry_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkEntry_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkEntry_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkEntry_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkEntry_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkEntry_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkEntry_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkEntryBuffer *GtkEntryBuffer_autoptr
+     * }
+     */
+    public static final AddressLayout GtkEntryBuffer_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkEntryBuffer_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkEntryBuffer_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkEntryBuffer_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkEntryBuffer_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkEntryBuffer_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkEntryBuffer_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkEntryCompletion *GtkEntryCompletion_autoptr
+     * }
+     */
+    public static final AddressLayout GtkEntryCompletion_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkEntryCompletion_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkEntryCompletion_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkEntryCompletion_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkEntryCompletion_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkEntryCompletion_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkEntryCompletion_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkEventBox *GtkEventBox_autoptr
+     * }
+     */
+    public static final AddressLayout GtkEventBox_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkEventBox_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkEventBox_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkEventBox_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkEventBox_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkEventBox_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkEventBox_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkEventController *GtkEventController_autoptr
+     * }
+     */
+    public static final AddressLayout GtkEventController_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkEventController_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkEventController_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkEventController_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkEventController_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkEventController_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkEventController_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkExpander *GtkExpander_autoptr
+     * }
+     */
+    public static final AddressLayout GtkExpander_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkExpander_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkExpander_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkExpander_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkExpander_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkExpander_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkExpander_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkFileChooserButton *GtkFileChooserButton_autoptr
+     * }
+     */
+    public static final AddressLayout GtkFileChooserButton_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkFileChooserButton_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkFileChooserButton_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkFileChooserButton_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkFileChooserButton_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkFileChooserButton_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkFileChooserButton_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GtkFileChooserDialog *GtkFileChooserDialog_autoptr
+     * }
+     */
+    public static final AddressLayout GtkFileChooserDialog_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GtkFileChooserDialog_listautoptr
+     * }
+     */
+    public static final AddressLayout GtkFileChooserDialog_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GtkFileChooserDialog_slistautoptr
+     * }
+     */
+    public static final AddressLayout GtkFileChooserDialog_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GtkFileChooserDialog_queueautoptr
+     * }
+     */
+    public static final AddressLayout GtkFileChooserDialog_queueautoptr = app_indicator_h.C_POINTER;
     /**
      * {@snippet lang=c :
      * typedef GtkFileChooserWidget *GtkFileChooserWidget_autoptr
@@ -6907,37 +7145,46 @@ class app_indicator_h_1 extends app_indicator_h_2 {
     public static int GLIB_VERSION_2_88() {
         return GLIB_VERSION_2_88;
     }
-    private static final int GLIB_VERSION_CUR_STABLE = (int)153600L;
+    private static final int GLIB_VERSION_2_90 = (int)154112L;
     /**
      * {@snippet lang=c :
-     * #define GLIB_VERSION_CUR_STABLE 153600
+     * #define GLIB_VERSION_2_90 154112
+     * }
+     */
+    public static int GLIB_VERSION_2_90() {
+        return GLIB_VERSION_2_90;
+    }
+    private static final int GLIB_VERSION_CUR_STABLE = (int)154112L;
+    /**
+     * {@snippet lang=c :
+     * #define GLIB_VERSION_CUR_STABLE 154112
      * }
      */
     public static int GLIB_VERSION_CUR_STABLE() {
         return GLIB_VERSION_CUR_STABLE;
     }
-    private static final int GLIB_VERSION_PREV_STABLE = (int)153088L;
+    private static final int GLIB_VERSION_PREV_STABLE = (int)153600L;
     /**
      * {@snippet lang=c :
-     * #define GLIB_VERSION_PREV_STABLE 153088
+     * #define GLIB_VERSION_PREV_STABLE 153600
      * }
      */
     public static int GLIB_VERSION_PREV_STABLE() {
         return GLIB_VERSION_PREV_STABLE;
     }
-    private static final int GLIB_VERSION_MIN_REQUIRED = (int)153600L;
+    private static final int GLIB_VERSION_MIN_REQUIRED = (int)154112L;
     /**
      * {@snippet lang=c :
-     * #define GLIB_VERSION_MIN_REQUIRED 153600
+     * #define GLIB_VERSION_MIN_REQUIRED 154112
      * }
      */
     public static int GLIB_VERSION_MIN_REQUIRED() {
         return GLIB_VERSION_MIN_REQUIRED;
     }
-    private static final int GLIB_VERSION_MAX_ALLOWED = (int)153600L;
+    private static final int GLIB_VERSION_MAX_ALLOWED = (int)154112L;
     /**
      * {@snippet lang=c :
-     * #define GLIB_VERSION_MAX_ALLOWED 153600
+     * #define GLIB_VERSION_MAX_ALLOWED 154112
      * }
      */
     public static int GLIB_VERSION_MAX_ALLOWED() {
@@ -9192,366 +9439,6 @@ class app_indicator_h_1 extends app_indicator_h_2 {
      */
     public static long G_TYPE_VARIANT() {
         return G_TYPE_VARIANT;
-    }
-    private static final int G_TYPE_RESERVED_GLIB_FIRST = (int)22L;
-    /**
-     * {@snippet lang=c :
-     * #define G_TYPE_RESERVED_GLIB_FIRST 22
-     * }
-     */
-    public static int G_TYPE_RESERVED_GLIB_FIRST() {
-        return G_TYPE_RESERVED_GLIB_FIRST;
-    }
-    private static final int G_TYPE_RESERVED_GLIB_LAST = (int)31L;
-    /**
-     * {@snippet lang=c :
-     * #define G_TYPE_RESERVED_GLIB_LAST 31
-     * }
-     */
-    public static int G_TYPE_RESERVED_GLIB_LAST() {
-        return G_TYPE_RESERVED_GLIB_LAST;
-    }
-    private static final int G_TYPE_RESERVED_BSE_FIRST = (int)32L;
-    /**
-     * {@snippet lang=c :
-     * #define G_TYPE_RESERVED_BSE_FIRST 32
-     * }
-     */
-    public static int G_TYPE_RESERVED_BSE_FIRST() {
-        return G_TYPE_RESERVED_BSE_FIRST;
-    }
-    private static final int G_TYPE_RESERVED_BSE_LAST = (int)48L;
-    /**
-     * {@snippet lang=c :
-     * #define G_TYPE_RESERVED_BSE_LAST 48
-     * }
-     */
-    public static int G_TYPE_RESERVED_BSE_LAST() {
-        return G_TYPE_RESERVED_BSE_LAST;
-    }
-    private static final int G_TYPE_RESERVED_USER_FIRST = (int)49L;
-    /**
-     * {@snippet lang=c :
-     * #define G_TYPE_RESERVED_USER_FIRST 49
-     * }
-     */
-    public static int G_TYPE_RESERVED_USER_FIRST() {
-        return G_TYPE_RESERVED_USER_FIRST;
-    }
-    private static final long G_TYPE_FLAG_RESERVED_ID_BIT = 1L;
-    /**
-     * {@snippet lang=c :
-     * #define G_TYPE_FLAG_RESERVED_ID_BIT 1
-     * }
-     */
-    public static long G_TYPE_FLAG_RESERVED_ID_BIT() {
-        return G_TYPE_FLAG_RESERVED_ID_BIT;
-    }
-    private static final int G_VALUE_NOCOPY_CONTENTS = (int)134217728L;
-    /**
-     * {@snippet lang=c :
-     * #define G_VALUE_NOCOPY_CONTENTS 134217728
-     * }
-     */
-    public static int G_VALUE_NOCOPY_CONTENTS() {
-        return G_VALUE_NOCOPY_CONTENTS;
-    }
-    private static final int G_VALUE_INTERNED_STRING = (int)268435456L;
-    /**
-     * {@snippet lang=c :
-     * #define G_VALUE_INTERNED_STRING 268435456
-     * }
-     */
-    public static int G_VALUE_INTERNED_STRING() {
-        return G_VALUE_INTERNED_STRING;
-    }
-    private static final int G_PARAM_STATIC_STRINGS = (int)224L;
-    /**
-     * {@snippet lang=c :
-     * #define G_PARAM_STATIC_STRINGS 224
-     * }
-     */
-    public static int G_PARAM_STATIC_STRINGS() {
-        return G_PARAM_STATIC_STRINGS;
-    }
-    private static final int G_PARAM_MASK = (int)255L;
-    /**
-     * {@snippet lang=c :
-     * #define G_PARAM_MASK 255
-     * }
-     */
-    public static int G_PARAM_MASK() {
-        return G_PARAM_MASK;
-    }
-    private static final int G_PARAM_USER_SHIFT = (int)8L;
-    /**
-     * {@snippet lang=c :
-     * #define G_PARAM_USER_SHIFT 8
-     * }
-     */
-    public static int G_PARAM_USER_SHIFT() {
-        return G_PARAM_USER_SHIFT;
-    }
-    private static final long G_SIGNAL_TYPE_STATIC_SCOPE = 1L;
-    /**
-     * {@snippet lang=c :
-     * #define G_SIGNAL_TYPE_STATIC_SCOPE 1
-     * }
-     */
-    public static long G_SIGNAL_TYPE_STATIC_SCOPE() {
-        return G_SIGNAL_TYPE_STATIC_SCOPE;
-    }
-    private static final long _POSIX_VERSION = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_VERSION 200809
-     * }
-     */
-    public static long _POSIX_VERSION() {
-        return _POSIX_VERSION;
-    }
-    private static final long __POSIX2_THIS_VERSION = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define __POSIX2_THIS_VERSION 200809
-     * }
-     */
-    public static long __POSIX2_THIS_VERSION() {
-        return __POSIX2_THIS_VERSION;
-    }
-    private static final long _POSIX2_VERSION = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX2_VERSION 200809
-     * }
-     */
-    public static long _POSIX2_VERSION() {
-        return _POSIX2_VERSION;
-    }
-    private static final long _POSIX2_C_VERSION = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX2_C_VERSION 200809
-     * }
-     */
-    public static long _POSIX2_C_VERSION() {
-        return _POSIX2_C_VERSION;
-    }
-    private static final long _POSIX2_C_BIND = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX2_C_BIND 200809
-     * }
-     */
-    public static long _POSIX2_C_BIND() {
-        return _POSIX2_C_BIND;
-    }
-    private static final long _POSIX2_C_DEV = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX2_C_DEV 200809
-     * }
-     */
-    public static long _POSIX2_C_DEV() {
-        return _POSIX2_C_DEV;
-    }
-    private static final long _POSIX2_SW_DEV = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX2_SW_DEV 200809
-     * }
-     */
-    public static long _POSIX2_SW_DEV() {
-        return _POSIX2_SW_DEV;
-    }
-    private static final long _POSIX2_LOCALEDEF = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX2_LOCALEDEF 200809
-     * }
-     */
-    public static long _POSIX2_LOCALEDEF() {
-        return _POSIX2_LOCALEDEF;
-    }
-    private static final long _POSIX_PRIORITY_SCHEDULING = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_PRIORITY_SCHEDULING 200809
-     * }
-     */
-    public static long _POSIX_PRIORITY_SCHEDULING() {
-        return _POSIX_PRIORITY_SCHEDULING;
-    }
-    private static final long _POSIX_SYNCHRONIZED_IO = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_SYNCHRONIZED_IO 200809
-     * }
-     */
-    public static long _POSIX_SYNCHRONIZED_IO() {
-        return _POSIX_SYNCHRONIZED_IO;
-    }
-    private static final long _POSIX_FSYNC = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_FSYNC 200809
-     * }
-     */
-    public static long _POSIX_FSYNC() {
-        return _POSIX_FSYNC;
-    }
-    private static final long _POSIX_MAPPED_FILES = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_MAPPED_FILES 200809
-     * }
-     */
-    public static long _POSIX_MAPPED_FILES() {
-        return _POSIX_MAPPED_FILES;
-    }
-    private static final long _POSIX_MEMLOCK = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_MEMLOCK 200809
-     * }
-     */
-    public static long _POSIX_MEMLOCK() {
-        return _POSIX_MEMLOCK;
-    }
-    private static final long _POSIX_MEMLOCK_RANGE = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_MEMLOCK_RANGE 200809
-     * }
-     */
-    public static long _POSIX_MEMLOCK_RANGE() {
-        return _POSIX_MEMLOCK_RANGE;
-    }
-    private static final long _POSIX_MEMORY_PROTECTION = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_MEMORY_PROTECTION 200809
-     * }
-     */
-    public static long _POSIX_MEMORY_PROTECTION() {
-        return _POSIX_MEMORY_PROTECTION;
-    }
-    private static final long _POSIX_THREADS = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_THREADS 200809
-     * }
-     */
-    public static long _POSIX_THREADS() {
-        return _POSIX_THREADS;
-    }
-    private static final long _POSIX_THREAD_SAFE_FUNCTIONS = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_THREAD_SAFE_FUNCTIONS 200809
-     * }
-     */
-    public static long _POSIX_THREAD_SAFE_FUNCTIONS() {
-        return _POSIX_THREAD_SAFE_FUNCTIONS;
-    }
-    private static final long _POSIX_THREAD_PRIORITY_SCHEDULING = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_THREAD_PRIORITY_SCHEDULING 200809
-     * }
-     */
-    public static long _POSIX_THREAD_PRIORITY_SCHEDULING() {
-        return _POSIX_THREAD_PRIORITY_SCHEDULING;
-    }
-    private static final long _POSIX_THREAD_ATTR_STACKSIZE = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_THREAD_ATTR_STACKSIZE 200809
-     * }
-     */
-    public static long _POSIX_THREAD_ATTR_STACKSIZE() {
-        return _POSIX_THREAD_ATTR_STACKSIZE;
-    }
-    private static final long _POSIX_THREAD_ATTR_STACKADDR = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_THREAD_ATTR_STACKADDR 200809
-     * }
-     */
-    public static long _POSIX_THREAD_ATTR_STACKADDR() {
-        return _POSIX_THREAD_ATTR_STACKADDR;
-    }
-    private static final long _POSIX_THREAD_PRIO_INHERIT = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_THREAD_PRIO_INHERIT 200809
-     * }
-     */
-    public static long _POSIX_THREAD_PRIO_INHERIT() {
-        return _POSIX_THREAD_PRIO_INHERIT;
-    }
-    private static final long _POSIX_THREAD_PRIO_PROTECT = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_THREAD_PRIO_PROTECT 200809
-     * }
-     */
-    public static long _POSIX_THREAD_PRIO_PROTECT() {
-        return _POSIX_THREAD_PRIO_PROTECT;
-    }
-    private static final long _POSIX_THREAD_ROBUST_PRIO_INHERIT = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_THREAD_ROBUST_PRIO_INHERIT 200809
-     * }
-     */
-    public static long _POSIX_THREAD_ROBUST_PRIO_INHERIT() {
-        return _POSIX_THREAD_ROBUST_PRIO_INHERIT;
-    }
-    private static final int _POSIX_THREAD_ROBUST_PRIO_PROTECT = (int)-1L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_THREAD_ROBUST_PRIO_PROTECT -1
-     * }
-     */
-    public static int _POSIX_THREAD_ROBUST_PRIO_PROTECT() {
-        return _POSIX_THREAD_ROBUST_PRIO_PROTECT;
-    }
-    private static final long _POSIX_SEMAPHORES = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_SEMAPHORES 200809
-     * }
-     */
-    public static long _POSIX_SEMAPHORES() {
-        return _POSIX_SEMAPHORES;
-    }
-    private static final long _POSIX_REALTIME_SIGNALS = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_REALTIME_SIGNALS 200809
-     * }
-     */
-    public static long _POSIX_REALTIME_SIGNALS() {
-        return _POSIX_REALTIME_SIGNALS;
-    }
-    private static final long _POSIX_ASYNCHRONOUS_IO = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_ASYNCHRONOUS_IO 200809
-     * }
-     */
-    public static long _POSIX_ASYNCHRONOUS_IO() {
-        return _POSIX_ASYNCHRONOUS_IO;
-    }
-    private static final long _POSIX_PRIORITIZED_IO = 200809L;
-    /**
-     * {@snippet lang=c :
-     * #define _POSIX_PRIORITIZED_IO 200809
-     * }
-     */
-    public static long _POSIX_PRIORITIZED_IO() {
-        return _POSIX_PRIORITIZED_IO;
     }
 }
 

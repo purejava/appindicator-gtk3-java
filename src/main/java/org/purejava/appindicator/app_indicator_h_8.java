@@ -2,15 +2,420 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.lang.invoke.MethodHandle;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
-import static java.lang.foreign.ValueLayout.OfInt;
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 class app_indicator_h_8 extends app_indicator_h_9 {
 
     app_indicator_h_8() {
         // Should not be called directly
+    }
+    private static final int GDK_NOTIFY_INFERIOR = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_NOTIFY_INFERIOR = 2
+     * }
+     */
+    public static int GDK_NOTIFY_INFERIOR() {
+        return GDK_NOTIFY_INFERIOR;
+    }
+    private static final int GDK_NOTIFY_NONLINEAR = (int)3L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_NOTIFY_NONLINEAR = 3
+     * }
+     */
+    public static int GDK_NOTIFY_NONLINEAR() {
+        return GDK_NOTIFY_NONLINEAR;
+    }
+    private static final int GDK_NOTIFY_NONLINEAR_VIRTUAL = (int)4L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_NOTIFY_NONLINEAR_VIRTUAL = 4
+     * }
+     */
+    public static int GDK_NOTIFY_NONLINEAR_VIRTUAL() {
+        return GDK_NOTIFY_NONLINEAR_VIRTUAL;
+    }
+    private static final int GDK_NOTIFY_UNKNOWN = (int)5L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_NOTIFY_UNKNOWN = 5
+     * }
+     */
+    public static int GDK_NOTIFY_UNKNOWN() {
+        return GDK_NOTIFY_UNKNOWN;
+    }
+    private static final int GDK_CROSSING_NORMAL = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_CROSSING_NORMAL = 0
+     * }
+     */
+    public static int GDK_CROSSING_NORMAL() {
+        return GDK_CROSSING_NORMAL;
+    }
+    private static final int GDK_CROSSING_GRAB = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_CROSSING_GRAB = 1
+     * }
+     */
+    public static int GDK_CROSSING_GRAB() {
+        return GDK_CROSSING_GRAB;
+    }
+    private static final int GDK_CROSSING_UNGRAB = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_CROSSING_UNGRAB = 2
+     * }
+     */
+    public static int GDK_CROSSING_UNGRAB() {
+        return GDK_CROSSING_UNGRAB;
+    }
+    private static final int GDK_CROSSING_GTK_GRAB = (int)3L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_CROSSING_GTK_GRAB = 3
+     * }
+     */
+    public static int GDK_CROSSING_GTK_GRAB() {
+        return GDK_CROSSING_GTK_GRAB;
+    }
+    private static final int GDK_CROSSING_GTK_UNGRAB = (int)4L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_CROSSING_GTK_UNGRAB = 4
+     * }
+     */
+    public static int GDK_CROSSING_GTK_UNGRAB() {
+        return GDK_CROSSING_GTK_UNGRAB;
+    }
+    private static final int GDK_CROSSING_STATE_CHANGED = (int)5L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_CROSSING_STATE_CHANGED = 5
+     * }
+     */
+    public static int GDK_CROSSING_STATE_CHANGED() {
+        return GDK_CROSSING_STATE_CHANGED;
+    }
+    private static final int GDK_CROSSING_TOUCH_BEGIN = (int)6L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_CROSSING_TOUCH_BEGIN = 6
+     * }
+     */
+    public static int GDK_CROSSING_TOUCH_BEGIN() {
+        return GDK_CROSSING_TOUCH_BEGIN;
+    }
+    private static final int GDK_CROSSING_TOUCH_END = (int)7L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_CROSSING_TOUCH_END = 7
+     * }
+     */
+    public static int GDK_CROSSING_TOUCH_END() {
+        return GDK_CROSSING_TOUCH_END;
+    }
+    private static final int GDK_CROSSING_DEVICE_SWITCH = (int)8L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_CROSSING_DEVICE_SWITCH = 8
+     * }
+     */
+    public static int GDK_CROSSING_DEVICE_SWITCH() {
+        return GDK_CROSSING_DEVICE_SWITCH;
+    }
+    private static final int GDK_PROPERTY_NEW_VALUE = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_PROPERTY_NEW_VALUE = 0
+     * }
+     */
+    public static int GDK_PROPERTY_NEW_VALUE() {
+        return GDK_PROPERTY_NEW_VALUE;
+    }
+    private static final int GDK_PROPERTY_DELETE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_PROPERTY_DELETE = 1
+     * }
+     */
+    public static int GDK_PROPERTY_DELETE() {
+        return GDK_PROPERTY_DELETE;
+    }
+    private static final int GDK_WINDOW_STATE_WITHDRAWN = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_WINDOW_STATE_WITHDRAWN = 1
+     * }
+     */
+    public static int GDK_WINDOW_STATE_WITHDRAWN() {
+        return GDK_WINDOW_STATE_WITHDRAWN;
+    }
+    private static final int GDK_WINDOW_STATE_ICONIFIED = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_WINDOW_STATE_ICONIFIED = 2
+     * }
+     */
+    public static int GDK_WINDOW_STATE_ICONIFIED() {
+        return GDK_WINDOW_STATE_ICONIFIED;
+    }
+    private static final int GDK_WINDOW_STATE_MAXIMIZED = (int)4L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_WINDOW_STATE_MAXIMIZED = 4
+     * }
+     */
+    public static int GDK_WINDOW_STATE_MAXIMIZED() {
+        return GDK_WINDOW_STATE_MAXIMIZED;
+    }
+    private static final int GDK_WINDOW_STATE_STICKY = (int)8L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_WINDOW_STATE_STICKY = 8
+     * }
+     */
+    public static int GDK_WINDOW_STATE_STICKY() {
+        return GDK_WINDOW_STATE_STICKY;
+    }
+    private static final int GDK_WINDOW_STATE_FULLSCREEN = (int)16L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_WINDOW_STATE_FULLSCREEN = 16
+     * }
+     */
+    public static int GDK_WINDOW_STATE_FULLSCREEN() {
+        return GDK_WINDOW_STATE_FULLSCREEN;
+    }
+    private static final int GDK_WINDOW_STATE_ABOVE = (int)32L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_WINDOW_STATE_ABOVE = 32
+     * }
+     */
+    public static int GDK_WINDOW_STATE_ABOVE() {
+        return GDK_WINDOW_STATE_ABOVE;
+    }
+    private static final int GDK_WINDOW_STATE_BELOW = (int)64L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_WINDOW_STATE_BELOW = 64
+     * }
+     */
+    public static int GDK_WINDOW_STATE_BELOW() {
+        return GDK_WINDOW_STATE_BELOW;
+    }
+    private static final int GDK_WINDOW_STATE_FOCUSED = (int)128L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_WINDOW_STATE_FOCUSED = 128
+     * }
+     */
+    public static int GDK_WINDOW_STATE_FOCUSED() {
+        return GDK_WINDOW_STATE_FOCUSED;
+    }
+    private static final int GDK_WINDOW_STATE_TILED = (int)256L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_WINDOW_STATE_TILED = 256
+     * }
+     */
+    public static int GDK_WINDOW_STATE_TILED() {
+        return GDK_WINDOW_STATE_TILED;
+    }
+    private static final int GDK_WINDOW_STATE_TOP_TILED = (int)512L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_WINDOW_STATE_TOP_TILED = 512
+     * }
+     */
+    public static int GDK_WINDOW_STATE_TOP_TILED() {
+        return GDK_WINDOW_STATE_TOP_TILED;
+    }
+    private static final int GDK_WINDOW_STATE_TOP_RESIZABLE = (int)1024L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_WINDOW_STATE_TOP_RESIZABLE = 1024
+     * }
+     */
+    public static int GDK_WINDOW_STATE_TOP_RESIZABLE() {
+        return GDK_WINDOW_STATE_TOP_RESIZABLE;
+    }
+    private static final int GDK_WINDOW_STATE_RIGHT_TILED = (int)2048L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_WINDOW_STATE_RIGHT_TILED = 2048
+     * }
+     */
+    public static int GDK_WINDOW_STATE_RIGHT_TILED() {
+        return GDK_WINDOW_STATE_RIGHT_TILED;
+    }
+    private static final int GDK_WINDOW_STATE_RIGHT_RESIZABLE = (int)4096L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_WINDOW_STATE_RIGHT_RESIZABLE = 4096
+     * }
+     */
+    public static int GDK_WINDOW_STATE_RIGHT_RESIZABLE() {
+        return GDK_WINDOW_STATE_RIGHT_RESIZABLE;
+    }
+    private static final int GDK_WINDOW_STATE_BOTTOM_TILED = (int)8192L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_WINDOW_STATE_BOTTOM_TILED = 8192
+     * }
+     */
+    public static int GDK_WINDOW_STATE_BOTTOM_TILED() {
+        return GDK_WINDOW_STATE_BOTTOM_TILED;
+    }
+    private static final int GDK_WINDOW_STATE_BOTTOM_RESIZABLE = (int)16384L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_WINDOW_STATE_BOTTOM_RESIZABLE = 16384
+     * }
+     */
+    public static int GDK_WINDOW_STATE_BOTTOM_RESIZABLE() {
+        return GDK_WINDOW_STATE_BOTTOM_RESIZABLE;
+    }
+    private static final int GDK_WINDOW_STATE_LEFT_TILED = (int)32768L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_WINDOW_STATE_LEFT_TILED = 32768
+     * }
+     */
+    public static int GDK_WINDOW_STATE_LEFT_TILED() {
+        return GDK_WINDOW_STATE_LEFT_TILED;
+    }
+    private static final int GDK_WINDOW_STATE_LEFT_RESIZABLE = (int)65536L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_WINDOW_STATE_LEFT_RESIZABLE = 65536
+     * }
+     */
+    public static int GDK_WINDOW_STATE_LEFT_RESIZABLE() {
+        return GDK_WINDOW_STATE_LEFT_RESIZABLE;
+    }
+    private static final int GDK_SETTING_ACTION_NEW = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_SETTING_ACTION_NEW = 0
+     * }
+     */
+    public static int GDK_SETTING_ACTION_NEW() {
+        return GDK_SETTING_ACTION_NEW;
+    }
+    private static final int GDK_SETTING_ACTION_CHANGED = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_SETTING_ACTION_CHANGED = 1
+     * }
+     */
+    public static int GDK_SETTING_ACTION_CHANGED() {
+        return GDK_SETTING_ACTION_CHANGED;
+    }
+    private static final int GDK_SETTING_ACTION_DELETED = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_SETTING_ACTION_DELETED = 2
+     * }
+     */
+    public static int GDK_SETTING_ACTION_DELETED() {
+        return GDK_SETTING_ACTION_DELETED;
+    }
+    private static final int GDK_OWNER_CHANGE_NEW_OWNER = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_OWNER_CHANGE_NEW_OWNER = 0
+     * }
+     */
+    public static int GDK_OWNER_CHANGE_NEW_OWNER() {
+        return GDK_OWNER_CHANGE_NEW_OWNER;
+    }
+    private static final int GDK_OWNER_CHANGE_DESTROY = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_OWNER_CHANGE_DESTROY = 1
+     * }
+     */
+    public static int GDK_OWNER_CHANGE_DESTROY() {
+        return GDK_OWNER_CHANGE_DESTROY;
+    }
+    private static final int GDK_OWNER_CHANGE_CLOSE = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.GDK_OWNER_CHANGE_CLOSE = 2
+     * }
+     */
+    public static int GDK_OWNER_CHANGE_CLOSE() {
+        return GDK_OWNER_CHANGE_CLOSE;
+    }
+
+    private static class gdk_event_get_type {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG    );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gdk_event_get_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GType gdk_event_get_type()
+     * }
+     */
+    public static FunctionDescriptor gdk_event_get_type$descriptor() {
+        return gdk_event_get_type.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GType gdk_event_get_type()
+     * }
+     */
+    public static MethodHandle gdk_event_get_type$handle() {
+        return gdk_event_get_type.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GType gdk_event_get_type()
+     * }
+     */
+    public static MemorySegment gdk_event_get_type$address() {
+        return gdk_event_get_type.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern GType gdk_event_get_type()
+     * }
+     */
+    public static long gdk_event_get_type() {
+        var mh$ = gdk_event_get_type.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gdk_event_get_type");
+            }
+            return (long)mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
     }
 
     private static class gdk_event_sequence_get_type {
@@ -45898,239 +46303,5 @@ class app_indicator_h_8 extends app_indicator_h_9 {
      * }
      */
     public static final AddressLayout GdkCursor_listautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GSList *GdkCursor_slistautoptr
-     * }
-     */
-    public static final AddressLayout GdkCursor_slistautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GQueue *GdkCursor_queueautoptr
-     * }
-     */
-    public static final AddressLayout GdkCursor_queueautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GdkDevice *GdkDevice_autoptr
-     * }
-     */
-    public static final AddressLayout GdkDevice_autoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GList *GdkDevice_listautoptr
-     * }
-     */
-    public static final AddressLayout GdkDevice_listautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GSList *GdkDevice_slistautoptr
-     * }
-     */
-    public static final AddressLayout GdkDevice_slistautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GQueue *GdkDevice_queueautoptr
-     * }
-     */
-    public static final AddressLayout GdkDevice_queueautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GdkDeviceManager *GdkDeviceManager_autoptr
-     * }
-     */
-    public static final AddressLayout GdkDeviceManager_autoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GList *GdkDeviceManager_listautoptr
-     * }
-     */
-    public static final AddressLayout GdkDeviceManager_listautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GSList *GdkDeviceManager_slistautoptr
-     * }
-     */
-    public static final AddressLayout GdkDeviceManager_slistautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GQueue *GdkDeviceManager_queueautoptr
-     * }
-     */
-    public static final AddressLayout GdkDeviceManager_queueautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GdkDisplay *GdkDisplay_autoptr
-     * }
-     */
-    public static final AddressLayout GdkDisplay_autoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GList *GdkDisplay_listautoptr
-     * }
-     */
-    public static final AddressLayout GdkDisplay_listautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GSList *GdkDisplay_slistautoptr
-     * }
-     */
-    public static final AddressLayout GdkDisplay_slistautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GQueue *GdkDisplay_queueautoptr
-     * }
-     */
-    public static final AddressLayout GdkDisplay_queueautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GdkDisplayManager *GdkDisplayManager_autoptr
-     * }
-     */
-    public static final AddressLayout GdkDisplayManager_autoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GList *GdkDisplayManager_listautoptr
-     * }
-     */
-    public static final AddressLayout GdkDisplayManager_listautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GSList *GdkDisplayManager_slistautoptr
-     * }
-     */
-    public static final AddressLayout GdkDisplayManager_slistautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GQueue *GdkDisplayManager_queueautoptr
-     * }
-     */
-    public static final AddressLayout GdkDisplayManager_queueautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GdkDragContext *GdkDragContext_autoptr
-     * }
-     */
-    public static final AddressLayout GdkDragContext_autoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GList *GdkDragContext_listautoptr
-     * }
-     */
-    public static final AddressLayout GdkDragContext_listautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GSList *GdkDragContext_slistautoptr
-     * }
-     */
-    public static final AddressLayout GdkDragContext_slistautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GQueue *GdkDragContext_queueautoptr
-     * }
-     */
-    public static final AddressLayout GdkDragContext_queueautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GdkFrameClock *GdkFrameClock_autoptr
-     * }
-     */
-    public static final AddressLayout GdkFrameClock_autoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GList *GdkFrameClock_listautoptr
-     * }
-     */
-    public static final AddressLayout GdkFrameClock_listautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GSList *GdkFrameClock_slistautoptr
-     * }
-     */
-    public static final AddressLayout GdkFrameClock_slistautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GQueue *GdkFrameClock_queueautoptr
-     * }
-     */
-    public static final AddressLayout GdkFrameClock_queueautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GdkGLContext *GdkGLContext_autoptr
-     * }
-     */
-    public static final AddressLayout GdkGLContext_autoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GList *GdkGLContext_listautoptr
-     * }
-     */
-    public static final AddressLayout GdkGLContext_listautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GSList *GdkGLContext_slistautoptr
-     * }
-     */
-    public static final AddressLayout GdkGLContext_slistautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GQueue *GdkGLContext_queueautoptr
-     * }
-     */
-    public static final AddressLayout GdkGLContext_queueautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GdkKeymap *GdkKeymap_autoptr
-     * }
-     */
-    public static final AddressLayout GdkKeymap_autoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GList *GdkKeymap_listautoptr
-     * }
-     */
-    public static final AddressLayout GdkKeymap_listautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GSList *GdkKeymap_slistautoptr
-     * }
-     */
-    public static final AddressLayout GdkKeymap_slistautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GQueue *GdkKeymap_queueautoptr
-     * }
-     */
-    public static final AddressLayout GdkKeymap_queueautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GdkScreen *GdkScreen_autoptr
-     * }
-     */
-    public static final AddressLayout GdkScreen_autoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GList *GdkScreen_listautoptr
-     * }
-     */
-    public static final AddressLayout GdkScreen_listautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GSList *GdkScreen_slistautoptr
-     * }
-     */
-    public static final AddressLayout GdkScreen_slistautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GQueue *GdkScreen_queueautoptr
-     * }
-     */
-    public static final AddressLayout GdkScreen_queueautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GdkVisual *GdkVisual_autoptr
-     * }
-     */
-    public static final AddressLayout GdkVisual_autoptr = app_indicator_h.C_POINTER;
 }
 

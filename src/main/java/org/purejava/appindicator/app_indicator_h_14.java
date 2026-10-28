@@ -2,15 +2,110 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.lang.invoke.MethodHandle;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
-import static java.lang.foreign.ValueLayout.OfInt;
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 class app_indicator_h_14 extends app_indicator_h_15 {
 
     app_indicator_h_14() {
         // Should not be called directly
+    }
+    private static final int G_ASK_PASSWORD_NEED_DOMAIN = (int)4L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.G_ASK_PASSWORD_NEED_DOMAIN = 4
+     * }
+     */
+    public static int G_ASK_PASSWORD_NEED_DOMAIN() {
+        return G_ASK_PASSWORD_NEED_DOMAIN;
+    }
+    private static final int G_ASK_PASSWORD_SAVING_SUPPORTED = (int)8L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.G_ASK_PASSWORD_SAVING_SUPPORTED = 8
+     * }
+     */
+    public static int G_ASK_PASSWORD_SAVING_SUPPORTED() {
+        return G_ASK_PASSWORD_SAVING_SUPPORTED;
+    }
+    private static final int G_ASK_PASSWORD_ANONYMOUS_SUPPORTED = (int)16L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.G_ASK_PASSWORD_ANONYMOUS_SUPPORTED = 16
+     * }
+     */
+    public static int G_ASK_PASSWORD_ANONYMOUS_SUPPORTED() {
+        return G_ASK_PASSWORD_ANONYMOUS_SUPPORTED;
+    }
+    private static final int G_ASK_PASSWORD_TCRYPT = (int)32L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.G_ASK_PASSWORD_TCRYPT = 32
+     * }
+     */
+    public static int G_ASK_PASSWORD_TCRYPT() {
+        return G_ASK_PASSWORD_TCRYPT;
+    }
+    private static final int G_PASSWORD_SAVE_NEVER = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.G_PASSWORD_SAVE_NEVER = 0
+     * }
+     */
+    public static int G_PASSWORD_SAVE_NEVER() {
+        return G_PASSWORD_SAVE_NEVER;
+    }
+    private static final int G_PASSWORD_SAVE_FOR_SESSION = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.G_PASSWORD_SAVE_FOR_SESSION = 1
+     * }
+     */
+    public static int G_PASSWORD_SAVE_FOR_SESSION() {
+        return G_PASSWORD_SAVE_FOR_SESSION;
+    }
+    private static final int G_PASSWORD_SAVE_PERMANENTLY = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.G_PASSWORD_SAVE_PERMANENTLY = 2
+     * }
+     */
+    public static int G_PASSWORD_SAVE_PERMANENTLY() {
+        return G_PASSWORD_SAVE_PERMANENTLY;
+    }
+    private static final int G_MOUNT_OPERATION_HANDLED = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.G_MOUNT_OPERATION_HANDLED = 0
+     * }
+     */
+    public static int G_MOUNT_OPERATION_HANDLED() {
+        return G_MOUNT_OPERATION_HANDLED;
+    }
+    private static final int G_MOUNT_OPERATION_ABORTED = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.G_MOUNT_OPERATION_ABORTED = 1
+     * }
+     */
+    public static int G_MOUNT_OPERATION_ABORTED() {
+        return G_MOUNT_OPERATION_ABORTED;
+    }
+    private static final int G_MOUNT_OPERATION_UNHANDLED = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.G_MOUNT_OPERATION_UNHANDLED = 2
+     * }
+     */
+    public static int G_MOUNT_OPERATION_UNHANDLED() {
+        return G_MOUNT_OPERATION_UNHANDLED;
     }
     private static final int G_OUTPUT_STREAM_SPLICE_NONE = (int)0L;
     /**
@@ -29859,626 +29954,6 @@ class app_indicator_h_14 extends app_indicator_h_15 {
                 traceDowncall("g_credentials_get_native", credentials, native_type);
             }
             return (MemorySegment)mh$.invokeExact(credentials, native_type);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_credentials_set_native {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_credentials_set_native");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void g_credentials_set_native(GCredentials *credentials, GCredentialsType native_type, gpointer native)
-     * }
-     */
-    public static FunctionDescriptor g_credentials_set_native$descriptor() {
-        return g_credentials_set_native.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void g_credentials_set_native(GCredentials *credentials, GCredentialsType native_type, gpointer native)
-     * }
-     */
-    public static MethodHandle g_credentials_set_native$handle() {
-        return g_credentials_set_native.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void g_credentials_set_native(GCredentials *credentials, GCredentialsType native_type, gpointer native)
-     * }
-     */
-    public static MemorySegment g_credentials_set_native$address() {
-        return g_credentials_set_native.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void g_credentials_set_native(GCredentials *credentials, GCredentialsType native_type, gpointer native)
-     * }
-     */
-    public static void g_credentials_set_native(MemorySegment credentials, int native_type, MemorySegment native_) {
-        var mh$ = g_credentials_set_native.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_credentials_set_native", credentials, native_type, native_);
-            }
-            mh$.invokeExact(credentials, native_type, native_);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_credentials_is_same_user {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_credentials_is_same_user");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern gboolean g_credentials_is_same_user(GCredentials *credentials, GCredentials *other_credentials, GError **error)
-     * }
-     */
-    public static FunctionDescriptor g_credentials_is_same_user$descriptor() {
-        return g_credentials_is_same_user.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern gboolean g_credentials_is_same_user(GCredentials *credentials, GCredentials *other_credentials, GError **error)
-     * }
-     */
-    public static MethodHandle g_credentials_is_same_user$handle() {
-        return g_credentials_is_same_user.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern gboolean g_credentials_is_same_user(GCredentials *credentials, GCredentials *other_credentials, GError **error)
-     * }
-     */
-    public static MemorySegment g_credentials_is_same_user$address() {
-        return g_credentials_is_same_user.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern gboolean g_credentials_is_same_user(GCredentials *credentials, GCredentials *other_credentials, GError **error)
-     * }
-     */
-    public static int g_credentials_is_same_user(MemorySegment credentials, MemorySegment other_credentials, MemorySegment error) {
-        var mh$ = g_credentials_is_same_user.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_credentials_is_same_user", credentials, other_credentials, error);
-            }
-            return (int)mh$.invokeExact(credentials, other_credentials, error);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_credentials_get_unix_pid {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_credentials_get_unix_pid");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern pid_t g_credentials_get_unix_pid(GCredentials *credentials, GError **error)
-     * }
-     */
-    public static FunctionDescriptor g_credentials_get_unix_pid$descriptor() {
-        return g_credentials_get_unix_pid.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern pid_t g_credentials_get_unix_pid(GCredentials *credentials, GError **error)
-     * }
-     */
-    public static MethodHandle g_credentials_get_unix_pid$handle() {
-        return g_credentials_get_unix_pid.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern pid_t g_credentials_get_unix_pid(GCredentials *credentials, GError **error)
-     * }
-     */
-    public static MemorySegment g_credentials_get_unix_pid$address() {
-        return g_credentials_get_unix_pid.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern pid_t g_credentials_get_unix_pid(GCredentials *credentials, GError **error)
-     * }
-     */
-    public static int g_credentials_get_unix_pid(MemorySegment credentials, MemorySegment error) {
-        var mh$ = g_credentials_get_unix_pid.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_credentials_get_unix_pid", credentials, error);
-            }
-            return (int)mh$.invokeExact(credentials, error);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_credentials_get_unix_user {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_credentials_get_unix_user");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern uid_t g_credentials_get_unix_user(GCredentials *credentials, GError **error)
-     * }
-     */
-    public static FunctionDescriptor g_credentials_get_unix_user$descriptor() {
-        return g_credentials_get_unix_user.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern uid_t g_credentials_get_unix_user(GCredentials *credentials, GError **error)
-     * }
-     */
-    public static MethodHandle g_credentials_get_unix_user$handle() {
-        return g_credentials_get_unix_user.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern uid_t g_credentials_get_unix_user(GCredentials *credentials, GError **error)
-     * }
-     */
-    public static MemorySegment g_credentials_get_unix_user$address() {
-        return g_credentials_get_unix_user.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern uid_t g_credentials_get_unix_user(GCredentials *credentials, GError **error)
-     * }
-     */
-    public static int g_credentials_get_unix_user(MemorySegment credentials, MemorySegment error) {
-        var mh$ = g_credentials_get_unix_user.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_credentials_get_unix_user", credentials, error);
-            }
-            return (int)mh$.invokeExact(credentials, error);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_credentials_set_unix_user {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_credentials_set_unix_user");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern gboolean g_credentials_set_unix_user(GCredentials *credentials, uid_t uid, GError **error)
-     * }
-     */
-    public static FunctionDescriptor g_credentials_set_unix_user$descriptor() {
-        return g_credentials_set_unix_user.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern gboolean g_credentials_set_unix_user(GCredentials *credentials, uid_t uid, GError **error)
-     * }
-     */
-    public static MethodHandle g_credentials_set_unix_user$handle() {
-        return g_credentials_set_unix_user.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern gboolean g_credentials_set_unix_user(GCredentials *credentials, uid_t uid, GError **error)
-     * }
-     */
-    public static MemorySegment g_credentials_set_unix_user$address() {
-        return g_credentials_set_unix_user.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern gboolean g_credentials_set_unix_user(GCredentials *credentials, uid_t uid, GError **error)
-     * }
-     */
-    public static int g_credentials_set_unix_user(MemorySegment credentials, int uid, MemorySegment error) {
-        var mh$ = g_credentials_set_unix_user.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_credentials_set_unix_user", credentials, uid, error);
-            }
-            return (int)mh$.invokeExact(credentials, uid, error);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_datagram_based_get_type {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_LONG    );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_datagram_based_get_type");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GType g_datagram_based_get_type()
-     * }
-     */
-    public static FunctionDescriptor g_datagram_based_get_type$descriptor() {
-        return g_datagram_based_get_type.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GType g_datagram_based_get_type()
-     * }
-     */
-    public static MethodHandle g_datagram_based_get_type$handle() {
-        return g_datagram_based_get_type.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern GType g_datagram_based_get_type()
-     * }
-     */
-    public static MemorySegment g_datagram_based_get_type$address() {
-        return g_datagram_based_get_type.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern GType g_datagram_based_get_type()
-     * }
-     */
-    public static long g_datagram_based_get_type() {
-        var mh$ = g_datagram_based_get_type.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_datagram_based_get_type");
-            }
-            return (long)mh$.invokeExact();
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_datagram_based_receive_messages {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_LONG,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_datagram_based_receive_messages");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern gint g_datagram_based_receive_messages(GDatagramBased *datagram_based, GInputMessage *messages, guint num_messages, gint flags, gint64 timeout, GCancellable *cancellable, GError **error)
-     * }
-     */
-    public static FunctionDescriptor g_datagram_based_receive_messages$descriptor() {
-        return g_datagram_based_receive_messages.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern gint g_datagram_based_receive_messages(GDatagramBased *datagram_based, GInputMessage *messages, guint num_messages, gint flags, gint64 timeout, GCancellable *cancellable, GError **error)
-     * }
-     */
-    public static MethodHandle g_datagram_based_receive_messages$handle() {
-        return g_datagram_based_receive_messages.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern gint g_datagram_based_receive_messages(GDatagramBased *datagram_based, GInputMessage *messages, guint num_messages, gint flags, gint64 timeout, GCancellable *cancellable, GError **error)
-     * }
-     */
-    public static MemorySegment g_datagram_based_receive_messages$address() {
-        return g_datagram_based_receive_messages.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern gint g_datagram_based_receive_messages(GDatagramBased *datagram_based, GInputMessage *messages, guint num_messages, gint flags, gint64 timeout, GCancellable *cancellable, GError **error)
-     * }
-     */
-    public static int g_datagram_based_receive_messages(MemorySegment datagram_based, MemorySegment messages, int num_messages, int flags, long timeout, MemorySegment cancellable, MemorySegment error) {
-        var mh$ = g_datagram_based_receive_messages.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_datagram_based_receive_messages", datagram_based, messages, num_messages, flags, timeout, cancellable, error);
-            }
-            return (int)mh$.invokeExact(datagram_based, messages, num_messages, flags, timeout, cancellable, error);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_datagram_based_send_messages {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_LONG,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_datagram_based_send_messages");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern gint g_datagram_based_send_messages(GDatagramBased *datagram_based, GOutputMessage *messages, guint num_messages, gint flags, gint64 timeout, GCancellable *cancellable, GError **error)
-     * }
-     */
-    public static FunctionDescriptor g_datagram_based_send_messages$descriptor() {
-        return g_datagram_based_send_messages.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern gint g_datagram_based_send_messages(GDatagramBased *datagram_based, GOutputMessage *messages, guint num_messages, gint flags, gint64 timeout, GCancellable *cancellable, GError **error)
-     * }
-     */
-    public static MethodHandle g_datagram_based_send_messages$handle() {
-        return g_datagram_based_send_messages.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern gint g_datagram_based_send_messages(GDatagramBased *datagram_based, GOutputMessage *messages, guint num_messages, gint flags, gint64 timeout, GCancellable *cancellable, GError **error)
-     * }
-     */
-    public static MemorySegment g_datagram_based_send_messages$address() {
-        return g_datagram_based_send_messages.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern gint g_datagram_based_send_messages(GDatagramBased *datagram_based, GOutputMessage *messages, guint num_messages, gint flags, gint64 timeout, GCancellable *cancellable, GError **error)
-     * }
-     */
-    public static int g_datagram_based_send_messages(MemorySegment datagram_based, MemorySegment messages, int num_messages, int flags, long timeout, MemorySegment cancellable, MemorySegment error) {
-        var mh$ = g_datagram_based_send_messages.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_datagram_based_send_messages", datagram_based, messages, num_messages, flags, timeout, cancellable, error);
-            }
-            return (int)mh$.invokeExact(datagram_based, messages, num_messages, flags, timeout, cancellable, error);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_datagram_based_create_source {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_datagram_based_create_source");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GSource *g_datagram_based_create_source(GDatagramBased *datagram_based, GIOCondition condition, GCancellable *cancellable)
-     * }
-     */
-    public static FunctionDescriptor g_datagram_based_create_source$descriptor() {
-        return g_datagram_based_create_source.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GSource *g_datagram_based_create_source(GDatagramBased *datagram_based, GIOCondition condition, GCancellable *cancellable)
-     * }
-     */
-    public static MethodHandle g_datagram_based_create_source$handle() {
-        return g_datagram_based_create_source.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern GSource *g_datagram_based_create_source(GDatagramBased *datagram_based, GIOCondition condition, GCancellable *cancellable)
-     * }
-     */
-    public static MemorySegment g_datagram_based_create_source$address() {
-        return g_datagram_based_create_source.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern GSource *g_datagram_based_create_source(GDatagramBased *datagram_based, GIOCondition condition, GCancellable *cancellable)
-     * }
-     */
-    public static MemorySegment g_datagram_based_create_source(MemorySegment datagram_based, int condition, MemorySegment cancellable) {
-        var mh$ = g_datagram_based_create_source.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_datagram_based_create_source", datagram_based, condition, cancellable);
-            }
-            return (MemorySegment)mh$.invokeExact(datagram_based, condition, cancellable);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_datagram_based_condition_check {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_datagram_based_condition_check");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GIOCondition g_datagram_based_condition_check(GDatagramBased *datagram_based, GIOCondition condition)
-     * }
-     */
-    public static FunctionDescriptor g_datagram_based_condition_check$descriptor() {
-        return g_datagram_based_condition_check.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GIOCondition g_datagram_based_condition_check(GDatagramBased *datagram_based, GIOCondition condition)
-     * }
-     */
-    public static MethodHandle g_datagram_based_condition_check$handle() {
-        return g_datagram_based_condition_check.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern GIOCondition g_datagram_based_condition_check(GDatagramBased *datagram_based, GIOCondition condition)
-     * }
-     */
-    public static MemorySegment g_datagram_based_condition_check$address() {
-        return g_datagram_based_condition_check.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern GIOCondition g_datagram_based_condition_check(GDatagramBased *datagram_based, GIOCondition condition)
-     * }
-     */
-    public static int g_datagram_based_condition_check(MemorySegment datagram_based, int condition) {
-        var mh$ = g_datagram_based_condition_check.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_datagram_based_condition_check", datagram_based, condition);
-            }
-            return (int)mh$.invokeExact(datagram_based, condition);
         } catch (Error | RuntimeException ex) {
            throw ex;
         } catch (Throwable ex$) {

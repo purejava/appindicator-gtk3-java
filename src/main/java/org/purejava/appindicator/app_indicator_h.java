@@ -2,12 +2,380 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 public class app_indicator_h extends app_indicator_h_1 {
 
     app_indicator_h() {
         // Should not be called directly
+    }
+    private static final int G_TYPE_RESERVED_GLIB_FIRST = (int)22L;
+    /**
+     * {@snippet lang=c :
+     * #define G_TYPE_RESERVED_GLIB_FIRST 22
+     * }
+     */
+    public static int G_TYPE_RESERVED_GLIB_FIRST() {
+        return G_TYPE_RESERVED_GLIB_FIRST;
+    }
+    private static final int G_TYPE_RESERVED_GLIB_LAST = (int)31L;
+    /**
+     * {@snippet lang=c :
+     * #define G_TYPE_RESERVED_GLIB_LAST 31
+     * }
+     */
+    public static int G_TYPE_RESERVED_GLIB_LAST() {
+        return G_TYPE_RESERVED_GLIB_LAST;
+    }
+    private static final int G_TYPE_RESERVED_BSE_FIRST = (int)32L;
+    /**
+     * {@snippet lang=c :
+     * #define G_TYPE_RESERVED_BSE_FIRST 32
+     * }
+     */
+    public static int G_TYPE_RESERVED_BSE_FIRST() {
+        return G_TYPE_RESERVED_BSE_FIRST;
+    }
+    private static final int G_TYPE_RESERVED_BSE_LAST = (int)48L;
+    /**
+     * {@snippet lang=c :
+     * #define G_TYPE_RESERVED_BSE_LAST 48
+     * }
+     */
+    public static int G_TYPE_RESERVED_BSE_LAST() {
+        return G_TYPE_RESERVED_BSE_LAST;
+    }
+    private static final int G_TYPE_RESERVED_USER_FIRST = (int)49L;
+    /**
+     * {@snippet lang=c :
+     * #define G_TYPE_RESERVED_USER_FIRST 49
+     * }
+     */
+    public static int G_TYPE_RESERVED_USER_FIRST() {
+        return G_TYPE_RESERVED_USER_FIRST;
+    }
+    private static final long G_TYPE_FLAG_RESERVED_ID_BIT = 1L;
+    /**
+     * {@snippet lang=c :
+     * #define G_TYPE_FLAG_RESERVED_ID_BIT 1
+     * }
+     */
+    public static long G_TYPE_FLAG_RESERVED_ID_BIT() {
+        return G_TYPE_FLAG_RESERVED_ID_BIT;
+    }
+    private static final int G_VALUE_NOCOPY_CONTENTS = (int)134217728L;
+    /**
+     * {@snippet lang=c :
+     * #define G_VALUE_NOCOPY_CONTENTS 134217728
+     * }
+     */
+    public static int G_VALUE_NOCOPY_CONTENTS() {
+        return G_VALUE_NOCOPY_CONTENTS;
+    }
+    private static final int G_VALUE_INTERNED_STRING = (int)268435456L;
+    /**
+     * {@snippet lang=c :
+     * #define G_VALUE_INTERNED_STRING 268435456
+     * }
+     */
+    public static int G_VALUE_INTERNED_STRING() {
+        return G_VALUE_INTERNED_STRING;
+    }
+    private static final int G_PARAM_STATIC_STRINGS = (int)224L;
+    /**
+     * {@snippet lang=c :
+     * #define G_PARAM_STATIC_STRINGS 224
+     * }
+     */
+    public static int G_PARAM_STATIC_STRINGS() {
+        return G_PARAM_STATIC_STRINGS;
+    }
+    private static final int G_PARAM_MASK = (int)255L;
+    /**
+     * {@snippet lang=c :
+     * #define G_PARAM_MASK 255
+     * }
+     */
+    public static int G_PARAM_MASK() {
+        return G_PARAM_MASK;
+    }
+    private static final int G_PARAM_USER_SHIFT = (int)8L;
+    /**
+     * {@snippet lang=c :
+     * #define G_PARAM_USER_SHIFT 8
+     * }
+     */
+    public static int G_PARAM_USER_SHIFT() {
+        return G_PARAM_USER_SHIFT;
+    }
+    private static final long G_SIGNAL_TYPE_STATIC_SCOPE = 1L;
+    /**
+     * {@snippet lang=c :
+     * #define G_SIGNAL_TYPE_STATIC_SCOPE 1
+     * }
+     */
+    public static long G_SIGNAL_TYPE_STATIC_SCOPE() {
+        return G_SIGNAL_TYPE_STATIC_SCOPE;
+    }
+    private static final long _POSIX_VERSION = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_VERSION 200809
+     * }
+     */
+    public static long _POSIX_VERSION() {
+        return _POSIX_VERSION;
+    }
+    private static final long __POSIX2_THIS_VERSION = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define __POSIX2_THIS_VERSION 200809
+     * }
+     */
+    public static long __POSIX2_THIS_VERSION() {
+        return __POSIX2_THIS_VERSION;
+    }
+    private static final long _POSIX2_VERSION = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX2_VERSION 200809
+     * }
+     */
+    public static long _POSIX2_VERSION() {
+        return _POSIX2_VERSION;
+    }
+    private static final long _POSIX2_C_VERSION = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX2_C_VERSION 200809
+     * }
+     */
+    public static long _POSIX2_C_VERSION() {
+        return _POSIX2_C_VERSION;
+    }
+    private static final long _POSIX2_C_BIND = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX2_C_BIND 200809
+     * }
+     */
+    public static long _POSIX2_C_BIND() {
+        return _POSIX2_C_BIND;
+    }
+    private static final long _POSIX2_C_DEV = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX2_C_DEV 200809
+     * }
+     */
+    public static long _POSIX2_C_DEV() {
+        return _POSIX2_C_DEV;
+    }
+    private static final long _POSIX2_SW_DEV = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX2_SW_DEV 200809
+     * }
+     */
+    public static long _POSIX2_SW_DEV() {
+        return _POSIX2_SW_DEV;
+    }
+    private static final long _POSIX2_LOCALEDEF = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX2_LOCALEDEF 200809
+     * }
+     */
+    public static long _POSIX2_LOCALEDEF() {
+        return _POSIX2_LOCALEDEF;
+    }
+    private static final long _POSIX_PRIORITY_SCHEDULING = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_PRIORITY_SCHEDULING 200809
+     * }
+     */
+    public static long _POSIX_PRIORITY_SCHEDULING() {
+        return _POSIX_PRIORITY_SCHEDULING;
+    }
+    private static final long _POSIX_SYNCHRONIZED_IO = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_SYNCHRONIZED_IO 200809
+     * }
+     */
+    public static long _POSIX_SYNCHRONIZED_IO() {
+        return _POSIX_SYNCHRONIZED_IO;
+    }
+    private static final long _POSIX_FSYNC = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_FSYNC 200809
+     * }
+     */
+    public static long _POSIX_FSYNC() {
+        return _POSIX_FSYNC;
+    }
+    private static final long _POSIX_MAPPED_FILES = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_MAPPED_FILES 200809
+     * }
+     */
+    public static long _POSIX_MAPPED_FILES() {
+        return _POSIX_MAPPED_FILES;
+    }
+    private static final long _POSIX_MEMLOCK = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_MEMLOCK 200809
+     * }
+     */
+    public static long _POSIX_MEMLOCK() {
+        return _POSIX_MEMLOCK;
+    }
+    private static final long _POSIX_MEMLOCK_RANGE = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_MEMLOCK_RANGE 200809
+     * }
+     */
+    public static long _POSIX_MEMLOCK_RANGE() {
+        return _POSIX_MEMLOCK_RANGE;
+    }
+    private static final long _POSIX_MEMORY_PROTECTION = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_MEMORY_PROTECTION 200809
+     * }
+     */
+    public static long _POSIX_MEMORY_PROTECTION() {
+        return _POSIX_MEMORY_PROTECTION;
+    }
+    private static final long _POSIX_THREADS = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_THREADS 200809
+     * }
+     */
+    public static long _POSIX_THREADS() {
+        return _POSIX_THREADS;
+    }
+    private static final long _POSIX_THREAD_SAFE_FUNCTIONS = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_THREAD_SAFE_FUNCTIONS 200809
+     * }
+     */
+    public static long _POSIX_THREAD_SAFE_FUNCTIONS() {
+        return _POSIX_THREAD_SAFE_FUNCTIONS;
+    }
+    private static final long _POSIX_THREAD_PRIORITY_SCHEDULING = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_THREAD_PRIORITY_SCHEDULING 200809
+     * }
+     */
+    public static long _POSIX_THREAD_PRIORITY_SCHEDULING() {
+        return _POSIX_THREAD_PRIORITY_SCHEDULING;
+    }
+    private static final long _POSIX_THREAD_ATTR_STACKSIZE = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_THREAD_ATTR_STACKSIZE 200809
+     * }
+     */
+    public static long _POSIX_THREAD_ATTR_STACKSIZE() {
+        return _POSIX_THREAD_ATTR_STACKSIZE;
+    }
+    private static final long _POSIX_THREAD_ATTR_STACKADDR = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_THREAD_ATTR_STACKADDR 200809
+     * }
+     */
+    public static long _POSIX_THREAD_ATTR_STACKADDR() {
+        return _POSIX_THREAD_ATTR_STACKADDR;
+    }
+    private static final long _POSIX_THREAD_PRIO_INHERIT = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_THREAD_PRIO_INHERIT 200809
+     * }
+     */
+    public static long _POSIX_THREAD_PRIO_INHERIT() {
+        return _POSIX_THREAD_PRIO_INHERIT;
+    }
+    private static final long _POSIX_THREAD_PRIO_PROTECT = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_THREAD_PRIO_PROTECT 200809
+     * }
+     */
+    public static long _POSIX_THREAD_PRIO_PROTECT() {
+        return _POSIX_THREAD_PRIO_PROTECT;
+    }
+    private static final long _POSIX_THREAD_ROBUST_PRIO_INHERIT = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_THREAD_ROBUST_PRIO_INHERIT 200809
+     * }
+     */
+    public static long _POSIX_THREAD_ROBUST_PRIO_INHERIT() {
+        return _POSIX_THREAD_ROBUST_PRIO_INHERIT;
+    }
+    private static final int _POSIX_THREAD_ROBUST_PRIO_PROTECT = (int)-1L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_THREAD_ROBUST_PRIO_PROTECT -1
+     * }
+     */
+    public static int _POSIX_THREAD_ROBUST_PRIO_PROTECT() {
+        return _POSIX_THREAD_ROBUST_PRIO_PROTECT;
+    }
+    private static final long _POSIX_SEMAPHORES = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_SEMAPHORES 200809
+     * }
+     */
+    public static long _POSIX_SEMAPHORES() {
+        return _POSIX_SEMAPHORES;
+    }
+    private static final long _POSIX_REALTIME_SIGNALS = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_REALTIME_SIGNALS 200809
+     * }
+     */
+    public static long _POSIX_REALTIME_SIGNALS() {
+        return _POSIX_REALTIME_SIGNALS;
+    }
+    private static final long _POSIX_ASYNCHRONOUS_IO = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_ASYNCHRONOUS_IO 200809
+     * }
+     */
+    public static long _POSIX_ASYNCHRONOUS_IO() {
+        return _POSIX_ASYNCHRONOUS_IO;
+    }
+    private static final long _POSIX_PRIORITIZED_IO = 200809L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_PRIORITIZED_IO 200809
+     * }
+     */
+    public static long _POSIX_PRIORITIZED_IO() {
+        return _POSIX_PRIORITIZED_IO;
     }
     private static final long _POSIX_SHARED_MEMORY_OBJECTS = 200809L;
     /**
@@ -1889,13 +2257,13 @@ public class app_indicator_h extends app_indicator_h_1 {
     }
     /**
      * {@snippet lang=c :
-     * #define PANGO_VERSION_STRING "1.58.0"
+     * #define PANGO_VERSION_STRING "1.58.2"
      * }
      */
     public static MemorySegment PANGO_VERSION_STRING() {
         class Holder {
             static final MemorySegment PANGO_VERSION_STRING
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("1.58.0");
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("1.58.2");
         }
         return Holder.PANGO_VERSION_STRING;
     }
@@ -4086,6 +4454,24 @@ public class app_indicator_h extends app_indicator_h_1 {
         }
         return Holder.SCNxPTR;
     }
+    private static final long HB_BUDGET_DEFAULT = -9223372036854775808L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_BUDGET_DEFAULT -9223372036854775808
+     * }
+     */
+    public static long HB_BUDGET_DEFAULT() {
+        return HB_BUDGET_DEFAULT;
+    }
+    private static final long HB_BUDGET_UNLIMITED = 9223372036854775807L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_BUDGET_UNLIMITED 9223372036854775807
+     * }
+     */
+    public static long HB_BUDGET_UNLIMITED() {
+        return HB_BUDGET_UNLIMITED;
+    }
     private static final int HB_CODEPOINT_INVALID = (int)4294967295L;
     /**
      * {@snippet lang=c :
@@ -4250,13 +4636,13 @@ public class app_indicator_h extends app_indicator_h_1 {
     }
     /**
      * {@snippet lang=c :
-     * #define HB_VERSION_STRING "14.2.1"
+     * #define HB_VERSION_STRING "15.0.0"
      * }
      */
     public static MemorySegment HB_VERSION_STRING() {
         class Holder {
             static final MemorySegment HB_VERSION_STRING
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("14.2.1");
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("15.0.0");
         }
         return Holder.HB_VERSION_STRING;
     }
@@ -4461,10 +4847,10 @@ public class app_indicator_h extends app_indicator_h_1 {
         }
         return Holder.P_tmpdir;
     }
-    private static final int PANGO_VERSION = (int)15800L;
+    private static final int PANGO_VERSION = (int)15802L;
     /**
      * {@snippet lang=c :
-     * #define PANGO_VERSION 15800
+     * #define PANGO_VERSION 15802
      * }
      */
     public static int PANGO_VERSION() {
@@ -4479,10 +4865,10 @@ public class app_indicator_h extends app_indicator_h_1 {
     public static int CAIRO_FONT_TYPE_ATSUI() {
         return CAIRO_FONT_TYPE_ATSUI;
     }
-    private static final int CAIRO_VERSION = (int)11804L;
+    private static final int CAIRO_VERSION = (int)11806L;
     /**
      * {@snippet lang=c :
-     * #define CAIRO_VERSION 11804
+     * #define CAIRO_VERSION 11806
      * }
      */
     public static int CAIRO_VERSION() {
@@ -4490,13 +4876,13 @@ public class app_indicator_h extends app_indicator_h_1 {
     }
     /**
      * {@snippet lang=c :
-     * #define CAIRO_VERSION_STRING "1.18.4"
+     * #define CAIRO_VERSION_STRING "1.18.6"
      * }
      */
     public static MemorySegment CAIRO_VERSION_STRING() {
         class Holder {
             static final MemorySegment CAIRO_VERSION_STRING
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("1.18.4");
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("1.18.6");
         }
         return Holder.CAIRO_VERSION_STRING;
     }
@@ -4800,10 +5186,10 @@ public class app_indicator_h extends app_indicator_h_1 {
     public static int GDK_PIXBUF_MINOR() {
         return GDK_PIXBUF_MINOR;
     }
-    private static final int GDK_PIXBUF_MICRO = (int)7L;
+    private static final int GDK_PIXBUF_MICRO = (int)8L;
     /**
      * {@snippet lang=c :
-     * #define GDK_PIXBUF_MICRO 7
+     * #define GDK_PIXBUF_MICRO 8
      * }
      */
     public static int GDK_PIXBUF_MICRO() {
@@ -4811,13 +5197,13 @@ public class app_indicator_h extends app_indicator_h_1 {
     }
     /**
      * {@snippet lang=c :
-     * #define GDK_PIXBUF_VERSION "2.44.7"
+     * #define GDK_PIXBUF_VERSION "2.44.8"
      * }
      */
     public static MemorySegment GDK_PIXBUF_VERSION() {
         class Holder {
             static final MemorySegment GDK_PIXBUF_VERSION
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("2.44.7");
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("2.44.8");
         }
         return Holder.GDK_PIXBUF_VERSION;
     }
@@ -5217,28 +5603,28 @@ public class app_indicator_h extends app_indicator_h_1 {
     public static int ATK_MAJOR_VERSION() {
         return ATK_MAJOR_VERSION;
     }
-    private static final int ATK_MINOR_VERSION = (int)60L;
+    private static final int ATK_MINOR_VERSION = (int)62L;
     /**
      * {@snippet lang=c :
-     * #define ATK_MINOR_VERSION 60
+     * #define ATK_MINOR_VERSION 62
      * }
      */
     public static int ATK_MINOR_VERSION() {
         return ATK_MINOR_VERSION;
     }
-    private static final int ATK_MICRO_VERSION = (int)5L;
+    private static final int ATK_MICRO_VERSION = (int)1L;
     /**
      * {@snippet lang=c :
-     * #define ATK_MICRO_VERSION 5
+     * #define ATK_MICRO_VERSION 1
      * }
      */
     public static int ATK_MICRO_VERSION() {
         return ATK_MICRO_VERSION;
     }
-    private static final int ATK_BINARY_AGE = (int)26015L;
+    private static final int ATK_BINARY_AGE = (int)26211L;
     /**
      * {@snippet lang=c :
-     * #define ATK_BINARY_AGE 26015
+     * #define ATK_BINARY_AGE 26211
      * }
      */
     public static int ATK_BINARY_AGE() {
@@ -5352,37 +5738,37 @@ public class app_indicator_h extends app_indicator_h_1 {
     public static int ATK_VERSION_2_52() {
         return ATK_VERSION_2_52;
     }
-    private static final int ATK_VERSION_CUR_STABLE = (int)146432L;
+    private static final int ATK_VERSION_CUR_STABLE = (int)146944L;
     /**
      * {@snippet lang=c :
-     * #define ATK_VERSION_CUR_STABLE 146432
+     * #define ATK_VERSION_CUR_STABLE 146944
      * }
      */
     public static int ATK_VERSION_CUR_STABLE() {
         return ATK_VERSION_CUR_STABLE;
     }
-    private static final int ATK_VERSION_PREV_STABLE = (int)145920L;
+    private static final int ATK_VERSION_PREV_STABLE = (int)146432L;
     /**
      * {@snippet lang=c :
-     * #define ATK_VERSION_PREV_STABLE 145920
+     * #define ATK_VERSION_PREV_STABLE 146432
      * }
      */
     public static int ATK_VERSION_PREV_STABLE() {
         return ATK_VERSION_PREV_STABLE;
     }
-    private static final int ATK_VERSION_MIN_REQUIRED = (int)146432L;
+    private static final int ATK_VERSION_MIN_REQUIRED = (int)146944L;
     /**
      * {@snippet lang=c :
-     * #define ATK_VERSION_MIN_REQUIRED 146432
+     * #define ATK_VERSION_MIN_REQUIRED 146944
      * }
      */
     public static int ATK_VERSION_MIN_REQUIRED() {
         return ATK_VERSION_MIN_REQUIRED;
     }
-    private static final int ATK_VERSION_MAX_ALLOWED = (int)146432L;
+    private static final int ATK_VERSION_MAX_ALLOWED = (int)146944L;
     /**
      * {@snippet lang=c :
-     * #define ATK_VERSION_MAX_ALLOWED 146432
+     * #define ATK_VERSION_MAX_ALLOWED 146944
      * }
      */
     public static int ATK_VERSION_MAX_ALLOWED() {
@@ -7196,13 +7582,13 @@ public class app_indicator_h extends app_indicator_h_1 {
     }
     /**
      * {@snippet lang=c :
-     * #define AYATANA_APP_INDICATOR_VERSION_S "0.6.0"
+     * #define AYATANA_APP_INDICATOR_VERSION_S "0.6.1"
      * }
      */
     public static MemorySegment AYATANA_APP_INDICATOR_VERSION_S() {
         class Holder {
             static final MemorySegment AYATANA_APP_INDICATOR_VERSION_S
-                = app_indicator_h.LIBRARY_ARENA.allocateFrom("0.6.0");
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("0.6.1");
         }
         return Holder.AYATANA_APP_INDICATOR_VERSION_S;
     }

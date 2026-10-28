@@ -2,11 +2,15 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.util.function.Consumer;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
-import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
-import static java.lang.foreign.ValueLayout.OfInt;
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
@@ -33,7 +37,7 @@ public class GTestConfig {
         app_indicator_h.C_INT.withName("test_verbose"),
         app_indicator_h.C_INT.withName("test_quiet"),
         app_indicator_h.C_INT.withName("test_undefined")
-    ).withName("$anon$689:9");
+    ).withName("$anon$724:9");
 
     /**
      * The layout of this struct

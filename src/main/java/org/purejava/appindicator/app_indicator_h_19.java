@@ -2,17 +2,29 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
-import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
 import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 class app_indicator_h_19 extends app_indicator_h_20 {
 
     app_indicator_h_19() {
         // Should not be called directly
+    }
+    private static final int GDK_KEY_Hangul_J_Kiyeog = (int)3796L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_J_Kiyeog 3796
+     * }
+     */
+    public static int GDK_KEY_Hangul_J_Kiyeog() {
+        return GDK_KEY_Hangul_J_Kiyeog;
     }
     private static final int GDK_KEY_Hangul_J_SsangKiyeog = (int)3797L;
     /**
@@ -10888,68 +10900,6 @@ class app_indicator_h_19 extends app_indicator_h_20 {
                 traceDowncall("__memcmpeq", __s1, __s2, __n);
             }
             return (int)mh$.invokeExact(__s1, __s2, __n);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class memchr {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_LONG
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("memchr");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void *memchr(const void *__s, int __c, size_t __n)
-     * }
-     */
-    public static FunctionDescriptor memchr$descriptor() {
-        return memchr.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void *memchr(const void *__s, int __c, size_t __n)
-     * }
-     */
-    public static MethodHandle memchr$handle() {
-        return memchr.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void *memchr(const void *__s, int __c, size_t __n)
-     * }
-     */
-    public static MemorySegment memchr$address() {
-        return memchr.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void *memchr(const void *__s, int __c, size_t __n)
-     * }
-     */
-    public static MemorySegment memchr(MemorySegment __s, int __c, long __n) {
-        var mh$ = memchr.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("memchr", __s, __c, __n);
-            }
-            return (MemorySegment)mh$.invokeExact(__s, __c, __n);
         } catch (Error | RuntimeException ex) {
            throw ex;
         } catch (Throwable ex$) {

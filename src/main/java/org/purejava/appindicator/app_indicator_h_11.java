@@ -2,16 +2,147 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.lang.invoke.MethodHandle;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
-import static java.lang.foreign.ValueLayout.OfInt;
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 class app_indicator_h_11 extends app_indicator_h_12 {
 
     app_indicator_h_11() {
         // Should not be called directly
     }
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GFile_listautoptr
+     * }
+     */
+    public static final AddressLayout GFile_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GFile_slistautoptr
+     * }
+     */
+    public static final AddressLayout GFile_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GFile_queueautoptr
+     * }
+     */
+    public static final AddressLayout GFile_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GFileAttributeInfoList *GFileAttributeInfoList_autoptr
+     * }
+     */
+    public static final AddressLayout GFileAttributeInfoList_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GFileAttributeInfoList_listautoptr
+     * }
+     */
+    public static final AddressLayout GFileAttributeInfoList_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GFileAttributeInfoList_slistautoptr
+     * }
+     */
+    public static final AddressLayout GFileAttributeInfoList_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GFileAttributeInfoList_queueautoptr
+     * }
+     */
+    public static final AddressLayout GFileAttributeInfoList_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GFileIcon *GFileIcon_autoptr
+     * }
+     */
+    public static final AddressLayout GFileIcon_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GFileIcon_listautoptr
+     * }
+     */
+    public static final AddressLayout GFileIcon_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GFileIcon_slistautoptr
+     * }
+     */
+    public static final AddressLayout GFileIcon_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GFileIcon_queueautoptr
+     * }
+     */
+    public static final AddressLayout GFileIcon_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GFileInfo *GFileInfo_autoptr
+     * }
+     */
+    public static final AddressLayout GFileInfo_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GFileInfo_listautoptr
+     * }
+     */
+    public static final AddressLayout GFileInfo_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GFileInfo_slistautoptr
+     * }
+     */
+    public static final AddressLayout GFileInfo_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GFileInfo_queueautoptr
+     * }
+     */
+    public static final AddressLayout GFileInfo_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GFileInputStream *GFileInputStream_autoptr
+     * }
+     */
+    public static final AddressLayout GFileInputStream_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GFileInputStream_listautoptr
+     * }
+     */
+    public static final AddressLayout GFileInputStream_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GFileInputStream_slistautoptr
+     * }
+     */
+    public static final AddressLayout GFileInputStream_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GFileInputStream_queueautoptr
+     * }
+     */
+    public static final AddressLayout GFileInputStream_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GFileIOStream *GFileIOStream_autoptr
+     * }
+     */
+    public static final AddressLayout GFileIOStream_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GFileIOStream_listautoptr
+     * }
+     */
+    public static final AddressLayout GFileIOStream_listautoptr = app_indicator_h.C_POINTER;
     /**
      * {@snippet lang=c :
      * typedef GSList *GFileIOStream_slistautoptr
@@ -4489,6 +4620,33 @@ class app_indicator_h_11 extends app_indicator_h_12 {
      */
     public static int HB_SCRIPT_TOLONG_SIKI() {
         return HB_SCRIPT_TOLONG_SIKI;
+    }
+    private static final int HB_SCRIPT_JURCHEN = (int)1249210979L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.HB_SCRIPT_JURCHEN = 1249210979
+     * }
+     */
+    public static int HB_SCRIPT_JURCHEN() {
+        return HB_SCRIPT_JURCHEN;
+    }
+    private static final int HB_SCRIPT_PROTO_CUNEIFORM = (int)1348695406L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.HB_SCRIPT_PROTO_CUNEIFORM = 1348695406
+     * }
+     */
+    public static int HB_SCRIPT_PROTO_CUNEIFORM() {
+        return HB_SCRIPT_PROTO_CUNEIFORM;
+    }
+    private static final int HB_SCRIPT_SEAL = (int)1399153004L;
+    /**
+     * {@snippet lang=c :
+     * enum <anonymous>.HB_SCRIPT_SEAL = 1399153004
+     * }
+     */
+    public static int HB_SCRIPT_SEAL() {
+        return HB_SCRIPT_SEAL;
     }
     private static final int HB_SCRIPT_INVALID = (int)0L;
     /**
@@ -9768,6 +9926,67 @@ class app_indicator_h_11 extends app_indicator_h_12 {
         }
     }
 
+    private static class hb_set_intersects {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_set_intersects");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_set_intersects(const hb_set_t *set, const hb_set_t *other)
+     * }
+     */
+    public static FunctionDescriptor hb_set_intersects$descriptor() {
+        return hb_set_intersects.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_set_intersects(const hb_set_t *set, const hb_set_t *other)
+     * }
+     */
+    public static MethodHandle hb_set_intersects$handle() {
+        return hb_set_intersects.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_set_intersects(const hb_set_t *set, const hb_set_t *other)
+     * }
+     */
+    public static MemorySegment hb_set_intersects$address() {
+        return hb_set_intersects.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_set_intersects(const hb_set_t *set, const hb_set_t *other)
+     * }
+     */
+    public static int hb_set_intersects(MemorySegment set, MemorySegment other) {
+        var mh$ = hb_set_intersects.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_set_intersects", set, other);
+            }
+            return (int)mh$.invokeExact(set, other);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
     private static class hb_set_hash {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_INT,
@@ -14190,6 +14409,192 @@ class app_indicator_h_11 extends app_indicator_h_12 {
         }
     }
 
+    private static class hb_draw_funcs_set_set_budget_func {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_funcs_set_set_budget_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_draw_funcs_set_set_budget_func(hb_draw_funcs_t *dfuncs, hb_draw_set_budget_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static FunctionDescriptor hb_draw_funcs_set_set_budget_func$descriptor() {
+        return hb_draw_funcs_set_set_budget_func.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_draw_funcs_set_set_budget_func(hb_draw_funcs_t *dfuncs, hb_draw_set_budget_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MethodHandle hb_draw_funcs_set_set_budget_func$handle() {
+        return hb_draw_funcs_set_set_budget_func.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_draw_funcs_set_set_budget_func(hb_draw_funcs_t *dfuncs, hb_draw_set_budget_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_draw_funcs_set_set_budget_func$address() {
+        return hb_draw_funcs_set_set_budget_func.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_draw_funcs_set_set_budget_func(hb_draw_funcs_t *dfuncs, hb_draw_set_budget_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static void hb_draw_funcs_set_set_budget_func(MemorySegment dfuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_draw_funcs_set_set_budget_func.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_draw_funcs_set_set_budget_func", dfuncs, func, user_data, destroy);
+            }
+            mh$.invokeExact(dfuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_draw_funcs_set_get_budget_func {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_funcs_set_get_budget_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_draw_funcs_set_get_budget_func(hb_draw_funcs_t *dfuncs, hb_draw_get_budget_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static FunctionDescriptor hb_draw_funcs_set_get_budget_func$descriptor() {
+        return hb_draw_funcs_set_get_budget_func.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_draw_funcs_set_get_budget_func(hb_draw_funcs_t *dfuncs, hb_draw_get_budget_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MethodHandle hb_draw_funcs_set_get_budget_func$handle() {
+        return hb_draw_funcs_set_get_budget_func.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_draw_funcs_set_get_budget_func(hb_draw_funcs_t *dfuncs, hb_draw_get_budget_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_draw_funcs_set_get_budget_func$address() {
+        return hb_draw_funcs_set_get_budget_func.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_draw_funcs_set_get_budget_func(hb_draw_funcs_t *dfuncs, hb_draw_get_budget_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static void hb_draw_funcs_set_get_budget_func(MemorySegment dfuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_draw_funcs_set_get_budget_func.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_draw_funcs_set_get_budget_func", dfuncs, func, user_data, destroy);
+            }
+            mh$.invokeExact(dfuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_draw_funcs_set_get_budget_remaining_func {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_funcs_set_get_budget_remaining_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_draw_funcs_set_get_budget_remaining_func(hb_draw_funcs_t *dfuncs, hb_draw_get_budget_remaining_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static FunctionDescriptor hb_draw_funcs_set_get_budget_remaining_func$descriptor() {
+        return hb_draw_funcs_set_get_budget_remaining_func.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_draw_funcs_set_get_budget_remaining_func(hb_draw_funcs_t *dfuncs, hb_draw_get_budget_remaining_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MethodHandle hb_draw_funcs_set_get_budget_remaining_func$handle() {
+        return hb_draw_funcs_set_get_budget_remaining_func.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_draw_funcs_set_get_budget_remaining_func(hb_draw_funcs_t *dfuncs, hb_draw_get_budget_remaining_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_draw_funcs_set_get_budget_remaining_func$address() {
+        return hb_draw_funcs_set_get_budget_remaining_func.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_draw_funcs_set_get_budget_remaining_func(hb_draw_funcs_t *dfuncs, hb_draw_get_budget_remaining_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static void hb_draw_funcs_set_get_budget_remaining_func(MemorySegment dfuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_draw_funcs_set_get_budget_remaining_func.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_draw_funcs_set_get_budget_remaining_func", dfuncs, func, user_data, destroy);
+            }
+            mh$.invokeExact(dfuncs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
     private static class hb_draw_funcs_create {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
@@ -14662,6 +15067,190 @@ class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_draw_funcs_is_immutable", dfuncs);
             }
             return (int)mh$.invokeExact(dfuncs);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_draw_set_budget {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_set_budget");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_draw_set_budget(hb_draw_funcs_t *dfuncs, void *draw_data, int64_t budget)
+     * }
+     */
+    public static FunctionDescriptor hb_draw_set_budget$descriptor() {
+        return hb_draw_set_budget.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_draw_set_budget(hb_draw_funcs_t *dfuncs, void *draw_data, int64_t budget)
+     * }
+     */
+    public static MethodHandle hb_draw_set_budget$handle() {
+        return hb_draw_set_budget.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_draw_set_budget(hb_draw_funcs_t *dfuncs, void *draw_data, int64_t budget)
+     * }
+     */
+    public static MemorySegment hb_draw_set_budget$address() {
+        return hb_draw_set_budget.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_draw_set_budget(hb_draw_funcs_t *dfuncs, void *draw_data, int64_t budget)
+     * }
+     */
+    public static int hb_draw_set_budget(MemorySegment dfuncs, MemorySegment draw_data, long budget) {
+        var mh$ = hb_draw_set_budget.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_draw_set_budget", dfuncs, draw_data, budget);
+            }
+            return (int)mh$.invokeExact(dfuncs, draw_data, budget);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_draw_get_budget {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_get_budget");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int64_t hb_draw_get_budget(hb_draw_funcs_t *dfuncs, void *draw_data)
+     * }
+     */
+    public static FunctionDescriptor hb_draw_get_budget$descriptor() {
+        return hb_draw_get_budget.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int64_t hb_draw_get_budget(hb_draw_funcs_t *dfuncs, void *draw_data)
+     * }
+     */
+    public static MethodHandle hb_draw_get_budget$handle() {
+        return hb_draw_get_budget.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int64_t hb_draw_get_budget(hb_draw_funcs_t *dfuncs, void *draw_data)
+     * }
+     */
+    public static MemorySegment hb_draw_get_budget$address() {
+        return hb_draw_get_budget.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int64_t hb_draw_get_budget(hb_draw_funcs_t *dfuncs, void *draw_data)
+     * }
+     */
+    public static long hb_draw_get_budget(MemorySegment dfuncs, MemorySegment draw_data) {
+        var mh$ = hb_draw_get_budget.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_draw_get_budget", dfuncs, draw_data);
+            }
+            return (long)mh$.invokeExact(dfuncs, draw_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_draw_get_budget_remaining {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_draw_get_budget_remaining");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int64_t hb_draw_get_budget_remaining(hb_draw_funcs_t *dfuncs, void *draw_data)
+     * }
+     */
+    public static FunctionDescriptor hb_draw_get_budget_remaining$descriptor() {
+        return hb_draw_get_budget_remaining.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int64_t hb_draw_get_budget_remaining(hb_draw_funcs_t *dfuncs, void *draw_data)
+     * }
+     */
+    public static MethodHandle hb_draw_get_budget_remaining$handle() {
+        return hb_draw_get_budget_remaining.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int64_t hb_draw_get_budget_remaining(hb_draw_funcs_t *dfuncs, void *draw_data)
+     * }
+     */
+    public static MemorySegment hb_draw_get_budget_remaining$address() {
+        return hb_draw_get_budget_remaining.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int64_t hb_draw_get_budget_remaining(hb_draw_funcs_t *dfuncs, void *draw_data)
+     * }
+     */
+    public static long hb_draw_get_budget_remaining(MemorySegment dfuncs, MemorySegment draw_data) {
+        var mh$ = hb_draw_get_budget_remaining.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_draw_get_budget_remaining", dfuncs, draw_data);
+            }
+            return (long)mh$.invokeExact(dfuncs, draw_data);
         } catch (Error | RuntimeException ex) {
            throw ex;
         } catch (Throwable ex$) {
@@ -15205,6 +15794,192 @@ class app_indicator_h_11 extends app_indicator_h_12 {
         }
     }
 
+    private static class hb_paint_funcs_set_set_budget_func {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_set_set_budget_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_set_budget_func(hb_paint_funcs_t *funcs, hb_paint_set_budget_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static FunctionDescriptor hb_paint_funcs_set_set_budget_func$descriptor() {
+        return hb_paint_funcs_set_set_budget_func.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_set_budget_func(hb_paint_funcs_t *funcs, hb_paint_set_budget_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MethodHandle hb_paint_funcs_set_set_budget_func$handle() {
+        return hb_paint_funcs_set_set_budget_func.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_set_budget_func(hb_paint_funcs_t *funcs, hb_paint_set_budget_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_set_set_budget_func$address() {
+        return hb_paint_funcs_set_set_budget_func.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_set_budget_func(hb_paint_funcs_t *funcs, hb_paint_set_budget_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static void hb_paint_funcs_set_set_budget_func(MemorySegment funcs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_paint_funcs_set_set_budget_func.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_paint_funcs_set_set_budget_func", funcs, func, user_data, destroy);
+            }
+            mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_paint_funcs_set_get_budget_func {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_set_get_budget_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_get_budget_func(hb_paint_funcs_t *funcs, hb_paint_get_budget_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static FunctionDescriptor hb_paint_funcs_set_get_budget_func$descriptor() {
+        return hb_paint_funcs_set_get_budget_func.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_get_budget_func(hb_paint_funcs_t *funcs, hb_paint_get_budget_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MethodHandle hb_paint_funcs_set_get_budget_func$handle() {
+        return hb_paint_funcs_set_get_budget_func.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_get_budget_func(hb_paint_funcs_t *funcs, hb_paint_get_budget_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_set_get_budget_func$address() {
+        return hb_paint_funcs_set_get_budget_func.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_get_budget_func(hb_paint_funcs_t *funcs, hb_paint_get_budget_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static void hb_paint_funcs_set_get_budget_func(MemorySegment funcs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_paint_funcs_set_get_budget_func.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_paint_funcs_set_get_budget_func", funcs, func, user_data, destroy);
+            }
+            mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_paint_funcs_set_get_budget_remaining_func {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_set_get_budget_remaining_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_get_budget_remaining_func(hb_paint_funcs_t *funcs, hb_paint_get_budget_remaining_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static FunctionDescriptor hb_paint_funcs_set_get_budget_remaining_func$descriptor() {
+        return hb_paint_funcs_set_get_budget_remaining_func.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_get_budget_remaining_func(hb_paint_funcs_t *funcs, hb_paint_get_budget_remaining_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MethodHandle hb_paint_funcs_set_get_budget_remaining_func$handle() {
+        return hb_paint_funcs_set_get_budget_remaining_func.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_get_budget_remaining_func(hb_paint_funcs_t *funcs, hb_paint_get_budget_remaining_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_set_get_budget_remaining_func$address() {
+        return hb_paint_funcs_set_get_budget_remaining_func.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_get_budget_remaining_func(hb_paint_funcs_t *funcs, hb_paint_get_budget_remaining_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static void hb_paint_funcs_set_get_budget_remaining_func(MemorySegment funcs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_paint_funcs_set_get_budget_remaining_func.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_paint_funcs_set_get_budget_remaining_func", funcs, func, user_data, destroy);
+            }
+            mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
     private static class hb_paint_funcs_create {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
@@ -15677,6 +16452,190 @@ class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_funcs_is_immutable", funcs);
             }
             return (int)mh$.invokeExact(funcs);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_paint_set_budget {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_set_budget");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_paint_set_budget(hb_paint_funcs_t *funcs, void *paint_data, int64_t budget)
+     * }
+     */
+    public static FunctionDescriptor hb_paint_set_budget$descriptor() {
+        return hb_paint_set_budget.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_paint_set_budget(hb_paint_funcs_t *funcs, void *paint_data, int64_t budget)
+     * }
+     */
+    public static MethodHandle hb_paint_set_budget$handle() {
+        return hb_paint_set_budget.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_paint_set_budget(hb_paint_funcs_t *funcs, void *paint_data, int64_t budget)
+     * }
+     */
+    public static MemorySegment hb_paint_set_budget$address() {
+        return hb_paint_set_budget.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern hb_bool_t hb_paint_set_budget(hb_paint_funcs_t *funcs, void *paint_data, int64_t budget)
+     * }
+     */
+    public static int hb_paint_set_budget(MemorySegment funcs, MemorySegment paint_data, long budget) {
+        var mh$ = hb_paint_set_budget.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_paint_set_budget", funcs, paint_data, budget);
+            }
+            return (int)mh$.invokeExact(funcs, paint_data, budget);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_paint_get_budget {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_get_budget");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int64_t hb_paint_get_budget(hb_paint_funcs_t *funcs, void *paint_data)
+     * }
+     */
+    public static FunctionDescriptor hb_paint_get_budget$descriptor() {
+        return hb_paint_get_budget.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int64_t hb_paint_get_budget(hb_paint_funcs_t *funcs, void *paint_data)
+     * }
+     */
+    public static MethodHandle hb_paint_get_budget$handle() {
+        return hb_paint_get_budget.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int64_t hb_paint_get_budget(hb_paint_funcs_t *funcs, void *paint_data)
+     * }
+     */
+    public static MemorySegment hb_paint_get_budget$address() {
+        return hb_paint_get_budget.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int64_t hb_paint_get_budget(hb_paint_funcs_t *funcs, void *paint_data)
+     * }
+     */
+    public static long hb_paint_get_budget(MemorySegment funcs, MemorySegment paint_data) {
+        var mh$ = hb_paint_get_budget.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_paint_get_budget", funcs, paint_data);
+            }
+            return (long)mh$.invokeExact(funcs, paint_data);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_paint_get_budget_remaining {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_get_budget_remaining");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int64_t hb_paint_get_budget_remaining(hb_paint_funcs_t *funcs, void *paint_data)
+     * }
+     */
+    public static FunctionDescriptor hb_paint_get_budget_remaining$descriptor() {
+        return hb_paint_get_budget_remaining.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int64_t hb_paint_get_budget_remaining(hb_paint_funcs_t *funcs, void *paint_data)
+     * }
+     */
+    public static MethodHandle hb_paint_get_budget_remaining$handle() {
+        return hb_paint_get_budget_remaining.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int64_t hb_paint_get_budget_remaining(hb_paint_funcs_t *funcs, void *paint_data)
+     * }
+     */
+    public static MemorySegment hb_paint_get_budget_remaining$address() {
+        return hb_paint_get_budget_remaining.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int64_t hb_paint_get_budget_remaining(hb_paint_funcs_t *funcs, void *paint_data)
+     * }
+     */
+    public static long hb_paint_get_budget_remaining(MemorySegment funcs, MemorySegment paint_data) {
+        var mh$ = hb_paint_get_budget_remaining.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_paint_get_budget_remaining", funcs, paint_data);
+            }
+            return (long)mh$.invokeExact(funcs, paint_data);
         } catch (Error | RuntimeException ex) {
            throw ex;
         } catch (Throwable ex$) {
@@ -16263,6 +17222,68 @@ class app_indicator_h_11 extends app_indicator_h_12 {
         try {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("hb_paint_funcs_set_color_glyph_func", funcs, func, user_data, destroy);
+            }
+            mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_paint_funcs_set_fill_glyph_func {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_funcs_set_fill_glyph_func");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_fill_glyph_func(hb_paint_funcs_t *funcs, hb_paint_fill_glyph_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static FunctionDescriptor hb_paint_funcs_set_fill_glyph_func$descriptor() {
+        return hb_paint_funcs_set_fill_glyph_func.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_fill_glyph_func(hb_paint_funcs_t *funcs, hb_paint_fill_glyph_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MethodHandle hb_paint_funcs_set_fill_glyph_func$handle() {
+        return hb_paint_funcs_set_fill_glyph_func.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_fill_glyph_func(hb_paint_funcs_t *funcs, hb_paint_fill_glyph_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_set_fill_glyph_func$address() {
+        return hb_paint_funcs_set_fill_glyph_func.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_paint_funcs_set_fill_glyph_func(hb_paint_funcs_t *funcs, hb_paint_fill_glyph_func_t func, void *user_data, hb_destroy_func_t destroy)
+     * }
+     */
+    public static void hb_paint_funcs_set_fill_glyph_func(MemorySegment funcs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_paint_funcs_set_fill_glyph_func.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_paint_funcs_set_fill_glyph_func", funcs, func, user_data, destroy);
             }
             mh$.invokeExact(funcs, func, user_data, destroy);
         } catch (Error | RuntimeException ex) {
@@ -17444,6 +18465,70 @@ class app_indicator_h_11 extends app_indicator_h_12 {
                 traceDowncall("hb_paint_color_glyph", funcs, paint_data, glyph, font);
             }
             return (int)mh$.invokeExact(funcs, paint_data, glyph, font);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class hb_paint_fill_glyph {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_paint_fill_glyph");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void hb_paint_fill_glyph(hb_paint_funcs_t *funcs, void *paint_data, hb_codepoint_t glyph, hb_font_t *font, hb_bool_t is_foreground, hb_color_t color)
+     * }
+     */
+    public static FunctionDescriptor hb_paint_fill_glyph$descriptor() {
+        return hb_paint_fill_glyph.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void hb_paint_fill_glyph(hb_paint_funcs_t *funcs, void *paint_data, hb_codepoint_t glyph, hb_font_t *font, hb_bool_t is_foreground, hb_color_t color)
+     * }
+     */
+    public static MethodHandle hb_paint_fill_glyph$handle() {
+        return hb_paint_fill_glyph.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void hb_paint_fill_glyph(hb_paint_funcs_t *funcs, void *paint_data, hb_codepoint_t glyph, hb_font_t *font, hb_bool_t is_foreground, hb_color_t color)
+     * }
+     */
+    public static MemorySegment hb_paint_fill_glyph$address() {
+        return hb_paint_fill_glyph.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void hb_paint_fill_glyph(hb_paint_funcs_t *funcs, void *paint_data, hb_codepoint_t glyph, hb_font_t *font, hb_bool_t is_foreground, hb_color_t color)
+     * }
+     */
+    public static void hb_paint_fill_glyph(MemorySegment funcs, MemorySegment paint_data, int glyph, MemorySegment font, int is_foreground, int color) {
+        var mh$ = hb_paint_fill_glyph.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("hb_paint_fill_glyph", funcs, paint_data, glyph, font, is_foreground, color);
+            }
+            mh$.invokeExact(funcs, paint_data, glyph, font, is_foreground, color);
         } catch (Error | RuntimeException ex) {
            throw ex;
         } catch (Throwable ex$) {
@@ -23173,66 +24258,6 @@ class app_indicator_h_11 extends app_indicator_h_12 {
         }
     }
 
-    private static class hb_font_set_face {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_set_face");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_font_set_face(hb_font_t *font, hb_face_t *face)
-     * }
-     */
-    public static FunctionDescriptor hb_font_set_face$descriptor() {
-        return hb_font_set_face.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_font_set_face(hb_font_t *font, hb_face_t *face)
-     * }
-     */
-    public static MethodHandle hb_font_set_face$handle() {
-        return hb_font_set_face.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void hb_font_set_face(hb_font_t *font, hb_face_t *face)
-     * }
-     */
-    public static MemorySegment hb_font_set_face$address() {
-        return hb_font_set_face.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void hb_font_set_face(hb_font_t *font, hb_face_t *face)
-     * }
-     */
-    public static void hb_font_set_face(MemorySegment font, MemorySegment face) {
-        var mh$ = hb_font_set_face.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_font_set_face", font, face);
-            }
-            mh$.invokeExact(font, face);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
     private static class hb_font_get_face {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER,
@@ -24384,1880 +25409,6 @@ class app_indicator_h_11 extends app_indicator_h_12 {
         } catch (Throwable ex$) {
            throw new AssertionError("should not reach here", ex$);
         }
-    }
-
-    private static class hb_font_get_var_coords_design {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_var_coords_design");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern const float *hb_font_get_var_coords_design(hb_font_t *font, unsigned int *length)
-     * }
-     */
-    public static FunctionDescriptor hb_font_get_var_coords_design$descriptor() {
-        return hb_font_get_var_coords_design.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern const float *hb_font_get_var_coords_design(hb_font_t *font, unsigned int *length)
-     * }
-     */
-    public static MethodHandle hb_font_get_var_coords_design$handle() {
-        return hb_font_get_var_coords_design.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern const float *hb_font_get_var_coords_design(hb_font_t *font, unsigned int *length)
-     * }
-     */
-    public static MemorySegment hb_font_get_var_coords_design$address() {
-        return hb_font_get_var_coords_design.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern const float *hb_font_get_var_coords_design(hb_font_t *font, unsigned int *length)
-     * }
-     */
-    public static MemorySegment hb_font_get_var_coords_design(MemorySegment font, MemorySegment length) {
-        var mh$ = hb_font_get_var_coords_design.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_font_get_var_coords_design", font, length);
-            }
-            return (MemorySegment)mh$.invokeExact(font, length);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_font_set_var_coords_normalized {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_set_var_coords_normalized");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_font_set_var_coords_normalized(hb_font_t *font, const int *coords, unsigned int coords_length)
-     * }
-     */
-    public static FunctionDescriptor hb_font_set_var_coords_normalized$descriptor() {
-        return hb_font_set_var_coords_normalized.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_font_set_var_coords_normalized(hb_font_t *font, const int *coords, unsigned int coords_length)
-     * }
-     */
-    public static MethodHandle hb_font_set_var_coords_normalized$handle() {
-        return hb_font_set_var_coords_normalized.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void hb_font_set_var_coords_normalized(hb_font_t *font, const int *coords, unsigned int coords_length)
-     * }
-     */
-    public static MemorySegment hb_font_set_var_coords_normalized$address() {
-        return hb_font_set_var_coords_normalized.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void hb_font_set_var_coords_normalized(hb_font_t *font, const int *coords, unsigned int coords_length)
-     * }
-     */
-    public static void hb_font_set_var_coords_normalized(MemorySegment font, MemorySegment coords, int coords_length) {
-        var mh$ = hb_font_set_var_coords_normalized.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_font_set_var_coords_normalized", font, coords, coords_length);
-            }
-            mh$.invokeExact(font, coords, coords_length);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_font_get_var_coords_normalized {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_var_coords_normalized");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern const int *hb_font_get_var_coords_normalized(hb_font_t *font, unsigned int *length)
-     * }
-     */
-    public static FunctionDescriptor hb_font_get_var_coords_normalized$descriptor() {
-        return hb_font_get_var_coords_normalized.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern const int *hb_font_get_var_coords_normalized(hb_font_t *font, unsigned int *length)
-     * }
-     */
-    public static MethodHandle hb_font_get_var_coords_normalized$handle() {
-        return hb_font_get_var_coords_normalized.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern const int *hb_font_get_var_coords_normalized(hb_font_t *font, unsigned int *length)
-     * }
-     */
-    public static MemorySegment hb_font_get_var_coords_normalized$address() {
-        return hb_font_get_var_coords_normalized.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern const int *hb_font_get_var_coords_normalized(hb_font_t *font, unsigned int *length)
-     * }
-     */
-    public static MemorySegment hb_font_get_var_coords_normalized(MemorySegment font, MemorySegment length) {
-        var mh$ = hb_font_get_var_coords_normalized.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_font_get_var_coords_normalized", font, length);
-            }
-            return (MemorySegment)mh$.invokeExact(font, length);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_font_set_var_named_instance {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_set_var_named_instance");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_font_set_var_named_instance(hb_font_t *font, unsigned int instance_index)
-     * }
-     */
-    public static FunctionDescriptor hb_font_set_var_named_instance$descriptor() {
-        return hb_font_set_var_named_instance.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_font_set_var_named_instance(hb_font_t *font, unsigned int instance_index)
-     * }
-     */
-    public static MethodHandle hb_font_set_var_named_instance$handle() {
-        return hb_font_set_var_named_instance.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void hb_font_set_var_named_instance(hb_font_t *font, unsigned int instance_index)
-     * }
-     */
-    public static MemorySegment hb_font_set_var_named_instance$address() {
-        return hb_font_set_var_named_instance.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void hb_font_set_var_named_instance(hb_font_t *font, unsigned int instance_index)
-     * }
-     */
-    public static void hb_font_set_var_named_instance(MemorySegment font, int instance_index) {
-        var mh$ = hb_font_set_var_named_instance.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_font_set_var_named_instance", font, instance_index);
-            }
-            mh$.invokeExact(font, instance_index);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_font_get_var_named_instance {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_font_get_var_named_instance");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern unsigned int hb_font_get_var_named_instance(hb_font_t *font)
-     * }
-     */
-    public static FunctionDescriptor hb_font_get_var_named_instance$descriptor() {
-        return hb_font_get_var_named_instance.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern unsigned int hb_font_get_var_named_instance(hb_font_t *font)
-     * }
-     */
-    public static MethodHandle hb_font_get_var_named_instance$handle() {
-        return hb_font_get_var_named_instance.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern unsigned int hb_font_get_var_named_instance(hb_font_t *font)
-     * }
-     */
-    public static MemorySegment hb_font_get_var_named_instance$address() {
-        return hb_font_get_var_named_instance.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern unsigned int hb_font_get_var_named_instance(hb_font_t *font)
-     * }
-     */
-    public static int hb_font_get_var_named_instance(MemorySegment font) {
-        var mh$ = hb_font_get_var_named_instance.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_font_get_var_named_instance", font);
-            }
-            return (int)mh$.invokeExact(font);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    private static final int HB_GLYPH_FLAG_UNSAFE_TO_BREAK = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_GLYPH_FLAG_UNSAFE_TO_BREAK = 1
-     * }
-     */
-    public static int HB_GLYPH_FLAG_UNSAFE_TO_BREAK() {
-        return HB_GLYPH_FLAG_UNSAFE_TO_BREAK;
-    }
-    private static final int HB_GLYPH_FLAG_UNSAFE_TO_CONCAT = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_GLYPH_FLAG_UNSAFE_TO_CONCAT = 2
-     * }
-     */
-    public static int HB_GLYPH_FLAG_UNSAFE_TO_CONCAT() {
-        return HB_GLYPH_FLAG_UNSAFE_TO_CONCAT;
-    }
-    private static final int HB_GLYPH_FLAG_SAFE_TO_INSERT_TATWEEL = (int)4L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_GLYPH_FLAG_SAFE_TO_INSERT_TATWEEL = 4
-     * }
-     */
-    public static int HB_GLYPH_FLAG_SAFE_TO_INSERT_TATWEEL() {
-        return HB_GLYPH_FLAG_SAFE_TO_INSERT_TATWEEL;
-    }
-    private static final int HB_GLYPH_FLAG_DEFINED = (int)7L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_GLYPH_FLAG_DEFINED = 7
-     * }
-     */
-    public static int HB_GLYPH_FLAG_DEFINED() {
-        return HB_GLYPH_FLAG_DEFINED;
-    }
-
-    private static class hb_glyph_info_get_glyph_flags {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_glyph_info_get_glyph_flags");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_glyph_flags_t hb_glyph_info_get_glyph_flags(const hb_glyph_info_t *info)
-     * }
-     */
-    public static FunctionDescriptor hb_glyph_info_get_glyph_flags$descriptor() {
-        return hb_glyph_info_get_glyph_flags.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_glyph_flags_t hb_glyph_info_get_glyph_flags(const hb_glyph_info_t *info)
-     * }
-     */
-    public static MethodHandle hb_glyph_info_get_glyph_flags$handle() {
-        return hb_glyph_info_get_glyph_flags.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern hb_glyph_flags_t hb_glyph_info_get_glyph_flags(const hb_glyph_info_t *info)
-     * }
-     */
-    public static MemorySegment hb_glyph_info_get_glyph_flags$address() {
-        return hb_glyph_info_get_glyph_flags.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern hb_glyph_flags_t hb_glyph_info_get_glyph_flags(const hb_glyph_info_t *info)
-     * }
-     */
-    public static int hb_glyph_info_get_glyph_flags(MemorySegment info) {
-        var mh$ = hb_glyph_info_get_glyph_flags.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_glyph_info_get_glyph_flags", info);
-            }
-            return (int)mh$.invokeExact(info);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_segment_properties_equal {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_segment_properties_equal");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_segment_properties_equal(const hb_segment_properties_t *a, const hb_segment_properties_t *b)
-     * }
-     */
-    public static FunctionDescriptor hb_segment_properties_equal$descriptor() {
-        return hb_segment_properties_equal.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_segment_properties_equal(const hb_segment_properties_t *a, const hb_segment_properties_t *b)
-     * }
-     */
-    public static MethodHandle hb_segment_properties_equal$handle() {
-        return hb_segment_properties_equal.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_segment_properties_equal(const hb_segment_properties_t *a, const hb_segment_properties_t *b)
-     * }
-     */
-    public static MemorySegment hb_segment_properties_equal$address() {
-        return hb_segment_properties_equal.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_segment_properties_equal(const hb_segment_properties_t *a, const hb_segment_properties_t *b)
-     * }
-     */
-    public static int hb_segment_properties_equal(MemorySegment a, MemorySegment b) {
-        var mh$ = hb_segment_properties_equal.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_segment_properties_equal", a, b);
-            }
-            return (int)mh$.invokeExact(a, b);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_segment_properties_hash {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_segment_properties_hash");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern unsigned int hb_segment_properties_hash(const hb_segment_properties_t *p)
-     * }
-     */
-    public static FunctionDescriptor hb_segment_properties_hash$descriptor() {
-        return hb_segment_properties_hash.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern unsigned int hb_segment_properties_hash(const hb_segment_properties_t *p)
-     * }
-     */
-    public static MethodHandle hb_segment_properties_hash$handle() {
-        return hb_segment_properties_hash.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern unsigned int hb_segment_properties_hash(const hb_segment_properties_t *p)
-     * }
-     */
-    public static MemorySegment hb_segment_properties_hash$address() {
-        return hb_segment_properties_hash.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern unsigned int hb_segment_properties_hash(const hb_segment_properties_t *p)
-     * }
-     */
-    public static int hb_segment_properties_hash(MemorySegment p) {
-        var mh$ = hb_segment_properties_hash.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_segment_properties_hash", p);
-            }
-            return (int)mh$.invokeExact(p);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_segment_properties_overlay {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_segment_properties_overlay");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_segment_properties_overlay(hb_segment_properties_t *p, const hb_segment_properties_t *src)
-     * }
-     */
-    public static FunctionDescriptor hb_segment_properties_overlay$descriptor() {
-        return hb_segment_properties_overlay.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_segment_properties_overlay(hb_segment_properties_t *p, const hb_segment_properties_t *src)
-     * }
-     */
-    public static MethodHandle hb_segment_properties_overlay$handle() {
-        return hb_segment_properties_overlay.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void hb_segment_properties_overlay(hb_segment_properties_t *p, const hb_segment_properties_t *src)
-     * }
-     */
-    public static MemorySegment hb_segment_properties_overlay$address() {
-        return hb_segment_properties_overlay.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void hb_segment_properties_overlay(hb_segment_properties_t *p, const hb_segment_properties_t *src)
-     * }
-     */
-    public static void hb_segment_properties_overlay(MemorySegment p, MemorySegment src) {
-        var mh$ = hb_segment_properties_overlay.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_segment_properties_overlay", p, src);
-            }
-            mh$.invokeExact(p, src);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_create {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER    );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_create");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_buffer_t *hb_buffer_create()
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_create$descriptor() {
-        return hb_buffer_create.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_buffer_t *hb_buffer_create()
-     * }
-     */
-    public static MethodHandle hb_buffer_create$handle() {
-        return hb_buffer_create.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern hb_buffer_t *hb_buffer_create()
-     * }
-     */
-    public static MemorySegment hb_buffer_create$address() {
-        return hb_buffer_create.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern hb_buffer_t *hb_buffer_create()
-     * }
-     */
-    public static MemorySegment hb_buffer_create() {
-        var mh$ = hb_buffer_create.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_create");
-            }
-            return (MemorySegment)mh$.invokeExact();
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_create_similar {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_create_similar");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_buffer_t *hb_buffer_create_similar(const hb_buffer_t *src)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_create_similar$descriptor() {
-        return hb_buffer_create_similar.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_buffer_t *hb_buffer_create_similar(const hb_buffer_t *src)
-     * }
-     */
-    public static MethodHandle hb_buffer_create_similar$handle() {
-        return hb_buffer_create_similar.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern hb_buffer_t *hb_buffer_create_similar(const hb_buffer_t *src)
-     * }
-     */
-    public static MemorySegment hb_buffer_create_similar$address() {
-        return hb_buffer_create_similar.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern hb_buffer_t *hb_buffer_create_similar(const hb_buffer_t *src)
-     * }
-     */
-    public static MemorySegment hb_buffer_create_similar(MemorySegment src) {
-        var mh$ = hb_buffer_create_similar.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_create_similar", src);
-            }
-            return (MemorySegment)mh$.invokeExact(src);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_reset {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_reset");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_reset(hb_buffer_t *buffer)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_reset$descriptor() {
-        return hb_buffer_reset.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_reset(hb_buffer_t *buffer)
-     * }
-     */
-    public static MethodHandle hb_buffer_reset$handle() {
-        return hb_buffer_reset.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_reset(hb_buffer_t *buffer)
-     * }
-     */
-    public static MemorySegment hb_buffer_reset$address() {
-        return hb_buffer_reset.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_reset(hb_buffer_t *buffer)
-     * }
-     */
-    public static void hb_buffer_reset(MemorySegment buffer) {
-        var mh$ = hb_buffer_reset.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_reset", buffer);
-            }
-            mh$.invokeExact(buffer);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_get_empty {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER    );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_get_empty");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_buffer_t *hb_buffer_get_empty()
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_get_empty$descriptor() {
-        return hb_buffer_get_empty.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_buffer_t *hb_buffer_get_empty()
-     * }
-     */
-    public static MethodHandle hb_buffer_get_empty$handle() {
-        return hb_buffer_get_empty.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern hb_buffer_t *hb_buffer_get_empty()
-     * }
-     */
-    public static MemorySegment hb_buffer_get_empty$address() {
-        return hb_buffer_get_empty.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern hb_buffer_t *hb_buffer_get_empty()
-     * }
-     */
-    public static MemorySegment hb_buffer_get_empty() {
-        var mh$ = hb_buffer_get_empty.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_get_empty");
-            }
-            return (MemorySegment)mh$.invokeExact();
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_reference {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_reference");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_buffer_t *hb_buffer_reference(hb_buffer_t *buffer)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_reference$descriptor() {
-        return hb_buffer_reference.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_buffer_t *hb_buffer_reference(hb_buffer_t *buffer)
-     * }
-     */
-    public static MethodHandle hb_buffer_reference$handle() {
-        return hb_buffer_reference.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern hb_buffer_t *hb_buffer_reference(hb_buffer_t *buffer)
-     * }
-     */
-    public static MemorySegment hb_buffer_reference$address() {
-        return hb_buffer_reference.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern hb_buffer_t *hb_buffer_reference(hb_buffer_t *buffer)
-     * }
-     */
-    public static MemorySegment hb_buffer_reference(MemorySegment buffer) {
-        var mh$ = hb_buffer_reference.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_reference", buffer);
-            }
-            return (MemorySegment)mh$.invokeExact(buffer);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_destroy {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_destroy");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_destroy(hb_buffer_t *buffer)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_destroy$descriptor() {
-        return hb_buffer_destroy.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_destroy(hb_buffer_t *buffer)
-     * }
-     */
-    public static MethodHandle hb_buffer_destroy$handle() {
-        return hb_buffer_destroy.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_destroy(hb_buffer_t *buffer)
-     * }
-     */
-    public static MemorySegment hb_buffer_destroy$address() {
-        return hb_buffer_destroy.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_destroy(hb_buffer_t *buffer)
-     * }
-     */
-    public static void hb_buffer_destroy(MemorySegment buffer) {
-        var mh$ = hb_buffer_destroy.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_destroy", buffer);
-            }
-            mh$.invokeExact(buffer);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_set_user_data {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_set_user_data");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_buffer_set_user_data(hb_buffer_t *buffer, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_set_user_data$descriptor() {
-        return hb_buffer_set_user_data.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_buffer_set_user_data(hb_buffer_t *buffer, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
-     * }
-     */
-    public static MethodHandle hb_buffer_set_user_data$handle() {
-        return hb_buffer_set_user_data.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_buffer_set_user_data(hb_buffer_t *buffer, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
-     * }
-     */
-    public static MemorySegment hb_buffer_set_user_data$address() {
-        return hb_buffer_set_user_data.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern hb_bool_t hb_buffer_set_user_data(hb_buffer_t *buffer, hb_user_data_key_t *key, void *data, hb_destroy_func_t destroy, hb_bool_t replace)
-     * }
-     */
-    public static int hb_buffer_set_user_data(MemorySegment buffer, MemorySegment key, MemorySegment data, MemorySegment destroy, int replace) {
-        var mh$ = hb_buffer_set_user_data.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_set_user_data", buffer, key, data, destroy, replace);
-            }
-            return (int)mh$.invokeExact(buffer, key, data, destroy, replace);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_get_user_data {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_get_user_data");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void *hb_buffer_get_user_data(const hb_buffer_t *buffer, hb_user_data_key_t *key)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_get_user_data$descriptor() {
-        return hb_buffer_get_user_data.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void *hb_buffer_get_user_data(const hb_buffer_t *buffer, hb_user_data_key_t *key)
-     * }
-     */
-    public static MethodHandle hb_buffer_get_user_data$handle() {
-        return hb_buffer_get_user_data.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void *hb_buffer_get_user_data(const hb_buffer_t *buffer, hb_user_data_key_t *key)
-     * }
-     */
-    public static MemorySegment hb_buffer_get_user_data$address() {
-        return hb_buffer_get_user_data.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void *hb_buffer_get_user_data(const hb_buffer_t *buffer, hb_user_data_key_t *key)
-     * }
-     */
-    public static MemorySegment hb_buffer_get_user_data(MemorySegment buffer, MemorySegment key) {
-        var mh$ = hb_buffer_get_user_data.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_get_user_data", buffer, key);
-            }
-            return (MemorySegment)mh$.invokeExact(buffer, key);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    private static final int HB_BUFFER_CONTENT_TYPE_INVALID = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_CONTENT_TYPE_INVALID = 0
-     * }
-     */
-    public static int HB_BUFFER_CONTENT_TYPE_INVALID() {
-        return HB_BUFFER_CONTENT_TYPE_INVALID;
-    }
-    private static final int HB_BUFFER_CONTENT_TYPE_UNICODE = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_CONTENT_TYPE_UNICODE = 1
-     * }
-     */
-    public static int HB_BUFFER_CONTENT_TYPE_UNICODE() {
-        return HB_BUFFER_CONTENT_TYPE_UNICODE;
-    }
-    private static final int HB_BUFFER_CONTENT_TYPE_GLYPHS = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_CONTENT_TYPE_GLYPHS = 2
-     * }
-     */
-    public static int HB_BUFFER_CONTENT_TYPE_GLYPHS() {
-        return HB_BUFFER_CONTENT_TYPE_GLYPHS;
-    }
-
-    private static class hb_buffer_set_content_type {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_set_content_type");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_content_type(hb_buffer_t *buffer, hb_buffer_content_type_t content_type)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_set_content_type$descriptor() {
-        return hb_buffer_set_content_type.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_content_type(hb_buffer_t *buffer, hb_buffer_content_type_t content_type)
-     * }
-     */
-    public static MethodHandle hb_buffer_set_content_type$handle() {
-        return hb_buffer_set_content_type.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_content_type(hb_buffer_t *buffer, hb_buffer_content_type_t content_type)
-     * }
-     */
-    public static MemorySegment hb_buffer_set_content_type$address() {
-        return hb_buffer_set_content_type.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_content_type(hb_buffer_t *buffer, hb_buffer_content_type_t content_type)
-     * }
-     */
-    public static void hb_buffer_set_content_type(MemorySegment buffer, int content_type) {
-        var mh$ = hb_buffer_set_content_type.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_set_content_type", buffer, content_type);
-            }
-            mh$.invokeExact(buffer, content_type);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_get_content_type {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_get_content_type");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_buffer_content_type_t hb_buffer_get_content_type(const hb_buffer_t *buffer)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_get_content_type$descriptor() {
-        return hb_buffer_get_content_type.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_buffer_content_type_t hb_buffer_get_content_type(const hb_buffer_t *buffer)
-     * }
-     */
-    public static MethodHandle hb_buffer_get_content_type$handle() {
-        return hb_buffer_get_content_type.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern hb_buffer_content_type_t hb_buffer_get_content_type(const hb_buffer_t *buffer)
-     * }
-     */
-    public static MemorySegment hb_buffer_get_content_type$address() {
-        return hb_buffer_get_content_type.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern hb_buffer_content_type_t hb_buffer_get_content_type(const hb_buffer_t *buffer)
-     * }
-     */
-    public static int hb_buffer_get_content_type(MemorySegment buffer) {
-        var mh$ = hb_buffer_get_content_type.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_get_content_type", buffer);
-            }
-            return (int)mh$.invokeExact(buffer);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_set_unicode_funcs {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_set_unicode_funcs");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_unicode_funcs(hb_buffer_t *buffer, hb_unicode_funcs_t *unicode_funcs)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_set_unicode_funcs$descriptor() {
-        return hb_buffer_set_unicode_funcs.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_unicode_funcs(hb_buffer_t *buffer, hb_unicode_funcs_t *unicode_funcs)
-     * }
-     */
-    public static MethodHandle hb_buffer_set_unicode_funcs$handle() {
-        return hb_buffer_set_unicode_funcs.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_unicode_funcs(hb_buffer_t *buffer, hb_unicode_funcs_t *unicode_funcs)
-     * }
-     */
-    public static MemorySegment hb_buffer_set_unicode_funcs$address() {
-        return hb_buffer_set_unicode_funcs.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_unicode_funcs(hb_buffer_t *buffer, hb_unicode_funcs_t *unicode_funcs)
-     * }
-     */
-    public static void hb_buffer_set_unicode_funcs(MemorySegment buffer, MemorySegment unicode_funcs) {
-        var mh$ = hb_buffer_set_unicode_funcs.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_set_unicode_funcs", buffer, unicode_funcs);
-            }
-            mh$.invokeExact(buffer, unicode_funcs);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_get_unicode_funcs {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_get_unicode_funcs");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_unicode_funcs_t *hb_buffer_get_unicode_funcs(const hb_buffer_t *buffer)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_get_unicode_funcs$descriptor() {
-        return hb_buffer_get_unicode_funcs.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_unicode_funcs_t *hb_buffer_get_unicode_funcs(const hb_buffer_t *buffer)
-     * }
-     */
-    public static MethodHandle hb_buffer_get_unicode_funcs$handle() {
-        return hb_buffer_get_unicode_funcs.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern hb_unicode_funcs_t *hb_buffer_get_unicode_funcs(const hb_buffer_t *buffer)
-     * }
-     */
-    public static MemorySegment hb_buffer_get_unicode_funcs$address() {
-        return hb_buffer_get_unicode_funcs.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern hb_unicode_funcs_t *hb_buffer_get_unicode_funcs(const hb_buffer_t *buffer)
-     * }
-     */
-    public static MemorySegment hb_buffer_get_unicode_funcs(MemorySegment buffer) {
-        var mh$ = hb_buffer_get_unicode_funcs.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_get_unicode_funcs", buffer);
-            }
-            return (MemorySegment)mh$.invokeExact(buffer);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_set_direction {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_set_direction");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_direction(hb_buffer_t *buffer, hb_direction_t direction)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_set_direction$descriptor() {
-        return hb_buffer_set_direction.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_direction(hb_buffer_t *buffer, hb_direction_t direction)
-     * }
-     */
-    public static MethodHandle hb_buffer_set_direction$handle() {
-        return hb_buffer_set_direction.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_direction(hb_buffer_t *buffer, hb_direction_t direction)
-     * }
-     */
-    public static MemorySegment hb_buffer_set_direction$address() {
-        return hb_buffer_set_direction.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_direction(hb_buffer_t *buffer, hb_direction_t direction)
-     * }
-     */
-    public static void hb_buffer_set_direction(MemorySegment buffer, int direction) {
-        var mh$ = hb_buffer_set_direction.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_set_direction", buffer, direction);
-            }
-            mh$.invokeExact(buffer, direction);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_get_direction {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_get_direction");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_direction_t hb_buffer_get_direction(const hb_buffer_t *buffer)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_get_direction$descriptor() {
-        return hb_buffer_get_direction.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_direction_t hb_buffer_get_direction(const hb_buffer_t *buffer)
-     * }
-     */
-    public static MethodHandle hb_buffer_get_direction$handle() {
-        return hb_buffer_get_direction.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern hb_direction_t hb_buffer_get_direction(const hb_buffer_t *buffer)
-     * }
-     */
-    public static MemorySegment hb_buffer_get_direction$address() {
-        return hb_buffer_get_direction.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern hb_direction_t hb_buffer_get_direction(const hb_buffer_t *buffer)
-     * }
-     */
-    public static int hb_buffer_get_direction(MemorySegment buffer) {
-        var mh$ = hb_buffer_get_direction.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_get_direction", buffer);
-            }
-            return (int)mh$.invokeExact(buffer);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_set_script {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_set_script");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_script(hb_buffer_t *buffer, hb_script_t script)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_set_script$descriptor() {
-        return hb_buffer_set_script.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_script(hb_buffer_t *buffer, hb_script_t script)
-     * }
-     */
-    public static MethodHandle hb_buffer_set_script$handle() {
-        return hb_buffer_set_script.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_script(hb_buffer_t *buffer, hb_script_t script)
-     * }
-     */
-    public static MemorySegment hb_buffer_set_script$address() {
-        return hb_buffer_set_script.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_script(hb_buffer_t *buffer, hb_script_t script)
-     * }
-     */
-    public static void hb_buffer_set_script(MemorySegment buffer, int script) {
-        var mh$ = hb_buffer_set_script.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_set_script", buffer, script);
-            }
-            mh$.invokeExact(buffer, script);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_get_script {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_get_script");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_script_t hb_buffer_get_script(const hb_buffer_t *buffer)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_get_script$descriptor() {
-        return hb_buffer_get_script.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_script_t hb_buffer_get_script(const hb_buffer_t *buffer)
-     * }
-     */
-    public static MethodHandle hb_buffer_get_script$handle() {
-        return hb_buffer_get_script.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern hb_script_t hb_buffer_get_script(const hb_buffer_t *buffer)
-     * }
-     */
-    public static MemorySegment hb_buffer_get_script$address() {
-        return hb_buffer_get_script.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern hb_script_t hb_buffer_get_script(const hb_buffer_t *buffer)
-     * }
-     */
-    public static int hb_buffer_get_script(MemorySegment buffer) {
-        var mh$ = hb_buffer_get_script.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_get_script", buffer);
-            }
-            return (int)mh$.invokeExact(buffer);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_set_language {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_set_language");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_language(hb_buffer_t *buffer, hb_language_t language)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_set_language$descriptor() {
-        return hb_buffer_set_language.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_language(hb_buffer_t *buffer, hb_language_t language)
-     * }
-     */
-    public static MethodHandle hb_buffer_set_language$handle() {
-        return hb_buffer_set_language.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_language(hb_buffer_t *buffer, hb_language_t language)
-     * }
-     */
-    public static MemorySegment hb_buffer_set_language$address() {
-        return hb_buffer_set_language.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_language(hb_buffer_t *buffer, hb_language_t language)
-     * }
-     */
-    public static void hb_buffer_set_language(MemorySegment buffer, MemorySegment language) {
-        var mh$ = hb_buffer_set_language.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_set_language", buffer, language);
-            }
-            mh$.invokeExact(buffer, language);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_get_language {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_get_language");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern hb_language_t hb_buffer_get_language(const hb_buffer_t *buffer)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_get_language$descriptor() {
-        return hb_buffer_get_language.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern hb_language_t hb_buffer_get_language(const hb_buffer_t *buffer)
-     * }
-     */
-    public static MethodHandle hb_buffer_get_language$handle() {
-        return hb_buffer_get_language.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern hb_language_t hb_buffer_get_language(const hb_buffer_t *buffer)
-     * }
-     */
-    public static MemorySegment hb_buffer_get_language$address() {
-        return hb_buffer_get_language.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern hb_language_t hb_buffer_get_language(const hb_buffer_t *buffer)
-     * }
-     */
-    public static MemorySegment hb_buffer_get_language(MemorySegment buffer) {
-        var mh$ = hb_buffer_get_language.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_get_language", buffer);
-            }
-            return (MemorySegment)mh$.invokeExact(buffer);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_set_segment_properties {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_set_segment_properties");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_segment_properties(hb_buffer_t *buffer, const hb_segment_properties_t *props)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_set_segment_properties$descriptor() {
-        return hb_buffer_set_segment_properties.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_segment_properties(hb_buffer_t *buffer, const hb_segment_properties_t *props)
-     * }
-     */
-    public static MethodHandle hb_buffer_set_segment_properties$handle() {
-        return hb_buffer_set_segment_properties.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_segment_properties(hb_buffer_t *buffer, const hb_segment_properties_t *props)
-     * }
-     */
-    public static MemorySegment hb_buffer_set_segment_properties$address() {
-        return hb_buffer_set_segment_properties.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_set_segment_properties(hb_buffer_t *buffer, const hb_segment_properties_t *props)
-     * }
-     */
-    public static void hb_buffer_set_segment_properties(MemorySegment buffer, MemorySegment props) {
-        var mh$ = hb_buffer_set_segment_properties.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_set_segment_properties", buffer, props);
-            }
-            mh$.invokeExact(buffer, props);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_get_segment_properties {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_get_segment_properties");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_get_segment_properties(const hb_buffer_t *buffer, hb_segment_properties_t *props)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_get_segment_properties$descriptor() {
-        return hb_buffer_get_segment_properties.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_get_segment_properties(const hb_buffer_t *buffer, hb_segment_properties_t *props)
-     * }
-     */
-    public static MethodHandle hb_buffer_get_segment_properties$handle() {
-        return hb_buffer_get_segment_properties.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_get_segment_properties(const hb_buffer_t *buffer, hb_segment_properties_t *props)
-     * }
-     */
-    public static MemorySegment hb_buffer_get_segment_properties$address() {
-        return hb_buffer_get_segment_properties.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_get_segment_properties(const hb_buffer_t *buffer, hb_segment_properties_t *props)
-     * }
-     */
-    public static void hb_buffer_get_segment_properties(MemorySegment buffer, MemorySegment props) {
-        var mh$ = hb_buffer_get_segment_properties.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_get_segment_properties", buffer, props);
-            }
-            mh$.invokeExact(buffer, props);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class hb_buffer_guess_segment_properties {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("hb_buffer_guess_segment_properties");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_guess_segment_properties(hb_buffer_t *buffer)
-     * }
-     */
-    public static FunctionDescriptor hb_buffer_guess_segment_properties$descriptor() {
-        return hb_buffer_guess_segment_properties.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_guess_segment_properties(hb_buffer_t *buffer)
-     * }
-     */
-    public static MethodHandle hb_buffer_guess_segment_properties$handle() {
-        return hb_buffer_guess_segment_properties.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void hb_buffer_guess_segment_properties(hb_buffer_t *buffer)
-     * }
-     */
-    public static MemorySegment hb_buffer_guess_segment_properties$address() {
-        return hb_buffer_guess_segment_properties.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void hb_buffer_guess_segment_properties(hb_buffer_t *buffer)
-     * }
-     */
-    public static void hb_buffer_guess_segment_properties(MemorySegment buffer) {
-        var mh$ = hb_buffer_guess_segment_properties.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("hb_buffer_guess_segment_properties", buffer);
-            }
-            mh$.invokeExact(buffer);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    private static final int HB_BUFFER_FLAG_DEFAULT = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.HB_BUFFER_FLAG_DEFAULT = 0
-     * }
-     */
-    public static int HB_BUFFER_FLAG_DEFAULT() {
-        return HB_BUFFER_FLAG_DEFAULT;
     }
 }
 

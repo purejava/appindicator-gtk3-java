@@ -2,14 +2,255 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.lang.invoke.MethodHandle;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 class app_indicator_h_6 extends app_indicator_h_7 {
 
     app_indicator_h_6() {
         // Should not be called directly
     }
+    /**
+     * {@snippet lang=c :
+     * typedef AtkObject *AtkObject_autoptr
+     * }
+     */
+    public static final AddressLayout AtkObject_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *AtkObject_listautoptr
+     * }
+     */
+    public static final AddressLayout AtkObject_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *AtkObject_slistautoptr
+     * }
+     */
+    public static final AddressLayout AtkObject_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *AtkObject_queueautoptr
+     * }
+     */
+    public static final AddressLayout AtkObject_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef AtkPlug *AtkPlug_autoptr
+     * }
+     */
+    public static final AddressLayout AtkPlug_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *AtkPlug_listautoptr
+     * }
+     */
+    public static final AddressLayout AtkPlug_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *AtkPlug_slistautoptr
+     * }
+     */
+    public static final AddressLayout AtkPlug_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *AtkPlug_queueautoptr
+     * }
+     */
+    public static final AddressLayout AtkPlug_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef AtkRegistry *AtkRegistry_autoptr
+     * }
+     */
+    public static final AddressLayout AtkRegistry_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *AtkRegistry_listautoptr
+     * }
+     */
+    public static final AddressLayout AtkRegistry_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *AtkRegistry_slistautoptr
+     * }
+     */
+    public static final AddressLayout AtkRegistry_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *AtkRegistry_queueautoptr
+     * }
+     */
+    public static final AddressLayout AtkRegistry_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef AtkRelationSet *AtkRelationSet_autoptr
+     * }
+     */
+    public static final AddressLayout AtkRelationSet_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *AtkRelationSet_listautoptr
+     * }
+     */
+    public static final AddressLayout AtkRelationSet_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *AtkRelationSet_slistautoptr
+     * }
+     */
+    public static final AddressLayout AtkRelationSet_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *AtkRelationSet_queueautoptr
+     * }
+     */
+    public static final AddressLayout AtkRelationSet_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef AtkRelation *AtkRelation_autoptr
+     * }
+     */
+    public static final AddressLayout AtkRelation_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *AtkRelation_listautoptr
+     * }
+     */
+    public static final AddressLayout AtkRelation_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *AtkRelation_slistautoptr
+     * }
+     */
+    public static final AddressLayout AtkRelation_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *AtkRelation_queueautoptr
+     * }
+     */
+    public static final AddressLayout AtkRelation_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef AtkSelection *AtkSelection_autoptr
+     * }
+     */
+    public static final AddressLayout AtkSelection_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *AtkSelection_listautoptr
+     * }
+     */
+    public static final AddressLayout AtkSelection_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *AtkSelection_slistautoptr
+     * }
+     */
+    public static final AddressLayout AtkSelection_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *AtkSelection_queueautoptr
+     * }
+     */
+    public static final AddressLayout AtkSelection_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef AtkSocket *AtkSocket_autoptr
+     * }
+     */
+    public static final AddressLayout AtkSocket_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *AtkSocket_listautoptr
+     * }
+     */
+    public static final AddressLayout AtkSocket_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *AtkSocket_slistautoptr
+     * }
+     */
+    public static final AddressLayout AtkSocket_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *AtkSocket_queueautoptr
+     * }
+     */
+    public static final AddressLayout AtkSocket_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef AtkStateSet *AtkStateSet_autoptr
+     * }
+     */
+    public static final AddressLayout AtkStateSet_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *AtkStateSet_listautoptr
+     * }
+     */
+    public static final AddressLayout AtkStateSet_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *AtkStateSet_slistautoptr
+     * }
+     */
+    public static final AddressLayout AtkStateSet_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *AtkStateSet_queueautoptr
+     * }
+     */
+    public static final AddressLayout AtkStateSet_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef AtkStreamableContent *AtkStreamableContent_autoptr
+     * }
+     */
+    public static final AddressLayout AtkStreamableContent_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *AtkStreamableContent_listautoptr
+     * }
+     */
+    public static final AddressLayout AtkStreamableContent_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *AtkStreamableContent_slistautoptr
+     * }
+     */
+    public static final AddressLayout AtkStreamableContent_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *AtkStreamableContent_queueautoptr
+     * }
+     */
+    public static final AddressLayout AtkStreamableContent_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef AtkTableCell *AtkTableCell_autoptr
+     * }
+     */
+    public static final AddressLayout AtkTableCell_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *AtkTableCell_listautoptr
+     * }
+     */
+    public static final AddressLayout AtkTableCell_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *AtkTableCell_slistautoptr
+     * }
+     */
+    public static final AddressLayout AtkTableCell_slistautoptr = app_indicator_h.C_POINTER;
     /**
      * {@snippet lang=c :
      * typedef GQueue *AtkTableCell_queueautoptr
@@ -50716,2241 +50957,6 @@ class app_indicator_h_6 extends app_indicator_h_7 {
                 traceDowncall("gtk_cell_area_add_focus_sibling", area, renderer, sibling);
             }
             mh$.invokeExact(area, renderer, sibling);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_cell_area_remove_focus_sibling {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_cell_area_remove_focus_sibling");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void gtk_cell_area_remove_focus_sibling(GtkCellArea *area, GtkCellRenderer *renderer, GtkCellRenderer *sibling)
-     * }
-     */
-    public static FunctionDescriptor gtk_cell_area_remove_focus_sibling$descriptor() {
-        return gtk_cell_area_remove_focus_sibling.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void gtk_cell_area_remove_focus_sibling(GtkCellArea *area, GtkCellRenderer *renderer, GtkCellRenderer *sibling)
-     * }
-     */
-    public static MethodHandle gtk_cell_area_remove_focus_sibling$handle() {
-        return gtk_cell_area_remove_focus_sibling.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void gtk_cell_area_remove_focus_sibling(GtkCellArea *area, GtkCellRenderer *renderer, GtkCellRenderer *sibling)
-     * }
-     */
-    public static MemorySegment gtk_cell_area_remove_focus_sibling$address() {
-        return gtk_cell_area_remove_focus_sibling.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void gtk_cell_area_remove_focus_sibling(GtkCellArea *area, GtkCellRenderer *renderer, GtkCellRenderer *sibling)
-     * }
-     */
-    public static void gtk_cell_area_remove_focus_sibling(MemorySegment area, MemorySegment renderer, MemorySegment sibling) {
-        var mh$ = gtk_cell_area_remove_focus_sibling.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_cell_area_remove_focus_sibling", area, renderer, sibling);
-            }
-            mh$.invokeExact(area, renderer, sibling);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_cell_area_is_focus_sibling {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_cell_area_is_focus_sibling");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern gboolean gtk_cell_area_is_focus_sibling(GtkCellArea *area, GtkCellRenderer *renderer, GtkCellRenderer *sibling)
-     * }
-     */
-    public static FunctionDescriptor gtk_cell_area_is_focus_sibling$descriptor() {
-        return gtk_cell_area_is_focus_sibling.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern gboolean gtk_cell_area_is_focus_sibling(GtkCellArea *area, GtkCellRenderer *renderer, GtkCellRenderer *sibling)
-     * }
-     */
-    public static MethodHandle gtk_cell_area_is_focus_sibling$handle() {
-        return gtk_cell_area_is_focus_sibling.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern gboolean gtk_cell_area_is_focus_sibling(GtkCellArea *area, GtkCellRenderer *renderer, GtkCellRenderer *sibling)
-     * }
-     */
-    public static MemorySegment gtk_cell_area_is_focus_sibling$address() {
-        return gtk_cell_area_is_focus_sibling.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern gboolean gtk_cell_area_is_focus_sibling(GtkCellArea *area, GtkCellRenderer *renderer, GtkCellRenderer *sibling)
-     * }
-     */
-    public static int gtk_cell_area_is_focus_sibling(MemorySegment area, MemorySegment renderer, MemorySegment sibling) {
-        var mh$ = gtk_cell_area_is_focus_sibling.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_cell_area_is_focus_sibling", area, renderer, sibling);
-            }
-            return (int)mh$.invokeExact(area, renderer, sibling);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_cell_area_get_focus_siblings {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_cell_area_get_focus_siblings");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern const GList *gtk_cell_area_get_focus_siblings(GtkCellArea *area, GtkCellRenderer *renderer)
-     * }
-     */
-    public static FunctionDescriptor gtk_cell_area_get_focus_siblings$descriptor() {
-        return gtk_cell_area_get_focus_siblings.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern const GList *gtk_cell_area_get_focus_siblings(GtkCellArea *area, GtkCellRenderer *renderer)
-     * }
-     */
-    public static MethodHandle gtk_cell_area_get_focus_siblings$handle() {
-        return gtk_cell_area_get_focus_siblings.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern const GList *gtk_cell_area_get_focus_siblings(GtkCellArea *area, GtkCellRenderer *renderer)
-     * }
-     */
-    public static MemorySegment gtk_cell_area_get_focus_siblings$address() {
-        return gtk_cell_area_get_focus_siblings.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern const GList *gtk_cell_area_get_focus_siblings(GtkCellArea *area, GtkCellRenderer *renderer)
-     * }
-     */
-    public static MemorySegment gtk_cell_area_get_focus_siblings(MemorySegment area, MemorySegment renderer) {
-        var mh$ = gtk_cell_area_get_focus_siblings.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_cell_area_get_focus_siblings", area, renderer);
-            }
-            return (MemorySegment)mh$.invokeExact(area, renderer);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_cell_area_get_focus_from_sibling {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_cell_area_get_focus_from_sibling");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GtkCellRenderer *gtk_cell_area_get_focus_from_sibling(GtkCellArea *area, GtkCellRenderer *renderer)
-     * }
-     */
-    public static FunctionDescriptor gtk_cell_area_get_focus_from_sibling$descriptor() {
-        return gtk_cell_area_get_focus_from_sibling.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GtkCellRenderer *gtk_cell_area_get_focus_from_sibling(GtkCellArea *area, GtkCellRenderer *renderer)
-     * }
-     */
-    public static MethodHandle gtk_cell_area_get_focus_from_sibling$handle() {
-        return gtk_cell_area_get_focus_from_sibling.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern GtkCellRenderer *gtk_cell_area_get_focus_from_sibling(GtkCellArea *area, GtkCellRenderer *renderer)
-     * }
-     */
-    public static MemorySegment gtk_cell_area_get_focus_from_sibling$address() {
-        return gtk_cell_area_get_focus_from_sibling.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern GtkCellRenderer *gtk_cell_area_get_focus_from_sibling(GtkCellArea *area, GtkCellRenderer *renderer)
-     * }
-     */
-    public static MemorySegment gtk_cell_area_get_focus_from_sibling(MemorySegment area, MemorySegment renderer) {
-        var mh$ = gtk_cell_area_get_focus_from_sibling.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_cell_area_get_focus_from_sibling", area, renderer);
-            }
-            return (MemorySegment)mh$.invokeExact(area, renderer);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_cell_area_get_edited_cell {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_cell_area_get_edited_cell");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GtkCellRenderer *gtk_cell_area_get_edited_cell(GtkCellArea *area)
-     * }
-     */
-    public static FunctionDescriptor gtk_cell_area_get_edited_cell$descriptor() {
-        return gtk_cell_area_get_edited_cell.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GtkCellRenderer *gtk_cell_area_get_edited_cell(GtkCellArea *area)
-     * }
-     */
-    public static MethodHandle gtk_cell_area_get_edited_cell$handle() {
-        return gtk_cell_area_get_edited_cell.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern GtkCellRenderer *gtk_cell_area_get_edited_cell(GtkCellArea *area)
-     * }
-     */
-    public static MemorySegment gtk_cell_area_get_edited_cell$address() {
-        return gtk_cell_area_get_edited_cell.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern GtkCellRenderer *gtk_cell_area_get_edited_cell(GtkCellArea *area)
-     * }
-     */
-    public static MemorySegment gtk_cell_area_get_edited_cell(MemorySegment area) {
-        var mh$ = gtk_cell_area_get_edited_cell.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_cell_area_get_edited_cell", area);
-            }
-            return (MemorySegment)mh$.invokeExact(area);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_cell_area_get_edit_widget {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_cell_area_get_edit_widget");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GtkCellEditable *gtk_cell_area_get_edit_widget(GtkCellArea *area)
-     * }
-     */
-    public static FunctionDescriptor gtk_cell_area_get_edit_widget$descriptor() {
-        return gtk_cell_area_get_edit_widget.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GtkCellEditable *gtk_cell_area_get_edit_widget(GtkCellArea *area)
-     * }
-     */
-    public static MethodHandle gtk_cell_area_get_edit_widget$handle() {
-        return gtk_cell_area_get_edit_widget.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern GtkCellEditable *gtk_cell_area_get_edit_widget(GtkCellArea *area)
-     * }
-     */
-    public static MemorySegment gtk_cell_area_get_edit_widget$address() {
-        return gtk_cell_area_get_edit_widget.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern GtkCellEditable *gtk_cell_area_get_edit_widget(GtkCellArea *area)
-     * }
-     */
-    public static MemorySegment gtk_cell_area_get_edit_widget(MemorySegment area) {
-        var mh$ = gtk_cell_area_get_edit_widget.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_cell_area_get_edit_widget", area);
-            }
-            return (MemorySegment)mh$.invokeExact(area);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_cell_area_activate_cell {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_cell_area_activate_cell");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern gboolean gtk_cell_area_activate_cell(GtkCellArea *area, GtkWidget *widget, GtkCellRenderer *renderer, GdkEvent *event, const GdkRectangle *cell_area, GtkCellRendererState flags)
-     * }
-     */
-    public static FunctionDescriptor gtk_cell_area_activate_cell$descriptor() {
-        return gtk_cell_area_activate_cell.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern gboolean gtk_cell_area_activate_cell(GtkCellArea *area, GtkWidget *widget, GtkCellRenderer *renderer, GdkEvent *event, const GdkRectangle *cell_area, GtkCellRendererState flags)
-     * }
-     */
-    public static MethodHandle gtk_cell_area_activate_cell$handle() {
-        return gtk_cell_area_activate_cell.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern gboolean gtk_cell_area_activate_cell(GtkCellArea *area, GtkWidget *widget, GtkCellRenderer *renderer, GdkEvent *event, const GdkRectangle *cell_area, GtkCellRendererState flags)
-     * }
-     */
-    public static MemorySegment gtk_cell_area_activate_cell$address() {
-        return gtk_cell_area_activate_cell.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern gboolean gtk_cell_area_activate_cell(GtkCellArea *area, GtkWidget *widget, GtkCellRenderer *renderer, GdkEvent *event, const GdkRectangle *cell_area, GtkCellRendererState flags)
-     * }
-     */
-    public static int gtk_cell_area_activate_cell(MemorySegment area, MemorySegment widget, MemorySegment renderer, MemorySegment event, MemorySegment cell_area, int flags) {
-        var mh$ = gtk_cell_area_activate_cell.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_cell_area_activate_cell", area, widget, renderer, event, cell_area, flags);
-            }
-            return (int)mh$.invokeExact(area, widget, renderer, event, cell_area, flags);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_cell_area_stop_editing {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_cell_area_stop_editing");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void gtk_cell_area_stop_editing(GtkCellArea *area, gboolean canceled)
-     * }
-     */
-    public static FunctionDescriptor gtk_cell_area_stop_editing$descriptor() {
-        return gtk_cell_area_stop_editing.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void gtk_cell_area_stop_editing(GtkCellArea *area, gboolean canceled)
-     * }
-     */
-    public static MethodHandle gtk_cell_area_stop_editing$handle() {
-        return gtk_cell_area_stop_editing.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void gtk_cell_area_stop_editing(GtkCellArea *area, gboolean canceled)
-     * }
-     */
-    public static MemorySegment gtk_cell_area_stop_editing$address() {
-        return gtk_cell_area_stop_editing.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void gtk_cell_area_stop_editing(GtkCellArea *area, gboolean canceled)
-     * }
-     */
-    public static void gtk_cell_area_stop_editing(MemorySegment area, int canceled) {
-        var mh$ = gtk_cell_area_stop_editing.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_cell_area_stop_editing", area, canceled);
-            }
-            mh$.invokeExact(area, canceled);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_cell_area_inner_cell_area {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_cell_area_inner_cell_area");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void gtk_cell_area_inner_cell_area(GtkCellArea *area, GtkWidget *widget, const GdkRectangle *cell_area, GdkRectangle *inner_area)
-     * }
-     */
-    public static FunctionDescriptor gtk_cell_area_inner_cell_area$descriptor() {
-        return gtk_cell_area_inner_cell_area.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void gtk_cell_area_inner_cell_area(GtkCellArea *area, GtkWidget *widget, const GdkRectangle *cell_area, GdkRectangle *inner_area)
-     * }
-     */
-    public static MethodHandle gtk_cell_area_inner_cell_area$handle() {
-        return gtk_cell_area_inner_cell_area.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void gtk_cell_area_inner_cell_area(GtkCellArea *area, GtkWidget *widget, const GdkRectangle *cell_area, GdkRectangle *inner_area)
-     * }
-     */
-    public static MemorySegment gtk_cell_area_inner_cell_area$address() {
-        return gtk_cell_area_inner_cell_area.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void gtk_cell_area_inner_cell_area(GtkCellArea *area, GtkWidget *widget, const GdkRectangle *cell_area, GdkRectangle *inner_area)
-     * }
-     */
-    public static void gtk_cell_area_inner_cell_area(MemorySegment area, MemorySegment widget, MemorySegment cell_area, MemorySegment inner_area) {
-        var mh$ = gtk_cell_area_inner_cell_area.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_cell_area_inner_cell_area", area, widget, cell_area, inner_area);
-            }
-            mh$.invokeExact(area, widget, cell_area, inner_area);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_cell_area_request_renderer {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_cell_area_request_renderer");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void gtk_cell_area_request_renderer(GtkCellArea *area, GtkCellRenderer *renderer, GtkOrientation orientation, GtkWidget *widget, gint for_size, gint *minimum_size, gint *natural_size)
-     * }
-     */
-    public static FunctionDescriptor gtk_cell_area_request_renderer$descriptor() {
-        return gtk_cell_area_request_renderer.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void gtk_cell_area_request_renderer(GtkCellArea *area, GtkCellRenderer *renderer, GtkOrientation orientation, GtkWidget *widget, gint for_size, gint *minimum_size, gint *natural_size)
-     * }
-     */
-    public static MethodHandle gtk_cell_area_request_renderer$handle() {
-        return gtk_cell_area_request_renderer.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void gtk_cell_area_request_renderer(GtkCellArea *area, GtkCellRenderer *renderer, GtkOrientation orientation, GtkWidget *widget, gint for_size, gint *minimum_size, gint *natural_size)
-     * }
-     */
-    public static MemorySegment gtk_cell_area_request_renderer$address() {
-        return gtk_cell_area_request_renderer.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void gtk_cell_area_request_renderer(GtkCellArea *area, GtkCellRenderer *renderer, GtkOrientation orientation, GtkWidget *widget, gint for_size, gint *minimum_size, gint *natural_size)
-     * }
-     */
-    public static void gtk_cell_area_request_renderer(MemorySegment area, MemorySegment renderer, int orientation, MemorySegment widget, int for_size, MemorySegment minimum_size, MemorySegment natural_size) {
-        var mh$ = gtk_cell_area_request_renderer.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_cell_area_request_renderer", area, renderer, orientation, widget, for_size, minimum_size, natural_size);
-            }
-            mh$.invokeExact(area, renderer, orientation, widget, for_size, minimum_size, natural_size);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class _gtk_cell_area_set_cell_data_func_with_proxy {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("_gtk_cell_area_set_cell_data_func_with_proxy");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * void _gtk_cell_area_set_cell_data_func_with_proxy(GtkCellArea *area, GtkCellRenderer *cell, GFunc func, gpointer func_data, GDestroyNotify destroy, gpointer proxy)
-     * }
-     */
-    public static FunctionDescriptor _gtk_cell_area_set_cell_data_func_with_proxy$descriptor() {
-        return _gtk_cell_area_set_cell_data_func_with_proxy.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * void _gtk_cell_area_set_cell_data_func_with_proxy(GtkCellArea *area, GtkCellRenderer *cell, GFunc func, gpointer func_data, GDestroyNotify destroy, gpointer proxy)
-     * }
-     */
-    public static MethodHandle _gtk_cell_area_set_cell_data_func_with_proxy$handle() {
-        return _gtk_cell_area_set_cell_data_func_with_proxy.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * void _gtk_cell_area_set_cell_data_func_with_proxy(GtkCellArea *area, GtkCellRenderer *cell, GFunc func, gpointer func_data, GDestroyNotify destroy, gpointer proxy)
-     * }
-     */
-    public static MemorySegment _gtk_cell_area_set_cell_data_func_with_proxy$address() {
-        return _gtk_cell_area_set_cell_data_func_with_proxy.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * void _gtk_cell_area_set_cell_data_func_with_proxy(GtkCellArea *area, GtkCellRenderer *cell, GFunc func, gpointer func_data, GDestroyNotify destroy, gpointer proxy)
-     * }
-     */
-    public static void _gtk_cell_area_set_cell_data_func_with_proxy(MemorySegment area, MemorySegment cell, MemorySegment func, MemorySegment func_data, MemorySegment destroy, MemorySegment proxy) {
-        var mh$ = _gtk_cell_area_set_cell_data_func_with_proxy.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("_gtk_cell_area_set_cell_data_func_with_proxy", area, cell, func, func_data, destroy, proxy);
-            }
-            mh$.invokeExact(area, cell, func, func_data, destroy, proxy);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    private static final int GTK_TREE_VIEW_COLUMN_GROW_ONLY = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GTK_TREE_VIEW_COLUMN_GROW_ONLY = 0
-     * }
-     */
-    public static int GTK_TREE_VIEW_COLUMN_GROW_ONLY() {
-        return GTK_TREE_VIEW_COLUMN_GROW_ONLY;
-    }
-    private static final int GTK_TREE_VIEW_COLUMN_AUTOSIZE = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GTK_TREE_VIEW_COLUMN_AUTOSIZE = 1
-     * }
-     */
-    public static int GTK_TREE_VIEW_COLUMN_AUTOSIZE() {
-        return GTK_TREE_VIEW_COLUMN_AUTOSIZE;
-    }
-    private static final int GTK_TREE_VIEW_COLUMN_FIXED = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.GTK_TREE_VIEW_COLUMN_FIXED = 2
-     * }
-     */
-    public static int GTK_TREE_VIEW_COLUMN_FIXED() {
-        return GTK_TREE_VIEW_COLUMN_FIXED;
-    }
-
-    private static class gtk_tree_view_column_get_type {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_LONG    );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_get_type");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GType gtk_tree_view_column_get_type()
-     * }
-     */
-    public static FunctionDescriptor gtk_tree_view_column_get_type$descriptor() {
-        return gtk_tree_view_column_get_type.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GType gtk_tree_view_column_get_type()
-     * }
-     */
-    public static MethodHandle gtk_tree_view_column_get_type$handle() {
-        return gtk_tree_view_column_get_type.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern GType gtk_tree_view_column_get_type()
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_get_type$address() {
-        return gtk_tree_view_column_get_type.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern GType gtk_tree_view_column_get_type()
-     * }
-     */
-    public static long gtk_tree_view_column_get_type() {
-        var mh$ = gtk_tree_view_column_get_type.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_tree_view_column_get_type");
-            }
-            return (long)mh$.invokeExact();
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_tree_view_column_new {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER    );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_new");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GtkTreeViewColumn *gtk_tree_view_column_new()
-     * }
-     */
-    public static FunctionDescriptor gtk_tree_view_column_new$descriptor() {
-        return gtk_tree_view_column_new.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GtkTreeViewColumn *gtk_tree_view_column_new()
-     * }
-     */
-    public static MethodHandle gtk_tree_view_column_new$handle() {
-        return gtk_tree_view_column_new.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern GtkTreeViewColumn *gtk_tree_view_column_new()
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_new$address() {
-        return gtk_tree_view_column_new.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern GtkTreeViewColumn *gtk_tree_view_column_new()
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_new() {
-        var mh$ = gtk_tree_view_column_new.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_tree_view_column_new");
-            }
-            return (MemorySegment)mh$.invokeExact();
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_tree_view_column_new_with_area {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_new_with_area");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GtkTreeViewColumn *gtk_tree_view_column_new_with_area(GtkCellArea *area)
-     * }
-     */
-    public static FunctionDescriptor gtk_tree_view_column_new_with_area$descriptor() {
-        return gtk_tree_view_column_new_with_area.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GtkTreeViewColumn *gtk_tree_view_column_new_with_area(GtkCellArea *area)
-     * }
-     */
-    public static MethodHandle gtk_tree_view_column_new_with_area$handle() {
-        return gtk_tree_view_column_new_with_area.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern GtkTreeViewColumn *gtk_tree_view_column_new_with_area(GtkCellArea *area)
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_new_with_area$address() {
-        return gtk_tree_view_column_new_with_area.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern GtkTreeViewColumn *gtk_tree_view_column_new_with_area(GtkCellArea *area)
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_new_with_area(MemorySegment area) {
-        var mh$ = gtk_tree_view_column_new_with_area.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_tree_view_column_new_with_area", area);
-            }
-            return (MemorySegment)mh$.invokeExact(area);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    /**
-     * Variadic invoker class for:
-     * {@snippet lang=c :
-     * extern GtkTreeViewColumn *gtk_tree_view_column_new_with_attributes(const gchar *title, GtkCellRenderer *cell, ...)
-     * }
-     */
-    public static class gtk_tree_view_column_new_with_attributes {
-        private static final FunctionDescriptor BASE_DESC = FunctionDescriptor.of(
-                app_indicator_h.C_POINTER,
-                app_indicator_h.C_POINTER,
-                app_indicator_h.C_POINTER
-            );
-        private static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_new_with_attributes");
-
-        private final MethodHandle handle;
-        private final FunctionDescriptor descriptor;
-        private final MethodHandle spreader;
-
-        private gtk_tree_view_column_new_with_attributes(MethodHandle handle, FunctionDescriptor descriptor, MethodHandle spreader) {
-            this.handle = handle;
-            this.descriptor = descriptor;
-            this.spreader = spreader;
-        }
-
-        /**
-         * Variadic invoker factory for:
-         * {@snippet lang=c :
-         * extern GtkTreeViewColumn *gtk_tree_view_column_new_with_attributes(const gchar *title, GtkCellRenderer *cell, ...)
-         * }
-         */
-        public static gtk_tree_view_column_new_with_attributes makeInvoker(MemoryLayout... layouts) {
-            FunctionDescriptor desc$ = BASE_DESC.appendArgumentLayouts(layouts);
-            Linker.Option fva$ = Linker.Option.firstVariadicArg(BASE_DESC.argumentLayouts().size());
-            var mh$ = Linker.nativeLinker().downcallHandle(ADDR, desc$, fva$);
-            var spreader$ = mh$.asSpreader(Object[].class, layouts.length);
-            return new gtk_tree_view_column_new_with_attributes(mh$, desc$, spreader$);
-        }
-
-        /**
-         * {@return the address}
-         */
-        public static MemorySegment address() {
-            return ADDR;
-        }
-
-        /**
-         * {@return the specialized method handle}
-         */
-        public MethodHandle handle() {
-            return handle;
-        }
-
-        /**
-         * {@return the specialized descriptor}
-         */
-        public FunctionDescriptor descriptor() {
-            return descriptor;
-        }
-
-        public MemorySegment apply(MemorySegment title, MemorySegment cell, Object... x2) {
-            try {
-                if (TRACE_DOWNCALLS) {
-                    traceDowncall("gtk_tree_view_column_new_with_attributes", title, cell, x2);
-                }
-                return (MemorySegment) spreader.invokeExact(title, cell, x2);
-            } catch(IllegalArgumentException | ClassCastException ex$)  {
-                throw ex$; // rethrow IAE from passing wrong number/type of args
-            } catch (Throwable ex$) {
-               throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static class gtk_tree_view_column_pack_start {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_pack_start");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_pack_start(GtkTreeViewColumn *tree_column, GtkCellRenderer *cell, gboolean expand)
-     * }
-     */
-    public static FunctionDescriptor gtk_tree_view_column_pack_start$descriptor() {
-        return gtk_tree_view_column_pack_start.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_pack_start(GtkTreeViewColumn *tree_column, GtkCellRenderer *cell, gboolean expand)
-     * }
-     */
-    public static MethodHandle gtk_tree_view_column_pack_start$handle() {
-        return gtk_tree_view_column_pack_start.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_pack_start(GtkTreeViewColumn *tree_column, GtkCellRenderer *cell, gboolean expand)
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_pack_start$address() {
-        return gtk_tree_view_column_pack_start.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_pack_start(GtkTreeViewColumn *tree_column, GtkCellRenderer *cell, gboolean expand)
-     * }
-     */
-    public static void gtk_tree_view_column_pack_start(MemorySegment tree_column, MemorySegment cell, int expand) {
-        var mh$ = gtk_tree_view_column_pack_start.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_tree_view_column_pack_start", tree_column, cell, expand);
-            }
-            mh$.invokeExact(tree_column, cell, expand);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_tree_view_column_pack_end {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_pack_end");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_pack_end(GtkTreeViewColumn *tree_column, GtkCellRenderer *cell, gboolean expand)
-     * }
-     */
-    public static FunctionDescriptor gtk_tree_view_column_pack_end$descriptor() {
-        return gtk_tree_view_column_pack_end.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_pack_end(GtkTreeViewColumn *tree_column, GtkCellRenderer *cell, gboolean expand)
-     * }
-     */
-    public static MethodHandle gtk_tree_view_column_pack_end$handle() {
-        return gtk_tree_view_column_pack_end.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_pack_end(GtkTreeViewColumn *tree_column, GtkCellRenderer *cell, gboolean expand)
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_pack_end$address() {
-        return gtk_tree_view_column_pack_end.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_pack_end(GtkTreeViewColumn *tree_column, GtkCellRenderer *cell, gboolean expand)
-     * }
-     */
-    public static void gtk_tree_view_column_pack_end(MemorySegment tree_column, MemorySegment cell, int expand) {
-        var mh$ = gtk_tree_view_column_pack_end.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_tree_view_column_pack_end", tree_column, cell, expand);
-            }
-            mh$.invokeExact(tree_column, cell, expand);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_tree_view_column_clear {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_clear");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_clear(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static FunctionDescriptor gtk_tree_view_column_clear$descriptor() {
-        return gtk_tree_view_column_clear.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_clear(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static MethodHandle gtk_tree_view_column_clear$handle() {
-        return gtk_tree_view_column_clear.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_clear(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_clear$address() {
-        return gtk_tree_view_column_clear.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_clear(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static void gtk_tree_view_column_clear(MemorySegment tree_column) {
-        var mh$ = gtk_tree_view_column_clear.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_tree_view_column_clear", tree_column);
-            }
-            mh$.invokeExact(tree_column);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_tree_view_column_add_attribute {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_add_attribute");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_add_attribute(GtkTreeViewColumn *tree_column, GtkCellRenderer *cell_renderer, const gchar *attribute, gint column)
-     * }
-     */
-    public static FunctionDescriptor gtk_tree_view_column_add_attribute$descriptor() {
-        return gtk_tree_view_column_add_attribute.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_add_attribute(GtkTreeViewColumn *tree_column, GtkCellRenderer *cell_renderer, const gchar *attribute, gint column)
-     * }
-     */
-    public static MethodHandle gtk_tree_view_column_add_attribute$handle() {
-        return gtk_tree_view_column_add_attribute.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_add_attribute(GtkTreeViewColumn *tree_column, GtkCellRenderer *cell_renderer, const gchar *attribute, gint column)
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_add_attribute$address() {
-        return gtk_tree_view_column_add_attribute.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_add_attribute(GtkTreeViewColumn *tree_column, GtkCellRenderer *cell_renderer, const gchar *attribute, gint column)
-     * }
-     */
-    public static void gtk_tree_view_column_add_attribute(MemorySegment tree_column, MemorySegment cell_renderer, MemorySegment attribute, int column) {
-        var mh$ = gtk_tree_view_column_add_attribute.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_tree_view_column_add_attribute", tree_column, cell_renderer, attribute, column);
-            }
-            mh$.invokeExact(tree_column, cell_renderer, attribute, column);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    /**
-     * Variadic invoker class for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_attributes(GtkTreeViewColumn *tree_column, GtkCellRenderer *cell_renderer, ...)
-     * }
-     */
-    public static class gtk_tree_view_column_set_attributes {
-        private static final FunctionDescriptor BASE_DESC = FunctionDescriptor.ofVoid(
-                app_indicator_h.C_POINTER,
-                app_indicator_h.C_POINTER
-            );
-        private static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_set_attributes");
-
-        private final MethodHandle handle;
-        private final FunctionDescriptor descriptor;
-        private final MethodHandle spreader;
-
-        private gtk_tree_view_column_set_attributes(MethodHandle handle, FunctionDescriptor descriptor, MethodHandle spreader) {
-            this.handle = handle;
-            this.descriptor = descriptor;
-            this.spreader = spreader;
-        }
-
-        /**
-         * Variadic invoker factory for:
-         * {@snippet lang=c :
-         * extern void gtk_tree_view_column_set_attributes(GtkTreeViewColumn *tree_column, GtkCellRenderer *cell_renderer, ...)
-         * }
-         */
-        public static gtk_tree_view_column_set_attributes makeInvoker(MemoryLayout... layouts) {
-            FunctionDescriptor desc$ = BASE_DESC.appendArgumentLayouts(layouts);
-            Linker.Option fva$ = Linker.Option.firstVariadicArg(BASE_DESC.argumentLayouts().size());
-            var mh$ = Linker.nativeLinker().downcallHandle(ADDR, desc$, fva$);
-            var spreader$ = mh$.asSpreader(Object[].class, layouts.length);
-            return new gtk_tree_view_column_set_attributes(mh$, desc$, spreader$);
-        }
-
-        /**
-         * {@return the address}
-         */
-        public static MemorySegment address() {
-            return ADDR;
-        }
-
-        /**
-         * {@return the specialized method handle}
-         */
-        public MethodHandle handle() {
-            return handle;
-        }
-
-        /**
-         * {@return the specialized descriptor}
-         */
-        public FunctionDescriptor descriptor() {
-            return descriptor;
-        }
-
-        public void apply(MemorySegment tree_column, MemorySegment cell_renderer, Object... x2) {
-            try {
-                if (TRACE_DOWNCALLS) {
-                    traceDowncall("gtk_tree_view_column_set_attributes", tree_column, cell_renderer, x2);
-                }
-                 spreader.invokeExact(tree_column, cell_renderer, x2);
-            } catch(IllegalArgumentException | ClassCastException ex$)  {
-                throw ex$; // rethrow IAE from passing wrong number/type of args
-            } catch (Throwable ex$) {
-               throw new AssertionError("should not reach here", ex$);
-            }
-        }
-    }
-
-    private static class gtk_tree_view_column_set_cell_data_func {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_set_cell_data_func");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_cell_data_func(GtkTreeViewColumn *tree_column, GtkCellRenderer *cell_renderer, GtkTreeCellDataFunc func, gpointer func_data, GDestroyNotify destroy)
-     * }
-     */
-    public static FunctionDescriptor gtk_tree_view_column_set_cell_data_func$descriptor() {
-        return gtk_tree_view_column_set_cell_data_func.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_cell_data_func(GtkTreeViewColumn *tree_column, GtkCellRenderer *cell_renderer, GtkTreeCellDataFunc func, gpointer func_data, GDestroyNotify destroy)
-     * }
-     */
-    public static MethodHandle gtk_tree_view_column_set_cell_data_func$handle() {
-        return gtk_tree_view_column_set_cell_data_func.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_cell_data_func(GtkTreeViewColumn *tree_column, GtkCellRenderer *cell_renderer, GtkTreeCellDataFunc func, gpointer func_data, GDestroyNotify destroy)
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_set_cell_data_func$address() {
-        return gtk_tree_view_column_set_cell_data_func.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_cell_data_func(GtkTreeViewColumn *tree_column, GtkCellRenderer *cell_renderer, GtkTreeCellDataFunc func, gpointer func_data, GDestroyNotify destroy)
-     * }
-     */
-    public static void gtk_tree_view_column_set_cell_data_func(MemorySegment tree_column, MemorySegment cell_renderer, MemorySegment func, MemorySegment func_data, MemorySegment destroy) {
-        var mh$ = gtk_tree_view_column_set_cell_data_func.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_tree_view_column_set_cell_data_func", tree_column, cell_renderer, func, func_data, destroy);
-            }
-            mh$.invokeExact(tree_column, cell_renderer, func, func_data, destroy);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_tree_view_column_clear_attributes {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_clear_attributes");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_clear_attributes(GtkTreeViewColumn *tree_column, GtkCellRenderer *cell_renderer)
-     * }
-     */
-    public static FunctionDescriptor gtk_tree_view_column_clear_attributes$descriptor() {
-        return gtk_tree_view_column_clear_attributes.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_clear_attributes(GtkTreeViewColumn *tree_column, GtkCellRenderer *cell_renderer)
-     * }
-     */
-    public static MethodHandle gtk_tree_view_column_clear_attributes$handle() {
-        return gtk_tree_view_column_clear_attributes.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_clear_attributes(GtkTreeViewColumn *tree_column, GtkCellRenderer *cell_renderer)
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_clear_attributes$address() {
-        return gtk_tree_view_column_clear_attributes.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_clear_attributes(GtkTreeViewColumn *tree_column, GtkCellRenderer *cell_renderer)
-     * }
-     */
-    public static void gtk_tree_view_column_clear_attributes(MemorySegment tree_column, MemorySegment cell_renderer) {
-        var mh$ = gtk_tree_view_column_clear_attributes.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_tree_view_column_clear_attributes", tree_column, cell_renderer);
-            }
-            mh$.invokeExact(tree_column, cell_renderer);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_tree_view_column_set_spacing {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_set_spacing");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_spacing(GtkTreeViewColumn *tree_column, gint spacing)
-     * }
-     */
-    public static FunctionDescriptor gtk_tree_view_column_set_spacing$descriptor() {
-        return gtk_tree_view_column_set_spacing.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_spacing(GtkTreeViewColumn *tree_column, gint spacing)
-     * }
-     */
-    public static MethodHandle gtk_tree_view_column_set_spacing$handle() {
-        return gtk_tree_view_column_set_spacing.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_spacing(GtkTreeViewColumn *tree_column, gint spacing)
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_set_spacing$address() {
-        return gtk_tree_view_column_set_spacing.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_spacing(GtkTreeViewColumn *tree_column, gint spacing)
-     * }
-     */
-    public static void gtk_tree_view_column_set_spacing(MemorySegment tree_column, int spacing) {
-        var mh$ = gtk_tree_view_column_set_spacing.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_tree_view_column_set_spacing", tree_column, spacing);
-            }
-            mh$.invokeExact(tree_column, spacing);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_tree_view_column_get_spacing {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_get_spacing");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern gint gtk_tree_view_column_get_spacing(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static FunctionDescriptor gtk_tree_view_column_get_spacing$descriptor() {
-        return gtk_tree_view_column_get_spacing.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern gint gtk_tree_view_column_get_spacing(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static MethodHandle gtk_tree_view_column_get_spacing$handle() {
-        return gtk_tree_view_column_get_spacing.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern gint gtk_tree_view_column_get_spacing(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_get_spacing$address() {
-        return gtk_tree_view_column_get_spacing.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern gint gtk_tree_view_column_get_spacing(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static int gtk_tree_view_column_get_spacing(MemorySegment tree_column) {
-        var mh$ = gtk_tree_view_column_get_spacing.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_tree_view_column_get_spacing", tree_column);
-            }
-            return (int)mh$.invokeExact(tree_column);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_tree_view_column_set_visible {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_set_visible");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_visible(GtkTreeViewColumn *tree_column, gboolean visible)
-     * }
-     */
-    public static FunctionDescriptor gtk_tree_view_column_set_visible$descriptor() {
-        return gtk_tree_view_column_set_visible.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_visible(GtkTreeViewColumn *tree_column, gboolean visible)
-     * }
-     */
-    public static MethodHandle gtk_tree_view_column_set_visible$handle() {
-        return gtk_tree_view_column_set_visible.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_visible(GtkTreeViewColumn *tree_column, gboolean visible)
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_set_visible$address() {
-        return gtk_tree_view_column_set_visible.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_visible(GtkTreeViewColumn *tree_column, gboolean visible)
-     * }
-     */
-    public static void gtk_tree_view_column_set_visible(MemorySegment tree_column, int visible) {
-        var mh$ = gtk_tree_view_column_set_visible.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_tree_view_column_set_visible", tree_column, visible);
-            }
-            mh$.invokeExact(tree_column, visible);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_tree_view_column_get_visible {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_get_visible");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern gboolean gtk_tree_view_column_get_visible(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static FunctionDescriptor gtk_tree_view_column_get_visible$descriptor() {
-        return gtk_tree_view_column_get_visible.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern gboolean gtk_tree_view_column_get_visible(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static MethodHandle gtk_tree_view_column_get_visible$handle() {
-        return gtk_tree_view_column_get_visible.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern gboolean gtk_tree_view_column_get_visible(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_get_visible$address() {
-        return gtk_tree_view_column_get_visible.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern gboolean gtk_tree_view_column_get_visible(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static int gtk_tree_view_column_get_visible(MemorySegment tree_column) {
-        var mh$ = gtk_tree_view_column_get_visible.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_tree_view_column_get_visible", tree_column);
-            }
-            return (int)mh$.invokeExact(tree_column);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_tree_view_column_set_resizable {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_set_resizable");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_resizable(GtkTreeViewColumn *tree_column, gboolean resizable)
-     * }
-     */
-    public static FunctionDescriptor gtk_tree_view_column_set_resizable$descriptor() {
-        return gtk_tree_view_column_set_resizable.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_resizable(GtkTreeViewColumn *tree_column, gboolean resizable)
-     * }
-     */
-    public static MethodHandle gtk_tree_view_column_set_resizable$handle() {
-        return gtk_tree_view_column_set_resizable.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_resizable(GtkTreeViewColumn *tree_column, gboolean resizable)
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_set_resizable$address() {
-        return gtk_tree_view_column_set_resizable.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_resizable(GtkTreeViewColumn *tree_column, gboolean resizable)
-     * }
-     */
-    public static void gtk_tree_view_column_set_resizable(MemorySegment tree_column, int resizable) {
-        var mh$ = gtk_tree_view_column_set_resizable.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_tree_view_column_set_resizable", tree_column, resizable);
-            }
-            mh$.invokeExact(tree_column, resizable);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_tree_view_column_get_resizable {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_get_resizable");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern gboolean gtk_tree_view_column_get_resizable(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static FunctionDescriptor gtk_tree_view_column_get_resizable$descriptor() {
-        return gtk_tree_view_column_get_resizable.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern gboolean gtk_tree_view_column_get_resizable(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static MethodHandle gtk_tree_view_column_get_resizable$handle() {
-        return gtk_tree_view_column_get_resizable.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern gboolean gtk_tree_view_column_get_resizable(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_get_resizable$address() {
-        return gtk_tree_view_column_get_resizable.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern gboolean gtk_tree_view_column_get_resizable(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static int gtk_tree_view_column_get_resizable(MemorySegment tree_column) {
-        var mh$ = gtk_tree_view_column_get_resizable.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_tree_view_column_get_resizable", tree_column);
-            }
-            return (int)mh$.invokeExact(tree_column);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_tree_view_column_set_sizing {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_set_sizing");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_sizing(GtkTreeViewColumn *tree_column, GtkTreeViewColumnSizing type)
-     * }
-     */
-    public static FunctionDescriptor gtk_tree_view_column_set_sizing$descriptor() {
-        return gtk_tree_view_column_set_sizing.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_sizing(GtkTreeViewColumn *tree_column, GtkTreeViewColumnSizing type)
-     * }
-     */
-    public static MethodHandle gtk_tree_view_column_set_sizing$handle() {
-        return gtk_tree_view_column_set_sizing.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_sizing(GtkTreeViewColumn *tree_column, GtkTreeViewColumnSizing type)
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_set_sizing$address() {
-        return gtk_tree_view_column_set_sizing.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_sizing(GtkTreeViewColumn *tree_column, GtkTreeViewColumnSizing type)
-     * }
-     */
-    public static void gtk_tree_view_column_set_sizing(MemorySegment tree_column, int type) {
-        var mh$ = gtk_tree_view_column_set_sizing.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_tree_view_column_set_sizing", tree_column, type);
-            }
-            mh$.invokeExact(tree_column, type);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_tree_view_column_get_sizing {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_get_sizing");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GtkTreeViewColumnSizing gtk_tree_view_column_get_sizing(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static FunctionDescriptor gtk_tree_view_column_get_sizing$descriptor() {
-        return gtk_tree_view_column_get_sizing.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GtkTreeViewColumnSizing gtk_tree_view_column_get_sizing(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static MethodHandle gtk_tree_view_column_get_sizing$handle() {
-        return gtk_tree_view_column_get_sizing.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern GtkTreeViewColumnSizing gtk_tree_view_column_get_sizing(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_get_sizing$address() {
-        return gtk_tree_view_column_get_sizing.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern GtkTreeViewColumnSizing gtk_tree_view_column_get_sizing(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static int gtk_tree_view_column_get_sizing(MemorySegment tree_column) {
-        var mh$ = gtk_tree_view_column_get_sizing.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_tree_view_column_get_sizing", tree_column);
-            }
-            return (int)mh$.invokeExact(tree_column);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_tree_view_column_get_x_offset {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_get_x_offset");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern gint gtk_tree_view_column_get_x_offset(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static FunctionDescriptor gtk_tree_view_column_get_x_offset$descriptor() {
-        return gtk_tree_view_column_get_x_offset.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern gint gtk_tree_view_column_get_x_offset(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static MethodHandle gtk_tree_view_column_get_x_offset$handle() {
-        return gtk_tree_view_column_get_x_offset.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern gint gtk_tree_view_column_get_x_offset(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_get_x_offset$address() {
-        return gtk_tree_view_column_get_x_offset.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern gint gtk_tree_view_column_get_x_offset(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static int gtk_tree_view_column_get_x_offset(MemorySegment tree_column) {
-        var mh$ = gtk_tree_view_column_get_x_offset.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_tree_view_column_get_x_offset", tree_column);
-            }
-            return (int)mh$.invokeExact(tree_column);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_tree_view_column_get_width {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_get_width");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern gint gtk_tree_view_column_get_width(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static FunctionDescriptor gtk_tree_view_column_get_width$descriptor() {
-        return gtk_tree_view_column_get_width.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern gint gtk_tree_view_column_get_width(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static MethodHandle gtk_tree_view_column_get_width$handle() {
-        return gtk_tree_view_column_get_width.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern gint gtk_tree_view_column_get_width(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_get_width$address() {
-        return gtk_tree_view_column_get_width.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern gint gtk_tree_view_column_get_width(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static int gtk_tree_view_column_get_width(MemorySegment tree_column) {
-        var mh$ = gtk_tree_view_column_get_width.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_tree_view_column_get_width", tree_column);
-            }
-            return (int)mh$.invokeExact(tree_column);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_tree_view_column_get_fixed_width {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_get_fixed_width");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern gint gtk_tree_view_column_get_fixed_width(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static FunctionDescriptor gtk_tree_view_column_get_fixed_width$descriptor() {
-        return gtk_tree_view_column_get_fixed_width.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern gint gtk_tree_view_column_get_fixed_width(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static MethodHandle gtk_tree_view_column_get_fixed_width$handle() {
-        return gtk_tree_view_column_get_fixed_width.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern gint gtk_tree_view_column_get_fixed_width(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_get_fixed_width$address() {
-        return gtk_tree_view_column_get_fixed_width.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern gint gtk_tree_view_column_get_fixed_width(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static int gtk_tree_view_column_get_fixed_width(MemorySegment tree_column) {
-        var mh$ = gtk_tree_view_column_get_fixed_width.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_tree_view_column_get_fixed_width", tree_column);
-            }
-            return (int)mh$.invokeExact(tree_column);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_tree_view_column_set_fixed_width {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_set_fixed_width");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_fixed_width(GtkTreeViewColumn *tree_column, gint fixed_width)
-     * }
-     */
-    public static FunctionDescriptor gtk_tree_view_column_set_fixed_width$descriptor() {
-        return gtk_tree_view_column_set_fixed_width.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_fixed_width(GtkTreeViewColumn *tree_column, gint fixed_width)
-     * }
-     */
-    public static MethodHandle gtk_tree_view_column_set_fixed_width$handle() {
-        return gtk_tree_view_column_set_fixed_width.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_fixed_width(GtkTreeViewColumn *tree_column, gint fixed_width)
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_set_fixed_width$address() {
-        return gtk_tree_view_column_set_fixed_width.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_fixed_width(GtkTreeViewColumn *tree_column, gint fixed_width)
-     * }
-     */
-    public static void gtk_tree_view_column_set_fixed_width(MemorySegment tree_column, int fixed_width) {
-        var mh$ = gtk_tree_view_column_set_fixed_width.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_tree_view_column_set_fixed_width", tree_column, fixed_width);
-            }
-            mh$.invokeExact(tree_column, fixed_width);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_tree_view_column_set_min_width {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_INT
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_set_min_width");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_min_width(GtkTreeViewColumn *tree_column, gint min_width)
-     * }
-     */
-    public static FunctionDescriptor gtk_tree_view_column_set_min_width$descriptor() {
-        return gtk_tree_view_column_set_min_width.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_min_width(GtkTreeViewColumn *tree_column, gint min_width)
-     * }
-     */
-    public static MethodHandle gtk_tree_view_column_set_min_width$handle() {
-        return gtk_tree_view_column_set_min_width.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_min_width(GtkTreeViewColumn *tree_column, gint min_width)
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_set_min_width$address() {
-        return gtk_tree_view_column_set_min_width.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern void gtk_tree_view_column_set_min_width(GtkTreeViewColumn *tree_column, gint min_width)
-     * }
-     */
-    public static void gtk_tree_view_column_set_min_width(MemorySegment tree_column, int min_width) {
-        var mh$ = gtk_tree_view_column_set_min_width.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_tree_view_column_set_min_width", tree_column, min_width);
-            }
-            mh$.invokeExact(tree_column, min_width);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class gtk_tree_view_column_get_min_width {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("gtk_tree_view_column_get_min_width");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern gint gtk_tree_view_column_get_min_width(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static FunctionDescriptor gtk_tree_view_column_get_min_width$descriptor() {
-        return gtk_tree_view_column_get_min_width.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern gint gtk_tree_view_column_get_min_width(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static MethodHandle gtk_tree_view_column_get_min_width$handle() {
-        return gtk_tree_view_column_get_min_width.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern gint gtk_tree_view_column_get_min_width(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static MemorySegment gtk_tree_view_column_get_min_width$address() {
-        return gtk_tree_view_column_get_min_width.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern gint gtk_tree_view_column_get_min_width(GtkTreeViewColumn *tree_column)
-     * }
-     */
-    public static int gtk_tree_view_column_get_min_width(MemorySegment tree_column) {
-        var mh$ = gtk_tree_view_column_get_min_width.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("gtk_tree_view_column_get_min_width", tree_column);
-            }
-            return (int)mh$.invokeExact(tree_column);
         } catch (Error | RuntimeException ex) {
            throw ex;
         } catch (Throwable ex$) {

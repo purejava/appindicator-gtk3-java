@@ -2,19 +2,255 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.AddressLayout;
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.Linker;
-import java.lang.foreign.MemorySegment;
-import java.lang.invoke.MethodHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
-import static java.lang.foreign.ValueLayout.OfLong;
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 class app_indicator_h_7 extends app_indicator_h_8 {
 
     app_indicator_h_7() {
         // Should not be called directly
     }
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GdkCursor_slistautoptr
+     * }
+     */
+    public static final AddressLayout GdkCursor_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GdkCursor_queueautoptr
+     * }
+     */
+    public static final AddressLayout GdkCursor_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GdkDevice *GdkDevice_autoptr
+     * }
+     */
+    public static final AddressLayout GdkDevice_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GdkDevice_listautoptr
+     * }
+     */
+    public static final AddressLayout GdkDevice_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GdkDevice_slistautoptr
+     * }
+     */
+    public static final AddressLayout GdkDevice_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GdkDevice_queueautoptr
+     * }
+     */
+    public static final AddressLayout GdkDevice_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GdkDeviceManager *GdkDeviceManager_autoptr
+     * }
+     */
+    public static final AddressLayout GdkDeviceManager_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GdkDeviceManager_listautoptr
+     * }
+     */
+    public static final AddressLayout GdkDeviceManager_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GdkDeviceManager_slistautoptr
+     * }
+     */
+    public static final AddressLayout GdkDeviceManager_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GdkDeviceManager_queueautoptr
+     * }
+     */
+    public static final AddressLayout GdkDeviceManager_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GdkDisplay *GdkDisplay_autoptr
+     * }
+     */
+    public static final AddressLayout GdkDisplay_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GdkDisplay_listautoptr
+     * }
+     */
+    public static final AddressLayout GdkDisplay_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GdkDisplay_slistautoptr
+     * }
+     */
+    public static final AddressLayout GdkDisplay_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GdkDisplay_queueautoptr
+     * }
+     */
+    public static final AddressLayout GdkDisplay_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GdkDisplayManager *GdkDisplayManager_autoptr
+     * }
+     */
+    public static final AddressLayout GdkDisplayManager_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GdkDisplayManager_listautoptr
+     * }
+     */
+    public static final AddressLayout GdkDisplayManager_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GdkDisplayManager_slistautoptr
+     * }
+     */
+    public static final AddressLayout GdkDisplayManager_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GdkDisplayManager_queueautoptr
+     * }
+     */
+    public static final AddressLayout GdkDisplayManager_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GdkDragContext *GdkDragContext_autoptr
+     * }
+     */
+    public static final AddressLayout GdkDragContext_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GdkDragContext_listautoptr
+     * }
+     */
+    public static final AddressLayout GdkDragContext_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GdkDragContext_slistautoptr
+     * }
+     */
+    public static final AddressLayout GdkDragContext_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GdkDragContext_queueautoptr
+     * }
+     */
+    public static final AddressLayout GdkDragContext_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GdkFrameClock *GdkFrameClock_autoptr
+     * }
+     */
+    public static final AddressLayout GdkFrameClock_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GdkFrameClock_listautoptr
+     * }
+     */
+    public static final AddressLayout GdkFrameClock_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GdkFrameClock_slistautoptr
+     * }
+     */
+    public static final AddressLayout GdkFrameClock_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GdkFrameClock_queueautoptr
+     * }
+     */
+    public static final AddressLayout GdkFrameClock_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GdkGLContext *GdkGLContext_autoptr
+     * }
+     */
+    public static final AddressLayout GdkGLContext_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GdkGLContext_listautoptr
+     * }
+     */
+    public static final AddressLayout GdkGLContext_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GdkGLContext_slistautoptr
+     * }
+     */
+    public static final AddressLayout GdkGLContext_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GdkGLContext_queueautoptr
+     * }
+     */
+    public static final AddressLayout GdkGLContext_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GdkKeymap *GdkKeymap_autoptr
+     * }
+     */
+    public static final AddressLayout GdkKeymap_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GdkKeymap_listautoptr
+     * }
+     */
+    public static final AddressLayout GdkKeymap_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GdkKeymap_slistautoptr
+     * }
+     */
+    public static final AddressLayout GdkKeymap_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GdkKeymap_queueautoptr
+     * }
+     */
+    public static final AddressLayout GdkKeymap_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GdkScreen *GdkScreen_autoptr
+     * }
+     */
+    public static final AddressLayout GdkScreen_autoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GList *GdkScreen_listautoptr
+     * }
+     */
+    public static final AddressLayout GdkScreen_listautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GSList *GdkScreen_slistautoptr
+     * }
+     */
+    public static final AddressLayout GdkScreen_slistautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GQueue *GdkScreen_queueautoptr
+     * }
+     */
+    public static final AddressLayout GdkScreen_queueautoptr = app_indicator_h.C_POINTER;
+    /**
+     * {@snippet lang=c :
+     * typedef GdkVisual *GdkVisual_autoptr
+     * }
+     */
+    public static final AddressLayout GdkVisual_autoptr = app_indicator_h.C_POINTER;
     /**
      * {@snippet lang=c :
      * typedef GList *GdkVisual_listautoptr
@@ -25292,239 +25528,5 @@ class app_indicator_h_7 extends app_indicator_h_8 {
      * }
      */
     public static final AddressLayout AtkObjectFactory_queueautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef AtkObject *AtkObject_autoptr
-     * }
-     */
-    public static final AddressLayout AtkObject_autoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GList *AtkObject_listautoptr
-     * }
-     */
-    public static final AddressLayout AtkObject_listautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GSList *AtkObject_slistautoptr
-     * }
-     */
-    public static final AddressLayout AtkObject_slistautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GQueue *AtkObject_queueautoptr
-     * }
-     */
-    public static final AddressLayout AtkObject_queueautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef AtkPlug *AtkPlug_autoptr
-     * }
-     */
-    public static final AddressLayout AtkPlug_autoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GList *AtkPlug_listautoptr
-     * }
-     */
-    public static final AddressLayout AtkPlug_listautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GSList *AtkPlug_slistautoptr
-     * }
-     */
-    public static final AddressLayout AtkPlug_slistautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GQueue *AtkPlug_queueautoptr
-     * }
-     */
-    public static final AddressLayout AtkPlug_queueautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef AtkRegistry *AtkRegistry_autoptr
-     * }
-     */
-    public static final AddressLayout AtkRegistry_autoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GList *AtkRegistry_listautoptr
-     * }
-     */
-    public static final AddressLayout AtkRegistry_listautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GSList *AtkRegistry_slistautoptr
-     * }
-     */
-    public static final AddressLayout AtkRegistry_slistautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GQueue *AtkRegistry_queueautoptr
-     * }
-     */
-    public static final AddressLayout AtkRegistry_queueautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef AtkRelationSet *AtkRelationSet_autoptr
-     * }
-     */
-    public static final AddressLayout AtkRelationSet_autoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GList *AtkRelationSet_listautoptr
-     * }
-     */
-    public static final AddressLayout AtkRelationSet_listautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GSList *AtkRelationSet_slistautoptr
-     * }
-     */
-    public static final AddressLayout AtkRelationSet_slistautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GQueue *AtkRelationSet_queueautoptr
-     * }
-     */
-    public static final AddressLayout AtkRelationSet_queueautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef AtkRelation *AtkRelation_autoptr
-     * }
-     */
-    public static final AddressLayout AtkRelation_autoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GList *AtkRelation_listautoptr
-     * }
-     */
-    public static final AddressLayout AtkRelation_listautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GSList *AtkRelation_slistautoptr
-     * }
-     */
-    public static final AddressLayout AtkRelation_slistautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GQueue *AtkRelation_queueautoptr
-     * }
-     */
-    public static final AddressLayout AtkRelation_queueautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef AtkSelection *AtkSelection_autoptr
-     * }
-     */
-    public static final AddressLayout AtkSelection_autoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GList *AtkSelection_listautoptr
-     * }
-     */
-    public static final AddressLayout AtkSelection_listautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GSList *AtkSelection_slistautoptr
-     * }
-     */
-    public static final AddressLayout AtkSelection_slistautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GQueue *AtkSelection_queueautoptr
-     * }
-     */
-    public static final AddressLayout AtkSelection_queueautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef AtkSocket *AtkSocket_autoptr
-     * }
-     */
-    public static final AddressLayout AtkSocket_autoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GList *AtkSocket_listautoptr
-     * }
-     */
-    public static final AddressLayout AtkSocket_listautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GSList *AtkSocket_slistautoptr
-     * }
-     */
-    public static final AddressLayout AtkSocket_slistautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GQueue *AtkSocket_queueautoptr
-     * }
-     */
-    public static final AddressLayout AtkSocket_queueautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef AtkStateSet *AtkStateSet_autoptr
-     * }
-     */
-    public static final AddressLayout AtkStateSet_autoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GList *AtkStateSet_listautoptr
-     * }
-     */
-    public static final AddressLayout AtkStateSet_listautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GSList *AtkStateSet_slistautoptr
-     * }
-     */
-    public static final AddressLayout AtkStateSet_slistautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GQueue *AtkStateSet_queueautoptr
-     * }
-     */
-    public static final AddressLayout AtkStateSet_queueautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef AtkStreamableContent *AtkStreamableContent_autoptr
-     * }
-     */
-    public static final AddressLayout AtkStreamableContent_autoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GList *AtkStreamableContent_listautoptr
-     * }
-     */
-    public static final AddressLayout AtkStreamableContent_listautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GSList *AtkStreamableContent_slistautoptr
-     * }
-     */
-    public static final AddressLayout AtkStreamableContent_slistautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GQueue *AtkStreamableContent_queueautoptr
-     * }
-     */
-    public static final AddressLayout AtkStreamableContent_queueautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef AtkTableCell *AtkTableCell_autoptr
-     * }
-     */
-    public static final AddressLayout AtkTableCell_autoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GList *AtkTableCell_listautoptr
-     * }
-     */
-    public static final AddressLayout AtkTableCell_listautoptr = app_indicator_h.C_POINTER;
-    /**
-     * {@snippet lang=c :
-     * typedef GSList *AtkTableCell_slistautoptr
-     * }
-     */
-    public static final AddressLayout AtkTableCell_slistautoptr = app_indicator_h.C_POINTER;
 }
 

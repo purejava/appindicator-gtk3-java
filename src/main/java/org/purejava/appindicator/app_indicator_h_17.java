@@ -2,15 +2,139 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.lang.invoke.MethodHandle;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
 import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 class app_indicator_h_17 extends app_indicator_h_18 {
 
     app_indicator_h_17() {
         // Should not be called directly
+    }
+
+    private static class g_list_free_1 {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_list_free_1");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_list_free_1(GList *list)
+     * }
+     */
+    public static FunctionDescriptor g_list_free_1$descriptor() {
+        return g_list_free_1.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_list_free_1(GList *list)
+     * }
+     */
+    public static MethodHandle g_list_free_1$handle() {
+        return g_list_free_1.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_list_free_1(GList *list)
+     * }
+     */
+    public static MemorySegment g_list_free_1$address() {
+        return g_list_free_1.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_list_free_1(GList *list)
+     * }
+     */
+    public static void g_list_free_1(MemorySegment list) {
+        var mh$ = g_list_free_1.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_list_free_1", list);
+            }
+            mh$.invokeExact(list);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_list_free_full {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_list_free_full");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_list_free_full(GList *list, GDestroyNotify free_func)
+     * }
+     */
+    public static FunctionDescriptor g_list_free_full$descriptor() {
+        return g_list_free_full.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_list_free_full(GList *list, GDestroyNotify free_func)
+     * }
+     */
+    public static MethodHandle g_list_free_full$handle() {
+        return g_list_free_full.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_list_free_full(GList *list, GDestroyNotify free_func)
+     * }
+     */
+    public static MemorySegment g_list_free_full$address() {
+        return g_list_free_full.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_list_free_full(GList *list, GDestroyNotify free_func)
+     * }
+     */
+    public static void g_list_free_full(MemorySegment list, MemorySegment free_func) {
+        var mh$ = g_list_free_full.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_list_free_full", list, free_func);
+            }
+            mh$.invokeExact(list, free_func);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
     }
 
     private static class g_list_append {
@@ -12394,6 +12518,125 @@ class app_indicator_h_17 extends app_indicator_h_18 {
         }
     }
 
+    private static class g_source_set_ready_time_ns {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_source_set_ready_time_ns");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_source_set_ready_time_ns(GSource *source, uint64_t ready_time)
+     * }
+     */
+    public static FunctionDescriptor g_source_set_ready_time_ns$descriptor() {
+        return g_source_set_ready_time_ns.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_source_set_ready_time_ns(GSource *source, uint64_t ready_time)
+     * }
+     */
+    public static MethodHandle g_source_set_ready_time_ns$handle() {
+        return g_source_set_ready_time_ns.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_source_set_ready_time_ns(GSource *source, uint64_t ready_time)
+     * }
+     */
+    public static MemorySegment g_source_set_ready_time_ns$address() {
+        return g_source_set_ready_time_ns.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_source_set_ready_time_ns(GSource *source, uint64_t ready_time)
+     * }
+     */
+    public static void g_source_set_ready_time_ns(MemorySegment source, long ready_time) {
+        var mh$ = g_source_set_ready_time_ns.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_source_set_ready_time_ns", source, ready_time);
+            }
+            mh$.invokeExact(source, ready_time);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_source_clear_ready_time {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_source_clear_ready_time");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_source_clear_ready_time(GSource *source)
+     * }
+     */
+    public static FunctionDescriptor g_source_clear_ready_time$descriptor() {
+        return g_source_clear_ready_time.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_source_clear_ready_time(GSource *source)
+     * }
+     */
+    public static MethodHandle g_source_clear_ready_time$handle() {
+        return g_source_clear_ready_time.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_source_clear_ready_time(GSource *source)
+     * }
+     */
+    public static MemorySegment g_source_clear_ready_time$address() {
+        return g_source_clear_ready_time.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_source_clear_ready_time(GSource *source)
+     * }
+     */
+    public static void g_source_clear_ready_time(MemorySegment source) {
+        var mh$ = g_source_clear_ready_time.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_source_clear_ready_time", source);
+            }
+            mh$.invokeExact(source);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
     private static class g_source_get_ready_time {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_LONG,
@@ -12447,6 +12690,67 @@ class app_indicator_h_17 extends app_indicator_h_18 {
                 traceDowncall("g_source_get_ready_time", source);
             }
             return (long)mh$.invokeExact(source);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_source_get_ready_time_ns {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_source_get_ready_time_ns");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern gboolean g_source_get_ready_time_ns(GSource *source, uint64_t *ready_time)
+     * }
+     */
+    public static FunctionDescriptor g_source_get_ready_time_ns$descriptor() {
+        return g_source_get_ready_time_ns.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern gboolean g_source_get_ready_time_ns(GSource *source, uint64_t *ready_time)
+     * }
+     */
+    public static MethodHandle g_source_get_ready_time_ns$handle() {
+        return g_source_get_ready_time_ns.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_source_get_ready_time_ns(GSource *source, uint64_t *ready_time)
+     * }
+     */
+    public static MemorySegment g_source_get_ready_time_ns$address() {
+        return g_source_get_ready_time_ns.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern gboolean g_source_get_ready_time_ns(GSource *source, uint64_t *ready_time)
+     * }
+     */
+    public static int g_source_get_ready_time_ns(MemorySegment source, MemorySegment ready_time) {
+        var mh$ = g_source_get_ready_time_ns.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_source_get_ready_time_ns", source, ready_time);
+            }
+            return (int)mh$.invokeExact(source, ready_time);
         } catch (Error | RuntimeException ex) {
            throw ex;
         } catch (Throwable ex$) {
@@ -13119,6 +13423,66 @@ class app_indicator_h_17 extends app_indicator_h_18 {
         }
     }
 
+    private static class g_source_get_time_ns {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_source_get_time_ns");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern uint64_t g_source_get_time_ns(GSource *source)
+     * }
+     */
+    public static FunctionDescriptor g_source_get_time_ns$descriptor() {
+        return g_source_get_time_ns.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern uint64_t g_source_get_time_ns(GSource *source)
+     * }
+     */
+    public static MethodHandle g_source_get_time_ns$handle() {
+        return g_source_get_time_ns.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern uint64_t g_source_get_time_ns(GSource *source)
+     * }
+     */
+    public static MemorySegment g_source_get_time_ns$address() {
+        return g_source_get_time_ns.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern uint64_t g_source_get_time_ns(GSource *source)
+     * }
+     */
+    public static long g_source_get_time_ns(MemorySegment source) {
+        var mh$ = g_source_get_time_ns.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_source_get_time_ns", source);
+            }
+            return (long)mh$.invokeExact(source);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
     private static class g_idle_source_new {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
@@ -13288,6 +13652,66 @@ class app_indicator_h_17 extends app_indicator_h_18 {
         try {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("g_timeout_source_new", interval);
+            }
+            return (MemorySegment)mh$.invokeExact(interval);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_timeout_source_new_ns {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_timeout_source_new_ns");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GSource *g_timeout_source_new_ns(uint64_t interval)
+     * }
+     */
+    public static FunctionDescriptor g_timeout_source_new_ns$descriptor() {
+        return g_timeout_source_new_ns.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GSource *g_timeout_source_new_ns(uint64_t interval)
+     * }
+     */
+    public static MethodHandle g_timeout_source_new_ns$handle() {
+        return g_timeout_source_new_ns.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GSource *g_timeout_source_new_ns(uint64_t interval)
+     * }
+     */
+    public static MemorySegment g_timeout_source_new_ns$address() {
+        return g_timeout_source_new_ns.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern GSource *g_timeout_source_new_ns(uint64_t interval)
+     * }
+     */
+    public static MemorySegment g_timeout_source_new_ns(long interval) {
+        var mh$ = g_timeout_source_new_ns.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_timeout_source_new_ns", interval);
             }
             return (MemorySegment)mh$.invokeExact(interval);
         } catch (Error | RuntimeException ex) {
@@ -25570,6 +25994,65 @@ class app_indicator_h_17 extends app_indicator_h_18 {
         }
     }
 
+    private static class g_string_free_deep {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_string_free_deep");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void (g_string_free_deep)(GString *string)
+     * }
+     */
+    public static FunctionDescriptor g_string_free_deep$descriptor() {
+        return g_string_free_deep.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void (g_string_free_deep)(GString *string)
+     * }
+     */
+    public static MethodHandle g_string_free_deep$handle() {
+        return g_string_free_deep.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void (g_string_free_deep)(GString *string)
+     * }
+     */
+    public static MemorySegment g_string_free_deep$address() {
+        return g_string_free_deep.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void (g_string_free_deep)(GString *string)
+     * }
+     */
+    public static void g_string_free_deep(MemorySegment string) {
+        var mh$ = g_string_free_deep.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_string_free_deep", string);
+            }
+            mh$.invokeExact(string);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
     private static class g_string_free_and_steal {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER,
@@ -30747,6 +31230,74 @@ class app_indicator_h_17 extends app_indicator_h_18 {
         }
     }
 
+    private static class g_key_file_load_unix_configurations {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_key_file_load_unix_configurations");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern gboolean g_key_file_load_unix_configurations(GKeyFile *key_file, const gchar *project, const gchar *etc_subdir, const gchar *run_subdir, const gchar *usr_subdir, const gchar *config_name, const gchar *config_suffix, GKeyFileFlags flags, GError **error)
+     * }
+     */
+    public static FunctionDescriptor g_key_file_load_unix_configurations$descriptor() {
+        return g_key_file_load_unix_configurations.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern gboolean g_key_file_load_unix_configurations(GKeyFile *key_file, const gchar *project, const gchar *etc_subdir, const gchar *run_subdir, const gchar *usr_subdir, const gchar *config_name, const gchar *config_suffix, GKeyFileFlags flags, GError **error)
+     * }
+     */
+    public static MethodHandle g_key_file_load_unix_configurations$handle() {
+        return g_key_file_load_unix_configurations.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gboolean g_key_file_load_unix_configurations(GKeyFile *key_file, const gchar *project, const gchar *etc_subdir, const gchar *run_subdir, const gchar *usr_subdir, const gchar *config_name, const gchar *config_suffix, GKeyFileFlags flags, GError **error)
+     * }
+     */
+    public static MemorySegment g_key_file_load_unix_configurations$address() {
+        return g_key_file_load_unix_configurations.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern gboolean g_key_file_load_unix_configurations(GKeyFile *key_file, const gchar *project, const gchar *etc_subdir, const gchar *run_subdir, const gchar *usr_subdir, const gchar *config_name, const gchar *config_suffix, GKeyFileFlags flags, GError **error)
+     * }
+     */
+    public static int g_key_file_load_unix_configurations(MemorySegment key_file, MemorySegment project, MemorySegment etc_subdir, MemorySegment run_subdir, MemorySegment usr_subdir, MemorySegment config_name, MemorySegment config_suffix, int flags, MemorySegment error) {
+        var mh$ = g_key_file_load_unix_configurations.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_key_file_load_unix_configurations", key_file, project, etc_subdir, run_subdir, usr_subdir, config_name, config_suffix, flags, error);
+            }
+            return (int)mh$.invokeExact(key_file, project, etc_subdir, run_subdir, usr_subdir, config_name, config_suffix, flags, error);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
     private static class g_key_file_load_from_bytes {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_INT,
@@ -34818,6 +35369,72 @@ class app_indicator_h_17 extends app_indicator_h_18 {
                 traceDowncall("g_markup_parse_context_get_tag_start", context, line_number, char_number, offset);
             }
             mh$.invokeExact(context, line_number, char_number, offset);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class g_markup_parse_context_get_attribute_position {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_markup_parse_context_get_attribute_position");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_markup_parse_context_get_attribute_position(GMarkupParseContext *context, unsigned int attr, size_t *start_lines, size_t *start_chars, size_t *start_offset, size_t *end_lines, size_t *end_chars, size_t *end_offset)
+     * }
+     */
+    public static FunctionDescriptor g_markup_parse_context_get_attribute_position$descriptor() {
+        return g_markup_parse_context_get_attribute_position.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_markup_parse_context_get_attribute_position(GMarkupParseContext *context, unsigned int attr, size_t *start_lines, size_t *start_chars, size_t *start_offset, size_t *end_lines, size_t *end_chars, size_t *end_offset)
+     * }
+     */
+    public static MethodHandle g_markup_parse_context_get_attribute_position$handle() {
+        return g_markup_parse_context_get_attribute_position.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_markup_parse_context_get_attribute_position(GMarkupParseContext *context, unsigned int attr, size_t *start_lines, size_t *start_chars, size_t *start_offset, size_t *end_lines, size_t *end_chars, size_t *end_offset)
+     * }
+     */
+    public static MemorySegment g_markup_parse_context_get_attribute_position$address() {
+        return g_markup_parse_context_get_attribute_position.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void g_markup_parse_context_get_attribute_position(GMarkupParseContext *context, unsigned int attr, size_t *start_lines, size_t *start_chars, size_t *start_offset, size_t *end_lines, size_t *end_chars, size_t *end_offset)
+     * }
+     */
+    public static void g_markup_parse_context_get_attribute_position(MemorySegment context, int attr, MemorySegment start_lines, MemorySegment start_chars, MemorySegment start_offset, MemorySegment end_lines, MemorySegment end_chars, MemorySegment end_offset) {
+        var mh$ = g_markup_parse_context_get_attribute_position.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_markup_parse_context_get_attribute_position", context, attr, start_lines, start_chars, start_offset, end_lines, end_chars, end_offset);
+            }
+            mh$.invokeExact(context, attr, start_lines, start_chars, start_offset, end_lines, end_chars, end_offset);
         } catch (Error | RuntimeException ex) {
            throw ex;
         } catch (Throwable ex$) {
@@ -39708,612 +40325,6 @@ class app_indicator_h_17 extends app_indicator_h_18 {
                 traceDowncall("g_variant_get_uint64", value);
             }
             return (long)mh$.invokeExact(value);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_variant_get_handle {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_INT,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_get_handle");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern gint32 g_variant_get_handle(GVariant *value)
-     * }
-     */
-    public static FunctionDescriptor g_variant_get_handle$descriptor() {
-        return g_variant_get_handle.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern gint32 g_variant_get_handle(GVariant *value)
-     * }
-     */
-    public static MethodHandle g_variant_get_handle$handle() {
-        return g_variant_get_handle.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern gint32 g_variant_get_handle(GVariant *value)
-     * }
-     */
-    public static MemorySegment g_variant_get_handle$address() {
-        return g_variant_get_handle.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern gint32 g_variant_get_handle(GVariant *value)
-     * }
-     */
-    public static int g_variant_get_handle(MemorySegment value) {
-        var mh$ = g_variant_get_handle.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_variant_get_handle", value);
-            }
-            return (int)mh$.invokeExact(value);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_variant_get_double {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_DOUBLE,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_get_double");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern gdouble g_variant_get_double(GVariant *value)
-     * }
-     */
-    public static FunctionDescriptor g_variant_get_double$descriptor() {
-        return g_variant_get_double.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern gdouble g_variant_get_double(GVariant *value)
-     * }
-     */
-    public static MethodHandle g_variant_get_double$handle() {
-        return g_variant_get_double.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern gdouble g_variant_get_double(GVariant *value)
-     * }
-     */
-    public static MemorySegment g_variant_get_double$address() {
-        return g_variant_get_double.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern gdouble g_variant_get_double(GVariant *value)
-     * }
-     */
-    public static double g_variant_get_double(MemorySegment value) {
-        var mh$ = g_variant_get_double.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_variant_get_double", value);
-            }
-            return (double)mh$.invokeExact(value);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_variant_get_variant {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_get_variant");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern GVariant *g_variant_get_variant(GVariant *value)
-     * }
-     */
-    public static FunctionDescriptor g_variant_get_variant$descriptor() {
-        return g_variant_get_variant.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern GVariant *g_variant_get_variant(GVariant *value)
-     * }
-     */
-    public static MethodHandle g_variant_get_variant$handle() {
-        return g_variant_get_variant.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern GVariant *g_variant_get_variant(GVariant *value)
-     * }
-     */
-    public static MemorySegment g_variant_get_variant$address() {
-        return g_variant_get_variant.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern GVariant *g_variant_get_variant(GVariant *value)
-     * }
-     */
-    public static MemorySegment g_variant_get_variant(MemorySegment value) {
-        var mh$ = g_variant_get_variant.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_variant_get_variant", value);
-            }
-            return (MemorySegment)mh$.invokeExact(value);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_variant_get_string {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_get_string");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern const gchar *g_variant_get_string(GVariant *value, gsize *length)
-     * }
-     */
-    public static FunctionDescriptor g_variant_get_string$descriptor() {
-        return g_variant_get_string.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern const gchar *g_variant_get_string(GVariant *value, gsize *length)
-     * }
-     */
-    public static MethodHandle g_variant_get_string$handle() {
-        return g_variant_get_string.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern const gchar *g_variant_get_string(GVariant *value, gsize *length)
-     * }
-     */
-    public static MemorySegment g_variant_get_string$address() {
-        return g_variant_get_string.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern const gchar *g_variant_get_string(GVariant *value, gsize *length)
-     * }
-     */
-    public static MemorySegment g_variant_get_string(MemorySegment value, MemorySegment length) {
-        var mh$ = g_variant_get_string.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_variant_get_string", value, length);
-            }
-            return (MemorySegment)mh$.invokeExact(value, length);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_variant_dup_string {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_dup_string");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern gchar *g_variant_dup_string(GVariant *value, gsize *length)
-     * }
-     */
-    public static FunctionDescriptor g_variant_dup_string$descriptor() {
-        return g_variant_dup_string.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern gchar *g_variant_dup_string(GVariant *value, gsize *length)
-     * }
-     */
-    public static MethodHandle g_variant_dup_string$handle() {
-        return g_variant_dup_string.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern gchar *g_variant_dup_string(GVariant *value, gsize *length)
-     * }
-     */
-    public static MemorySegment g_variant_dup_string$address() {
-        return g_variant_dup_string.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern gchar *g_variant_dup_string(GVariant *value, gsize *length)
-     * }
-     */
-    public static MemorySegment g_variant_dup_string(MemorySegment value, MemorySegment length) {
-        var mh$ = g_variant_dup_string.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_variant_dup_string", value, length);
-            }
-            return (MemorySegment)mh$.invokeExact(value, length);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_variant_get_strv {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_get_strv");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern const gchar **g_variant_get_strv(GVariant *value, gsize *length)
-     * }
-     */
-    public static FunctionDescriptor g_variant_get_strv$descriptor() {
-        return g_variant_get_strv.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern const gchar **g_variant_get_strv(GVariant *value, gsize *length)
-     * }
-     */
-    public static MethodHandle g_variant_get_strv$handle() {
-        return g_variant_get_strv.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern const gchar **g_variant_get_strv(GVariant *value, gsize *length)
-     * }
-     */
-    public static MemorySegment g_variant_get_strv$address() {
-        return g_variant_get_strv.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern const gchar **g_variant_get_strv(GVariant *value, gsize *length)
-     * }
-     */
-    public static MemorySegment g_variant_get_strv(MemorySegment value, MemorySegment length) {
-        var mh$ = g_variant_get_strv.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_variant_get_strv", value, length);
-            }
-            return (MemorySegment)mh$.invokeExact(value, length);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_variant_dup_strv {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_dup_strv");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern gchar **g_variant_dup_strv(GVariant *value, gsize *length)
-     * }
-     */
-    public static FunctionDescriptor g_variant_dup_strv$descriptor() {
-        return g_variant_dup_strv.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern gchar **g_variant_dup_strv(GVariant *value, gsize *length)
-     * }
-     */
-    public static MethodHandle g_variant_dup_strv$handle() {
-        return g_variant_dup_strv.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern gchar **g_variant_dup_strv(GVariant *value, gsize *length)
-     * }
-     */
-    public static MemorySegment g_variant_dup_strv$address() {
-        return g_variant_dup_strv.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern gchar **g_variant_dup_strv(GVariant *value, gsize *length)
-     * }
-     */
-    public static MemorySegment g_variant_dup_strv(MemorySegment value, MemorySegment length) {
-        var mh$ = g_variant_dup_strv.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_variant_dup_strv", value, length);
-            }
-            return (MemorySegment)mh$.invokeExact(value, length);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_variant_get_objv {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_get_objv");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern const gchar **g_variant_get_objv(GVariant *value, gsize *length)
-     * }
-     */
-    public static FunctionDescriptor g_variant_get_objv$descriptor() {
-        return g_variant_get_objv.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern const gchar **g_variant_get_objv(GVariant *value, gsize *length)
-     * }
-     */
-    public static MethodHandle g_variant_get_objv$handle() {
-        return g_variant_get_objv.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern const gchar **g_variant_get_objv(GVariant *value, gsize *length)
-     * }
-     */
-    public static MemorySegment g_variant_get_objv$address() {
-        return g_variant_get_objv.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern const gchar **g_variant_get_objv(GVariant *value, gsize *length)
-     * }
-     */
-    public static MemorySegment g_variant_get_objv(MemorySegment value, MemorySegment length) {
-        var mh$ = g_variant_get_objv.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_variant_get_objv", value, length);
-            }
-            return (MemorySegment)mh$.invokeExact(value, length);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_variant_dup_objv {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_dup_objv");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern gchar **g_variant_dup_objv(GVariant *value, gsize *length)
-     * }
-     */
-    public static FunctionDescriptor g_variant_dup_objv$descriptor() {
-        return g_variant_dup_objv.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern gchar **g_variant_dup_objv(GVariant *value, gsize *length)
-     * }
-     */
-    public static MethodHandle g_variant_dup_objv$handle() {
-        return g_variant_dup_objv.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern gchar **g_variant_dup_objv(GVariant *value, gsize *length)
-     * }
-     */
-    public static MemorySegment g_variant_dup_objv$address() {
-        return g_variant_dup_objv.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern gchar **g_variant_dup_objv(GVariant *value, gsize *length)
-     * }
-     */
-    public static MemorySegment g_variant_dup_objv(MemorySegment value, MemorySegment length) {
-        var mh$ = g_variant_dup_objv.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_variant_dup_objv", value, length);
-            }
-            return (MemorySegment)mh$.invokeExact(value, length);
-        } catch (Error | RuntimeException ex) {
-           throw ex;
-        } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
-        }
-    }
-
-    private static class g_variant_get_bytestring {
-        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            app_indicator_h.C_POINTER,
-            app_indicator_h.C_POINTER
-        );
-
-        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("g_variant_get_bytestring");
-
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
-    }
-
-    /**
-     * Function descriptor for:
-     * {@snippet lang=c :
-     * extern const gchar *g_variant_get_bytestring(GVariant *value)
-     * }
-     */
-    public static FunctionDescriptor g_variant_get_bytestring$descriptor() {
-        return g_variant_get_bytestring.DESC;
-    }
-
-    /**
-     * Downcall method handle for:
-     * {@snippet lang=c :
-     * extern const gchar *g_variant_get_bytestring(GVariant *value)
-     * }
-     */
-    public static MethodHandle g_variant_get_bytestring$handle() {
-        return g_variant_get_bytestring.HANDLE;
-    }
-
-    /**
-     * Address for:
-     * {@snippet lang=c :
-     * extern const gchar *g_variant_get_bytestring(GVariant *value)
-     * }
-     */
-    public static MemorySegment g_variant_get_bytestring$address() {
-        return g_variant_get_bytestring.ADDR;
-    }
-
-    /**
-     * {@snippet lang=c :
-     * extern const gchar *g_variant_get_bytestring(GVariant *value)
-     * }
-     */
-    public static MemorySegment g_variant_get_bytestring(MemorySegment value) {
-        var mh$ = g_variant_get_bytestring.HANDLE;
-        try {
-            if (TRACE_DOWNCALLS) {
-                traceDowncall("g_variant_get_bytestring", value);
-            }
-            return (MemorySegment)mh$.invokeExact(value);
         } catch (Error | RuntimeException ex) {
            throw ex;
         } catch (Throwable ex$) {

@@ -2,10 +2,29 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 class app_indicator_h_20 extends app_indicator_h_21 {
 
     app_indicator_h_20() {
         // Should not be called directly
+    }
+    private static final int GDK_KEY_q = (int)113L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_q 113
+     * }
+     */
+    public static int GDK_KEY_q() {
+        return GDK_KEY_q;
     }
     private static final int GDK_KEY_r = (int)114L;
     /**
@@ -8997,15 +9016,6 @@ class app_indicator_h_20 extends app_indicator_h_21 {
      */
     public static int GDK_KEY_Hangul_I() {
         return GDK_KEY_Hangul_I;
-    }
-    private static final int GDK_KEY_Hangul_J_Kiyeog = (int)3796L;
-    /**
-     * {@snippet lang=c :
-     * #define GDK_KEY_Hangul_J_Kiyeog 3796
-     * }
-     */
-    public static int GDK_KEY_Hangul_J_Kiyeog() {
-        return GDK_KEY_Hangul_J_Kiyeog;
     }
 }
 

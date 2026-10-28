@@ -2,11 +2,15 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.util.function.Consumer;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
-import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
-import static java.lang.foreign.ValueLayout.OfInt;
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
  * {@snippet lang=c :
@@ -32,7 +36,7 @@ public class GTestLogMsg {
         app_indicator_h.C_INT.withName("n_nums"),
         MemoryLayout.paddingLayout(4),
         app_indicator_h.C_POINTER.withName("nums")
-    ).withName("$anon$722:9");
+    ).withName("$anon$757:9");
 
     /**
      * The layout of this struct

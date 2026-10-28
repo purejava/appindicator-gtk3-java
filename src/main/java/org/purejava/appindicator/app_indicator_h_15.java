@@ -2,16 +2,629 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.lang.invoke.MethodHandle;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
-import static java.lang.foreign.ValueLayout.OfInt;
-import static java.lang.foreign.ValueLayout.OfLong;
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 class app_indicator_h_15 extends app_indicator_h_16 {
 
     app_indicator_h_15() {
         // Should not be called directly
+    }
+
+    private static class pthread_mutexattr_destroy {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_mutexattr_destroy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_destroy(pthread_mutexattr_t *__attr)
+     * }
+     */
+    public static FunctionDescriptor pthread_mutexattr_destroy$descriptor() {
+        return pthread_mutexattr_destroy.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_destroy(pthread_mutexattr_t *__attr)
+     * }
+     */
+    public static MethodHandle pthread_mutexattr_destroy$handle() {
+        return pthread_mutexattr_destroy.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_destroy(pthread_mutexattr_t *__attr)
+     * }
+     */
+    public static MemorySegment pthread_mutexattr_destroy$address() {
+        return pthread_mutexattr_destroy.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_destroy(pthread_mutexattr_t *__attr)
+     * }
+     */
+    public static int pthread_mutexattr_destroy(MemorySegment __attr) {
+        var mh$ = pthread_mutexattr_destroy.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_mutexattr_destroy", __attr);
+            }
+            return (int)mh$.invokeExact(__attr);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_mutexattr_getpshared {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_mutexattr_getpshared");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_getpshared(const pthread_mutexattr_t *restrict __attr, int *restrict __pshared)
+     * }
+     */
+    public static FunctionDescriptor pthread_mutexattr_getpshared$descriptor() {
+        return pthread_mutexattr_getpshared.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_getpshared(const pthread_mutexattr_t *restrict __attr, int *restrict __pshared)
+     * }
+     */
+    public static MethodHandle pthread_mutexattr_getpshared$handle() {
+        return pthread_mutexattr_getpshared.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_getpshared(const pthread_mutexattr_t *restrict __attr, int *restrict __pshared)
+     * }
+     */
+    public static MemorySegment pthread_mutexattr_getpshared$address() {
+        return pthread_mutexattr_getpshared.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_getpshared(const pthread_mutexattr_t *restrict __attr, int *restrict __pshared)
+     * }
+     */
+    public static int pthread_mutexattr_getpshared(MemorySegment __attr, MemorySegment __pshared) {
+        var mh$ = pthread_mutexattr_getpshared.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_mutexattr_getpshared", __attr, __pshared);
+            }
+            return (int)mh$.invokeExact(__attr, __pshared);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_mutexattr_setpshared {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_mutexattr_setpshared");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_setpshared(pthread_mutexattr_t *__attr, int __pshared)
+     * }
+     */
+    public static FunctionDescriptor pthread_mutexattr_setpshared$descriptor() {
+        return pthread_mutexattr_setpshared.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_setpshared(pthread_mutexattr_t *__attr, int __pshared)
+     * }
+     */
+    public static MethodHandle pthread_mutexattr_setpshared$handle() {
+        return pthread_mutexattr_setpshared.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_setpshared(pthread_mutexattr_t *__attr, int __pshared)
+     * }
+     */
+    public static MemorySegment pthread_mutexattr_setpshared$address() {
+        return pthread_mutexattr_setpshared.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_setpshared(pthread_mutexattr_t *__attr, int __pshared)
+     * }
+     */
+    public static int pthread_mutexattr_setpshared(MemorySegment __attr, int __pshared) {
+        var mh$ = pthread_mutexattr_setpshared.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_mutexattr_setpshared", __attr, __pshared);
+            }
+            return (int)mh$.invokeExact(__attr, __pshared);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_mutexattr_gettype {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_mutexattr_gettype");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_gettype(const pthread_mutexattr_t *restrict __attr, int *restrict __kind)
+     * }
+     */
+    public static FunctionDescriptor pthread_mutexattr_gettype$descriptor() {
+        return pthread_mutexattr_gettype.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_gettype(const pthread_mutexattr_t *restrict __attr, int *restrict __kind)
+     * }
+     */
+    public static MethodHandle pthread_mutexattr_gettype$handle() {
+        return pthread_mutexattr_gettype.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_gettype(const pthread_mutexattr_t *restrict __attr, int *restrict __kind)
+     * }
+     */
+    public static MemorySegment pthread_mutexattr_gettype$address() {
+        return pthread_mutexattr_gettype.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_gettype(const pthread_mutexattr_t *restrict __attr, int *restrict __kind)
+     * }
+     */
+    public static int pthread_mutexattr_gettype(MemorySegment __attr, MemorySegment __kind) {
+        var mh$ = pthread_mutexattr_gettype.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_mutexattr_gettype", __attr, __kind);
+            }
+            return (int)mh$.invokeExact(__attr, __kind);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_mutexattr_settype {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_mutexattr_settype");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_settype(pthread_mutexattr_t *__attr, int __kind)
+     * }
+     */
+    public static FunctionDescriptor pthread_mutexattr_settype$descriptor() {
+        return pthread_mutexattr_settype.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_settype(pthread_mutexattr_t *__attr, int __kind)
+     * }
+     */
+    public static MethodHandle pthread_mutexattr_settype$handle() {
+        return pthread_mutexattr_settype.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_settype(pthread_mutexattr_t *__attr, int __kind)
+     * }
+     */
+    public static MemorySegment pthread_mutexattr_settype$address() {
+        return pthread_mutexattr_settype.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_settype(pthread_mutexattr_t *__attr, int __kind)
+     * }
+     */
+    public static int pthread_mutexattr_settype(MemorySegment __attr, int __kind) {
+        var mh$ = pthread_mutexattr_settype.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_mutexattr_settype", __attr, __kind);
+            }
+            return (int)mh$.invokeExact(__attr, __kind);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_mutexattr_getprotocol {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_mutexattr_getprotocol");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_getprotocol(const pthread_mutexattr_t *restrict __attr, int *restrict __protocol)
+     * }
+     */
+    public static FunctionDescriptor pthread_mutexattr_getprotocol$descriptor() {
+        return pthread_mutexattr_getprotocol.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_getprotocol(const pthread_mutexattr_t *restrict __attr, int *restrict __protocol)
+     * }
+     */
+    public static MethodHandle pthread_mutexattr_getprotocol$handle() {
+        return pthread_mutexattr_getprotocol.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_getprotocol(const pthread_mutexattr_t *restrict __attr, int *restrict __protocol)
+     * }
+     */
+    public static MemorySegment pthread_mutexattr_getprotocol$address() {
+        return pthread_mutexattr_getprotocol.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_getprotocol(const pthread_mutexattr_t *restrict __attr, int *restrict __protocol)
+     * }
+     */
+    public static int pthread_mutexattr_getprotocol(MemorySegment __attr, MemorySegment __protocol) {
+        var mh$ = pthread_mutexattr_getprotocol.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_mutexattr_getprotocol", __attr, __protocol);
+            }
+            return (int)mh$.invokeExact(__attr, __protocol);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_mutexattr_setprotocol {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_mutexattr_setprotocol");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_setprotocol(pthread_mutexattr_t *__attr, int __protocol)
+     * }
+     */
+    public static FunctionDescriptor pthread_mutexattr_setprotocol$descriptor() {
+        return pthread_mutexattr_setprotocol.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_setprotocol(pthread_mutexattr_t *__attr, int __protocol)
+     * }
+     */
+    public static MethodHandle pthread_mutexattr_setprotocol$handle() {
+        return pthread_mutexattr_setprotocol.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_setprotocol(pthread_mutexattr_t *__attr, int __protocol)
+     * }
+     */
+    public static MemorySegment pthread_mutexattr_setprotocol$address() {
+        return pthread_mutexattr_setprotocol.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_setprotocol(pthread_mutexattr_t *__attr, int __protocol)
+     * }
+     */
+    public static int pthread_mutexattr_setprotocol(MemorySegment __attr, int __protocol) {
+        var mh$ = pthread_mutexattr_setprotocol.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_mutexattr_setprotocol", __attr, __protocol);
+            }
+            return (int)mh$.invokeExact(__attr, __protocol);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_mutexattr_getprioceiling {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_mutexattr_getprioceiling");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_getprioceiling(const pthread_mutexattr_t *restrict __attr, int *restrict __prioceiling)
+     * }
+     */
+    public static FunctionDescriptor pthread_mutexattr_getprioceiling$descriptor() {
+        return pthread_mutexattr_getprioceiling.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_getprioceiling(const pthread_mutexattr_t *restrict __attr, int *restrict __prioceiling)
+     * }
+     */
+    public static MethodHandle pthread_mutexattr_getprioceiling$handle() {
+        return pthread_mutexattr_getprioceiling.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_getprioceiling(const pthread_mutexattr_t *restrict __attr, int *restrict __prioceiling)
+     * }
+     */
+    public static MemorySegment pthread_mutexattr_getprioceiling$address() {
+        return pthread_mutexattr_getprioceiling.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_getprioceiling(const pthread_mutexattr_t *restrict __attr, int *restrict __prioceiling)
+     * }
+     */
+    public static int pthread_mutexattr_getprioceiling(MemorySegment __attr, MemorySegment __prioceiling) {
+        var mh$ = pthread_mutexattr_getprioceiling.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_mutexattr_getprioceiling", __attr, __prioceiling);
+            }
+            return (int)mh$.invokeExact(__attr, __prioceiling);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_mutexattr_setprioceiling {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_mutexattr_setprioceiling");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_setprioceiling(pthread_mutexattr_t *__attr, int __prioceiling)
+     * }
+     */
+    public static FunctionDescriptor pthread_mutexattr_setprioceiling$descriptor() {
+        return pthread_mutexattr_setprioceiling.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_setprioceiling(pthread_mutexattr_t *__attr, int __prioceiling)
+     * }
+     */
+    public static MethodHandle pthread_mutexattr_setprioceiling$handle() {
+        return pthread_mutexattr_setprioceiling.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_setprioceiling(pthread_mutexattr_t *__attr, int __prioceiling)
+     * }
+     */
+    public static MemorySegment pthread_mutexattr_setprioceiling$address() {
+        return pthread_mutexattr_setprioceiling.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_setprioceiling(pthread_mutexattr_t *__attr, int __prioceiling)
+     * }
+     */
+    public static int pthread_mutexattr_setprioceiling(MemorySegment __attr, int __prioceiling) {
+        var mh$ = pthread_mutexattr_setprioceiling.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_mutexattr_setprioceiling", __attr, __prioceiling);
+            }
+            return (int)mh$.invokeExact(__attr, __prioceiling);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    private static class pthread_mutexattr_getrobust {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("pthread_mutexattr_getrobust");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_getrobust(const pthread_mutexattr_t *__attr, int *__robustness)
+     * }
+     */
+    public static FunctionDescriptor pthread_mutexattr_getrobust$descriptor() {
+        return pthread_mutexattr_getrobust.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_getrobust(const pthread_mutexattr_t *__attr, int *__robustness)
+     * }
+     */
+    public static MethodHandle pthread_mutexattr_getrobust$handle() {
+        return pthread_mutexattr_getrobust.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_getrobust(const pthread_mutexattr_t *__attr, int *__robustness)
+     * }
+     */
+    public static MemorySegment pthread_mutexattr_getrobust$address() {
+        return pthread_mutexattr_getrobust.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern int pthread_mutexattr_getrobust(const pthread_mutexattr_t *__attr, int *__robustness)
+     * }
+     */
+    public static int pthread_mutexattr_getrobust(MemorySegment __attr, MemorySegment __robustness) {
+        var mh$ = pthread_mutexattr_getrobust.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("pthread_mutexattr_getrobust", __attr, __robustness);
+            }
+            return (int)mh$.invokeExact(__attr, __robustness);
+        } catch (Error | RuntimeException ex) {
+           throw ex;
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
     }
 
     private static class pthread_mutexattr_setrobust {
@@ -37407,96 +38020,6 @@ class app_indicator_h_15 extends app_indicator_h_16 {
      */
     public static int G_ASK_PASSWORD_NEED_USERNAME() {
         return G_ASK_PASSWORD_NEED_USERNAME;
-    }
-    private static final int G_ASK_PASSWORD_NEED_DOMAIN = (int)4L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_ASK_PASSWORD_NEED_DOMAIN = 4
-     * }
-     */
-    public static int G_ASK_PASSWORD_NEED_DOMAIN() {
-        return G_ASK_PASSWORD_NEED_DOMAIN;
-    }
-    private static final int G_ASK_PASSWORD_SAVING_SUPPORTED = (int)8L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_ASK_PASSWORD_SAVING_SUPPORTED = 8
-     * }
-     */
-    public static int G_ASK_PASSWORD_SAVING_SUPPORTED() {
-        return G_ASK_PASSWORD_SAVING_SUPPORTED;
-    }
-    private static final int G_ASK_PASSWORD_ANONYMOUS_SUPPORTED = (int)16L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_ASK_PASSWORD_ANONYMOUS_SUPPORTED = 16
-     * }
-     */
-    public static int G_ASK_PASSWORD_ANONYMOUS_SUPPORTED() {
-        return G_ASK_PASSWORD_ANONYMOUS_SUPPORTED;
-    }
-    private static final int G_ASK_PASSWORD_TCRYPT = (int)32L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_ASK_PASSWORD_TCRYPT = 32
-     * }
-     */
-    public static int G_ASK_PASSWORD_TCRYPT() {
-        return G_ASK_PASSWORD_TCRYPT;
-    }
-    private static final int G_PASSWORD_SAVE_NEVER = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_PASSWORD_SAVE_NEVER = 0
-     * }
-     */
-    public static int G_PASSWORD_SAVE_NEVER() {
-        return G_PASSWORD_SAVE_NEVER;
-    }
-    private static final int G_PASSWORD_SAVE_FOR_SESSION = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_PASSWORD_SAVE_FOR_SESSION = 1
-     * }
-     */
-    public static int G_PASSWORD_SAVE_FOR_SESSION() {
-        return G_PASSWORD_SAVE_FOR_SESSION;
-    }
-    private static final int G_PASSWORD_SAVE_PERMANENTLY = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_PASSWORD_SAVE_PERMANENTLY = 2
-     * }
-     */
-    public static int G_PASSWORD_SAVE_PERMANENTLY() {
-        return G_PASSWORD_SAVE_PERMANENTLY;
-    }
-    private static final int G_MOUNT_OPERATION_HANDLED = (int)0L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_MOUNT_OPERATION_HANDLED = 0
-     * }
-     */
-    public static int G_MOUNT_OPERATION_HANDLED() {
-        return G_MOUNT_OPERATION_HANDLED;
-    }
-    private static final int G_MOUNT_OPERATION_ABORTED = (int)1L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_MOUNT_OPERATION_ABORTED = 1
-     * }
-     */
-    public static int G_MOUNT_OPERATION_ABORTED() {
-        return G_MOUNT_OPERATION_ABORTED;
-    }
-    private static final int G_MOUNT_OPERATION_UNHANDLED = (int)2L;
-    /**
-     * {@snippet lang=c :
-     * enum <anonymous>.G_MOUNT_OPERATION_UNHANDLED = 2
-     * }
-     */
-    public static int G_MOUNT_OPERATION_UNHANDLED() {
-        return G_MOUNT_OPERATION_UNHANDLED;
     }
 }
 
