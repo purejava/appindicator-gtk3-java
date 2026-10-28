@@ -22,7 +22,7 @@ dependencies {
 }
 
 group = "org.purejava"
-version = "1.4.3"
+version = "1.4.4"
 description = "Java bindings for libayatana-appindicator and libappindicator-gtk3 in 100% pure Java"
 
 java {
