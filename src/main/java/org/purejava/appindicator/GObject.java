@@ -2,15 +2,10 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
-import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemorySegment;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static org.purejava.appindicator.app_indicator_h_15.g_signal_connect_object;
 
 /**
  * {@snippet lang=c :
