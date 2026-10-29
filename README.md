@@ -8,7 +8,7 @@ Java bindings for libayatana-appindicator and libappindicator-gtk3 in 100% pure 
 
 Based on libayatana-appindicator 0.6.1-1
 
-Based on libappindicator 12.10.1-1
+Based on libappindicator 12.10.1-2
 
 # Requires
 Java 25
